@@ -141,6 +141,65 @@
             50% { transform: translate(-50%, -10px); }
         }
 
+        /* Sticky note with available games */
+        .sticky-note {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            width: 200px;
+            background: #feff9c;
+            padding: 15px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            transform: rotate(2deg);
+            font-family: 'Courier Prime', monospace;
+            color: #333;
+            border-bottom: 20px solid #f0e68c;
+        }
+
+        .sticky-note h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-decoration: underline;
+            color: #000;
+        }
+
+        .sticky-note ul {
+            list-style: none;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .sticky-note li {
+            margin-bottom: 4px;
+        }
+
+        .sticky-note li::before {
+            content: '> ';
+            color: #d32f2f;
+        }
+
+        /* Game canvas overlay */
+        #gameCanvas {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 9999;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-note {
+                right: 10px;
+                top: 60px;
+                width: 150px;
+                font-size: 10px;
+                padding: 10px;
+            }
+        }
+
         /* ============================================
            SECTION 2: TRANSITION ZONE - EARLY WEB
            ============================================ */
@@ -402,6 +461,18 @@
          SECTION 1: COMMODORE 64 BOOT SEQUENCE
          ============================================ -->
     <section class="c64-section">
+        <!-- Sticky note with available games -->
+        <div class="sticky-note">
+            <h3>AVAILABLE GAMES:</h3>
+            <ul>
+                <li>LOAD "*",8</li>
+                <li>LOAD "RDS",8</li>
+            </ul>
+            <p style="font-size: 10px; margin-top: 8px; font-style: italic;">
+                Click terminal to start!
+            </p>
+        </div>
+
         <div class="terminal-container">
             <div class="terminal-screen" id="terminalScreen">
                 <div class="terminal-line">**** COMMODORE 64 BASIC V2 ****</div>
@@ -426,6 +497,11 @@
         </div>
         <div class="scroll-hint">▼ SCROLL TO LOAD FUTURE ▼</div>
     </section>
+
+    <!-- ============================================
+         RACING DESTRUCTION SET GAME CANVAS
+         ============================================ -->
+    <canvas id="gameCanvas"></canvas>
 
     <!-- ============================================
          SECTION 2: TRANSITION - THE DISCLAIMER
@@ -621,20 +697,22 @@
             // Process commands
             const trimmedCmd = cmd.trim();
 
-            if (trimmedCmd === 'LOAD "*",8' || trimmedCmd === 'LOAD "*",8,1') {
+            if (trimmedCmd === 'LOAD "*",8' || trimmedCmd === 'LOAD "*",8,1' ||
+                trimmedCmd === 'LOAD "RDS",8' || trimmedCmd === 'LOAD "RDS",8,1') {
                 addTerminalLine('SEARCHING FOR *');
                 addTerminalLine('LOADING');
                 addTerminalLine('READY.');
+                addTerminalLine('');
                 setTimeout(() => {
+                    addTerminalLine('RACING DESTRUCTION SET');
+                    addTerminalLine('BY ELECTRONIC ARTS - 1985');
                     addTerminalLine('');
-                    addTerminalLine('CONGRATS! YOU FOUND THE EASTER EGG!');
+                    addTerminalLine('UPDATED FOR 2025 BY MIKE');
                     addTerminalLine('');
-                    addTerminalLine('UNFORTUNATELY, I HAVE NOT LOADED ANY');
-                    addTerminalLine('GAMES YET. CHECK BACK LATER!');
-                    addTerminalLine('');
-                    addTerminalLine('(MIKE IS PROBABLY STILL FIGURING OUT');
-                    addTerminalLine('HOW TO CODE PONG IN A BROWSER...)');
-                    resetTerminal();
+                    addTerminalLine('LAUNCHING...');
+                    setTimeout(() => {
+                        startRacingGame();
+                    }, 1500);
                 }, 1000);
             } else if (trimmedCmd.match(/^\d+\s+PRINT/i)) {
                 // BASIC program line
@@ -790,6 +868,374 @@
             el.style.transition = 'all 0.8s ease-out';
             sectionObserver.observe(el);
         });
+
+        // ============================================
+        // RACING DESTRUCTION SET - GAME ENGINE
+        // ============================================
+        function startRacingGame() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Show canvas and set dimensions
+            canvas.style.display = 'block';
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Game state
+            let gameRunning = true;
+            let currentLap = 1;
+            let totalLaps = 3;
+            let checkpointsPassed = 0;
+
+            // C64 color palette
+            const C64_COLORS = {
+                blue: '#3e31a2',
+                green: '#7bfc9c',
+                red: '#d32f2f',
+                yellow: '#feff9c',
+                white: '#ffffff',
+                black: '#000000',
+                gray: '#808080',
+                orange: '#ff6b35'
+            };
+
+            // Player car
+            const player = {
+                x: canvas.width / 2,
+                y: canvas.height - 150,
+                width: 20,
+                height: 30,
+                speed: 0,
+                maxSpeed: 8,
+                angle: 0,
+                turnSpeed: 0.08,
+                acceleration: 0.3,
+                friction: 0.95,
+                isJumping: false,
+                jumpHeight: 0,
+                color: C64_COLORS.green
+            };
+
+            // Opponent cars
+            const opponents = [
+                { x: canvas.width / 2 - 50, y: canvas.height - 150, width: 20, height: 30, speed: 3, angle: 0, color: C64_COLORS.red, offset: 0 },
+                { x: canvas.width / 2 + 50, y: canvas.height - 150, width: 20, height: 30, speed: 2.5, angle: 0, color: C64_COLORS.yellow, offset: Math.PI }
+            ];
+
+            // Track elements
+            const trackY = 0; // Scrolling track position
+            let scrollSpeed = 0;
+
+            // Obstacles and jumps
+            const trackElements = [];
+            function createTrackElements() {
+                for (let i = 0; i < 20; i++) {
+                    const y = -i * 400 - 200;
+
+                    // Add jumps
+                    if (i % 3 === 0) {
+                        trackElements.push({
+                            type: 'jump',
+                            x: canvas.width / 2 - 100 + Math.random() * 200,
+                            y: y,
+                            width: 60,
+                            height: 15,
+                            color: C64_COLORS.yellow
+                        });
+                    }
+
+                    // Add barriers
+                    if (i % 4 === 1) {
+                        trackElements.push({
+                            type: 'barrier',
+                            x: canvas.width / 2 - 150,
+                            y: y,
+                            width: 30,
+                            height: 30,
+                            color: C64_COLORS.red,
+                            health: 3
+                        });
+                        trackElements.push({
+                            type: 'barrier',
+                            x: canvas.width / 2 + 120,
+                            y: y,
+                            width: 30,
+                            height: 30,
+                            color: C64_COLORS.red,
+                            health: 3
+                        });
+                    }
+
+                    // Add checkpoints
+                    if (i % 5 === 0) {
+                        trackElements.push({
+                            type: 'checkpoint',
+                            x: canvas.width / 4,
+                            y: y,
+                            width: canvas.width / 2,
+                            height: 5,
+                            color: C64_COLORS.white,
+                            passed: false
+                        });
+                    }
+                }
+            }
+            createTrackElements();
+
+            // Input handling
+            const keys = {};
+            window.addEventListener('keydown', (e) => {
+                keys[e.key] = true;
+                if (e.key === 'Escape') {
+                    exitGame();
+                }
+                if (e.key === ' ' && !player.isJumping) {
+                    player.isJumping = true;
+                    player.jumpHeight = 0;
+                }
+            });
+
+            window.addEventListener('keyup', (e) => {
+                keys[e.key] = false;
+            });
+
+            function exitGame() {
+                gameRunning = false;
+                canvas.style.display = 'none';
+                window.removeEventListener('keydown', () => {});
+                window.removeEventListener('keyup', () => {});
+                isRunningProgram = false;
+                resetTerminal();
+            }
+
+            // Game loop
+            function update() {
+                if (!gameRunning) return;
+
+                // Player controls
+                if (keys['ArrowUp']) {
+                    player.speed += player.acceleration;
+                }
+                if (keys['ArrowDown']) {
+                    player.speed -= player.acceleration * 0.5;
+                }
+                if (keys['ArrowLeft']) {
+                    player.angle -= player.turnSpeed;
+                }
+                if (keys['ArrowRight']) {
+                    player.angle += player.turnSpeed;
+                }
+
+                // Speed limits
+                player.speed = Math.max(-player.maxSpeed / 2, Math.min(player.maxSpeed, player.speed));
+                player.speed *= player.friction;
+
+                // Update track scroll based on player speed
+                scrollSpeed = player.speed;
+
+                // Jumping physics
+                if (player.isJumping) {
+                    player.jumpHeight += 1;
+                    if (player.jumpHeight > 20) {
+                        player.isJumping = false;
+                        player.jumpHeight = 0;
+                    }
+                }
+
+                // Update opponents (simple AI)
+                opponents.forEach((opp, idx) => {
+                    opp.offset += 0.01;
+                    opp.x = canvas.width / 2 + Math.sin(opp.offset) * 100;
+                    opp.angle = Math.sin(opp.offset) * 0.1;
+                });
+
+                // Update track elements
+                trackElements.forEach(el => {
+                    el.y += scrollSpeed;
+
+                    // Reset elements that go off screen
+                    if (el.y > canvas.height + 100) {
+                        el.y = -Math.random() * 2000 - 500;
+                        if (el.type === 'checkpoint') {
+                            el.passed = false;
+                        }
+                    }
+
+                    // Collision detection with player
+                    if (!player.isJumping) {
+                        const collision = checkCollision(player, el);
+
+                        if (collision && el.type === 'jump') {
+                            if (!player.isJumping) {
+                                player.isJumping = true;
+                                player.jumpHeight = 0;
+                            }
+                        }
+
+                        if (collision && el.type === 'barrier') {
+                            // Destroy barrier on collision
+                            el.health--;
+                            if (el.health <= 0) {
+                                el.y = -Math.random() * 2000 - 500;
+                                el.health = 3;
+                            }
+                            player.speed *= 0.7; // Slow down on hit
+                        }
+
+                        if (collision && el.type === 'checkpoint' && !el.passed) {
+                            el.passed = true;
+                            checkpointsPassed++;
+                            if (checkpointsPassed >= 4) {
+                                currentLap++;
+                                checkpointsPassed = 0;
+                                // Reset all checkpoints
+                                trackElements.forEach(e => {
+                                    if (e.type === 'checkpoint') e.passed = false;
+                                });
+                            }
+                        }
+                    }
+                });
+
+                // Check if race is complete
+                if (currentLap > totalLaps) {
+                    drawVictoryScreen();
+                    setTimeout(exitGame, 3000);
+                    return;
+                }
+            }
+
+            function checkCollision(car, element) {
+                return car.x < element.x + element.width &&
+                       car.x + car.width > element.x &&
+                       car.y < element.y + element.height &&
+                       car.y + car.height > element.y;
+            }
+
+            function draw() {
+                if (!gameRunning) return;
+
+                // Clear screen with C64 blue
+                ctx.fillStyle = C64_COLORS.blue;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Draw track (road)
+                ctx.fillStyle = C64_COLORS.gray;
+                const roadWidth = canvas.width / 2;
+                ctx.fillRect(canvas.width / 2 - roadWidth / 2, 0, roadWidth, canvas.height);
+
+                // Draw center line
+                ctx.fillStyle = C64_COLORS.white;
+                for (let i = 0; i < canvas.height; i += 40) {
+                    const offsetY = (i + scrollSpeed * 10) % 60;
+                    ctx.fillRect(canvas.width / 2 - 3, offsetY, 6, 20);
+                }
+
+                // Draw track elements
+                trackElements.forEach(el => {
+                    ctx.fillStyle = el.color;
+
+                    if (el.type === 'jump') {
+                        // Draw ramp
+                        ctx.beginPath();
+                        ctx.moveTo(el.x, el.y + el.height);
+                        ctx.lineTo(el.x + el.width, el.y + el.height);
+                        ctx.lineTo(el.x + el.width, el.y);
+                        ctx.closePath();
+                        ctx.fill();
+                    } else if (el.type === 'barrier') {
+                        ctx.fillRect(el.x, el.y, el.width, el.height);
+                        // Draw X on barrier
+                        ctx.strokeStyle = C64_COLORS.white;
+                        ctx.lineWidth = 2;
+                        ctx.beginPath();
+                        ctx.moveTo(el.x, el.y);
+                        ctx.lineTo(el.x + el.width, el.y + el.height);
+                        ctx.moveTo(el.x + el.width, el.y);
+                        ctx.lineTo(el.x, el.y + el.height);
+                        ctx.stroke();
+                    } else if (el.type === 'checkpoint') {
+                        if (!el.passed) {
+                            ctx.fillRect(el.x, el.y, el.width, el.height);
+                        }
+                    }
+                });
+
+                // Draw opponents
+                opponents.forEach(opp => {
+                    ctx.save();
+                    ctx.translate(opp.x + opp.width / 2, opp.y + opp.height / 2);
+                    ctx.rotate(opp.angle);
+                    ctx.fillStyle = opp.color;
+                    ctx.fillRect(-opp.width / 2, -opp.height / 2, opp.width, opp.height);
+                    // Draw simple car details
+                    ctx.fillStyle = C64_COLORS.black;
+                    ctx.fillRect(-opp.width / 2 + 2, -opp.height / 2 + 5, 4, 4);
+                    ctx.fillRect(opp.width / 2 - 6, -opp.height / 2 + 5, 4, 4);
+                    ctx.restore();
+                });
+
+                // Draw player car
+                ctx.save();
+                ctx.translate(player.x + player.width / 2, player.y + player.height / 2 - player.jumpHeight);
+                ctx.rotate(player.angle);
+
+                // Shadow when jumping
+                if (player.isJumping) {
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+                    ctx.fillRect(-player.width / 2, player.height / 2 + player.jumpHeight, player.width, player.height / 4);
+                }
+
+                ctx.fillStyle = player.color;
+                ctx.fillRect(-player.width / 2, -player.height / 2, player.width, player.height);
+
+                // Car details
+                ctx.fillStyle = C64_COLORS.white;
+                ctx.fillRect(-player.width / 2 + 2, -player.height / 2 + 5, 4, 4);
+                ctx.fillRect(player.width / 2 - 6, -player.height / 2 + 5, 4, 4);
+
+                // Windshield
+                ctx.fillStyle = C64_COLORS.blue;
+                ctx.fillRect(-player.width / 4, -player.height / 4, player.width / 2, player.height / 3);
+                ctx.restore();
+
+                // Draw HUD
+                ctx.fillStyle = C64_COLORS.green;
+                ctx.font = '24px "VT323", monospace';
+                ctx.fillText(`SPEED: ${Math.floor(Math.abs(player.speed) * 10)}`, 20, 40);
+                ctx.fillText(`LAP: ${currentLap}/${totalLaps}`, 20, 70);
+                ctx.fillText(`JUMP: ${player.isJumping ? 'YES' : 'NO'}`, 20, 100);
+
+                ctx.fillText(`ARROWS: DRIVE  |  SPACE: JUMP  |  ESC: QUIT`, canvas.width / 2 - 300, canvas.height - 30);
+            }
+
+            function drawVictoryScreen() {
+                ctx.fillStyle = C64_COLORS.blue;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = C64_COLORS.green;
+                ctx.font = '48px "VT323", monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText('RACE COMPLETE!', canvas.width / 2, canvas.height / 2 - 40);
+
+                ctx.font = '32px "VT323", monospace';
+                ctx.fillText('YOU DESTROYED THE COMPETITION!', canvas.width / 2, canvas.height / 2 + 20);
+
+                ctx.font = '24px "VT323", monospace';
+                ctx.fillText('RETURNING TO TERMINAL...', canvas.width / 2, canvas.height / 2 + 80);
+            }
+
+            function gameLoop() {
+                update();
+                draw();
+                if (gameRunning) {
+                    requestAnimationFrame(gameLoop);
+                }
+            }
+
+            // Start the game
+            gameLoop();
+        }
     </script>
 
 </body>
