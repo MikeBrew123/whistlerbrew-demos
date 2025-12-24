@@ -3,211 +3,794 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhistlerBrew - AI-Powered Demo Playground</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>WhistlerBrew.com - Mike's Digital Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- BRAND COLOR PALETTE --- */
+        /* ============================================
+           ROOT VARIABLES - The time machine starts here
+           ============================================ */
         :root {
-            --bg-dark: #121212;      /* Deep charcoal background */
-            --bg-card: #1E1E1E;      /* Slightly lighter dark for cards */
-            --text-light: #E0E0E0;   /* Off-white text */
-            --text-muted: #A0A0A0;   /* Grayer text for descriptions */
-            --accent-fire: #FF5722;  /* Fiery orange accent color */
+            /* C64 Era (1980s) */
+            --c64-bg: #3e31a2;
+            --c64-text: #7bfc9c;
+            --c64-border: #6c5eb5;
+
+            /* Modern Era */
+            --modern-bg: #0a0e27;
+            --modern-text: #e0e6ed;
+            --modern-accent: #00d9ff;
+
+            /* Forest Era */
+            --forest-bg: #1a2f23;
+            --forest-text: #f0f4f0;
+            --forest-accent: #4a9d5f;
+
+            /* Fire theme (because firefighter) */
+            --fire-orange: #ff6b35;
+            --fire-red: #d32f2f;
         }
 
-        /* Basic Reset */
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* --- Hero Section with Banner Image --- */
-        .hero {
-            /* IMPORTANT: This expects a file named banner.png in the same folder */
-            background-image: url('banner.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 50vh; /* Takes up 50% of the viewport height */
-            min-height: 400px;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--c64-bg);
+            color: var(--c64-text);
+            overflow-x: hidden;
+            transition: background-color 1s ease, color 1s ease;
+        }
+
+        /* ============================================
+           SECTION 1: COMMODORE 64 TERMINAL
+           ============================================ */
+        .c64-section {
+            min-height: 100vh;
+            background: var(--c64-bg);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            padding: 40px 20px;
             position: relative;
         }
 
-        /* Dark overlay to ensure text over the image is readable */
-        .hero::before {
+        .terminal-container {
+            width: 90%;
+            max-width: 800px;
+            background: var(--c64-bg);
+            border: 16px solid var(--c64-border);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(123, 252, 156, 0.3);
+            font-family: 'VT323', monospace;
+            font-size: 20px;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .terminal-screen {
+            color: var(--c64-text);
+            text-shadow: 0 0 8px var(--c64-text);
+            letter-spacing: 1px;
+        }
+
+        .terminal-line {
+            margin-bottom: 8px;
+        }
+
+        .terminal-prompt {
+            color: var(--c64-text);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 12px;
+            height: 20px;
+            background: var(--c64-text);
+            animation: blink 1s step-end infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: var(--c64-text);
+            font-family: 'VT323', monospace;
+            font-size: 20px;
+            outline: none;
+            width: calc(100% - 120px);
+            text-shadow: 0 0 8px var(--c64-text);
+            caret-color: transparent;
+        }
+
+        .input-line {
+            display: flex;
+            align-items: center;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--c64-text);
+            font-family: 'VT323', monospace;
+            font-size: 18px;
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 8px var(--c64-text);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, -10px); }
+        }
+
+        /* ============================================
+           SECTION 2: TRANSITION ZONE - EARLY WEB
+           ============================================ */
+        .transition-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--c64-bg) 0%, #1a1a2e 50%, var(--modern-bg) 100%);
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-box {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 40px;
+        }
+
+        .content-box h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--fire-orange), var(--fire-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .content-box h2 {
+            font-size: 2rem;
+            margin: 30px 0 15px 0;
+            color: var(--modern-accent);
+        }
+
+        .content-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--modern-text);
+            margin-bottom: 15px;
+        }
+
+        .content-box em {
+            color: var(--fire-orange);
+            font-style: italic;
+        }
+
+        /* ============================================
+           SECTION 3: MODERN WEB - WHO IS MIKE?
+           ============================================ */
+        .modern-section {
+            min-height: 100vh;
+            background: var(--modern-bg);
+            padding: 80px 20px;
+            color: var(--modern-text);
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .interest-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            /* Gradient from semi-transparent black to solid dark background at bottom */
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(18,18,18,1) 100%);
-            z-index: 1;
-        }
-
-        /* Ensure content sits above the overlay */
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            /* Hiding the text visually since it's in the banner image, 
-               but keeping it for SEO/screen readers */
-            visibility: hidden; 
-            height: 0;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--text-light);
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-            margin-top: 180px; /* Adjusting positioning based on the banner image text space */
-        }
-
-
-        /* --- Main Content Section --- */
-        .main-container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Optional: add a small fire accent underline to the title */
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
             height: 3px;
-            background-color: var(--accent-fire);
-            margin: 15px auto 0;
+            background: linear-gradient(90deg, var(--modern-accent), var(--fire-orange));
         }
 
-        /* --- Grid Layout --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* --- Dark Project Cards --- */
-        .card {
-            background-color: var(--bg-card);
-            padding: 35px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            border: 1px solid #333; /* Subtle dark border */
-            /* The fiery orange accent on top */
-            border-top: 4px solid var(--accent-fire);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Hover effect for cards */
-        .card:hover {
+        .interest-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.15); /* Subtle orange glow on hover */
+            border-color: var(--modern-accent);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
         }
 
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: white;
+        .interest-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--modern-accent);
         }
 
-        .card p {
+        .interest-card p {
             font-size: 1rem;
-            line-height: 1.5;
-            color: var(--text-muted);
-            margin-bottom: 25px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* --- Fiery 'Coming Soon' Badge --- */
-        .coming-soon {
-            display: inline-block;
-            background-color: var(--accent-fire);
-            color: white; /* Dark text on the bright orange badge for contrast */
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* ============================================
+           SECTION 4: PNW FOREST WITH CODE OVERLAY
+           ============================================ */
+        .forest-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--modern-bg) 0%, var(--forest-bg) 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .forest-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .trees-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+
+        .tree {
+            opacity: 0.7;
+        }
+
+        .code-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-family: 'Courier Prime', monospace;
+            font-size: 14px;
+            color: rgba(74, 157, 95, 0.15);
+            overflow: hidden;
+            pointer-events: none;
+            line-height: 1.6;
+            padding: 20px;
+            white-space: pre;
+        }
+
+        .forest-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .forest-content h2 {
+            font-size: 2.5rem;
+            color: var(--forest-text);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, var(--forest-accent), var(--modern-accent));
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: auto; /* Pushes badge to bottom of card */
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(74, 157, 95, 0.4);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* --- Responsive Adjustments --- */
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-button:hover::before {
+            left: 100%;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 157, 95, 0.6);
+        }
+
+        .footer-note {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: rgba(240, 244, 240, 0.6);
+            font-style: italic;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
         @media (max-width: 768px) {
-            .hero { height: 40vh; min-height: 300px; }
-            .hero p { font-size: 1.2rem; margin-top: 120px;}
-            .section-title { font-size: 1.6rem; }
+            .terminal-container {
+                font-size: 16px;
+                padding: 20px;
+            }
+
+            .content-box h1 {
+                font-size: 2rem;
+            }
+
+            .content-box p {
+                font-size: 1rem;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>WhistlerBrew</h1> 
-            <p>AI-Powered Demo Playground</p>
+    <!-- ============================================
+         SECTION 1: COMMODORE 64 BOOT SEQUENCE
+         ============================================ -->
+    <section class="c64-section">
+        <div class="terminal-container">
+            <div class="terminal-screen" id="terminalScreen">
+                <div class="terminal-line">**** COMMODORE 64 BASIC V2 ****</div>
+                <div class="terminal-line">64K RAM SYSTEM  38911 BASIC BYTES FREE</div>
+                <div class="terminal-line">&nbsp;</div>
+                <div class="terminal-line">WELCOME TO WHISTLERBREW.COM</div>
+                <div class="terminal-line">&nbsp;</div>
+                <div class="terminal-line">WARNING: THIS IS NOT A REAL WEBSITE.</div>
+                <div class="terminal-line">THIS IS WHERE MIKE PLAYS WITH CODE, AI,</div>
+                <div class="terminal-line">AND QUESTIONABLE IDEAS.</div>
+                <div class="terminal-line">&nbsp;</div>
+                <div class="terminal-line">PROCEED AT YOUR OWN RISK.</div>
+                <div class="terminal-line">&nbsp;</div>
+                <div class="terminal-line input-line">
+                    <span class="terminal-prompt">READY.</span>
+                    <span class="cursor" id="cursor"></span>
+                </div>
+                <div class="terminal-line" style="margin-top: 10px; font-size: 16px; opacity: 0.7;">
+                    (TRY TYPING: LOAD "*",8 OR YOUR FAVORITE BASIC CODE)
+                </div>
+            </div>
         </div>
-    </header>
+        <div class="scroll-hint">▼ SCROLL TO LOAD FUTURE ▼</div>
+    </section>
 
-    <main class="main-container">
-        <h2 class="section-title">Live Demos & Projects</h2>
-
-        <div class="grid">
-            <article class="card">
-                <h3>Jane Voice Assistant</h3>
-                <p>AI-powered voicemail replacement with intelligent caller routing and context-aware responses.</p>
-                <span class="coming-soon">Coming Soon</span>
-            </article>
-
-            <article class="card">
-                <h3>FireSmart Tools</h3>
-                <p>Educational campaigns and assessment tools for wildfire prevention and community safety.</p>
-                <span class="coming-soon">Coming Soon</span>
-            </article>
-
-            <article class="card">
-                <h3>Automation Showcase</h3>
-                <p>N8N workflows and AI integrations demonstrating process optimization and efficiency gains.</p>
-                <span class="coming-soon">Coming Soon</span>
-            </article>
+    <!-- ============================================
+         SECTION 2: TRANSITION - THE DISCLAIMER
+         ============================================ -->
+    <section class="transition-section">
+        <div class="content-box">
+            <h1>WhistlerBrew.com</h1>
+            <p>
+                Congratulations! You've time-traveled from 1982 to... well, somewhere between
+                dial-up and 5G. This is <em>not</em> a professional portfolio. This is <em>not</em>
+                a corporate website. This is where I build weird stuff, break things, and
+                occasionally fix them.
+            </p>
+            <p>
+                Think of this as my digital garage. Sometimes there's a cool project in here.
+                Sometimes there's just me trying to remember how CSS Grid works.
+            </p>
+            <p>
+                <strong>Fair warning:</strong> Expect half-finished experiments, AI rabbit holes,
+                and the occasional dad joke in the code comments.
+            </p>
         </div>
-    </main>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: MODERN WEB - WHO IS MIKE?
+         ============================================ -->
+    <section class="modern-section">
+        <div class="content-box">
+            <h2>So... Who's Behind This Madness?</h2>
+            <p>
+                Hi, I'm Mike. By day, I do things that involve spreadsheets, data, and way too many
+                browser tabs. By night (and weekends, and early mornings...) I'm chasing down
+                whatever shiny tech catches my eye.
+            </p>
+        </div>
+
+        <div class="interests-grid">
+            <div class="interest-card">
+                <div class="interest-icon">🔥</div>
+                <h3>Structure Fire</h3>
+                <p>Battling blazes in buildings. Because someone's gotta do it, and apparently I thought it looked fun.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🌲</div>
+                <h3>Wildland Fire</h3>
+                <p>Structure protection in the wild. Saving homes while surrounded by trees that really want to be charcoal.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🏖️</div>
+                <h3>Mexico Escapes</h3>
+                <p>Beaches, tacos, and strategic WiFi avoidance. My preferred method of ctrl+alt+del on life.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">📊</div>
+                <h3>Excel Wizardry</h3>
+                <p>Yes, I unironically love Excel. Pivot tables are beautiful. Fight me.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">📈</div>
+                <h3>Power BI</h3>
+                <p>Making data look pretty since... whenever Power BI became a thing. DAX is a lifestyle.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🤖</div>
+                <h3>AI Everything</h3>
+                <p>ChatGPT, Gemini, Claude... if it talks back and hallucinates facts, I'm probably playing with it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4: PNW FOREST - WHERE TO GO
+         ============================================ -->
+    <section class="forest-section">
+        <!-- Animated code in background -->
+        <div class="code-overlay" id="codeOverlay"></div>
+
+        <!-- SVG Trees -->
+        <div class="forest-bg">
+            <div class="trees-container">
+                <svg class="tree" width="120" height="250" viewBox="0 0 120 250">
+                    <polygon points="60,20 100,100 80,100 110,160 70,160 60,250 50,250 10,160 40,160 20,100 60,20" fill="#2d5016" opacity="0.8"/>
+                    <rect x="55" y="160" width="10" height="90" fill="#3d2817"/>
+                </svg>
+                <svg class="tree" width="150" height="300" viewBox="0 0 150 300">
+                    <polygon points="75,10 120,110 100,110 130,180 90,180 75,300 65,300 20,180 50,180 30,110 75,10" fill="#1e3a0f" opacity="0.9"/>
+                    <rect x="70" y="180" width="10" height="120" fill="#2d1810"/>
+                </svg>
+                <svg class="tree" width="100" height="220" viewBox="0 0 100 220">
+                    <polygon points="50,30 80,90 65,90 90,150 60,150 50,220 40,220 10,150 35,150 15,90 50,30" fill="#3a5a1f" opacity="0.7"/>
+                    <rect x="45" y="150" width="10" height="70" fill="#4a3520"/>
+                </svg>
+                <svg class="tree" width="130" height="270" viewBox="0 0 130 270">
+                    <polygon points="65,15 105,105 85,105 115,175 75,175 65,270 55,270 15,175 45,175 25,105 65,15" fill="#254716" opacity="0.85"/>
+                    <rect x="60" y="175" width="10" height="95" fill="#362818"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="forest-content">
+            <h2>Welcome to the Pacific Northwest Digital Forest</h2>
+            <p style="font-size: 1.2rem; color: rgba(240, 244, 240, 0.9); max-width: 700px; margin: 0 auto;">
+                You've reached the end of the time tunnel. Or maybe the beginning?
+                Either way, here's where you can explore the stuff I've been building, breaking, and rebuilding.
+            </p>
+
+            <div class="nav-links">
+                <a href="stuff-i-build.html" class="nav-button">Stuff I Build</a>
+                <a href="things-im-working-on.html" class="nav-button">Things I'm Working On</a>
+                <a href="other-stuff.html" class="nav-button">Other Stuff</a>
+            </div>
+
+            <p class="footer-note">
+                Made with caffeine, stubbornness, and a concerning amount of AI assistance.<br>
+                © 2025 Mike @ WhistlerBrew.com | Not a real company | Probably never will be
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         JAVASCRIPT - THE MAGIC SAUCE
+         ============================================ -->
+    <script>
+        // ============================================
+        // INTERACTIVE TERMINAL EASTER EGG
+        // ============================================
+        const terminalScreen = document.getElementById('terminalScreen');
+        const cursor = document.getElementById('cursor');
+        let terminalInput = '';
+        let isTerminalActive = false;
+        let basicProgram = [];
+        let isRunningProgram = false;
+
+        // Listen for clicks on terminal to activate it
+        document.querySelector('.terminal-container').addEventListener('click', () => {
+            if (!isTerminalActive && !isRunningProgram) {
+                activateTerminal();
+            }
+        });
+
+        function activateTerminal() {
+            isTerminalActive = true;
+            const inputLine = document.createElement('div');
+            inputLine.className = 'terminal-line input-line';
+            inputLine.innerHTML = '<span class="terminal-prompt">READY.</span><span id="currentInput"></span><span class="cursor"></span>';
+
+            // Remove old cursor
+            cursor.remove();
+
+            // Add new input line
+            terminalScreen.appendChild(inputLine);
+
+            // Scroll to bottom
+            terminalScreen.parentElement.scrollTop = terminalScreen.parentElement.scrollHeight;
+        }
+
+        // Keyboard input handler
+        document.addEventListener('keydown', (e) => {
+            if (!isTerminalActive || isRunningProgram) return;
+
+            const currentInput = document.getElementById('currentInput');
+            if (!currentInput) return;
+
+            if (e.key === 'Enter') {
+                handleCommand(terminalInput);
+                terminalInput = '';
+            } else if (e.key === 'Backspace') {
+                e.preventDefault();
+                terminalInput = terminalInput.slice(0, -1);
+                currentInput.textContent = terminalInput;
+            } else if (e.key.length === 1) {
+                terminalInput += e.key.toUpperCase();
+                currentInput.textContent = terminalInput;
+            }
+        });
+
+        function handleCommand(cmd) {
+            const currentInputLine = document.querySelector('.input-line');
+            currentInputLine.querySelector('.cursor').remove();
+
+            // Add the command to screen
+            const cmdLine = document.createElement('div');
+            cmdLine.className = 'terminal-line';
+            cmdLine.textContent = cmd;
+            currentInputLine.appendChild(cmdLine);
+
+            // Process commands
+            const trimmedCmd = cmd.trim();
+
+            if (trimmedCmd === 'LOAD "*",8' || trimmedCmd === 'LOAD "*",8,1') {
+                addTerminalLine('SEARCHING FOR *');
+                addTerminalLine('LOADING');
+                addTerminalLine('READY.');
+                setTimeout(() => {
+                    addTerminalLine('');
+                    addTerminalLine('CONGRATS! YOU FOUND THE EASTER EGG!');
+                    addTerminalLine('');
+                    addTerminalLine('UNFORTUNATELY, I HAVE NOT LOADED ANY');
+                    addTerminalLine('GAMES YET. CHECK BACK LATER!');
+                    addTerminalLine('');
+                    addTerminalLine('(MIKE IS PROBABLY STILL FIGURING OUT');
+                    addTerminalLine('HOW TO CODE PONG IN A BROWSER...)');
+                    resetTerminal();
+                }, 1000);
+            } else if (trimmedCmd.match(/^\d+\s+PRINT/i)) {
+                // BASIC program line
+                basicProgram.push(trimmedCmd);
+                addTerminalLine('OK');
+                resetTerminal();
+            } else if (trimmedCmd === 'RUN') {
+                runBasicProgram();
+            } else if (trimmedCmd === 'LIST') {
+                basicProgram.forEach(line => addTerminalLine(line));
+                resetTerminal();
+            } else if (trimmedCmd === 'NEW') {
+                basicProgram = [];
+                addTerminalLine('OK');
+                resetTerminal();
+            } else if (trimmedCmd !== '') {
+                addTerminalLine('?SYNTAX ERROR');
+                resetTerminal();
+            } else {
+                resetTerminal();
+            }
+        }
+
+        function addTerminalLine(text) {
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            line.textContent = text;
+            terminalScreen.appendChild(line);
+            terminalScreen.parentElement.scrollTop = terminalScreen.parentElement.scrollHeight;
+        }
+
+        function resetTerminal() {
+            setTimeout(() => {
+                const inputLine = document.createElement('div');
+                inputLine.className = 'terminal-line input-line';
+                inputLine.innerHTML = '<span class="terminal-prompt">READY.</span><span id="currentInput"></span><span class="cursor"></span>';
+                terminalScreen.appendChild(inputLine);
+                terminalScreen.parentElement.scrollTop = terminalScreen.parentElement.scrollHeight;
+            }, 500);
+        }
+
+        function runBasicProgram() {
+            if (basicProgram.length === 0) {
+                addTerminalLine('?NO PROGRAM');
+                resetTerminal();
+                return;
+            }
+
+            isRunningProgram = true;
+
+            // Parse and execute simple BASIC
+            const sortedProgram = basicProgram.sort((a, b) => {
+                const numA = parseInt(a.split(' ')[0]);
+                const numB = parseInt(b.split(' ')[0]);
+                return numA - numB;
+            });
+
+            let currentLine = 0;
+            let iterations = 0;
+            const maxIterations = 20; // Prevent infinite loops from running forever
+
+            function executeNextLine() {
+                if (currentLine >= sortedProgram.length || iterations >= maxIterations) {
+                    if (iterations >= maxIterations) {
+                        addTerminalLine('');
+                        addTerminalLine('...AND SO ON (STOPPED AT 20 LINES)');
+                    }
+                    isRunningProgram = false;
+                    resetTerminal();
+                    return;
+                }
+
+                const line = sortedProgram[currentLine];
+                const match = line.match(/^\d+\s+PRINT\s+"?([^"]*)"?/i);
+
+                if (match) {
+                    addTerminalLine(match[1]);
+                    iterations++;
+                }
+
+                // Check for GOTO
+                const gotoMatch = line.match(/GOTO\s+(\d+)/i);
+                if (gotoMatch) {
+                    const targetLine = gotoMatch[1];
+                    const targetIndex = sortedProgram.findIndex(l => l.startsWith(targetLine + ' '));
+                    if (targetIndex !== -1) {
+                        currentLine = targetIndex;
+                    } else {
+                        currentLine++;
+                    }
+                } else {
+                    currentLine++;
+                }
+
+                setTimeout(executeNextLine, 200);
+            }
+
+            executeNextLine();
+        }
+
+        // ============================================
+        // ANIMATED CODE OVERLAY IN FOREST
+        // ============================================
+        const codeSnippets = [
+            'function explorePNW() {',
+            '  const trees = ["Douglas Fir", "Western Red Cedar"];',
+            '  return trees.map(tree => grow(tree));',
+            '}',
+            '',
+            'class Firefighter extends Hero {',
+            '  constructor() {',
+            '    super("Mike");',
+            '    this.coffee = Infinity;',
+            '  }',
+            '}',
+            '',
+            '// TODO: Add more Mexico vacation time',
+            'const workLifeBalance = calculateRatio();',
+            'if (workLifeBalance < 0.3) {',
+            '  bookFlight("Puerto Vallarta");',
+            '}',
+            '',
+            'SELECT * FROM projects',
+            'WHERE status = "half-finished"',
+            'ORDER BY excitement DESC;',
+        ];
+
+        const codeOverlay = document.getElementById('codeOverlay');
+        if (codeOverlay) {
+            codeOverlay.textContent = codeSnippets.join('\n').repeat(5);
+        }
+
+        // ============================================
+        // SCROLL-TRIGGERED TRANSITIONS
+        // ============================================
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-box, .interest-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            sectionObserver.observe(el);
+        });
+    </script>
 
 </body>
 </html>

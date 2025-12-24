@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuff I Build - WhistlerBrew.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a2f23 100%);
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 40px;
+            border-bottom: 2px solid #00d9ff;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #00d9ff, #4a9d5f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+            flex: 1;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00d9ff;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00d9ff, #4a9d5f);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #00d9ff;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-coming-soon {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+            border: 1px solid #ff6b35;
+        }
+
+        .status-in-progress {
+            background: rgba(0, 217, 255, 0.2);
+            color: #00d9ff;
+            border: 1px solid #00d9ff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .intro h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Stuff I Build</h1>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Projects, Experiments & Half-Baked Ideas</h2>
+            <p>
+                This is where I showcase the things I've actually finished... and the things I'm
+                still convincing myself I'll finish someday. No judgment, please.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Example project cards - replace with real content -->
+            <div class="project-card">
+                <h3>WhistlerBrew.com</h3>
+                <p>
+                    This very website! A retro-to-modern journey through time and tech.
+                    Features a working Commodore 64 terminal because why not?
+                </p>
+                <span class="status-badge status-in-progress">Live & Evolving</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Your Next Project Here</h3>
+                <p>
+                    This is a placeholder. Add your actual projects, demos, or experiments here.
+                    Include links, screenshots, or whatever makes sense.
+                </p>
+                <span class="status-badge status-coming-soon">Coming Soon</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Another Cool Thing</h3>
+                <p>
+                    Maybe a FireSmart tool? An AI experiment? A Power BI dashboard that
+                    actually makes people say "wow"? The possibilities are endless.
+                </p>
+                <span class="status-badge status-coming-soon">Coming Soon</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Built with questionable amounts of caffeine | © 2025 WhistlerBrew.com</p>
+    </footer>
+</body>
+</html>
