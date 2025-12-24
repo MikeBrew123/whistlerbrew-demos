@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things I'm Working On - WhistlerBrew.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0e27 100%);
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 40px;
+            border-bottom: 2px solid #ff6b35;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #ff6b35, #d32f2f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff6b35;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+            flex: 1;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff6b35;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #ff6b35;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: #00d9ff;
+            transform: translateX(5px);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff6b35;
+        }
+
+        .timeline-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b35, #00d9ff);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .intro h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Things I'm Working On</h1>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Current Rabbit Holes</h2>
+            <p>
+                Here's what's currently consuming my brain cycles, free time, and probably
+                too much coffee. Progress bars are aspirational at best.
+            </p>
+        </div>
+
+        <div class="timeline">
+            <!-- Example timeline items - replace with real content -->
+            <div class="timeline-item">
+                <span class="timeline-date">December 2025 - Present</span>
+                <h3>WhistlerBrew.com Redesign</h3>
+                <p>
+                    Building this retro-modern fever dream of a website. Started with "I just need
+                    a simple landing page" and ended up with a working C64 terminal. As one does.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">Ongoing</span>
+                <h3>Learning Whatever AI Tool Dropped This Week</h3>
+                <p>
+                    ChatGPT? Check. Claude? Check. Gemini? Check. The next big thing that launches
+                    tomorrow? Probably also check. I have a problem.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">TBD - Eventually</span>
+                <h3>Your Project Title Here</h3>
+                <p>
+                    Replace these placeholder items with your actual work-in-progress projects.
+                    Add updates, progress bars, links, or whatever helps you track your journey.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 15%;"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">Someday</span>
+                <h3>Actually Using Power BI for Something Cool</h3>
+                <p>
+                    I keep saying I'll build an awesome dashboard. It'll happen. Eventually.
+                    Right after I finish that other thing. And that other thing. And...
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 5%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Progress not guaranteed | © 2025 WhistlerBrew.com</p>
+    </footer>
+</body>
+</html>

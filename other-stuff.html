@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Stuff - WhistlerBrew.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a2f23 0%, #0a0e27 100%);
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 40px;
+            border-bottom: 2px solid #4a9d5f;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #4a9d5f, #00d9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #4a9d5f;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+            flex: 1;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4a9d5f;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(74, 157, 95, 0.2);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            border-color: #4a9d5f;
+            box-shadow: 0 10px 30px rgba(74, 157, 95, 0.2);
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #4a9d5f;
+        }
+
+        .content-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .content-card ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .content-card li {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .misc-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(74, 157, 95, 0.2);
+            border-radius: 8px;
+        }
+
+        .misc-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4a9d5f;
+        }
+
+        .misc-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .intro h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Other Stuff</h1>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>The Miscellaneous Drawer</h2>
+            <p>
+                You know that drawer in your kitchen with random batteries, twist ties, and
+                instruction manuals for things you don't own anymore? This is the digital version.
+            </p>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>Random Thoughts</h3>
+                <p>
+                    Maybe I'll turn this into a blog someday. Or a collection of hot takes about
+                    Excel formulas. Or just links to things I found interesting.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h3>Resources & Links</h3>
+                <p>
+                    Useful tools, tutorials, and websites I keep forgetting to bookmark properly.
+                    Future Mike will thank Present Mike for this.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h3>Contact... Maybe?</h3>
+                <p>
+                    Not sure if I want to add contact info here yet. But this seems like a good
+                    spot for it if I ever decide to let strangers email me about DAX formulas.
+                </p>
+            </div>
+        </div>
+
+        <div class="misc-section">
+            <h3>About This "Other Stuff" Page</h3>
+            <p>
+                Look, not everything fits neatly into categories. Sometimes you just need a place
+                to dump things that don't quite belong anywhere else.
+            </p>
+            <p>
+                This could become a blog, a resource library, a collection of code snippets, or
+                just a place where I ramble about why pivot tables are superior to VLOOKUP.
+                (They are. This is not up for debate.)
+            </p>
+            <p>
+                For now, it's a placeholder. But a <em>stylish</em> placeholder with gradient
+                text and hover effects. Because if you're going to procrastinate on creating
+                content, you might as well make it look good.
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Still figuring out what goes here | © 2025 WhistlerBrew.com</p>
+    </footer>
+</body>
+</html>
