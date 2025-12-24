@@ -697,8 +697,10 @@
             // Process commands
             const trimmedCmd = cmd.trim();
 
-            if (trimmedCmd === 'LOAD "*",8' || trimmedCmd === 'LOAD "*",8,1' ||
-                trimmedCmd === 'LOAD "RDS",8' || trimmedCmd === 'LOAD "RDS",8,1') {
+            // Check for LOAD commands (allow with or without space after LOAD)
+            const loadRDSMatch = trimmedCmd.match(/^LOAD\s*"?(RDS|\*)"?,8,?1?$/i);
+
+            if (loadRDSMatch) {
                 addTerminalLine('SEARCHING FOR *');
                 addTerminalLine('LOADING');
                 addTerminalLine('READY.');
