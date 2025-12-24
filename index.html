@@ -486,12 +486,13 @@
                 <div class="terminal-line">&nbsp;</div>
                 <div class="terminal-line">PROCEED AT YOUR OWN RISK.</div>
                 <div class="terminal-line">&nbsp;</div>
-                <div class="terminal-line input-line">
+                <div class="terminal-line input-line" id="initialInputLine">
                     <span class="terminal-prompt">READY.</span>
-                    <span class="cursor" id="cursor"></span>
+                    <span id="currentInput"></span>
+                    <span class="cursor"></span>
                 </div>
                 <div class="terminal-line" style="margin-top: 10px; font-size: 16px; opacity: 0.7;">
-                    (TRY TYPING: LOAD "*",8 OR YOUR FAVORITE BASIC CODE)
+                    (START TYPING: LOAD "*",8 OR YOUR FAVORITE BASIC CODE)
                 </div>
             </div>
         </div>
@@ -635,34 +636,15 @@
         // INTERACTIVE TERMINAL EASTER EGG
         // ============================================
         const terminalScreen = document.getElementById('terminalScreen');
-        const cursor = document.getElementById('cursor');
         let terminalInput = '';
-        let isTerminalActive = false;
+        let isTerminalActive = true; // Auto-activated on page load
         let basicProgram = [];
         let isRunningProgram = false;
 
-        // Listen for clicks on terminal to activate it
-        document.querySelector('.terminal-container').addEventListener('click', () => {
-            if (!isTerminalActive && !isRunningProgram) {
-                activateTerminal();
-            }
+        // Focus the page so keyboard input works immediately
+        window.addEventListener('load', () => {
+            document.body.focus();
         });
-
-        function activateTerminal() {
-            isTerminalActive = true;
-            const inputLine = document.createElement('div');
-            inputLine.className = 'terminal-line input-line';
-            inputLine.innerHTML = '<span class="terminal-prompt">READY.</span><span id="currentInput"></span><span class="cursor"></span>';
-
-            // Remove old cursor
-            cursor.remove();
-
-            // Add new input line
-            terminalScreen.appendChild(inputLine);
-
-            // Scroll to bottom
-            terminalScreen.parentElement.scrollTop = terminalScreen.parentElement.scrollHeight;
-        }
 
         // Keyboard input handler
         document.addEventListener('keydown', (e) => {
