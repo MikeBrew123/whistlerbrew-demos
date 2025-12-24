@@ -855,371 +855,329 @@
 
         // ============================================
         // RACING DESTRUCTION SET - GAME ENGINE
+        // Authentic slot-car racing mechanics!
         // ============================================
-        function startRacingGame() {
-            const canvas = document.getElementById('gameCanvas');
-            const ctx = canvas.getContext('2d');
+// ============================================
+// RACING DESTRUCTION SET - PROPER IMPLEMENTATION
+// Slot-car racing with lane-based movement
+// ============================================
 
-            // Show canvas and set dimensions
-            canvas.style.display = 'block';
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+function startRacingGame() {
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
 
-            // Game state
-            let gameRunning = true;
-            let currentLap = 1;
-            let totalLaps = 3;
-            let checkpointsPassed = 0;
+    canvas.style.display = 'block';
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-            // C64 color palette
-            const C64_COLORS = {
-                blue: '#3e31a2',
-                green: '#7bfc9c',
-                red: '#d32f2f',
-                yellow: '#feff9c',
-                white: '#ffffff',
-                black: '#000000',
-                gray: '#808080',
-                orange: '#ff6b35'
-            };
+    let gameRunning = true;
+    let raceStarted = false;
 
-            // Player car
-            const player = {
-                x: canvas.width / 2,
-                y: canvas.height - 150,
-                width: 20,
-                height: 30,
-                speed: 0,
-                maxSpeed: 8,
-                angle: 0,
-                turnSpeed: 0.08,
-                acceleration: 0.3,
-                friction: 0.95,
-                isJumping: false,
-                jumpHeight: 0,
-                color: C64_COLORS.green
-            };
+    // C64 Colors
+    const C64 = {
+        blue: '#3e31a2',
+        green: '#7bfc9c',
+        red: '#d32f2f',
+        yellow: '#feff9c',
+        white: '#ffffff',
+        black: '#000000',
+        gray: '#808080'
+    };
 
-            // Opponent cars
-            const opponents = [
-                { x: canvas.width / 2 - 50, y: canvas.height - 150, width: 20, height: 30, speed: 3, angle: 0, color: C64_COLORS.red, offset: 0 },
-                { x: canvas.width / 2 + 50, y: canvas.height - 150, width: 20, height: 30, speed: 2.5, angle: 0, color: C64_COLORS.yellow, offset: Math.PI }
-            ];
+    // ============================================
+    // TRACK - Circular racing circuit
+    // ============================================
+    const TRACK_SEGMENTS = 60;
+    const LANE_WIDTH = 60;
+    const NUM_LANES = 3;
+    const CENTER_X = canvas.width / 2;
+    const CENTER_Y = canvas.height / 2;
+    const RADIUS = Math.min(canvas.width, canvas.height) * 0.35;
 
-            // Track elements
-            const trackY = 0; // Scrolling track position
-            let scrollSpeed = 0;
+    function getTrackPosition(progress, lane) {
+        const laneOffset = (lane - 1) * LANE_WIDTH; // -1, 0, 1 for lanes 0,1,2
+        const radius = RADIUS + laneOffset;
+        const angle = progress * Math.PI * 2;
 
-            // Obstacles and jumps
-            const trackElements = [];
-            function createTrackElements() {
-                for (let i = 0; i < 20; i++) {
-                    const y = -i * 400 - 200;
+        return {
+            x: CENTER_X + Math.cos(angle) * radius,
+            y: CENTER_Y + Math.sin(angle) * radius,
+            angle: angle + Math.PI / 2
+        };
+    }
 
-                    // Add jumps
-                    if (i % 3 === 0) {
-                        trackElements.push({
-                            type: 'jump',
-                            x: canvas.width / 2 - 100 + Math.random() * 200,
-                            y: y,
-                            width: 60,
-                            height: 15,
-                            color: C64_COLORS.yellow
-                        });
-                    }
+    function getSafeSpeed(progress) {
+        // Vary safe speed around the track (slower on "turns")
+        const angle = progress * Math.PI * 2;
+        const variation = Math.sin(angle * 4) * 2; // 4 "turns" around track
+        return 7 + variation;
+    }
 
-                    // Add barriers
-                    if (i % 4 === 1) {
-                        trackElements.push({
-                            type: 'barrier',
-                            x: canvas.width / 2 - 150,
-                            y: y,
-                            width: 30,
-                            height: 30,
-                            color: C64_COLORS.red,
-                            health: 3
-                        });
-                        trackElements.push({
-                            type: 'barrier',
-                            x: canvas.width / 2 + 120,
-                            y: y,
-                            width: 30,
-                            height: 30,
-                            color: C64_COLORS.red,
-                            health: 3
-                        });
-                    }
+    // ============================================
+    // PLAYER CAR
+    // ============================================
+    const player = {
+        progress: 0,
+        lane: 1,
+        speed: 0,
+        targetLane: 1,
+        laneChangeProgress: 0,
+        laps: 0,
+        crashed: false,
+        crashTimer: 0,
+        lastProgress: 0
+    };
 
-                    // Add checkpoints
-                    if (i % 5 === 0) {
-                        trackElements.push({
-                            type: 'checkpoint',
-                            x: canvas.width / 4,
-                            y: y,
-                            width: canvas.width / 2,
-                            height: 5,
-                            color: C64_COLORS.white,
-                            passed: false
-                        });
-                    }
-                }
+    // ============================================
+    // OPPONENT CAR
+    // ============================================
+    const opponent = {
+        progress: 0.08,
+        lane: 1,
+        speed: 5,
+        laps: 0,
+        lastProgress: 0
+    };
+
+    // ============================================
+    // INPUT
+    // ============================================
+    const keys = {};
+    let laneChangeDelay = 0;
+
+    window.addEventListener('keydown', (e) => {
+        keys[e.key] = true;
+        if (e.key === 'Escape') exitGame();
+
+        // Lane changes (discrete!)
+        if (raceStarted && laneChangeDelay <= 0 && player.laneChangeProgress === 0) {
+            if (e.key === 'ArrowLeft' && player.lane > 0) {
+                player.targetLane = player.lane - 1;
+                player.laneChangeProgress = 1;
+                laneChangeDelay = 10;
             }
-            createTrackElements();
-
-            // Input handling
-            const keys = {};
-            window.addEventListener('keydown', (e) => {
-                keys[e.key] = true;
-                if (e.key === 'Escape') {
-                    exitGame();
-                }
-                if (e.key === ' ' && !player.isJumping) {
-                    player.isJumping = true;
-                    player.jumpHeight = 0;
-                }
-            });
-
-            window.addEventListener('keyup', (e) => {
-                keys[e.key] = false;
-            });
-
-            function exitGame() {
-                gameRunning = false;
-                canvas.style.display = 'none';
-                window.removeEventListener('keydown', () => {});
-                window.removeEventListener('keyup', () => {});
-                isRunningProgram = false;
-                resetTerminal();
+            if (e.key === 'ArrowRight' && player.lane < NUM_LANES - 1) {
+                player.targetLane = player.lane + 1;
+                player.laneChangeProgress = 1;
+                laneChangeDelay = 10;
             }
-
-            // Game loop
-            function update() {
-                if (!gameRunning) return;
-
-                // Player controls
-                if (keys['ArrowUp']) {
-                    player.speed += player.acceleration;
-                }
-                if (keys['ArrowDown']) {
-                    player.speed -= player.acceleration * 0.5;
-                }
-                if (keys['ArrowLeft']) {
-                    player.angle -= player.turnSpeed;
-                }
-                if (keys['ArrowRight']) {
-                    player.angle += player.turnSpeed;
-                }
-
-                // Speed limits
-                player.speed = Math.max(-player.maxSpeed / 2, Math.min(player.maxSpeed, player.speed));
-                player.speed *= player.friction;
-
-                // Update track scroll based on player speed
-                scrollSpeed = player.speed;
-
-                // Jumping physics
-                if (player.isJumping) {
-                    player.jumpHeight += 1;
-                    if (player.jumpHeight > 20) {
-                        player.isJumping = false;
-                        player.jumpHeight = 0;
-                    }
-                }
-
-                // Update opponents (simple AI)
-                opponents.forEach((opp, idx) => {
-                    opp.offset += 0.01;
-                    opp.x = canvas.width / 2 + Math.sin(opp.offset) * 100;
-                    opp.angle = Math.sin(opp.offset) * 0.1;
-                });
-
-                // Update track elements
-                trackElements.forEach(el => {
-                    el.y += scrollSpeed;
-
-                    // Reset elements that go off screen
-                    if (el.y > canvas.height + 100) {
-                        el.y = -Math.random() * 2000 - 500;
-                        if (el.type === 'checkpoint') {
-                            el.passed = false;
-                        }
-                    }
-
-                    // Collision detection with player
-                    if (!player.isJumping) {
-                        const collision = checkCollision(player, el);
-
-                        if (collision && el.type === 'jump') {
-                            if (!player.isJumping) {
-                                player.isJumping = true;
-                                player.jumpHeight = 0;
-                            }
-                        }
-
-                        if (collision && el.type === 'barrier') {
-                            // Destroy barrier on collision
-                            el.health--;
-                            if (el.health <= 0) {
-                                el.y = -Math.random() * 2000 - 500;
-                                el.health = 3;
-                            }
-                            player.speed *= 0.7; // Slow down on hit
-                        }
-
-                        if (collision && el.type === 'checkpoint' && !el.passed) {
-                            el.passed = true;
-                            checkpointsPassed++;
-                            if (checkpointsPassed >= 4) {
-                                currentLap++;
-                                checkpointsPassed = 0;
-                                // Reset all checkpoints
-                                trackElements.forEach(e => {
-                                    if (e.type === 'checkpoint') e.passed = false;
-                                });
-                            }
-                        }
-                    }
-                });
-
-                // Check if race is complete
-                if (currentLap > totalLaps) {
-                    drawVictoryScreen();
-                    setTimeout(exitGame, 3000);
-                    return;
-                }
-            }
-
-            function checkCollision(car, element) {
-                return car.x < element.x + element.width &&
-                       car.x + car.width > element.x &&
-                       car.y < element.y + element.height &&
-                       car.y + car.height > element.y;
-            }
-
-            function draw() {
-                if (!gameRunning) return;
-
-                // Clear screen with C64 blue
-                ctx.fillStyle = C64_COLORS.blue;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                // Draw track (road)
-                ctx.fillStyle = C64_COLORS.gray;
-                const roadWidth = canvas.width / 2;
-                ctx.fillRect(canvas.width / 2 - roadWidth / 2, 0, roadWidth, canvas.height);
-
-                // Draw center line
-                ctx.fillStyle = C64_COLORS.white;
-                for (let i = 0; i < canvas.height; i += 40) {
-                    const offsetY = (i + scrollSpeed * 10) % 60;
-                    ctx.fillRect(canvas.width / 2 - 3, offsetY, 6, 20);
-                }
-
-                // Draw track elements
-                trackElements.forEach(el => {
-                    ctx.fillStyle = el.color;
-
-                    if (el.type === 'jump') {
-                        // Draw ramp
-                        ctx.beginPath();
-                        ctx.moveTo(el.x, el.y + el.height);
-                        ctx.lineTo(el.x + el.width, el.y + el.height);
-                        ctx.lineTo(el.x + el.width, el.y);
-                        ctx.closePath();
-                        ctx.fill();
-                    } else if (el.type === 'barrier') {
-                        ctx.fillRect(el.x, el.y, el.width, el.height);
-                        // Draw X on barrier
-                        ctx.strokeStyle = C64_COLORS.white;
-                        ctx.lineWidth = 2;
-                        ctx.beginPath();
-                        ctx.moveTo(el.x, el.y);
-                        ctx.lineTo(el.x + el.width, el.y + el.height);
-                        ctx.moveTo(el.x + el.width, el.y);
-                        ctx.lineTo(el.x, el.y + el.height);
-                        ctx.stroke();
-                    } else if (el.type === 'checkpoint') {
-                        if (!el.passed) {
-                            ctx.fillRect(el.x, el.y, el.width, el.height);
-                        }
-                    }
-                });
-
-                // Draw opponents
-                opponents.forEach(opp => {
-                    ctx.save();
-                    ctx.translate(opp.x + opp.width / 2, opp.y + opp.height / 2);
-                    ctx.rotate(opp.angle);
-                    ctx.fillStyle = opp.color;
-                    ctx.fillRect(-opp.width / 2, -opp.height / 2, opp.width, opp.height);
-                    // Draw simple car details
-                    ctx.fillStyle = C64_COLORS.black;
-                    ctx.fillRect(-opp.width / 2 + 2, -opp.height / 2 + 5, 4, 4);
-                    ctx.fillRect(opp.width / 2 - 6, -opp.height / 2 + 5, 4, 4);
-                    ctx.restore();
-                });
-
-                // Draw player car
-                ctx.save();
-                ctx.translate(player.x + player.width / 2, player.y + player.height / 2 - player.jumpHeight);
-                ctx.rotate(player.angle);
-
-                // Shadow when jumping
-                if (player.isJumping) {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
-                    ctx.fillRect(-player.width / 2, player.height / 2 + player.jumpHeight, player.width, player.height / 4);
-                }
-
-                ctx.fillStyle = player.color;
-                ctx.fillRect(-player.width / 2, -player.height / 2, player.width, player.height);
-
-                // Car details
-                ctx.fillStyle = C64_COLORS.white;
-                ctx.fillRect(-player.width / 2 + 2, -player.height / 2 + 5, 4, 4);
-                ctx.fillRect(player.width / 2 - 6, -player.height / 2 + 5, 4, 4);
-
-                // Windshield
-                ctx.fillStyle = C64_COLORS.blue;
-                ctx.fillRect(-player.width / 4, -player.height / 4, player.width / 2, player.height / 3);
-                ctx.restore();
-
-                // Draw HUD
-                ctx.fillStyle = C64_COLORS.green;
-                ctx.font = '24px "VT323", monospace';
-                ctx.fillText(`SPEED: ${Math.floor(Math.abs(player.speed) * 10)}`, 20, 40);
-                ctx.fillText(`LAP: ${currentLap}/${totalLaps}`, 20, 70);
-                ctx.fillText(`JUMP: ${player.isJumping ? 'YES' : 'NO'}`, 20, 100);
-
-                ctx.fillText(`ARROWS: DRIVE  |  SPACE: JUMP  |  ESC: QUIT`, canvas.width / 2 - 300, canvas.height - 30);
-            }
-
-            function drawVictoryScreen() {
-                ctx.fillStyle = C64_COLORS.blue;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                ctx.fillStyle = C64_COLORS.green;
-                ctx.font = '48px "VT323", monospace';
-                ctx.textAlign = 'center';
-                ctx.fillText('RACE COMPLETE!', canvas.width / 2, canvas.height / 2 - 40);
-
-                ctx.font = '32px "VT323", monospace';
-                ctx.fillText('YOU DESTROYED THE COMPETITION!', canvas.width / 2, canvas.height / 2 + 20);
-
-                ctx.font = '24px "VT323", monospace';
-                ctx.fillText('RETURNING TO TERMINAL...', canvas.width / 2, canvas.height / 2 + 80);
-            }
-
-            function gameLoop() {
-                update();
-                draw();
-                if (gameRunning) {
-                    requestAnimationFrame(gameLoop);
-                }
-            }
-
-            // Start the game
-            gameLoop();
         }
+    });
+
+    window.addEventListener('keyup', (e) => {
+        keys[e.key] = false;
+    });
+
+    function exitGame() {
+        gameRunning = false;
+        canvas.style.display = 'none';
+        isRunningProgram = false;
+        resetTerminal();
+    }
+
+    // ============================================
+    // GAME LOOP
+    // ============================================
+    function update() {
+        if (!gameRunning) return;
+
+        if (!raceStarted) {
+            raceStarted = true;
+        }
+
+        laneChangeDelay--;
+
+        // PLAYER CONTROLS - Gas/Brake
+        if (keys['ArrowUp']) {
+            player.speed += 0.2;
+        } else if (keys['ArrowDown']) {
+            player.speed -= 0.3;
+        } else {
+            player.speed *= 0.98; // Natural slowdown
+        }
+
+        player.speed = Math.max(0, Math.min(12, player.speed));
+
+        // Lane change animation
+        if (player.laneChangeProgress > 0) {
+            player.laneChangeProgress -= 0.1;
+            if (player.laneChangeProgress <= 0) {
+                player.lane = player.targetLane;
+                player.laneChangeProgress = 0;
+            }
+        }
+
+        // Move player along track
+        if (!player.crashed) {
+            player.progress += player.speed * 0.001;
+
+            // Lap detection
+            if (player.progress >= 1) {
+                player.progress -= 1;
+                player.laps++;
+            }
+
+            // Check for crash (too fast on turns)
+            const safeSpeed = getSafeSpeed(player.progress);
+            if (player.speed > safeSpeed + 4) {
+                const crashChance = (player.speed - safeSpeed) / 20;
+                if (Math.random() < crashChance) {
+                    player.crashed = true;
+                    player.crashTimer = 60;
+                    player.speed *= 0.3;
+                }
+            }
+        }
+
+        // Crash recovery
+        if (player.crashed) {
+            player.crashTimer--;
+            if (player.crashTimer <= 0) {
+                player.crashed = false;
+            }
+        }
+
+        // OPPONENT AI
+        opponent.progress += opponent.speed * 0.001;
+        if (opponent.progress >= 1) {
+            opponent.progress -= 1;
+            opponent.laps++;
+        }
+
+        // Simple AI lane changing
+        if (Math.random() < 0.01) {
+            const newLane = Math.floor(Math.random() * NUM_LANES);
+            opponent.lane = newLane;
+        }
+
+        // Check win condition
+        if (player.laps >= 3 || opponent.laps >= 3) {
+            drawVictoryScreen(player.laps >= 3);
+            setTimeout(exitGame, 3000);
+            return;
+        }
+    }
+
+    function draw() {
+        if (!gameRunning) return;
+
+        // Clear
+        ctx.fillStyle = C64.blue;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw track (all lanes)
+        ctx.strokeStyle = C64.gray;
+        ctx.lineWidth = LANE_WIDTH * NUM_LANES + 10;
+        ctx.beginPath();
+        ctx.arc(CENTER_X, CENTER_Y, RADIUS, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Draw lane lines
+        ctx.strokeStyle = C64.white;
+        ctx.lineWidth = 2;
+        for (let lane = 0; lane < NUM_LANES + 1; lane++) {
+            const r = RADIUS + (lane - 1.5) * LANE_WIDTH;
+            ctx.setLineDash([10, 10]);
+            ctx.beginPath();
+            ctx.arc(CENTER_X, CENTER_Y, r, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+        ctx.setLineDash([]);
+
+        // Draw start/finish line
+        const finishPos = getTrackPosition(0, 1);
+        ctx.fillStyle = C64.white;
+        ctx.fillRect(finishPos.x - 3, finishPos.y - 40, 6, 80);
+
+        // Draw opponent
+        const oppLane = opponent.lane;
+        const oppPos = getTrackPosition(opponent.progress, oppLane);
+        drawCar(oppPos.x, oppPos.y, oppPos.angle, C64.red, opponent.crashed);
+
+        // Draw player
+        let currentLane = player.lane;
+        if (player.laneChangeProgress > 0) {
+            currentLane = player.lane + (player.targetLane - player.lane) * (1 - player.laneChangeProgress);
+        }
+        const playerPos = getTrackPosition(player.progress, currentLane);
+        drawCar(playerPos.x, playerPos.y, playerPos.angle, C64.green, player.crashed);
+
+        // HUD
+        ctx.fillStyle = C64.green;
+        ctx.font = '28px "VT323", monospace';
+        ctx.fillText(`SPEED: ${Math.floor(player.speed * 10)}`, 20, 40);
+        ctx.fillText(`LAP: ${player.laps + 1}/3`, 20, 75);
+        ctx.fillText(`LANE: ${player.lane + 1}`, 20, 110);
+
+        ctx.fillStyle = C64.red;
+        ctx.fillText(`OPP LAP: ${opponent.laps + 1}/3`, canvas.width - 200, 40);
+
+        if (player.crashed) {
+            ctx.fillStyle = C64.yellow;
+            ctx.font = '36px "VT323", monospace';
+            ctx.fillText('CRASHED!', canvas.width / 2 - 60, 50);
+        }
+
+        // Controls
+        ctx.fillStyle = C64.white;
+        ctx.font = '20px "VT323", monospace';
+        ctx.fillText('↑ GAS | ↓ BRAKE | ← → CHANGE LANE | ESC QUIT', canvas.width / 2 - 260, canvas.height - 20);
+    }
+
+    function drawCar(x, y, angle, color, crashed) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+
+        if (crashed) {
+            // Spinning crashed car
+            ctx.rotate(Date.now() * 0.01);
+        }
+
+        // Car body
+        ctx.fillStyle = color;
+        ctx.fillRect(-12, -18, 24, 36);
+
+        // Windshield
+        ctx.fillStyle = C64.blue;
+        ctx.fillRect(-8, -10, 16, 12);
+
+        // Wheels
+        ctx.fillStyle = C64.black;
+        ctx.fillRect(-12, -15, 4, 8);
+        ctx.fillRect(8, -15, 4, 8);
+        ctx.fillRect(-12, 7, 4, 8);
+        ctx.fillRect(8, 7, 4, 8);
+
+        ctx.restore();
+    }
+
+    function drawVictoryScreen(playerWon) {
+        ctx.fillStyle = C64.blue;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = playerWon ? C64.green : C64.red;
+        ctx.font = '60px "VT323", monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(playerWon ? 'YOU WIN!' : 'OPPONENT WINS!', canvas.width / 2, canvas.height / 2 - 40);
+
+        ctx.font = '32px "VT323", monospace';
+        ctx.fillText(playerWon ? 'RACE COMPLETE!' : 'BETTER LUCK NEXT TIME!', canvas.width / 2, canvas.height / 2 + 20);
+
+        ctx.font = '24px "VT323", monospace';
+        ctx.fillText('RETURNING TO TERMINAL...', canvas.width / 2, canvas.height / 2 + 80);
+    }
+
+    function gameLoop() {
+        update();
+        draw();
+        if (gameRunning) {
+            requestAnimationFrame(gameLoop);
+        }
+    }
+
+    gameLoop();
+}
     </script>
 
 </body>
