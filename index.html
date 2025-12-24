@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhistlerBrew - AI-Powered Demo Playground</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic Reset to make styling easier */
+        /* --- BRAND COLOR PALETTE --- */
+        :root {
+            --bg-dark: #121212;      /* Deep charcoal background */
+            --bg-card: #1E1E1E;      /* Slightly lighter dark for cards */
+            --text-light: #E0E0E0;   /* Off-white text */
+            --text-muted: #A0A0A0;   /* Grayer text for descriptions */
+            --accent-fire: #FF5722;  /* Fiery orange accent color */
+        }
+
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -14,113 +23,164 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f5; /* Light gray background behind the main container */
-            color: #333;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
-        /* --- Hero Section (The Purple Gradient) --- */
+        /* --- Hero Section with Banner Image --- */
         .hero {
-            /* Creating the purple gradient background */
-            background: linear-gradient(135deg, #7c83fd 0%, #96bae3 100%);
-            height: 450px; /* Adjust height as needed */
+            /* IMPORTANT: This expects a file named banner.png in the same folder */
+            background-image: url('banner.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh; /* Takes up 50% of the viewport height */
+            min-height: 400px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
-            padding-bottom: 80px; /* Extra padding to account for the overlap */
+            position: relative;
+        }
+
+        /* Dark overlay to ensure text over the image is readable */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Gradient from semi-transparent black to solid dark background at bottom */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(18,18,18,1) 100%);
+            z-index: 1;
+        }
+
+        /* Ensure content sits above the overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            /* Hiding the text visually since it's in the banner image, 
+               but keeping it for SEO/screen readers */
+            visibility: hidden; 
+            height: 0;
         }
 
         .hero p {
             font-size: 1.5rem;
             font-weight: 400;
-            opacity: 0.9;
+            color: var(--text-light);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            margin-top: 180px; /* Adjusting positioning based on the banner image text space */
         }
 
-        /* --- Main Content Container (The White Overlapping Box) --- */
+
+        /* --- Main Content Section --- */
         .main-container {
-            background-color: white;
             max-width: 1100px;
-            margin: -100px auto 50px auto; /* Negative top margin creates the overlap */
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            color: #6b72dd; /* A purple/blue to match the theme */
-            font-size: 1.8rem;
+            color: var(--text-light);
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* --- Card Grid Layout --- */
+        /* Optional: add a small fire accent underline to the title */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-fire);
+            margin: 15px auto 0;
+        }
+
+        /* --- Grid Layout --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        /* --- Individual Cards --- */
+        /* --- Dark Project Cards --- */
         .card {
-            background-color: #a5adb9; /* The medium grey from the screenshot */
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
+            background-color: var(--bg-card);
+            padding: 35px;
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            min-height: 250px; /* Ensures cards are roughly the same height */
+            border: 1px solid #333; /* Subtle dark border */
+            /* The fiery orange accent on top */
+            border-top: 4px solid var(--accent-fire);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.15); /* Subtle orange glow on hover */
         }
 
         .card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
             font-weight: 600;
+            color: white;
         }
 
         .card p {
             font-size: 1rem;
             line-height: 1.5;
-            margin-bottom: auto; /* Pushes the 'Coming Soon' button to the bottom */
-            opacity: 0.95;
+            color: var(--text-muted);
+            margin-bottom: 25px;
         }
 
+        /* --- Fiery 'Coming Soon' Badge --- */
         .coming-soon {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-top: 20px;
+            background-color: var(--accent-fire);
+            color: white; /* Dark text on the bright orange badge for contrast */
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: auto; /* Pushes badge to bottom of card */
         }
 
-        /* --- Responsive adjustments for smaller screens --- */
+        /* --- Responsive Adjustments --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .main-container {
-                margin-top: -50px;
-                padding: 20px;
-                width: 95%; /* Ensure it doesn't hit the screen edges on mobile */
-            }
+            .hero { height: 40vh; min-height: 300px; }
+            .hero p { font-size: 1.2rem; margin-top: 120px;}
+            .section-title { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <div>
-            <h1>WhistlerBrew</h1>
+        <div class="hero-content">
+            <h1>WhistlerBrew</h1> 
             <p>AI-Powered Demo Playground</p>
         </div>
     </header>
@@ -129,23 +189,23 @@
         <h2 class="section-title">Live Demos & Projects</h2>
 
         <div class="grid">
-            <div class="card">
+            <article class="card">
                 <h3>Jane Voice Assistant</h3>
                 <p>AI-powered voicemail replacement with intelligent caller routing and context-aware responses.</p>
                 <span class="coming-soon">Coming Soon</span>
-            </div>
+            </article>
 
-            <div class="card">
+            <article class="card">
                 <h3>FireSmart Tools</h3>
                 <p>Educational campaigns and assessment tools for wildfire prevention and community safety.</p>
                 <span class="coming-soon">Coming Soon</span>
-            </div>
+            </article>
 
-            <div class="card">
+            <article class="card">
                 <h3>Automation Showcase</h3>
                 <p>N8N workflows and AI integrations demonstrating process optimization and efficiency gains.</p>
                 <span class="coming-soon">Coming Soon</span>
-            </div>
+            </article>
         </div>
     </main>
 
