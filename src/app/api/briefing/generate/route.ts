@@ -165,38 +165,29 @@ function generateBriefingHTML(data: BriefingData): string {
     });
   };
 
-  let html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPS Dispatch Briefing - ${community}</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
-    .header { background: #1a1a1a; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-    .header h1 { margin: 0 0 10px 0; color: #00a8ff; }
-    .header .subtitle { color: #b0b0b0; font-size: 14px; }
-    .section { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .section h2 { margin: 0 0 15px 0; padding-bottom: 10px; border-bottom: 2px solid #00a8ff; color: #333; }
-    .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin-bottom: 15px; }
-    .fire-of-note { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin-bottom: 15px; }
-    .fire-of-note strong { color: #dc3545; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #eee; }
-    th { background: #f8f9fa; font-weight: 600; }
-    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
-    .badge-fire { background: #dc3545; color: white; }
-    .badge-info { background: #17a2b8; color: white; }
-    .sources { font-size: 12px; color: #666; }
-    .sources ul { margin: 5px 0; padding-left: 20px; }
-    .pronunciation { font-style: italic; color: #666; font-size: 13px; }
-    @media print { body { background: white; } .section { box-shadow: none; border: 1px solid #ddd; } }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <h1>SPS Dispatch Briefing</h1>
-    <div class="subtitle">
+  // Inline styles for embedded rendering (no external CSS needed)
+  const styles = {
+    header: "background:#1a1a1a;color:white;padding:20px;border-radius:8px;margin-bottom:20px",
+    headerH1: "margin:0 0 10px 0;color:#00a8ff;font-size:24px",
+    subtitle: "color:#b0b0b0;font-size:14px",
+    section: "background:white;padding:20px;border-radius:8px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.1)",
+    sectionH2: "margin:0 0 15px 0;padding-bottom:10px;border-bottom:2px solid #00a8ff;color:#333;font-size:18px",
+    sectionH3: "margin:15px 0 10px 0;color:#555;font-size:16px",
+    warning: "background:#fff3cd;border-left:4px solid #ffc107;padding:10px 15px;margin-bottom:15px",
+    fireOfNote: "background:#f8d7da;border-left:4px solid #dc3545;padding:10px 15px;margin-bottom:15px",
+    table: "width:100%;border-collapse:collapse",
+    th: "text-align:left;padding:8px 12px;border-bottom:1px solid #eee;background:#f8f9fa;font-weight:600;color:#333",
+    td: "text-align:left;padding:8px 12px;border-bottom:1px solid #eee;color:#333",
+    badgeFire: "display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold;background:#dc3545;color:white",
+    sources: "font-size:12px;color:#666",
+    pronunciation: "font-style:italic;color:#666;font-size:13px",
+    link: "color:#00a8ff",
+  };
+
+  let html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:800px;margin:0 auto;color:#333">
+  <div style="${styles.header}">
+    <h1 style="${styles.headerH1}">SPS Dispatch Briefing</h1>
+    <div style="${styles.subtitle}">
       <strong>Community:</strong> ${community}<br>
       ${fireNumber ? `<strong>Fire Number:</strong> ${fireNumber}<br>` : ""}
       <strong>Generated:</strong> ${formatDate(generatedAt)}
@@ -206,37 +197,37 @@ function generateBriefingHTML(data: BriefingData): string {
 
   // Fire Information Section
   if (fire || (nearbyFires && nearbyFires.length > 0)) {
-    html += `<div class="section">
-    <h2>🔥 BC Wildfire Service Information</h2>`;
+    html += `<div style="${styles.section}">
+    <h2 style="${styles.sectionH2}">🔥 BC Wildfire Service Information</h2>`;
 
     if (fire) {
       html += `
-    ${fire.isFireOfNote ? '<div class="fire-of-note"><strong>⚠️ FIRE OF NOTE</strong> - This fire is being closely monitored by BC Wildfire Service</div>' : ""}
-    <table>
-      <tr><th>Fire Number</th><td>${fire.fireNumber}</td></tr>
-      <tr><th>Name</th><td>${fire.name}</td></tr>
-      <tr><th>Status</th><td>${fire.status}</td></tr>
-      <tr><th>Size</th><td>${fire.size.toLocaleString()} hectares</td></tr>
-      <tr><th>Cause</th><td>${fire.cause}</td></tr>
-      <tr><th>Fire Centre</th><td>${fire.fireCentre}</td></tr>
-      <tr><th>More Info</th><td><a href="${fire.url}" target="_blank">BC Wildfire Dashboard</a></td></tr>
+    ${fire.isFireOfNote ? `<div style="${styles.fireOfNote}"><strong style="color:#dc3545">⚠️ FIRE OF NOTE</strong> - This fire is being closely monitored by BC Wildfire Service</div>` : ""}
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Fire Number</th><td style="${styles.td}">${fire.fireNumber}</td></tr>
+      <tr><th style="${styles.th}">Name</th><td style="${styles.td}">${fire.name}</td></tr>
+      <tr><th style="${styles.th}">Status</th><td style="${styles.td}">${fire.status}</td></tr>
+      <tr><th style="${styles.th}">Size</th><td style="${styles.td}">${fire.size.toLocaleString()} hectares</td></tr>
+      <tr><th style="${styles.th}">Cause</th><td style="${styles.td}">${fire.cause}</td></tr>
+      <tr><th style="${styles.th}">Fire Centre</th><td style="${styles.td}">${fire.fireCentre}</td></tr>
+      <tr><th style="${styles.th}">More Info</th><td style="${styles.td}"><a href="${fire.url}" target="_blank" style="${styles.link}">BC Wildfire Dashboard</a></td></tr>
     </table>`;
     }
 
     if (nearbyFires && nearbyFires.length > 0) {
       html += `
-    <h3>Other Fires Within 100km</h3>
-    <table>
-      <tr><th>Fire #</th><th>Name</th><th>Status</th><th>Size (ha)</th><th>Distance</th></tr>
+    <h3 style="${styles.sectionH3}">Other Fires Within 100km</h3>
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Fire #</th><th style="${styles.th}">Name</th><th style="${styles.th}">Status</th><th style="${styles.th}">Size (ha)</th><th style="${styles.th}">Distance</th></tr>
       ${nearbyFires
         .slice(0, 5)
         .map(
           (f) => `<tr>
-        <td>${f.fireNumber}${f.isFireOfNote ? ' <span class="badge badge-fire">FON</span>' : ""}</td>
-        <td>${f.name}</td>
-        <td>${f.status}</td>
-        <td>${f.size.toLocaleString()}</td>
-        <td>${f.distanceKm} km</td>
+        <td style="${styles.td}">${f.fireNumber}${f.isFireOfNote ? ` <span style="${styles.badgeFire}">FON</span>` : ""}</td>
+        <td style="${styles.td}">${f.name}</td>
+        <td style="${styles.td}">${f.status}</td>
+        <td style="${styles.td}">${f.size.toLocaleString()}</td>
+        <td style="${styles.td}">${f.distanceKm} km</td>
       </tr>`
         )
         .join("")}
@@ -248,20 +239,20 @@ function generateBriefingHTML(data: BriefingData): string {
 
   // First Nations Section
   if (firstNations && firstNations.length > 0) {
-    html += `<div class="section">
-    <h2>🏛️ Local First Nations</h2>
-    <p style="font-size: 13px; color: #666; margin-bottom: 15px;">
+    html += `<div style="${styles.section}">
+    <h2 style="${styles.sectionH2}">🏛️ Local First Nations</h2>
+    <p style="font-size:13px;color:#666;margin-bottom:15px">
       <em>Pronunciation guides are approximate. Please verify with community members.</em>
     </p>
-    <table>
-      <tr><th>Nation</th><th>Distance</th><th>Pronunciation Guide</th></tr>
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Nation</th><th style="${styles.th}">Distance</th><th style="${styles.th}">Pronunciation Guide</th></tr>
       ${firstNations
         .slice(0, 5)
         .map(
           (fn) => `<tr>
-        <td><strong>${fn.name}</strong></td>
-        <td>${fn.distanceKm} km</td>
-        <td class="pronunciation">${fn.pronunciation || "—"}</td>
+        <td style="${styles.td}"><strong>${fn.name}</strong></td>
+        <td style="${styles.td}">${fn.distanceKm} km</td>
+        <td style="${styles.td};${styles.pronunciation}">${fn.pronunciation || "—"}</td>
       </tr>`
         )
         .join("")}
@@ -271,36 +262,36 @@ function generateBriefingHTML(data: BriefingData): string {
 
   // Weather Section
   if (weather) {
-    html += `<div class="section">
-    <h2>🌤️ Weather Forecast</h2>`;
+    html += `<div style="${styles.section}">
+    <h2 style="${styles.sectionH2}">🌤️ Weather Forecast</h2>`;
 
     if (weather.warnings && weather.warnings.length > 0 && !weather.warnings[0].includes("No watches")) {
-      html += weather.warnings.map((w: string) => `<div class="warning">⚠️ ${w}</div>`).join("");
+      html += weather.warnings.map((w: string) => `<div style="${styles.warning}">⚠️ ${w}</div>`).join("");
     }
 
     if (weather.current && weather.current.temperature !== undefined) {
       html += `
-    <h3>Current Conditions (${weather.location})</h3>
-    <table>
-      <tr><th>Temperature</th><td>${weather.current.temperature}°C</td></tr>
-      ${weather.current.condition ? `<tr><th>Condition</th><td>${weather.current.condition}</td></tr>` : ""}
-      ${weather.current.humidity ? `<tr><th>Humidity</th><td>${weather.current.humidity}%</td></tr>` : ""}
-      ${weather.current.wind ? `<tr><th>Wind</th><td>${weather.current.wind}</td></tr>` : ""}
+    <h3 style="${styles.sectionH3}">Current Conditions (${weather.location})</h3>
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Temperature</th><td style="${styles.td}">${weather.current.temperature}°C</td></tr>
+      ${weather.current.condition ? `<tr><th style="${styles.th}">Condition</th><td style="${styles.td}">${weather.current.condition}</td></tr>` : ""}
+      ${weather.current.humidity ? `<tr><th style="${styles.th}">Humidity</th><td style="${styles.td}">${weather.current.humidity}%</td></tr>` : ""}
+      ${weather.current.wind ? `<tr><th style="${styles.th}">Wind</th><td style="${styles.td}">${weather.current.wind}</td></tr>` : ""}
     </table>`;
     }
 
     if (weather.forecast && weather.forecast.length > 0) {
       html += `
-    <h3>3-Day Forecast</h3>
-    <table>
-      <tr><th>Period</th><th>Forecast</th><th>Temp</th></tr>
+    <h3 style="${styles.sectionH3}">3-Day Forecast</h3>
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Period</th><th style="${styles.th}">Forecast</th><th style="${styles.th}">Temp</th></tr>
       ${weather.forecast
         .slice(0, 6)
         .map(
           (f) => `<tr>
-        <td><strong>${f.day}</strong></td>
-        <td>${f.summary}</td>
-        <td>${f.high !== undefined ? `High ${f.high}°C` : f.low !== undefined ? `Low ${f.low}°C` : "—"}</td>
+        <td style="${styles.td}"><strong>${f.day}</strong></td>
+        <td style="${styles.td}">${f.summary}</td>
+        <td style="${styles.td}">${f.high !== undefined ? `High ${f.high}°C` : f.low !== undefined ? `Low ${f.low}°C` : "—"}</td>
       </tr>`
         )
         .join("")}
@@ -312,18 +303,18 @@ function generateBriefingHTML(data: BriefingData): string {
 
   // Municipal Contacts Section
   if (pois) {
-    html += `<div class="section">
-    <h2>📞 Emergency & Municipal Contacts</h2>`;
+    html += `<div style="${styles.section}">
+    <h2 style="${styles.sectionH2}">📞 Emergency & Municipal Contacts</h2>`;
 
     if (pois.fireDepartment && pois.fireDepartment.length > 0) {
       html += `
-    <h3>Fire Department</h3>
-    <table>
+    <h3 style="${styles.sectionH3}">Fire Department</h3>
+    <table style="${styles.table}">
       ${pois.fireDepartment
         .map(
           (p) => `<tr>
-        <td><strong>${p.name}</strong><br><small>${p.address}</small></td>
-        <td>${p.phone || "—"}</td>
+        <td style="${styles.td}"><strong>${p.name}</strong><br><small>${p.address}</small></td>
+        <td style="${styles.td}">${p.phone || "—"}</td>
       </tr>`
         )
         .join("")}
@@ -332,13 +323,13 @@ function generateBriefingHTML(data: BriefingData): string {
 
     if (pois.rcmp && pois.rcmp.length > 0) {
       html += `
-    <h3>RCMP</h3>
-    <table>
+    <h3 style="${styles.sectionH3}">RCMP</h3>
+    <table style="${styles.table}">
       ${pois.rcmp
         .map(
           (p) => `<tr>
-        <td><strong>${p.name}</strong><br><small>${p.address}</small></td>
-        <td>${p.phone || "—"}</td>
+        <td style="${styles.td}"><strong>${p.name}</strong><br><small>${p.address}</small></td>
+        <td style="${styles.td}">${p.phone || "—"}</td>
       </tr>`
         )
         .join("")}
@@ -347,13 +338,13 @@ function generateBriefingHTML(data: BriefingData): string {
 
     if (pois.hospital && pois.hospital.length > 0) {
       html += `
-    <h3>Hospital / Health Centre</h3>
-    <table>
+    <h3 style="${styles.sectionH3}">Hospital / Health Centre</h3>
+    <table style="${styles.table}">
       ${pois.hospital
         .map(
           (p) => `<tr>
-        <td><strong>${p.name}</strong><br><small>${p.address}</small></td>
-        <td>${p.phone || "—"}</td>
+        <td style="${styles.td}"><strong>${p.name}</strong><br><small>${p.address}</small></td>
+        <td style="${styles.td}">${p.phone || "—"}</td>
       </tr>`
         )
         .join("")}
@@ -365,34 +356,34 @@ function generateBriefingHTML(data: BriefingData): string {
 
   // Regional Contact
   if (regionalContact) {
-    html += `<div class="section">
-    <h2>🏢 Regional District</h2>
-    <table>
-      <tr><th>Name</th><td>${regionalContact.name}</td></tr>
-      <tr><th>Phone</th><td>${regionalContact.phone}</td></tr>
-      <tr><th>Website</th><td><a href="${regionalContact.website}" target="_blank">${regionalContact.website}</a></td></tr>
+    html += `<div style="${styles.section}">
+    <h2 style="${styles.sectionH2}">🏢 Regional District</h2>
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Name</th><td style="${styles.td}">${regionalContact.name}</td></tr>
+      <tr><th style="${styles.th}">Phone</th><td style="${styles.td}">${regionalContact.phone}</td></tr>
+      <tr><th style="${styles.th}">Website</th><td style="${styles.td}"><a href="${regionalContact.website}" target="_blank" style="${styles.link}">${regionalContact.website}</a></td></tr>
     </table>
   </div>`;
   }
 
   // Local Services
   if (pois && (pois.groceryStore || pois.hotel)) {
-    html += `<div class="section">
-    <h2>🛒 Local Services</h2>`;
+    html += `<div style="${styles.section}">
+    <h2 style="${styles.sectionH2}">🛒 Local Services</h2>`;
 
     if (pois.groceryStore && pois.groceryStore.length > 0) {
       html += `
-    <h3>Grocery Stores</h3>
-    <ul>
-      ${pois.groceryStore.map((p) => `<li><strong>${p.name}</strong> - ${p.address}</li>`).join("")}
+    <h3 style="${styles.sectionH3}">Grocery Stores</h3>
+    <ul style="margin:10px 0;padding-left:20px">
+      ${pois.groceryStore.map((p) => `<li style="margin:5px 0"><strong>${p.name}</strong> - ${p.address}</li>`).join("")}
     </ul>`;
     }
 
     if (pois.hotel && pois.hotel.length > 0) {
       html += `
-    <h3>Accommodations</h3>
-    <ul>
-      ${pois.hotel.map((p) => `<li><strong>${p.name}</strong> - ${p.address}</li>`).join("")}
+    <h3 style="${styles.sectionH3}">Accommodations</h3>
+    <ul style="margin:10px 0;padding-left:20px">
+      ${pois.hotel.map((p) => `<li style="margin:5px 0"><strong>${p.name}</strong> - ${p.address}</li>`).join("")}
     </ul>`;
     }
 
@@ -400,18 +391,17 @@ function generateBriefingHTML(data: BriefingData): string {
   }
 
   // Sources
-  html += `<div class="section sources">
-    <h2>📚 Sources</h2>
-    <ul>
-      <li>BC Wildfire Service - <a href="https://wildfiresituation.nrs.gov.bc.ca/">wildfiresituation.nrs.gov.bc.ca</a></li>
-      <li>Environment Canada Weather - <a href="https://weather.gc.ca/">weather.gc.ca</a></li>
-      <li>Indigenous Services Canada - <a href="https://geo.aadnc-aandc.gc.ca/">First Nations Location Data</a></li>
-      <li>BC Address Geocoder - <a href="https://geocoder.api.gov.bc.ca/">geocoder.api.gov.bc.ca</a></li>
+  html += `<div style="${styles.section};${styles.sources}">
+    <h2 style="${styles.sectionH2}">📚 Sources</h2>
+    <ul style="margin:5px 0;padding-left:20px">
+      <li>BC Wildfire Service - <a href="https://wildfiresituation.nrs.gov.bc.ca/" style="${styles.link}">wildfiresituation.nrs.gov.bc.ca</a></li>
+      <li>Environment Canada Weather - <a href="https://weather.gc.ca/" style="${styles.link}">weather.gc.ca</a></li>
+      <li>Indigenous Services Canada - <a href="https://geo.aadnc-aandc.gc.ca/" style="${styles.link}">First Nations Location Data</a></li>
+      <li>BC Address Geocoder - <a href="https://geocoder.api.gov.bc.ca/" style="${styles.link}">geocoder.api.gov.bc.ca</a></li>
     </ul>
-    <p><em>This briefing was automatically generated. Always verify critical information with official sources.</em></p>
+    <p style="margin-top:15px;color:#666"><em>This briefing was automatically generated. Always verify critical information with official sources.</em></p>
   </div>
-</body>
-</html>`;
+</div>`;
 
   return html;
 }
