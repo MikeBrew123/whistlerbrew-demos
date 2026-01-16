@@ -19,6 +19,12 @@ const START_LOCATIONS = [
   "Other",
 ];
 
+type FormErrors = {
+  startLocation?: string;
+  reportTo?: string;
+  community?: string;
+};
+
 export default function SPSBriefing() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const router = useRouter();
@@ -32,6 +38,10 @@ export default function SPSBriefing() {
   const [departureDate, setDepartureDate] = useState("");
   const [departureTime, setDepartureTime] = useState("");
 
+  // UI state
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const auth = sessionStorage.getItem("whistlerbrew_auth");
     if (auth !== "true") {
@@ -40,6 +50,50 @@ export default function SPSBriefing() {
       setIsAuthenticated(true);
     }
   }, [router]);
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    const isFullMode = mode === "full";
+
+    if (!community.trim()) {
+      newErrors.community = "Community to Protect is required";
+    }
+
+    if (isFullMode) {
+      if (!startLocation) {
+        newErrors.startLocation = "Start Location is required";
+      }
+      if (!reportTo.trim()) {
+        newErrors.reportTo = "Report TO is required";
+      }
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async () => {
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+
+    const formData = {
+      mode,
+      startLocation: mode === "full" ? startLocation : null,
+      reportTo: mode === "full" ? reportTo : null,
+      community,
+      fireNumber: fireNumber || null,
+      departureDate: mode === "full" ? departureDate || null : null,
+      departureTime: mode === "full" ? departureTime || null : null,
+    };
+
+    console.log("Form submitted:", formData);
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    setIsLoading(false);
+  };
 
   if (!isAuthenticated) {
     return null;
@@ -76,7 +130,7 @@ export default function SPSBriefing() {
           <label className="block text-sm text-[#b0b0b0] mb-2">Briefing Mode</label>
           <div className="flex gap-2">
             <button
-              onClick={() => setMode("full")}
+              onClick={() => { setMode("full"); setErrors({}); }}
               className={`flex-1 py-3 px-4 rounded-md font-medium transition-colors ${
                 isFullMode
                   ? "bg-[#00a8ff] text-white"
@@ -86,7 +140,7 @@ export default function SPSBriefing() {
               Full Briefing
             </button>
             <button
-              onClick={() => setMode("community")}
+              onClick={() => { setMode("community"); setErrors({}); }}
               className={`flex-1 py-3 px-4 rounded-md font-medium transition-colors ${
                 !isFullMode
                   ? "bg-[#00a8ff] text-white"
@@ -111,8 +165,10 @@ export default function SPSBriefing() {
             </label>
             <select
               value={startLocation}
-              onChange={(e) => setStartLocation(e.target.value)}
-              className="w-full p-3 bg-[#1e1e1e] border border-[#333] rounded-md text-white focus:outline-none focus:border-[#00a8ff]"
+              onChange={(e) => { setStartLocation(e.target.value); setErrors((prev) => ({ ...prev, startLocation: undefined })); }}
+              className={`w-full p-3 bg-[#1e1e1e] border rounded-md text-white focus:outline-none focus:border-[#00a8ff] ${
+                errors.startLocation ? "border-red-400" : "border-[#333]"
+              }`}
             >
               <option value="">Select location...</option>
               {START_LOCATIONS.map((loc) => (
@@ -121,6 +177,9 @@ export default function SPSBriefing() {
                 </option>
               ))}
             </select>
+            {errors.startLocation && (
+              <p className="text-red-400 text-xs mt-1">{errors.startLocation}</p>
+            )}
           </div>
         )}
 
@@ -133,10 +192,15 @@ export default function SPSBriefing() {
             <input
               type="text"
               value={reportTo}
-              onChange={(e) => setReportTo(e.target.value)}
+              onChange={(e) => { setReportTo(e.target.value); setErrors((prev) => ({ ...prev, reportTo: undefined })); }}
               placeholder="e.g., Burns Lake Fire Centre"
-              className="w-full p-3 bg-[#1e1e1e] border border-[#333] rounded-md text-white placeholder-[#666] focus:outline-none focus:border-[#00a8ff]"
+              className={`w-full p-3 bg-[#1e1e1e] border rounded-md text-white placeholder-[#666] focus:outline-none focus:border-[#00a8ff] ${
+                errors.reportTo ? "border-red-400" : "border-[#333]"
+              }`}
             />
+            {errors.reportTo && (
+              <p className="text-red-400 text-xs mt-1">{errors.reportTo}</p>
+            )}
           </div>
         )}
 
@@ -148,10 +212,15 @@ export default function SPSBriefing() {
           <input
             type="text"
             value={community}
-            onChange={(e) => setCommunity(e.target.value)}
+            onChange={(e) => { setCommunity(e.target.value); setErrors((prev) => ({ ...prev, community: undefined })); }}
             placeholder="e.g., Burns Lake"
-            className="w-full p-3 bg-[#1e1e1e] border border-[#333] rounded-md text-white placeholder-[#666] focus:outline-none focus:border-[#00a8ff]"
+            className={`w-full p-3 bg-[#1e1e1e] border rounded-md text-white placeholder-[#666] focus:outline-none focus:border-[#00a8ff] ${
+              errors.community ? "border-red-400" : "border-[#333]"
+            }`}
           />
+          {errors.community && (
+            <p className="text-red-400 text-xs mt-1">{errors.community}</p>
+          )}
         </div>
 
         {/* Fire Number - Always Shows */}
@@ -194,9 +263,15 @@ export default function SPSBriefing() {
 
         {/* Generate Button */}
         <button
-          className="w-full py-4 bg-[#00a8ff] hover:bg-[#0090e0] text-white font-semibold rounded-md transition-colors"
+          onClick={handleSubmit}
+          disabled={isLoading}
+          className={`w-full py-4 font-semibold rounded-md transition-colors ${
+            isLoading
+              ? "bg-[#333] text-[#666] cursor-not-allowed"
+              : "bg-[#00a8ff] hover:bg-[#0090e0] text-white"
+          }`}
         >
-          Generate Briefing
+          {isLoading ? "Generating..." : "Generate Briefing"}
         </button>
       </main>
 
