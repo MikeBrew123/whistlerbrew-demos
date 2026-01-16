@@ -474,9 +474,84 @@ export async function POST(request: NextRequest) {
     // Step 5: Generate HTML
     const html = generateBriefingHTML(briefingData);
 
+    // Step 6: Build KML points for map export
+    const kmlPoints: Array<{
+      name: string;
+      lat: number;
+      lng: number;
+      category: string;
+      description?: string;
+      isFireOfNote?: boolean;
+    }> = [];
+
+    // Add fires to KML
+    if (specificFire && location) {
+      kmlPoints.push({
+        name: `${specificFire.fireNumber} - ${specificFire.name}`,
+        lat: specificFire.lat || location.lat,
+        lng: specificFire.lng || location.lng,
+        category: "fire",
+        description: `Status: ${specificFire.status}, Size: ${specificFire.size} ha`,
+        isFireOfNote: specificFire.isFireOfNote,
+      });
+    }
+
+    if (firesData?.fires) {
+      for (const fire of firesData.fires.slice(0, 10)) {
+        if (fire.fireNumber !== fireNumber && fire.lat && fire.lng) {
+          kmlPoints.push({
+            name: `${fire.fireNumber} - ${fire.name}`,
+            lat: fire.lat,
+            lng: fire.lng,
+            category: "fire",
+            description: `Status: ${fire.status}, Size: ${fire.size} ha`,
+            isFireOfNote: fire.isFireOfNote,
+          });
+        }
+      }
+    }
+
+    // Add First Nations to KML
+    if (firstNationsData?.nations) {
+      for (const fn of firstNationsData.nations.slice(0, 5)) {
+        if (fn.lat && fn.lng) {
+          kmlPoints.push({
+            name: fn.name,
+            lat: fn.lat,
+            lng: fn.lng,
+            category: "firstNation",
+            description: fn.pronunciation ? `Pronunciation: ${fn.pronunciation}` : undefined,
+          });
+        }
+      }
+    }
+
+    // Add POIs to KML
+    const addPOIsToKML = (pois: Array<{ name: string; address: string; lat?: number; lng?: number }> | undefined, category: string) => {
+      if (!pois) return;
+      for (const poi of pois.slice(0, 3)) {
+        if (poi.lat && poi.lng) {
+          kmlPoints.push({
+            name: poi.name,
+            lat: poi.lat,
+            lng: poi.lng,
+            category,
+            description: poi.address,
+          });
+        }
+      }
+    };
+
+    addPOIsToKML(fireDeptData?.results, "fireDept");
+    addPOIsToKML(hospitalData?.results, "hospital");
+    addPOIsToKML(rcmpData?.results, "rcmp");
+    addPOIsToKML(groceryData?.results, "grocery");
+    addPOIsToKML(hotelData?.results, "hotel");
+
     return NextResponse.json({
-      briefing: briefingData,
-      html,
+      briefing: html,
+      data: briefingData,
+      kmlPoints,
     });
   } catch (error) {
     console.error("Error generating briefing:", error);
