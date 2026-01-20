@@ -64,17 +64,25 @@ function calculateBoundingBox(
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { originLat, originLng, destLat, destLng, origin, destination } = body;
+    const { originLat, originLng, destLat, destLng, origin, destination, latitude, longitude, radiusKm = 50 } = body;
 
-    if (!originLat || !originLng || !destLat || !destLng) {
+    let bbox: string;
+
+    // Support both route-based (origin/dest) and location-based (single point with radius) queries
+    if (latitude && longitude) {
+      // Location-based query - create bbox around single point
+      const latDelta = radiusKm / 111;
+      const lngDelta = radiusKm / (111 * Math.cos((latitude * Math.PI) / 180));
+      bbox = `${longitude - lngDelta},${latitude - latDelta},${longitude + lngDelta},${latitude + latDelta}`;
+    } else if (originLat && originLng && destLat && destLng) {
+      // Route-based query
+      bbox = calculateBoundingBox(originLat, originLng, destLat, destLng);
+    } else {
       return NextResponse.json(
-        { error: "originLat, originLng, destLat, and destLng are required" },
+        { error: "Either (latitude, longitude) or (originLat, originLng, destLat, destLng) are required" },
         { status: 400 }
       );
     }
-
-    // Calculate bounding box for route
-    const bbox = calculateBoundingBox(originLat, originLng, destLat, destLng);
 
     // Build API URL
     const params = new URLSearchParams({

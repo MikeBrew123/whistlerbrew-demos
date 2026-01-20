@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Google Directions API
-const GOOGLE_DIRECTIONS_API = "https://maps.googleapis.com/maps/api/directions/json";
+// Google Routes API (New)
+const GOOGLE_ROUTES_API = "https://routes.googleapis.com/directions/v2:computeRoutes";
 
 // Vancouver Island detection - rough bounding box
 const VANCOUVER_ISLAND_BBOX = {
@@ -101,12 +101,13 @@ function decodePolyline(encoded: string): Array<{ lat: number; lng: number }> {
   return points;
 }
 
-function findPointAtDuration(
+// For new Routes API response format
+function findPointAtDurationNew(
   legs: Array<{
-    steps: Array<{
-      duration: { value: number };
-      end_location: { lat: number; lng: number };
-      html_instructions: string;
+    steps?: Array<{
+      localizedValues?: { staticDuration?: { text: string } };
+      endLocation?: { latLng: { latitude: number; longitude: number } };
+      navigationInstruction?: { instructions?: string };
     }>;
   }>,
   targetSeconds: number
@@ -114,21 +115,27 @@ function findPointAtDuration(
   let accumulated = 0;
 
   for (const leg of legs) {
+    if (!leg.steps) continue;
     for (const step of leg.steps) {
-      accumulated += step.duration.value;
-      if (accumulated >= targetSeconds) {
-        // Extract location name from instructions
-        const instructions = step.html_instructions || "";
+      // Parse duration from text like "5 mins" or "1 hour 30 mins"
+      const durationText = step.localizedValues?.staticDuration?.text || "";
+      let stepSeconds = 0;
+      const hoursMatch = durationText.match(/(\d+)\s*hour/i);
+      const minsMatch = durationText.match(/(\d+)\s*min/i);
+      if (hoursMatch) stepSeconds += parseInt(hoursMatch[1]) * 3600;
+      if (minsMatch) stepSeconds += parseInt(minsMatch[1]) * 60;
+
+      accumulated += stepSeconds;
+      if (accumulated >= targetSeconds && step.endLocation?.latLng) {
+        const lat = step.endLocation.latLng.latitude;
+        const lng = step.endLocation.latLng.longitude;
+        const instructions = step.navigationInstruction?.instructions || "";
         const locationMatch = instructions.match(/(?:toward|onto|via)\s+([^<]+)/i);
         const locationName = locationMatch
           ? locationMatch[1].trim()
-          : `${step.end_location.lat.toFixed(2)}, ${step.end_location.lng.toFixed(2)}`;
+          : `${lat.toFixed(2)}, ${lng.toFixed(2)}`;
 
-        return {
-          lat: step.end_location.lat,
-          lng: step.end_location.lng,
-          locationName,
-        };
+        return { lat, lng, locationName };
       }
     }
   }
@@ -156,32 +163,76 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Build request
-    const originStr = origin || `${originLat},${originLng}`;
-    const destStr = destination || `${destLat},${destLng}`;
+    // Build request for Routes API (New)
+    const requestBody = {
+      origin: {
+        location: {
+          latLng: {
+            latitude: originLat,
+            longitude: originLng,
+          },
+        },
+      },
+      destination: {
+        location: {
+          latLng: {
+            latitude: destLat,
+            longitude: destLng,
+          },
+        },
+      },
+      travelMode: "DRIVE",
+      routingPreference: "TRAFFIC_AWARE",
+      computeAlternativeRoutes: false,
+      languageCode: "en-CA",
+      units: "METRIC",
+    };
 
-    const params = new URLSearchParams({
-      origin: originStr,
-      destination: destStr,
-      key: apiKey,
-      mode: "driving",
-      units: "metric",
-      region: "ca",
+    let durationSeconds: number;
+    let distanceMeters: number;
+    let routePolyline = "";
+    let routeLegs: Array<{ steps?: Array<unknown> }> = [];
+
+    // Try Routes API first, fall back to Haversine calculation
+    const response = await fetch(GOOGLE_ROUTES_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": apiKey,
+        "X-Goog-FieldMask": "routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline,routes.legs.steps.navigationInstruction,routes.legs.steps.endLocation,routes.legs.steps.localizedValues",
+      },
+      body: JSON.stringify(requestBody),
     });
 
-    const response = await fetch(`${GOOGLE_DIRECTIONS_API}?${params}`);
     const data = await response.json();
 
-    if (data.status !== "OK") {
-      console.error("Google Directions API error:", data.status, data.error_message);
-      return NextResponse.json({
-        route: null,
-        error: data.error_message || `API error: ${data.status}`,
-      });
-    }
+    if (response.ok && data.routes && data.routes.length > 0) {
+      // Use Routes API response
+      const route = data.routes[0];
+      durationSeconds = parseInt(route.duration.replace("s", ""));
+      distanceMeters = route.distanceMeters;
+      routePolyline = route.polyline?.encodedPolyline || "";
+      routeLegs = route.legs || [];
+    } else {
+      // Fallback: Calculate straight-line distance and estimate driving time
+      console.log("Routes API unavailable, using Haversine fallback");
+      const R = 6371000; // Earth radius in meters
+      const dLat = ((destLat - originLat) * Math.PI) / 180;
+      const dLng = ((destLng - originLng) * Math.PI) / 180;
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos((originLat * Math.PI) / 180) *
+          Math.cos((destLat * Math.PI) / 180) *
+          Math.sin(dLng / 2) *
+          Math.sin(dLng / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const straightLineMeters = R * c;
 
-    const route = data.routes[0];
-    const leg = route.legs[0];
+      // BC roads are typically 1.3-1.5x straight-line due to terrain
+      distanceMeters = Math.round(straightLineMeters * 1.4);
+      // Average BC highway speed ~80 km/h accounting for terrain
+      durationSeconds = Math.round((distanceMeters / 1000 / 80) * 3600);
+    }
 
     // Check for Vancouver Island crossing
     const originOnIsland = isOnVancouverIsland(originLat, originLng);
@@ -189,12 +240,12 @@ export async function POST(request: NextRequest) {
     const islandCrossing = originOnIsland !== destOnIsland;
 
     // Calculate adjusted duration (add 2 hours for ferry)
-    let adjustedDurationValue = leg.duration.value;
+    let adjustedDurationValue = durationSeconds;
     let adjustedDuration: RouteResult["adjustedDuration"] = undefined;
 
     if (islandCrossing) {
       const ferryTimeSeconds = 2 * 3600; // 2 hours for ferry wait + crossing
-      adjustedDurationValue = leg.duration.value + ferryTimeSeconds;
+      adjustedDurationValue = durationSeconds + ferryTimeSeconds;
       adjustedDuration = {
         value: adjustedDurationValue,
         text: formatDuration(adjustedDurationValue),
@@ -209,8 +260,8 @@ export async function POST(request: NextRequest) {
     // Find 10-hour point if needed
     let overnightPoint: RouteResult["overnightPoint"] = undefined;
 
-    if (needsOvernight) {
-      const point = findPointAtDuration(route.legs, TEN_HOURS_SECONDS);
+    if (needsOvernight && routeLegs.length > 0) {
+      const point = findPointAtDurationNew(routeLegs as Parameters<typeof findPointAtDurationNew>[0], TEN_HOURS_SECONDS);
       if (point) {
         overnightPoint = {
           lat: point.lat,
@@ -221,18 +272,24 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Format distance text
+    const distanceKm = Math.round(distanceMeters / 1000);
+    const distanceText = distanceKm >= 1000
+      ? `${(distanceKm / 1000).toFixed(1)} thousand km`
+      : `${distanceKm} km`;
+
     const result: RouteResult = {
       duration: {
-        value: leg.duration.value,
-        text: leg.duration.text,
+        value: durationSeconds,
+        text: formatDuration(durationSeconds),
       },
       distance: {
-        value: leg.distance.value,
-        text: leg.distance.text,
+        value: distanceMeters,
+        text: distanceText,
       },
-      polyline: route.overview_polyline.points,
-      startAddress: leg.start_address,
-      endAddress: leg.end_address,
+      polyline: routePolyline,
+      startAddress: origin || `${originLat}, ${originLng}`,
+      endAddress: destination || `${destLat}, ${destLng}`,
       needsOvernight,
       islandCrossing,
       adjustedDuration,

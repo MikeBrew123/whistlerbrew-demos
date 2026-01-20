@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Google Places API for hotel search
-const GOOGLE_PLACES_API = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-const GOOGLE_DETAILS_API = "https://maps.googleapis.com/maps/api/place/details/json";
+// Google Places API (New) for hotel search
+const PLACES_API_NEW = "https://places.googleapis.com/v1/places:searchNearby";
 
 type HotelResult = {
   name: string;
@@ -27,27 +26,6 @@ type HotelSearchResponse = {
   error?: string;
 };
 
-async function getPlaceDetails(
-  placeId: string,
-  apiKey: string
-): Promise<{ phone?: string; website?: string }> {
-  try {
-    const url = `${GOOGLE_DETAILS_API}?place_id=${placeId}&fields=formatted_phone_number,website&key=${apiKey}`;
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if (data.result) {
-      return {
-        phone: data.result.formatted_phone_number,
-        website: data.result.website,
-      };
-    }
-  } catch (error) {
-    console.error("Error fetching place details:", error);
-  }
-  return {};
-}
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -68,56 +46,62 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Search for lodging near the point
-    const params = new URLSearchParams({
-      location: `${lat},${lng}`,
-      radius: String(radiusKm * 1000), // Convert to meters
-      type: "lodging",
-      key: apiKey,
+    // Use Places API (New) - searchNearby with includedTypes
+    const requestBody = {
+      includedTypes: ["lodging"],
+      maxResultCount: 5,
+      locationRestriction: {
+        circle: {
+          center: { latitude: lat, longitude: lng },
+          radius: radiusKm * 1000, // meters
+        },
+      },
+    };
+
+    const response = await fetch(PLACES_API_NEW, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": apiKey,
+        "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.location,places.rating,places.priceLevel,places.websiteUri,places.userRatingCount",
+      },
+      body: JSON.stringify(requestBody),
     });
 
-    const response = await fetch(`${GOOGLE_PLACES_API}?${params}`);
-    const data = await response.json();
-
-    if (data.status !== "OK" && data.status !== "ZERO_RESULTS") {
-      console.error("Google Places API error:", data.status, data.error_message);
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Google Places API error:", errorData);
       return NextResponse.json({
         hotels: [],
         searchLocation: { lat, lng, name: locationName },
-        error: data.error_message || `API error: ${data.status}`,
+        error: errorData.error?.message || `API error: ${response.status}`,
       });
     }
 
-    // Get top 5 hotels with details
-    const topPlaces = (data.results || []).slice(0, 5);
+    const data = await response.json();
 
-    const hotels: HotelResult[] = await Promise.all(
-      topPlaces.map(
-        async (place: {
-          name: string;
-          vicinity: string;
-          geometry: { location: { lat: number; lng: number } };
-          rating?: number;
-          price_level?: number;
-          place_id: string;
-          user_ratings_total?: number;
-        }) => {
-          const details = await getPlaceDetails(place.place_id, apiKey);
-
-          return {
-            name: place.name,
-            address: place.vicinity,
-            lat: place.geometry.location.lat,
-            lng: place.geometry.location.lng,
-            rating: place.rating,
-            priceLevel: place.price_level,
-            placeId: place.place_id,
-            totalRatings: place.user_ratings_total,
-            ...details,
-          };
-        }
-      )
-    );
+    const hotels: HotelResult[] = (data.places || []).map((place: {
+      id: string;
+      displayName: { text: string };
+      formattedAddress: string;
+      nationalPhoneNumber?: string;
+      location: { latitude: number; longitude: number };
+      rating?: number;
+      priceLevel?: string;
+      websiteUri?: string;
+      userRatingCount?: number;
+    }) => ({
+      name: place.displayName.text,
+      address: place.formattedAddress,
+      phone: place.nationalPhoneNumber,
+      lat: place.location.latitude,
+      lng: place.location.longitude,
+      rating: place.rating,
+      priceLevel: place.priceLevel ? ["FREE", "INEXPENSIVE", "MODERATE", "EXPENSIVE", "VERY_EXPENSIVE"].indexOf(place.priceLevel) : undefined,
+      placeId: place.id,
+      website: place.websiteUri,
+      totalRatings: place.userRatingCount,
+    }));
 
     // Sort by rating (highest first)
     hotels.sort((a, b) => {

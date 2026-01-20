@@ -185,35 +185,49 @@ async function searchPlaces(query: string, location?: { lat: number; lng: number
   if (!apiKey) return [];
 
   try {
-    const params = new URLSearchParams({
-      query: query,
-      key: apiKey,
-      region: "ca",
-    });
+    // Use Places API (New) - the legacy Text Search API requires separate enablement
+    const requestBody: {
+      textQuery: string;
+      locationBias?: { circle: { center: { latitude: number; longitude: number }; radius: number } };
+    } = {
+      textQuery: `${query}, BC, Canada`,
+    };
 
     if (location) {
-      params.append("location", `${location.lat},${location.lng}`);
-      params.append("radius", "50000"); // 50km
+      requestBody.locationBias = {
+        circle: {
+          center: { latitude: location.lat, longitude: location.lng },
+          radius: 50000, // 50km
+        },
+      };
     }
 
-    const response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/textsearch/json?${params}`
-    );
+    const response = await fetch("https://places.googleapis.com/v1/places:searchText", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": apiKey,
+        "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.location",
+      },
+      body: JSON.stringify(requestBody),
+    });
 
     if (!response.ok) return [];
 
     const data = await response.json();
-    if (data.status !== "OK") return [];
+    if (!data.places || data.places.length === 0) return [];
 
-    return (data.results || []).slice(0, 3).map((place: {
-      name: string;
-      formatted_address: string;
-      geometry: { location: { lat: number; lng: number } };
+    return data.places.slice(0, 3).map((place: {
+      displayName: { text: string };
+      formattedAddress: string;
+      nationalPhoneNumber?: string;
+      location: { latitude: number; longitude: number };
     }) => ({
-      name: place.name,
-      address: place.formatted_address,
-      lat: place.geometry.location.lat,
-      lng: place.geometry.location.lng,
+      name: place.displayName.text,
+      address: place.formattedAddress,
+      phone: place.nationalPhoneNumber,
+      lat: place.location.latitude,
+      lng: place.location.longitude,
       confidence: "high" as const,
       source: "Google Places",
     }));

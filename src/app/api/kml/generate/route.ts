@@ -4,7 +4,7 @@ type KMLPoint = {
   name: string;
   lat: number;
   lng: number;
-  category: "fire" | "firstNation" | "fireDept" | "hospital" | "rcmp" | "grocery" | "hotel" | "other";
+  category: "fire" | "firstNation" | "fireDept" | "hospital" | "rcmp" | "grocery" | "hotel" | "waterSource" | "other";
   description?: string;
   isFireOfNote?: boolean;
 };
@@ -25,6 +25,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   rcmp: "http://maps.google.com/mapfiles/kml/shapes/police.png",
   grocery: "http://maps.google.com/mapfiles/kml/shapes/grocery.png",
   hotel: "http://maps.google.com/mapfiles/kml/shapes/lodging.png",
+  waterSource: "http://maps.google.com/mapfiles/kml/paddle/blu-circle.png",
   other: "http://maps.google.com/mapfiles/kml/paddle/wht-circle.png",
 };
 
@@ -36,6 +37,7 @@ const CATEGORY_NAMES: Record<string, string> = {
   rcmp: "RCMP Detachments",
   grocery: "Grocery Stores",
   hotel: "Accommodations",
+  waterSource: "Water Access Points",
   other: "Other Points",
 };
 
@@ -100,7 +102,7 @@ function generateKML(data: KMLRequest): string {
   }
 
   // Generate folders in preferred order
-  const categoryOrder = ["fire", "firstNation", "fireDept", "hospital", "rcmp", "grocery", "hotel", "other"];
+  const categoryOrder = ["fire", "waterSource", "firstNation", "fireDept", "hospital", "rcmp", "grocery", "hotel", "other"];
   const folders = categoryOrder
     .filter((cat) => grouped[cat] && grouped[cat].length > 0)
     .map((cat) => generateFolder(CATEGORY_NAMES[cat], grouped[cat]))

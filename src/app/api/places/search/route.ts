@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Google Places API (Text Search)
-const GOOGLE_PLACES_API = "https://maps.googleapis.com/maps/api/place/textsearch/json";
-const GOOGLE_DETAILS_API = "https://maps.googleapis.com/maps/api/place/details/json";
+// Google Places API (New)
+const PLACES_API_NEW = "https://places.googleapis.com/v1/places:searchText";
 
 type PlaceResult = {
   name: string;
@@ -20,24 +19,6 @@ type PlacesResponse = {
   places: PlaceResult[];
   error?: string;
 };
-
-async function getPlaceDetails(placeId: string, apiKey: string): Promise<Partial<PlaceResult>> {
-  try {
-    const url = `${GOOGLE_DETAILS_API}?place_id=${placeId}&fields=formatted_phone_number,website&key=${apiKey}`;
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if (data.result) {
-      return {
-        phone: data.result.formatted_phone_number,
-        website: data.result.website,
-      };
-    }
-  } catch (error) {
-    console.error("Error fetching place details:", error);
-  }
-  return {};
-}
 
 export async function POST(request: NextRequest) {
   try {
@@ -65,67 +46,74 @@ export async function POST(request: NextRequest) {
     if (type) {
       searchQuery = `${type} ${query}`;
     }
+    searchQuery += ", BC, Canada";
 
-    // Build URL with parameters
-    const params = new URLSearchParams({
-      query: searchQuery,
-      key: apiKey,
-    });
+    // Build request body for Places API (New)
+    const requestBody: {
+      textQuery: string;
+      maxResultCount: number;
+      locationBias?: { circle: { center: { latitude: number; longitude: number }; radius: number } };
+    } = {
+      textQuery: searchQuery,
+      maxResultCount: 5,
+    };
 
     // Add location bias if provided
     if (location?.lat && location?.lng) {
-      params.append("location", `${location.lat},${location.lng}`);
-      params.append("radius", String(radiusKm * 1000)); // Convert km to meters
+      requestBody.locationBias = {
+        circle: {
+          center: { latitude: location.lat, longitude: location.lng },
+          radius: radiusKm * 1000, // Convert km to meters
+        },
+      };
     }
 
-    // Add region bias for BC, Canada
-    params.append("region", "ca");
-
-    const response = await fetch(`${GOOGLE_PLACES_API}?${params}`);
+    const response = await fetch(PLACES_API_NEW, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": apiKey,
+        "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.location,places.rating,places.websiteUri,places.types",
+      },
+      body: JSON.stringify(requestBody),
+    });
 
     if (!response.ok) {
-      throw new Error(`Google Places API returned ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    if (data.status === "ZERO_RESULTS") {
-      return NextResponse.json({ places: [] });
-    }
-
-    if (data.status !== "OK" && data.status !== "ZERO_RESULTS") {
-      console.error("Google Places API error:", data.status, data.error_message);
+      const errorData = await response.json();
+      console.error("Google Places API error:", errorData);
       return NextResponse.json(
-        { error: data.error_message || `API error: ${data.status}` },
+        { error: errorData.error?.message || `API error: ${response.status}` },
         { status: 500 }
       );
     }
 
-    // Transform results
-    const places: PlaceResult[] = await Promise.all(
-      (data.results || []).slice(0, 5).map(async (place: {
-        name: string;
-        formatted_address: string;
-        geometry: { location: { lat: number; lng: number } };
-        place_id: string;
-        rating?: number;
-        types?: string[];
-      }) => {
-        // Get additional details (phone, website)
-        const details = await getPlaceDetails(place.place_id, apiKey);
+    const data = await response.json();
 
-        return {
-          name: place.name,
-          address: place.formatted_address,
-          lat: place.geometry.location.lat,
-          lng: place.geometry.location.lng,
-          placeId: place.place_id,
-          rating: place.rating,
-          types: place.types,
-          ...details,
-        };
-      })
-    );
+    if (!data.places || data.places.length === 0) {
+      return NextResponse.json({ places: [] });
+    }
+
+    // Transform results
+    const places: PlaceResult[] = data.places.map((place: {
+      id: string;
+      displayName: { text: string };
+      formattedAddress: string;
+      nationalPhoneNumber?: string;
+      location: { latitude: number; longitude: number };
+      rating?: number;
+      websiteUri?: string;
+      types?: string[];
+    }) => ({
+      name: place.displayName.text,
+      address: place.formattedAddress,
+      phone: place.nationalPhoneNumber,
+      lat: place.location.latitude,
+      lng: place.location.longitude,
+      placeId: place.id,
+      rating: place.rating,
+      website: place.websiteUri,
+      types: place.types,
+    }));
 
     return NextResponse.json({ places } as PlacesResponse);
   } catch (error) {
