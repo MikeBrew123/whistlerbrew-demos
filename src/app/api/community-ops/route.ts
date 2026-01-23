@@ -26,6 +26,7 @@ type CommunityOpsData = {
     is24h: boolean;
     address?: string;
     phone?: string;
+    notes?: string;
   }[];
   stagingAreas: {
     name: string;
