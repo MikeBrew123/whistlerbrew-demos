@@ -4,6 +4,31 @@ export const runtime = "edge";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
+// BC Wildfire Fire Centres and Zone Offices
+const BC_WILDFIRE_ZONES: Record<string, { centre: string; zoneOffice: string; phone: string; emergencyPhone: string }> = {
+  // Coastal Fire Centre
+  "Sea to Sky": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Pemberton)", phone: "604-894-6717", emergencyPhone: "1-888-797-1717" },
+  "Squamish": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Squamish)", phone: "604-898-2100", emergencyPhone: "1-888-797-1717" },
+  "Whistler": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Pemberton)", phone: "604-894-6717", emergencyPhone: "1-888-797-1717" },
+  "Pemberton": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Pemberton)", phone: "604-894-6717", emergencyPhone: "1-888-797-1717" },
+
+  // Kamloops Fire Centre
+  "Kamloops": { centre: "Kamloops Fire Centre", zoneOffice: "Thompson Nicola Fire Zone", phone: "250-554-5960", emergencyPhone: "1-888-797-1717" },
+  "Merritt": { centre: "Kamloops Fire Centre", zoneOffice: "Thompson Nicola Fire Zone", phone: "250-378-8484", emergencyPhone: "1-888-797-1717" },
+  "Lillooet": { centre: "Kamloops Fire Centre", zoneOffice: "Lillooet Fire Zone", phone: "250-256-1400", emergencyPhone: "1-888-797-1717" },
+
+  // Prince George Fire Centre
+  "Prince George": { centre: "Prince George Fire Centre", zoneOffice: "Prince George Fire Zone", phone: "250-565-4700", emergencyPhone: "1-888-797-1717" },
+  "Burns Lake": { centre: "Prince George Fire Centre", zoneOffice: "Nadina Fire Zone", phone: "250-692-2000", emergencyPhone: "1-888-797-1717" },
+  "Quesnel": { centre: "Prince George Fire Centre", zoneOffice: "Quesnel Fire Zone", phone: "250-992-4400", emergencyPhone: "1-888-797-1717" },
+};
+
+// Utility Emergency Contacts
+const UTILITY_CONTACTS = {
+  bcHydro: { name: "BC Hydro", emergencyPhone: "1-800-224-9376", customerService: "1-800-224-9376" },
+  fortisBC: { name: "FortisBC (Gas)", emergencyPhone: "1-800-663-9911", customerService: "1-888-224-2710" },
+};
+
 type BriefingData = {
   community: string;
   fireNumber?: string;
@@ -385,8 +410,11 @@ function generateBriefingHTML(data: BriefingData): string {
 
   // Road Events Section (DriveBC)
   if (roadEvents && roadEvents.length > 0) {
+    const roadConditionsTitle = travelInfo
+      ? "🚗 Road Conditions - Route"
+      : "🚗 Road Conditions - Major Access Highways";
     html += `<div style="${styles.section}">
-    <h2 style="${styles.sectionH2}">🚗 Road Conditions (DriveBC)</h2>
+    <h2 style="${styles.sectionH2}">${roadConditionsTitle}</h2>
     <table style="${styles.table}">
       <tr><th style="${styles.th}">Severity</th><th style="${styles.th}">Road</th><th style="${styles.th}">Event</th><th style="${styles.th}">Details</th></tr>
       ${roadEvents
@@ -669,6 +697,46 @@ function generateBriefingHTML(data: BriefingData): string {
     </table>`;
     }
 
+    // BC Wildfire Zone Office
+    const wildfireZone = BC_WILDFIRE_ZONES[community];
+    if (wildfireZone) {
+      html += `
+    <h3 style="${styles.sectionH3}">🔥 BC Wildfire Service</h3>
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Fire Centre</th><td style="${styles.td}">${wildfireZone.centre}</td></tr>
+      <tr><th style="${styles.th}">Zone Office</th><td style="${styles.td}">${wildfireZone.zoneOffice}</td></tr>
+      <tr><th style="${styles.th}">Zone Phone</th><td style="${styles.td}">${wildfireZone.phone}</td></tr>
+      <tr><th style="${styles.th}">Report Wildfire</th><td style="${styles.td}"><strong>${wildfireZone.emergencyPhone}</strong> (*5555 from cell)</td></tr>
+    </table>`;
+    }
+
+    // Utilities
+    html += `
+    <h3 style="${styles.sectionH3}">⚡ Utilities</h3>
+    <table style="${styles.table}">
+      <tr>
+        <td style="${styles.td}"><strong>${UTILITY_CONTACTS.bcHydro.name}</strong></td>
+        <td style="${styles.td}">Emergency: ${UTILITY_CONTACTS.bcHydro.emergencyPhone}</td>
+      </tr>
+      <tr>
+        <td style="${styles.td}"><strong>${UTILITY_CONTACTS.fortisBC.name}</strong></td>
+        <td style="${styles.td}">Emergency: ${UTILITY_CONTACTS.fortisBC.emergencyPhone}</td>
+      </tr>
+    </table>`;
+
+    // First Nations Band Office
+    if (firstNations && firstNations.length > 0 && firstNations[0]) {
+      html += `
+    <h3 style="${styles.sectionH3}">🏛️ First Nations Band Office</h3>
+    <table style="${styles.table}">
+      <tr>
+        <td style="${styles.td}"><strong>${firstNations[0].name}</strong></td>
+        <td style="${styles.td}">Contact via BC First Nations directory: 1-800-665-9994</td>
+      </tr>
+    </table>
+    <p style="font-size:12px;color:#666;margin-top:8px"><em>For specific band office contact, consult <a href="https://www.bcafn.ca/" target="_blank" style="${styles.link}">BC Assembly of First Nations directory</a></em></p>`;
+    }
+
     html += `</div>`;
   }
 
@@ -826,7 +894,23 @@ export async function POST(request: NextRequest) {
     }
 
     // Use route-based road events if available, otherwise location-based
-    const roadEventsData = routeRoadEvents || locationRoadEvents;
+    let roadEventsData = routeRoadEvents || locationRoadEvents;
+
+    // For community-only mode (no route), filter to only major access highways
+    if (!hasOrigin && roadEventsData?.events) {
+      roadEventsData = {
+        ...roadEventsData,
+        events: roadEventsData.events.filter((event: any) => {
+          // Only show major highways and numbered routes
+          const roadName = event.roadName?.toLowerCase() || '';
+          return (
+            roadName.includes('highway') ||
+            /hwy\s*\d+/.test(roadName) ||
+            roadName.match(/^\d+$/) // Route numbers like "99", "1", etc.
+          );
+        })
+      };
+    }
 
     // Build travel info if route data available
     let travelInfo: BriefingData["travelInfo"] = undefined;
