@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // Environment Canada RSS feed URL format: https://weather.gc.ca/rss/city/bc-XX_e.xml
 // BC city codes for Environment Canada forecasts (RSS format: bc-XX)

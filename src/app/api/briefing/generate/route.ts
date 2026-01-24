@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 

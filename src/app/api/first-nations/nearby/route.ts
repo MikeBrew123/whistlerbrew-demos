@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // Federal First Nations Location API
 // Data source: https://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4

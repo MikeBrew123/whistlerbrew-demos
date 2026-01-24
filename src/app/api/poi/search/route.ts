@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // Regional Districts in BC with their main contact info
 const BC_REGIONAL_DISTRICTS: Record<string, { name: string; phone: string; website: string }> = {

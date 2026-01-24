@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // Google Routes API (New)
 const GOOGLE_ROUTES_API = "https://routes.googleapis.com/directions/v2:computeRoutes";

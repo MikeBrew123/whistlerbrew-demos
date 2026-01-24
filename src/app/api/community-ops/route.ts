@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // Community operational data for emergency dispatch
 // This data should be maintained and updated by local emergency coordinators

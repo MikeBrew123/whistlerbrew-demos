@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // DriveBC Open511 API
 const DRIVEBC_API = "https://api.open511.gov.bc.ca/events";

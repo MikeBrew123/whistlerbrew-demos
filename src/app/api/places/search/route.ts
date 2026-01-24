@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // Google Places API (New)
 const PLACES_API_NEW = "https://places.googleapis.com/v1/places:searchText";

@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // Water source types relevant for firefighting - boat launches and beaches are key water access points
 const WATER_SOURCE_TYPES = [

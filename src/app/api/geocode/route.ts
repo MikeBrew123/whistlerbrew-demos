@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // BC Address Geocoder API
 const BC_GEOCODER_API = "https://geocoder.api.gov.bc.ca/addresses.json";

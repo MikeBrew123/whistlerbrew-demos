@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const runtime = "edge";
+
 
 // BC OpenMaps WFS API for current fire points
 const BC_FIRES_API =
