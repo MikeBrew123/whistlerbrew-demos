@@ -44,11 +44,22 @@ export async function POST(request: NextRequest) {
             };
           });
 
-          // If multiple results, return for disambiguation
-          if (bcResults.length > 1) {
+          // Deduplicate by locality - only keep highest scoring result per locality
+          const uniqueLocalities = new Map<string, typeof bcResults[0]>();
+          for (const result of bcResults) {
+            const localityKey = (result.locality || '').toLowerCase();
+            if (!uniqueLocalities.has(localityKey) ||
+                (result.score > (uniqueLocalities.get(localityKey)?.score || 0))) {
+              uniqueLocalities.set(localityKey, result);
+            }
+          }
+          const deduplicatedResults = Array.from(uniqueLocalities.values());
+
+          // If multiple unique localities, return for disambiguation
+          if (deduplicatedResults.length > 1) {
             return NextResponse.json({
               multiple: true,
-              options: bcResults.map((result: any) => {
+              options: deduplicatedResults.map((result: any) => {
                 let displayName = address.trim();
 
                 // Use regional district or locality for context
