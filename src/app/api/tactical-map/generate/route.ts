@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "edge";
 
 // BC District to Radio Channel Map mapping
-const BC_RADIO_CHANNEL_MAPS = {
+const BC_RADIO_CHANNEL_MAPS: Record<string, string> = {
   "Sea to Sky": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/natural-resource-use/resource-roads/local-road-safety-information/sea-to-sky/seatosky_road_channels_jul02_2025.pdf",
   "Thompson Rivers": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/natural-resource-use/resource-roads/channel-maps/thompson_rivers_resource_road_channels_2017.pdf",
   "Prince George": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/natural-resource-use/resource-roads/channel-maps/pg_district_radio_frequency_map_georeferenced_low_resolution.pdf",
