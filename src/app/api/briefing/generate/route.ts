@@ -966,8 +966,8 @@ export async function POST(request: NextRequest) {
     if (hasOrigin) {
       // Fetch route info and route-based road events in parallel
       const [routeResult, routeEvents] = await Promise.all([
-        fetchRouteInfo(origin, originLat, originLng, community, location.lat, location.lng),
-        fetchRoadEventsForRoute(originLat, originLng, location.lat, location.lng),
+        fetchRouteInfo(origin, originLat, originLng, community, location!.lat, location!.lng),
+        fetchRoadEventsForRoute(originLat, originLng, location!.lat, location!.lng),
       ]);
       routeData = routeResult?.route || null;
       routeRoadEvents = routeEvents;
