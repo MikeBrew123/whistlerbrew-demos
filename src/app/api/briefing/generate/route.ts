@@ -5,25 +5,66 @@ export const runtime = "edge";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 // BC Wildfire Fire Centres and Zone Offices
-const BC_WILDFIRE_ZONES: Record<string, { centre: string; zoneOffice: string; phone: string; emergencyPhone: string }> = {
+const BC_WILDFIRE_ZONES: Record<string, {
+  centre: string;
+  zoneOffice: string;
+  phone: string;
+  emergencyPhone: string;
+  fireChief?: string;
+  fireChiefPhone?: string;
+  localBase?: string;
+  localBasePhone?: string;
+}> = {
   // Coastal Fire Centre
-  "Sea to Sky": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Pemberton)", phone: "604-894-6717", emergencyPhone: "1-888-797-1717" },
-  "Squamish": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Squamish)", phone: "604-898-2100", emergencyPhone: "1-888-797-1717" },
-  "Whistler": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Pemberton)", phone: "604-894-6717", emergencyPhone: "1-888-797-1717" },
-  "Pemberton": { centre: "Coastal Fire Centre", zoneOffice: "Sea to Sky Fire Zone (Pemberton)", phone: "604-894-6717", emergencyPhone: "1-888-797-1717" },
+  "sea to sky": {
+    centre: "Coastal Fire Centre",
+    zoneOffice: "Sea to Sky Fire Zone (Pemberton)",
+    phone: "604-894-6717",
+    emergencyPhone: "1-888-797-1717",
+    localBase: "Pemberton Fire Base",
+    localBasePhone: "604-894-6717"
+  },
+  "squamish": {
+    centre: "Coastal Fire Centre",
+    zoneOffice: "Sea to Sky Fire Zone (Squamish)",
+    phone: "604-898-2100",
+    emergencyPhone: "1-888-797-1717",
+    fireChief: "Chad McRae",
+    fireChiefPhone: "604-898-9666",
+    localBase: "Squamish Fire Base",
+    localBasePhone: "604-898-2100"
+  },
+  "whistler": {
+    centre: "Coastal Fire Centre",
+    zoneOffice: "Sea to Sky Fire Zone (Pemberton)",
+    phone: "604-894-6717",
+    emergencyPhone: "1-888-797-1717",
+    fireChief: "John McKinley",
+    fireChiefPhone: "604-935-8351",
+    localBase: "Pemberton Fire Base",
+    localBasePhone: "604-894-6717"
+  },
+  "pemberton": {
+    centre: "Coastal Fire Centre",
+    zoneOffice: "Sea to Sky Fire Zone (Pemberton)",
+    phone: "604-894-6717",
+    emergencyPhone: "1-888-797-1717",
+    localBase: "Pemberton Fire Base",
+    localBasePhone: "604-894-6717"
+  },
 
   // Kamloops Fire Centre
-  "Kamloops": { centre: "Kamloops Fire Centre", zoneOffice: "Thompson Nicola Fire Zone", phone: "250-554-5960", emergencyPhone: "1-888-797-1717" },
-  "Merritt": { centre: "Kamloops Fire Centre", zoneOffice: "Thompson Nicola Fire Zone", phone: "250-378-8484", emergencyPhone: "1-888-797-1717" },
-  "Lillooet": { centre: "Kamloops Fire Centre", zoneOffice: "Lillooet Fire Zone", phone: "250-256-1400", emergencyPhone: "1-888-797-1717" },
+  "kamloops": { centre: "Kamloops Fire Centre", zoneOffice: "Thompson Nicola Fire Zone", phone: "250-554-5960", emergencyPhone: "1-888-797-1717" },
+  "merritt": { centre: "Kamloops Fire Centre", zoneOffice: "Thompson Nicola Fire Zone", phone: "250-378-8484", emergencyPhone: "1-888-797-1717" },
+  "lillooet": { centre: "Kamloops Fire Centre", zoneOffice: "Lillooet Fire Zone", phone: "250-256-1400", emergencyPhone: "1-888-797-1717" },
 
   // Prince George Fire Centre
-  "Prince George": { centre: "Prince George Fire Centre", zoneOffice: "Prince George Fire Zone", phone: "250-565-4700", emergencyPhone: "1-888-797-1717" },
-  "Burns Lake": { centre: "Prince George Fire Centre", zoneOffice: "Nadina Fire Zone", phone: "250-692-2000", emergencyPhone: "1-888-797-1717" },
-  "Quesnel": { centre: "Prince George Fire Centre", zoneOffice: "Quesnel Fire Zone", phone: "250-992-4400", emergencyPhone: "1-888-797-1717" },
-  "100 Mile House": { centre: "Cariboo Fire Centre", zoneOffice: "100 Mile House Fire Zone", phone: "250-395-7800", emergencyPhone: "1-888-797-1717" },
-  "Williams Lake": { centre: "Cariboo Fire Centre", zoneOffice: "Cariboo Fire Zone", phone: "250-989-2800", emergencyPhone: "1-888-797-1717" },
-  "Loon Lake": { centre: "Cariboo Fire Centre", zoneOffice: "100 Mile House Fire Zone", phone: "250-395-7800", emergencyPhone: "1-888-797-1717" },
+  "prince george": { centre: "Prince George Fire Centre", zoneOffice: "Prince George Fire Zone", phone: "250-565-4700", emergencyPhone: "1-888-797-1717" },
+  "burns lake": { centre: "Prince George Fire Centre", zoneOffice: "Nadina Fire Zone", phone: "250-692-2000", emergencyPhone: "1-888-797-1717" },
+  "quesnel": { centre: "Prince George Fire Centre", zoneOffice: "Quesnel Fire Zone", phone: "250-992-4400", emergencyPhone: "1-888-797-1717" },
+  "100 mile house": { centre: "Cariboo Fire Centre", zoneOffice: "100 Mile House Fire Zone", phone: "250-395-7800", emergencyPhone: "1-888-797-1717" },
+  "williams lake": { centre: "Cariboo Fire Centre", zoneOffice: "Cariboo Fire Zone", phone: "250-989-2800", emergencyPhone: "1-888-797-1717" },
+  "loon lake": { centre: "Cariboo Fire Centre", zoneOffice: "100 Mile House Fire Zone", phone: "250-395-7800", emergencyPhone: "1-888-797-1717" },
 };
 
 // Default BC Wildfire contact (fallback when community not in lookup)
@@ -755,7 +796,8 @@ function generateBriefingHTML(data: BriefingData): string {
     }
 
     // BC Wildfire Zone Office (always show, use fallback if community not in lookup)
-    const wildfireZone = BC_WILDFIRE_ZONES[community] || BC_WILDFIRE_DEFAULT;
+    // Case-insensitive lookup
+    const wildfireZone = BC_WILDFIRE_ZONES[community.toLowerCase()] || BC_WILDFIRE_DEFAULT;
     html += `
     <h3 style="${styles.sectionH3}">🔥 BC Wildfire Service</h3>
     <table style="${styles.table}">
@@ -763,6 +805,8 @@ function generateBriefingHTML(data: BriefingData): string {
       <tr><th style="${styles.th}">Zone Office</th><td style="${styles.td}">${wildfireZone.zoneOffice}</td></tr>
       <tr><th style="${styles.th}">Zone Phone</th><td style="${styles.td}">${wildfireZone.phone}</td></tr>
       <tr><th style="${styles.th}">Report Wildfire</th><td style="${styles.td}"><strong>${wildfireZone.emergencyPhone}</strong> (*5555 from cell)</td></tr>
+      ${wildfireZone.localBase ? `<tr><th style="${styles.th}">Local Fire Base</th><td style="${styles.td}">${wildfireZone.localBase}${wildfireZone.localBasePhone ? ` - ${wildfireZone.localBasePhone}` : ""}</td></tr>` : ""}
+      ${wildfireZone.fireChief ? `<tr><th style="${styles.th}">Fire Chief</th><td style="${styles.td}">${wildfireZone.fireChief}${wildfireZone.fireChiefPhone ? ` - ${wildfireZone.fireChiefPhone}` : ""}</td></tr>` : ""}
     </table>`;
 
     // Utilities
