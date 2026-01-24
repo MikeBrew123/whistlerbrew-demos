@@ -29,7 +29,8 @@ export async function POST(request: NextRequest) {
       ? address
       : `${address}, BC, Canada`;
 
-    const url = `${GOOGLE_GEOCODING_API}?address=${encodeURIComponent(searchAddress)}&key=${apiKey}`;
+    // Request region biasing to prioritize BC results and get more results
+    const url = `${GOOGLE_GEOCODING_API}?address=${encodeURIComponent(searchAddress)}&components=administrative_area:BC|country:CA&key=${apiKey}`;
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -46,12 +47,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check for multiple results - return all BC results for disambiguation
-    const bcResults = data.results.filter((result: any) => {
-      const addressComponents = result.address_components || [];
-      return addressComponents.some((comp: any) =>
-        comp.short_name === "BC" || comp.long_name === "British Columbia"
-      );
+    // Get all results (component filtering should have already limited to BC)
+    const bcResults = data.results;
+
+    console.log(`Geocoding "${address}": Found ${bcResults.length} result(s)`);
+    bcResults.forEach((r: any, i: number) => {
+      console.log(`  ${i + 1}. ${r.formatted_address} (${r.geometry.location.lat}, ${r.geometry.location.lng})`);
     });
 
     // If multiple BC results exist, return them for user selection
