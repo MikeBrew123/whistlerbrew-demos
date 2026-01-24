@@ -1,0 +1,4 @@
+name = "whistlerbrew-demos"
+pages_build_output_dir = ".vercel/output/static"
+compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-01-23"

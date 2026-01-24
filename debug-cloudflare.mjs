@@ -7,9 +7,9 @@ const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
 const page = await context.newPage();
 
-// Test whistlerbrew-demos.pages.dev
-console.log('\n🔍 Testing whistlerbrew-demos.pages.dev...');
-await page.goto('https://whistlerbrew-demos.pages.dev', { waitUntil: 'networkidle' });
+// Test new deployment
+console.log('\n🔍 Testing latest Cloudflare deployment...');
+await page.goto('https://e1c6cd8e.whistlerbrew-demos.pages.dev', { waitUntil: 'networkidle' });
 await page.screenshot({ path: `${screenshotDir}/01-homepage.png`, fullPage: true });
 
 // Check if logo loaded
