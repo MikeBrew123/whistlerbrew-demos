@@ -39,8 +39,9 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
 
     if (data.status !== "OK" || !data.results || data.results.length === 0) {
+      console.error("Google Geocoding API error:", data.status, data.error_message);
       return NextResponse.json(
-        { error: "Location not found" },
+        { error: `Geocoding failed: ${data.status}${data.error_message ? ` - ${data.error_message}` : ""}` },
         { status: 404 }
       );
     }
