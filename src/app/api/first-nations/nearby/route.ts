@@ -19,6 +19,11 @@ const BC_FIRST_NATIONS_FALLBACK: Array<{ name: string; bandNumber: number; lat: 
   { name: "Stó:lō Nation", bandNumber: 0, lat: 49.1833, lng: -121.9500 },
   { name: "Sts'ailes", bandNumber: 524, lat: 49.3500, lng: -121.9833 },
   { name: "Seabird Island Band", bandNumber: 568, lat: 49.3500, lng: -121.7500 },
+  // Lillooet / Fraser Canyon
+  { name: "St'át'imc Nation (Lillooet)", bandNumber: 0, lat: 50.6850, lng: -121.9400 },
+  { name: "T'it'q'et (Lillooet)", bandNumber: 528, lat: 50.7000, lng: -122.0000 },
+  { name: "N'Quatqua First Nation", bandNumber: 540, lat: 50.7167, lng: -122.5833 },
+  { name: "Bridge River Indian Band", bandNumber: 507, lat: 50.7333, lng: -122.4500 },
   // Kamloops / Thompson
   { name: "Tk'emlúps te Secwépemc", bandNumber: 531, lat: 50.6745, lng: -120.3273 },
   { name: "Shuswap Indian Band", bandNumber: 529, lat: 50.8667, lng: -119.2667 },
@@ -108,6 +113,10 @@ const PRONUNCIATION_HINTS: Record<string, string> = {
   "Yale": "YALE",
   "Spuzzum": "SPUH-zum",
   "Nlaka'pamux": "ing-khla-KAP-muh",
+  "St'át'imc": "STAT-lee-um",
+  "T'it'q'et": "TIT-ket",
+  "N'Quatqua": "in-KWAT-kwah",
+  "Bridge River Indian Band": "Bridge River",
   "Secwepemc": "shuh-HWEP-muhk",
   "Tk'emlúps": "tuh-KEM-loops",
   "Splats'in": "SPLAT-sin",
