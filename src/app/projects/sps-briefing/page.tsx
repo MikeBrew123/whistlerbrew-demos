@@ -67,6 +67,20 @@ export default function SPSBriefing() {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingStatus, setLoadingStatus] = useState("");
 
+  // Location disambiguation state
+  const [locationOptions, setLocationOptions] = useState<Array<{
+    latitude: number;
+    longitude: number;
+    formattedAddress: string;
+    placeId: string;
+  }>>([]);
+  const [showLocationPicker, setShowLocationPicker] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState<{
+    latitude: number;
+    longitude: number;
+    formattedAddress: string;
+  } | null>(null);
+
   // Fire search state
   const [isSearchingFires, setIsSearchingFires] = useState(false);
   const [nearbyFires, setNearbyFires] = useState<Fire[]>([]);
@@ -166,6 +180,12 @@ export default function SPSBriefing() {
     setShowFireResults(false);
   };
 
+  const selectLocation = (location: { latitude: number; longitude: number; formattedAddress: string }) => {
+    setSelectedLocation(location);
+    setShowLocationPicker(false);
+    generateBriefingWithLocation(location);
+  };
+
   const handleSubmit = async () => {
     if (!validateForm()) return;
 
@@ -186,6 +206,30 @@ export default function SPSBriefing() {
       }
 
       const communityGeo = await communityGeoRes.json();
+
+      // Check if disambiguation is needed
+      if (communityGeo.multiple && communityGeo.options) {
+        setLocationOptions(communityGeo.options);
+        setShowLocationPicker(true);
+        setIsLoading(false);
+        return;
+      }
+
+      // Single result - proceed with briefing
+      await generateBriefingWithLocation(communityGeo);
+    } catch (error) {
+      console.error("Error geocoding community:", error);
+      alert(error instanceof Error ? error.message : "Failed to geocode community");
+      setIsLoading(false);
+    }
+  };
+
+  const generateBriefingWithLocation = async (communityGeo: { latitude: number; longitude: number; formattedAddress: string }) => {
+    setIsLoading(true);
+    setLoadingStatus("Generating briefing...");
+    setResults(null);
+
+    try {
 
       let routeBrief: string | undefined;
       let originLat: number | undefined;
@@ -369,6 +413,9 @@ export default function SPSBriefing() {
 
   const resetForm = () => {
     setResults(null);
+    setShowLocationPicker(false);
+    setLocationOptions([]);
+    setSelectedLocation(null);
   };
 
   if (!isAuthenticated) {
@@ -603,6 +650,46 @@ export default function SPSBriefing() {
               {isLoading ? loadingStatus || "Generating..." : "Generate Briefing"}
             </button>
           </>
+        )}
+
+        {/* Location Disambiguation Picker */}
+        {showLocationPicker && locationOptions.length > 0 && (
+          <div className="bg-[#1a1a1a] border-2 border-[#00a8ff] rounded-md overflow-hidden animate-pulse">
+            <div className="p-4 border-b border-[#333] bg-[#00a8ff]/10">
+              <h3 className="font-semibold text-[#00a8ff]">📍 Multiple locations found</h3>
+              <p className="text-sm text-[#b0b0b0] mt-1">Select the correct location for &quot;{community}&quot;</p>
+            </div>
+            <div className="max-h-80 overflow-y-auto">
+              {locationOptions.map((option, index) => (
+                <button
+                  key={option.placeId || index}
+                  onClick={() => selectLocation(option)}
+                  className="w-full p-4 text-left hover:bg-[#252525] border-b border-[#222] last:border-b-0 transition-colors"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex-1">
+                      <div className="text-white font-medium">{option.formattedAddress}</div>
+                      <div className="text-xs text-[#666] mt-1">
+                        {option.latitude.toFixed(4)}°N, {option.longitude.toFixed(4)}°W
+                      </div>
+                    </div>
+                    <div className="text-[#00a8ff] text-xl">→</div>
+                  </div>
+                </button>
+              ))}
+            </div>
+            <div className="p-3 border-t border-[#333] bg-[#1a1a1a]">
+              <button
+                onClick={() => {
+                  setShowLocationPicker(false);
+                  setLocationOptions([]);
+                }}
+                className="text-sm text-[#b0b0b0] hover:text-white transition-colors"
+              >
+                ← Cancel
+              </button>
+            </div>
+          </div>
         )}
 
         {/* Results Section */}
