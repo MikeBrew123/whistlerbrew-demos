@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env.local
+
+# secrets - exclude sensitive files but keep directory structure
+secrets/*
+!secrets/.gitkeep
+!secrets/README.md
