@@ -59,21 +59,41 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         multiple: true,
         options: bcResults.map((result: any) => {
-          // Extract locality/city for clearer display
+          // Extract location context for clearer display
           const addressComponents = result.address_components || [];
+
+          // Try to find best context: regional district, county, or nearby city
+          const adminLevel2 = addressComponents.find((c: any) =>
+            c.types.includes("administrative_area_level_2")
+          )?.long_name;
+
           const locality = addressComponents.find((c: any) =>
             c.types.includes("locality")
           )?.long_name;
-          const sublocality = addressComponents.find((c: any) =>
-            c.types.includes("sublocality") || c.types.includes("neighborhood")
-          )?.long_name;
 
-          // Build display name like "Willowbrook (near Penticton)"
+          // Build display name using regional context
           let displayName = address.trim();
-          if (locality && locality.toLowerCase() !== address.trim().toLowerCase()) {
+          const searchTerm = address.trim().toLowerCase();
+
+          // Use admin level 2 (regional district) if available and different from search
+          if (adminLevel2 && adminLevel2.toLowerCase() !== searchTerm) {
+            displayName = `${address.trim()} (${adminLevel2} area)`;
+          }
+          // Otherwise use locality if it's different from search
+          else if (locality && locality.toLowerCase() !== searchTerm) {
             displayName = `${address.trim()} (near ${locality})`;
-          } else if (sublocality) {
-            displayName = `${sublocality} (${locality || "BC"})`;
+          }
+          // Fallback: parse formatted address for context
+          else {
+            // Extract meaningful part from formatted address
+            const parts = result.formatted_address.split(",").map((p: string) => p.trim());
+            if (parts.length > 2) {
+              // Use second part if it's not BC or postal code
+              const context = parts[1];
+              if (context && !context.match(/^[A-Z]\d[A-Z]/)) {
+                displayName = `${address.trim()} (${context})`;
+              }
+            }
           }
 
           return {
