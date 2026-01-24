@@ -523,21 +523,6 @@ function generateBriefingHTML(data: BriefingData): string {
     </div>`;
     }
 
-    // RAWS Station & Fire Weather
-    if (communityOps.rawsStation) {
-      html += `<div style="${styles.section}">
-      <h2 style="${styles.sectionH2}">🌡️ Fire Weather Station</h2>
-      <table style="${styles.table}">
-        <tr><th style="${styles.th}">Station ID</th><td style="${styles.td}">${communityOps.rawsStation.id}</td></tr>
-        <tr><th style="${styles.th}">Name</th><td style="${styles.td}">${communityOps.rawsStation.name}</td></tr>
-        ${communityOps.rawsStation.ffmc !== undefined ? `<tr><th style="${styles.th}">FFMC</th><td style="${styles.td}">${communityOps.rawsStation.ffmc}</td></tr>` : ""}
-        ${communityOps.rawsStation.isi !== undefined ? `<tr><th style="${styles.th}">ISI</th><td style="${styles.td}">${communityOps.rawsStation.isi}</td></tr>` : ""}
-        ${communityOps.rawsStation.fwi !== undefined ? `<tr><th style="${styles.th}">FWI</th><td style="${styles.td}">${communityOps.rawsStation.fwi}</td></tr>` : ""}
-      </table>
-      ${communityOps.rawsStation.notes ? `<p style="font-size:13px;color:#666;margin-top:10px"><em>${communityOps.rawsStation.notes}</em></p>` : ""}
-    </div>`;
-    }
-
     // Staging Areas & Helipads
     if (communityOps.stagingAreas && communityOps.stagingAreas.length > 0) {
       html += `<div style="${styles.section}">
