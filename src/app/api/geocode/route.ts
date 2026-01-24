@@ -58,12 +58,32 @@ export async function POST(request: NextRequest) {
     if (bcResults.length > 1) {
       return NextResponse.json({
         multiple: true,
-        options: bcResults.map((result: any) => ({
-          latitude: result.geometry.location.lat,
-          longitude: result.geometry.location.lng,
-          formattedAddress: result.formatted_address,
-          placeId: result.place_id,
-        })),
+        options: bcResults.map((result: any) => {
+          // Extract locality/city for clearer display
+          const addressComponents = result.address_components || [];
+          const locality = addressComponents.find((c: any) =>
+            c.types.includes("locality")
+          )?.long_name;
+          const sublocality = addressComponents.find((c: any) =>
+            c.types.includes("sublocality") || c.types.includes("neighborhood")
+          )?.long_name;
+
+          // Build display name like "Willowbrook (near Penticton)"
+          let displayName = address.trim();
+          if (locality && locality.toLowerCase() !== address.trim().toLowerCase()) {
+            displayName = `${address.trim()} (near ${locality})`;
+          } else if (sublocality) {
+            displayName = `${sublocality} (${locality || "BC"})`;
+          }
+
+          return {
+            latitude: result.geometry.location.lat,
+            longitude: result.geometry.location.lng,
+            formattedAddress: result.formatted_address,
+            displayName,
+            placeId: result.place_id,
+          };
+        }),
       });
     }
 

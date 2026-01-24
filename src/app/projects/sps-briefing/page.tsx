@@ -70,6 +70,7 @@ export default function SPSBriefing() {
     latitude: number;
     longitude: number;
     formattedAddress: string;
+    displayName: string;
     placeId: string;
   }>>([]);
   const [showLocationPicker, setShowLocationPicker] = useState(false);
@@ -640,7 +641,7 @@ export default function SPSBriefing() {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex-1">
-                      <div className="text-white font-medium">{option.formattedAddress}</div>
+                      <div className="text-white font-medium text-lg">{option.displayName}</div>
                       <div className="text-xs text-[#666] mt-1">
                         {option.latitude.toFixed(4)}°N, {option.longitude.toFixed(4)}°W
                       </div>
