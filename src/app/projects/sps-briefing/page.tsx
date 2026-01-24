@@ -59,8 +59,6 @@ export default function SPSBriefing() {
   const [reportTo, setReportTo] = useState("");
   const [community, setCommunity] = useState("");
   const [fireNumber, setFireNumber] = useState("");
-  const [departureDate, setDepartureDate] = useState("");
-  const [departureTime, setDepartureTime] = useState("");
 
   // UI state
   const [errors, setErrors] = useState<FormErrors>({});
@@ -260,8 +258,6 @@ export default function SPSBriefing() {
               originLng,
               destLat: communityGeo.latitude,
               destLng: communityGeo.longitude,
-              departureDate,
-              departureTime,
             }),
           });
 
@@ -600,7 +596,7 @@ export default function SPSBriefing() {
             )}
 
             {/* Fire Number - Always Shows */}
-            <div className="mb-4">
+            <div className="mb-6">
               <label className="block text-sm text-[#b0b0b0] mb-2">
                 Fire Number <span className="text-[#666]">(optional)</span>
               </label>
@@ -612,30 +608,6 @@ export default function SPSBriefing() {
                 className="w-full p-3 bg-[#1e1e1e] border border-[#333] rounded-md text-white placeholder-[#666] focus:outline-none focus:border-[#00a8ff]"
               />
             </div>
-
-            {/* Departure Date/Time - Full Mode Only */}
-            {isFullMode && (
-              <div className="mb-6 grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm text-[#b0b0b0] mb-2">Departure Date</label>
-                  <input
-                    type="date"
-                    value={departureDate}
-                    onChange={(e) => setDepartureDate(e.target.value)}
-                    className="w-full p-3 bg-[#1e1e1e] border border-[#333] rounded-md text-white focus:outline-none focus:border-[#00a8ff]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-[#b0b0b0] mb-2">Departure Time</label>
-                  <input
-                    type="time"
-                    value={departureTime}
-                    onChange={(e) => setDepartureTime(e.target.value)}
-                    className="w-full p-3 bg-[#1e1e1e] border border-[#333] rounded-md text-white focus:outline-none focus:border-[#00a8ff]"
-                  />
-                </div>
-              </div>
-            )}
 
             {/* Generate Button */}
             <button
