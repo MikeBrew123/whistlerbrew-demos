@@ -228,12 +228,12 @@ async function fetchFirstNations(lat: number, lng: number, radiusKm = 50) {
   }
 }
 
-async function fetchPOI(type: string, community: string) {
+async function fetchPOI(type: string, community: string, lat: number, lng: number) {
   try {
     const res = await fetch(`${BASE_URL}/api/poi/search`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ type, community }),
+      body: JSON.stringify({ type, community, location: { lat, lng } }),
     });
     if (!res.ok) return null;
     return await res.json();
@@ -943,11 +943,11 @@ export async function POST(request: NextRequest) {
         location ? fetchNearbyFires(location.lat, location.lng) : Promise.resolve(null),
         fetchWeather(community),
         location ? fetchFirstNations(location.lat, location.lng) : Promise.resolve(null),
-        fetchPOI("fire department", community),
-        fetchPOI("hospital", community),
-        fetchPOI("rcmp", community),
-        fetchPOI("grocery store", community),
-        fetchPOI("hotel", community),
+        location ? fetchPOI("fire department", community, location.lat, location.lng) : Promise.resolve(null),
+        location ? fetchPOI("hospital", community, location.lat, location.lng) : Promise.resolve(null),
+        location ? fetchPOI("rcmp", community, location.lat, location.lng) : Promise.resolve(null),
+        location ? fetchPOI("grocery store", community, location.lat, location.lng) : Promise.resolve(null),
+        location ? fetchPOI("hotel", community, location.lat, location.lng) : Promise.resolve(null),
         location ? fetchWaterSources(location.lat, location.lng) : Promise.resolve(null),
         location ? fetchEmployers(location.lat, location.lng) : Promise.resolve(null),
         fetchCommunityOps(community),
