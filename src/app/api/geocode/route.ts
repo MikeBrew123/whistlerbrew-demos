@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 export const runtime = "edge";
 
-// Use Google Geocoding API for better accuracy with city names
+// BC Government's official geocoder - knows ALL BC communities including small rural ones
+const BC_GEOCODER_API = "https://geocoder.api.gov.bc.ca/addresses.json";
+// Google fallback for major cities
 const GOOGLE_GEOCODING_API = "https://maps.googleapis.com/maps/api/geocode/json";
 
 export async function POST(request: NextRequest) {
@@ -16,10 +18,73 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Try BC Geocoder first (knows all BC communities, even small rural ones)
+    try {
+      const bcUrl = `${BC_GEOCODER_API}?addressString=${encodeURIComponent(address)}&localityName=&provinceCode=BC&maxResults=10&interpolation=adaptive&echo=true&brief=false&autoComplete=true`;
+      const bcResponse = await fetch(bcUrl);
+
+      if (bcResponse.ok) {
+        const bcData = await bcResponse.json();
+
+        if (bcData.features && bcData.features.length > 0) {
+          console.log(`BC Geocoder found ${bcData.features.length} result(s) for "${address}"`);
+
+          // Transform BC Geocoder results to our format
+          const bcResults = bcData.features.map((feature: any) => {
+            const props = feature.properties;
+            const coords = feature.geometry.coordinates; // [lng, lat]
+
+            return {
+              latitude: coords[1],
+              longitude: coords[0],
+              formattedAddress: props.fullAddress || `${address}, BC`,
+              locality: props.localityName,
+              regionalDistrict: props.electoralArea,
+              score: props.score,
+            };
+          });
+
+          // If multiple results, return for disambiguation
+          if (bcResults.length > 1) {
+            return NextResponse.json({
+              multiple: true,
+              options: bcResults.map((result: any) => {
+                let displayName = address.trim();
+
+                // Use regional district or locality for context
+                if (result.regionalDistrict) {
+                  displayName = `${address.trim()} (${result.regionalDistrict})`;
+                } else if (result.locality && result.locality.toLowerCase() !== address.trim().toLowerCase()) {
+                  displayName = `${address.trim()} (near ${result.locality})`;
+                }
+
+                return {
+                  ...result,
+                  displayName,
+                  placeId: `bc-${result.latitude}-${result.longitude}`,
+                };
+              }),
+            });
+          }
+
+          // Single result from BC Geocoder
+          return NextResponse.json({
+            latitude: bcResults[0].latitude,
+            longitude: bcResults[0].longitude,
+            formattedAddress: bcResults[0].formattedAddress,
+            score: bcResults[0].score,
+          });
+        }
+      }
+    } catch (bcError) {
+      console.log("BC Geocoder failed, falling back to Google:", bcError);
+    }
+
+    // Fallback to Google if BC Geocoder has no results
     const apiKey = process.env.GOOGLE_PLACES_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
-        { error: "Google API key not configured" },
+        { error: "Geocoding failed - no API configured" },
         { status: 500 }
       );
     }
