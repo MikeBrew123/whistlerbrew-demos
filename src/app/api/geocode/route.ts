@@ -41,12 +41,76 @@ export async function POST(request: NextRequest) {
               locality: props.localityName,
               regionalDistrict: props.electoralArea,
               score: props.score,
+              matchPrecision: props.matchPrecision,
             };
           });
 
-          // Deduplicate by locality - only keep highest scoring result per locality
-          const uniqueLocalities = new Map<string, typeof bcResults[0]>();
-          for (const result of bcResults) {
+          // Filter to LOCALITY precision only (exclude STREET/CIVIC_NUMBER/etc)
+          const localityResults = bcResults.filter((r: any) => r.matchPrecision === 'LOCALITY');
+
+          // Look for exact locality name matches (case-insensitive)
+          const searchTerm = address.toLowerCase().trim();
+          const exactMatches = localityResults.filter((r: any) =>
+            r.locality?.toLowerCase() === searchTerm
+          );
+
+          // If exactly 1 exact match, return it immediately
+          if (exactMatches.length === 1) {
+            return NextResponse.json({
+              latitude: exactMatches[0].latitude,
+              longitude: exactMatches[0].longitude,
+              formattedAddress: exactMatches[0].formattedAddress,
+              score: exactMatches[0].score,
+            });
+          }
+
+          // If multiple exact matches, deduplicate by locality and regional district
+          if (exactMatches.length > 1) {
+            const uniqueLocalities = new Map<string, typeof exactMatches[0]>();
+            for (const result of exactMatches) {
+              const localityKey = (result.locality || '').toLowerCase();
+              if (!uniqueLocalities.has(localityKey) ||
+                  (result.score > (uniqueLocalities.get(localityKey)?.score || 0))) {
+                uniqueLocalities.set(localityKey, result);
+              }
+            }
+            const deduplicatedResults = Array.from(uniqueLocalities.values());
+
+            // If still multiple after deduplication, show disambiguation
+            if (deduplicatedResults.length > 1) {
+              return NextResponse.json({
+                multiple: true,
+                options: deduplicatedResults.map((result: any) => {
+                  let displayName = address.trim();
+
+                  // Use regional district or locality for context
+                  if (result.regionalDistrict) {
+                    displayName = `${address.trim()} (${result.regionalDistrict})`;
+                  } else if (result.locality && result.locality.toLowerCase() !== searchTerm) {
+                    displayName = `${address.trim()} (near ${result.locality})`;
+                  }
+
+                  return {
+                    ...result,
+                    displayName,
+                    placeId: `bc-${result.latitude}-${result.longitude}`,
+                  };
+                }),
+              });
+            }
+
+            // Single result after deduplication
+            return NextResponse.json({
+              latitude: deduplicatedResults[0].latitude,
+              longitude: deduplicatedResults[0].longitude,
+              formattedAddress: deduplicatedResults[0].formattedAddress,
+              score: deduplicatedResults[0].score,
+            });
+          }
+
+          // No exact matches - use all locality results and deduplicate
+          const uniqueLocalities = new Map<string, typeof localityResults[0]>();
+          for (const result of localityResults) {
             const localityKey = (result.locality || '').toLowerCase();
             if (!uniqueLocalities.has(localityKey) ||
                 (result.score > (uniqueLocalities.get(localityKey)?.score || 0))) {
