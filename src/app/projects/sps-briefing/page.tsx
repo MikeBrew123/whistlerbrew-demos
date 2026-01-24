@@ -44,6 +44,9 @@ type BriefingResult = {
   communityBrief: string;
   kmlData?: string;
   kmlFilename?: string;
+  community?: string;
+  latitude?: number;
+  longitude?: number;
 };
 
 export default function SPSBriefing() {
@@ -271,6 +274,9 @@ export default function SPSBriefing() {
         communityBrief: briefingData.briefing,
         kmlData,
         kmlFilename,
+        community,
+        latitude: communityGeo.latitude,
+        longitude: communityGeo.longitude,
       });
 
       // Scroll to results
@@ -320,6 +326,41 @@ export default function SPSBriefing() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  };
+
+  const downloadTacticalMap = async () => {
+    if (!results?.community || !results?.latitude || !results?.longitude) return;
+
+    try {
+      const response = await fetch("/api/tactical-map/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          community: results.community,
+          latitude: results.latitude,
+          longitude: results.longitude,
+          radiusKm: 30,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate tactical map");
+      }
+
+      const kmlData = await response.text();
+      const blob = new Blob([kmlData], { type: "application/vnd.google-earth.kml+xml" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${results.community.replace(/[^a-z0-9]/gi, "_")}_tactical_map.kml`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Error downloading tactical map:", error);
+      alert("Failed to generate tactical map");
+    }
   };
 
   const handlePrint = () => {
@@ -584,9 +625,15 @@ export default function SPSBriefing() {
                   onClick={downloadKML}
                   className="flex-1 py-3 px-4 rounded-md font-medium text-sm bg-[#1e1e1e] border border-[#333] text-[#b0b0b0] hover:border-[#00a8ff] hover:text-[#00a8ff] transition-colors"
                 >
-                  📍 Download KML
+                  📍 Infrastructure Map
                 </button>
               )}
+              <button
+                onClick={downloadTacticalMap}
+                className="flex-1 py-3 px-4 rounded-md font-medium text-sm bg-[#1e1e1e] border border-[#333] text-[#b0b0b0] hover:border-[#00a8ff] hover:text-[#00a8ff] transition-colors"
+              >
+                📡 Tactical Map
+              </button>
               <button
                 onClick={handlePrint}
                 className="flex-1 py-3 px-4 rounded-md font-medium text-sm bg-[#1e1e1e] border border-[#333] text-[#b0b0b0] hover:border-[#00a8ff] hover:text-[#00a8ff] transition-colors"
