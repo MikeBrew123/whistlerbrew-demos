@@ -148,6 +148,16 @@ type BriefingData = {
     roadName: string;
     direction?: string;
   }>;
+  evacuationAlerts?: Array<{
+    id: string;
+    type: "Alert" | "Order";
+    issuedBy: string;
+    issuedDate: string;
+    area: string;
+    details: string;
+    distanceKm: number;
+    severity: "High" | "Medium" | "Low";
+  }>;
 };
 
 async function geocodeCommunity(community: string): Promise<{ lat: number; lng: number } | null> {
@@ -213,6 +223,20 @@ async function fetchPOI(type: string, community: string) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type, community }),
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+async function fetchEvacuationAlerts(lat: number, lng: number, radiusKm = 100) {
+  try {
+    const res = await fetch(`${BASE_URL}/api/evacuation-alerts/nearby`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ latitude: lat, longitude: lng, radiusKm }),
     });
     if (!res.ok) return null;
     return await res.json();
@@ -306,7 +330,7 @@ async function fetchRouteInfo(origin: string, originLat: number, originLng: numb
 }
 
 function generateBriefingHTML(data: BriefingData): string {
-  const { community, fireNumber, generatedAt, fire, nearbyFires, weather, firstNations, pois, regionalContact, waterSources, majorEmployers, communityOps, roadEvents, travelInfo } = data;
+  const { community, fireNumber, generatedAt, fire, nearbyFires, weather, firstNations, pois, regionalContact, waterSources, majorEmployers, communityOps, roadEvents, travelInfo, evacuationAlerts } = data;
 
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleString("en-CA", {
@@ -406,6 +430,43 @@ function generateBriefingHTML(data: BriefingData): string {
     }
 
     html += `</div>`;
+  }
+
+  // Evacuation Alerts Section (CRITICAL - Show prominently)
+  if (evacuationAlerts && evacuationAlerts.length > 0) {
+    html += `<div style="${styles.section};border-left:4px solid #dc3545;background:#fff5f5">
+    <h2 style="${styles.sectionH2};color:#dc3545">🚨 EVACUATION ALERTS & ORDERS</h2>
+    <p style="font-size:14px;color:#dc3545;font-weight:600;margin-bottom:15px">
+      ⚠️ Active evacuation notices in the area - Verify current status with local authorities
+    </p>
+    <table style="${styles.table}">
+      <tr><th style="${styles.th}">Type</th><th style="${styles.th}">Area</th><th style="${styles.th}">Issued By</th><th style="${styles.th}">Date/Time</th><th style="${styles.th}">Distance</th><th style="${styles.th}">Details</th></tr>
+      ${evacuationAlerts
+        .slice(0, 10)
+        .map(
+          (alert) => {
+            const date = new Date(alert.issuedDate).toLocaleString("en-CA", {
+              month: "short",
+              day: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            });
+            const typeColor = alert.type === "Order" ? "#dc3545" : "#ffc107";
+            const typeTextColor = alert.type === "Order" ? "white" : "#333";
+            return `<tr style="${alert.severity === "High" ? "background:#fff5f5" : ""}">
+        <td style="${styles.td}"><span style="display:inline-block;padding:4px 10px;border-radius:4px;font-size:13px;font-weight:bold;background:${typeColor};color:${typeTextColor}">${alert.type.toUpperCase()}</span></td>
+        <td style="${styles.td}"><strong>${alert.area}</strong></td>
+        <td style="${styles.td}">${alert.issuedBy}</td>
+        <td style="${styles.td}">${date}</td>
+        <td style="${styles.td}">${alert.distanceKm} km</td>
+        <td style="${styles.td}">${alert.details}</td>
+      </tr>`;
+          }
+        )
+        .join("")}
+    </table>
+    <p style="font-size:12px;color:#666;margin-top:10px"><em>Source: <a href="https://www.emergencyinfobc.gov.bc.ca/" target="_blank" style="${styles.link}">EmergencyInfoBC</a> - Always verify with local authorities for current status</em></p>
+  </div>`;
   }
 
   // Road Events Section (DriveBC)
@@ -868,7 +929,7 @@ export async function POST(request: NextRequest) {
     }
 
     /// Step 2: Make parallel API calls
-    const [firesData, weatherData, firstNationsData, fireDeptData, hospitalData, rcmpData, groceryData, hotelData, waterData, employersData, communityOpsData, locationRoadEvents] =
+    const [firesData, weatherData, firstNationsData, fireDeptData, hospitalData, rcmpData, groceryData, hotelData, waterData, employersData, communityOpsData, locationRoadEvents, evacuationAlertsData] =
       await Promise.all([
         location ? fetchNearbyFires(location.lat, location.lng) : Promise.resolve(null),
         fetchWeather(community),
@@ -883,6 +944,7 @@ export async function POST(request: NextRequest) {
         fetchCommunityOps(community),
         // Only fetch location-based road events if no route was provided
         !hasOrigin && location ? fetchRoadEventsForLocation(location.lat, location.lng) : Promise.resolve(null),
+        location ? fetchEvacuationAlerts(location.lat, location.lng) : Promise.resolve(null),
       ]);
 
     // Step 3: Find specific fire if fireNumber provided
@@ -952,6 +1014,7 @@ export async function POST(request: NextRequest) {
       majorEmployers: employersData?.employers,
       communityOps: communityOpsData?.dataAvailable ? communityOpsData : undefined,
       roadEvents: roadEventsData?.events,
+      evacuationAlerts: evacuationAlertsData?.alerts,
     };
 
     // Step 5: Generate HTML
