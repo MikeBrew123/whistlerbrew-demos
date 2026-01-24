@@ -21,6 +21,17 @@ const BC_WILDFIRE_ZONES: Record<string, { centre: string; zoneOffice: string; ph
   "Prince George": { centre: "Prince George Fire Centre", zoneOffice: "Prince George Fire Zone", phone: "250-565-4700", emergencyPhone: "1-888-797-1717" },
   "Burns Lake": { centre: "Prince George Fire Centre", zoneOffice: "Nadina Fire Zone", phone: "250-692-2000", emergencyPhone: "1-888-797-1717" },
   "Quesnel": { centre: "Prince George Fire Centre", zoneOffice: "Quesnel Fire Zone", phone: "250-992-4400", emergencyPhone: "1-888-797-1717" },
+  "100 Mile House": { centre: "Cariboo Fire Centre", zoneOffice: "100 Mile House Fire Zone", phone: "250-395-7800", emergencyPhone: "1-888-797-1717" },
+  "Williams Lake": { centre: "Cariboo Fire Centre", zoneOffice: "Cariboo Fire Zone", phone: "250-989-2800", emergencyPhone: "1-888-797-1717" },
+  "Loon Lake": { centre: "Cariboo Fire Centre", zoneOffice: "100 Mile House Fire Zone", phone: "250-395-7800", emergencyPhone: "1-888-797-1717" },
+};
+
+// Default BC Wildfire contact (fallback when community not in lookup)
+const BC_WILDFIRE_DEFAULT = {
+  centre: "BC Wildfire Service",
+  zoneOffice: "Contact nearest fire zone",
+  phone: "1-888-797-1717",
+  emergencyPhone: "1-888-797-1717",
 };
 
 // Utility Emergency Contacts
@@ -758,10 +769,9 @@ function generateBriefingHTML(data: BriefingData): string {
     </table>`;
     }
 
-    // BC Wildfire Zone Office
-    const wildfireZone = BC_WILDFIRE_ZONES[community];
-    if (wildfireZone) {
-      html += `
+    // BC Wildfire Zone Office (always show, use fallback if community not in lookup)
+    const wildfireZone = BC_WILDFIRE_ZONES[community] || BC_WILDFIRE_DEFAULT;
+    html += `
     <h3 style="${styles.sectionH3}">🔥 BC Wildfire Service</h3>
     <table style="${styles.table}">
       <tr><th style="${styles.th}">Fire Centre</th><td style="${styles.td}">${wildfireZone.centre}</td></tr>
@@ -769,7 +779,6 @@ function generateBriefingHTML(data: BriefingData): string {
       <tr><th style="${styles.th}">Zone Phone</th><td style="${styles.td}">${wildfireZone.phone}</td></tr>
       <tr><th style="${styles.th}">Report Wildfire</th><td style="${styles.td}"><strong>${wildfireZone.emergencyPhone}</strong> (*5555 from cell)</td></tr>
     </table>`;
-    }
 
     // Utilities
     html += `
