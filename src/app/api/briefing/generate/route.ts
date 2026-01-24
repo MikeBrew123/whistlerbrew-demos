@@ -913,14 +913,21 @@ function generateBriefingHTML(data: BriefingData): string {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { community, fireNumber, origin, originLat, originLng } = body;
+    const { community, fireNumber, origin, originLat, originLng, latitude, longitude } = body;
 
     if (!community) {
       return NextResponse.json({ error: "community is required" }, { status: 400 });
     }
 
-    // Step 1: Geocode community (destination)
-    const location = await geocodeCommunity(community);
+    // Step 1: Get community location (use provided coordinates or geocode)
+    let location: { lat: number; lng: number } | null = null;
+    if (latitude && longitude) {
+      // Use coordinates provided by frontend (from BC Geocoder)
+      location = { lat: latitude, lng: longitude };
+    } else {
+      // Fallback: geocode the community name
+      location = await geocodeCommunity(community);
+    }
 
     // Step 1b: If origin provided, get route info and road events along route
     let routeData = null;
