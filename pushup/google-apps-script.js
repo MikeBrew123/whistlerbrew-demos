@@ -677,17 +677,17 @@ function handleChirps() {
 
   // Always include at least one praise and one roast if possible
   if (praiseMsgs.length > 0 && top3.length > 0) {
-    chirps.push(fillChirp(pickRandom(praiseMsgs), pickRandom(top3)));
+    chirps.push({ text: fillChirp(pickRandom(praiseMsgs), pickRandom(top3)), type: 'praise' });
   }
   if (roastMsgs.length > 0 && bottom3.length > 0) {
-    chirps.push(fillChirp(pickRandom(roastMsgs), pickRandom(bottom3)));
+    chirps.push({ text: fillChirp(pickRandom(roastMsgs), pickRandom(bottom3)), type: 'roast' });
   }
   // Add hype and shame for those with non-zero bank
   if (hypeMsgs.length > 0 && positive.length > 0) {
-    chirps.push(fillChirp(pickRandom(hypeMsgs), pickRandom(positive)));
+    chirps.push({ text: fillChirp(pickRandom(hypeMsgs), pickRandom(positive)), type: 'hype' });
   }
   if (shameMsgs.length > 0 && negative.length > 0) {
-    chirps.push(fillChirp(pickRandom(shameMsgs), pickRandom(negative)));
+    chirps.push({ text: fillChirp(pickRandom(shameMsgs), pickRandom(negative)), type: 'shame' });
   }
   // Pad to 5-8 total with mix of praise/roast on different people
   var attempts = 0;
@@ -695,17 +695,17 @@ function handleChirps() {
     attempts++;
     var roll = Math.random();
     if (roll < 0.35 && praiseMsgs.length > 0 && top3.length > 0) {
-      var candidate = fillChirp(pickRandom(praiseMsgs), pickRandom(top3));
-      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+      var candidate = { text: fillChirp(pickRandom(praiseMsgs), pickRandom(top3)), type: 'praise' };
+      if (!chirps.some(function(c) { return c.text === candidate.text; })) chirps.push(candidate);
     } else if (roll < 0.65 && roastMsgs.length > 0 && bottom3.length > 0) {
-      var candidate = fillChirp(pickRandom(roastMsgs), pickRandom(bottom3));
-      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+      var candidate = { text: fillChirp(pickRandom(roastMsgs), pickRandom(bottom3)), type: 'roast' };
+      if (!chirps.some(function(c) { return c.text === candidate.text; })) chirps.push(candidate);
     } else if (roll < 0.82 && hypeMsgs.length > 0 && positive.length > 0) {
-      var candidate = fillChirp(pickRandom(hypeMsgs), pickRandom(positive));
-      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+      var candidate = { text: fillChirp(pickRandom(hypeMsgs), pickRandom(positive)), type: 'hype' };
+      if (!chirps.some(function(c) { return c.text === candidate.text; })) chirps.push(candidate);
     } else if (shameMsgs.length > 0 && negative.length > 0) {
-      var candidate = fillChirp(pickRandom(shameMsgs), pickRandom(negative));
-      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+      var candidate = { text: fillChirp(pickRandom(shameMsgs), pickRandom(negative)), type: 'shame' };
+      if (!chirps.some(function(c) { return c.text === candidate.text; })) chirps.push(candidate);
     }
   }
 

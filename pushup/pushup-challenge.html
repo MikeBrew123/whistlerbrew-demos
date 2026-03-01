@@ -1840,12 +1840,16 @@ async function loadChirps() {
     if (!ticker || !track) return;
 
     // Build the message list, duplicated so the scroll loops seamlessly
-    const sep = '<span class="chirp-sep"> 🔥 </span>';
-    const items = chirps.map(c => `<span class="chirp-item">${c}</span>${sep}`).join('');
+    const chirpEmoji = { praise: '🔥', roast: '💀', hype: '🎆', shame: '👎' };
+    const items = chirps.map(c => {
+      const emoji = chirpEmoji[c.type] || '🔥';
+      const text = typeof c === 'string' ? c : c.text;
+      return `<span class="chirp-item">${text}</span><span class="chirp-sep"> ${emoji} </span>`;
+    }).join('');
     track.innerHTML = items + items; // duplicate for seamless loop
 
     // Adjust speed relative to total text length (longer = slower)
-    const charCount = chirps.join(' ').length;
+    const charCount = chirps.map(c => typeof c === 'string' ? c : c.text).join(' ').length;
     const duration = Math.max(30, Math.min(90, charCount * 0.18));
     track.style.animationDuration = duration + 's';
 
