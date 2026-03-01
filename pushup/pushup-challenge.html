@@ -979,8 +979,8 @@
           </div>
           <table class="ring-stats-table">
             <tr><td class="ring-stat-label">Target</td><td class="ring-stat-value" id="stat-today-target">—</td></tr>
-            <tr><td class="ring-stat-label">Weekly Avg</td><td class="ring-stat-value" id="stat-weekly-avg">—</td></tr>
-            <tr><td class="ring-stat-label">Best Day</td><td class="ring-stat-value" id="stat-best-day">—</td></tr>
+            <tr><td class="ring-stat-label">Total Done</td><td class="ring-stat-value" id="stat-total-done">—</td></tr>
+            <tr><td class="ring-stat-label">Bank</td><td class="ring-stat-value" id="stat-bank">—</td></tr>
             <tr><td class="ring-stat-label">Station Rank</td><td class="ring-stat-value" id="stat-rank">—</td></tr>
           </table>
         </div>
@@ -1559,18 +1559,19 @@ function renderDashboard() {
   const todayTarget = todaySchedule ? todaySchedule.target : 0;
   const todayLogged = logMap[today] || 0;
 
-  let totalDone = 0;
-  let totalRequired = 0;
+  // totalDone: ALL logged pushups, including days not on the schedule
+  const totalDone = state.myLog.reduce((sum, l) => sum + l.count, 0);
 
+  // totalRequired: scheduled targets up to and including today only
+  let totalRequired = 0;
   for (const s of state.schedule) {
     if (s.date <= today) {
       totalRequired += s.target;
     }
-    if (logMap[s.date]) {
-      totalDone += logMap[s.date];
-    }
   }
 
+  // bank: positive = ahead, negative = behind
+  // Off-schedule pushups count fully as banked (required = 0 for those days)
   const bank = totalDone - totalRequired;
 
   // --- Update SVG ring ---
@@ -1589,6 +1590,15 @@ function renderDashboard() {
     targetEl.textContent = (todaySchedule && todaySchedule.label === 'REST') ? 'REST' : (todayTarget || '—');
   }
 
+  const totalDoneEl = document.getElementById('stat-total-done');
+  if (totalDoneEl) totalDoneEl.textContent = totalDone.toLocaleString();
+
+  const bankEl = document.getElementById('stat-bank');
+  if (bankEl) {
+    bankEl.textContent = (bank >= 0 ? '+' : '') + bank;
+    bankEl.style.color = bank >= 0 ? 'var(--green-positive)' : 'var(--red-negative)';
+  }
+
   // --- Dashboard log badge ---
   const todayLogEntry = state.myLog.find(l => l.date === today);
   const dashAlready = document.getElementById('dash-already-logged');
@@ -1605,23 +1615,7 @@ function renderDashboard() {
   // --- Render calendar ---
   renderCalendar(scheduleMap, logMap, today);
 
-  // --- Personal stats (Weekly Avg / Best Day / Overall Rank) ---
-  // Weekly Avg: avg pushups per logged day in the last 7 days
-  const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 6);
-  const cutoffStr = cutoff.toISOString().substring(0, 10);
-  const weekLogs = state.myLog.filter(l => l.date >= cutoffStr && l.count > 0);
-  const weekAvg = weekLogs.length > 0
-    ? Math.round(weekLogs.reduce((s, l) => s + l.count, 0) / weekLogs.length)
-    : 0;
-  const weekAvgEl = document.getElementById('stat-weekly-avg');
-  if (weekAvgEl) weekAvgEl.textContent = weekAvg > 0 ? weekAvg : '—';
-
-  // Best Day: highest single-day count ever
-  const bestDay = state.myLog.reduce((max, l) => Math.max(max, l.count), 0);
-  const bestDayEl = document.getElementById('stat-best-day');
-  if (bestDayEl) bestDayEl.textContent = bestDay > 0 ? bestDay : '—';
-
-  // Overall Rank: position in individual leaderboard (if loaded)
+  // --- Station Rank: position in individual leaderboard (if loaded) ---
   const rankEl = document.getElementById('stat-rank');
   if (rankEl) {
     if (state.leaderboardIndividual) {
