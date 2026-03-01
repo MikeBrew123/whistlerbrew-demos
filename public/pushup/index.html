@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pushup Challenge — Fire Service</title>
+
+  <!--
+    FONTS: We're using two Google Fonts
+    - Oswald: Bold, strong display font for headers (feels powerful/athletic)
+    - Source Sans 3: Clean, readable body font
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =============================================
+       CSS VARIABLES — Central control for all colors/fonts
+       Change these to retheme the entire page
+       ============================================= */
+    :root {
+      --fire-red: #D42A1E;
+      --fire-orange: #E8651A;
+      --fire-yellow: #F5A623;
+      --dark-bg: #1A1A2E;
+      --darker-bg: #12121F;
+      --card-bg: #222240;
+      --card-border: #333355;
+      --text-primary: #F0F0F5;
+      --text-secondary: #9999BB;
+      --text-muted: #666688;
+      --green-positive: #2ECC71;
+      --red-negative: #E74C3C;
+      --blue-accent: #3498DB;
+      --font-display: 'Oswald', sans-serif;
+      --font-body: 'Source Sans 3', sans-serif;
+    }
+
+    /* =============================================
+       RESET & BASE — Clean slate for consistent styling
+       ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       LAYOUT — Page structure
+       ============================================= */
+    .app-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header with fire gradient background */
+    .header {
+      text-align: center;
+      padding: 30px 20px;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, var(--dark-bg) 0%, #2A1520 50%, var(--dark-bg) 100%);
+      border-bottom: 3px solid var(--fire-red);
+      border-radius: 12px;
+    }
+
+    .header h1 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      /* Fire gradient text effect */
+      background: linear-gradient(90deg, var(--fire-yellow), var(--fire-orange), var(--fire-red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    /* Cards — The main content containers */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--fire-orange);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* =============================================
+       NAVIGATION TABS — Switch between views
+       ============================================= */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 24px;
+      background: var(--darker-bg);
+      border-radius: 10px;
+      padding: 4px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px 16px;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .tab:hover {
+      color: var(--text-secondary);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .tab.active {
+      background: var(--card-bg);
+      color: var(--fire-orange);
+      font-weight: 600;
+    }
+
+    /* =============================================
+       FORMS & INPUTS
+       ============================================= */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      background: var(--darker-bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--fire-orange);
+    }
+
+    /* Big number input for pushup count */
+    .pushup-input {
+      font-size: 3rem !important;
+      text-align: center;
+      font-family: var(--font-display) !important;
+      font-weight: 700;
+      padding: 20px !important;
+      letter-spacing: 2px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--fire-red), var(--fire-orange));
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(212, 42, 30, 0.4);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-secondary {
+      background: var(--card-border);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: #444466;
+    }
+
+    .btn-small {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      width: auto;
+    }
+
+    /* =============================================
+       STATS GRID — The 4-box dashboard summary
+       ============================================= */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat-box {
+      background: var(--darker-bg);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-box .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: var(--font-display);
+    }
+
+    .stat-box .value {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      margin-top: 4px;
+    }
+
+    .stat-box .value.positive { color: var(--green-positive); }
+    .stat-box .value.negative { color: var(--red-negative); }
+    .stat-box .value.neutral { color: var(--fire-orange); }
+
+    /* =============================================
+       CALENDAR VIEW — Color-coded day grid
+       ============================================= */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-top: 12px;
+    }
+
+    .cal-header {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      padding: 4px;
+    }
+
+    .cal-day {
+      aspect-ratio: 1;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      position: relative;
+      cursor: default;
+      transition: transform 0.15s;
+    }
+
+    .cal-day:not(.empty):hover {
+      transform: scale(1.1);
+      z-index: 1;
+    }
+
+    .cal-day .day-num {
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    .cal-day .day-count {
+      font-size: 0.65rem;
+      opacity: 0.8;
+    }
+
+    /* Calendar color states */
+    .cal-day.met { background: rgba(46, 204, 113, 0.3); color: var(--green-positive); }
+    .cal-day.banked { background: rgba(52, 152, 219, 0.3); color: var(--blue-accent); }
+    .cal-day.missed { background: rgba(231, 76, 60, 0.25); color: var(--red-negative); }
+    .cal-day.rest { background: rgba(255,255,255,0.05); color: var(--text-muted); }
+    .cal-day.future { background: rgba(255,255,255,0.03); color: var(--text-muted); }
+    .cal-day.today {
+      outline: 2px solid var(--fire-orange);
+      outline-offset: -1px;
+    }
+    .cal-day.empty { background: transparent; }
+
+    .calendar-legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* =============================================
+       LEADERBOARD TABLES
+       ============================================= */
+    .leaderboard-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .leaderboard-table th {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .leaderboard-table td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .leaderboard-table tr:hover td {
+      background: rgba(255,255,255,0.03);
+    }
+
+    .rank-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      width: 36px;
+    }
+
+    .rank-num.gold { color: #FFD700; }
+    .rank-num.silver { color: #C0C0C0; }
+    .rank-num.bronze { color: #CD7F32; }
+
+    .player-name {
+      font-weight: 600;
+    }
+
+    .player-hall {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .bank-positive { color: var(--green-positive); font-weight: 600; }
+    .bank-negative { color: var(--red-negative); font-weight: 600; }
+
+    /* =============================================
+       LOADING & MESSAGES
+       ============================================= */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+    }
+
+    .loading .spinner {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--card-border);
+      border-top-color: var(--fire-orange);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--green-positive);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.error {
+      background: var(--red-negative);
+    }
+
+    /* =============================================
+       WELCOME / REGISTRATION SCREEN
+       ============================================= */
+    .welcome-screen {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .welcome-screen h2 {
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .welcome-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin: 8px 0;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      border-top: 1px solid var(--card-border);
+    }
+
+    /* Identity bar (shows who's logged in) */
+    .identity-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      background: var(--darker-bg);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .identity-bar .name {
+      font-weight: 700;
+      color: var(--fire-orange);
+    }
+
+    .identity-bar .hall {
+      color: var(--text-muted);
+    }
+
+    .identity-bar button {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      text-decoration: underline;
+    }
+
+    .identity-bar button:hover {
+      color: var(--text-secondary);
+    }
+
+    /* Today's target hero display */
+    .today-hero {
+      text-align: center;
+      padding: 20px;
+      background: var(--darker-bg);
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    .today-hero .target-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      letter-spacing: 1px;
+    }
+
+    .today-hero .target-number {
+      font-size: 4rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--fire-orange);
+      line-height: 1.1;
+    }
+
+    .today-hero .target-sublabel {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .today-hero.rest .target-number {
+      font-size: 2.5rem;
+      color: var(--text-muted);
+    }
+
+    /* Already logged today indicator */
+    .already-logged {
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid rgba(46, 204, 113, 0.3);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--green-positive);
+      font-weight: 600;
+    }
+
+    /* Date picker row */
+    .date-row {
+      display: flex;
+      gap: 8px;
+      align-items: end;
+      margin-bottom: 16px;
+    }
+
+    .date-row .form-group {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .date-row .btn {
+      width: auto;
+      white-space: nowrap;
+    }
+
+    /* Section toggle for catching up */
+    .toggle-section {
+      margin-top: 12px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 4px 0;
+      text-decoration: underline;
+    }
+
+    .toggle-btn:hover {
+      color: var(--text-secondary);
+    }
+
+    .toggle-content {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .toggle-content.visible {
+      display: block;
+    }
+
+    /* =============================================
+       HALL SELECTION MODAL — For returning users with no hall
+       ============================================= */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.visible {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--fire-orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .modal-content p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .modal-content .form-group {
+      text-align: left;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.8rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .stat-box .value { font-size: 1.5rem; }
+      .pushup-input { font-size: 2.5rem !important; }
+      .today-hero .target-number { font-size: 3rem; }
+      .tabs { font-size: 0.8rem; }
+      .tab { padding: 10px 8px; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="app-container">
+
+  <!-- ========== HEADER ========== -->
+  <div class="header">
+    <h1>Pushup Challenge</h1>
+    <div class="subtitle">Fire Service Mental Health — March 2026</div>
+  </div>
+
+  <!-- ========== TOAST (popup notifications) ========== -->
+  <div id="toast" class="toast"></div>
+
+  <!-- ========== HALL SELECTION MODAL ========== -->
+  <div id="hall-modal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Select Your Hall</h3>
+      <p>Welcome! Pick your fire hall to get started.</p>
+      <div class="form-group">
+        <label>Fire Hall:</label>
+        <select id="modal-hall">
+          <option value="">Select your hall...</option>
+          <option value="Whistler Hall 1">Whistler Hall 1</option>
+          <option value="Whistler Hall 2">Whistler Hall 2</option>
+          <option value="Whistler Hall 3">Whistler Hall 3</option>
+          <option value="__other__">Other...</option>
+        </select>
+      </div>
+      <div id="modal-other-hall-group" class="form-group" style="display:none">
+        <label>Enter your hall name:</label>
+        <input type="text" id="modal-hall-other" placeholder="e.g. North Van Fire" maxlength="50">
+      </div>
+      <button class="btn btn-primary" onclick="submitHallModal()" style="margin-top:12px">Save &amp; Continue</button>
+    </div>
+  </div>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div id="loading-screen" class="loading">
+    <div class="spinner"></div>
+    <p style="margin-top:12px">Loading challenge data...</p>
+  </div>
+
+  <!-- ========== WELCOME SCREEN (first visit / switch user) ========== -->
+  <div id="welcome-screen" class="card welcome-screen" style="display:none">
+    <h2>Join the Challenge</h2>
+    <p style="color:var(--text-secondary); margin-top:8px">Track your daily pushups with your crew</p>
+
+    <!-- Returning user picks from dropdown -->
+    <div id="returning-section" class="welcome-options" style="display:none">
+      <div class="form-group">
+        <label>Welcome back — select your name:</label>
+        <select id="returning-select">
+          <option value="">Choose your name...</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="loginExisting()">Let's Go</button>
+      <div class="divider">or register as someone new</div>
+    </div>
+
+    <!-- New user registration -->
+    <div class="welcome-options">
+      <div class="form-group">
+        <label>Your display name:</label>
+        <input type="text" id="reg-name" placeholder="e.g. Brew" maxlength="30">
+      </div>
+      <div class="form-group">
+        <label>Fire Hall:</label>
+        <select id="reg-hall">
+          <option value="">Select your hall...</option>
+          <option value="Whistler Hall 1">Whistler Hall 1</option>
+          <option value="Whistler Hall 2">Whistler Hall 2</option>
+          <option value="Whistler Hall 3">Whistler Hall 3</option>
+          <option value="__other__">Other...</option>
+        </select>
+      </div>
+      <div id="other-hall-group" class="form-group" style="display:none">
+        <label>Enter your hall name:</label>
+        <input type="text" id="reg-hall-other" placeholder="e.g. North Van Fire" maxlength="50">
+      </div>
+      <button class="btn btn-primary" onclick="registerNew()">Join Challenge</button>
+    </div>
+  </div>
+
+  <!-- ========== MAIN APP (after login) ========== -->
+  <div id="main-app" style="display:none">
+
+    <!-- Identity bar — shows who's logged in -->
+    <div class="identity-bar">
+      <div>
+        <span class="name" id="identity-name"></span>
+        <span class="hall" id="identity-hall"></span>
+      </div>
+      <button onclick="switchUser()">Not you?</button>
+    </div>
+
+    <!-- Navigation tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="dashboard" onclick="showTab('dashboard')">Dashboard</button>
+      <button class="tab" data-tab="log" onclick="showTab('log')">Log Pushups</button>
+      <button class="tab" data-tab="leaderboard" onclick="showTab('leaderboard')">Leaderboard</button>
+    </div>
+
+    <!-- ===== DASHBOARD TAB ===== -->
+    <div id="tab-dashboard" class="tab-content">
+
+      <!-- Stats summary boxes -->
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="label">Today's Target</div>
+          <div class="value neutral" id="stat-today-target">--</div>
+        </div>
+        <div class="stat-box">
+          <div class="label">Today Logged</div>
+          <div class="value" id="stat-today-logged">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="label">Total Done</div>
+          <div class="value" id="stat-total-done">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="label">Bank Balance</div>
+          <div class="value" id="stat-bank">0</div>
+        </div>
+      </div>
+
+      <!-- Calendar view -->
+      <div class="card">
+        <h2>March Progress</h2>
+        <div id="calendar-container" class="calendar-grid"></div>
+        <div class="calendar-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:rgba(46,204,113,0.5)"></div> Met target</div>
+          <div class="legend-item"><div class="legend-dot" style="background:rgba(52,152,219,0.5)"></div> Banked extra</div>
+          <div class="legend-item"><div class="legend-dot" style="background:rgba(231,76,60,0.4)"></div> Missed</div>
+          <div class="legend-item"><div class="legend-dot" style="background:rgba(255,255,255,0.1)"></div> Rest / Future</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LOG PUSHUPS TAB ===== -->
+    <div id="tab-log" class="tab-content" style="display:none">
+
+      <!-- Today's target hero -->
+      <div id="today-hero" class="today-hero">
+        <div class="target-label">Today's Target</div>
+        <div class="target-number" id="hero-target">--</div>
+        <div class="target-sublabel" id="hero-sublabel"></div>
+      </div>
+
+      <!-- Already logged indicator -->
+      <div id="already-logged" class="already-logged" style="display:none">
+        You've logged <span id="already-count">0</span> pushups today
+      </div>
+
+      <!-- Quick log for today -->
+      <div class="card">
+        <h2>Log Pushups</h2>
+        <div class="form-group">
+          <label>How many pushups?</label>
+          <input type="number" id="log-count" class="pushup-input" min="0" max="9999" placeholder="0">
+        </div>
+        <button class="btn btn-primary" id="log-today-btn" onclick="logPushups()">
+          Log for Today
+        </button>
+
+        <!-- Option to log for a different date -->
+        <div class="toggle-section">
+          <button class="toggle-btn" onclick="toggleDifferentDate()">
+            Log for a different date? (catch up or bank ahead)
+          </button>
+          <div id="different-date-section" class="toggle-content">
+            <div class="date-row">
+              <div class="form-group">
+                <label>Select date:</label>
+                <input type="date" id="log-date">
+              </div>
+            </div>
+            <button class="btn btn-secondary" onclick="logPushups(true)">
+              Log for Selected Date
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LEADERBOARD TAB ===== -->
+    <div id="tab-leaderboard" class="tab-content" style="display:none">
+
+      <!-- Individual leaderboard -->
+      <div class="card">
+        <h2>Individual Ranking</h2>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th style="text-align:right">Total</th>
+              <th style="text-align:right">Bank</th>
+            </tr>
+          </thead>
+          <tbody id="individual-leaderboard">
+            <tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Hall leaderboard -->
+      <div class="card">
+        <h2>Fire Hall Ranking</h2>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Hall</th>
+              <th style="text-align:right">Members</th>
+              <th style="text-align:right">Avg Bank</th>
+            </tr>
+          </thead>
+          <tbody id="hall-leaderboard">
+            <tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /main-app -->
+
+</div><!-- /app-container -->
+
+<script>
+/**
+ * =====================================================
+ * PUSHUP CHALLENGE — Frontend JavaScript
+ * =====================================================
+ *
+ * HOW THIS WORKS:
+ *
+ * 1. When the page loads, it calls the Google Apps Script "API"
+ *    to get the schedule and participant list.
+ *
+ * 2. If the browser has a saved participant_id (from localStorage),
+ *    it auto-loads that person's data. Otherwise, it shows the
+ *    welcome/registration screen.
+ *
+ * 3. All data flows through the API_URL — that's the Google Apps
+ *    Script web app deployment URL.
+ * =====================================================
+ */
+
+// ==========================================
+// CONFIGURATION
+// ==========================================
+// Replace this with your deployed Google Apps Script URL
+// (See SETUP.md for how to get this URL)
+const API_URL = 'https://script.google.com/macros/s/AKfycbzWO2I7Ldrsau8q5Pc8P45PDvex065s1MpP6T__W76wviu-wDhFc10UX5Zb9alc2DVrRg/exec';
+
+// ==========================================
+// APP STATE
+// ==========================================
+// These variables hold all the data the page needs.
+// Think of it as the app's "memory" while it's open.
+let state = {
+  schedule: [],        // Array of { date, target, label } for every day
+  participants: [],    // Array of all registered participants
+  myLog: [],          // Current user's pushup log entries
+  myId: null,          // Current user's participant ID
+  myName: null,        // Current user's display name
+  myHall: null         // Current user's fire hall
+};
+
+// ==========================================
+// PAGE INITIALIZATION
+// ==========================================
+/**
+ * This runs when the page first loads.
+ * It checks if we have a saved user, fetches data from the API,
+ * and decides which screen to show.
+ */
+document.addEventListener('DOMContentLoaded', async () => {
+  // Check if this browser has a saved participant from last visit
+  state.myId = localStorage.getItem('pushup_participant_id');
+  state.myName = localStorage.getItem('pushup_participant_name');
+  state.myHall = localStorage.getItem('pushup_participant_hall');
+
+  // Show "Other" hall input when they select "Other" from registration dropdown
+  document.getElementById('reg-hall').addEventListener('change', (e) => {
+    const otherGroup = document.getElementById('other-hall-group');
+    otherGroup.style.display = e.target.value === '__other__' ? 'block' : 'none';
+  });
+
+  // Show "Other" hall input in the modal dropdown too
+  document.getElementById('modal-hall').addEventListener('change', (e) => {
+    const otherGroup = document.getElementById('modal-other-hall-group');
+    otherGroup.style.display = e.target.value === '__other__' ? 'block' : 'none';
+  });
+
+  try {
+    // Fetch initial data from our API
+    const data = await apiGet('init', state.myId ? { participant_id: state.myId } : {});
+
+    state.schedule = data.schedule || [];
+    state.participants = data.participants || [];
+    state.myLog = data.log || [];
+
+    // Hide loading screen
+    document.getElementById('loading-screen').style.display = 'none';
+
+    // Decide what to show:
+    if (state.myId && state.participants.find(p => p.id === state.myId)) {
+      // We have a saved user who exists in the system — go to dashboard
+      showMainApp();
+    } else {
+      // No saved user (or they were deleted) — show welcome screen
+      showWelcome();
+    }
+
+  } catch (error) {
+    console.error('Init failed:', error);
+    document.getElementById('loading-screen').innerHTML =
+      '<p style="color:var(--red-negative)">Failed to load. Check your connection and refresh.</p>' +
+      '<p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem">' + error.message + '</p>';
+  }
+});
+
+// ==========================================
+// API COMMUNICATION
+// ==========================================
+
+/**
+ * apiGet — Makes a GET request to our Google Apps Script API
+ *
+ * GET requests are for reading data (they don't change anything).
+ * We pass parameters in the URL (like ?action=init&participant_id=123).
+ */
+async function apiGet(action, params = {}) {
+  const url = new URL(API_URL);
+  url.searchParams.set('action', action);
+
+  // Add any extra parameters to the URL
+  for (const [key, val] of Object.entries(params)) {
+    if (val) url.searchParams.set(key, val);
+  }
+
+  const response = await fetch(url.toString());
+  const data = await response.json();
+
+  if (data.error) throw new Error(data.error);
+  return data;
+}
+
+/**
+ * apiPost — Makes a POST request to our Google Apps Script API
+ *
+ * POST requests are for writing data (creating/updating things).
+ * We send the data in the request body as JSON.
+ */
+async function apiPost(action, body = {}) {
+  body.action = action;
+
+  const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+
+  // Google Apps Script sometimes redirects POST requests.
+  // If we get redirected, we need to follow it.
+  const data = await response.json();
+
+  if (data.error) throw new Error(data.error);
+  return data;
+}
+
+// ==========================================
+// SCREEN MANAGEMENT
+// ==========================================
+
+/** Shows the welcome/registration screen */
+function showWelcome() {
+  document.getElementById('welcome-screen').style.display = 'block';
+  document.getElementById('main-app').style.display = 'none';
+
+  // If there are existing participants, show the "returning user" dropdown
+  if (state.participants.length > 0) {
+    const section = document.getElementById('returning-section');
+    section.style.display = 'flex';
+
+    const select = document.getElementById('returning-select');
+    select.innerHTML = '<option value="">Choose your name...</option>';
+
+    // Sort alphabetically for easy finding
+    const sorted = [...state.participants].sort((a, b) => a.name.localeCompare(b.name));
+    for (const p of sorted) {
+      const hallLabel = p.hall ? ' — ' + p.hall : '';
+      select.innerHTML += `<option value="${p.id}">${p.name}${hallLabel}</option>`;
+    }
+  }
+}
+
+/** Shows the main app (dashboard/log/leaderboard) */
+function showMainApp() {
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.getElementById('main-app').style.display = 'block';
+
+  // Check if user has no hall set (pre-loaded participants)
+  // If so, show the hall selection modal
+  if (!state.myHall || state.myHall === '') {
+    showHallModal();
+    return;
+  }
+
+  // Update the identity bar
+  document.getElementById('identity-name').textContent = state.myName;
+  document.getElementById('identity-hall').textContent = ' — ' + state.myHall;
+
+  // Render the current tab
+  renderDashboard();
+  showTab('dashboard');
+}
+
+/** Shows the hall selection modal for users with no hall */
+function showHallModal() {
+  document.getElementById('hall-modal').classList.add('visible');
+}
+
+/** Handles submitting the hall selection modal */
+async function submitHallModal() {
+  let hall = document.getElementById('modal-hall').value;
+
+  if (hall === '__other__') {
+    hall = document.getElementById('modal-hall-other').value.trim();
+    if (!hall) return showToast('Please enter your hall name', true);
+  }
+
+  if (!hall) return showToast('Please select your fire hall', true);
+
+  try {
+    const result = await apiPost('update_hall', {
+      participant_id: state.myId,
+      hall: hall
+    });
+
+    // Update local state
+    state.myHall = hall;
+    localStorage.setItem('pushup_participant_hall', hall);
+
+    // Also update the participant in the local list
+    const p = state.participants.find(p => p.id === state.myId);
+    if (p) p.hall = hall;
+
+    // Close modal and show the app
+    document.getElementById('hall-modal').classList.remove('visible');
+
+    // Update the identity bar
+    document.getElementById('identity-name').textContent = state.myName;
+    document.getElementById('identity-hall').textContent = ' — ' + state.myHall;
+
+    renderDashboard();
+    showTab('dashboard');
+
+    showToast('Welcome, ' + state.myName + '!');
+
+  } catch (error) {
+    showToast('Failed to save hall: ' + error.message, true);
+  }
+}
+
+/** Switches between tabs (Dashboard / Log / Leaderboard) */
+function showTab(tabName) {
+  // Hide all tab content
+  document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+  // Remove active class from all tabs
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+
+  // Show selected tab and mark it active
+  document.getElementById('tab-' + tabName).style.display = 'block';
+  document.querySelector(`.tab[data-tab="${tabName}"]`).classList.add('active');
+
+  // Render content for the selected tab
+  if (tabName === 'dashboard') renderDashboard();
+  if (tabName === 'log') renderLogTab();
+  if (tabName === 'leaderboard') loadLeaderboard();
+}
+
+// ==========================================
+// REGISTRATION & LOGIN
+// ==========================================
+
+/** Handles the "returning user" dropdown login */
+function loginExisting() {
+  const select = document.getElementById('returning-select');
+  const id = select.value;
+  if (!id) return showToast('Please select your name', true);
+
+  const participant = state.participants.find(p => p.id === id);
+  if (!participant) return showToast('Participant not found', true);
+
+  // Save to localStorage so we remember them next time
+  state.myId = participant.id;
+  state.myName = participant.name;
+  state.myHall = participant.hall || '';
+  localStorage.setItem('pushup_participant_id', state.myId);
+  localStorage.setItem('pushup_participant_name', state.myName);
+  localStorage.setItem('pushup_participant_hall', state.myHall);
+
+  // Fetch their log data and show the app
+  loadMyLog().then(() => showMainApp());
+}
+
+/** Handles new user registration */
+async function registerNew() {
+  const name = document.getElementById('reg-name').value.trim();
+  let hall = document.getElementById('reg-hall').value;
+
+  // If they selected "Other", use the custom text input
+  if (hall === '__other__') {
+    hall = document.getElementById('reg-hall-other').value.trim();
+    if (!hall) return showToast('Please enter your hall name', true);
+  }
+
+  if (!name) return showToast('Please enter your name', true);
+  if (!hall) return showToast('Please select your fire hall', true);
+
+  try {
+    const result = await apiPost('register', { name, hall });
+
+    // Save the new participant locally
+    state.myId = result.participant.id;
+    state.myName = result.participant.name;
+    state.myHall = result.participant.hall;
+    localStorage.setItem('pushup_participant_id', state.myId);
+    localStorage.setItem('pushup_participant_name', state.myName);
+    localStorage.setItem('pushup_participant_hall', state.myHall);
+
+    // Add to local participants list
+    state.participants.push(result.participant);
+    state.myLog = [];
+
+    showToast('Welcome to the challenge, ' + state.myName + '!');
+    showMainApp();
+
+  } catch (error) {
+    showToast('Registration failed: ' + error.message, true);
+  }
+}
+
+/** "Not you?" button — clears saved identity and shows welcome screen */
+function switchUser() {
+  localStorage.removeItem('pushup_participant_id');
+  localStorage.removeItem('pushup_participant_name');
+  localStorage.removeItem('pushup_participant_hall');
+  state.myId = null;
+  state.myName = null;
+  state.myHall = null;
+  state.myLog = [];
+  showWelcome();
+}
+
+// ==========================================
+// PUSHUP LOGGING
+// ==========================================
+
+/**
+ * Logs pushups — either for today or a selected date.
+ *
+ * @param {boolean} useDatePicker - If true, use the date picker value
+ *                                   instead of today's date
+ */
+async function logPushups(useDatePicker = false) {
+  const count = parseInt(document.getElementById('log-count').value);
+  if (isNaN(count) || count < 0) return showToast('Enter a valid number', true);
+
+  let date;
+  if (useDatePicker) {
+    date = document.getElementById('log-date').value;
+    if (!date) return showToast('Please select a date', true);
+  } else {
+    date = getToday();
+  }
+
+  // Disable button while saving to prevent double-submits
+  const btn = useDatePicker
+    ? document.querySelector('#different-date-section .btn')
+    : document.getElementById('log-today-btn');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  try {
+    const result = await apiPost('log', {
+      participant_id: state.myId,
+      date: date,
+      count: count
+    });
+
+    // Update local log data with what the server returned
+    state.myLog = result.log;
+
+    showToast(count + ' pushups logged!');
+    document.getElementById('log-count').value = '';
+
+    // Refresh the displays
+    renderLogTab();
+    renderDashboard();
+
+  } catch (error) {
+    showToast('Failed to save: ' + error.message, true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = useDatePicker ? 'Log for Selected Date' : 'Log for Today';
+  }
+}
+
+// ==========================================
+// DASHBOARD RENDERING
+// ==========================================
+
+/** Renders the dashboard: stats boxes + calendar */
+function renderDashboard() {
+  const today = getToday();
+  const scheduleMap = {};
+  state.schedule.forEach(s => scheduleMap[s.date] = s);
+
+  const logMap = {};
+  state.myLog.forEach(l => logMap[l.date] = l.count);
+
+  // --- Calculate stats ---
+  const todaySchedule = scheduleMap[today];
+  const todayTarget = todaySchedule ? todaySchedule.target : 0;
+  const todayLogged = logMap[today] || 0;
+
+  let totalDone = 0;
+  let totalRequired = 0;
+
+  for (const s of state.schedule) {
+    if (s.date <= today) {
+      totalRequired += s.target;
+    }
+    if (logMap[s.date]) {
+      totalDone += logMap[s.date];
+    }
+  }
+
+  const bank = totalDone - totalRequired;
+
+  // --- Update stat boxes ---
+  const targetEl = document.getElementById('stat-today-target');
+  if (todaySchedule && todaySchedule.label === 'REST') {
+    targetEl.textContent = 'REST';
+    targetEl.className = 'value';
+  } else {
+    targetEl.textContent = todayTarget;
+    targetEl.className = 'value neutral';
+  }
+
+  const loggedEl = document.getElementById('stat-today-logged');
+  loggedEl.textContent = todayLogged;
+  loggedEl.className = 'value ' + (todayLogged >= todayTarget && todayTarget > 0 ? 'positive' : '');
+
+  document.getElementById('stat-total-done').textContent = totalDone.toLocaleString();
+
+  const bankEl = document.getElementById('stat-bank');
+  bankEl.textContent = (bank >= 0 ? '+' : '') + bank;
+  bankEl.className = 'value ' + (bank >= 0 ? 'positive' : 'negative');
+
+  // --- Render calendar ---
+  renderCalendar(scheduleMap, logMap, today);
+}
+
+/**
+ * Renders the calendar grid for March.
+ *
+ * Each day is color-coded:
+ * - Green: Met the target exactly
+ * - Blue: Banked extra (did more than required)
+ * - Red: Missed (logged less than target, and day has passed)
+ * - Gray: Rest day or future day
+ * - Orange outline: Today
+ */
+function renderCalendar(scheduleMap, logMap, today) {
+  const container = document.getElementById('calendar-container');
+  container.innerHTML = '';
+
+  // Day-of-week headers
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  days.forEach(d => {
+    container.innerHTML += `<div class="cal-header">${d}</div>`;
+  });
+
+  // March 2026 starts on Sunday (day 0)
+  const marchStart = new Date(2026, 2, 1); // Month is 0-indexed
+  const startDay = marchStart.getDay(); // 0=Sun, 6=Sat
+
+  // Add empty cells before March 1
+  for (let i = 0; i < startDay; i++) {
+    container.innerHTML += '<div class="cal-day empty"></div>';
+  }
+
+  // Render each day of March
+  for (let d = 1; d <= 31; d++) {
+    const dateStr = `2026-03-${String(d).padStart(2, '0')}`;
+    const sched = scheduleMap[dateStr];
+    const logged = logMap[dateStr] || 0;
+    const isToday = dateStr === today;
+    const isPast = dateStr < today;
+
+    let cssClass = 'cal-day';
+    let content = '';
+
+    if (!sched) {
+      // No schedule for this day (shouldn't happen for March, but safety check)
+      cssClass += ' future';
+      content = `<div class="day-num">${d}</div>`;
+    } else if (sched.label === 'REST' || sched.target === 0) {
+      cssClass += ' rest';
+      content = `<div class="day-num">${d}</div><div class="day-count">REST</div>`;
+    } else if (isPast || isToday) {
+      if (logged > sched.target) {
+        cssClass += ' banked'; // Did more than required!
+        content = `<div class="day-num">${d}</div><div class="day-count">${logged}/${sched.target}</div>`;
+      } else if (logged >= sched.target) {
+        cssClass += ' met';
+        content = `<div class="day-num">${d}</div><div class="day-count">${logged}</div>`;
+      } else if (logged > 0) {
+        cssClass += ' missed'; // Did some but not enough
+        content = `<div class="day-num">${d}</div><div class="day-count">${logged}/${sched.target}</div>`;
+      } else if (isPast) {
+        cssClass += ' missed'; // Didn't log at all
+        content = `<div class="day-num">${d}</div><div class="day-count">0/${sched.target}</div>`;
+      } else {
+        cssClass += ' future'; // Today but hasn't logged yet
+        content = `<div class="day-num">${d}</div><div class="day-count">${sched.target}</div>`;
+      }
+    } else {
+      cssClass += ' future';
+      content = `<div class="day-num">${d}</div><div class="day-count">${sched.target}</div>`;
+    }
+
+    if (isToday) cssClass += ' today';
+
+    container.innerHTML += `<div class="${cssClass}" title="${dateStr}: ${logged}/${sched ? sched.target : '?'}">${content}</div>`;
+  }
+}
+
+// ==========================================
+// LOG TAB RENDERING
+// ==========================================
+
+/** Renders the "Log Pushups" tab */
+function renderLogTab() {
+  const today = getToday();
+  const todaySchedule = state.schedule.find(s => s.date === today);
+  const todayTarget = todaySchedule ? todaySchedule.target : 0;
+  const isRest = todaySchedule && todaySchedule.label === 'REST';
+
+  // Update hero display
+  const hero = document.getElementById('today-hero');
+  const heroTarget = document.getElementById('hero-target');
+  const heroSub = document.getElementById('hero-sublabel');
+
+  if (isRest) {
+    hero.className = 'today-hero rest';
+    heroTarget.textContent = 'REST DAY';
+    heroSub.textContent = 'Take it easy — you earned it';
+  } else {
+    hero.className = 'today-hero';
+    heroTarget.textContent = todayTarget;
+    heroSub.textContent = todaySchedule && todaySchedule.label
+      ? todaySchedule.label.toUpperCase() + ' DAY'
+      : 'pushups today';
+  }
+
+  // Show if already logged today
+  const todayLog = state.myLog.find(l => l.date === today);
+  const alreadyEl = document.getElementById('already-logged');
+  if (todayLog && todayLog.count > 0) {
+    alreadyEl.style.display = 'block';
+    document.getElementById('already-count').textContent = todayLog.count;
+  } else {
+    alreadyEl.style.display = 'none';
+  }
+
+  // Set date picker defaults
+  const dateInput = document.getElementById('log-date');
+  if (!dateInput.value) {
+    dateInput.value = today;
+  }
+  // Restrict date range to schedule dates
+  if (state.schedule.length > 0) {
+    dateInput.min = state.schedule[0].date;
+    dateInput.max = state.schedule[state.schedule.length - 1].date;
+  }
+}
+
+// ==========================================
+// LEADERBOARD
+// ==========================================
+
+/** Fetches leaderboard data from API and renders both tables */
+async function loadLeaderboard() {
+  try {
+    const data = await apiGet('leaderboard');
+    renderIndividualLeaderboard(data.individual);
+    renderHallLeaderboard(data.halls);
+  } catch (error) {
+    console.error('Leaderboard failed:', error);
+  }
+}
+
+function renderIndividualLeaderboard(individuals) {
+  const tbody = document.getElementById('individual-leaderboard');
+
+  if (!individuals || individuals.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">No data yet — start logging pushups!</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = individuals.map((p, i) => {
+    // First 3 get gold/silver/bronze coloring
+    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    const bankClass = p.bank >= 0 ? 'bank-positive' : 'bank-negative';
+    const bankStr = (p.bank >= 0 ? '+' : '') + p.bank;
+    // Highlight the current user's row
+    const isMe = p.id === state.myId;
+
+    return `<tr style="${isMe ? 'background:rgba(232,101,26,0.1)' : ''}">
+      <td class="rank-num ${rankClass}">${i + 1}</td>
+      <td>
+        <div class="player-name">${p.name}${isMe ? ' *' : ''}</div>
+        <div class="player-hall">${p.hall}</div>
+      </td>
+      <td style="text-align:right">${p.totalDone.toLocaleString()}</td>
+      <td style="text-align:right" class="${bankClass}">${bankStr}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderHallLeaderboard(halls) {
+  const tbody = document.getElementById('hall-leaderboard');
+
+  if (!halls || halls.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">No data yet</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = halls.map((h, i) => {
+    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    const bankClass = h.avgBank >= 0 ? 'bank-positive' : 'bank-negative';
+    const bankStr = (h.avgBank >= 0 ? '+' : '') + h.avgBank;
+    const isMyHall = h.hall === state.myHall;
+
+    return `<tr style="${isMyHall ? 'background:rgba(232,101,26,0.1)' : ''}">
+      <td class="rank-num ${rankClass}">${i + 1}</td>
+      <td>${h.hall}${isMyHall ? ' *' : ''}</td>
+      <td style="text-align:right">${h.memberCount}</td>
+      <td style="text-align:right" class="${bankClass}">${bankStr}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ==========================================
+// HELPER FUNCTIONS
+// ==========================================
+
+/** Gets today's date as YYYY-MM-DD string in local timezone */
+function getToday() {
+  const now = new Date();
+  return now.getFullYear() + '-' +
+    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+    String(now.getDate()).padStart(2, '0');
+}
+
+/** Fetches the current user's log entries from the API */
+async function loadMyLog() {
+  if (!state.myId) return;
+  const data = await apiGet('init', { participant_id: state.myId });
+  state.myLog = data.log || [];
+}
+
+/** Shows/hides the "different date" section on the log tab */
+function toggleDifferentDate() {
+  const section = document.getElementById('different-date-section');
+  section.classList.toggle('visible');
+}
+
+/**
+ * Shows a temporary notification at the bottom of the screen.
+ * Used for success messages ("Pushups logged!") and errors.
+ */
+function showToast(message, isError = false) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = 'toast' + (isError ? ' error' : '') + ' show';
+
+  // Auto-hide after 3 seconds
+  setTimeout(() => {
+    toast.className = 'toast' + (isError ? ' error' : '');
+  }, 3000);
+}
+</script>
+
+</body>
+</html>

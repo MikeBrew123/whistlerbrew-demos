@@ -45,3 +45,6 @@ next-env.d.ts
 secrets/*
 !secrets/.gitkeep
 !secrets/README.md
+
+# service account credentials
+config/service-account.json
