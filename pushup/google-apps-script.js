@@ -21,6 +21,136 @@
 const SCHEDULE_SHEET = 'Schedule';
 const PARTICIPANTS_SHEET = 'Participants';
 const LOG_SHEET = 'Log';
+const ROAST_SHEET = 'Roast';
+const PRAISE_SHEET = 'Praise';
+const HYPE_SHEET = 'Hype';
+const SHAME_SHEET = 'Shame';
+
+// ==========================================
+// CHIRP DATA — Embedded for lazy tab creation
+// Tabs are created from this data on first chirps request.
+// Edit the sheet tabs directly to customise messages.
+// ==========================================
+const CHIRP_SEED = {
+  Roast: [
+    "{name} thinks pushups are optional. The floor disagrees.",
+    "{name} \u2014 even the station cat has better form than your excuses \ud83d\udc31",
+    "{name}'s pushup count is lower than the WiFi signal at Hall 3",
+    "Dispatch to {name}: your pushup deficit has been reported \ud83d\udcdf",
+    "{name} is treating this challenge like a suggestion",
+    "{name} \u2014 the ground misses you. Visit it more often.",
+    "{name}'s arms filed a missing persons report",
+    "Someone check on {name}. Haven't seen them near the floor in days.",
+    "{name} heard 'push up' and pushed up from the couch",
+    "{name}'s pushup strategy: thoughts and prayers \ud83d\ude4f",
+    "{name} is out here doing zero reps and maximum excuses",
+    "{name} \u2014 the probies are outworking you right now",
+    "{name} bringing big 'I'll start Monday' energy",
+    "{name}'s deficit is bigger than the apparatus bay",
+    "{name} \u2014 your SCBA gets more of a workout than your arms",
+    "{name} thinks 'banking pushups' means saving them for retirement",
+    "{name} is on the express route to the Wall of Shame",
+    "Breaking: {name} spotted doing pushups. Just kidding.",
+    "{name}'s arms called. They want to know what's going on.",
+    "{name} \u2014 even a wet hose has more push than you right now",
+    "{name} is proof that showing up is only half the battle",
+    "{name} entered the challenge and chose violence\u2026 against their own score",
+    "{name}'s daily pushup count fits on a Post-it note",
+    "{name} \u2014 the only thing you're pushing is your luck",
+    "{name} has more rest days than the schedule allows",
+    "{name}'s pushup form: lying face down and hoping for the best",
+    "{name} is in a committed relationship with zero reps",
+    "{name} \u2014 somewhere a set of pushups is waiting and crying",
+    "{name}'s arms are on stress leave",
+    "{name} approaches pushups like a structure fire \u2014 avoid at all costs",
+    "{name} \u2014 your pushup count and your ambition have something in common: both are low",
+    "{name} is speedrunning last place",
+    "{name} put the 'rest' in 'fire service'",
+    "{name} \u2014 the only rep you're doing is reputation damage",
+    "{name} is living proof that peer pressure doesn't always work",
+    "{name}'s contribution to the team: moral support from the sidelines",
+    "{name} heard 'drop and give me 20' and negotiated it down to 0",
+    "{name} \u2014 at this rate the challenge will finish before you do",
+    "{name} treats pushup day like it's optional training",
+    "{name}'s arms have filed for a transfer to a different department",
+    "{name} is giving main character energy \u2014 if the main character never shows up",
+    "{name} \u2014 the floor called. It's lonely."
+  ],
+  Praise: [
+    "{name} is absolutely on fire right now \ud83d\udd25",
+    "{name} didn't come to play \u2014 they came to WORK \ud83d\udcaa",
+    "Someone check on {name}'s crew \u2014 they're carrying the whole hall",
+    "{name} is making this look way too easy",
+    "{name} woke up and chose pushups. Respect.",
+    "{name} is built different. The leaderboard confirms it.",
+    "{name} is treating the floor like it owes them money",
+    "{name} \u2014 certified machine. No days off.",
+    "{name} is the reason the rest of you should be worried",
+    "Shoutout to {name} \u2014 setting the standard \ud83c\udfc6",
+    "{name} is out here making the schedule look light",
+    "{name} doesn't bank pushups \u2014 they invest them",
+    "{name} eats big days for breakfast",
+    "{name} has more pushups than excuses. Take notes.",
+    "{name} \u2014 the floor knows your name and it's scared",
+    "{name} showing everyone how it's done. Legend.",
+    "{name} is running away with this thing \ud83c\udfc3\u200d\u2642\ufe0f\ud83d\udca8",
+    "{name} just keeps stacking. Unreal.",
+    "{name} \u2014 if pushups were currency you'd be retired",
+    "{name} is what happens when you actually show up every day",
+    "{name} is proving that consistency beats everything",
+    "{name} \u2014 your crew should be buying you coffee",
+    "{name} out here doing pushups like it's their primary job",
+    "{name} is the MVP your hall doesn't deserve",
+    "{name} \u2014 when they said 'go hard or go home' you chose violence",
+    "{name} is proof that firefighters are built different \ud83d\udd25",
+    "{name} \u2014 your consistency is motivating the entire crew",
+    "{name} just keeps showing up. That's the whole secret.",
+    "{name} \u2014 absolute unit. The leaderboard respects you.",
+    "{name} making the rest of the crew look like they're on vacation",
+    "{name} is what leadership looks like \u2014 from the front",
+    "{name} \u2014 the bell doesn't ring itself and neither do those reps",
+    "{name} is outworking everyone and making it look casual",
+    "{name} \u2014 respect earned one pushup at a time",
+    "{name} is the benchmark. Everyone else is playing catch-up."
+  ],
+  Hype: [
+    "{name} just banked {bank} extra. That's how leaders operate.",
+    "{name} is +{bank} ahead. Building a fortress of pushups.",
+    "{name} has {bank} in the bank. Sleep well tonight.",
+    "{name} with a surplus of {bank}. Future-proofing like a pro.",
+    "{name} banked {bank} \u2014 big day? What big day?",
+    "{name} is +{bank} and building momentum every day",
+    "{name} with {bank} banked \u2014 big day won't know what hit it",
+    "{name} \u2014 +{bank} means you earned that rest day guilt-free",
+    "{name} is sitting on +{bank}. That's called being prepared.",
+    "{name} has +{bank} in reserve. The big days don't scare them.",
+    "{name} \u2014 +{bank} banked and still grinding. Relentless.",
+    "{name} just stacked {bank} extra. That's compound interest on effort.",
+    "{name} is +{bank} deep. The schedule can't touch them."
+  ],
+  Shame: [
+    "{name} is {deficit} behind. The clock is ticking \u23f0",
+    "{name} owes {deficit} pushups. The floor remembers.",
+    "{name} \u2014 your deficit of {deficit} is showing",
+    "{name} is down {deficit}. Time to put in some overtime.",
+    "{name} needs {deficit} pushups just to break even. Better start now.",
+    "{name} is {deficit} in the red. Even the probie is ahead of you.",
+    "{name}'s deficit: {deficit}. That's a lot of catching up.",
+    "{name} \u2014 {deficit} pushups behind is not a strategy",
+    "{name} has a {deficit} pushup debt. Payments are due immediately.",
+    "{name}'s bank balance: -{deficit}. The auditor is concerned.",
+    "{name} is {deficit} behind. The big day is coming and it does not care.",
+    "{name} \u2014 {deficit} deficit. Your future self is not impressed.",
+    "{name} needs to find {deficit} pushups somewhere. Check the couch cushions.",
+    "{name}'s arms owe the challenge {deficit} pushups. Pay up.",
+    "{name} \u2014 at -{deficit} you're not in a hole you're in a basement",
+    "Alert: {name} is {deficit} pushups behind. Rescue team en route.",
+    "{name} owes {deficit}. Interest is accumulating daily.",
+    "{name}'s deficit of {deficit} is now visible from the truck.",
+    "{name} is {deficit} in the hole. Someone throw a ladder.",
+    "{name} is down {deficit}. That's not a bank balance that's a cry for help."
+  ]
+};
 
 // ==========================================
 // doGet — Handles all READ requests
@@ -42,6 +172,11 @@ function doGet(e) {
       case 'leaderboard':
         // Returns aggregated stats for the leaderboard display.
         result = handleLeaderboard();
+        break;
+
+      case 'chirps':
+        // Returns 5-8 personalised chirp messages for the ticker.
+        result = handleChirps();
         break;
 
       default:
@@ -489,6 +624,149 @@ function formatDate(d) {
   // Use Utilities.formatDate with the spreadsheet timezone
   // This prevents timezone offset issues
   return Utilities.formatDate(new Date(d), SpreadsheetApp.getActiveSpreadsheet().getSpreadsheetTimeZone(), 'yyyy-MM-dd');
+}
+
+// ==========================================
+// CHIRP HANDLERS
+// ==========================================
+
+/**
+ * handleChirps — Builds 5-8 personalised chirp messages for the ticker.
+ * Rules:
+ *   Roast  → bottom 3 active participants (lowest bank)
+ *   Praise → top 3 active participants (highest bank)
+ *   Hype   → anyone with positive bank, fills {bank}
+ *   Shame  → anyone with negative bank, fills {deficit}
+ * Only participants with >0 total pushups are eligible.
+ */
+function handleChirps() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  ensureChirpTabs(ss);
+
+  // Get active participants with stats
+  const participants = getAllParticipants();
+  const allLogs = getAllLogs();
+  const schedule = getScheduleAsMap();
+  const today = formatDate(new Date());
+
+  const stats = participants.map(function(p) {
+    const personLogs = allLogs.filter(function(l) { return l.participant_id === p.id; });
+    const totalDone = personLogs.reduce(function(sum, l) { return sum + l.count; }, 0);
+    var requiredSinceJoin = 0;
+    for (var date in schedule) {
+      if (date >= p.joined && date <= today) requiredSinceJoin += schedule[date];
+    }
+    return { name: p.name, totalDone: totalDone, bank: totalDone - requiredSinceJoin };
+  }).filter(function(p) { return p.totalDone > 0; });
+
+  if (stats.length === 0) return { success: true, chirps: [] };
+
+  stats.sort(function(a, b) { return b.bank - a.bank; });
+
+  var roastMsgs  = readChirpTab(ss, ROAST_SHEET);
+  var praiseMsgs = readChirpTab(ss, PRAISE_SHEET);
+  var hypeMsgs   = readChirpTab(ss, HYPE_SHEET);
+  var shameMsgs  = readChirpTab(ss, SHAME_SHEET);
+
+  var top3     = stats.slice(0, Math.min(3, stats.length));
+  var bottom3  = stats.slice(Math.max(0, stats.length - 3)).reverse();
+  var positive = stats.filter(function(p) { return p.bank > 0; });
+  var negative = stats.filter(function(p) { return p.bank < 0; });
+
+  var chirps = [];
+
+  // Always include at least one praise and one roast if possible
+  if (praiseMsgs.length > 0 && top3.length > 0) {
+    chirps.push(fillChirp(pickRandom(praiseMsgs), pickRandom(top3)));
+  }
+  if (roastMsgs.length > 0 && bottom3.length > 0) {
+    chirps.push(fillChirp(pickRandom(roastMsgs), pickRandom(bottom3)));
+  }
+  // Add hype and shame for those with non-zero bank
+  if (hypeMsgs.length > 0 && positive.length > 0) {
+    chirps.push(fillChirp(pickRandom(hypeMsgs), pickRandom(positive)));
+  }
+  if (shameMsgs.length > 0 && negative.length > 0) {
+    chirps.push(fillChirp(pickRandom(shameMsgs), pickRandom(negative)));
+  }
+  // Pad to 5-8 total with mix of praise/roast on different people
+  var attempts = 0;
+  while (chirps.length < 6 && attempts < 20) {
+    attempts++;
+    var roll = Math.random();
+    if (roll < 0.35 && praiseMsgs.length > 0 && top3.length > 0) {
+      var candidate = fillChirp(pickRandom(praiseMsgs), pickRandom(top3));
+      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+    } else if (roll < 0.65 && roastMsgs.length > 0 && bottom3.length > 0) {
+      var candidate = fillChirp(pickRandom(roastMsgs), pickRandom(bottom3));
+      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+    } else if (roll < 0.82 && hypeMsgs.length > 0 && positive.length > 0) {
+      var candidate = fillChirp(pickRandom(hypeMsgs), pickRandom(positive));
+      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+    } else if (shameMsgs.length > 0 && negative.length > 0) {
+      var candidate = fillChirp(pickRandom(shameMsgs), pickRandom(negative));
+      if (chirps.indexOf(candidate) === -1) chirps.push(candidate);
+    }
+  }
+
+  return { success: true, chirps: shuffleArray(chirps) };
+}
+
+/**
+ * ensureChirpTabs — Creates Roast/Praise/Hype/Shame tabs if they don't exist yet.
+ * Populated from the CHIRP_SEED data embedded in the script.
+ * After creation the tabs can be edited freely in the sheet.
+ */
+function ensureChirpTabs(ss) {
+  var tabs = [ROAST_SHEET, PRAISE_SHEET, HYPE_SHEET, SHAME_SHEET];
+  tabs.forEach(function(tabName) {
+    if (!ss.getSheetByName(tabName)) {
+      var sheet = ss.insertSheet(tabName);
+      var msgs = CHIRP_SEED[tabName];
+      var rows = [['message']].concat(msgs.map(function(m) { return [m]; }));
+      sheet.getRange(1, 1, rows.length, 1).setValues(rows);
+    }
+  });
+}
+
+/**
+ * readChirpTab — Reads all message rows from a chirp tab.
+ * Falls back to CHIRP_SEED if the tab is empty or missing.
+ */
+function readChirpTab(ss, tabName) {
+  var sheet = ss.getSheetByName(tabName);
+  if (!sheet) return CHIRP_SEED[tabName] || [];
+  var data = sheet.getDataRange().getValues();
+  var msgs = [];
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0]) msgs.push(String(data[i][0]));
+  }
+  return msgs.length > 0 ? msgs : (CHIRP_SEED[tabName] || []);
+}
+
+/** fillChirp — Replaces {name}, {bank}, {deficit} placeholders */
+function fillChirp(template, person) {
+  var deficit = person.bank < 0 ? Math.abs(person.bank) : 0;
+  var bank    = person.bank > 0 ? person.bank : 0;
+  return template
+    .replace(/\{name\}/g,    person.name)
+    .replace(/\{bank\}/g,    bank)
+    .replace(/\{deficit\}/g, deficit);
+}
+
+/** pickRandom — Returns a random element from an array */
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+/** shuffleArray — Fisher-Yates shuffle */
+function shuffleArray(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+  }
+  return a;
 }
 
 // ==========================================

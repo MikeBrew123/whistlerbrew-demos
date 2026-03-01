@@ -843,6 +843,49 @@
       transform: none;
     }
 
+    /* =============================================
+       CHIRP TICKER — scrolling message strip
+       ============================================= */
+    .chirp-ticker {
+      overflow: hidden;
+      background: rgba(249,115,22,0.07);
+      border: 1px solid rgba(249,115,22,0.18);
+      border-radius: 0.375rem;
+      margin-bottom: 16px;
+      height: 36px;
+      display: none; /* hidden until chirps load */
+      align-items: center;
+    }
+
+    .chirp-track {
+      display: flex;
+      white-space: nowrap;
+      animation: tickerScroll 60s linear infinite;
+      will-change: transform;
+    }
+
+    .chirp-ticker:hover .chirp-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes tickerScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .chirp-item {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      padding: 0 24px;
+      flex-shrink: 0;
+    }
+
+    .chirp-sep {
+      color: var(--accent);
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       .header h1 { font-size: 1.8rem; }
@@ -954,6 +997,11 @@
         <span class="hall" id="identity-hall"></span>
       </div>
       <button onclick="switchUser()">Not you?</button>
+    </div>
+
+    <!-- Chirp ticker — loads after login, only shown when active participants exist -->
+    <div id="chirp-ticker" class="chirp-ticker">
+      <div id="chirp-track" class="chirp-track"></div>
     </div>
 
     <!-- Navigation tabs -->
@@ -1313,10 +1361,11 @@ function showMainApp() {
   document.getElementById('identity-name').textContent = state.myName;
   document.getElementById('identity-hall').textContent = ' — ' + state.myHall;
 
-  // Render the current tab + load leaderboard for rank display
+  // Render the current tab + load leaderboard and chirps asynchronously
   renderDashboard();
   showTab('dashboard');
   loadLeaderboard();
+  loadChirps();
 }
 
 /** Shows the hall selection modal for users with no hall */
@@ -1773,6 +1822,38 @@ function renderLogTab() {
 // ==========================================
 // LEADERBOARD
 // ==========================================
+
+/**
+ * loadChirps — Fetches personalised chirp messages from action=chirps
+ * and renders a continuously scrolling ticker strip.
+ * Only shown when active participants (>0 pushups) exist.
+ */
+async function loadChirps() {
+  try {
+    const data = await apiGet('chirps');
+    const chirps = data.chirps || [];
+    if (chirps.length === 0) return;
+
+    const ticker = document.getElementById('chirp-ticker');
+    const track  = document.getElementById('chirp-track');
+    if (!ticker || !track) return;
+
+    // Build the message list, duplicated so the scroll loops seamlessly
+    const sep = '<span class="chirp-sep"> 🔥 </span>';
+    const items = chirps.map(c => `<span class="chirp-item">${c}</span>${sep}`).join('');
+    track.innerHTML = items + items; // duplicate for seamless loop
+
+    // Adjust speed relative to total text length (longer = slower)
+    const charCount = chirps.join(' ').length;
+    const duration = Math.max(30, Math.min(90, charCount * 0.18));
+    track.style.animationDuration = duration + 's';
+
+    ticker.style.display = 'flex';
+  } catch (e) {
+    // Chirps are non-critical — fail silently
+    console.log('Chirps skipped:', e.message);
+  }
+}
 
 /** Fetches leaderboard data from API and renders both tables */
 async function loadLeaderboard() {
