@@ -1353,28 +1353,44 @@ async function logPushups(useDatePicker = false) {
 }
 
 /**
- * editTotal — Manually set today's total (replaces, for fixing mistakes)
+ * editTotal — Directly overwrite the total for any date (SET, not add)
+ * Use this to fix mistakes: typos, overcounting, full resets.
  */
 async function editTotal() {
   const today = getToday();
-  const todayLog = state.myLog.find(l => l.date === today);
-  const current = todayLog ? todayLog.count : 0;
 
-  const input = prompt('Set today\'s total to:');
-  if (input === null) return; // cancelled
+  // Step 1: pick the date (default today, supports any past date)
+  const dateInput = prompt('Which date to edit? (YYYY-MM-DD)', today);
+  if (dateInput === null) return;
+  const date = dateInput.trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return showToast('Enter date as YYYY-MM-DD', true);
+
+  // Step 2: find what's already logged for that date
+  const existing = state.myLog.find(l => l.date === date);
+  const current = existing ? existing.count : 0;
+
+  // Step 3: get the corrected total
+  const input = prompt('Enter the correct total for ' + date + ':');
+  if (input === null) return;
   const newTotal = parseInt(input);
   if (isNaN(newTotal) || newTotal < 0) return showToast('Enter a valid number', true);
-  if (!confirm('Change today\'s total from ' + current + ' to ' + newTotal + '?')) return;
+
+  // Build "Set March 2 total to 10? (was 100)"
+  const MONTHS = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+  const p = date.split('-');
+  const label = MONTHS[parseInt(p[1]) - 1] + ' ' + parseInt(p[2]);
+  if (!confirm('Set ' + label + ' total to ' + newTotal + '? (was ' + current + ')')) return;
 
   try {
     const result = await apiPost('log', {
       participant_id: state.myId,
-      date: today,
+      date: date,
       count: newTotal,
-      mode: 'set'
+      mode: 'set'   // REPLACES — not adds
     });
     state.myLog = result.log;
-    showToast('Total updated to ' + newTotal);
+    showToast(label + ' total set to ' + newTotal);
     renderLogTab();
     renderDashboard();
   } catch (error) {
