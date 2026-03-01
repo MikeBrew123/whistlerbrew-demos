@@ -70,7 +70,6 @@
       margin-bottom: 30px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-bottom: 3px solid var(--accent);
       border-radius: 0.5rem;
       box-shadow: 0 4px 24px rgba(0,0,0,0.4);
     }
@@ -80,7 +79,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--accent);
+      color: #FFFFFF;
     }
 
     .header .subtitle {
@@ -149,9 +148,10 @@
     }
 
     .tab.active {
-      background: var(--accent);
-      color: white;
+      background: rgba(249,115,22,0.1);
+      color: var(--accent);
       font-weight: 700;
+      border-bottom: 2px solid var(--accent);
     }
 
     /* =============================================
@@ -533,7 +533,7 @@
 
     .identity-bar .name {
       font-weight: 700;
-      color: var(--accent);
+      color: var(--green-positive);
     }
 
     .identity-bar .hall {
@@ -745,11 +745,108 @@
       color: var(--text-primary);
     }
 
+    /* =============================================
+       DASHBOARD TWO-COLUMN LAYOUT
+       ============================================= */
+    .dashboard-columns {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .ring-card, .log-card {
+      margin-bottom: 0;
+    }
+
+    .card-section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* SVG Ring */
+    .ring-container {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 16px;
+    }
+
+    .ring-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .ring-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .ring-pct {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Stats table inside ring card */
+    .ring-stats-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ring-stats-table tr {
+      border-top: 1px solid var(--border);
+    }
+
+    .ring-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      padding: 8px 4px;
+    }
+
+    .ring-stat-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: right;
+      padding: 8px 4px;
+    }
+
+    /* Crimson LOG button */
+    .btn-log {
+      background: #B91C1C;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .btn-log:hover {
+      background: #991B1B;
+      transform: translateY(-1px);
+    }
+
+    .btn-log:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       .header h1 { font-size: 1.8rem; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-      .stat-box .value { font-size: 1.5rem; }
+      .dashboard-columns { grid-template-columns: 1fr; }
       .pushup-input { font-size: 2.5rem !important; }
       .today-hero .target-number { font-size: 3rem; }
       .tab { padding: 8px 6px; font-size: 0.75rem; gap: 4px; }
@@ -856,33 +953,54 @@
     <div class="tabs">
       <button class="tab active" data-tab="dashboard" onclick="showTab('dashboard')"><i data-lucide="layout-dashboard"></i> Dashboard</button>
       <button class="tab" data-tab="log" onclick="showTab('log')"><i data-lucide="activity"></i> Log Pushups</button>
-      <button class="tab" data-tab="leaderboard" onclick="showTab('leaderboard')"><i data-lucide="trophy"></i> Leaderboard</button>
     </div>
 
     <!-- ===== DASHBOARD TAB ===== -->
     <div id="tab-dashboard" class="tab-content">
 
-      <!-- Stats summary boxes -->
-      <div class="stats-grid">
-        <div class="stat-box">
-          <div class="label">Today's Target</div>
-          <div class="value neutral" id="stat-today-target">--</div>
-          <div class="progress-bar-track">
-            <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+      <!-- Two-column layout: ring (left) + log form (right) -->
+      <div class="dashboard-columns">
+
+        <!-- LEFT: Ring + stats table -->
+        <div class="ring-card card">
+          <h3 class="card-section-label">Today's Target</h3>
+          <div class="ring-container">
+            <svg viewBox="0 0 120 120" width="160" height="160">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="#1E293B" stroke-width="10"/>
+              <circle id="ring-progress" cx="60" cy="60" r="54" fill="none"
+                stroke="#F97316" stroke-width="10" stroke-linecap="round"
+                stroke-dasharray="339.3" stroke-dashoffset="339.3"
+                transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="ring-center">
+              <div class="ring-number" id="ring-number">0</div>
+              <div class="ring-pct" id="ring-pct">0%</div>
+            </div>
           </div>
+          <table class="ring-stats-table">
+            <tr><td class="ring-stat-label">Target</td><td class="ring-stat-value" id="stat-today-target">—</td></tr>
+            <tr><td class="ring-stat-label">Weekly Avg</td><td class="ring-stat-value" id="stat-weekly-avg">—</td></tr>
+            <tr><td class="ring-stat-label">Best Day</td><td class="ring-stat-value" id="stat-best-day">—</td></tr>
+            <tr><td class="ring-stat-label">Station Rank</td><td class="ring-stat-value" id="stat-rank">—</td></tr>
+          </table>
         </div>
-        <div class="stat-box">
-          <div class="label">Today Logged</div>
-          <div class="value" id="stat-today-logged">0</div>
+
+        <!-- RIGHT: Log form -->
+        <div class="log-card card">
+          <h3 class="card-section-label">Log Pushups</h3>
+          <div id="dash-already-logged" class="already-logged" style="display:none">
+            You've logged <span id="dash-already-count">0</span> today
+            <button class="edit-total-link" onclick="editTotal()">Edit total</button>
+          </div>
+          <div class="form-group">
+            <label>How many pushups?</label>
+            <input type="number" id="dash-log-count" class="pushup-input" min="0" max="9999" placeholder="0">
+          </div>
+          <button class="btn btn-log" id="dash-log-btn" onclick="logPushups()">
+            Log for Today ✓
+          </button>
         </div>
-        <div class="stat-box">
-          <div class="label">Total Done</div>
-          <div class="value" id="stat-total-done">0</div>
-        </div>
-        <div class="stat-box">
-          <div class="label">Bank Balance</div>
-          <div class="value" id="stat-bank">0</div>
-        </div>
+
       </div>
 
       <!-- Calendar view -->
@@ -895,23 +1013,42 @@
           <div class="legend-item"><div class="legend-dot" style="background:rgba(231,76,60,0.4)"></div> Missed</div>
           <div class="legend-item"><div class="legend-dot" style="background:rgba(255,255,255,0.1)"></div> Rest / Future</div>
         </div>
-
-        <!-- Personal stats row -->
-        <div class="stats-mini">
-          <div class="mini-stat">
-            <div class="mini-label">Weekly Avg</div>
-            <div class="mini-value" id="stat-weekly-avg">—</div>
-          </div>
-          <div class="mini-stat">
-            <div class="mini-label">Best Day</div>
-            <div class="mini-value" id="stat-best-day">—</div>
-          </div>
-          <div class="mini-stat">
-            <div class="mini-label">Overall Rank</div>
-            <div class="mini-value" id="stat-rank">—</div>
-          </div>
-        </div>
       </div>
+
+      <!-- Individual leaderboard -->
+      <div class="card">
+        <h2>Individual Ranking</h2>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th><th>Name</th>
+              <th style="text-align:right">Total</th>
+              <th style="text-align:right">Bank</th>
+            </tr>
+          </thead>
+          <tbody id="individual-leaderboard">
+            <tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Hall leaderboard -->
+      <div class="card">
+        <h2>Fire Hall Ranking</h2>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th><th>Hall</th>
+              <th style="text-align:right">Members</th>
+              <th style="text-align:right">Avg Bank</th>
+            </tr>
+          </thead>
+          <tbody id="hall-leaderboard">
+            <tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
     <!-- ===== LOG PUSHUPS TAB ===== -->
@@ -961,45 +1098,6 @@
       </div>
     </div>
 
-    <!-- ===== LEADERBOARD TAB ===== -->
-    <div id="tab-leaderboard" class="tab-content" style="display:none">
-
-      <!-- Individual leaderboard -->
-      <div class="card">
-        <h2>Individual Ranking</h2>
-        <table class="leaderboard-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th style="text-align:right">Total</th>
-              <th style="text-align:right">Bank</th>
-            </tr>
-          </thead>
-          <tbody id="individual-leaderboard">
-            <tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">Loading...</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Hall leaderboard -->
-      <div class="card">
-        <h2>Fire Hall Ranking</h2>
-        <table class="leaderboard-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Hall</th>
-              <th style="text-align:right">Members</th>
-              <th style="text-align:right">Avg Bank</th>
-            </tr>
-          </thead>
-          <tbody id="hall-leaderboard">
-            <tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">Loading...</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
 
   </div><!-- /main-app -->
 
@@ -1197,9 +1295,10 @@ function showMainApp() {
   document.getElementById('identity-name').textContent = state.myName;
   document.getElementById('identity-hall').textContent = ' — ' + state.myHall;
 
-  // Render the current tab
+  // Render the current tab + load leaderboard for rank display
   renderDashboard();
   showTab('dashboard');
+  loadLeaderboard();
 }
 
 /** Shows the hall selection modal for users with no hall */
@@ -1249,21 +1348,16 @@ async function submitHallModal() {
   }
 }
 
-/** Switches between tabs (Dashboard / Log / Leaderboard) */
+/** Switches between tabs (Dashboard / Log) */
 function showTab(tabName) {
-  // Hide all tab content
   document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
-  // Remove active class from all tabs
   document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
 
-  // Show selected tab and mark it active
   document.getElementById('tab-' + tabName).style.display = 'block';
   document.querySelector(`.tab[data-tab="${tabName}"]`).classList.add('active');
 
-  // Render content for the selected tab
   if (tabName === 'dashboard') renderDashboard();
   if (tabName === 'log') renderLogTab();
-  if (tabName === 'leaderboard') loadLeaderboard();
 }
 
 // ==========================================
@@ -1351,7 +1445,12 @@ function switchUser() {
  *                                   instead of today's date
  */
 async function logPushups(useDatePicker = false) {
-  const count = parseInt(document.getElementById('log-count').value);
+  // Auto-detect which tab is active to read from the right input
+  const dashActive = document.getElementById('tab-dashboard').style.display !== 'none';
+  const countId = dashActive ? 'dash-log-count' : 'log-count';
+  const btnId = dashActive ? 'dash-log-btn' : 'log-today-btn';
+
+  const count = parseInt(document.getElementById(countId).value);
   if (isNaN(count) || count < 0) return showToast('Enter a valid number', true);
 
   let date;
@@ -1362,10 +1461,9 @@ async function logPushups(useDatePicker = false) {
     date = getToday();
   }
 
-  // Disable button while saving to prevent double-submits
   const btn = useDatePicker
     ? document.querySelector('#different-date-section .btn')
-    : document.getElementById('log-today-btn');
+    : document.getElementById(btnId);
   btn.disabled = true;
   btn.textContent = 'Saving...';
 
@@ -1376,19 +1474,16 @@ async function logPushups(useDatePicker = false) {
       count: count
     });
 
-    // Update local log data with what the server returned
     state.myLog = result.log;
 
-    // Show running total in toast
     const updatedEntry = state.myLog.find(l => l.date === date);
     const newTotal = updatedEntry ? updatedEntry.count : count;
     const daySchedule = state.schedule.find(s => s.date === date);
     const target = daySchedule ? daySchedule.target : null;
     const totalStr = target ? newTotal + '/' + target : String(newTotal);
     showToast('Added ' + count + ' — total today: ' + totalStr);
-    document.getElementById('log-count').value = '';
+    document.getElementById(countId).value = '';
 
-    // Refresh the displays
     renderLogTab();
     renderDashboard();
 
@@ -1396,7 +1491,7 @@ async function logPushups(useDatePicker = false) {
     showToast('Failed to save: ' + error.message, true);
   } finally {
     btn.disabled = false;
-    btn.textContent = useDatePicker ? 'Log for Selected Date' : 'Log for Today';
+    btn.textContent = useDatePicker ? 'Log for Selected Date' : (dashActive ? 'Log for Today ✓' : 'Log for Today');
   }
 }
 
@@ -1478,32 +1573,33 @@ function renderDashboard() {
 
   const bank = totalDone - totalRequired;
 
-  // --- Update stat boxes ---
+  // --- Update SVG ring ---
+  const circumference = 2 * Math.PI * 54; // r=54 → 339.3
+  const pct = todayTarget > 0 ? Math.min(1, todayLogged / todayTarget) : 0;
+  const ring = document.getElementById('ring-progress');
+  if (ring) ring.style.strokeDashoffset = circumference * (1 - pct);
+  const ringNum = document.getElementById('ring-number');
+  if (ringNum) ringNum.textContent = todayLogged;
+  const ringPctEl = document.getElementById('ring-pct');
+  if (ringPctEl) ringPctEl.textContent = todayTarget > 0 ? Math.round(pct * 100) + '%' : '—';
+
+  // --- Update stats table ---
   const targetEl = document.getElementById('stat-today-target');
-  if (todaySchedule && todaySchedule.label === 'REST') {
-    targetEl.textContent = 'REST';
-    targetEl.className = 'value';
-  } else {
-    targetEl.textContent = todayTarget;
-    targetEl.className = 'value neutral';
+  if (targetEl) {
+    targetEl.textContent = (todaySchedule && todaySchedule.label === 'REST') ? 'REST' : (todayTarget || '—');
   }
 
-  const loggedEl = document.getElementById('stat-today-logged');
-  loggedEl.textContent = todayLogged;
-  loggedEl.className = 'value ' + (todayLogged >= todayTarget && todayTarget > 0 ? 'positive' : '');
-
-  document.getElementById('stat-total-done').textContent = totalDone.toLocaleString();
-
-  const bankEl = document.getElementById('stat-bank');
-  bankEl.textContent = (bank >= 0 ? '+' : '') + bank;
-  bankEl.className = 'value ' + (bank >= 0 ? 'positive' : 'negative');
-
-  // --- Update progress bar ---
-  const fill = document.getElementById('progress-fill');
-  if (fill && todayTarget > 0) {
-    fill.style.width = Math.min(100, Math.round((todayLogged / todayTarget) * 100)) + '%';
-  } else if (fill) {
-    fill.style.width = '0%';
+  // --- Dashboard log badge ---
+  const todayLogEntry = state.myLog.find(l => l.date === today);
+  const dashAlready = document.getElementById('dash-already-logged');
+  if (dashAlready) {
+    if (todayLogEntry && todayLogEntry.count > 0) {
+      dashAlready.style.display = 'block';
+      const dashCount = document.getElementById('dash-already-count');
+      if (dashCount) dashCount.textContent = todayLogEntry.count;
+    } else {
+      dashAlready.style.display = 'none';
+    }
   }
 
   // --- Render calendar ---
