@@ -1840,7 +1840,7 @@ async function loadChirps() {
     if (!ticker || !track) return;
 
     // Build the message list, duplicated so the scroll loops seamlessly
-    const chirpEmoji = { praise: '🔥', roast: '💀', hype: '🎆', shame: '👎' };
+    const chirpEmoji = { praise: '🔥', roast: '😂', hype: '🎆', shame: '👎' };
     const items = chirps.map(c => {
       const emoji = chirpEmoji[c.type] || '🔥';
       const text = typeof c === 'string' ? c : c.text;
