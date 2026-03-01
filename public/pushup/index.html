@@ -898,23 +898,26 @@
 
   <!-- ========== WELCOME SCREEN (first visit / switch user) ========== -->
   <div id="welcome-screen" class="card welcome-screen" style="display:none">
-    <h2>Join the Challenge</h2>
-    <p style="color:var(--text-secondary); margin-top:8px">Track your daily pushups with your crew</p>
 
-    <!-- Returning user picks from dropdown -->
-    <div id="returning-section" class="welcome-options" style="display:none">
+    <!-- PRIMARY: Returning user — always shown first when participants exist -->
+    <div id="returning-section" style="display:none">
+      <h2>Welcome back</h2>
+      <p style="color:var(--text-secondary); margin-top:8px; margin-bottom:20px">Select your name to continue</p>
       <div class="form-group">
-        <label>Welcome back — select your name:</label>
         <select id="returning-select">
           <option value="">Choose your name...</option>
         </select>
       </div>
       <button class="btn btn-primary" onclick="loginExisting()">Let's Go</button>
-      <div class="divider">or register as someone new</div>
+      <div style="margin-top:20px; text-align:center">
+        <button class="toggle-btn" onclick="toggleRegForm()">New to the challenge? Join here</button>
+      </div>
     </div>
 
-    <!-- New user registration -->
-    <div class="welcome-options">
+    <!-- SECONDARY: New registration — hidden until "Join here" is clicked -->
+    <div id="reg-section" style="display:none">
+      <h2>Join the Challenge</h2>
+      <p style="color:var(--text-secondary); margin-top:8px; margin-bottom:20px">Track your daily pushups with your crew</p>
       <div class="form-group">
         <label>Your display name:</label>
         <input type="text" id="reg-name" placeholder="e.g. Brew" maxlength="30">
@@ -934,7 +937,11 @@
         <input type="text" id="reg-hall-other" placeholder="e.g. North Van Fire" maxlength="50">
       </div>
       <button class="btn btn-primary" onclick="registerNew()">Join Challenge</button>
+      <div style="margin-top:16px; text-align:center">
+        <button class="toggle-btn" onclick="toggleRegForm()">← Back to name selection</button>
+      </div>
     </div>
+
   </div>
 
   <!-- ========== MAIN APP (after login) ========== -->
@@ -1262,21 +1269,32 @@ function showWelcome() {
   document.getElementById('welcome-screen').style.display = 'block';
   document.getElementById('main-app').style.display = 'none';
 
-  // If there are existing participants, show the "returning user" dropdown
   if (state.participants.length > 0) {
-    const section = document.getElementById('returning-section');
-    section.style.display = 'flex';
+    // Returning path is primary — show dropdown, hide reg form
+    document.getElementById('returning-section').style.display = 'block';
+    document.getElementById('reg-section').style.display = 'none';
 
     const select = document.getElementById('returning-select');
     select.innerHTML = '<option value="">Choose your name...</option>';
-
-    // Sort alphabetically for easy finding
     const sorted = [...state.participants].sort((a, b) => a.name.localeCompare(b.name));
     for (const p of sorted) {
       const hallLabel = p.hall ? ' — ' + p.hall : '';
       select.innerHTML += `<option value="${p.id}">${p.name}${hallLabel}</option>`;
     }
+  } else {
+    // No participants yet — show registration directly
+    document.getElementById('returning-section').style.display = 'none';
+    document.getElementById('reg-section').style.display = 'block';
   }
+}
+
+/** Toggles between the returning-user dropdown and the new registration form */
+function toggleRegForm() {
+  const ret = document.getElementById('returning-section');
+  const reg = document.getElementById('reg-section');
+  const retVisible = ret.style.display !== 'none';
+  ret.style.display = retVisible ? 'none' : 'block';
+  reg.style.display = retVisible ? 'block' : 'none';
 }
 
 /** Shows the main app (dashboard/log/leaderboard) */
