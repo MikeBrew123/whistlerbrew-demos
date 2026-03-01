@@ -185,8 +185,11 @@ function handleRegister(name, hall) {
 
   const today = formatDate(new Date());
 
-  // Append a new row to the Participants sheet
-  sheet.appendRow([id, name.trim(), (hall || '').trim(), today]);
+  // Write row using setValues (not appendRow) so the date column
+  // respects the '@' plain-text format and isn't auto-converted to a Date object.
+  const partLastRow = sheet.getLastRow() + 1;
+  sheet.getRange(partLastRow, 4).setNumberFormat('@');
+  sheet.getRange(partLastRow, 1, 1, 4).setValues([[id, name.trim(), (hall || '').trim(), today]]);
 
   return {
     success: true,
@@ -270,8 +273,12 @@ function handleLog(participantId, date, count) {
     sheet.getRange(existingRow, 3).setValue(count);  // Column C = count
     sheet.getRange(existingRow, 4).setValue(now);     // Column D = timestamp
   } else {
-    // Add new row
-    sheet.appendRow([participantId, date, count, now]);
+    // Write row using setValues (not appendRow) — appendRow ignores the '@' format
+    // on column B and auto-converts YYYY-MM-DD strings to Date objects, which then
+    // shift back 1 day when read in America/Vancouver (UTC-8) via formatDate().
+    const logLastRow = sheet.getLastRow() + 1;
+    sheet.getRange(logLastRow, 2).setNumberFormat('@');
+    sheet.getRange(logLastRow, 1, 1, 4).setValues([[participantId, date, count, now]]);
   }
 
   // Return updated log for this person so the page can refresh
