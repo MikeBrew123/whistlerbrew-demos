@@ -1047,9 +1047,11 @@ async function apiGet(action, params = {}) {
 async function apiPost(action, body = {}) {
   body.action = action;
 
+  // No Content-Type header — omitting it sends text/plain which is a CORS
+  // "simple request" and avoids the OPTIONS preflight that Apps Script ignores.
+  // e.postData.contents still receives the raw JSON string correctly.
   const response = await fetch(API_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
 
