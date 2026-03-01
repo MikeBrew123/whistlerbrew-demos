@@ -78,7 +78,7 @@ function doPost(e) {
 
       case 'log':
         // Someone is logging their pushups
-        result = handleLog(data.participant_id, data.date, data.count);
+        result = handleLog(data.participant_id, data.date, data.count, data.mode);
         break;
 
       case 'update_hall':
@@ -238,11 +238,10 @@ function handleUpdateHall(participantId, hall) {
 /**
  * handleLog — Records pushups for a specific date
  *
- * Important design choice: We REPLACE any existing entry for this
- * person + date combination. This way if someone logs 20, then
- * realizes they did 25, they can just submit again.
+ * mode = 'add' (default): adds count to any existing entry (for logging sets)
+ * mode = 'set': replaces count entirely (for correcting mistakes via Edit total)
  */
-function handleLog(participantId, date, count) {
+function handleLog(participantId, date, count, mode) {
   if (!participantId || !date || count === undefined) {
     return { error: 'participant_id, date, and count are required' };
   }
@@ -269,9 +268,11 @@ function handleLog(participantId, date, count) {
   const now = new Date().toISOString();
 
   if (existingRow > 0) {
-    // Update existing row (overwrite count and timestamp)
-    sheet.getRange(existingRow, 3).setValue(count);  // Column C = count
-    sheet.getRange(existingRow, 4).setValue(now);     // Column D = timestamp
+    // mode='set' replaces (Edit total / fix mistakes); default adds (logging sets)
+    const existingCount = Number(data[existingRow - 1][2]);
+    const newCount = (mode === 'set') ? count : existingCount + count;
+    sheet.getRange(existingRow, 3).setValue(newCount); // Column C = count
+    sheet.getRange(existingRow, 4).setValue(now);      // Column D = timestamp
   } else {
     // Write row using setValues (not appendRow) — appendRow ignores the '@' format
     // on column B and auto-converts YYYY-MM-DD strings to Date objects, which then

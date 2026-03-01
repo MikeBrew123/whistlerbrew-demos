@@ -581,6 +581,19 @@
       color: var(--green-positive);
       font-weight: 600;
     }
+    .edit-total-link {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 400;
+      cursor: pointer;
+      margin-top: 4px;
+      text-decoration: underline;
+      padding: 0;
+    }
+    .edit-total-link:hover { color: var(--text-primary); }
 
     /* Date picker row */
     .date-row {
@@ -840,6 +853,7 @@
       <!-- Already logged indicator -->
       <div id="already-logged" class="already-logged" style="display:none">
         You've logged <span id="already-count">0</span> pushups today
+        <button class="edit-total-link" onclick="editTotal()">Edit total</button>
       </div>
 
       <!-- Quick log for today -->
@@ -1287,7 +1301,13 @@ async function logPushups(useDatePicker = false) {
     // Update local log data with what the server returned
     state.myLog = result.log;
 
-    showToast(count + ' pushups logged!');
+    // Show running total in toast
+    const updatedEntry = state.myLog.find(l => l.date === date);
+    const newTotal = updatedEntry ? updatedEntry.count : count;
+    const daySchedule = state.schedule.find(s => s.date === date);
+    const target = daySchedule ? daySchedule.target : null;
+    const totalStr = target ? newTotal + '/' + target : String(newTotal);
+    showToast('Added ' + count + ' — total today: ' + totalStr);
     document.getElementById('log-count').value = '';
 
     // Refresh the displays
@@ -1299,6 +1319,36 @@ async function logPushups(useDatePicker = false) {
   } finally {
     btn.disabled = false;
     btn.textContent = useDatePicker ? 'Log for Selected Date' : 'Log for Today';
+  }
+}
+
+/**
+ * editTotal — Manually set today's total (replaces, for fixing mistakes)
+ */
+async function editTotal() {
+  const today = getToday();
+  const todayLog = state.myLog.find(l => l.date === today);
+  const current = todayLog ? todayLog.count : 0;
+
+  const input = prompt('Set today\'s total to:');
+  if (input === null) return; // cancelled
+  const newTotal = parseInt(input);
+  if (isNaN(newTotal) || newTotal < 0) return showToast('Enter a valid number', true);
+  if (!confirm('Change today\'s total from ' + current + ' to ' + newTotal + '?')) return;
+
+  try {
+    const result = await apiPost('log', {
+      participant_id: state.myId,
+      date: today,
+      count: newTotal,
+      mode: 'set'
+    });
+    state.myLog = result.log;
+    showToast('Total updated to ' + newTotal);
+    renderLogTab();
+    renderDashboard();
+  } catch (error) {
+    showToast('Failed to update: ' + error.message, true);
   }
 }
 
