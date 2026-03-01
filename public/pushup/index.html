@@ -1783,12 +1783,14 @@ async function loadLeaderboard() {
 function renderIndividualLeaderboard(individuals) {
   const tbody = document.getElementById('individual-leaderboard');
 
-  if (!individuals || individuals.length === 0) {
+  const active = (individuals || []).filter(p => p.totalDone > 0);
+
+  if (active.length === 0) {
     tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px">No data yet — start logging pushups!</td></tr>';
     return;
   }
 
-  tbody.innerHTML = individuals.map((p, i) => {
+  tbody.innerHTML = active.map((p, i) => {
     // First 3 get gold/silver/bronze coloring
     const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
     const bankClass = p.bank >= 0 ? 'bank-positive' : 'bank-negative';
