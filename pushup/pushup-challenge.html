@@ -714,6 +714,37 @@
       text-align: left;
     }
 
+    /* Personal stats row (Weekly Avg / Best Day / Overall Rank) */
+    .stats-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .mini-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .mini-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .mini-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 4px;
+      color: var(--text-primary);
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       .header h1 { font-size: 1.8rem; }
@@ -864,6 +895,22 @@
           <div class="legend-item"><div class="legend-dot" style="background:rgba(231,76,60,0.4)"></div> Missed</div>
           <div class="legend-item"><div class="legend-dot" style="background:rgba(255,255,255,0.1)"></div> Rest / Future</div>
         </div>
+
+        <!-- Personal stats row -->
+        <div class="stats-mini">
+          <div class="mini-stat">
+            <div class="mini-label">Weekly Avg</div>
+            <div class="mini-value" id="stat-weekly-avg">—</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-label">Best Day</div>
+            <div class="mini-value" id="stat-best-day">—</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-label">Overall Rank</div>
+            <div class="mini-value" id="stat-rank">—</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -996,7 +1043,8 @@ let state = {
   myLog: [],          // Current user's pushup log entries
   myId: null,          // Current user's participant ID
   myName: null,        // Current user's display name
-  myHall: null         // Current user's fire hall
+  myHall: null,        // Current user's fire hall
+  leaderboardIndividual: null  // Cached individual leaderboard (for rank display)
 };
 
 // ==========================================
@@ -1460,6 +1508,33 @@ function renderDashboard() {
 
   // --- Render calendar ---
   renderCalendar(scheduleMap, logMap, today);
+
+  // --- Personal stats (Weekly Avg / Best Day / Overall Rank) ---
+  // Weekly Avg: avg pushups per logged day in the last 7 days
+  const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 6);
+  const cutoffStr = cutoff.toISOString().substring(0, 10);
+  const weekLogs = state.myLog.filter(l => l.date >= cutoffStr && l.count > 0);
+  const weekAvg = weekLogs.length > 0
+    ? Math.round(weekLogs.reduce((s, l) => s + l.count, 0) / weekLogs.length)
+    : 0;
+  const weekAvgEl = document.getElementById('stat-weekly-avg');
+  if (weekAvgEl) weekAvgEl.textContent = weekAvg > 0 ? weekAvg : '—';
+
+  // Best Day: highest single-day count ever
+  const bestDay = state.myLog.reduce((max, l) => Math.max(max, l.count), 0);
+  const bestDayEl = document.getElementById('stat-best-day');
+  if (bestDayEl) bestDayEl.textContent = bestDay > 0 ? bestDay : '—';
+
+  // Overall Rank: position in individual leaderboard (if loaded)
+  const rankEl = document.getElementById('stat-rank');
+  if (rankEl) {
+    if (state.leaderboardIndividual) {
+      const pos = state.leaderboardIndividual.findIndex(p => p.id === state.myId);
+      rankEl.textContent = pos >= 0 ? '#' + (pos + 1) : '—';
+    } else {
+      rankEl.textContent = '—';
+    }
+  }
 }
 
 /**
@@ -1595,8 +1670,15 @@ function renderLogTab() {
 async function loadLeaderboard() {
   try {
     const data = await apiGet('leaderboard');
+    state.leaderboardIndividual = data.individual || [];
     renderIndividualLeaderboard(data.individual);
     renderHallLeaderboard(data.halls);
+    // Refresh rank in dashboard now that we have the data
+    const rankEl = document.getElementById('stat-rank');
+    if (rankEl && state.leaderboardIndividual) {
+      const pos = state.leaderboardIndividual.findIndex(p => p.id === state.myId);
+      rankEl.textContent = pos >= 0 ? '#' + (pos + 1) : '—';
+    }
   } catch (error) {
     console.error('Leaderboard failed:', error);
   }
