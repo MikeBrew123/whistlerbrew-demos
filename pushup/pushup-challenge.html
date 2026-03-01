@@ -1889,15 +1889,14 @@ function renderIndividualLeaderboard(individuals) {
   }
 
   tbody.innerHTML = active.map((p, i) => {
-    // First 3 get gold/silver/bronze coloring
     const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    const rankDisplay = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
     const bankClass = p.bank >= 0 ? 'bank-positive' : 'bank-negative';
     const bankStr = (p.bank >= 0 ? '+' : '') + p.bank;
-    // Highlight the current user's row
     const isMe = p.id === state.myId;
 
     return `<tr style="${isMe ? 'background:rgba(249,115,22,0.1)' : ''}">
-      <td class="rank-num ${rankClass}">${i + 1}</td>
+      <td class="rank-num ${rankClass}">${rankDisplay}</td>
       <td>
         <div class="player-name">${p.name}${isMe ? ' *' : ''}</div>
         <div class="player-hall">${p.hall}</div>
@@ -1918,12 +1917,13 @@ function renderHallLeaderboard(halls) {
 
   tbody.innerHTML = halls.map((h, i) => {
     const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    const rankDisplay = i === 0 ? '🏆' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
     const bankClass = h.avgBank >= 0 ? 'bank-positive' : 'bank-negative';
     const bankStr = (h.avgBank >= 0 ? '+' : '') + h.avgBank;
     const isMyHall = h.hall === state.myHall;
 
     return `<tr style="${isMyHall ? 'background:rgba(249,115,22,0.1)' : ''}">
-      <td class="rank-num ${rankClass}">${i + 1}</td>
+      <td class="rank-num ${rankClass}">${rankDisplay}</td>
       <td>${h.hall}${isMyHall ? ' *' : ''}</td>
       <td style="text-align:right">${h.memberCount}</td>
       <td style="text-align:right" class="${bankClass}">${bankStr}</td>
