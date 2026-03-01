@@ -1559,7 +1559,13 @@ async function logPushups(useDatePicker = false) {
     showToast('Failed to save: ' + error.message, true);
   } finally {
     btn.disabled = false;
-    btn.textContent = useDatePicker ? 'Log for Selected Date' : (dashActive ? 'Log for Today ✓' : 'Log for Today');
+    if (useDatePicker) {
+      btn.textContent = 'Log for Selected Date';
+    } else if (dashActive) {
+      renderDashboard(); // re-renders button with correct label/colour
+    } else {
+      btn.textContent = 'Log for Today';
+    }
   }
 }
 
@@ -1677,6 +1683,20 @@ function renderDashboard() {
       if (dashCount) dashCount.textContent = todayLogEntry.count;
     } else {
       dashAlready.style.display = 'none';
+    }
+  }
+
+  // --- Dashboard log button: context-aware label + colour ---
+  const dashBtn = document.getElementById('dash-log-btn');
+  if (dashBtn) {
+    const goalMet = todayTarget > 0 && todayLogged >= todayTarget;
+    const noTarget = todayTarget === 0;
+    if (goalMet || noTarget) {
+      dashBtn.textContent = '+ Add to Your Bank';
+      dashBtn.style.background = '#16a34a';
+    } else {
+      dashBtn.textContent = '+ Add to Today';
+      dashBtn.style.background = '#B91C1C';
     }
   }
 
