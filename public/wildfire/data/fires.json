@@ -1,0 +1,644 @@
+{
+  "updated_at": "2024-08-14T14:30:00Z",
+  "next_update": "2024-08-14T20:30:00Z",
+  "season_year": 2024,
+  "bc_totals": {
+    "active": 47,
+    "fires_of_note": 8,
+    "season_total": 312,
+    "hectares_burned": 142650,
+    "crews_deployed": 312,
+    "preparedness_level": 4
+  },
+  "zones": [
+    {
+      "id": "kamloops",
+      "name": "Kamloops Fire Centre",
+      "danger_rating": "Extreme",
+      "danger_colour": "#8B0000",
+      "weather_summary": "Hot, dry, SE winds 30–60 km/h. No rain in forecast.",
+      "active_fires": 14,
+      "fires_of_note": 3,
+      "zone_summary": "Extreme fire behaviour continues across the southern interior. The Loon Lake complex remains the most significant threat with rapid growth overnight and multiple evacuation orders in effect. Resources are stretched across three active fronts.",
+      "fires_of_note_list": [
+        {
+          "fire_number": "K20123",
+          "name": "Loon Lake",
+          "hectares": 14820,
+          "status": "Out of Control",
+          "cause": "Human",
+          "discovered": "2024-08-08",
+          "lat": 51.0234,
+          "lng": -121.5678,
+          "crews": 85,
+          "machines": 12,
+          "helicopters": 6,
+          "airtankers": 4,
+          "tactics": "Crews are constructing guard on the northeast flank to protect Loon Lake community. Airtankers conducting retardant drops on the advancing southwest head. Bulldozer lines active on two flanks.",
+          "growth_history": [
+            {"date": "2024-08-08", "ha": 10, "note": "Human-caused ignition, initial attack"},
+            {"date": "2024-08-10", "ha": 540, "note": "Escaped initial attack, spread to grass"},
+            {"date": "2024-08-12", "ha": 4200, "note": "Extreme spread, Evacuation Alert issued"},
+            {"date": "2024-08-14", "ha": 14820, "note": "Overnight run, Evacuation Order expanded"}
+          ],
+          "evac_notices": [
+            {
+              "type": "ORDER",
+              "area": "Loon Lake Road — Properties 1 through 340",
+              "properties": 340,
+              "issued": "2024-08-14T06:00:00Z",
+              "link": "https://www.tnrd.ca/services/emergency-services/"
+            },
+            {
+              "type": "ALERT",
+              "area": "70 Mile House — West Side Road corridor",
+              "properties": 215,
+              "issued": "2024-08-13T18:00:00Z",
+              "link": "https://www.tnrd.ca/services/emergency-services/"
+            }
+          ],
+          "road_closures": [
+            {
+              "status": "CLOSED",
+              "road": "Loon Lake Road (FSR)",
+              "reason": "Wildfire",
+              "since": "2024-08-13T20:00:00Z",
+              "link": "https://drivebc.ca"
+            },
+            {
+              "status": "CLOSED",
+              "road": "Hwy 97 — Bonaparte Lake turnoff to 70 Mile House",
+              "reason": "Wildfire smoke — zero visibility",
+              "since": "2024-08-14T08:00:00Z",
+              "link": "https://drivebc.ca"
+            }
+          ],
+          "news": [
+            {
+              "title": "Evacuation orders expanded as Loon Lake fire makes overnight run",
+              "summary": "BCWS reported the fire grew by more than 8,000 ha overnight as winds shifted from the southeast. Evacuation orders now cover over 300 properties.",
+              "url": "https://www.cbc.ca/news/canada/british-columbia",
+              "source": "CBC BC",
+              "age": "3h"
+            },
+            {
+              "title": "Hwy 97 closed near 70 Mile House due to wildfire smoke",
+              "summary": "DriveBC confirmed a full closure of Highway 97 between Bonaparte Lake Road and 70 Mile House due to zero-visibility smoke conditions.",
+              "url": "https://www.cbc.ca/news/canada/british-columbia",
+              "source": "CBC BC",
+              "age": "5h"
+            }
+          ],
+          "social_posts": [
+            {
+              "account": "@BCGovFireInfo",
+              "post_url": "https://twitter.com/BCGovFireInfo",
+              "embed_html": ""
+            }
+          ],
+          "photos": [
+            {
+              "url": "https://www.instagram.com/bcgovfireinfo/",
+              "image_url": "",
+              "caption": "K20123 Loon Lake — aerial view from Aug 14 morning patrol",
+              "source": "instagram",
+              "timestamp": "2024-08-14T10:00:00Z"
+            }
+          ],
+          "webcams": [
+            {
+              "name": "Hwy 97 @ Cache Creek",
+              "distance_km": 42,
+              "snapshot_url": "",
+              "link": "https://drivebc.ca"
+            }
+          ],
+          "weather": {
+            "temp_c": 36,
+            "rh_pct": 14,
+            "wind_dir": "SE",
+            "wind_kmh": 38,
+            "gust_kmh": 62,
+            "fwi": 38,
+            "bui": 192,
+            "isi": 21.4,
+            "forecast": [
+              {"date": "2024-08-14", "high": 36, "desc": "Sunny, SE 30–60", "precip_pct": 0},
+              {"date": "2024-08-15", "high": 34, "desc": "Partly cloudy, SE 20–40", "precip_pct": 5},
+              {"date": "2024-08-16", "high": 30, "desc": "Mostly cloudy", "precip_pct": 20},
+              {"date": "2024-08-17", "high": 26, "desc": "Chance of showers", "precip_pct": 45}
+            ]
+          }
+        },
+        {
+          "fire_number": "K20098",
+          "name": "Elephant Hill",
+          "hectares": 3240,
+          "status": "Being Held",
+          "cause": "Lightning",
+          "discovered": "2024-08-01",
+          "lat": 50.8876,
+          "lng": -120.9812,
+          "crews": 42,
+          "machines": 5,
+          "helicopters": 3,
+          "airtankers": 1,
+          "tactics": "Fire is being held on all flanks. Crews focused on strengthening guard line on north flank. Patrol and mop-up underway on secured perimeter.",
+          "growth_history": [
+            {"date": "2024-08-01", "ha": 2, "note": "Lightning ignition, initial attack"},
+            {"date": "2024-08-05", "ha": 890, "note": "Wind event — escaped to grass and timber"},
+            {"date": "2024-08-09", "ha": 2800, "note": "Status upgraded to Fire of Note"},
+            {"date": "2024-08-14", "ha": 3240, "note": "Being Held — minimal overnight growth"}
+          ],
+          "evac_notices": [
+            {
+              "type": "ALERT",
+              "area": "Deadman–Vidette Road corridor",
+              "properties": 88,
+              "issued": "2024-08-09T12:00:00Z",
+              "link": "https://www.tnrd.ca/services/emergency-services/"
+            }
+          ],
+          "road_closures": [
+            {
+              "status": "CLOSED",
+              "road": "Deadman–Vidette Road south of Vidette Lake",
+              "reason": "Wildfire",
+              "since": "2024-08-09T14:00:00Z",
+              "link": "https://drivebc.ca"
+            }
+          ],
+          "news": [
+            {
+              "title": "Elephant Hill fire stabilises after week of rapid growth",
+              "summary": "After growing to over 3,000 hectares, the Elephant Hill fire near Ashcroft has been held for two days. Crews report good progress on perimeter containment.",
+              "url": "https://www.cbc.ca/news/canada/british-columbia",
+              "source": "CBC BC",
+              "age": "1d"
+            }
+          ],
+          "social_posts": [],
+          "photos": [],
+          "webcams": [],
+          "weather": {
+            "temp_c": 33,
+            "rh_pct": 18,
+            "wind_dir": "SW",
+            "wind_kmh": 18,
+            "gust_kmh": 32,
+            "fwi": 29,
+            "bui": 168,
+            "isi": 14.2,
+            "forecast": [
+              {"date": "2024-08-14", "high": 33, "desc": "Sunny, SW 15–30", "precip_pct": 0},
+              {"date": "2024-08-15", "high": 31, "desc": "Sunny", "precip_pct": 0},
+              {"date": "2024-08-16", "high": 28, "desc": "Partly cloudy", "precip_pct": 15},
+              {"date": "2024-08-17", "high": 24, "desc": "Chance of showers", "precip_pct": 40}
+            ]
+          }
+        },
+        {
+          "fire_number": "K20145",
+          "name": "Upper Hat Creek",
+          "hectares": 870,
+          "status": "Out of Control",
+          "cause": "Lightning",
+          "discovered": "2024-08-12",
+          "lat": 50.6123,
+          "lng": -121.1234,
+          "crews": 18,
+          "machines": 2,
+          "helicopters": 2,
+          "airtankers": 0,
+          "tactics": "Newly established fire making moderate spread in timber. Initial attack crews establishing anchor point on south side. Helicopter bucket operations ongoing on advancing head.",
+          "growth_history": [
+            {"date": "2024-08-12", "ha": 15, "note": "Lightning ignition"},
+            {"date": "2024-08-13", "ha": 280, "note": "Wind-driven spread to north"},
+            {"date": "2024-08-14", "ha": 870, "note": "Designated Fire of Note"}
+          ],
+          "evac_notices": [],
+          "road_closures": [],
+          "news": [],
+          "social_posts": [],
+          "photos": [],
+          "webcams": [],
+          "weather": {
+            "temp_c": 34,
+            "rh_pct": 16,
+            "wind_dir": "NW",
+            "wind_kmh": 24,
+            "gust_kmh": 44,
+            "fwi": 34,
+            "bui": 175,
+            "isi": 18.8,
+            "forecast": [
+              {"date": "2024-08-14", "high": 34, "desc": "Sunny, NW 20–45", "precip_pct": 0},
+              {"date": "2024-08-15", "high": 32, "desc": "Sunny", "precip_pct": 0},
+              {"date": "2024-08-16", "high": 29, "desc": "Partly cloudy", "precip_pct": 10},
+              {"date": "2024-08-17", "high": 25, "desc": "Mostly cloudy", "precip_pct": 35}
+            ]
+          }
+        }
+      ],
+      "zone_news": [
+        {
+          "title": "BCWS moves to Preparedness Level 4 in Kamloops Fire Centre",
+          "summary": "The Kamloops Fire Centre has escalated to Preparedness Level 4 as multiple fires of note burn simultaneously across the region.",
+          "url": "https://www.cbc.ca/news/canada/british-columbia",
+          "source": "CBC BC",
+          "age": "6h"
+        }
+      ],
+      "zone_road_closures": [
+        {
+          "status": "CLOSED",
+          "road": "Loon Lake Road (FSR)",
+          "reason": "Wildfire",
+          "since": "2024-08-13T20:00:00Z",
+          "link": "https://drivebc.ca"
+        },
+        {
+          "status": "CLOSED",
+          "road": "Deadman–Vidette Road south of Vidette Lake",
+          "reason": "Wildfire",
+          "since": "2024-08-09T14:00:00Z",
+          "link": "https://drivebc.ca"
+        }
+      ],
+      "zone_evac_notices": [
+        {
+          "type": "ORDER",
+          "area": "Loon Lake Road — Properties 1–340",
+          "properties": 340,
+          "issued": "2024-08-14T06:00:00Z",
+          "link": "https://www.tnrd.ca/services/emergency-services/"
+        },
+        {
+          "type": "ALERT",
+          "area": "70 Mile House — West Side Road corridor",
+          "properties": 215,
+          "issued": "2024-08-13T18:00:00Z",
+          "link": "https://www.tnrd.ca/services/emergency-services/"
+        }
+      ]
+    },
+    {
+      "id": "prince-george",
+      "name": "Prince George Fire Centre",
+      "danger_rating": "High",
+      "danger_colour": "#E67E22",
+      "weather_summary": "Warm with isolated thunderstorms possible. Moderate winds.",
+      "active_fires": 11,
+      "fires_of_note": 2,
+      "zone_summary": "Two fires of note burning in the central interior. The Nadina Lake fire continues to grow in remote terrain northwest of Burns Lake. New lightning ignitions are being monitored following yesterday's storm track.",
+      "fires_of_note_list": [
+        {
+          "fire_number": "G41207",
+          "name": "Nadina Lake",
+          "hectares": 6200,
+          "status": "Out of Control",
+          "cause": "Lightning",
+          "discovered": "2024-08-03",
+          "lat": 54.1234,
+          "lng": -125.8765,
+          "crews": 34,
+          "machines": 4,
+          "helicopters": 4,
+          "airtankers": 2,
+          "tactics": "Remote fire in rugged terrain limiting ground access. Aerial resources focusing on protecting structures at Nadina Lake. Guard line construction underway on accessible south flank.",
+          "growth_history": [
+            {"date": "2024-08-03", "ha": 8, "note": "Lightning ignition"},
+            {"date": "2024-08-07", "ha": 1200, "note": "Remote spread, resource access limited"},
+            {"date": "2024-08-11", "ha": 4100, "note": "Significant run on west side"},
+            {"date": "2024-08-14", "ha": 6200, "note": "Moderate growth, holding on east flank"}
+          ],
+          "evac_notices": [
+            {
+              "type": "ALERT",
+              "area": "Nadina Lake Road — lakeside properties",
+              "properties": 42,
+              "issued": "2024-08-11T09:00:00Z",
+              "link": "https://www.lakelandsrd.ca/"
+            }
+          ],
+          "road_closures": [
+            {
+              "status": "CLOSED",
+              "road": "Nadina Lake Forest Service Road",
+              "reason": "Wildfire",
+              "since": "2024-08-08T10:00:00Z",
+              "link": "https://drivebc.ca"
+            }
+          ],
+          "news": [
+            {
+              "title": "Nadina Lake fire forces evacuation alert for remote lakeside community",
+              "summary": "Forty-two properties on Nadina Lake Road are under evacuation alert as the fire continues to grow in challenging terrain northwest of Burns Lake.",
+              "url": "https://www.cbc.ca/news/canada/british-columbia",
+              "source": "CBC BC",
+              "age": "8h"
+            }
+          ],
+          "social_posts": [],
+          "photos": [],
+          "webcams": [],
+          "weather": {
+            "temp_c": 29,
+            "rh_pct": 24,
+            "wind_dir": "W",
+            "wind_kmh": 22,
+            "gust_kmh": 38,
+            "fwi": 26,
+            "bui": 148,
+            "isi": 13.6,
+            "forecast": [
+              {"date": "2024-08-14", "high": 29, "desc": "Partly cloudy, W 20–40", "precip_pct": 10},
+              {"date": "2024-08-15", "high": 28, "desc": "Chance of thunderstorm", "precip_pct": 30},
+              {"date": "2024-08-16", "high": 26, "desc": "Showers likely", "precip_pct": 55},
+              {"date": "2024-08-17", "high": 22, "desc": "Rain, cooling", "precip_pct": 70}
+            ]
+          }
+        },
+        {
+          "fire_number": "G41188",
+          "name": "Francois Lake South",
+          "hectares": 1450,
+          "status": "Being Held",
+          "cause": "Lightning",
+          "discovered": "2024-07-29",
+          "lat": 54.0654,
+          "lng": -125.2341,
+          "crews": 22,
+          "machines": 3,
+          "helicopters": 2,
+          "airtankers": 0,
+          "tactics": "Fire held on all flanks for 48 hours. Mop-up operations underway along guard. Patrol continuing to monitor interior burning.",
+          "growth_history": [
+            {"date": "2024-07-29", "ha": 5, "note": "Lightning ignition"},
+            {"date": "2024-08-02", "ha": 420, "note": "Wind-driven growth"},
+            {"date": "2024-08-08", "ha": 1450, "note": "Held — no significant growth since"}
+          ],
+          "evac_notices": [],
+          "road_closures": [],
+          "news": [],
+          "social_posts": [],
+          "photos": [],
+          "webcams": [],
+          "weather": {
+            "temp_c": 27,
+            "rh_pct": 28,
+            "wind_dir": "SW",
+            "wind_kmh": 15,
+            "gust_kmh": 28,
+            "fwi": 21,
+            "bui": 132,
+            "isi": 10.8,
+            "forecast": [
+              {"date": "2024-08-14", "high": 27, "desc": "Mostly sunny", "precip_pct": 5},
+              {"date": "2024-08-15", "high": 26, "desc": "Partly cloudy", "precip_pct": 25},
+              {"date": "2024-08-16", "high": 23, "desc": "Showers", "precip_pct": 60},
+              {"date": "2024-08-17", "high": 20, "desc": "Rain", "precip_pct": 75}
+            ]
+          }
+        }
+      ],
+      "zone_news": [],
+      "zone_road_closures": [
+        {
+          "status": "CLOSED",
+          "road": "Nadina Lake Forest Service Road",
+          "reason": "Wildfire",
+          "since": "2024-08-08T10:00:00Z",
+          "link": "https://drivebc.ca"
+        }
+      ],
+      "zone_evac_notices": [
+        {
+          "type": "ALERT",
+          "area": "Nadina Lake Road — lakeside properties",
+          "properties": 42,
+          "issued": "2024-08-11T09:00:00Z",
+          "link": "https://www.lakelandsrd.ca/"
+        }
+      ]
+    },
+    {
+      "id": "cariboo",
+      "name": "Cariboo Fire Centre",
+      "danger_rating": "Very High",
+      "danger_colour": "#C0392B",
+      "weather_summary": "Hot and dry. Low relative humidity persisting.",
+      "active_fires": 9,
+      "fires_of_note": 1,
+      "zone_summary": "One fire of note burning in the central Cariboo. Conditions remain dangerous with ongoing drought and low humidity. Eleven lightning ignitions from the August 10 storm track are being monitored.",
+      "fires_of_note_list": [
+        {
+          "fire_number": "C30452",
+          "name": "Horsefly River",
+          "hectares": 2180,
+          "status": "Out of Control",
+          "cause": "Unknown",
+          "discovered": "2024-08-09",
+          "lat": 52.3456,
+          "lng": -121.4567,
+          "crews": 28,
+          "machines": 4,
+          "helicopters": 3,
+          "airtankers": 1,
+          "tactics": "Fire burning in mixed timber and grass in the Horsefly River drainage. East flank priority — guard construction protecting the Horsefly community. Night operations planned if conditions allow.",
+          "growth_history": [
+            {"date": "2024-08-09", "ha": 20, "note": "Cause unknown, initial attack underway"},
+            {"date": "2024-08-11", "ha": 680, "note": "Wind event drove spread to northeast"},
+            {"date": "2024-08-14", "ha": 2180, "note": "Overnight run, Fire of Note declared"}
+          ],
+          "evac_notices": [
+            {
+              "type": "ALERT",
+              "area": "Horsefly community — north of Horsefly River",
+              "properties": 124,
+              "issued": "2024-08-14T07:30:00Z",
+              "link": "https://www.cariboord.ca/"
+            }
+          ],
+          "road_closures": [
+            {
+              "status": "CLOSED",
+              "road": "Horsefly–Likely Road east of Horsefly",
+              "reason": "Wildfire",
+              "since": "2024-08-14T08:00:00Z",
+              "link": "https://drivebc.ca"
+            }
+          ],
+          "news": [
+            {
+              "title": "Horsefly River fire declared Fire of Note after overnight growth",
+              "summary": "The Horsefly River wildfire has grown to over 2,000 hectares and been designated a Fire of Note. An evacuation alert has been issued for the Horsefly community.",
+              "url": "https://www.cbc.ca/news/canada/british-columbia",
+              "source": "CBC BC",
+              "age": "4h"
+            }
+          ],
+          "social_posts": [],
+          "photos": [],
+          "webcams": [],
+          "weather": {
+            "temp_c": 32,
+            "rh_pct": 16,
+            "wind_dir": "NE",
+            "wind_kmh": 26,
+            "gust_kmh": 46,
+            "fwi": 31,
+            "bui": 164,
+            "isi": 16.2,
+            "forecast": [
+              {"date": "2024-08-14", "high": 32, "desc": "Sunny, NE 20–45", "precip_pct": 0},
+              {"date": "2024-08-15", "high": 30, "desc": "Sunny", "precip_pct": 5},
+              {"date": "2024-08-16", "high": 28, "desc": "Partly cloudy", "precip_pct": 20},
+              {"date": "2024-08-17", "high": 24, "desc": "Showers possible", "precip_pct": 40}
+            ]
+          }
+        }
+      ],
+      "zone_news": [],
+      "zone_road_closures": [],
+      "zone_evac_notices": []
+    },
+    {
+      "id": "northwest",
+      "name": "Northwest Fire Centre",
+      "danger_rating": "High",
+      "danger_colour": "#E67E22",
+      "weather_summary": "Warm with isolated afternoon thunderstorms. Moderate fire danger.",
+      "active_fires": 7,
+      "fires_of_note": 1,
+      "zone_summary": "One fire of note in remote terrain near Tatogga Lake. Lightning activity continues to generate new ignitions in the northwest. Resource levels are adequate for current activity.",
+      "fires_of_note_list": [
+        {
+          "fire_number": "R10234",
+          "name": "Tatogga Lake",
+          "hectares": 4100,
+          "status": "Out of Control",
+          "cause": "Lightning",
+          "discovered": "2024-07-25",
+          "lat": 57.7891,
+          "lng": -130.0123,
+          "crews": 15,
+          "machines": 0,
+          "helicopters": 2,
+          "airtankers": 0,
+          "tactics": "Remote fire — ground access not possible. Aerial patrol and assessment only. Monitor and protect posture given extreme remoteness and no immediate threat to communities.",
+          "growth_history": [
+            {"date": "2024-07-25", "ha": 1, "note": "Lightning ignition, remote"},
+            {"date": "2024-07-30", "ha": 450, "note": "Moderate spread in timber"},
+            {"date": "2024-08-05", "ha": 2200, "note": "Wind-driven run to south"},
+            {"date": "2024-08-14", "ha": 4100, "note": "Steady growth, no community threat"}
+          ],
+          "evac_notices": [],
+          "road_closures": [],
+          "news": [],
+          "social_posts": [],
+          "photos": [],
+          "webcams": [],
+          "weather": {
+            "temp_c": 24,
+            "rh_pct": 32,
+            "wind_dir": "S",
+            "wind_kmh": 18,
+            "gust_kmh": 30,
+            "fwi": 18,
+            "bui": 98,
+            "isi": 9.4,
+            "forecast": [
+              {"date": "2024-08-14", "high": 24, "desc": "Partly cloudy", "precip_pct": 20},
+              {"date": "2024-08-15", "high": 22, "desc": "Chance of thunderstorm", "precip_pct": 35},
+              {"date": "2024-08-16", "high": 20, "desc": "Showers", "precip_pct": 55},
+              {"date": "2024-08-17", "high": 18, "desc": "Rain", "precip_pct": 65}
+            ]
+          }
+        }
+      ],
+      "zone_news": [],
+      "zone_road_closures": [],
+      "zone_evac_notices": []
+    },
+    {
+      "id": "southeast",
+      "name": "Southeast Fire Centre",
+      "danger_rating": "Very High",
+      "danger_colour": "#C0392B",
+      "weather_summary": "Hot and dry. Inflow winds increasing through afternoon.",
+      "active_fires": 4,
+      "fires_of_note": 1,
+      "zone_summary": "One fire of note near Revelstoke — the Begbie Creek fire is being held but requires significant resource commitment. Smoke impacts are affecting air quality in Revelstoke and Golden.",
+      "fires_of_note_list": [
+        {
+          "fire_number": "V50891",
+          "name": "Begbie Creek",
+          "hectares": 980,
+          "status": "Being Held",
+          "cause": "Lightning",
+          "discovered": "2024-08-05",
+          "lat": 51.0012,
+          "lng": -118.1987,
+          "crews": 24,
+          "machines": 3,
+          "helicopters": 2,
+          "airtankers": 0,
+          "tactics": "Fire held on all flanks. Crews completing mop-up on southern and eastern perimeter. West flank patrol continuing due to terrain. No current threat to Revelstoke.",
+          "growth_history": [
+            {"date": "2024-08-05", "ha": 3, "note": "Lightning ignition in alpine"},
+            {"date": "2024-08-08", "ha": 240, "note": "Spread to lower timber"},
+            {"date": "2024-08-11", "ha": 980, "note": "Held — stable for 72 hours"}
+          ],
+          "evac_notices": [],
+          "road_closures": [
+            {
+              "status": "CLOSED",
+              "road": "Begbie Creek FSR — all access",
+              "reason": "Wildfire suppression operations",
+              "since": "2024-08-06T08:00:00Z",
+              "link": "https://drivebc.ca"
+            }
+          ],
+          "news": [],
+          "social_posts": [],
+          "photos": [],
+          "webcams": [],
+          "weather": {
+            "temp_c": 31,
+            "rh_pct": 22,
+            "wind_dir": "W",
+            "wind_kmh": 20,
+            "gust_kmh": 36,
+            "fwi": 27,
+            "bui": 152,
+            "isi": 13.2,
+            "forecast": [
+              {"date": "2024-08-14", "high": 31, "desc": "Sunny, W 15–35", "precip_pct": 0},
+              {"date": "2024-08-15", "high": 29, "desc": "Partly cloudy", "precip_pct": 10},
+              {"date": "2024-08-16", "high": 26, "desc": "Mostly cloudy", "precip_pct": 30},
+              {"date": "2024-08-17", "high": 22, "desc": "Showers", "precip_pct": 55}
+            ]
+          }
+        }
+      ],
+      "zone_news": [],
+      "zone_road_closures": [],
+      "zone_evac_notices": []
+    },
+    {
+      "id": "coastal",
+      "name": "Coastal Fire Centre",
+      "danger_rating": "Moderate",
+      "danger_colour": "#F39C12",
+      "weather_summary": "Marine influence keeping humidity moderate. Winds light.",
+      "active_fires": 2,
+      "fires_of_note": 0,
+      "zone_summary": "Low activity on the coast. Two small fires under control. Marine air keeping conditions moderate. No fires of note currently.",
+      "fires_of_note_list": [],
+      "zone_news": [],
+      "zone_road_closures": [],
+      "zone_evac_notices": []
+    }
+  ]
+}

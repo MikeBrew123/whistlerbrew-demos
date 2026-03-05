@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: '/pushup', destination: '/pushup/index.html', permanent: false },
+      { source: '/wildfire', destination: '/wildfire/index.html', permanent: false },
     ];
   },
 };

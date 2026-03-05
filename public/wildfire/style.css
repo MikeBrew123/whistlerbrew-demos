@@ -1,0 +1,1143 @@
+/* ============================================================
+   BC WILDFIRE TRACKER — style.css
+   Design language: dark/industrial, information-dense, functional
+   ============================================================ */
+
+:root {
+  --fire-red:    #C0392B;
+  --fire-red-bg: #2a0a08;
+  --smoke:       #2C3E50;
+  --ember:       #E67E22;
+  --ember-bg:    #2a1a08;
+  --sky:         #2980B9;
+  --forest:      #27AE60;
+  --ash:         #7F8C8D;
+  --paper:       #F4F1EC;
+  --bg:          #0f1317;
+  --bg2:         #161b22;
+  --bg3:         #1e252f;
+  --border:      #2d3a47;
+  --text:        #d4d8de;
+  --text-muted:  #7a8694;
+  --text-strong: #eaecef;
+  --mono:        'SF Mono', 'Fira Code', 'Consolas', monospace;
+  --sans:        system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a { color: var(--sky); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ============================================================
+   SITE HEADER
+   ============================================================ */
+.site-header {
+  background: var(--bg2);
+  border-bottom: 2px solid var(--fire-red);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.7rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-flame { font-size: 1.2rem; }
+
+.header-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  letter-spacing: 0.02em;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.meta-sep { color: var(--border); }
+
+/* ============================================================
+   MAIN CONTENT WRAPPER
+   ============================================================ */
+#main-view,
+#zone-view,
+#fire-view {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.2rem 3rem;
+}
+
+/* ============================================================
+   LOAD ERROR
+   ============================================================ */
+.load-error {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  background: var(--fire-red-bg);
+  border-left: 4px solid var(--fire-red);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar {
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.stat-box {
+  flex: 1;
+  background: var(--bg2);
+  padding: 0.9rem 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-box.highlight { background: #1a1010; }
+
+.stat-value {
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1;
+}
+
+.stat-box.highlight .stat-value { color: var(--fire-red); }
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   OFF-SEASON BANNER
+   ============================================================ */
+.offseason-banner {
+  background: var(--bg3);
+  border-left: 4px solid var(--forest);
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
+.section-heading {
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-heading h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ============================================================
+   ZONE CARDS GRID
+   ============================================================ */
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) { .zone-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .zone-grid { grid-template-columns: 1fr; } }
+
+.zone-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  border-left: 4px solid var(--ash);
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+}
+
+.zone-card:hover {
+  background: var(--bg3);
+  border-color: var(--sky);
+}
+
+.zone-card:hover .zone-card-name { color: var(--sky); }
+
+.zone-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.zone-card-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  line-height: 1.3;
+  transition: color 0.15s;
+}
+
+.danger-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.zone-card-counts {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.zone-count {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.zone-count-val {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1;
+}
+
+.zone-count-val.fon-val { color: var(--fire-red); }
+
+.zone-count-lbl {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.zone-card-weather {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.zone-card-evac-badge {
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--fire-red);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.zone-card-quiet {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
+.zone-card-skeleton {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  border-left: 4px solid var(--border);
+  height: 130px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================================
+   CANADA SECTION
+   ============================================================ */
+.canada-section {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.canada-ciffc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ciffc-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+
+.ciffc-val {
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.ciffc-lbl {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.province-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.prov-chip {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  color: var(--text);
+}
+
+.prov-chip.prov-high { border-color: var(--fire-red); color: var(--fire-red); }
+
+.canada-news-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+
+.canada-news-item {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.canada-news-item:first-child { border-top: none; padding-top: 0; }
+
+.news-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+}
+
+.news-title a { color: var(--text-strong); }
+.news-title a:hover { color: var(--sky); }
+
+.news-summary {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+.news-meta {
+  font-size: 0.72rem;
+  color: var(--ash);
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ============================================================
+   WORLD SECTION
+   ============================================================ */
+.world-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.world-fire-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--ash);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.world-flag { font-size: 1.5rem; flex-shrink: 0; }
+
+.world-fire-info { flex: 1; min-width: 0; }
+
+.world-fire-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 0.2rem;
+}
+
+.world-fire-loc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.world-fire-summary {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.world-fire-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.world-stat {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.world-stat strong { color: var(--text); }
+
+/* ============================================================
+   SITE FOOTER
+   ============================================================ */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 2;
+}
+
+/* ============================================================
+   BREADCRUMB & BACK BUTTON
+   ============================================================ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.btn-back {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--sky);
+  font-size: 0.82rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: var(--sans);
+}
+
+.btn-back:hover { background: var(--bg3); }
+
+.crumb-sep { color: var(--border); }
+.crumb-current { color: var(--text); font-weight: 500; }
+
+/* ============================================================
+   ZONE DETAIL HEADER
+   ============================================================ */
+.zone-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.zone-detail-header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  margin-bottom: 0.3rem;
+}
+
+.zone-weather-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.zone-header-right { flex-shrink: 0; }
+
+.danger-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   EVACUATION NOTICES
+   ============================================================ */
+.evac-notice-block {
+  margin-bottom: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+  border-left: 4px solid;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.evac-notice-block.order {
+  background: #1c0808;
+  border-color: var(--fire-red);
+}
+
+.evac-notice-block.alert {
+  background: #1a1008;
+  border-color: var(--ember);
+}
+
+.evac-type-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.evac-notice-block.order .evac-type-label {
+  background: var(--fire-red);
+  color: #fff;
+}
+
+.evac-notice-block.alert .evac-type-label {
+  background: var(--ember);
+  color: #fff;
+}
+
+.evac-details { flex: 1; min-width: 0; }
+
+.evac-area {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 0.2rem;
+}
+
+.evac-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.evac-notices-wrapper { margin-bottom: 1.2rem; }
+
+/* ============================================================
+   TAB BAR
+   ============================================================ */
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 1.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-bar::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-family: var(--sans);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  color: var(--text-strong);
+  border-bottom-color: var(--sky);
+}
+
+.tab-panel { padding: 0.2rem 0; }
+
+/* ============================================================
+   FIRE LIST (zone fires tab)
+   ============================================================ */
+.fires-zone-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: var(--bg2);
+  border-radius: 4px;
+}
+
+.fzone-count { display: flex; flex-direction: column; }
+.fzone-val {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+.fzone-val.fon { color: var(--fire-red); }
+.fzone-lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+
+.fires-section-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin: 1rem 0 0.5rem;
+  font-weight: 600;
+}
+
+.fire-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.fire-row:hover {
+  background: var(--bg3);
+  border-color: var(--sky);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fire-row-info { flex: 1; min-width: 0; }
+
+.fire-row-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fire-row-number {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--bg3);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.fire-row-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.fire-row-stats {
+  display: flex;
+  gap: 1rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.fire-row-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.fire-row-stat-val {
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.fire-row-stat-lbl {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.fire-row-chevron {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.empty-tab {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   FIRE DETAIL HEADER
+   ============================================================ */
+.fire-detail-header {
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.fire-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.fire-number-tag {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--smoke);
+  color: var(--text-muted);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.fire-identity h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.fire-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.status-tag, .cause-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+.fire-discovered-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   FIRE STATS BAR
+   ============================================================ */
+.fire-stats-bar {
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.fstat-box {
+  flex: 1;
+  background: var(--bg2);
+  padding: 0.7rem 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.fstat-value {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1;
+}
+
+.fstat-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .fire-stats-bar { flex-wrap: wrap; }
+  .fstat-box { flex: 1 1 calc(33% - 2px); min-width: 80px; }
+}
+
+/* ============================================================
+   WEATHER TAB
+   ============================================================ */
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.wx-box {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.wx-val {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.wx-lbl {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.fwi-grid {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.fwi-box {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.fwi-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.fwi-value {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ember);
+}
+
+.forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.forecast-table th {
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.forecast-table td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.forecast-table tr:last-child td { border-bottom: none; }
+.forecast-table .precip-cell { color: var(--sky); font-family: var(--mono); }
+
+/* ============================================================
+   RESPONSE TAB
+   ============================================================ */
+.resources-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.resource-box {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 90px;
+}
+
+.resource-val {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.resource-lbl {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.tactics-block {
+  background: var(--bg2);
+  border-left: 3px solid var(--sky);
+  border-radius: 0 4px 4px 0;
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+.growth-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.growth-table th {
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.growth-table td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.growth-table tr:first-child td { font-weight: 700; color: var(--text-strong); }
+.growth-table .ha-cell { font-family: var(--mono); color: var(--ember); }
+.growth-table tr:last-child td { border-bottom: none; }
+
+/* ============================================================
+   ROADS TAB
+   ============================================================ */
+.road-closure-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.road-status-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.road-status-tag.closed { background: var(--fire-red); color: #fff; }
+.road-status-tag.restricted { background: var(--ember); color: #fff; }
+
+.road-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 0.2rem;
+}
+
+.road-reason {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   PHOTOS TAB
+   ============================================================ */
+.photo-placeholder {
+  background: var(--bg2);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.photo-placeholder p { margin-bottom: 0.4rem; }
+.photo-placeholder a { font-size: 0.82rem; }
+
+/* ============================================================
+   SOCIAL TAB
+   ============================================================ */
+.social-feed { display: flex; flex-direction: column; gap: 1rem; }
+
+.social-post-placeholder {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   MAP TAB
+   ============================================================ */
+.map-container { position: relative; }
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  display: block;
+}
+
+.map-fallback {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ============================================================
+   NEWS LIST
+   ============================================================ */
+.news-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+
+.news-item {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.news-item:last-child { border-bottom: none; }
+
+/* ============================================================
+   RESPONSIVE TWEAKS
+   ============================================================ */
+@media (max-width: 640px) {
+  .stats-bar { flex-wrap: wrap; }
+  .stat-box { flex: 1 1 calc(50% - 1px); }
+  .fire-row-stats { display: none; }
+  .zone-detail-header { flex-direction: column; }
+  .fire-detail-header { padding: 0.9rem; }
+  .fire-identity h1 { font-size: 1.2rem; }
+  .tab-btn { padding: 0.5rem 0.7rem; font-size: 0.78rem; }
+  .resources-grid { gap: 0.6rem; }
+  .resource-box { min-width: 75px; padding: 0.5rem 0.7rem; }
+}
+
+@media (max-width: 400px) {
+  .header-title { font-size: 0.95rem; }
+  .stat-value { font-size: 1.3rem; }
+}
