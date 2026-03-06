@@ -213,13 +213,13 @@ function renderZoneCard(zone) {
   const hasOrder = hasEvac && zone.zone_evac_notices.some(n => n.type === 'ORDER');
   const quietState = zone.active_fires === 0;
 
-  const dangerStyles = {
-    label: zone.danger_rating,
-    bg: zone.danger_colour || '#7F8C8D',
-  };
+  const isNA = !zone.danger_rating || zone.danger_rating === 'N/A';
+  const dangerBg = zone.danger_colour || '#7F8C8D';
 
-  // Pill text colour — always white on dark bg
-  const pillHtml = `<span class="danger-pill" style="background:${dangerStyles.bg}22;color:${dangerStyles.bg};border:1px solid ${dangerStyles.bg}55">${dangerStyles.label}</span>`;
+  // Hide pill entirely when off-season / no rating
+  const pillHtml = isNA
+    ? ''
+    : `<span class="danger-pill" style="background:${dangerBg}22;color:${dangerBg};border:1px solid ${dangerBg}55">${zone.danger_rating}</span>`;
 
   const evacBadge = hasOrder
     ? '<div class="zone-card-evac-badge">⚠ Evac Orders Active</div>'
@@ -234,7 +234,7 @@ function renderZoneCard(zone) {
         <div class="zone-count"><span class="zone-count-val fon-val">${zone.fires_of_note}</span><span class="zone-count-lbl">Fires of Note</span></div>
       </div>`;
 
-  const borderColour = hasOrder ? '#C0392B' : hasEvac ? '#E67E22' : (zone.danger_colour || '#7F8C8D');
+  const borderColour = hasOrder ? '#C0392B' : hasEvac ? '#E67E22' : isNA ? 'var(--border)' : (zone.danger_colour || '#7F8C8D');
 
   return `
     <div class="zone-card" style="border-left-color:${borderColour}" onclick="showZoneView('${zone.id}')">
@@ -572,7 +572,7 @@ function renderFireRow(fire) {
       </div>
       <div class="fire-row-stats">
         <div class="fire-row-stat">
-          <span class="fire-row-stat-val">${fire.hectares.toLocaleString()}</span>
+          <span class="fire-row-stat-val">${(fire.size_ha ?? fire.hectares ?? 0).toLocaleString()}</span>
           <span class="fire-row-stat-lbl">Ha</span>
         </div>
         <div class="fire-row-stat">
@@ -610,10 +610,11 @@ function renderEvacNotices(notices) {
 }
 
 function renderNewsItem(n) {
+  const age = n.age || (n.published ? formatAge(n.published) : '');
   return `<li class="news-item">
     <div class="news-title"><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a></div>
-    <div class="news-summary">${n.summary}</div>
-    <div class="news-meta"><span>${n.source}</span><span>${n.age}</span></div>
+    ${n.summary ? `<div class="news-summary">${n.summary}</div>` : ''}
+    <div class="news-meta"><span>${n.source || ''}</span><span>${age}</span></div>
   </li>`;
 }
 
