@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-03-06T00:13:00.412711+00:00",
-  "next_update": "2026-03-06T00:28:00.412711+00:00",
+  "updated_at": "2026-03-06T00:15:57.713Z",
+  "next_update": "2026-03-06T00:30:57.713Z",
   "season_year": 2024,
   "bc_totals": {
     "active": 0,
-    "fires_of_note": 8,
+    "fires_of_note": 0,
     "season_total": 312,
-    "hectares_burned": 142650,
+    "hectares_burned": 0,
     "crews_deployed": 312,
     "preparedness_level": 4
   },
@@ -16,9 +16,9 @@
       "name": "Kamloops Fire Centre",
       "danger_rating": "Extreme",
       "danger_colour": "#8B0000",
-      "weather_summary": "Hot, dry, SE winds 30\u201360 km/h. No rain in forecast.",
-      "active_fires": 14,
-      "fires_of_note": 3,
+      "weather_summary": "Hot, dry, SE winds 30–60 km/h. No rain in forecast.",
+      "active_fires": 0,
+      "fires_of_note": 0,
       "zone_summary": "Extreme fire behaviour continues across the southern interior. The Loon Lake complex remains the most significant threat with rapid growth overnight and multiple evacuation orders in effect. Resources are stretched across three active fronts.",
       "fires_of_note_list": [
         {
@@ -60,14 +60,14 @@
           "evac_notices": [
             {
               "type": "ORDER",
-              "area": "Loon Lake Road \u2014 Properties 1 through 340",
+              "area": "Loon Lake Road — Properties 1 through 340",
               "properties": 340,
               "issued": "2024-08-14T06:00:00Z",
               "link": "https://www.tnrd.ca/services/emergency-services/"
             },
             {
               "type": "ALERT",
-              "area": "70 Mile House \u2014 West Side Road corridor",
+              "area": "70 Mile House — West Side Road corridor",
               "properties": 215,
               "issued": "2024-08-13T18:00:00Z",
               "link": "https://www.tnrd.ca/services/emergency-services/"
@@ -83,8 +83,8 @@
             },
             {
               "status": "CLOSED",
-              "road": "Hwy 97 \u2014 Bonaparte Lake turnoff to 70 Mile House",
-              "reason": "Wildfire smoke \u2014 zero visibility",
+              "road": "Hwy 97 — Bonaparte Lake turnoff to 70 Mile House",
+              "reason": "Wildfire smoke — zero visibility",
               "since": "2024-08-14T08:00:00Z",
               "link": "https://drivebc.ca"
             }
@@ -116,7 +116,7 @@
             {
               "url": "https://www.instagram.com/bcgovfireinfo/",
               "image_url": "",
-              "caption": "K20123 Loon Lake \u2014 aerial view from Aug 14 morning patrol",
+              "caption": "K20123 Loon Lake — aerial view from Aug 14 morning patrol",
               "source": "instagram",
               "timestamp": "2024-08-14T10:00:00Z"
             }
@@ -142,13 +142,13 @@
               {
                 "date": "2024-08-14",
                 "high": 36,
-                "desc": "Sunny, SE 30\u201360",
+                "desc": "Sunny, SE 30–60",
                 "precip_pct": 0
               },
               {
                 "date": "2024-08-15",
                 "high": 34,
-                "desc": "Partly cloudy, SE 20\u201340",
+                "desc": "Partly cloudy, SE 20–40",
                 "precip_pct": 5
               },
               {
@@ -189,7 +189,7 @@
             {
               "date": "2024-08-05",
               "ha": 890,
-              "note": "Wind event \u2014 escaped to grass and timber"
+              "note": "Wind event — escaped to grass and timber"
             },
             {
               "date": "2024-08-09",
@@ -199,13 +199,13 @@
             {
               "date": "2024-08-14",
               "ha": 3240,
-              "note": "Being Held \u2014 minimal overnight growth"
+              "note": "Being Held — minimal overnight growth"
             }
           ],
           "evac_notices": [
             {
               "type": "ALERT",
-              "area": "Deadman\u2013Vidette Road corridor",
+              "area": "Deadman–Vidette Road corridor",
               "properties": 88,
               "issued": "2024-08-09T12:00:00Z",
               "link": "https://www.tnrd.ca/services/emergency-services/"
@@ -214,7 +214,7 @@
           "road_closures": [
             {
               "status": "CLOSED",
-              "road": "Deadman\u2013Vidette Road south of Vidette Lake",
+              "road": "Deadman–Vidette Road south of Vidette Lake",
               "reason": "Wildfire",
               "since": "2024-08-09T14:00:00Z",
               "link": "https://drivebc.ca"
@@ -245,7 +245,7 @@
               {
                 "date": "2024-08-14",
                 "high": 33,
-                "desc": "Sunny, SW 15\u201330",
+                "desc": "Sunny, SW 15–30",
                 "precip_pct": 0
               },
               {
@@ -319,7 +319,7 @@
               {
                 "date": "2024-08-14",
                 "high": 34,
-                "desc": "Sunny, NW 20\u201345",
+                "desc": "Sunny, NW 20–45",
                 "precip_pct": 0
               },
               {
@@ -363,7 +363,7 @@
         },
         {
           "status": "CLOSED",
-          "road": "Deadman\u2013Vidette Road south of Vidette Lake",
+          "road": "Deadman–Vidette Road south of Vidette Lake",
           "reason": "Wildfire",
           "since": "2024-08-09T14:00:00Z",
           "link": "https://drivebc.ca"
@@ -372,14 +372,14 @@
       "zone_evac_notices": [
         {
           "type": "ORDER",
-          "area": "Loon Lake Road \u2014 Properties 1\u2013340",
+          "area": "Loon Lake Road — Properties 1–340",
           "properties": 340,
           "issued": "2024-08-14T06:00:00Z",
           "link": "https://www.tnrd.ca/services/emergency-services/"
         },
         {
           "type": "ALERT",
-          "area": "70 Mile House \u2014 West Side Road corridor",
+          "area": "70 Mile House — West Side Road corridor",
           "properties": 215,
           "issued": "2024-08-13T18:00:00Z",
           "link": "https://www.tnrd.ca/services/emergency-services/"
@@ -392,8 +392,8 @@
       "danger_rating": "High",
       "danger_colour": "#E67E22",
       "weather_summary": "Warm with isolated thunderstorms possible. Moderate winds.",
-      "active_fires": 11,
-      "fires_of_note": 2,
+      "active_fires": 0,
+      "fires_of_note": 0,
       "zone_summary": "Two fires of note burning in the central interior. The Nadina Lake fire continues to grow in remote terrain northwest of Burns Lake. New lightning ignitions are being monitored following yesterday's storm track.",
       "fires_of_note_list": [
         {
@@ -435,7 +435,7 @@
           "evac_notices": [
             {
               "type": "ALERT",
-              "area": "Nadina Lake Road \u2014 lakeside properties",
+              "area": "Nadina Lake Road — lakeside properties",
               "properties": 42,
               "issued": "2024-08-11T09:00:00Z",
               "link": "https://www.lakelandsrd.ca/"
@@ -475,7 +475,7 @@
               {
                 "date": "2024-08-14",
                 "high": 29,
-                "desc": "Partly cloudy, W 20\u201340",
+                "desc": "Partly cloudy, W 20–40",
                 "precip_pct": 10
               },
               {
@@ -527,7 +527,7 @@
             {
               "date": "2024-08-08",
               "ha": 1450,
-              "note": "Held \u2014 no significant growth since"
+              "note": "Held — no significant growth since"
             }
           ],
           "evac_notices": [],
@@ -587,7 +587,7 @@
       "zone_evac_notices": [
         {
           "type": "ALERT",
-          "area": "Nadina Lake Road \u2014 lakeside properties",
+          "area": "Nadina Lake Road — lakeside properties",
           "properties": 42,
           "issued": "2024-08-11T09:00:00Z",
           "link": "https://www.lakelandsrd.ca/"
@@ -600,8 +600,8 @@
       "danger_rating": "Very High",
       "danger_colour": "#C0392B",
       "weather_summary": "Hot and dry. Low relative humidity persisting.",
-      "active_fires": 9,
-      "fires_of_note": 1,
+      "active_fires": 0,
+      "fires_of_note": 0,
       "zone_summary": "One fire of note burning in the central Cariboo. Conditions remain dangerous with ongoing drought and low humidity. Eleven lightning ignitions from the August 10 storm track are being monitored.",
       "fires_of_note_list": [
         {
@@ -617,7 +617,7 @@
           "machines": 4,
           "helicopters": 3,
           "airtankers": 1,
-          "tactics": "Fire burning in mixed timber and grass in the Horsefly River drainage. East flank priority \u2014 guard construction protecting the Horsefly community. Night operations planned if conditions allow.",
+          "tactics": "Fire burning in mixed timber and grass in the Horsefly River drainage. East flank priority — guard construction protecting the Horsefly community. Night operations planned if conditions allow.",
           "growth_history": [
             {
               "date": "2024-08-09",
@@ -638,7 +638,7 @@
           "evac_notices": [
             {
               "type": "ALERT",
-              "area": "Horsefly community \u2014 north of Horsefly River",
+              "area": "Horsefly community — north of Horsefly River",
               "properties": 124,
               "issued": "2024-08-14T07:30:00Z",
               "link": "https://www.cariboord.ca/"
@@ -647,7 +647,7 @@
           "road_closures": [
             {
               "status": "CLOSED",
-              "road": "Horsefly\u2013Likely Road east of Horsefly",
+              "road": "Horsefly–Likely Road east of Horsefly",
               "reason": "Wildfire",
               "since": "2024-08-14T08:00:00Z",
               "link": "https://drivebc.ca"
@@ -678,7 +678,7 @@
               {
                 "date": "2024-08-14",
                 "high": 32,
-                "desc": "Sunny, NE 20\u201345",
+                "desc": "Sunny, NE 20–45",
                 "precip_pct": 0
               },
               {
@@ -713,8 +713,8 @@
       "danger_rating": "High",
       "danger_colour": "#E67E22",
       "weather_summary": "Warm with isolated afternoon thunderstorms. Moderate fire danger.",
-      "active_fires": 7,
-      "fires_of_note": 1,
+      "active_fires": 0,
+      "fires_of_note": 0,
       "zone_summary": "One fire of note in remote terrain near Tatogga Lake. Lightning activity continues to generate new ignitions in the northwest. Resource levels are adequate for current activity.",
       "fires_of_note_list": [
         {
@@ -730,7 +730,7 @@
           "machines": 0,
           "helicopters": 2,
           "airtankers": 0,
-          "tactics": "Remote fire \u2014 ground access not possible. Aerial patrol and assessment only. Monitor and protect posture given extreme remoteness and no immediate threat to communities.",
+          "tactics": "Remote fire — ground access not possible. Aerial patrol and assessment only. Monitor and protect posture given extreme remoteness and no immediate threat to communities.",
           "growth_history": [
             {
               "date": "2024-07-25",
@@ -807,9 +807,9 @@
       "danger_rating": "Very High",
       "danger_colour": "#C0392B",
       "weather_summary": "Hot and dry. Inflow winds increasing through afternoon.",
-      "active_fires": 4,
-      "fires_of_note": 1,
-      "zone_summary": "One fire of note near Revelstoke \u2014 the Begbie Creek fire is being held but requires significant resource commitment. Smoke impacts are affecting air quality in Revelstoke and Golden.",
+      "active_fires": 0,
+      "fires_of_note": 0,
+      "zone_summary": "One fire of note near Revelstoke — the Begbie Creek fire is being held but requires significant resource commitment. Smoke impacts are affecting air quality in Revelstoke and Golden.",
       "fires_of_note_list": [
         {
           "fire_number": "V50891",
@@ -839,14 +839,14 @@
             {
               "date": "2024-08-11",
               "ha": 980,
-              "note": "Held \u2014 stable for 72 hours"
+              "note": "Held — stable for 72 hours"
             }
           ],
           "evac_notices": [],
           "road_closures": [
             {
               "status": "CLOSED",
-              "road": "Begbie Creek FSR \u2014 all access",
+              "road": "Begbie Creek FSR — all access",
               "reason": "Wildfire suppression operations",
               "since": "2024-08-06T08:00:00Z",
               "link": "https://drivebc.ca"
@@ -869,7 +869,7 @@
               {
                 "date": "2024-08-14",
                 "high": 31,
-                "desc": "Sunny, W 15\u201335",
+                "desc": "Sunny, W 15–35",
                 "precip_pct": 0
               },
               {
@@ -904,7 +904,7 @@
       "danger_rating": "Moderate",
       "danger_colour": "#F39C12",
       "weather_summary": "Marine influence keeping humidity moderate. Winds light.",
-      "active_fires": 2,
+      "active_fires": 0,
       "fires_of_note": 0,
       "zone_summary": "Low activity on the coast. Two small fires under control. Marine air keeping conditions moderate. No fires of note currently.",
       "fires_of_note_list": [],
