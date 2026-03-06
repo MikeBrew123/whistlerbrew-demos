@@ -71,11 +71,12 @@ Vercel CDN caches aggressively. Use incrementing `?bust=NNNNN` params until `inc
 - **Data files:** `public/wildfire/data/` (fires.json, canada.json, world.json)
 - **Hosting:** Cloudflare Pages — auto-deploys on `git push origin main`
 
-### N8N Workflows (both active)
+### N8N Workflows (all active)
 | ID | Schedule | What it does |
 |----|----------|-------------|
 | `khKKRqqe7yudNG6B` | Every 15 min | BCWS fire counts + evac notices → fires.json → GitHub |
 | `91nhFP81Tc8XCoqS` | Every 6 hr | Above + CBC BC news + fires_of_note_list refresh |
+| `Xcp8eSz8FUtIY4qa` | Every 6 hr | CBC + BBC + InciWeb RSS → Claude haiku → world.json + canada.json news |
 
 **N8N instance:** https://n8n.srv927040.hstgr.cloud
 **API key:** `carnivore-weekly/secrets/api-keys.json` → `.n8n.api_key`

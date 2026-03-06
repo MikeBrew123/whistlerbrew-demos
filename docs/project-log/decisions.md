@@ -1,5 +1,16 @@
 # Wildfire Tracker — Decisions Log
 
+## 2026-03-06 (Session 2)
+
+### Workflow C: RSS → Claude haiku → world.json + canada.json
+Built a third N8N workflow (ID: Xcp8eSz8FUtIY4qa, every 6hr) that replaces manual world/canada news updates. Sequential chain: CBC National RSS + BBC World RSS + InciWeb RSS → Code (parse RSS, decode GitHub files, build Claude payload) → Claude haiku API → Code (parse response, build 2 updated JSON files) → single HTTP PUT node (processes both canada.json + world.json items). Reuters feed was dead; rss.app was dead; InciWeb is wildfire-specific and active. Anthropic key at `carnivore-weekly/secrets/api-keys.json` → `.anthropic.key`. Model: claude-haiku-4-5.
+
+### Single PUT node handles two files
+Rather than two separate GitHub PUT nodes, node 9 "Build Updated Files" returns TWO items (one per file). A single "PUT to GitHub" HTTP node processes both — cleaner, avoids node reference complexity. URL uses expression: `{{ 'https://.../' + $json.file }}`.
+
+### World fire card updates (app.js Session 2)
+renderWorldFireCard now null-safe for hectares, has Argentina flag, and renders `fw.news[]` as source attribution links. style.css updated with `.world-fire-sources` class.
+
 ## 2026-03-06
 
 ### URL: /wildfire (not /wildfirenews)
