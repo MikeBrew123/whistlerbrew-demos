@@ -1,39 +1,24 @@
 {
-  "updated_at": "2024-08-14T12:00:00Z",
+  "updated_at": "2026-03-06T00:00:00Z",
   "ciffc": {
-    "active_fires": 486,
-    "ha_burned_ytd": 3240000,
-    "preparedness_level": 5,
-    "interprovincial_requests": 3,
+    "active_fires": 0,
+    "ha_burned_ytd": 0,
+    "preparedness_level": 1,
+    "interprovincial_requests": 0,
     "source": "https://ciffc.net",
-    "note": "Canada is at Preparedness Level 5 — the highest. BC, Alberta, and Saskatchewan are all requesting mutual aid."
+    "note": "Off-season. National fire statistics will be updated when the 2026 fire season begins."
   },
   "provinces": [
-    {"id": "bc", "name": "BC", "active": 47, "ha": 142650, "level": 4},
-    {"id": "ab", "name": "AB", "active": 112, "ha": 980000, "level": 5},
-    {"id": "sk", "name": "SK", "active": 88, "ha": 640000, "level": 4},
-    {"id": "mb", "name": "MB", "active": 34, "ha": 210000, "level": 3},
-    {"id": "on", "name": "ON", "active": 62, "ha": 320000, "level": 3},
-    {"id": "qc", "name": "QC", "active": 28, "ha": 180000, "level": 2},
-    {"id": "nb", "name": "NB", "active": 8, "ha": 12000, "level": 2},
-    {"id": "ns", "name": "NS", "active": 4, "ha": 8400, "level": 2},
-    {"id": "nt", "name": "NT", "active": 58, "ha": 650000, "level": 4},
-    {"id": "yt", "name": "YT", "active": 21, "ha": 88000, "level": 3}
+    {"id": "bc", "name": "BC", "active": 0, "ha": 0, "level": 1},
+    {"id": "ab", "name": "AB", "active": 0, "ha": 0, "level": 1},
+    {"id": "sk", "name": "SK", "active": 0, "ha": 0, "level": 1},
+    {"id": "mb", "name": "MB", "active": 0, "ha": 0, "level": 1},
+    {"id": "on", "name": "ON", "active": 0, "ha": 0, "level": 1},
+    {"id": "qc", "name": "QC", "active": 0, "ha": 0, "level": 1},
+    {"id": "nb", "name": "NB", "active": 0, "ha": 0, "level": 1},
+    {"id": "ns", "name": "NS", "active": 0, "ha": 0, "level": 1},
+    {"id": "nt", "name": "NT", "active": 0, "ha": 0, "level": 1},
+    {"id": "yt", "name": "YT", "active": 0, "ha": 0, "level": 1}
   ],
-  "news": [
-    {
-      "title": "Canada hits Preparedness Level 5 as fires burn from BC to Quebec",
-      "summary": "Canada's interagency fire management network has reached its highest national preparedness level as simultaneous fires across BC, Alberta, and Saskatchewan stretch resources.",
-      "url": "https://www.cbc.ca/news/canada",
-      "source": "CBC National",
-      "age": "10h"
-    },
-    {
-      "title": "Alberta requests 200 international firefighters as Grande Prairie fires spread",
-      "summary": "Alberta has formally requested international firefighting resources through CIFFC as fires north of Grande Prairie continue to expand in hot, dry conditions.",
-      "url": "https://www.cbc.ca/news/canada",
-      "source": "CBC National",
-      "age": "1d"
-    }
-  ]
+  "news": []
 }

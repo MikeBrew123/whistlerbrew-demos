@@ -262,8 +262,8 @@ function renderCanadaSection(canada) {
   return `
     <div class="canada-ciffc">
       <div class="ciffc-stat"><span class="ciffc-val">${c.active_fires.toLocaleString()}</span><span class="ciffc-lbl">Active (Canada)</span></div>
-      <div class="ciffc-stat"><span class="ciffc-val">${(c.ha_burned_ytd / 1000000).toFixed(1)}M</span><span class="ciffc-lbl">Hectares YTD</span></div>
-      <div class="ciffc-stat"><span class="ciffc-val" style="color:var(--fire-red)">PL ${c.preparedness_level}</span><span class="ciffc-lbl">National Level</span></div>
+      <div class="ciffc-stat"><span class="ciffc-val">${c.ha_burned_ytd >= 1000000 ? (c.ha_burned_ytd / 1000000).toFixed(1) + 'M' : c.ha_burned_ytd.toLocaleString()}</span><span class="ciffc-lbl">Hectares YTD</span></div>
+      <div class="ciffc-stat"><span class="ciffc-val" style="color:${c.preparedness_level <= 1 ? 'var(--text-muted)' : 'var(--fire-red)'}">PL ${c.preparedness_level}</span><span class="ciffc-lbl">National Level</span></div>
       ${c.interprovincial_requests ? `<div class="ciffc-stat"><span class="ciffc-val">${c.interprovincial_requests}</span><span class="ciffc-lbl">Inter-prov Requests</span></div>` : ''}
     </div>
     <div class="province-bar">${provHtml}</div>

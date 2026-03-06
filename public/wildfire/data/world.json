@@ -1,25 +1,4 @@
 {
-  "updated_at": "2024-08-12T08:00:00Z",
-  "fires": [
-    {
-      "country": "USA",
-      "region": "California",
-      "name": "Park Fire",
-      "hectares": 165000,
-      "status": "Partially Contained",
-      "containment_pct": 32,
-      "summary": "The Park Fire in Tehama and Butte counties is now the fourth-largest in California history. Over 5,800 firefighters are assigned. Structures destroyed: 214.",
-      "link": "https://inciweb.wildfire.gov"
-    },
-    {
-      "country": "Greece",
-      "region": "Attica",
-      "name": "Varympompi Fire",
-      "hectares": 9400,
-      "status": "Active",
-      "containment_pct": 0,
-      "summary": "A fast-moving wildfire near Athens has forced the evacuation of several suburbs. Strong winds are hampering aerial operations. Canadian water bombers have been deployed.",
-      "link": "https://www.reuters.com"
-    }
-  ]
+  "updated_at": "2026-03-06T00:00:00Z",
+  "fires": []
 }
