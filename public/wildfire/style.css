@@ -452,6 +452,14 @@ a:hover { text-decoration: underline; }
 
 .world-stat strong { color: var(--text); }
 
+.world-fire-sources {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+.world-fire-sources a { color: var(--text-muted); text-decoration: underline; }
+.world-fire-sources a:hover { color: var(--text); }
+
 /* ============================================================
    SITE FOOTER
    ============================================================ */

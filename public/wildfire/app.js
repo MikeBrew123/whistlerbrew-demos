@@ -271,10 +271,14 @@ function renderCanadaSection(canada) {
 }
 
 function renderWorldFireCard(fw) {
-  const flags = { USA: '🇺🇸', Canada: '🇨🇦', Greece: '🇬🇷', Australia: '🇦🇺', Portugal: '🇵🇹', Spain: '🇪🇸', France: '🇫🇷' };
+  const flags = { USA: '🇺🇸', Canada: '🇨🇦', Greece: '🇬🇷', Australia: '🇦🇺', Portugal: '🇵🇹', Spain: '🇪🇸', France: '🇫🇷', Argentina: '🇦🇷' };
   const flag = flags[fw.country] || '🌍';
   const containHtml = fw.containment_pct > 0
     ? `<span class="world-stat"><strong>${fw.containment_pct}%</strong> contained</span>` : '';
+  const haText = fw.hectares ? fw.hectares.toLocaleString() + ' ha' : 'Size unknown';
+  const newsHtml = fw.news && fw.news.length
+    ? `<div class="world-fire-sources">Sources: ${fw.news.map(n => `<a href="${n.url}" target="_blank" rel="noopener">${n.source}</a>`).join(' · ')}</div>`
+    : '';
   return `
     <div class="world-fire-card">
       <span class="world-flag">${flag}</span>
@@ -283,10 +287,11 @@ function renderWorldFireCard(fw) {
         <div class="world-fire-loc">${fw.region}, ${fw.country}</div>
         <div class="world-fire-summary">${fw.summary}</div>
         <div class="world-fire-stats">
-          <span class="world-stat"><strong>${fw.hectares.toLocaleString()}</strong> ha</span>
+          <span class="world-stat"><strong>${haText}</strong></span>
           <span class="world-stat"><strong>${fw.status}</strong></span>
           ${containHtml}
         </div>
+        ${newsHtml}
       </div>
     </div>`;
 }
