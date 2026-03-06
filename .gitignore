@@ -46,5 +46,8 @@ secrets/*
 !secrets/.gitkeep
 !secrets/README.md
 
+# n8n workflow definitions (contain embedded credentials)
+n8n-workflows/
+
 # service account credentials
 config/service-account.json

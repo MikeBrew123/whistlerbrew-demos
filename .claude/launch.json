@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "whistlerbrew-demos",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "pushup-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "public/pushup", "-p", "8767", "--cors", "-c-1"],
+      "port": 8767
+    },
+    {
+      "name": "wildfire-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "public/wildfire", "-p", "8768", "--cors", "-c-1"],
+      "port": 8768
+    }
+  ]
+}
