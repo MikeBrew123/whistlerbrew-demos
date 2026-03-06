@@ -1,9 +1,9 @@
 {
-  "updated_at": "2024-08-14T14:30:00Z",
-  "next_update": "2024-08-14T20:30:00Z",
+  "updated_at": "2026-03-06T00:13:00.412711+00:00",
+  "next_update": "2026-03-06T00:28:00.412711+00:00",
   "season_year": 2024,
   "bc_totals": {
-    "active": 47,
+    "active": 0,
     "fires_of_note": 8,
     "season_total": 312,
     "hectares_burned": 142650,
@@ -16,7 +16,7 @@
       "name": "Kamloops Fire Centre",
       "danger_rating": "Extreme",
       "danger_colour": "#8B0000",
-      "weather_summary": "Hot, dry, SE winds 30–60 km/h. No rain in forecast.",
+      "weather_summary": "Hot, dry, SE winds 30\u201360 km/h. No rain in forecast.",
       "active_fires": 14,
       "fires_of_note": 3,
       "zone_summary": "Extreme fire behaviour continues across the southern interior. The Loon Lake complex remains the most significant threat with rapid growth overnight and multiple evacuation orders in effect. Resources are stretched across three active fronts.",
@@ -36,22 +36,38 @@
           "airtankers": 4,
           "tactics": "Crews are constructing guard on the northeast flank to protect Loon Lake community. Airtankers conducting retardant drops on the advancing southwest head. Bulldozer lines active on two flanks.",
           "growth_history": [
-            {"date": "2024-08-08", "ha": 10, "note": "Human-caused ignition, initial attack"},
-            {"date": "2024-08-10", "ha": 540, "note": "Escaped initial attack, spread to grass"},
-            {"date": "2024-08-12", "ha": 4200, "note": "Extreme spread, Evacuation Alert issued"},
-            {"date": "2024-08-14", "ha": 14820, "note": "Overnight run, Evacuation Order expanded"}
+            {
+              "date": "2024-08-08",
+              "ha": 10,
+              "note": "Human-caused ignition, initial attack"
+            },
+            {
+              "date": "2024-08-10",
+              "ha": 540,
+              "note": "Escaped initial attack, spread to grass"
+            },
+            {
+              "date": "2024-08-12",
+              "ha": 4200,
+              "note": "Extreme spread, Evacuation Alert issued"
+            },
+            {
+              "date": "2024-08-14",
+              "ha": 14820,
+              "note": "Overnight run, Evacuation Order expanded"
+            }
           ],
           "evac_notices": [
             {
               "type": "ORDER",
-              "area": "Loon Lake Road — Properties 1 through 340",
+              "area": "Loon Lake Road \u2014 Properties 1 through 340",
               "properties": 340,
               "issued": "2024-08-14T06:00:00Z",
               "link": "https://www.tnrd.ca/services/emergency-services/"
             },
             {
               "type": "ALERT",
-              "area": "70 Mile House — West Side Road corridor",
+              "area": "70 Mile House \u2014 West Side Road corridor",
               "properties": 215,
               "issued": "2024-08-13T18:00:00Z",
               "link": "https://www.tnrd.ca/services/emergency-services/"
@@ -67,8 +83,8 @@
             },
             {
               "status": "CLOSED",
-              "road": "Hwy 97 — Bonaparte Lake turnoff to 70 Mile House",
-              "reason": "Wildfire smoke — zero visibility",
+              "road": "Hwy 97 \u2014 Bonaparte Lake turnoff to 70 Mile House",
+              "reason": "Wildfire smoke \u2014 zero visibility",
               "since": "2024-08-14T08:00:00Z",
               "link": "https://drivebc.ca"
             }
@@ -100,7 +116,7 @@
             {
               "url": "https://www.instagram.com/bcgovfireinfo/",
               "image_url": "",
-              "caption": "K20123 Loon Lake — aerial view from Aug 14 morning patrol",
+              "caption": "K20123 Loon Lake \u2014 aerial view from Aug 14 morning patrol",
               "source": "instagram",
               "timestamp": "2024-08-14T10:00:00Z"
             }
@@ -123,10 +139,30 @@
             "bui": 192,
             "isi": 21.4,
             "forecast": [
-              {"date": "2024-08-14", "high": 36, "desc": "Sunny, SE 30–60", "precip_pct": 0},
-              {"date": "2024-08-15", "high": 34, "desc": "Partly cloudy, SE 20–40", "precip_pct": 5},
-              {"date": "2024-08-16", "high": 30, "desc": "Mostly cloudy", "precip_pct": 20},
-              {"date": "2024-08-17", "high": 26, "desc": "Chance of showers", "precip_pct": 45}
+              {
+                "date": "2024-08-14",
+                "high": 36,
+                "desc": "Sunny, SE 30\u201360",
+                "precip_pct": 0
+              },
+              {
+                "date": "2024-08-15",
+                "high": 34,
+                "desc": "Partly cloudy, SE 20\u201340",
+                "precip_pct": 5
+              },
+              {
+                "date": "2024-08-16",
+                "high": 30,
+                "desc": "Mostly cloudy",
+                "precip_pct": 20
+              },
+              {
+                "date": "2024-08-17",
+                "high": 26,
+                "desc": "Chance of showers",
+                "precip_pct": 45
+              }
             ]
           }
         },
@@ -145,15 +181,31 @@
           "airtankers": 1,
           "tactics": "Fire is being held on all flanks. Crews focused on strengthening guard line on north flank. Patrol and mop-up underway on secured perimeter.",
           "growth_history": [
-            {"date": "2024-08-01", "ha": 2, "note": "Lightning ignition, initial attack"},
-            {"date": "2024-08-05", "ha": 890, "note": "Wind event — escaped to grass and timber"},
-            {"date": "2024-08-09", "ha": 2800, "note": "Status upgraded to Fire of Note"},
-            {"date": "2024-08-14", "ha": 3240, "note": "Being Held — minimal overnight growth"}
+            {
+              "date": "2024-08-01",
+              "ha": 2,
+              "note": "Lightning ignition, initial attack"
+            },
+            {
+              "date": "2024-08-05",
+              "ha": 890,
+              "note": "Wind event \u2014 escaped to grass and timber"
+            },
+            {
+              "date": "2024-08-09",
+              "ha": 2800,
+              "note": "Status upgraded to Fire of Note"
+            },
+            {
+              "date": "2024-08-14",
+              "ha": 3240,
+              "note": "Being Held \u2014 minimal overnight growth"
+            }
           ],
           "evac_notices": [
             {
               "type": "ALERT",
-              "area": "Deadman–Vidette Road corridor",
+              "area": "Deadman\u2013Vidette Road corridor",
               "properties": 88,
               "issued": "2024-08-09T12:00:00Z",
               "link": "https://www.tnrd.ca/services/emergency-services/"
@@ -162,7 +214,7 @@
           "road_closures": [
             {
               "status": "CLOSED",
-              "road": "Deadman–Vidette Road south of Vidette Lake",
+              "road": "Deadman\u2013Vidette Road south of Vidette Lake",
               "reason": "Wildfire",
               "since": "2024-08-09T14:00:00Z",
               "link": "https://drivebc.ca"
@@ -190,10 +242,30 @@
             "bui": 168,
             "isi": 14.2,
             "forecast": [
-              {"date": "2024-08-14", "high": 33, "desc": "Sunny, SW 15–30", "precip_pct": 0},
-              {"date": "2024-08-15", "high": 31, "desc": "Sunny", "precip_pct": 0},
-              {"date": "2024-08-16", "high": 28, "desc": "Partly cloudy", "precip_pct": 15},
-              {"date": "2024-08-17", "high": 24, "desc": "Chance of showers", "precip_pct": 40}
+              {
+                "date": "2024-08-14",
+                "high": 33,
+                "desc": "Sunny, SW 15\u201330",
+                "precip_pct": 0
+              },
+              {
+                "date": "2024-08-15",
+                "high": 31,
+                "desc": "Sunny",
+                "precip_pct": 0
+              },
+              {
+                "date": "2024-08-16",
+                "high": 28,
+                "desc": "Partly cloudy",
+                "precip_pct": 15
+              },
+              {
+                "date": "2024-08-17",
+                "high": 24,
+                "desc": "Chance of showers",
+                "precip_pct": 40
+              }
             ]
           }
         },
@@ -212,9 +284,21 @@
           "airtankers": 0,
           "tactics": "Newly established fire making moderate spread in timber. Initial attack crews establishing anchor point on south side. Helicopter bucket operations ongoing on advancing head.",
           "growth_history": [
-            {"date": "2024-08-12", "ha": 15, "note": "Lightning ignition"},
-            {"date": "2024-08-13", "ha": 280, "note": "Wind-driven spread to north"},
-            {"date": "2024-08-14", "ha": 870, "note": "Designated Fire of Note"}
+            {
+              "date": "2024-08-12",
+              "ha": 15,
+              "note": "Lightning ignition"
+            },
+            {
+              "date": "2024-08-13",
+              "ha": 280,
+              "note": "Wind-driven spread to north"
+            },
+            {
+              "date": "2024-08-14",
+              "ha": 870,
+              "note": "Designated Fire of Note"
+            }
           ],
           "evac_notices": [],
           "road_closures": [],
@@ -232,10 +316,30 @@
             "bui": 175,
             "isi": 18.8,
             "forecast": [
-              {"date": "2024-08-14", "high": 34, "desc": "Sunny, NW 20–45", "precip_pct": 0},
-              {"date": "2024-08-15", "high": 32, "desc": "Sunny", "precip_pct": 0},
-              {"date": "2024-08-16", "high": 29, "desc": "Partly cloudy", "precip_pct": 10},
-              {"date": "2024-08-17", "high": 25, "desc": "Mostly cloudy", "precip_pct": 35}
+              {
+                "date": "2024-08-14",
+                "high": 34,
+                "desc": "Sunny, NW 20\u201345",
+                "precip_pct": 0
+              },
+              {
+                "date": "2024-08-15",
+                "high": 32,
+                "desc": "Sunny",
+                "precip_pct": 0
+              },
+              {
+                "date": "2024-08-16",
+                "high": 29,
+                "desc": "Partly cloudy",
+                "precip_pct": 10
+              },
+              {
+                "date": "2024-08-17",
+                "high": 25,
+                "desc": "Mostly cloudy",
+                "precip_pct": 35
+              }
             ]
           }
         }
@@ -259,7 +363,7 @@
         },
         {
           "status": "CLOSED",
-          "road": "Deadman–Vidette Road south of Vidette Lake",
+          "road": "Deadman\u2013Vidette Road south of Vidette Lake",
           "reason": "Wildfire",
           "since": "2024-08-09T14:00:00Z",
           "link": "https://drivebc.ca"
@@ -268,14 +372,14 @@
       "zone_evac_notices": [
         {
           "type": "ORDER",
-          "area": "Loon Lake Road — Properties 1–340",
+          "area": "Loon Lake Road \u2014 Properties 1\u2013340",
           "properties": 340,
           "issued": "2024-08-14T06:00:00Z",
           "link": "https://www.tnrd.ca/services/emergency-services/"
         },
         {
           "type": "ALERT",
-          "area": "70 Mile House — West Side Road corridor",
+          "area": "70 Mile House \u2014 West Side Road corridor",
           "properties": 215,
           "issued": "2024-08-13T18:00:00Z",
           "link": "https://www.tnrd.ca/services/emergency-services/"
@@ -307,15 +411,31 @@
           "airtankers": 2,
           "tactics": "Remote fire in rugged terrain limiting ground access. Aerial resources focusing on protecting structures at Nadina Lake. Guard line construction underway on accessible south flank.",
           "growth_history": [
-            {"date": "2024-08-03", "ha": 8, "note": "Lightning ignition"},
-            {"date": "2024-08-07", "ha": 1200, "note": "Remote spread, resource access limited"},
-            {"date": "2024-08-11", "ha": 4100, "note": "Significant run on west side"},
-            {"date": "2024-08-14", "ha": 6200, "note": "Moderate growth, holding on east flank"}
+            {
+              "date": "2024-08-03",
+              "ha": 8,
+              "note": "Lightning ignition"
+            },
+            {
+              "date": "2024-08-07",
+              "ha": 1200,
+              "note": "Remote spread, resource access limited"
+            },
+            {
+              "date": "2024-08-11",
+              "ha": 4100,
+              "note": "Significant run on west side"
+            },
+            {
+              "date": "2024-08-14",
+              "ha": 6200,
+              "note": "Moderate growth, holding on east flank"
+            }
           ],
           "evac_notices": [
             {
               "type": "ALERT",
-              "area": "Nadina Lake Road — lakeside properties",
+              "area": "Nadina Lake Road \u2014 lakeside properties",
               "properties": 42,
               "issued": "2024-08-11T09:00:00Z",
               "link": "https://www.lakelandsrd.ca/"
@@ -352,10 +472,30 @@
             "bui": 148,
             "isi": 13.6,
             "forecast": [
-              {"date": "2024-08-14", "high": 29, "desc": "Partly cloudy, W 20–40", "precip_pct": 10},
-              {"date": "2024-08-15", "high": 28, "desc": "Chance of thunderstorm", "precip_pct": 30},
-              {"date": "2024-08-16", "high": 26, "desc": "Showers likely", "precip_pct": 55},
-              {"date": "2024-08-17", "high": 22, "desc": "Rain, cooling", "precip_pct": 70}
+              {
+                "date": "2024-08-14",
+                "high": 29,
+                "desc": "Partly cloudy, W 20\u201340",
+                "precip_pct": 10
+              },
+              {
+                "date": "2024-08-15",
+                "high": 28,
+                "desc": "Chance of thunderstorm",
+                "precip_pct": 30
+              },
+              {
+                "date": "2024-08-16",
+                "high": 26,
+                "desc": "Showers likely",
+                "precip_pct": 55
+              },
+              {
+                "date": "2024-08-17",
+                "high": 22,
+                "desc": "Rain, cooling",
+                "precip_pct": 70
+              }
             ]
           }
         },
@@ -374,9 +514,21 @@
           "airtankers": 0,
           "tactics": "Fire held on all flanks for 48 hours. Mop-up operations underway along guard. Patrol continuing to monitor interior burning.",
           "growth_history": [
-            {"date": "2024-07-29", "ha": 5, "note": "Lightning ignition"},
-            {"date": "2024-08-02", "ha": 420, "note": "Wind-driven growth"},
-            {"date": "2024-08-08", "ha": 1450, "note": "Held — no significant growth since"}
+            {
+              "date": "2024-07-29",
+              "ha": 5,
+              "note": "Lightning ignition"
+            },
+            {
+              "date": "2024-08-02",
+              "ha": 420,
+              "note": "Wind-driven growth"
+            },
+            {
+              "date": "2024-08-08",
+              "ha": 1450,
+              "note": "Held \u2014 no significant growth since"
+            }
           ],
           "evac_notices": [],
           "road_closures": [],
@@ -394,10 +546,30 @@
             "bui": 132,
             "isi": 10.8,
             "forecast": [
-              {"date": "2024-08-14", "high": 27, "desc": "Mostly sunny", "precip_pct": 5},
-              {"date": "2024-08-15", "high": 26, "desc": "Partly cloudy", "precip_pct": 25},
-              {"date": "2024-08-16", "high": 23, "desc": "Showers", "precip_pct": 60},
-              {"date": "2024-08-17", "high": 20, "desc": "Rain", "precip_pct": 75}
+              {
+                "date": "2024-08-14",
+                "high": 27,
+                "desc": "Mostly sunny",
+                "precip_pct": 5
+              },
+              {
+                "date": "2024-08-15",
+                "high": 26,
+                "desc": "Partly cloudy",
+                "precip_pct": 25
+              },
+              {
+                "date": "2024-08-16",
+                "high": 23,
+                "desc": "Showers",
+                "precip_pct": 60
+              },
+              {
+                "date": "2024-08-17",
+                "high": 20,
+                "desc": "Rain",
+                "precip_pct": 75
+              }
             ]
           }
         }
@@ -415,7 +587,7 @@
       "zone_evac_notices": [
         {
           "type": "ALERT",
-          "area": "Nadina Lake Road — lakeside properties",
+          "area": "Nadina Lake Road \u2014 lakeside properties",
           "properties": 42,
           "issued": "2024-08-11T09:00:00Z",
           "link": "https://www.lakelandsrd.ca/"
@@ -445,16 +617,28 @@
           "machines": 4,
           "helicopters": 3,
           "airtankers": 1,
-          "tactics": "Fire burning in mixed timber and grass in the Horsefly River drainage. East flank priority — guard construction protecting the Horsefly community. Night operations planned if conditions allow.",
+          "tactics": "Fire burning in mixed timber and grass in the Horsefly River drainage. East flank priority \u2014 guard construction protecting the Horsefly community. Night operations planned if conditions allow.",
           "growth_history": [
-            {"date": "2024-08-09", "ha": 20, "note": "Cause unknown, initial attack underway"},
-            {"date": "2024-08-11", "ha": 680, "note": "Wind event drove spread to northeast"},
-            {"date": "2024-08-14", "ha": 2180, "note": "Overnight run, Fire of Note declared"}
+            {
+              "date": "2024-08-09",
+              "ha": 20,
+              "note": "Cause unknown, initial attack underway"
+            },
+            {
+              "date": "2024-08-11",
+              "ha": 680,
+              "note": "Wind event drove spread to northeast"
+            },
+            {
+              "date": "2024-08-14",
+              "ha": 2180,
+              "note": "Overnight run, Fire of Note declared"
+            }
           ],
           "evac_notices": [
             {
               "type": "ALERT",
-              "area": "Horsefly community — north of Horsefly River",
+              "area": "Horsefly community \u2014 north of Horsefly River",
               "properties": 124,
               "issued": "2024-08-14T07:30:00Z",
               "link": "https://www.cariboord.ca/"
@@ -463,7 +647,7 @@
           "road_closures": [
             {
               "status": "CLOSED",
-              "road": "Horsefly–Likely Road east of Horsefly",
+              "road": "Horsefly\u2013Likely Road east of Horsefly",
               "reason": "Wildfire",
               "since": "2024-08-14T08:00:00Z",
               "link": "https://drivebc.ca"
@@ -491,10 +675,30 @@
             "bui": 164,
             "isi": 16.2,
             "forecast": [
-              {"date": "2024-08-14", "high": 32, "desc": "Sunny, NE 20–45", "precip_pct": 0},
-              {"date": "2024-08-15", "high": 30, "desc": "Sunny", "precip_pct": 5},
-              {"date": "2024-08-16", "high": 28, "desc": "Partly cloudy", "precip_pct": 20},
-              {"date": "2024-08-17", "high": 24, "desc": "Showers possible", "precip_pct": 40}
+              {
+                "date": "2024-08-14",
+                "high": 32,
+                "desc": "Sunny, NE 20\u201345",
+                "precip_pct": 0
+              },
+              {
+                "date": "2024-08-15",
+                "high": 30,
+                "desc": "Sunny",
+                "precip_pct": 5
+              },
+              {
+                "date": "2024-08-16",
+                "high": 28,
+                "desc": "Partly cloudy",
+                "precip_pct": 20
+              },
+              {
+                "date": "2024-08-17",
+                "high": 24,
+                "desc": "Showers possible",
+                "precip_pct": 40
+              }
             ]
           }
         }
@@ -526,12 +730,28 @@
           "machines": 0,
           "helicopters": 2,
           "airtankers": 0,
-          "tactics": "Remote fire — ground access not possible. Aerial patrol and assessment only. Monitor and protect posture given extreme remoteness and no immediate threat to communities.",
+          "tactics": "Remote fire \u2014 ground access not possible. Aerial patrol and assessment only. Monitor and protect posture given extreme remoteness and no immediate threat to communities.",
           "growth_history": [
-            {"date": "2024-07-25", "ha": 1, "note": "Lightning ignition, remote"},
-            {"date": "2024-07-30", "ha": 450, "note": "Moderate spread in timber"},
-            {"date": "2024-08-05", "ha": 2200, "note": "Wind-driven run to south"},
-            {"date": "2024-08-14", "ha": 4100, "note": "Steady growth, no community threat"}
+            {
+              "date": "2024-07-25",
+              "ha": 1,
+              "note": "Lightning ignition, remote"
+            },
+            {
+              "date": "2024-07-30",
+              "ha": 450,
+              "note": "Moderate spread in timber"
+            },
+            {
+              "date": "2024-08-05",
+              "ha": 2200,
+              "note": "Wind-driven run to south"
+            },
+            {
+              "date": "2024-08-14",
+              "ha": 4100,
+              "note": "Steady growth, no community threat"
+            }
           ],
           "evac_notices": [],
           "road_closures": [],
@@ -549,10 +769,30 @@
             "bui": 98,
             "isi": 9.4,
             "forecast": [
-              {"date": "2024-08-14", "high": 24, "desc": "Partly cloudy", "precip_pct": 20},
-              {"date": "2024-08-15", "high": 22, "desc": "Chance of thunderstorm", "precip_pct": 35},
-              {"date": "2024-08-16", "high": 20, "desc": "Showers", "precip_pct": 55},
-              {"date": "2024-08-17", "high": 18, "desc": "Rain", "precip_pct": 65}
+              {
+                "date": "2024-08-14",
+                "high": 24,
+                "desc": "Partly cloudy",
+                "precip_pct": 20
+              },
+              {
+                "date": "2024-08-15",
+                "high": 22,
+                "desc": "Chance of thunderstorm",
+                "precip_pct": 35
+              },
+              {
+                "date": "2024-08-16",
+                "high": 20,
+                "desc": "Showers",
+                "precip_pct": 55
+              },
+              {
+                "date": "2024-08-17",
+                "high": 18,
+                "desc": "Rain",
+                "precip_pct": 65
+              }
             ]
           }
         }
@@ -569,7 +809,7 @@
       "weather_summary": "Hot and dry. Inflow winds increasing through afternoon.",
       "active_fires": 4,
       "fires_of_note": 1,
-      "zone_summary": "One fire of note near Revelstoke — the Begbie Creek fire is being held but requires significant resource commitment. Smoke impacts are affecting air quality in Revelstoke and Golden.",
+      "zone_summary": "One fire of note near Revelstoke \u2014 the Begbie Creek fire is being held but requires significant resource commitment. Smoke impacts are affecting air quality in Revelstoke and Golden.",
       "fires_of_note_list": [
         {
           "fire_number": "V50891",
@@ -586,15 +826,27 @@
           "airtankers": 0,
           "tactics": "Fire held on all flanks. Crews completing mop-up on southern and eastern perimeter. West flank patrol continuing due to terrain. No current threat to Revelstoke.",
           "growth_history": [
-            {"date": "2024-08-05", "ha": 3, "note": "Lightning ignition in alpine"},
-            {"date": "2024-08-08", "ha": 240, "note": "Spread to lower timber"},
-            {"date": "2024-08-11", "ha": 980, "note": "Held — stable for 72 hours"}
+            {
+              "date": "2024-08-05",
+              "ha": 3,
+              "note": "Lightning ignition in alpine"
+            },
+            {
+              "date": "2024-08-08",
+              "ha": 240,
+              "note": "Spread to lower timber"
+            },
+            {
+              "date": "2024-08-11",
+              "ha": 980,
+              "note": "Held \u2014 stable for 72 hours"
+            }
           ],
           "evac_notices": [],
           "road_closures": [
             {
               "status": "CLOSED",
-              "road": "Begbie Creek FSR — all access",
+              "road": "Begbie Creek FSR \u2014 all access",
               "reason": "Wildfire suppression operations",
               "since": "2024-08-06T08:00:00Z",
               "link": "https://drivebc.ca"
@@ -614,10 +866,30 @@
             "bui": 152,
             "isi": 13.2,
             "forecast": [
-              {"date": "2024-08-14", "high": 31, "desc": "Sunny, W 15–35", "precip_pct": 0},
-              {"date": "2024-08-15", "high": 29, "desc": "Partly cloudy", "precip_pct": 10},
-              {"date": "2024-08-16", "high": 26, "desc": "Mostly cloudy", "precip_pct": 30},
-              {"date": "2024-08-17", "high": 22, "desc": "Showers", "precip_pct": 55}
+              {
+                "date": "2024-08-14",
+                "high": 31,
+                "desc": "Sunny, W 15\u201335",
+                "precip_pct": 0
+              },
+              {
+                "date": "2024-08-15",
+                "high": 29,
+                "desc": "Partly cloudy",
+                "precip_pct": 10
+              },
+              {
+                "date": "2024-08-16",
+                "high": 26,
+                "desc": "Mostly cloudy",
+                "precip_pct": 30
+              },
+              {
+                "date": "2024-08-17",
+                "high": 22,
+                "desc": "Showers",
+                "precip_pct": 55
+              }
             ]
           }
         }
