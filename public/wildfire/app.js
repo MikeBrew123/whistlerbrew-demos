@@ -16,14 +16,16 @@ let countdownInterval = null;
    ============================================================ */
 async function loadData() {
   try {
-    const [fires, canada, world] = await Promise.all([
+    const [fires, canada, world, firesmartNews] = await Promise.all([
       fetch('./data/fires.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
       fetch('./data/canada.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
       fetch('./data/world.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+      fetch('./data/firesmart-news.json').then(r => r.ok ? r.json() : { zones: {} }).catch(() => ({ zones: {} })),
     ]);
     WF.fires = fires;
     WF.canada = canada;
     WF.world = world;
+    WF.firesmartNews = firesmartNews;
     document.getElementById('load-error').style.display = 'none';
     renderMainView();
     startCountdown(fires.updated_at, fires.next_update);
@@ -317,10 +319,23 @@ function populateZoneView(zone) {
   const firesPanel = document.getElementById('zone-tab-fires');
   firesPanel.innerHTML = renderZoneFiresTab(zone);
 
-  // News tab
+  // News tab — merge zone_news (Workflow B) + FireSmart news (Workflow D)
+  const zoneNews = zone.zone_news || [];
+  const fsZones = (WF.firesmartNews && WF.firesmartNews.zones) || {};
+  const fsItems = [...(fsZones[zone.id] || []), ...(fsZones['all'] || [])];
+  const fsNewsItems = fsItems.map(it => ({
+    url: it.link, title: it.title, summary: it.description,
+    source: it.source, published: it.pubDate
+  }));
+  const allNews = [...zoneNews, ...fsNewsItems];
+  const seenUrls = new Set();
+  const dedupedNews = allNews.filter(n => {
+    if (!n.url || seenUrls.has(n.url)) return false;
+    seenUrls.add(n.url); return true;
+  });
   document.getElementById('zone-tab-news').innerHTML =
-    zone.zone_news && zone.zone_news.length
-      ? `<ul class="news-list">${zone.zone_news.map(n => renderNewsItem(n)).join('')}</ul>`
+    dedupedNews.length
+      ? `<ul class="news-list">${dedupedNews.map(n => renderNewsItem(n)).join('')}</ul>`
       : '<p class="empty-tab">No news stories for this zone.</p>';
 
   // Roads tab
