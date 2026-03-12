@@ -805,54 +805,14 @@
       // The key trick: we tell it EXACTLY what format to respond in,
       // so we can reliably parse the result in JavaScript.
       //
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('/api/estimate-maintenance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-
-          // The system prompt defines Claude's role and output format
-          system: `You are an automotive maintenance cost expert familiar with Canadian repair prices.
-When given a vehicle, estimate its average MONTHLY maintenance cost in CAD for a typical Canadian owner.
-
-Include: oil changes, filters, brakes, tires (amortized), belts/hoses, minor repairs.
-Exclude: insurance, fuel, registration.
-
-Base your estimate on:
-- Vehicle age (older vehicles cost more to maintain)
-- Make/model reliability reputation (e.g. Honda/Toyota = lower, European luxury = higher)
-- Typical mileage stage for the age
-
-Respond ONLY with valid JSON in this exact format, no other text:
-{"monthly_cad": 95, "annual_cad": 1140, "reliability": "above average", "notes": "Brief reason for estimate"}`,
-
-          messages: [{
-            role: 'user',
-            // We pass the vehicle the user typed, plus context about why we need it
-            content: `Estimate monthly maintenance costs for: ${vehicle}
-This is for an EV cost-comparison calculator. The owner wants to know what they're currently spending to compare against buying an EV.`
-          }]
-        })
+        body: JSON.stringify({ vehicle })
       });
 
-      // ── Parse the response ────────────────────────────────────────
-      //
-      // response.json() converts the HTTP response body from text to a JS object.
-      // data.content[0].text is where Claude's reply lives in the API response.
-      //
-      const data = await response.json();
-      let raw = data.content[0].text.trim();
-
-      // Claude sometimes wraps JSON in markdown code fences like:
-      // ```json { ... } ```
-      // We strip those out before parsing.
-      // The regex looks for an opening { and closing } and grabs everything between.
-      const jsonMatch = raw.match(/\{[\s\S]*\}/);
-      if (!jsonMatch) throw new Error('No JSON object found in response');
-      raw = jsonMatch[0];
-
-      const estimate = JSON.parse(raw);
+      if (!response.ok) throw new Error('API error');
+      const estimate = await response.json();
 
       // ── Fill in the field ─────────────────────────────────────────
       maintInput.value = estimate.monthly_cad;
