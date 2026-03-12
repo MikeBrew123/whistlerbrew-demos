@@ -77,6 +77,7 @@ Vercel CDN caches aggressively. Use incrementing `?bust=NNNNN` params until `inc
 | `khKKRqqe7yudNG6B` | Every 15 min | BCWS fire counts + evac notices → fires.json → GitHub |
 | `91nhFP81Tc8XCoqS` | Every 6 hr | Above + CBC BC news + fires_of_note_list refresh |
 | `Xcp8eSz8FUtIY4qa` | Every 6 hr | CBC + BBC + InciWeb RSS → Claude haiku → world.json + canada.json news |
+| `ySh1dMIJpOrki6QM` | Every 6 hr | FireSmart BC + BC Emergency + CBC BC RSS → Claude haiku zone classifier → firesmart-news.json |
 
 **N8N instance:** https://n8n.srv927040.hstgr.cloud
 **API key:** `carnivore-weekly/secrets/api-keys.json` → `.n8n.api_key`
