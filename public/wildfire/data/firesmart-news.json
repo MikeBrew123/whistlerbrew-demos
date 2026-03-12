@@ -1,12 +1,199 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-03-12T20:55:01.728Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
+    "coastal": [
+      {
+        "title": "ENDED Flood Watches: West Vancouver Island and Englishman River. October 19, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/flood-watch-west-vancouver-island-october-18-2023/",
+        "description": "The River Forecast Centre has ENDED the Flood Watches for: West Vancouver Island Englishman River The River Forecast Centre continues to monitor conditions and provide updates. Recommended Actions Follow all directions from your Local Authority or First Nation Stay clear of fast-flowing rivers and potentially unstable riverbanks Avoid recreational activities such as fishing, swimming, boating or [",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Minor Earthquake Felt: 4.1 M earthquake occurred, 56km NW of Seattle, Washington",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/minor-earthquake-felt-4-1-m-earthquake-occurred-56km-nw-of-seattle-washington/",
+        "description": "An earthquake has been felt near Victoria, British Columbia. There are no reports of major damage or injuries and none are expected. More information is available from Natural Resources Canada. The National Tsunami Warning Center has stated a tsunami is NOT expected. Local Time: 7:21 pm PDT Magnitude: 4.1 Location: 56 km NW of Seattle, [&#8230;]\nThe post Minor Earthquake Felt: 4.1 M earthquake occ",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Honour Ranch: Protecting a Place of Healing with FireSmart Principles",
+        "link": "https://firesmartbc.ca/honour-ranch-protecting-a-place-of-healing-with-firesmart-principles/",
+        "description": "Located near Ashcroft, BC, Honour Ranch is a sanctuary dedicated to the mental health and well-being of veterans, military members, first responders, and emergency personnel. Operated by the Honour House Society, the Ranch provides a peaceful, restorative setting where front-line workers can access mental health support, peer connection, and recovery programming.\nThe post Honour Ranch: Protecting ",
+        "pubDate": "Wed, 13 Aug 2025 18:08:24 +0000",
+        "source": "FireSmart BC"
+      },
+      {
+        "title": "EXPIRED: Evacuation Order: Lower Similkameen Indian Band. Rockslide. Nov 6, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/evacuation-order-rockslide/",
+        "description": "On November 6th, the Lower Similkameen Indian Band issued an Evacuation Order (PDF) due to imminent danger from a rockslide. The risk of danger has now passed. This Evacuation Order expired on November 10, 2023. Recommended Actions Follow directions from your Local Authority or First Nation. Resources Know the signs of landslide and be prepared. Visit [&#8230;]\nThe post EXPIRED: Evacuation Order: ",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Evacuation Alert due to Rockslide: Regional District of Okanagan-Similkameen. Electoral Area “F”. Aug. 30, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/evacuation-alert-rdos-rockslide/",
+        "description": "On August 30th, 2023, the Regional District of Okanagan-Similkameen issued an Evacuation Alert for four properties in Electoral Area “F” along North Beach Road, due to a rockslide. The Evacuation Alert has been issued as a precautionary measure while the province conducts geotechnical assessments. Anyone in the affected area must be ready to leave on [&#8230;]\nThe post Evacuation Alert due to Rock",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Emergency Alert: Evacuation Order for Scotch Creek, Lee Creek, Celista, Magna Bay and Little River Areas due to Wildfire. Aug 18, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/18aug23a/",
+        "description": "An Evacuation Order and a BC Emergency Alert has been issued by the Skwlāx te SecwepemcúÍecw and Columbia Shuswap Regional District due to the Lower East Adams Lake Wildfire. Impacted residents should evacuate the area immediately. For a map of the impacted area visit: https://alertable.ca/#/details/2023/339202 Columbia Shuswap Regional District updates: Twitter Facebook Alert Message BC EMERGENCY",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Emergency Alert: Evacuation Order for Turtle Valley due to Wildfire. Aug 18, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/18aug23b/",
+        "description": "An Evacuation Order and a BC Emergency Alert has been issued by the Thompson-Nicola Regional District due to wildfire. Impacted residents should evacuate the area immediately. More information &#38; map: Evacuation Order (PDF) Thompson-Nicola Regional District updates: Twitter Facebook Alert Message BC EMERGENCY ALERT issued by TNRD due to the Lower East Adams Lake wildfire. Evacuate [&#8230;]\nThe",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "ENDED: Heat Warnings for B.C. August 18, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/heat-warnings-august-2023/",
+        "description": "The following Heat Warnings have been ENDED by Environment and Climate Change Canada: 100 Mile Boundary East Columbia Fraser Canyon &#8211; north including Lillooet Fraser Canyon &#8211; south including Lytton Kootenay Lake North Thompson Central Okanagan &#8211; including Kelowna North Okanagan &#8211; including Vernon South Okanagan &#8211; including Penticton South Thompson West Columbia On thi",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "BC Emergency Alert: Evacuation Order for Rose Valley and West Kelowna Estates due to Wildfire. Aug. 17, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/17aug23a/",
+        "description": "For the latest information on Evacuation Order and Alerts due to Wildfires in BC: Current Wildfire Information This page is no longer being updated. An Evacuation Order and a BC Emergency Alert have been issued by the City of West Kelowna and the Regional District of Central Okanagan due to the McDougall Creek wildfire. Impacted [&#8230;]\nThe post BC Emergency Alert: Evacuation Order for Rose Vall",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "Insights From the 2024 Wildfire Resiliency and Training Summit",
+        "link": "https://firesmartbc.ca/insights-from-the-2024-wildfire-resiliency-and-training-summit/",
+        "description": "FireSmart BC and our partners recently hosted the 2024 Wildfire Resiliency and Training Summit from April 20th to 24th in Prince George, BC. This important...\nThe post Insights From the 2024 Wildfire Resiliency and Training Summit first appeared on FireSmart BC.",
+        "pubDate": "Thu, 27 Jun 2024 23:29:34 +0000",
+        "source": "FireSmart BC"
+      },
+      {
+        "title": "Water Usage Restriction Order EXTENDED: Village of McBride. Severe Drought. Nov. 27, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/severe-drought-mcbride-2/",
+        "description": "The Village of McBride has extended the State of Local Emergency (PDF) to December 4, 2023 due to severe drought. The Water Usage Restriction Order (PDF) issued on September 19, 2023 remains in effect. The following water uses are not permitted: Washing of vehicles, building exteriors, driveways and sidewalks (unless ordered by a regulatory authority) [&#8230;]\nThe post Water Usage Restriction Ord",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Severe Drought: Water Usage Restriction Order. Village of McBride. Oct. 23, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/severe-drought-mcbride/",
+        "description": "The Village of McBride has extended the State of Local Emergency (PDF) to October 30, 2023 due to severe drought. The Water Usage Restriction Order (PDF) issued on September 19, 2023 remains in effect. The following water uses are not permitted: Washing of vehicles, building exteriors, driveways and sidewalks (unless ordered by a regulatory authority) [&#8230;]\nThe post Severe Drought: Water Usage",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "BC Emergency Alert: Evacuation Order in Peace River Regional District. Sept. 15, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/15sep23/",
+        "description": "An Evacuation Order has been issued by the Peace River Regional District due to the Stoddart Creek wildfire. The Evacuation Order includes the following area: Following the southern boundary of Blueberry River First Nations reserve lands and the Blueberry River east to the bridge on the Prespatou Road South along Prespatou Road to a point 3.2 [&#8230;]\nThe post BC Emergency Alert: Evacuation Order",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "ENDED: Heat Warning issued for Fort Nelson. August 30, 2023",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/heat-warnings-issued-august-29-2023/",
+        "description": "Heat Warning ENDED by Environment and Climate Change Canada: Fort Nelson On this page: Recommended actions  Cooling centre locations Heat safety Resources   About heat alerts  Recommended actions If you are in the area under a Heat Warning: Know the symptoms of heat-related illness and seek medical care if you or someone you are caring for are [&#8230;]\nThe post ENDED: Heat Warning issued for Fort",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      }
+    ],
     "cariboo": [],
-    "northwest": [],
+    "northwest": [
+      {
+        "title": "Minor Earthquake Felt: 5.2 M earthquake occurred, 151km WSW of Atlin, BC",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/minor-earthquake-felt-5-2-m-earthquake-occurred-151km-wsw-of-atlin-bc/",
+        "description": "An earthquake has been felt near Atlin, British Columbia. There are no reports of major damage or injuries and none are expected. More information is available from Natural Resources Canada. The National Tsunami Warning Center has stated a tsunami is NOT expected. Local Time: 8:44 pm PDT Magnitude: 5.2 Location: 63 km WSW of Skagway, [&#8230;]\nThe post Minor Earthquake Felt: 5.2 M earthquake occur",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      }
+    ],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Why Partnerships Are Critical to Building Wildfire Resiliency",
+        "link": "https://firesmartbc.ca/why-partnerships-are-critical-to-building-wildfire-resiliency/",
+        "description": "Since 2023, FireSmart BC has partnered with BCAA to strengthen wildfire resilience across British Columbia. This partnership focuses on expanding access to wildfire education and resources, especially in remote, rural, and high-risk areas.\nThe post Why Partnerships Are Critical to Building Wildfire Resiliency first appeared on FireSmart BC.",
+        "pubDate": "Tue, 25 Mar 2025 20:28:34 +0000",
+        "source": "FireSmart BC"
+      },
+      {
+        "title": "Building Wildfire Resilience Together: The BCAA FireSmart BC Initiative",
+        "link": "https://firesmartbc.ca/building-wildfire-resilience-together-the-bcaa-firesmart-bc-initiative/",
+        "description": "Since 2023, FireSmart BC has partnered with BCAA to strengthen wildfire resilience across British Columbia. This partnership focuses on expanding access to wildfire education and resources, especially in remote, rural, and high-risk areas.\nThe post Building Wildfire Resilience Together: The BCAA FireSmart BC Initiative first appeared on FireSmart BC.",
+        "pubDate": "Tue, 17 Dec 2024 19:13:56 +0000",
+        "source": "FireSmart BC"
+      },
+      {
+        "title": "How to Check Every Box When Preparing for Wildfire",
+        "link": "https://firesmartbc.ca/how-to-check-every-box-when-preparing-for-wildfire/",
+        "description": "As wildfire season continues to escalate across the province, emergency preparation has never been more important. Failing to prepare can lead to stressful situations, last-minute...\nThe post How to Check Every Box When Preparing for Wildfire first appeared on FireSmart BC.",
+        "pubDate": "Wed, 31 Jul 2024 16:23:42 +0000",
+        "source": "FireSmart BC"
+      },
+      {
+        "title": "Sparking Fire Safety Awareness Through Indigenous Artistry",
+        "link": "https://firesmartbc.ca/sparking-fire-safety-awareness-through-indigenous-artistry/",
+        "description": "Fashion isn’t generally a hot topic at the annual FireSmart Wildfire Resiliency and Training Summit, but this year, one accessory had everyone buzzing. Attendees couldn&#8217;t...\nThe post Sparking Fire Safety Awareness Through Indigenous Artistry first appeared on FireSmart BC.",
+        "pubDate": "Mon, 17 Jun 2024 18:23:52 +0000",
+        "source": "FireSmart BC"
+      },
+      {
+        "title": "[Arctic Outflow, Winter Storm, Wind and/or Snowfall] Warning Issued for [Locations]. Date.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/arctic-outflow-winter-storm-wind-and-or-snowfall-warning-issued-for-locations-date/",
+        "description": "[Arctic Outflow, Winter Storm, Wind and/or Snowfall] Warning[s] have been issued by Environment and Climate Change Canada for [areas in the following regions/ many areas] of British Columbia: [insert linked locations from Environment Canada] Recommended actions If you are in the area under a [Arctic Outflow, Winter Storm, Wind and/or Snowfall] Warning: Know the symptoms of cold-related illness and",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "BC Emergency Alert System Test: November 15, 2023",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/alert-2/",
+        "description": "BC Emergency Alerts are broadcast on TV, radio, and cell phones to provide urgent, life-saving information during emergencies. A TEST of the BC Emergency Alert system occurred on Wednesday, November 15, 2023, at 1:55 p.m. (PST). BC Emergency Alert TEST Message This is a TEST of the BC Emergency Alert system. This is ONLY a [&#8230;]\nThe post BC Emergency Alert System Test: November 15, 2023 first ",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "BC Emergency Alert System Test: November 15, 2023",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/test/",
+        "description": "BC Emergency Alerts are broadcast on TV, radio, and cell phones to provide urgent, life-saving information during emergencies. A TEST of the BC Emergency Alert system occurred on Wednesday, November 15, 2023, at 1:55 p.m. (PST). BC Emergency Alert TEST Message This is a TEST of the BC Emergency Alert system. This is ONLY a [&#8230;]\nThe post BC Emergency Alert System Test: November 15, 2023 first ",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Current Wildfire Information: Nov. 6, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/current-wildfire-information-2023-2/",
+        "description": "For the most up-to-date information on wildfire Evacuation Orders and Alerts, visit your Local Authority or First Nation website or see the list below. For more information on wildfire response in BC, visit BCWildfire.ca. Wildfire recovery services and supports are available for people and communities impacted by wildfires in BC. On this page: Evacuation Orders [&#8230;]\nThe post Current Wildfire ",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Current Wildfire Information: Oct. 24, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/current-wildfire-information-2023/",
+        "description": "For the most up-to-date information on wildfire Evacuation Orders and Alerts, visit your Local Authority or First Nation website or see the list below. For more information on wildfire response in BC, visit BCWildfire.ca. Wildfire recovery services and supports are available for people and communities impacted by wildfires in BC. On this page: Evacuation Orders [&#8230;]\nThe post Current Wildfire ",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "Provincial State of Emergency Expired: Sept. 14, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/provincial-state-of-emergency-august-18-2023/",
+        "description": "The Provincial State of Emergency issued by the Province of BC on August 18, 2023, expired at the end of day Thursday, September 14, 2023 (Pacific time). Links &#38; Resources For current wildfire evacuation information, visit EmergencyInfoBC.ca. For wildfire locations and response information, visit BCWildfire.ca. Guidance for wildfire evacuees Travel and highway wildfire impacts from [&#8230;]\nT",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      },
+      {
+        "title": "BC Emergency Alert: Evacuation Order for parts of Osoyoos and surrounding area due to wildfire. July 29, 2023.",
+        "link": "https://www.emergencyinfobc.gov.bc.ca/29jul23/",
+        "description": "On Saturday, June 29, 2023, at 2227, a BC Emergency Alert announcing an Evacuation Order was issued by the Town of Osoyoos and the Regional District of Okanagan-Similkameen due to wildfire. Impacted residents should evacuate the area immediately. An Evacuation Alert has also been issued for nearby areas (details below). BC Emergency Alert Message Evacuation [&#8230;]\nThe post BC Emergency Alert: E",
+        "pubDate": "",
+        "source": "BC Emergency Info"
+      }
+    ]
   }
 }
