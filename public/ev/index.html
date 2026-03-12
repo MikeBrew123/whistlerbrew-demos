@@ -6,375 +6,68 @@
   <title>EV Worth It? Calculator</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
   <style>
-    /* ─── CSS CUSTOM PROPERTIES ─────────────────────────────────── */
-    /* Think of these like variables - define once, reuse everywhere */
     :root {
-      --bg:         #0b0f0e;       /* Near-black background */
-      --surface:    #141918;       /* Slightly lighter card background */
-      --border:     #1f2b27;       /* Subtle border color */
-      --green:      #3dffa0;       /* Electric green accent */
-      --green-dim:  #1a5c3a;       /* Muted green for backgrounds */
-      --yellow:     #f0e060;       /* Warning/highlight yellow */
-      --red:        #ff6b6b;       /* Negative value red */
-      --text:       #d4e8e0;       /* Primary text */
-      --muted:      #5a7a6e;       /* Secondary/placeholder text */
-      --radius:     8px;
+      --bg:#0b0f0e; --surface:#141918; --border:#1f2b27;
+      --green:#3dffa0; --green-dim:#1a5c3a; --yellow:#f0e060;
+      --red:#ff6b6b; --text:#d4e8e0; --muted:#5a7a6e; --radius:8px;
     }
-
-    /* ─── RESET & BASE ──────────────────────────────────────────── */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'DM Mono', monospace;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 0;
-    }
-
-    /* ─── HEADER ────────────────────────────────────────────────── */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 24px 32px;
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-    }
-
-    header h1 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(1.4rem, 3vw, 2rem); /* Scales with screen size */
-      color: var(--green);
-      letter-spacing: -0.5px;
-    }
-
-    header span {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    /* ─── MAIN LAYOUT: two-column on desktop, single on mobile ─── */
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 800px) {
-      .layout { grid-template-columns: 1fr; }
-    }
-
-    /* ─── PANELS ────────────────────────────────────────────────── */
-    .panel {
-      padding: 32px;
-      border-right: 1px solid var(--border);
-    }
-
-    .panel:last-child { border-right: none; }
-
-    .panel-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ─── FORM FIELDS ───────────────────────────────────────────── */
-    .field {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    /* The little hint text below some fields */
-    .hint {
-      font-size: 0.65rem;
-      color: var(--muted);
-      margin-top: 4px;
-      opacity: 0.7;
-    }
-
-    input, select {
-      width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.9rem;
-      padding: 10px 14px;
-      transition: border-color 0.2s;
-      appearance: none;
-    }
-
-    input:focus, select:focus {
-      outline: none;
-      border-color: var(--green);
-    }
-
-    /* Prefix/suffix wrappers for $ and km labels */
-    .input-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .prefix, .suffix {
-      position: absolute;
-      font-size: 0.8rem;
-      color: var(--muted);
-      pointer-events: none; /* Clicks pass through to the input */
-    }
-
-    .prefix { left: 12px; }
-    .suffix { right: 12px; }
-    .has-prefix { padding-left: 26px; }
-    .has-suffix { padding-right: 40px; }
-
-    /* ─── SECTION DIVIDERS within a panel ───────────────────────── */
-    .section-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-dim);
-      margin: 24px 0 14px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ─── REBATE BADGES ─────────────────────────────────────────── */
-    /* These show which government rebates apply */
-    .rebates {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .rebate-badge {
-      background: var(--green-dim);
-      color: var(--green);
-      border: 1px solid #2a8a56;
-      border-radius: 4px;
-      padding: 4px 10px;
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-    }
-
-    /* ─── RESULTS PANEL ─────────────────────────────────────────── */
-    .results-panel {
-      padding: 32px;
-      background: var(--surface);
-      min-height: 500px;
-    }
-
-    .results-panel .panel-title { margin-bottom: 28px; }
-
-    /* Big number display cards */
-    .metric-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .metric {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-
-    .metric-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .metric-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-    }
-
-    /* Color coding: green = good, red = cost, yellow = neutral */
-    .metric-value.positive { color: var(--green); }
-    .metric-value.negative { color: var(--red); }
-    .metric-value.neutral  { color: var(--yellow); }
-
-    .metric-sub {
-      font-size: 0.6rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    /* ─── BREAKEVEN BAR ─────────────────────────────────────────── */
-    /* Visual progress bar showing how far along breakeven you are */
-    .breakeven-bar-wrap {
-      margin: 20px 0;
-    }
-
-    .breakeven-bar-track {
-      background: var(--border);
-      border-radius: 4px;
-      height: 8px;
-      overflow: hidden;
-    }
-
-    .breakeven-bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      background: linear-gradient(90deg, var(--green-dim), var(--green));
-      transition: width 0.5s ease; /* Smooth animation when value changes */
-    }
-
-    .breakeven-labels {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 6px;
-      font-size: 0.6rem;
-      color: var(--muted);
-    }
-
-    /* ─── COST COMPARISON TABLE ─────────────────────────────────── */
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.78rem;
-      margin-top: 16px;
-    }
-
-    .compare-table th {
-      text-align: left;
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 6px 8px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .compare-table td {
-      padding: 8px 8px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .compare-table tr:last-child td { border-bottom: none; }
-
-    .compare-table .total-row td {
-      color: var(--text);
-      font-weight: 500;
-      border-top: 1px solid var(--green-dim);
-      padding-top: 10px;
-    }
-
-    /* ─── VERDICT BANNER ────────────────────────────────────────── */
-    /* The big go/no-go decision at the bottom */
-    .verdict {
-      margin-top: 24px;
-      padding: 20px;
-      border-radius: var(--radius);
-      border: 1px solid;
-    }
-
-    .verdict.yes {
-      background: #0d2b1a;
-      border-color: var(--green);
-    }
-
-    .verdict.no {
-      background: #2b0d0d;
-      border-color: var(--red);
-    }
-
-    .verdict.maybe {
-      background: #2b2600;
-      border-color: var(--yellow);
-    }
-
-    .verdict-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-
-    .verdict.yes  .verdict-title { color: var(--green); }
-    .verdict.no   .verdict-title { color: var(--red); }
-    .verdict.maybe .verdict-title { color: var(--yellow); }
-
-    .verdict-body { font-size: 0.75rem; color: var(--text); line-height: 1.6; }
-
-    /* ─── CALCULATE BUTTON ──────────────────────────────────────── */
-    .calc-btn {
-      width: 100%;
-      margin-top: 28px;
-      padding: 14px;
-      background: var(--green);
-      color: #000;
-      border: none;
-      border-radius: var(--radius);
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s;
-    }
-
-    .calc-btn:hover  { opacity: 0.85; }
-    .calc-btn:active { transform: scale(0.98); }
-
-    /* ─── PLACEHOLDER (before first calculation) ─────────────────── */
-    .placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 300px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .placeholder-icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.3; }
-
-    .placeholder p { font-size: 0.75rem; line-height: 1.8; }
-
-    /* ─── DISCLAIMER ─────────────────────────────────────────────── */
-    .disclaimer {
-      margin-top: 20px;
-      padding: 12px;
-      background: var(--bg);
-      border-radius: var(--radius);
-      font-size: 0.62rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* Full-width results bottom bar */
-    .results-bottom {
-      border-top: 1px solid var(--border);
-      padding: 24px 32px;
-    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Mono',monospace;background:var(--bg);color:var(--text);min-height:100vh;}
+    header{border-bottom:1px solid var(--border);padding:20px 32px;display:flex;align-items:baseline;gap:16px;}
+    header h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--green);letter-spacing:-0.5px;}
+    header span{font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;}
+    .layout{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;}
+    @media(max-width:800px){.layout{grid-template-columns:1fr;}}
+    .panel{padding:28px 32px;border-right:1px solid var(--border);}
+    .panel:last-child{border-right:none;}
+    .panel-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+    .field{margin-bottom:16px;}
+    label{display:flex;align-items:center;justify-content:space-between;font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+    .hint{font-size:.63rem;color:var(--muted);margin-top:3px;opacity:.75;line-height:1.4;}
+    .hint.ok{color:var(--green);opacity:1;} .hint.warn{color:var(--yellow);opacity:1;} .hint.error{color:var(--red);opacity:1;}
+    input,select{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:'DM Mono',monospace;font-size:.88rem;padding:9px 12px;transition:border-color .2s;appearance:none;}
+    input:focus,select:focus{outline:none;border-color:var(--green);}
+    input[disabled]{opacity:.5;cursor:not-allowed;}
+    .input-wrap{position:relative;display:flex;align-items:center;}
+    .prefix,.suffix{position:absolute;font-size:.78rem;color:var(--muted);pointer-events:none;}
+    .prefix{left:11px;} .suffix{right:11px;}
+    .has-prefix{padding-left:24px;} .has-suffix{padding-right:38px;}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .section-label{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dim);margin:22px 0 12px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+    .section-label .optional{color:var(--border);font-size:.58rem;border:1px solid var(--border);border-radius:3px;padding:1px 5px;text-transform:none;letter-spacing:0;}
+    .ai-btn{background:var(--green-dim);color:var(--green);border:1px solid #2a8a56;border-radius:4px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.06em;cursor:pointer;text-transform:uppercase;white-space:nowrap;transition:opacity .2s;}
+    .ai-btn:hover{opacity:.8;} .ai-btn[disabled]{opacity:.4;cursor:not-allowed;}
+    .rebates{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px;}
+    .rebate-badge{background:var(--green-dim);color:var(--green);border:1px solid #2a8a56;border-radius:4px;padding:3px 9px;font-size:.63rem;letter-spacing:.06em;}
+    .results-panel{padding:28px 32px;background:var(--surface);min-height:500px;}
+    .metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+    .metric{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;}
+    .metric-label{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+    .metric-value{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;}
+    .metric-value.positive{color:var(--green);} .metric-value.negative{color:var(--red);} .metric-value.neutral{color:var(--yellow);}
+    .metric-sub{font-size:.58rem;color:var(--muted);margin-top:3px;}
+    .breakeven-bar-wrap{margin:18px 0;}
+    .breakeven-bar-track{background:var(--border);border-radius:4px;height:7px;overflow:hidden;}
+    .breakeven-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green-dim),var(--green));transition:width .5s ease;}
+    .breakeven-labels{display:flex;justify-content:space-between;margin-top:5px;font-size:.58rem;color:var(--muted);}
+    .compare-table{width:100%;border-collapse:collapse;font-size:.75rem;margin-top:14px;}
+    .compare-table th{text-align:left;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:5px 7px;border-bottom:1px solid var(--border);}
+    .compare-table td{padding:7px;border-bottom:1px solid var(--border);}
+    .compare-table tr:last-child td{border-bottom:none;}
+    .compare-table .total-row td{font-weight:500;border-top:1px solid var(--green-dim);padding-top:9px;}
+    .verdict{margin-top:20px;padding:18px;border-radius:var(--radius);border:1px solid;}
+    .verdict.yes{background:#0d2b1a;border-color:var(--green);}
+    .verdict.no{background:#2b0d0d;border-color:var(--red);}
+    .verdict.maybe{background:#2b2600;border-color:var(--yellow);}
+    .verdict-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;margin-bottom:5px;}
+    .verdict.yes .verdict-title{color:var(--green);} .verdict.no .verdict-title{color:var(--red);} .verdict.maybe .verdict-title{color:var(--yellow);}
+    .verdict-body{font-size:.72rem;color:var(--text);line-height:1.6;}
+    .calc-btn{width:100%;margin-top:24px;padding:13px;background:var(--green);color:#000;border:none;border-radius:var(--radius);font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.05em;cursor:pointer;transition:opacity .2s,transform .1s;}
+    .calc-btn:hover{opacity:.85;} .calc-btn:active{transform:scale(.98);}
+    .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;height:300px;text-align:center;color:var(--muted);}
+    .placeholder-icon{font-size:2.5rem;margin-bottom:14px;opacity:.3;}
+    .placeholder p{font-size:.72rem;line-height:1.8;}
+    .disclaimer{margin-top:18px;padding:11px;background:var(--bg);border-radius:var(--radius);font-size:.6rem;color:var(--muted);line-height:1.6;}
   </style>
 </head>
 <body>
@@ -384,612 +77,468 @@
   <span>Canadian EV &amp; Hybrid Cost Calculator</span>
 </header>
 
-<!-- ─── MAIN TWO-COLUMN LAYOUT ──────────────────────────────────── -->
 <div class="layout">
-
-  <!-- ══════════════════════════════════════════════
-       LEFT PANEL: User Inputs
-       All the fields the user fills in
-  ═══════════════════════════════════════════════ -->
   <div class="panel">
-    <div class="panel-title">Your Current Vehicle</div>
+    <div class="panel-title">Your Situation</div>
 
-    <!-- Province selector affects which rebates are shown -->
-    <div class="field">
-      <label>Province / Territory</label>
-      <select id="province">
-        <option value="BC">British Columbia</option>
-        <option value="AB">Alberta</option>
-        <option value="ON">Ontario</option>
-        <option value="QC">Quebec</option>
-        <option value="MB">Manitoba</option>
-        <option value="SK">Saskatchewan</option>
-        <option value="NS">Nova Scotia</option>
-        <option value="NB">New Brunswick</option>
-        <option value="PE">PEI</option>
-        <option value="NL">Newfoundland</option>
-        <option value="YT">Yukon</option>
-        <option value="NT">NWT</option>
-        <option value="NU">Nunavut</option>
-      </select>
-    </div>
-
-    <!-- What they currently drive affects fuel type assumption -->
-    <!-- onblur fires when the user clicks away from the field after typing -->
-    <div class="field">
-      <label>Current Vehicle (Year/Make/Model)</label>
-      <input type="text" id="currentVehicle" placeholder="e.g. 2009 Acura RDX" onblur="guessMaintenanceCost()" />
-    </div>
-
-    <!-- $0 = paid off, otherwise monthly car payment -->
-    <div class="field">
-      <label>Current Monthly Payment</label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
-        <input type="number" id="currentPayment" class="has-prefix" placeholder="0" min="0" value="0"/>
+    <div class="field-row">
+      <div class="field">
+        <label>Province / Territory</label>
+        <select id="province">
+          <option value="BC">British Columbia</option><option value="AB">Alberta</option>
+          <option value="ON">Ontario</option><option value="QC">Quebec</option>
+          <option value="MB">Manitoba</option><option value="SK">Saskatchewan</option>
+          <option value="NS">Nova Scotia</option><option value="NB">New Brunswick</option>
+          <option value="PE">PEI</option><option value="NL">Newfoundland</option>
+          <option value="YT">Yukon</option><option value="NT">NWT</option><option value="NU">Nunavut</option>
+        </select>
       </div>
-      <div class="hint">Enter $0 if your vehicle is paid off</div>
-    </div>
-
-    <!-- Fuel cost: current vehicle -->
-    <div class="field">
-      <label>Monthly Fuel Cost (current vehicle)</label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
-        <input type="number" id="currentFuel" class="has-prefix" placeholder="200" min="0" />
+      <div class="field">
+        <label>Monthly KM Driven</label>
+        <div class="input-wrap">
+          <input type="number" id="monthlyKm" class="has-suffix" placeholder="1500" min="0" value="1500" oninput="refreshFuelEstimate()"/>
+          <span class="suffix">km</span>
+        </div>
       </div>
     </div>
 
-    <!-- Maintenance: oil changes, tires, repairs average per month -->
-    <!-- This field gets auto-filled by the AI when you type a vehicle above -->
+    <div class="section-label">Current Vehicle</div>
+
     <div class="field">
-      <label style="display:flex; align-items:center; justify-content:space-between;">
-        <span>Avg Monthly Maintenance</span>
-        <!-- Small AI button — only visible when a vehicle is entered -->
-        <button id="aiEstimateBtn" onclick="guessMaintenanceCost()"
-          style="display:none; background:var(--green-dim); color:var(--green); border:1px solid #2a8a56;
-                 border-radius:4px; padding:3px 8px; font-family:'DM Mono',monospace; font-size:0.6rem;
-                 letter-spacing:0.06em; cursor:pointer; text-transform:uppercase;">
-          ⚡ Re-estimate
-        </button>
+      <label>
+        <span>Year / Make / Model</span>
+        <button id="reestimateBtn" class="ai-btn" onclick="estimateCurrentVehicle()" style="display:none">⚡ Re-estimate</button>
       </label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
-        <input type="number" id="currentMaint" class="has-prefix" placeholder="100" min="0" />
+      <input type="text" id="currentVehicle" placeholder="e.g. 2009 Acura RDX" onblur="estimateCurrentVehicle()" />
+      <div id="vehicleHint" class="hint">Enter your vehicle — Claude will estimate fuel &amp; maintenance</div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Monthly Fuel</label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="currentFuel" class="has-prefix" placeholder="200" min="0" />
+        </div>
+        <div id="fuelHint" class="hint">AI will estimate from your vehicle</div>
       </div>
-      <!-- This area shows AI status: loading, result explanation, or errors -->
-      <div id="maintHint" class="hint">Oil changes, brakes, repairs — spread over a year</div>
-    </div>
-
-    <!-- How much they drive affects the fuel savings calculation -->
-    <div class="field">
-      <label>Monthly Kilometres Driven</label>
-      <div class="input-wrap">
-        <input type="number" id="monthlyKm" class="has-suffix" placeholder="1500" min="0" />
-        <span class="suffix">km</span>
+      <div class="field">
+        <label>Monthly Maintenance</label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="currentMaint" class="has-prefix" placeholder="100" min="0" />
+        </div>
+        <div id="maintHint" class="hint">AI will estimate from your vehicle</div>
       </div>
     </div>
 
-    <!-- ─── EV SECTION ─────────────────────────── -->
-    <div class="section-label">The EV or Hybrid You're Considering</div>
-
-    <!-- EV type affects which rebates apply (full BEV vs PHEV vs hybrid) -->
-    <div class="field">
-      <label>Vehicle Type</label>
-      <select id="evType">
-        <option value="BEV">Battery Electric (BEV) — fully electric</option>
-        <option value="PHEV">Plug-in Hybrid (PHEV)</option>
-        <option value="HEV">Traditional Hybrid (non-plug-in)</option>
-      </select>
+    <div class="section-label">
+      Current Loan
+      <span class="optional">optional — leave blank if paid off</span>
     </div>
 
-    <div class="field">
-      <label>New Vehicle Price</label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
-        <input type="number" id="evPrice" class="has-prefix" placeholder="55000" min="0" />
+    <div class="field-row">
+      <div class="field">
+        <label>Monthly Payment</label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="currentPayment" class="has-prefix" placeholder="0" min="0" value="0"/>
+        </div>
       </div>
-      <div class="hint">MSRP before rebates — check that it qualifies for iZEV (under $55K–$65K depending on type)</div>
+      <div class="field">
+        <label>Months Remaining</label>
+        <input type="number" id="currentLoanMonths" placeholder="0" min="0" value="0"/>
+        <div class="hint">Payment stops after this — 0 means ongoing</div>
+      </div>
+    </div>
+
+    <div class="section-label">EV or Hybrid You're Considering</div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Vehicle Type</label>
+        <select id="evType" onchange="updateRebates();calcEVPayment();estimateEVMaintenance();">
+          <option value="BEV">Battery Electric (BEV)</option>
+          <option value="PHEV">Plug-in Hybrid (PHEV)</option>
+          <option value="HEV">Traditional Hybrid</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Model <span style="color:var(--border);font-size:.9em">(optional)</span></label>
+        <input type="text" id="evModel" placeholder="e.g. 2024 Tesla Model 3" onblur="estimateEVMaintenance()" />
+      </div>
     </div>
 
     <div class="field">
-      <label>Monthly Payment (EV/Hybrid)</label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
+      <label>Vehicle Price (MSRP before rebates)</label>
+      <div class="input-wrap"><span class="prefix">$</span>
+        <input type="number" id="evPrice" class="has-prefix" placeholder="55000" min="0" oninput="calcEVPayment()" />
+      </div>
+    </div>
+
+    <div class="section-label">
+      EV Financing
+      <span class="optional">optional — or enter payment directly below</span>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Down Payment</label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="downPayment" class="has-prefix" placeholder="0" min="0" value="0" oninput="calcEVPayment()"/>
+        </div>
+      </div>
+      <div class="field">
+        <label>Trade-In Value</label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="tradeIn" class="has-prefix" placeholder="0" min="0" value="0" oninput="calcEVPayment()"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Loan Term</label>
+        <select id="loanTerm" onchange="calcEVPayment()">
+          <option value="36">36 months</option><option value="48">48 months</option>
+          <option value="60" selected>60 months</option><option value="72">72 months</option>
+          <option value="84">84 months</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Interest Rate</label>
+        <div class="input-wrap">
+          <input type="number" id="interestRate" class="has-suffix" placeholder="6.99" step="0.01" min="0" value="6.99" oninput="calcEVPayment()"/>
+          <span class="suffix">%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>
+        <span>Monthly Payment</span>
+        <span id="paymentNote" style="font-size:.6rem;color:var(--green);"></span>
+      </label>
+      <div class="input-wrap"><span class="prefix">$</span>
         <input type="number" id="evPayment" class="has-prefix" placeholder="600" min="0" />
       </div>
-      <div class="hint">Your financed or lease payment after rebate applied</div>
+      <div class="hint">Auto-calculated from financing above — or enter manually to override</div>
     </div>
 
-    <!-- Electricity costs money too — just much less than gas -->
-    <div class="field">
-      <label>Est. Monthly Electricity Cost (charging)</label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
-        <input type="number" id="evElec" class="has-prefix" placeholder="40" min="0" />
+    <div class="section-label">EV Monthly Running Costs</div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Electricity (charging)</label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="evElec" class="has-prefix" placeholder="40" min="0" />
+        </div>
+        <div class="hint">~$0.03–0.05/km in BC</div>
       </div>
-      <div class="hint">Roughly $0.03–$0.05/km for BC Hydro rates</div>
-    </div>
-
-    <!-- EVs have lower maintenance — no oil changes, fewer brakes, etc. -->
-    <div class="field">
-      <label>Est. Monthly EV Maintenance</label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
-        <input type="number" id="evMaint" class="has-prefix" placeholder="40" min="0" />
+      <div class="field">
+        <label>
+          <span>EV Maintenance</span>
+          <button id="evMaintBtn" class="ai-btn" onclick="estimateEVMaintenance()" style="display:none">⚡ Re-est.</button>
+        </label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="evMaint" class="has-prefix" placeholder="45" min="0" />
+        </div>
+        <div id="evMaintHint" class="hint">AI will estimate from vehicle type</div>
       </div>
-      <div class="hint">BEVs average ~40–60% less maintenance than gas vehicles</div>
     </div>
 
-    <!-- ─── REBATES SECTION ─────────────────────── -->
     <div class="section-label">Government Rebates (auto-calculated)</div>
-
-    <!-- 
-      These rebates are shown/calculated automatically based on 
-      province and vehicle type — user doesn't have to know the rules 
-    -->
     <div id="rebateDisplay" class="rebates">
-      <span style="font-size:0.7rem; color:var(--muted)">Fill in vehicle type and province above</span>
+      <span style="font-size:.68rem;color:var(--muted)">Select vehicle type above</span>
     </div>
-
-    <div class="field" style="margin-top:16px;">
+    <div class="field" style="margin-top:14px;">
       <label>Total Rebates Applied</label>
-      <div class="input-wrap">
-        <span class="prefix">$</span>
-        <input type="number" id="totalRebate" class="has-prefix" placeholder="0" min="0" />
+      <div class="input-wrap"><span class="prefix">$</span>
+        <input type="number" id="totalRebate" class="has-prefix" placeholder="0" min="0" oninput="calcEVPayment()"/>
       </div>
-      <div class="hint">Auto-filled — you can override if you have more info</div>
+      <div class="hint">Auto-filled — override if needed</div>
     </div>
 
-    <!-- How long they plan to own the EV (affects if it pays off in time) -->
-    <div class="field">
+    <div class="field" style="margin-top:8px;">
       <label>How long will you keep the EV?</label>
       <select id="ownershipYears">
-        <option value="3">3 years</option>
-        <option value="5" selected>5 years</option>
-        <option value="7">7 years</option>
-        <option value="10">10 years</option>
-        <option value="15">15 years</option>
+        <option value="3">3 years</option><option value="5" selected>5 years</option>
+        <option value="7">7 years</option><option value="10">10 years</option><option value="15">15 years</option>
       </select>
     </div>
 
     <button class="calc-btn" onclick="calculate()">⚡ Calculate — Is It Worth It?</button>
-  </div><!-- /left panel -->
+  </div>
 
-  <!-- ══════════════════════════════════════════════
-       RIGHT PANEL: Results
-       Everything shown here is calculated from the inputs
-  ═══════════════════════════════════════════════ -->
+  <!-- Results Panel -->
   <div class="results-panel" id="resultsPanel">
     <div class="panel-title">Analysis &amp; Results</div>
-
-    <!-- Shown BEFORE any calculation is run -->
     <div class="placeholder" id="placeholder">
       <div class="placeholder-icon">⚡</div>
-      <p>Fill in your current vehicle costs<br/>and the EV you're considering,<br/>then hit Calculate.</p>
+      <p>Enter your vehicle above —<br/>Claude will auto-fill what it can.<br/>Then hit Calculate.</p>
     </div>
-
-    <!-- Hidden until calculation runs — then we swap it visible -->
     <div id="results" style="display:none">
-
-      <!-- Row of big-number summary cards -->
       <div class="metric-grid">
         <div class="metric">
-          <div class="metric-label">Current Monthly Cost</div>
+          <div class="metric-label">Avg Current Monthly</div>
           <div class="metric-value negative" id="r-current-monthly">—</div>
-          <div class="metric-sub">payment + fuel + maintenance</div>
+          <div class="metric-sub">averaged over ownership period</div>
         </div>
         <div class="metric">
-          <div class="metric-label">EV Monthly Cost</div>
+          <div class="metric-label">Avg EV Monthly</div>
           <div class="metric-value neutral" id="r-ev-monthly">—</div>
-          <div class="metric-sub">payment + electricity + maintenance</div>
+          <div class="metric-sub">averaged over ownership period</div>
         </div>
         <div class="metric">
-          <div class="metric-label">Monthly Savings</div>
+          <div class="metric-label">Avg Monthly Savings</div>
           <div class="metric-value" id="r-monthly-savings">—</div>
           <div class="metric-sub" id="r-savings-note"></div>
         </div>
         <div class="metric">
-          <div class="metric-label">Rebates Applied</div>
+          <div class="metric-label">Total Rebates</div>
           <div class="metric-value positive" id="r-rebates">—</div>
           <div class="metric-sub">off upfront cost</div>
         </div>
       </div>
 
-      <!-- ─── BREAKEVEN ─── -->
-      <!--
-        Breakeven = the point where your accumulated savings
-        cover the extra cost of the EV vs keeping your current car.
-        If you're saving $100/month and the EV costs $5,000 more net,
-        breakeven is 50 months (~4 years).
-      -->
       <div class="breakeven-bar-wrap">
-        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-          <span style="font-size:0.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">Breakeven Progress</span>
-          <span style="font-size:0.65rem; color:var(--green);" id="r-breakeven-label">—</span>
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+          <span style="font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;">Breakeven Progress</span>
+          <span style="font-size:.62rem;color:var(--green);" id="r-breakeven-label">—</span>
         </div>
         <div class="breakeven-bar-track">
           <div class="breakeven-bar-fill" id="r-breakeven-bar" style="width:0%"></div>
         </div>
         <div class="breakeven-labels">
-          <span>Now</span>
-          <span id="r-breakeven-end">—</span>
+          <span>Now</span><span id="r-breakeven-end">—</span>
         </div>
       </div>
 
-      <!-- ─── COST COMPARISON TABLE ─── -->
-      <!--
-        Side-by-side breakdown so you can see exactly where 
-        the money is going in each scenario
-      -->
       <table class="compare-table">
         <thead>
-          <tr>
-            <th>Cost Category</th>
-            <th>Current Vehicle</th>
-            <th>EV / Hybrid</th>
-          </tr>
+          <tr><th>Cost Category</th><th>Current Vehicle</th><th>EV / Hybrid</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Monthly Payment</td>
-            <td id="t-cur-payment">—</td>
-            <td id="t-ev-payment">—</td>
-          </tr>
-          <tr>
-            <td>Fuel / Electricity</td>
-            <td id="t-cur-fuel">—</td>
-            <td id="t-ev-elec">—</td>
-          </tr>
-          <tr>
-            <td>Maintenance</td>
-            <td id="t-cur-maint">—</td>
-            <td id="t-ev-maint">—</td>
-          </tr>
+          <tr><td>Loan Payment</td><td id="t-cur-payment">—</td><td id="t-ev-payment">—</td></tr>
+          <tr><td>Fuel / Electricity</td><td id="t-cur-fuel">—</td><td id="t-ev-elec">—</td></tr>
+          <tr><td>Maintenance</td><td id="t-cur-maint">—</td><td id="t-ev-maint">—</td></tr>
           <tr class="total-row">
-            <td>Monthly Total</td>
-            <td id="t-cur-total">—</td>
-            <td id="t-ev-total">—</td>
-          </tr>
-          <tr>
-            <td><span style="color:var(--muted)">Over <span id="t-years">5</span> years</span></td>
-            <td id="t-cur-5yr">—</td>
-            <td id="t-ev-5yr">—</td>
+            <td>Total over <span id="t-years">5</span> yrs</td>
+            <td id="t-cur-5yr">—</td><td id="t-ev-5yr">—</td>
           </tr>
         </tbody>
       </table>
 
-      <!-- ─── VERDICT ─── -->
-      <!-- 
-        The big verdict at the bottom: YES / NO / MAYBE.
-        Based on whether breakeven happens within the ownership window.
-      -->
       <div class="verdict" id="r-verdict">
         <div class="verdict-title" id="r-verdict-title">—</div>
         <div class="verdict-body" id="r-verdict-body">—</div>
       </div>
 
-      <!-- Fine print disclaimer -->
       <div class="disclaimer">
-        ⚠ This is an estimate for planning purposes. Rebate eligibility depends on MSRP caps and income thresholds. 
-        Fuel/electricity prices fluctuate. Verify rebates at tc.canada.ca/iZEV and your provincial program. 
-        Maintenance estimates are averages — actual costs vary by vehicle and usage.
+        ⚠ Estimates for planning only. Rebate eligibility depends on MSRP caps and income thresholds.
+        Fuel/electricity prices fluctuate. AI estimates are averages — actual costs vary. Verify at tc.canada.ca/iZEV.
       </div>
+    </div>
+  </div>
+</div>
 
-    </div><!-- /results -->
-  </div><!-- /results panel -->
-</div><!-- /layout -->
-
-<!-- ═══════════════════════════════════════════════════════════════
-     JAVASCRIPT — All the calculation logic lives here
-     Read through the comments to understand how it works
-═══════════════════════════════════════════════════════════════ -->
 <script>
+  function fmt(n){return'$'+Math.abs(Math.round(n)).toLocaleString('en-CA');}
 
-  // ─── HELPER: Format a number as Canadian currency ────────────────
-  // e.g. 1234.5 → "$1,235"
-  function fmt(n) {
-    return '$' + Math.round(n).toLocaleString('en-CA');
-  }
-
-  // ─── REBATE DATA ─────────────────────────────────────────────────
-  // 
-  // This object maps vehicle types to federal iZEV rebate amounts.
-  // BEV = Battery Electric Vehicle (full electric)
-  // PHEV = Plug-in Hybrid (has both a battery and gas engine)
-  // HEV = Regular Hybrid (no plug — charges itself while driving)
-  //
-  // Federal iZEV (Incentives for Zero-Emission Vehicles) program as of 2024:
-  //   BEV: up to $5,000 (vehicle must be under $55K base MSRP for cars,
-  //        or $60K for trucks/SUVs/minivans)
-  //   PHEV: up to $2,500
-  //   HEV: $0 (not eligible for federal rebate)
-  //
-  const FEDERAL_REBATE = {
-    BEV:  5000,
-    PHEV: 2500,
-    HEV:  0
+  const FEDERAL_REBATE={BEV:5000,PHEV:2500,HEV:0};
+  const PROVINCIAL_REBATE={
+    BC:{BEV:4000,PHEV:2000,HEV:0,name:"BC SCEP"},QC:{BEV:7000,PHEV:5000,HEV:0,name:"Roulez Vert"},
+    ON:{BEV:0,PHEV:0,HEV:0,name:"No provincial rebate"},AB:{BEV:0,PHEV:0,HEV:0,name:"No provincial rebate"},
+    MB:{BEV:0,PHEV:0,HEV:0,name:"No provincial rebate"},SK:{BEV:0,PHEV:0,HEV:0,name:"No provincial rebate"},
+    NS:{BEV:3000,PHEV:2000,HEV:0,name:"NS Rebate"},NB:{BEV:5000,PHEV:2500,HEV:0,name:"NB Rebate"},
+    PE:{BEV:5000,PHEV:2500,HEV:0,name:"PEI Rebate"},NL:{BEV:2500,PHEV:1000,HEV:0,name:"NL Rebate"},
+    YT:{BEV:5000,PHEV:2500,HEV:0,name:"Yukon Rebate"},NT:{BEV:0,PHEV:0,HEV:0,name:"No territorial rebate"},
+    NU:{BEV:0,PHEV:0,HEV:0,name:"No territorial rebate"},
   };
 
-  // Provincial rebates (on top of federal iZEV)
-  // These are approximate 2024 values — they change frequently!
-  const PROVINCIAL_REBATE = {
-    BC: { BEV: 4000, PHEV: 2000, HEV: 0,    name: "BC SCEP" },
-    QC: { BEV: 7000, PHEV: 5000, HEV: 0,    name: "Roulez Vert" },
-    ON: { BEV: 0,    PHEV: 0,    HEV: 0,    name: "No provincial rebate" },
-    AB: { BEV: 0,    PHEV: 0,    HEV: 0,    name: "No provincial rebate" },
-    MB: { BEV: 0,    PHEV: 0,    HEV: 0,    name: "No provincial rebate" },
-    SK: { BEV: 0,    PHEV: 0,    HEV: 0,    name: "No provincial rebate" },
-    NS: { BEV: 3000, PHEV: 2000, HEV: 0,    name: "NS Rebate" },
-    NB: { BEV: 5000, PHEV: 2500, HEV: 0,    name: "NB Rebate" },
-    PE: { BEV: 5000, PHEV: 2500, HEV: 0,    name: "PEI Rebate" },
-    NL: { BEV: 2500, PHEV: 1000, HEV: 0,    name: "NL Rebate" },
-    YT: { BEV: 5000, PHEV: 2500, HEV: 0,    name: "Yukon Rebate" },
-    NT: { BEV: 0,    PHEV: 0,    HEV: 0,    name: "No territorial rebate" },
-    NU: { BEV: 0,    PHEV: 0,    HEV: 0,    name: "No territorial rebate" },
-  };
+  document.getElementById('province').addEventListener('change',()=>{updateRebates();calcEVPayment();});
+  document.getElementById('evType').addEventListener('change',()=>{updateRebates();calcEVPayment();estimateEVMaintenance();});
 
-  // ─── AUTO-UPDATE REBATES when province or vehicle type changes ───
-  //
-  // We attach "event listeners" to the dropdowns — whenever the user
-  // changes a dropdown value, this function runs automatically.
-  //
-  document.getElementById('province').addEventListener('change', updateRebates);
-  document.getElementById('evType').addEventListener('change', updateRebates);
-
-  function updateRebates() {
-    const province = document.getElementById('province').value;
-    const evType   = document.getElementById('evType').value;
-
-    const federal     = FEDERAL_REBATE[evType];
-    const provincial  = PROVINCIAL_REBATE[province];
-    const provAmount  = provincial[evType];
-    const total       = federal + provAmount;
-
-    // Build the badge display
-    const badgeContainer = document.getElementById('rebateDisplay');
-    badgeContainer.innerHTML = '';
-
-    if (federal > 0) {
-      badgeContainer.innerHTML += `<span class="rebate-badge">Federal iZEV: ${fmt(federal)}</span>`;
-    }
-    if (provAmount > 0) {
-      badgeContainer.innerHTML += `<span class="rebate-badge">${provincial.name}: ${fmt(provAmount)}</span>`;
-    }
-    if (total === 0) {
-      badgeContainer.innerHTML = `<span style="font-size:0.7rem;color:var(--muted)">No rebates available for this combo</span>`;
-    }
-
-    // Auto-fill the rebate total field for the user
-    document.getElementById('totalRebate').value = total;
+  function updateRebates(){
+    const prov=document.getElementById('province').value;
+    const type=document.getElementById('evType').value;
+    const fed=FEDERAL_REBATE[type];
+    const pd=PROVINCIAL_REBATE[prov];
+    const provAmt=pd[type];
+    const total=fed+provAmt;
+    const box=document.getElementById('rebateDisplay');
+    box.innerHTML='';
+    if(fed>0) box.innerHTML+=`<span class="rebate-badge">Federal iZEV: ${fmt(fed)}</span>`;
+    if(provAmt>0) box.innerHTML+=`<span class="rebate-badge">${pd.name}: ${fmt(provAmt)}</span>`;
+    if(total===0) box.innerHTML=`<span style="font-size:.68rem;color:var(--muted)">No rebates for this combination</span>`;
+    document.getElementById('totalRebate').value=total;
   }
-
-  // Run once on page load so rebates show for the default selections
   updateRebates();
 
-  // ─── AI MAINTENANCE COST ESTIMATOR ───────────────────────────────
-  //
-  // HOW THIS WORKS:
-  // When the user finishes typing a vehicle name and clicks away (onblur),
-  // we send the vehicle info to the Anthropic API and ask Claude to estimate
-  // realistic monthly maintenance costs based on:
-  //   - The vehicle's age (older = more wear, more repairs)
-  //   - The make/model's reliability reputation
-  //   - Typical Canadian maintenance pricing
-  //
-  // We ask Claude to respond in JSON so we can parse the number out easily,
-  // rather than trying to find a dollar amount buried in a paragraph of text.
-  //
-  async function guessMaintenanceCost() {
-    const vehicle = document.getElementById('currentVehicle').value.trim();
-
-    // Don't fire if the field is empty or too short to be a real vehicle name
-    if (!vehicle || vehicle.length < 5) return;
-
-    // Show the re-estimate button now that we know a vehicle is entered
-    document.getElementById('aiEstimateBtn').style.display = 'inline-block';
-
-    // Update the hint text to show we're working on it
-    const hintEl = document.getElementById('maintHint');
-    hintEl.style.color = 'var(--yellow)';
-    hintEl.textContent = '⚡ Estimating based on vehicle age and reliability…';
-
-    // Disable the field while we wait so user doesn't type over it
-    const maintInput = document.getElementById('currentMaint');
-    maintInput.disabled = true;
-
-    try {
-      // ── Call the Anthropic API ────────────────────────────────────
-      //
-      // We're calling Claude with a very specific prompt that asks for JSON.
-      // The key trick: we tell it EXACTLY what format to respond in,
-      // so we can reliably parse the result in JavaScript.
-      //
-      const response = await fetch('/api/estimate-maintenance', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ vehicle })
-      });
-
-      if (!response.ok) throw new Error('API error');
-      const estimate = await response.json();
-
-      // ── Fill in the field ─────────────────────────────────────────
-      maintInput.value = estimate.monthly_cad;
-
-      // Update the hint with a human-readable explanation
-      hintEl.style.color = 'var(--green)';
-      hintEl.innerHTML = `⚡ AI estimate — ${estimate.reliability} reliability · ${estimate.notes}
-        <br><span style="color:var(--muted)">Adjust if your experience differs</span>`;
-
-    } catch (err) {
-      // Something went wrong — show a friendly error and let user type manually
-      console.error('AI estimate failed:', err);
-      hintEl.style.color = 'var(--red)';
-      hintEl.textContent = 'Could not estimate — enter manually above';
-    }
-
-    // Re-enable the field whether or not it succeeded
-    maintInput.disabled = false;
+  function calcEVPayment(){
+    const price=parseFloat(document.getElementById('evPrice').value)||0;
+    const down=parseFloat(document.getElementById('downPayment').value)||0;
+    const trade=parseFloat(document.getElementById('tradeIn').value)||0;
+    const rebate=parseFloat(document.getElementById('totalRebate').value)||0;
+    const term=parseInt(document.getElementById('loanTerm').value)||60;
+    const rate=parseFloat(document.getElementById('interestRate').value)||0;
+    if(!price)return;
+    const principal=Math.max(0,price-down-trade-rebate);
+    const note=document.getElementById('paymentNote');
+    if(principal<=0){document.getElementById('evPayment').value=0;note.textContent='Fully covered';return;}
+    if(rate<=0){document.getElementById('evPayment').value=Math.round(principal/term);note.textContent=`${fmt(principal)} ÷ ${term}mo @ 0%`;return;}
+    const r=rate/100/12;
+    const pay=principal*r*Math.pow(1+r,term)/(Math.pow(1+r,term)-1);
+    document.getElementById('evPayment').value=Math.round(pay);
+    note.textContent=`${fmt(principal)} over ${term}mo @ ${rate}%`;
   }
 
-  // ─── MAIN CALCULATION FUNCTION ───────────────────────────────────
-  //
-  // This is the core of the app. When you click "Calculate", we:
-  // 1. Read all the input values
-  // 2. Calculate current monthly cost vs EV monthly cost
-  // 3. Find the cost differential (extra upfront cost of EV)
-  // 4. Calculate how long savings take to pay off that differential
-  // 5. Compare breakeven point to ownership window → verdict
-  //
-  function calculate() {
+  let lastVehicle='';
+  async function estimateCurrentVehicle(){
+    const v=document.getElementById('currentVehicle').value.trim();
+    if(!v||v.length<5||v===lastVehicle)return;
+    lastVehicle=v;
+    document.getElementById('reestimateBtn').style.display='inline-block';
+    const hint=document.getElementById('vehicleHint');
+    hint.className='hint warn';
+    hint.textContent='⚡ Estimating fuel & maintenance…';
+    document.getElementById('currentFuel').disabled=true;
+    document.getElementById('currentMaint').disabled=true;
+    try{
+      const km=parseFloat(document.getElementById('monthlyKm').value)||1500;
+      const r=await fetch('/api/estimate-maintenance',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({vehicle:`${v}. Monthly driving: ${km} km.`,type:'current-vehicle'})});
+      if(!r.ok)throw new Error();
+      const est=await r.json();
+      document.getElementById('currentFuel').value=est.monthly_fuel_cad;
+      document.getElementById('currentMaint').value=est.monthly_maint_cad;
+      hint.className='hint ok';
+      hint.textContent=`⚡ ${est.reliability} reliability · ${est.fuel_economy_l100km}L/100km · ${est.notes}`;
+      document.getElementById('fuelHint').textContent='AI estimate — adjust if needed';
+      document.getElementById('maintHint').textContent='AI estimate — adjust if needed';
+    }catch{
+      hint.className='hint error';
+      hint.textContent='Could not estimate — enter manually';
+    }
+    document.getElementById('currentFuel').disabled=false;
+    document.getElementById('currentMaint').disabled=false;
+  }
 
-    // ── Step 1: Read all inputs ──────────────────────────────────
-    // parseInt/parseFloat convert text strings to numbers.
-    // The "|| 0" means "use 0 if the field is empty" so we don't get NaN.
-    const curPayment  = parseFloat(document.getElementById('currentPayment').value) || 0;
-    const curFuel     = parseFloat(document.getElementById('currentFuel').value)    || 0;
-    const curMaint    = parseFloat(document.getElementById('currentMaint').value)   || 0;
-    const evPayment   = parseFloat(document.getElementById('evPayment').value)      || 0;
-    const evElec      = parseFloat(document.getElementById('evElec').value)         || 0;
-    const evMaint     = parseFloat(document.getElementById('evMaint').value)        || 0;
-    const totalRebate = parseFloat(document.getElementById('totalRebate').value)    || 0;
-    const evPrice     = parseFloat(document.getElementById('evPrice').value)        || 0;
-    const monthlyKm   = parseFloat(document.getElementById('monthlyKm').value)      || 0;
-    const years       = parseInt(document.getElementById('ownershipYears').value)   || 5;
+  function refreshFuelEstimate(){lastVehicle='';}
 
-    // ── DEBUG: log all values so we can see what is being read ────
-    // Open browser DevTools (F12 → Console tab) to see this output.
-    console.log('EV Calc inputs:', { curPayment, curFuel, curMaint, evPayment, evElec, evMaint, totalRebate, evPrice, monthlyKm, years });
+  let lastEVKey='';
+  async function estimateEVMaintenance(){
+    const type=document.getElementById('evType').value;
+    const model=document.getElementById('evModel').value.trim();
+    const key=`${type}-${model}`;
+    if(key===lastEVKey)return;
+    lastEVKey=key;
+    document.getElementById('evMaintBtn').style.display='inline-block';
+    const hint=document.getElementById('evMaintHint');
+    hint.className='hint warn';
+    hint.textContent='⚡ Estimating EV maintenance…';
+    document.getElementById('evMaint').disabled=true;
+    try{
+      const typeLabel={BEV:'Battery Electric (BEV)',PHEV:'Plug-in Hybrid (PHEV)',HEV:'Traditional Hybrid (HEV)'}[type];
+      const vehicle=model?`${model} (${typeLabel})`:typeLabel;
+      const r=await fetch('/api/estimate-maintenance',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({vehicle,type:'ev'})});
+      if(!r.ok)throw new Error();
+      const est=await r.json();
+      document.getElementById('evMaint').value=est.monthly_cad;
+      hint.className='hint ok';
+      hint.textContent=`⚡ ${est.notes}`;
+    }catch{
+      hint.className='hint error';
+      hint.textContent='Could not estimate — enter manually';
+    }
+    document.getElementById('evMaint').disabled=false;
+  }
 
-    // ── Step 2: Monthly totals ────────────────────────────────────
-    // Simply add up all three cost categories for each vehicle
-    const curMonthly = curPayment + curFuel + curMaint;
-    const evMonthly  = evPayment  + evElec  + evMaint;
+  estimateEVMaintenance();
 
-    // ── Step 3: Monthly savings (can be negative if EV costs more/mo) 
-    const monthlySavings = curMonthly - evMonthly;
+  function calculate(){
+    const curPayment=parseFloat(document.getElementById('currentPayment').value)||0;
+    const curFuel=parseFloat(document.getElementById('currentFuel').value)||0;
+    const curMaint=parseFloat(document.getElementById('currentMaint').value)||0;
+    const curLoanMonths=parseInt(document.getElementById('currentLoanMonths').value)||0;
+    const evPayment=parseFloat(document.getElementById('evPayment').value)||0;
+    const evElec=parseFloat(document.getElementById('evElec').value)||0;
+    const evMaint=parseFloat(document.getElementById('evMaint').value)||0;
+    const totalRebate=parseFloat(document.getElementById('totalRebate').value)||0;
+    const evPrice=parseFloat(document.getElementById('evPrice').value)||0;
+    const downPayment=parseFloat(document.getElementById('downPayment').value)||0;
+    const tradeIn=parseFloat(document.getElementById('tradeIn').value)||0;
+    const loanTerm=parseInt(document.getElementById('loanTerm').value)||60;
+    const years=parseInt(document.getElementById('ownershipYears').value)||5;
+    const ownershipMonths=years*12;
 
-    // ── Step 4: Net upfront cost difference ──────────────────────
-    //
-    // The EV might cost more upfront, but rebates reduce that gap.
-    // We don't need to factor in the old car's "trade value" for
-    // this simple calculation — we're comparing ongoing cost streams.
-    //
-    // Net extra cost = EV price minus rebates minus the value you'd
-    // get from your current car (we approximate as $0 for simplicity —
-    // trade-in value varies too much to assume).
-    //
-    const netExtraCost = Math.max(0, evPrice - totalRebate);
+    // Net out-of-pocket upfront: down payment (trade-in offsets purchase, not a separate cost)
+    const netUpfront=Math.max(0,downPayment);
 
-    // ── Step 5: Breakeven ─────────────────────────────────────────
-    //
-    // If you save $X/month, and the EV costs $Y more net,
-    // then you break even in Y/X months.
-    //
-    // If monthly savings is zero or negative, you NEVER break even.
-    //
-    let breakevenMonths = Infinity;
-    if (monthlySavings > 0) {
-      breakevenMonths = netExtraCost / monthlySavings;
+    // Month-by-month simulation
+    // Current loan: if curLoanMonths > 0, payment ends there. If 0, payment is ongoing for full period.
+    // EV loan: payment ends at loanTerm.
+    let cumCurrent=0, cumEV=netUpfront, breakEven=Infinity;
+    let sumCur=0, sumEV=0;
+
+    for(let m=1;m<=ownershipMonths;m++){
+      const curPay=(curLoanMonths>0&&m>curLoanMonths)?0:curPayment;
+      const curM=curPay+curFuel+curMaint;
+      const evPay=m>loanTerm?0:evPayment;
+      const evM=evPay+evElec+evMaint;
+      cumCurrent+=curM; cumEV+=evM;
+      sumCur+=curM; sumEV+=evM;
+      if(breakEven===Infinity&&cumEV<=cumCurrent) breakEven=m;
     }
 
-    const breakevenYears = breakevenMonths / 12;
-    const ownershipMonths = years * 12;
+    const avgCur=sumCur/ownershipMonths;
+    const avgEV=sumEV/ownershipMonths;
+    const avgSave=avgCur-avgEV;
+    const breakYears=breakEven/12;
 
-    // ── Step 6: 5-year total comparison ──────────────────────────
-    const curTotal  = curMonthly  * ownershipMonths;
-    const evTotal   = evMonthly   * ownershipMonths + netExtraCost;
-
-    // ── Step 7: Verdict logic ─────────────────────────────────────
-    //
-    // YES:   Breakeven happens well within your ownership window
-    // MAYBE: Breakeven is close to or just beyond ownership window
-    // NO:    EV monthly is higher AND no breakeven, or breakeven
-    //        is way beyond how long you'll keep it
-    //
-    let verdictClass, verdictTitle, verdictBody;
-
-    if (breakevenMonths === Infinity) {
-      // EV is more expensive per month AND costs more upfront — hard no
-      verdictClass = 'no';
-      verdictTitle = '❌ Probably Not Worth It Right Now';
-      verdictBody  = `The EV would cost ${fmt(evMonthly - curMonthly)}/month MORE than your current vehicle, and at ${fmt(netExtraCost)} net upfront cost, you'd never recover that through savings. Unless fuel prices spike significantly or you find a lower-payment option, keep what you have.`;
-    } else if (breakevenYears <= years * 0.6) {
-      // Breaks even in less than 60% of your ownership window — clear win
-      verdictClass = 'yes';
-      verdictTitle = '✅ Yes — It Pays for Itself';
-      verdictBody  = `You'll break even in approximately ${Math.ceil(breakevenMonths)} months (${breakevenYears.toFixed(1)} years), and you plan to keep it for ${years} years. That leaves you ${Math.round(ownershipMonths - breakevenMonths)} months of pure savings — totalling roughly ${fmt((ownershipMonths - breakevenMonths) * monthlySavings)} in your pocket.`;
-    } else if (breakevenYears <= years * 1.2) {
-      // Breaks even close to the end of ownership — marginal
-      verdictClass = 'maybe';
-      verdictTitle = '⚠️ Maybe — Tight Timeline';
-      verdictBody  = `Breakeven is around ${Math.ceil(breakevenMonths)} months (${breakevenYears.toFixed(1)} years). ${
-        breakevenYears <= years
-          ? `You'll just barely break even within your ${years}-year window, saving about ${fmt((ownershipMonths - breakevenMonths) * monthlySavings)} after that point.`
-          : `You plan to keep it ${years} years but breakeven is ${(breakevenYears - years).toFixed(1)} years beyond that — unless you keep it longer, or fuel prices rise.`
-      } Consider whether you'll hold the vehicle longer than planned.`;
+    let vc,vt,vb;
+    if(breakEven===Infinity||cumEV>cumCurrent){
+      vc='no'; vt='❌ Probably Not Worth It Right Now';
+      vb=`Over ${years} years the EV costs ${fmt(cumEV-cumCurrent)} MORE than your current vehicle. Savings in fuel and maintenance don't overcome the upfront difference${netUpfront>0?` and your ${fmt(netUpfront)} down payment`:''}.`;
+    } else if(breakEven<=ownershipMonths*0.6){
+      vc='yes'; vt='✅ Yes — It Pays for Itself';
+      vb=`Breakeven in ~${Math.ceil(breakEven)} months (${breakYears.toFixed(1)} yrs), well within your ${years}-year window. You'd come out ${fmt(cumCurrent-cumEV)} ahead total.`;
+    } else if(breakEven<=ownershipMonths){
+      vc='maybe'; vt='⚠️ Maybe — Tight Timeline';
+      vb=`Breakeven at ~${Math.ceil(breakEven)} months (${breakYears.toFixed(1)} yrs), just within your ${years}-year plan. You'd save ${fmt(cumCurrent-cumEV)} — but only if you keep it the full term.`;
     } else {
-      // Way too long to break even
-      verdictClass = 'no';
-      verdictTitle = '❌ Not Worth It at This Price';
-      verdictBody  = `Breakeven would take ${breakevenYears.toFixed(1)} years, but you only plan to keep the vehicle ${years} years. The savings just don't add up unless you negotiate a lower purchase price, find higher rebates, or commit to a much longer ownership window.`;
+      vc='no'; vt='❌ Not Worth It at This Price';
+      vb=`Breakeven takes ${breakYears.toFixed(1)} years — longer than your ${years}-year plan. You'd be ${fmt(cumEV-cumCurrent)} behind at sale. Try: lower price, bigger down, or plan to keep it ${Math.ceil(breakYears)} years.`;
     }
 
-    // ── Step 8: Update the DOM (display the results) ──────────────
-    //
-    // We find each element by its ID and set its text/content.
-    // This is how JavaScript updates the page without reloading.
-    //
+    document.getElementById('r-current-monthly').textContent=fmt(avgCur)+'/mo avg';
+    document.getElementById('r-ev-monthly').textContent=fmt(avgEV)+'/mo avg';
+    const se=document.getElementById('r-monthly-savings');
+    se.textContent=(avgSave>=0?'+':'-')+fmt(Math.abs(avgSave))+'/mo avg';
+    se.className='metric-value '+(avgSave>=0?'positive':'negative');
+    document.getElementById('r-savings-note').textContent=avgSave>=0?`~${fmt(avgSave*12)}/yr on average`:`~${fmt(Math.abs(avgSave)*12)}/yr extra cost`;
+    document.getElementById('r-rebates').textContent=fmt(totalRebate);
 
-    // Big metric cards
-    document.getElementById('r-current-monthly').textContent = fmt(curMonthly);
-    document.getElementById('r-ev-monthly').textContent      = fmt(evMonthly);
+    const pct=breakEven===Infinity?0:Math.min(100,(ownershipMonths/breakEven)*100);
+    document.getElementById('r-breakeven-bar').style.width=pct+'%';
+    document.getElementById('r-breakeven-label').textContent=breakEven===Infinity?"Doesn't break even in this window":`Breakeven: ~${Math.ceil(breakEven)} months`;
+    document.getElementById('r-breakeven-end').textContent=`${years} yr window`;
 
-    const savingsEl = document.getElementById('r-monthly-savings');
-    savingsEl.textContent = (monthlySavings >= 0 ? '+' : '') + fmt(monthlySavings) + '/mo';
-    savingsEl.className = 'metric-value ' + (monthlySavings >= 0 ? 'positive' : 'negative');
-    document.getElementById('r-savings-note').textContent = monthlySavings >= 0
-      ? `${fmt(monthlySavings * 12)}/year savings`
-      : `${fmt(Math.abs(monthlySavings) * 12)}/year extra cost`;
+    const curPayStr=curLoanMonths>0?`${fmt(curPayment)}/mo × ${curLoanMonths}mo, then $0`:fmt(curPayment)+'/mo';
+    const evPayStr=`${fmt(evPayment)}/mo × ${loanTerm}mo, then $0`;
+    document.getElementById('t-cur-payment').textContent=curPayStr;
+    document.getElementById('t-ev-payment').textContent=evPayStr;
+    document.getElementById('t-cur-fuel').textContent=fmt(curFuel)+'/mo';
+    document.getElementById('t-ev-elec').textContent=fmt(evElec)+'/mo';
+    document.getElementById('t-cur-maint').textContent=fmt(curMaint)+'/mo';
+    document.getElementById('t-ev-maint').textContent=fmt(evMaint)+'/mo';
+    document.getElementById('t-years').textContent=years;
+    document.getElementById('t-cur-5yr').textContent=fmt(cumCurrent);
+    document.getElementById('t-ev-5yr').textContent=fmt(cumEV)+(netUpfront>0?` (incl. ${fmt(netUpfront)} down)`:'');
 
-    document.getElementById('r-rebates').textContent = fmt(totalRebate);
-
-    // Breakeven bar — fill % is capped at 100%
-    const breakevenPct = Math.min(100, (years / breakevenYears) * 100);
-    document.getElementById('r-breakeven-bar').style.width = breakevenPct + '%';
-    document.getElementById('r-breakeven-label').textContent = breakevenMonths === Infinity
-      ? 'Never breaks even'
-      : `Breakeven: ~${Math.ceil(breakevenMonths)} months`;
-    document.getElementById('r-breakeven-end').textContent = `${years} yr ownership window`;
-
-    // Comparison table
-    document.getElementById('t-cur-payment').textContent = fmt(curPayment);
-    document.getElementById('t-ev-payment').textContent  = fmt(evPayment);
-    document.getElementById('t-cur-fuel').textContent    = fmt(curFuel);
-    document.getElementById('t-ev-elec').textContent     = fmt(evElec);
-    document.getElementById('t-cur-maint').textContent   = fmt(curMaint);
-    document.getElementById('t-ev-maint').textContent    = fmt(evMaint);
-    document.getElementById('t-cur-total').textContent   = fmt(curMonthly);
-    document.getElementById('t-ev-total').textContent    = fmt(evMonthly);
-    document.getElementById('t-years').textContent       = years;
-    document.getElementById('t-cur-5yr').textContent     = fmt(curTotal);
-    document.getElementById('t-ev-5yr').textContent      = fmt(evTotal) + ' (incl. net upfront)';
-
-    // Verdict
-    const verdictEl = document.getElementById('r-verdict');
-    verdictEl.className = 'verdict ' + verdictClass;
-    document.getElementById('r-verdict-title').textContent = verdictTitle;
-    document.getElementById('r-verdict-body').textContent  = verdictBody;
-
-    // Hide placeholder, show results
-    document.getElementById('placeholder').style.display = 'none';
-    document.getElementById('results').style.display     = 'block';
-
-    // Smooth scroll to results on mobile
-    if (window.innerWidth < 800) {
-      document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth' });
-    }
+    const ve=document.getElementById('r-verdict');
+    ve.className='verdict '+vc;
+    document.getElementById('r-verdict-title').textContent=vt;
+    document.getElementById('r-verdict-body').textContent=vb;
+    document.getElementById('placeholder').style.display='none';
+    document.getElementById('results').style.display='block';
+    if(window.innerWidth<800) document.getElementById('resultsPanel').scrollIntoView({behavior:'smooth'});
   }
 </script>
 </body>
