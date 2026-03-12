@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-06T00:00:00Z",
+  "updated_at": "2026-03-12T17:00:41.217Z",
   "fires": [
     {
       "country": "Chile",
@@ -9,7 +9,8 @@
       "status": "Contained",
       "containment_pct": 100,
       "summary": "Swept through south-central Chile in January 2026, killing 21 people and forcing 50,000 to evacuate. State of catastrophe declared. 325 homes destroyed across two regions.",
-      "link": "https://www.connectingbusiness.org/ourwork/emergencies/chile-wildfires-2026"
+      "link": "https://www.connectingbusiness.org/ourwork/emergencies/chile-wildfires-2026",
+      "news": []
     },
     {
       "country": "Australia",
@@ -19,7 +20,8 @@
       "status": "Contained",
       "containment_pct": 100,
       "summary": "One of Australia's worst seasons since Black Summer. 400,000 ha burned across Victoria including 137,000 ha at Longwood. 900 structures destroyed, A$100M federal aid pledged.",
-      "link": "https://www.vic.gov.au/january-2026-victorian-bushfires"
+      "link": "https://www.vic.gov.au/january-2026-victorian-bushfires",
+      "news": []
     },
     {
       "country": "Argentina",
@@ -29,7 +31,8 @@
       "status": "Contained",
       "containment_pct": 100,
       "summary": "Burned through Patagonian lake district near Cholila, El Bolsón, and Los Alcerces National Park in January 2026. Climate attribution studies found fire weather made three times more likely by climate change.",
-      "link": "https://www.euronews.com/green/2026/02/11/devastating-wildfires-in-argentina-and-chile-made-three-times-more-likely-by-climate-chang"
+      "link": "https://www.euronews.com/green/2026/02/11/devastating-wildfires-in-argentina-and-chile-made-three-times-more-likely-by-climate-chang",
+      "news": []
     }
   ]
 }
