@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-13T11:00:41.487Z",
+  "updated_at": "2026-03-13T17:00:41.049Z",
   "fires": [
     {
       "country": "Chile",
@@ -27,7 +27,7 @@
       "country": "Argentina",
       "region": "Patagonia",
       "name": "Chubut–Los Alcerces Fires",
-      "hectares": 0,
+      "hectares": null,
       "status": "Contained",
       "containment_pct": 100,
       "summary": "Burned through Patagonian lake district near Cholila, El Bolsón, and Los Alcerces National Park in January 2026. Climate attribution studies found fire weather made three times more likely by climate change.",
