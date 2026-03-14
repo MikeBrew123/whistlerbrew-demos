@@ -9,16 +9,77 @@
     "note": "Off-season. National fire statistics will be updated when the 2026 fire season begins."
   },
   "provinces": [
-    {"id": "bc", "name": "BC", "active": 0, "ha": 0, "level": 1},
-    {"id": "ab", "name": "AB", "active": 0, "ha": 0, "level": 1},
-    {"id": "sk", "name": "SK", "active": 0, "ha": 0, "level": 1},
-    {"id": "mb", "name": "MB", "active": 0, "ha": 0, "level": 1},
-    {"id": "on", "name": "ON", "active": 0, "ha": 0, "level": 1},
-    {"id": "qc", "name": "QC", "active": 0, "ha": 0, "level": 1},
-    {"id": "nb", "name": "NB", "active": 0, "ha": 0, "level": 1},
-    {"id": "ns", "name": "NS", "active": 0, "ha": 0, "level": 1},
-    {"id": "nt", "name": "NT", "active": 0, "ha": 0, "level": 1},
-    {"id": "yt", "name": "YT", "active": 0, "ha": 0, "level": 1}
+    {
+      "id": "bc",
+      "name": "BC",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "ab",
+      "name": "AB",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "sk",
+      "name": "SK",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "mb",
+      "name": "MB",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "on",
+      "name": "ON",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "qc",
+      "name": "QC",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "nb",
+      "name": "NB",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "ns",
+      "name": "NS",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "nt",
+      "name": "NT",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    },
+    {
+      "id": "yt",
+      "name": "YT",
+      "active": 0,
+      "ha": 0,
+      "level": 1
+    }
   ],
-  "news": []
+  "news": [],
+  "last_news_update": "2026-03-14T23:00:40.930Z"
 }
