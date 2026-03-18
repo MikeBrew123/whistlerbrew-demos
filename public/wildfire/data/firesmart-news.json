@@ -1,10 +1,8 @@
 {
-  "updated_at": "2026-03-17T23:00:45.938Z",
+  "updated_at": "2026-03-18T05:00:45.432Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [
+    "kamloops": [
       {
         "title": "Lytton wildfire rebuild lacked legal framework from province, auditor general says",
         "link": "https://globalnews.ca/news/11735153/lytton-wildfire-rebuild-lacked-legal-framework-report/",
@@ -13,14 +11,44 @@
         "source": "Global BC News"
       }
     ],
+    "prince-george": [],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Fire burns down historic building at key fire research complex",
+        "link": "https://wildfiretoday.com/fire-burns-historic-building-at-key-fire-research-complex/",
+        "description": "A historic home at a world-leading fire research complex was consumed by a lightning fire on Tuesday and burnt to the ground. The historic Beadel House, on the Tall Timbers Research Station and Land Conservancy complex near Tallahassee, Florida in the United States, was completely lost despite the efforts of the Tallahassee Fire Department. One [&#8230;]",
+        "pubDate": "Tue, 17 Mar 2026 23:19:28 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "WFCC returns to Canada in 2026",
         "link": "https://wildfiretoday.com/wfcc-returns-to-canada-in-2026/",
         "description": "The combined Wildland Fire Canada Conference and Canadian Smoke Forum unites wildland fire management agencies, Indigenous knowledge holders, scientists and community members from across Canada and around the world. This biennial conference focuses on wildland fire management, science and knowledge sharing with the latest research, technology and practices. The last WFCC was in 2024 in [&#8230;]",
         "pubDate": "Thu, 12 Mar 2026 05:57:29 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Production to restart for the 214ST helicopter",
+        "link": "https://wildfiretoday.com/production-to-restart-for-the-214st-helicopter/",
+        "description": "A new and improved Bell 214ST helicopter will soon roll off the production lines with McDermott Aviation announcing the restart of manufacturing after more than 20 years for one of the main workhorses of disaster response worldwide. McDermott Aviation is announcing the move at the Verticon aviation conference in Atlanta, US, this week. Australian-based McDermott [&#8230;]",
+        "pubDate": "Wed, 11 Mar 2026 01:19:26 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Perspectives from the IAWF president",
+        "link": "https://wildfiretoday.com/perspectives-from-the-iawf-president/",
+        "description": "A conversation with Trevor Howard, National Manager Prescribed Burning Strategy, AFAC and President of the International Association of Wildland Fire, with AFAC Deputy CEO and Executive Director, Strategy, People and Performance Erin Liston-Abel. This article first appeared in Fire Australia Magazine, Issue 1, 2026 Could you please tell us a bit about your career in [&#8230;]",
+        "pubDate": "Thu, 05 Mar 2026 23:58:27 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Synchronized wildfires will strain global fire resources: report",
+        "link": "https://wildfiretoday.com/synchronized-wildfires-will-strain-global-fire-resources-report/",
+        "description": "While the trend to more extreme fire weather days is well understood for many regions worldwide, a new study has identified the rising incidence of widespread concurrent extreme fire weather days across multiple global regions. The increased risk of concurrent fires poses significant social and ecological consequences and may complicate the global sharing of fire [&#8230;]",
+        "pubDate": "Tue, 03 Mar 2026 21:17:36 +0000",
         "source": "Wildfire Today"
       },
       {
@@ -31,10 +59,10 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "A new national prescribed burning training program for Canada",
-        "link": "https://wildfiretoday.com/a-new-national-prescribed-burning-training-program-for-canada/",
-        "description": "Canada is lifting its commitment to prescribed fire with the establishment of a new national training program funded by a large injection of philanthropic money. The&#160;new&#160;$CAD 8 million&#160;Canadian Prescribed Fire Training Program (CPFTP), is co-developed by the University of British Columbia’s Okanagan Campus and the Weston Family Foundation. Launched this week, it&#160;aims to address",
-        "pubDate": "Fri, 27 Feb 2026 01:36:43 +0000",
+        "title": "&#8216;Unprecedented&#8217; snow drought sets up extreme wildfires for Western US in 2026",
+        "link": "https://wildfiretoday.com/unprecedented-snow-drought-sets-up-extreme-wildfires-for-western-us-in-2026/",
+        "description": "It&#8217;s been 40 years since the United States&#8217; western region has experienced this low of snowpack near winter&#8217;s end, setting the stage for what many fear will be an early and extreme peak wildfire season. Much of the mountainous West is experiencing a snow drought due to drier-than-normal and warmer-than-normal winter weather, according to the [&#8230;]",
+        "pubDate": "Sun, 01 Mar 2026 22:59:11 +0000",
         "source": "Wildfire Today"
       }
     ]
