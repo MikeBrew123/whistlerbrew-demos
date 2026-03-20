@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-19T11:00:47.787Z",
+  "updated_at": "2026-03-20T14:42:00.234Z",
   "fires": [
     {
       "country": "Chile",
@@ -33,6 +33,101 @@
       "summary": "Burned through Patagonian lake district near Cholila, El Bolsón, and Los Alcerces National Park in January 2026. Climate attribution studies found fire weather made three times more likely by climate change.",
       "link": "https://www.euronews.com/green/2026/02/11/devastating-wildfires-in-argentina-and-chile-made-three-times-more-likely-by-climate-chang",
       "news": []
+    },
+    {
+      "country": "United States",
+      "region": "Nebraska",
+      "name": "Nebraska Wildfires",
+      "hectares": 323748,
+      "status": "Active",
+      "containment_pct": null,
+      "summary": "Large wildfires consuming nearly 800,000 acres across Nebraska as of mid-March 2026 amid warm, dry conditions and elevated wildfire risk.",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBMV1Rwc1FXd1JDdlVOVVpVQmxwOWlQdGEyM193S1Rpa0F1WHJqcVNmZHNSWktYb2ozR1czclBwVDM2R2E4",
+      "news": [
+        {
+          "title": "Nebraska Wildfires Consume Nearly 800,000 Acres",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBMV1Rwc1FXd1JDdlVOVVpVQmxwOWlQdGEyM193S1Rpa0F1WHJqcVNmZHNSWktYb2ozR1czclBwVDM2R2E4",
+          "source": "The New York Times"
+        }
+      ]
+    },
+    {
+      "country": "United States",
+      "region": "Colorado",
+      "name": "Colorado Wildfires (March 2026)",
+      "hectares": null,
+      "status": "Active",
+      "containment_pct": null,
+      "summary": "Multiple active wildfires burning in southern Colorado including near Colorado Springs with Highway 115 closed. Evacuations partially lifted as fire activity continues with warm conditions increasing risk.",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVmdKdDgzZkpUdllSMWtYT2FGcWkxSWdvenNaQnBUM3ltM3hmaDRMSlFpTmFEeENhcEtWT1V2RUs3b1UtQi11Q3JU",
+      "news": [
+        {
+          "title": "Large wildfire burning south of Colorado Springs",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVmdKdDgzZkpUdllSMWtYT2FGcWkxSWdvenNaQnBUM3ltM3hmaDRMSlFpTmFEeENhcEtWT1V2RUs3b1UtQi11Q3JU",
+          "source": "CBS News"
+        },
+        {
+          "title": "Evacuations partially lifted as officials give updates on 3 wildfires burning in southern Colorado",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNWG1qdGswZzJqNkVxSG5FTjFUOEYtelV0RXlsVTQ1TlhuVUh6ME1vb2NMTXlWa2JIUmVKOU82b2EyVzh0RlowOGlG",
+          "source": "Colorado Springs Gazette"
+        },
+        {
+          "title": "Highway 115 fire blows up, road closed south of Colorado Springs",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNFczalRYLXVnaFZkWXl1cnFQTEdONEZ5ZEVKUkM2UTZLa3Z4d3g5Rk5iNzZrRDJFUTY3NWNZNzFra1pUVE9aOS1y",
+          "source": "Colorado Politics"
+        }
+      ]
+    },
+    {
+      "country": "United States",
+      "region": "California",
+      "name": "Biggar Fire",
+      "hectares": null,
+      "status": "Active",
+      "containment_pct": null,
+      "summary": "New wildfire reported in Mendocino County, California on March 20, 2026 amid elevated fire risk.",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4wdlJIbWtrWWhIUV9XSjQzTjBUeGUwclc4NlFhOFFOLTJQWUlKcl9fNjB1dFR4TkNFNXJ0QzE5QmtOODZfaDU0TzdU",
+      "news": [
+        {
+          "title": "Breaking: Biggar Fire reported in Mendocino County on March 20",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4wdlJIbWtrWWhIUV9XSjQzTjBUeGUwclc4NlFhOFFOLTJQWUlKcl9fNjB1dFR4TkNFNXJ0QzE5QmtOODZfaDU0TzdU",
+          "source": "Fresno Bee"
+        }
+      ]
+    },
+    {
+      "country": "United States",
+      "region": "Oregon",
+      "name": "La Pine Wildfire",
+      "hectares": null,
+      "status": "Controlled",
+      "containment_pct": null,
+      "summary": "Wildfire near La Pine with evacuation orders dropped though investigation continues. Rural fire district halting all debris burning amid elevated wildfire risk and warm weather.",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPOGh6bnlQYlp4eWtmbVd1RVo0S1dMWGYxLXgwOXpCbkpDS09QV0p3Zm1qMWE0TWdoRUg3UVhTNF9La1ZtWTdOOFI5",
+      "news": [
+        {
+          "title": "Evacuation orders dropped for wildfire near La Pine, though investigation continues",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPOGh6bnlQYlp4eWtmbVd1RVo0S1dMWGYxLXgwOXpCbkpDS09QV0p3Zm1qMWE0TWdoRUg3UVhTNF9La1ZtWTdOOFI5",
+          "source": "Oregon Public Broadcasting"
+        }
+      ]
+    },
+    {
+      "country": "United States",
+      "region": "Hawaii",
+      "name": "Hawaii Wildfire Burn Scars",
+      "hectares": null,
+      "status": "Controlled",
+      "containment_pct": null,
+      "summary": "Hawaii bracing for more rain as storms hit previous wildfire burn scars, creating flood and erosion risks in March 2026.",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVGJXd2ZRMzBNNWctRHBDTDdmTnpYYXRWaWNJNkZ3QldFN2FUUEtKNTdkY0lPOURfZ0JVNFdlY2FuRnhjbzV0aE5m",
+      "news": [
+        {
+          "title": "Hawaii braces for more rain as storms hit wildfire burn scars",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVGJXd2ZRMzBNNWctRHBDTDdmTnpYYXRWaWNJNkZ3QldFN2FUUEtKNTdkY0lPOURfZ0JVNFdlY2FuRnhjbzV0aE5m",
+          "source": "NBC News"
+        }
+      ]
     }
   ]
 }
