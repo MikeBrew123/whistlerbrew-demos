@@ -1,52 +1,92 @@
 {
-  "updated_at": "2026-03-21T14:30:00.000Z",
+  "updated_at": "2026-03-21T23:00:59.712Z",
   "fires": [
     {
       "country": "United States",
       "region": "Nebraska Panhandle",
       "name": "Nebraska Panhandle Fires",
-      "hectares": 258000,
       "status": "Active",
-      "containment_pct": 15,
-      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Conditions beginning to ease.",
-      "link": "https://news.google.com/search?q=nebraska+panhandle+wildfire",
-      "image": "",
-      "news": []
+      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Conditions beginning to ease. 15% contained.",
+      "link": "https://news.google.com/search?q=nebraska+panhandle+wildfire"
     },
     {
-      "country": "Chile",
-      "region": "Biob\u00edo & \u00d1uble",
-      "name": "Biob\u00edo\u2013\u00d1uble Fires",
-      "hectares": 45000,
-      "status": "Contained",
-      "containment_pct": 100,
-      "summary": "Large wildfire complex affected the Biob\u00edo and \u00d1uble regions of Chile in early 2026.",
-      "link": "https://reliefweb.int",
-      "image": "",
-      "news": []
+      "country": "United States",
+      "region": "Colorado",
+      "name": "Colorado Wildfires (south of Colorado Springs/near I-90)",
+      "status": "Active",
+      "summary": "Multiple active wildfires in Colorado including fire near Colorado 115 that broke containment with ongoing evacuations, and fires near Jefferson County.",
+      "link": "https://news.google.com/search?q=colorado+wildfire+2026"
     },
     {
-      "country": "Australia",
-      "region": "Victoria",
-      "name": "January 2026 Victorian Bushfires",
-      "hectares": 400000,
+      "country": "United States",
+      "region": "Florida",
+      "name": "Belmore State Forest Wildfire",
+      "status": "Active",
+      "summary": "Large wildfire in Belmore State Forest, Clay County. Fire Rescue working on containment.",
+      "link": "https://news.google.com/search?q=belmore+state+forest+wildfire"
+    },
+    {
+      "country": "United States",
+      "region": "Wyoming",
+      "name": "Casper Area Wildfire",
+      "status": "Active",
+      "summary": "Wildfire near Casper prompting evacuations amid record-high temperatures.",
+      "link": "https://news.google.com/search?q=casper+wyoming+wildfire"
+    },
+    {
+      "country": "United States",
+      "region": "Utah",
+      "name": "Sevier County Wildfire",
+      "status": "Active",
+      "summary": "50-acre wildfire in Sevier County driven by winds, putting structures at risk.",
+      "link": "https://news.google.com/search?q=sevier+county+utah+wildfire"
+    },
+    {
+      "country": "United States",
+      "region": "South Carolina",
+      "name": "Darlington County Wildfire",
+      "status": "Active",
+      "summary": "Large wildfire in Darlington County, South Carolina.",
+      "link": "https://news.google.com/search?q=darlington+county+south+carolina+wildfire"
+    },
+    {
+      "country": "United States",
+      "region": "Hawaii",
+      "name": "Lahaina Wildfire (aftermath)",
       "status": "Contained",
-      "containment_pct": 100,
-      "summary": "Extensive bushfires burned across Victoria in January 2026 during extreme heat conditions.",
-      "link": "https://www.abc.net.au",
-      "image": "",
-      "news": []
+      "summary": "Recovery and rebuilding efforts ongoing following 2023 Lahaina wildfire. Bracing for rain impacts on burn scars.",
+      "link": "https://news.google.com/search?q=lahaina+wildfire+rebuilding"
+    },
+    {
+      "country": "United States",
+      "region": "New Mexico",
+      "name": "Sandia Crest Area Mitigation",
+      "status": "Active",
+      "summary": "Sandia Crest to partially close until 2027 for wildfire mitigation work.",
+      "link": "https://news.google.com/search?q=sandia+crest+wildfire+mitigation"
     }
   ],
   "last_report": {
-    "note": "manually restored",
     "items_in": {
-      "canada": 5,
-      "world": 1
+      "canada": 10,
+      "world": 17
     },
     "items_out": {
-      "canada": 5,
-      "world_fires": 3
-    }
+      "canada": 8,
+      "world_fires": 8
+    },
+    "deduped": 3,
+    "rerouted": 2,
+    "notes": [
+      "Deduped: 'Invasive grasses' article appeared in both canada and world feeds - kept Canada source (National Observer) as primary with most recent publish date 2026-03-21",
+      "Deduped: Two Saskatchewan wildfire funding articles (CBC vs Global News) - kept Global News as most recent (2026-03-20)",
+      "Rerouted: Smithers BC wildfire hardening guide moved from world to context reference",
+      "Rerouted: Future of Good Indigenous communities article kept in world as policy-focused rather than incident reporting",
+      "Merged Nebraska fires articles across multiple sources into single active fire entry",
+      "Merged Colorado wildfires (115 fire and I-90 incidents) into regional entry",
+      "Preserved active fires: Nebraska Panhandle (15% contained, 1 death), new Colorado/Florida/Wyoming/Utah/SC incidents",
+      "Contained fires retained: Chile Biobío-Ñuble (100% contained, historical), Victoria Australia (100% contained, January 2026)",
+      "Filtered: Policy/funding articles, rebuilding retrospectives, and environmental analysis pieces excluded from world_fires list as non-incident reporting"
+    ]
   }
 }
