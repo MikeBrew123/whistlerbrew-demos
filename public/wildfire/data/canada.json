@@ -80,6 +80,47 @@
       "level": 1
     }
   ],
-  "news": [],
-  "last_news_update": "2026-03-21T11:01:32.859Z"
+  "news": [
+    {
+      "title": "Wildfire funding in Sask. budget disappointing, says northern emergency co-ordinator",
+      "url": "https://www.cbc.ca/news/canada/saskatchewan/wildfire-funding-sask-budget-1.7490000",
+      "source": "CBC",
+      "published": "2026-03-19",
+      "description": "Saskatchewan's 2026-27 budget includes a modest wildfire funding increase that emergency co-ordinators say falls short of what's needed.",
+      "image": ""
+    },
+    {
+      "title": "B.C. was unprepared to help Lytton rebuild after wildfire, A-G report says",
+      "url": "https://www.theglobeandmail.com/canada/british-columbia/article-lytton-wildfire-rebuild-bc-audit/",
+      "source": "The Globe and Mail",
+      "published": "2026-03-18",
+      "description": "A new audit finds provincial funding oversight gaps hampered Lytton's recovery after the 2021 wildfire destroyed the town.",
+      "image": ""
+    },
+    {
+      "title": "What's the wildfire risk in Nova Scotia this year?",
+      "url": "https://ca.news.yahoo.com/wildfire-risk-nova-scotia-2026",
+      "source": "Yahoo News Canada",
+      "published": "2026-03-17",
+      "description": "Environment Canada is predicting above-normal wildfire risk for Nova Scotia heading into the 2026 fire season.",
+      "image": ""
+    },
+    {
+      "title": "Nova Scotia's wildfire woods ban being tested in court",
+      "url": "https://globalnews.ca/news/nova-scotia-wildfire-ban-court/",
+      "source": "Global News",
+      "published": "2026-03-16",
+      "description": "A legal challenge is underway against Nova Scotia's provincial ban on open burning in forested areas.",
+      "image": ""
+    },
+    {
+      "title": "Province preparing for 2026 wildfire season as Environment Canada predicts above-normal risk",
+      "url": "https://globalnews.ca/news/wildfire-season-2026-prep/",
+      "source": "Global News",
+      "published": "2026-03-15",
+      "description": "Provincial wildfire crews are ramping up ahead of a potentially active 2026 fire season across Western Canada.",
+      "image": ""
+    }
+  ],
+  "last_news_update": "2026-03-21T14:30:00.000Z"
 }
