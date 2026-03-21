@@ -1,5 +1,52 @@
 {
-  "updated_at": "2026-03-21T16:16:12.827Z",
-  "fires": [],
-  "last_report": {}
+  "updated_at": "2026-03-21T14:30:00.000Z",
+  "fires": [
+    {
+      "country": "United States",
+      "region": "Nebraska Panhandle",
+      "name": "Nebraska Panhandle Fires",
+      "hectares": 258000,
+      "status": "Active",
+      "containment_pct": 15,
+      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Conditions beginning to ease.",
+      "link": "https://news.google.com/search?q=nebraska+panhandle+wildfire",
+      "image": "",
+      "news": []
+    },
+    {
+      "country": "Chile",
+      "region": "Biob\u00edo & \u00d1uble",
+      "name": "Biob\u00edo\u2013\u00d1uble Fires",
+      "hectares": 45000,
+      "status": "Contained",
+      "containment_pct": 100,
+      "summary": "Large wildfire complex affected the Biob\u00edo and \u00d1uble regions of Chile in early 2026.",
+      "link": "https://reliefweb.int",
+      "image": "",
+      "news": []
+    },
+    {
+      "country": "Australia",
+      "region": "Victoria",
+      "name": "January 2026 Victorian Bushfires",
+      "hectares": 400000,
+      "status": "Contained",
+      "containment_pct": 100,
+      "summary": "Extensive bushfires burned across Victoria in January 2026 during extreme heat conditions.",
+      "link": "https://www.abc.net.au",
+      "image": "",
+      "news": []
+    }
+  ],
+  "last_report": {
+    "note": "manually restored",
+    "items_in": {
+      "canada": 5,
+      "world": 1
+    },
+    "items_out": {
+      "canada": 5,
+      "world_fires": 3
+    }
+  }
 }
