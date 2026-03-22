@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-03-21T23:00:43.081Z",
+  "updated_at": "2026-03-22T05:00:43.091Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Dozens of homes along Chilliwack River on evacuation alert due to heavy rain",
-        "link": "https://globalnews.ca/news/11739143/fraser-valley-evacuation-watches/",
-        "description": "Environment Canada has forecast 120 millimetres of rain before conditions ease up, with some areas already reporting over 200 millimetres since Sunday.",
-        "pubDate": "Fri, 20 Mar 2026 12:07:23 +0000",
-        "source": "Global BC News"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
@@ -21,13 +13,6 @@
         "link": "https://wildfiretoday.com/wfcc-returns-to-canada-in-2026/",
         "description": "The combined Wildland Fire Canada Conference and Canadian Smoke Forum unites wildland fire management agencies, Indigenous knowledge holders, scientists and community members from across Canada and around the world. This biennial conference focuses on wildland fire management, science and knowledge sharing with the latest research, technology and practices. The last WFCC was in 2024 in [&#8230;]",
         "pubDate": "Thu, 12 Mar 2026 05:57:29 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Production to restart for the 214ST helicopter",
-        "link": "https://wildfiretoday.com/production-to-restart-for-the-214st-helicopter/",
-        "description": "A new and improved Bell 214ST helicopter will soon roll off the production lines with McDermott Aviation announcing the restart of manufacturing after more than 20 years for one of the main workhorses of disaster response worldwide. McDermott Aviation is announcing the move at the Verticon aviation conference in Atlanta, US, this week. Australian-based McDermott [&#8230;]",
-        "pubDate": "Wed, 11 Mar 2026 01:19:26 +0000",
         "source": "Wildfire Today"
       },
       {
