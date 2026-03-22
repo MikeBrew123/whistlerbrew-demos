@@ -1,21 +1,50 @@
 {
-  "updated_at": "2026-03-22T17:00:43.505Z",
+  "updated_at": "2026-03-22T23:00:43.283Z",
   "zones": {
     "coastal": [
       {
-        "title": "Dozens of homes along Chilliwack River on evacuation alert due to heavy rain",
-        "link": "https://globalnews.ca/news/11739143/fraser-valley-evacuation-watches/",
-        "description": "Environment Canada has forecast 120 millimetres of rain before conditions ease up, with some areas already reporting over 200 millimetres since Sunday.",
-        "pubDate": "Fri, 20 Mar 2026 12:07:23 +0000",
+        "title": "2 hikers among 14 rescued from B.C. mountain, officials say 1 in critical condition",
+        "link": "https://globalnews.ca/news/11741449/bc-mountain-rescue/",
+        "description": "North Shore Rescue says an emergency room doctor was among the members lowered down to the man, who had come to rest above a waterfall.",
+        "pubDate": "Sun, 22 Mar 2026 21:49:23 +0000",
         "source": "Global BC News"
       }
     ],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Water advisory issued after West Kelowna water reservoir &#8216;intentionally damaged&#8217;",
+        "link": "https://globalnews.ca/news/11739679/water-advisory-west-kelowna-water-reservoir-intentionally-damaged/",
+        "description": "On Thursday, West Kelowna city workers were notified of an alarm at the Tallus Ridge water reservoir and upon inspection, they found what they believed to be intentional damage.",
+        "pubDate": "Fri, 20 Mar 2026 18:53:11 +0000",
+        "source": "Global BC News"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "When are wildfire evacuations most dangerous? Research finds leaving late risks lives",
+        "link": "https://wildfiretoday.com/when-are-wildfire-evacuations-most-dangerous-research-finds-leaving-late-risks-lives/",
+        "description": "&#8220;Once you&#8217;re on the road, it may already be too late.&#8221; The somber warning was recently given by researchers who analyzed hundreds of self-recorded videos from people evacuating from wildfires. They were studying driving behaviour during emergency evacuations to learn why and when people choose to evacuate and understand how those decisions put lives at [&#8230;]",
+        "pubDate": "Sun, 22 Mar 2026 22:57:12 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "This is why we train &#8211; chainsaw graduates get inspired",
+        "link": "https://wildfiretoday.com/this-is-why-we-train-chainsaw-graduates-get-inspired/",
+        "description": "Trainers like what they do, and they are going to tell you why. At Yukon First Nations Wildfire, training is all about helping people and being safe. Here&#8217;s a bit of inspiration and enthusiasm from graduates of the recent Chainsaw Train the Trainer course, out of Whitehorse, Yukon Territory, Canada.",
+        "pubDate": "Wed, 18 Mar 2026 20:46:02 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Fire burns down historic building at key fire research complex",
+        "link": "https://wildfiretoday.com/fire-burns-historic-building-at-key-fire-research-complex/",
+        "description": "A historic home at a world-leading fire research complex was consumed by a lightning fire on Tuesday and burnt to the ground. The historic Beadel House, on the Tall Timbers Research Station and Land Conservancy complex near Tallahassee, Florida in the United States, was completely lost despite the efforts of the Tallahassee Fire Department. One [&#8230;]",
+        "pubDate": "Tue, 17 Mar 2026 23:19:28 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "WFCC returns to Canada in 2026",
         "link": "https://wildfiretoday.com/wfcc-returns-to-canada-in-2026/",
@@ -31,17 +60,17 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "Perspectives from the IAWF president",
+        "link": "https://wildfiretoday.com/perspectives-from-the-iawf-president/",
+        "description": "A conversation with Trevor Howard, National Manager Prescribed Burning Strategy, AFAC and President of the International Association of Wildland Fire, with AFAC Deputy CEO and Executive Director, Strategy, People and Performance Erin Liston-Abel. This article first appeared in Fire Australia Magazine, Issue 1, 2026 Could you please tell us a bit about your career in [&#8230;]",
+        "pubDate": "Thu, 05 Mar 2026 23:58:27 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "Synchronized wildfires will strain global fire resources: report",
         "link": "https://wildfiretoday.com/synchronized-wildfires-will-strain-global-fire-resources-report/",
         "description": "While the trend to more extreme fire weather days is well understood for many regions worldwide, a new study has identified the rising incidence of widespread concurrent extreme fire weather days across multiple global regions. The increased risk of concurrent fires poses significant social and ecological consequences and may complicate the global sharing of fire [&#8230;]",
         "pubDate": "Tue, 03 Mar 2026 21:17:36 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Canada boosts national aerial firefighting capacity",
-        "link": "https://wildfiretoday.com/canada-boosts-national-aerial-firefighting-capacity/",
-        "description": "The Government of Canada is investing $316.7 million over the next five years to increase Canada’s aerial wildfire firefighting capacity. This investment, from the Budget 2025 commitment to bolster provincial and territorial aerial firefighting capacity, will go to the Canadian Interagency Forest Fire Centre (CIFFC) to lease, manage and deploy federally funded aircraft for wildfires. [&#8230;]",
-        "pubDate": "Mon, 02 Mar 2026 21:43:55 +0000",
         "source": "Wildfire Today"
       }
     ]
