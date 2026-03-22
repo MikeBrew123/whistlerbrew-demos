@@ -1,9 +1,8 @@
 {
-  "updated_at": "2026-03-21T23:00:59.712Z",
+  "updated_at": "2026-03-22T23:00:59.954Z",
   "fires": [
     {
       "country": "United States",
-      "region": "Nebraska Panhandle",
       "name": "Nebraska Panhandle Fires",
       "status": "Active",
       "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Conditions beginning to ease. 15% contained.",
@@ -11,55 +10,76 @@
     },
     {
       "country": "United States",
-      "region": "Colorado",
-      "name": "Colorado Wildfires (south of Colorado Springs/near I-90)",
+      "name": "Colorado Wildfires (South of Colorado Springs)",
       "status": "Active",
-      "summary": "Multiple active wildfires in Colorado including fire near Colorado 115 that broke containment with ongoing evacuations, and fires near Jefferson County.",
+      "summary": "Multiple active wildfires in Colorado including fire near Colorado 115 that broke containment with over 4,600 acres burned. Highway 115 remains closed. Ongoing evacuations.",
       "link": "https://news.google.com/search?q=colorado+wildfire+2026"
     },
     {
       "country": "United States",
-      "region": "Florida",
       "name": "Belmore State Forest Wildfire",
       "status": "Active",
-      "summary": "Large wildfire in Belmore State Forest, Clay County. Fire Rescue working on containment.",
+      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment.",
       "link": "https://news.google.com/search?q=belmore+state+forest+wildfire"
     },
     {
       "country": "United States",
-      "region": "Wyoming",
       "name": "Casper Area Wildfire",
       "status": "Active",
-      "summary": "Wildfire near Casper prompting evacuations amid record-high temperatures.",
+      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures.",
       "link": "https://news.google.com/search?q=casper+wyoming+wildfire"
     },
     {
       "country": "United States",
-      "region": "Utah",
       "name": "Sevier County Wildfire",
       "status": "Active",
-      "summary": "50-acre wildfire in Sevier County driven by winds, putting structures at risk.",
+      "summary": "50-acre wildfire in Sevier County, Utah driven by winds, putting structures at risk.",
       "link": "https://news.google.com/search?q=sevier+county+utah+wildfire"
     },
     {
       "country": "United States",
-      "region": "South Carolina",
-      "name": "Darlington County Wildfire",
+      "name": "Cross Creek Wildfire",
       "status": "Active",
-      "summary": "Large wildfire in Darlington County, South Carolina.",
-      "link": "https://news.google.com/search?q=darlington+county+south+carolina+wildfire"
+      "summary": "126-acre wildfire in marshland near Cross Creek, Florida prompting family evacuations.",
+      "link": "https://news.google.com/search?q=cross+creek+florida+wildfire"
     },
     {
       "country": "United States",
-      "region": "Hawaii",
-      "name": "Lahaina Wildfire (aftermath)",
+      "name": "Kansas Wildfire (northwest)",
+      "status": "Contained",
+      "summary": "Large wildfire in northwest Kansas brought under control, avoiding devastating event to nearby city.",
+      "link": "https://news.google.com/search?q=kansas+wildfire+northwest"
+    },
+    {
+      "country": "United States",
+      "name": "Nacimiento Wildfire",
+      "status": "Active",
+      "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts.",
+      "link": "https://news.google.com/search?q=nacimiento+wildfire+new+mexico"
+    },
+    {
+      "country": "United States",
+      "name": "Butler County Wildfire",
+      "status": "Active",
+      "summary": "Very large wildfire in Butler County being contained.",
+      "link": "https://news.google.com/search?q=butler+county+wildfire"
+    },
+    {
+      "country": "United States",
+      "name": "Montana Wildfires",
+      "status": "Active",
+      "summary": "Multiple wildfires in Montana burning more than 2,000 acres.",
+      "link": "https://news.google.com/search?q=montana+wildfire+2026"
+    },
+    {
+      "country": "United States",
+      "name": "Hawaii Wildfire (Lahaina aftermath)",
       "status": "Contained",
       "summary": "Recovery and rebuilding efforts ongoing following 2023 Lahaina wildfire. Bracing for rain impacts on burn scars.",
       "link": "https://news.google.com/search?q=lahaina+wildfire+rebuilding"
     },
     {
       "country": "United States",
-      "region": "New Mexico",
       "name": "Sandia Crest Area Mitigation",
       "status": "Active",
       "summary": "Sandia Crest to partially close until 2027 for wildfire mitigation work.",
@@ -68,25 +88,21 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 10,
-      "world": 17
+      "canada": 9,
+      "world": 27
     },
     "items_out": {
-      "canada": 8,
-      "world_fires": 8
+      "canada_news": 9,
+      "world_fires": 12
     },
-    "deduped": 3,
+    "deduped": 5,
     "rerouted": 2,
     "notes": [
-      "Deduped: 'Invasive grasses' article appeared in both canada and world feeds - kept Canada source (National Observer) as primary with most recent publish date 2026-03-21",
-      "Deduped: Two Saskatchewan wildfire funding articles (CBC vs Global News) - kept Global News as most recent (2026-03-20)",
-      "Rerouted: Smithers BC wildfire hardening guide moved from world to context reference",
-      "Rerouted: Future of Good Indigenous communities article kept in world as policy-focused rather than incident reporting",
-      "Merged Nebraska fires articles across multiple sources into single active fire entry",
-      "Merged Colorado wildfires (115 fire and I-90 incidents) into regional entry",
-      "Preserved active fires: Nebraska Panhandle (15% contained, 1 death), new Colorado/Florida/Wyoming/Utah/SC incidents",
-      "Contained fires retained: Chile Biobío-Ñuble (100% contained, historical), Victoria Australia (100% contained, January 2026)",
-      "Filtered: Policy/funding articles, rebuilding retrospectives, and environmental analysis pieces excluded from world_fires list as non-incident reporting"
+      "Deduped: Sask wildfire funding (2 CBC/Global articles merged), Colorado Springs fires (multiple reports consolidated into one active fire entry)",
+      "Rerouted: Smithers BC guide (kept in world_fires as regional preparedness), invasive grasses post-wildfire (academic/policy, not active fire), Indigenous communities impact (policy article, not fire event)",
+      "Preserved active fires: Nebraska Panhandle, Colorado Springs area, Florida (Belmore + Cross Creek), Wyoming (Casper), Utah (Sevier), New Mexico (Nacimiento), Montana, Butler County, Kansas (contained)",
+      "Merged: Colorado reports into single active entry with updated acreage; Florida fires separated into two entries (Belmore and Cross Creek)",
+      "High fatality event noted: Florida sheriff's deputy death during wildfire evacuations (2026-03-22)"
     ]
   }
 }
