@@ -1,24 +1,8 @@
 {
-  "updated_at": "2026-03-22T23:00:43.283Z",
+  "updated_at": "2026-03-23T05:00:43.178Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "2 hikers among 14 rescued from B.C. mountain, officials say 1 in critical condition",
-        "link": "https://globalnews.ca/news/11741449/bc-mountain-rescue/",
-        "description": "North Shore Rescue says an emergency room doctor was among the members lowered down to the man, who had come to rest above a waterfall.",
-        "pubDate": "Sun, 22 Mar 2026 21:49:23 +0000",
-        "source": "Global BC News"
-      }
-    ],
-    "kamloops": [
-      {
-        "title": "Water advisory issued after West Kelowna water reservoir &#8216;intentionally damaged&#8217;",
-        "link": "https://globalnews.ca/news/11739679/water-advisory-west-kelowna-water-reservoir-intentionally-damaged/",
-        "description": "On Thursday, West Kelowna city workers were notified of an alarm at the Tallus Ridge water reservoir and upon inspection, they found what they believed to be intentional damage.",
-        "pubDate": "Fri, 20 Mar 2026 18:53:11 +0000",
-        "source": "Global BC News"
-      }
-    ],
+    "coastal": [],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
