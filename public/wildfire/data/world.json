@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-03-22T23:00:59.954Z",
+  "updated_at": "2026-03-23T05:01:05.096Z",
   "fires": [
     {
       "country": "United States",
       "name": "Nebraska Panhandle Fires",
       "status": "Active",
-      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Conditions beginning to ease. 15% contained.",
+      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Nearly 800,000 acres consumed across multiple fires. Conditions beginning to ease. 15% contained.",
       "link": "https://news.google.com/search?q=nebraska+panhandle+wildfire"
     },
     {
       "country": "United States",
       "name": "Colorado Wildfires (South of Colorado Springs)",
       "status": "Active",
-      "summary": "Multiple active wildfires in Colorado including fire near Colorado 115 that broke containment with over 4,600 acres burned. Highway 115 remains closed. Ongoing evacuations.",
+      "summary": "Multiple active wildfires in Colorado including fire near Colorado 115 that broke containment with 4,605+ acres burned and 0% containment. Highway 115 remains closed. Ongoing mandatory evacuations.",
       "link": "https://news.google.com/search?q=colorado+wildfire+2026"
     },
     {
@@ -45,13 +45,6 @@
     },
     {
       "country": "United States",
-      "name": "Kansas Wildfire (northwest)",
-      "status": "Contained",
-      "summary": "Large wildfire in northwest Kansas brought under control, avoiding devastating event to nearby city.",
-      "link": "https://news.google.com/search?q=kansas+wildfire+northwest"
-    },
-    {
-      "country": "United States",
       "name": "Nacimiento Wildfire",
       "status": "Active",
       "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts.",
@@ -73,10 +66,17 @@
     },
     {
       "country": "United States",
-      "name": "Hawaii Wildfire (Lahaina aftermath)",
-      "status": "Contained",
-      "summary": "Recovery and rebuilding efforts ongoing following 2023 Lahaina wildfire. Bracing for rain impacts on burn scars.",
-      "link": "https://news.google.com/search?q=lahaina+wildfire+rebuilding"
+      "name": "Merced County Wildfire",
+      "status": "Active",
+      "summary": "New wildfire reported in Merced County, California on March 22, 2026.",
+      "link": "https://news.google.com/search?q=merced+county+california+wildfire"
+    },
+    {
+      "country": "United States",
+      "name": "Bastrop State Park Wildfire",
+      "status": "Active",
+      "summary": "Wildfire at Bastrop State Park, Texas prompting evacuations.",
+      "link": "https://news.google.com/search?q=bastrop+state+park+wildfire"
     },
     {
       "country": "United States",
@@ -88,21 +88,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 9,
-      "world": 27
+      "canada": 10,
+      "world": 32
     },
     "items_out": {
-      "canada_news": 9,
+      "canada": 10,
       "world_fires": 12
     },
-    "deduped": 5,
-    "rerouted": 2,
+    "deduped": 2,
+    "rerouted": 1,
     "notes": [
-      "Deduped: Sask wildfire funding (2 CBC/Global articles merged), Colorado Springs fires (multiple reports consolidated into one active fire entry)",
-      "Rerouted: Smithers BC guide (kept in world_fires as regional preparedness), invasive grasses post-wildfire (academic/policy, not active fire), Indigenous communities impact (policy article, not fire event)",
-      "Preserved active fires: Nebraska Panhandle, Colorado Springs area, Florida (Belmore + Cross Creek), Wyoming (Casper), Utah (Sevier), New Mexico (Nacimiento), Montana, Butler County, Kansas (contained)",
-      "Merged: Colorado reports into single active entry with updated acreage; Florida fires separated into two entries (Belmore and Cross Creek)",
-      "High fatality event noted: Florida sheriff's deputy death during wildfire evacuations (2026-03-22)"
+      "Deduplicated: Colorado 115 wildfire (2 articles consolidated); Saskatchewan wildfire funding (2 articles consolidated)",
+      "Rerouted: Sacramento Bee article about Merced County wildfire moved from Canada to World fires (US location)",
+      "Preserved existing fires: All 12 active/contained fires maintained. Nebraska fires updated with latest acreage data",
+      "Enhanced summaries with current news data from feeds"
     ]
   }
 }
