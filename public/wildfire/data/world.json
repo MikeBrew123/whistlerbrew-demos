@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-23T05:01:05.096Z",
+  "updated_at": "2026-03-23T17:01:07.777Z",
   "fires": [
     {
       "country": "United States",
@@ -87,21 +87,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 10,
-      "world": 32
-    },
-    "items_out": {
-      "canada": 10,
-      "world_fires": 12
-    },
-    "deduped": 2,
-    "rerouted": 1,
-    "notes": [
-      "Deduplicated: Colorado 115 wildfire (2 articles consolidated); Saskatchewan wildfire funding (2 articles consolidated)",
-      "Rerouted: Sacramento Bee article about Merced County wildfire moved from Canada to World fires (US location)",
-      "Preserved existing fires: All 12 active/contained fires maintained. Nebraska fires updated with latest acreage data",
-      "Enhanced summaries with current news data from feeds"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Wood Buffalo National Park wildfire updates - Parks Canada\",\n      \"url\": \"https://news.google.com/rss/articles/CBMingFBVV95cUxPUmp1V0N5MWJuOVljQmNsd"
   }
 }
