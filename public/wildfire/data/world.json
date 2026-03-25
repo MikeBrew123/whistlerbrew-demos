@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-23T17:01:07.777Z",
+  "updated_at": "2026-03-25T05:01:14.495Z",
   "fires": [
     {
       "country": "United States",
@@ -88,6 +88,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Wood Buffalo National Park wildfire updates - Parks Canada\",\n      \"url\": \"https://news.google.com/rss/articles/CBMingFBVV95cUxPUmp1V0N5MWJuOVljQmNsd"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Canada tops air pollution ranking in North America, due to wildfire woes\",\n      \"url\": \"https://news.google.com/rss/articles/CBMirgFBVV95cUxQWXhRZ0R"
   }
 }
