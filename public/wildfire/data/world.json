@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-25T11:01:12.989Z",
+  "updated_at": "2026-03-25T17:00:55.793Z",
   "fires": [
     {
       "country": "United States",
@@ -12,35 +12,35 @@
       "country": "United States",
       "name": "Colorado Wildfires (South of Colorado Springs)",
       "status": "Active",
-      "summary": "Multiple active wildfires in Colorado including fire near Colorado 115 that broke containment with 4,605+ acres burned and 0% containment. Highway 115 remains closed. Ongoing mandatory evacuations.",
+      "summary": "Multiple active wildfires in Colorado including fire near Highway 115 with 7,385 acres burned and 0% containment. Evacuation orders lifted. Fire continues to spread rapidly.",
       "link": "https://news.google.com/search?q=colorado+wildfire+2026"
     },
     {
       "country": "United States",
       "name": "Belmore State Forest Wildfire",
       "status": "Active",
-      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment.",
+      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment. Sheriff's Deputy died assisting with evacuations.",
       "link": "https://news.google.com/search?q=belmore+state+forest+wildfire"
     },
     {
       "country": "United States",
       "name": "Casper Area Wildfire",
       "status": "Active",
-      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures.",
+      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures. Natrona County breaks wildfire record.",
       "link": "https://news.google.com/search?q=casper+wyoming+wildfire"
     },
     {
       "country": "United States",
       "name": "Sevier County Wildfire",
       "status": "Active",
-      "summary": "50-acre wildfire in Sevier County, Utah driven by winds, putting structures at risk.",
+      "summary": "50-acre wildfire in Sevier County, Utah near Vernal, driven by winds, putting structures at risk.",
       "link": "https://news.google.com/search?q=sevier+county+utah+wildfire"
     },
     {
       "country": "United States",
       "name": "Cross Creek Wildfire",
       "status": "Active",
-      "summary": "126-acre wildfire in marshland near Cross Creek, Florida prompting family evacuations.",
+      "summary": "Wildfire in marshland near Cross Creek, Florida prompting family evacuations.",
       "link": "https://news.google.com/search?q=cross+creek+florida+wildfire"
     },
     {
@@ -52,42 +52,69 @@
     },
     {
       "country": "United States",
-      "name": "Butler County Wildfire",
-      "status": "Active",
-      "summary": "Very large wildfire in Butler County being contained.",
-      "link": "https://news.google.com/search?q=butler+county+wildfire"
-    },
-    {
-      "country": "United States",
-      "name": "Montana Wildfires",
-      "status": "Active",
-      "summary": "Multiple wildfires in Montana burning more than 2,000 acres.",
-      "link": "https://news.google.com/search?q=montana+wildfire+2026"
-    },
-    {
-      "country": "United States",
-      "name": "Merced County Wildfire",
-      "status": "Active",
-      "summary": "New wildfire reported in Merced County, California on March 22, 2026.",
-      "link": "https://news.google.com/search?q=merced+county+california+wildfire"
-    },
-    {
-      "country": "United States",
       "name": "Bastrop State Park Wildfire",
       "status": "Active",
-      "summary": "Wildfire at Bastrop State Park, Texas prompting evacuations.",
+      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire.",
       "link": "https://news.google.com/search?q=bastrop+state+park+wildfire"
     },
     {
       "country": "United States",
-      "name": "Sandia Crest Area Mitigation",
+      "name": "Mossy Pond Area Wildfire",
       "status": "Active",
-      "summary": "Sandia Crest to partially close until 2027 for wildfire mitigation work.",
-      "link": "https://news.google.com/search?q=sandia+crest+wildfire+mitigation"
+      "summary": "500-acre wildfire in Mossy Pond area displacing 43 people with 15 dwellings destroyed.",
+      "link": "https://news.google.com/search?q=mossy+pond+area+wildfire"
+    },
+    {
+      "country": "United States",
+      "name": "Mitchell County Wildfire",
+      "status": "Active",
+      "summary": "125-acre wildfire burning near Tennessee line in Mitchell County, North Carolina.",
+      "link": "https://news.google.com/search?q=mitchell+county+north+carolina+wildfire"
+    },
+    {
+      "country": "United States",
+      "name": "Alabama/Georgia Regional Wildfire",
+      "status": "Active",
+      "summary": "Wildfire spanning approximately 117 acres across Alabama-Georgia region.",
+      "link": "https://news.google.com/search?q=alabama+georgia+wildfire+2026"
+    },
+    {
+      "country": "United States",
+      "name": "US Wildfire Season 2026",
+      "status": "Active",
+      "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts.",
+      "link": "https://news.google.com/search?q=us+wildfire+season+2026"
+    },
+    {
+      "country": "Europe",
+      "name": "European Wildfire Preparedness",
+      "status": "Active",
+      "summary": "Europe dangerously unprepared for worsening wildfires according to recent report.",
+      "link": "https://news.google.com/search?q=europe+wildfire+preparedness"
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Wood Buffalo National Park wildfire updates - Parks Canada\",\n      \"url\": \"https://news.google.com/rss/articles/CBMingFBVV95cUxPUmp1V0N5MWJuOVljQmNsd"
+    "items_in": {
+      "canada": 7,
+      "world": 26
+    },
+    "items_out": {
+      "canada": 7,
+      "world_fires": 13
+    },
+    "deduped": 8,
+    "rerouted": 2,
+    "notes": [
+      "Removed 2 non-wildfire articles: LaGuardia Airport collision (BBC) and Daily Hive Vancouver B.C. fire risk assessment (environmental/preparedness content, not breaking news fire coverage)",
+      "Consolidated Colorado wildfires into single entry with updated acreage (7,385 acres, 0% containment)",
+      "Consolidated Bastrop State Park fire with updated containment status (95% contained)",
+      "Grouped Nebraska fires as single 'Nebraska Panhandle Fires' entry",
+      "Added Florida deputy death incident to Belmore State Forest fire summary",
+      "Consolidated multiple small fires into regional groupings (Alabama/Georgia, Mitchell County)",
+      "Merged all US heatwave/wildfire season outlook articles into single 'US Wildfire Season 2026' entry",
+      "Added Europe wildfire preparedness as new world fire entry",
+      "Preserved all 12 existing fire entries as Active status maintained",
+      "No fires dropped based on >60 day containment rule"
+    ]
   }
 }
