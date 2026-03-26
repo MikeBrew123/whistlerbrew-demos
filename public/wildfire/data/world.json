@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-25T17:00:55.793Z",
+  "updated_at": "2026-03-26T05:01:09.426Z",
   "fires": [
     {
       "country": "United States",
@@ -94,27 +94,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 7,
-      "world": 26
-    },
-    "items_out": {
-      "canada": 7,
-      "world_fires": 13
-    },
-    "deduped": 8,
-    "rerouted": 2,
-    "notes": [
-      "Removed 2 non-wildfire articles: LaGuardia Airport collision (BBC) and Daily Hive Vancouver B.C. fire risk assessment (environmental/preparedness content, not breaking news fire coverage)",
-      "Consolidated Colorado wildfires into single entry with updated acreage (7,385 acres, 0% containment)",
-      "Consolidated Bastrop State Park fire with updated containment status (95% contained)",
-      "Grouped Nebraska fires as single 'Nebraska Panhandle Fires' entry",
-      "Added Florida deputy death incident to Belmore State Forest fire summary",
-      "Consolidated multiple small fires into regional groupings (Alabama/Georgia, Mitchell County)",
-      "Merged all US heatwave/wildfire season outlook articles into single 'US Wildfire Season 2026' entry",
-      "Added Europe wildfire preparedness as new world fire entry",
-      "Preserved all 12 existing fire entries as Active status maintained",
-      "No fires dropped based on >60 day containment rule"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Kamloops homeowners learn about 'firesmarting' ahead of wildfire season\",\n      \"url\": \"https://news.google.com/rss/articles/CBMijgFBVV95cUxPWHhrV0pj"
   }
 }
