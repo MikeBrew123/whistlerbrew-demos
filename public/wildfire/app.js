@@ -631,10 +631,15 @@ function renderEvacNotices(notices) {
 
 function renderNewsItem(n) {
   const age = n.age || (n.published ? formatAge(n.published) : '');
-  return `<li class="news-item">
-    <div class="news-title"><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a></div>
-    ${n.summary ? `<div class="news-summary">${n.summary}</div>` : ''}
-    <div class="news-meta"><span>${n.source || ''}</span><span>${age}</span></div>
+  const thumb = n.thumbnail || n.image || '';
+  const hasThumb = thumb.startsWith('http');
+  return `<li class="news-item${hasThumb ? ' has-thumb' : ''}">
+    ${hasThumb ? `<img class="news-thumb" src="${thumb}" alt="" loading="lazy" onerror="this.parentElement.classList.remove('has-thumb');this.remove()">` : ''}
+    <div class="news-body">
+      <div class="news-title"><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a></div>
+      ${n.summary ? `<div class="news-summary">${n.summary}</div>` : ''}
+      <div class="news-meta"><span>${n.source || ''}</span><span>${age}</span></div>
+    </div>
   </li>`;
 }
 
