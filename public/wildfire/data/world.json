@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-26T05:01:09.426Z",
+  "updated_at": "2026-03-26T23:00:42.681Z",
   "fires": [
     {
       "country": "United States",
@@ -94,7 +94,21 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Kamloops homeowners learn about 'firesmarting' ahead of wildfire season\",\n      \"url\": \"https://news.google.com/rss/articles/CBMijgFBVV95cUxPWHhrV0pj"
+    "items_in": {
+      "canada": 0,
+      "world": 2
+    },
+    "items_out": {
+      "canada": 0,
+      "world_fires": 13
+    },
+    "deduped": 1,
+    "rerouted": 2,
+    "notes": [
+      "Rerouted: 2 input articles about LaGuardia Airport collision are aviation incidents, not wildfire events. Removed from curation.",
+      "Deduped: BBC articles on LaGuardia collision were duplicates of same event across canada/world buckets.",
+      "All existing fires preserved as Active status with no fires >60 days old to remove.",
+      "No Canadian wildfire news in current feed."
+    ]
   }
 }
