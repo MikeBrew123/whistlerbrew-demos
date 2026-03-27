@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const SUPABASE_URL = process.env.SUPABASE_URL ?? "https://bdgmpkbbohbucwoiucyw.supabase.co";
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA3MTM5NTAsImV4cCI6MjA1NjI4OTk1MH0.tCGUkHpMFHngg8JF4fajLvfaIhBSvksR9brJ4DYzMKc";
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws";
 const INGEST_KEY = process.env.FIREBOX_INGEST_KEY ?? "firebox-pi-secret";
 const TABLE = `${SUPABASE_URL}/rest/v1/firebox_config`;
 
