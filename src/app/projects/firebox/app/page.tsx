@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
+import Image from "next/image";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -104,8 +105,8 @@ function ModeSelector({ onSelect }: { onSelect: (m: OpMode) => void }) {
       display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 32,
     }}>
       <div style={{ textAlign: "center" }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: "#fff", letterSpacing: 3 }}>FireBox</div>
-        <div style={{ fontSize: 12, color: "#555", marginTop: 6 }}>Select Operating Mode</div>
+        <Image src="/firebox-logo.png" alt="FireBox" width={320} height={160} style={{ objectFit: "contain" }} />
+        <div style={{ fontSize: 12, color: "#555", marginTop: 4 }}>Select Operating Mode</div>
       </div>
       <div style={{ display: "flex", gap: 20 }}>
         {([
