@@ -20,8 +20,11 @@ type Transcript = {
 // Channel display names and accent colours for the feed.
 // Add new channels here as rtl_airband picks up more frequencies.
 const CHANNEL_STYLE: Record<string, { label: string; color: string }> = {
-  "wfd-dispatch": { label: "WFD Ch.2 On Scene", color: "#ff6b35" },
-  "wfd-garibaldi": { label: "WFD Garibaldi", color: "#00a8ff" },
+  "wfd-ch1-dispatch": { label: "WFD Ch.1 Dispatch", color: "#ff6b35" },
+  "wfd-ch2-scene":    { label: "WFD Ch.2 On Scene", color: "#f0a500" },
+  "wfd-garibaldi":    { label: "WFD Ch.5 Garibaldi", color: "#00a8ff" },
+  // Legacy key — kept so old transcripts still display correctly
+  "wfd-dispatch":     { label: "WFD Ch.2 On Scene", color: "#f0a500" },
 };
 
 function channelStyle(channel: string) {
@@ -133,7 +136,7 @@ function FireBoxFeed() {
   }, [fetchTranscripts, live]);
 
   // Always show all monitored channels as tabs, even before any traffic arrives
-  const MONITORED_CHANNELS = ["wfd-dispatch", "wfd-garibaldi"];
+  const MONITORED_CHANNELS = ["wfd-ch1-dispatch", "wfd-ch2-scene", "wfd-garibaldi"];
   const activeChannels = Array.from(new Set([...MONITORED_CHANNELS, ...transcripts.map((t) => t.channel)]));
 
   return (
