@@ -17,20 +17,22 @@ type Transcript = {
   speaker?: string; // Identified by GPT-4o-mini: "Dispatch", "Engine 1", etc.
 };
 
+// Channels actively transcribed (Whisper + GPT pipeline running).
+// All other channels: live audio available but no transcript.
+const TRANSCRIBE_CHANNELS = new Set(["wfd-ch2-scene", "wfd-ch6-ce"]);
+
 // Channel display names and accent colours for the feed.
-// Add new channels here as rtl_airband picks up more frequencies.
 const CHANNEL_STYLE: Record<string, { label: string; color: string }> = {
-  // WFD Fire channels
-  "wfd-ch1-dispatch":   { label: "WFD Ch.1 Dispatch",       color: "#ff6b35" },
+  // WFD Fire channels — transcription active
   "wfd-ch2-scene":      { label: "WFD Ch.2 On Scene",        color: "#f0a500" },
   "wfd-ch6-ce":         { label: "WFD Ch.6 Combined Events", color: "#fb923c" },
-  // Whistler Blackcomb
+  // Whistler Blackcomb — audio only
   "wb-patrol-whistler": { label: "WB Whistler Patrol",       color: "#38bdf8" },
   "wb-patrol-blackcomb":{ label: "WB Blackcomb Patrol",      color: "#22d3ee" },
   "wb-lift-ops":        { label: "WB Lift Ops",              color: "#67e8f9" },
   "wb-ops":             { label: "WB Operations",            color: "#a5f3fc" },
   "wb-heliski":         { label: "WB Heliskiing",            color: "#7dd3fc" },
-  // BCWS NRS
+  // BCWS NRS — audio only
   "bcws-titanium":      { label: "NRS Titanium",             color: "#4ade80" },
   "bcws-platinum":      { label: "NRS Platinum",             color: "#86efac" },
   // Legacy keys
@@ -167,13 +169,14 @@ function FireBoxFeed() {
     return () => clearInterval(id);
   }, [fetchTranscripts, live]);
 
-  // Always show all monitored channels as tabs, even before any traffic arrives
+  // All monitored channels — tabs always shown regardless of traffic
   const MONITORED_CHANNELS = [
-    "wfd-ch1-dispatch", "wfd-ch2-scene", "wfd-ch6-ce",
+    "wfd-ch2-scene", "wfd-ch6-ce",
     "wb-patrol-whistler", "wb-patrol-blackcomb", "wb-lift-ops",
     "wb-ops", "wb-heliski", "bcws-titanium", "bcws-platinum",
   ];
   const activeChannels = Array.from(new Set([...MONITORED_CHANNELS, ...transcripts.map((t) => t.channel)]));
+  const isAudioOnly = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0d0d0d] text-white">
@@ -215,15 +218,17 @@ function FireBoxFeed() {
         <div className="max-w-3xl mx-auto flex flex-wrap gap-1 pt-3 pb-0">
           {["all", ...activeChannels].map((ch) => {
             const style = ch === "all" ? { label: "All Channels", color: "#aaa" } : channelStyle(ch);
+            const audioOnly = ch !== "all" && !TRANSCRIBE_CHANNELS.has(ch);
             return (
               <button
                 key={ch}
                 onClick={() => setChannelFilter(ch)}
-                className={`px-3 py-2 text-xs font-medium rounded-t-lg border-b-2 transition-colors whitespace-nowrap
+                className={`px-3 py-2 text-xs font-medium rounded-t-lg border-b-2 transition-colors whitespace-nowrap flex items-center gap-1
                   ${channelFilter === ch
                     ? "border-[#ff6b35] text-white"
                     : "border-transparent text-[#666] hover:text-[#aaa]"}`}
               >
+                {audioOnly && <span className="opacity-60">🔊</span>}
                 {style.label}
               </button>
             );
@@ -252,7 +257,21 @@ function FireBoxFeed() {
       {/* Feed */}
       <main className="flex-1 overflow-y-auto px-6 py-6" ref={feedRef}>
         <div className="max-w-3xl mx-auto space-y-3">
-          {transcripts.length === 0 ? (
+          {isAudioOnly ? (
+            <div className="text-center py-16 text-[#555]">
+              <div className="text-5xl mb-5">🔊</div>
+              <p className="text-base font-medium text-[#888] mb-1">{channelStyle(channelFilter).label}</p>
+              <p className="text-sm mb-6">Audio monitoring only — transcription not active on this channel.</p>
+              <p className="text-xs text-[#444] mb-8">Use the player above to listen live.</p>
+              <button
+                onClick={() => alert("To enable transcription for this channel, add it to TRANSCRIBE_CHANNELS in transcribe.py on the Pi.")}
+                className="px-4 py-2 text-xs border border-[#333] rounded-lg text-[#555]
+                           hover:border-[#ff6b35] hover:text-[#ff6b35] transition-colors"
+              >
+                ▶ Enable Transcription
+              </button>
+            </div>
+          ) : transcripts.length === 0 ? (
             <div className="text-center py-20 text-[#444]">
               <div className="text-4xl mb-4">📡</div>
               <p className="text-lg">No transmissions yet</p>
