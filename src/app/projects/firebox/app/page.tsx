@@ -4,8 +4,8 @@ import { useEffect, useState, useCallback, useRef } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
-type Mode = "channels" | "monitor" | "info";
-type Agency = "all" | "WFD" | "WB" | "BCWS";
+type View = "channels" | "monitor";
+type OpMode = "whistler" | "deployment";
 
 type Transcript = {
   channel: string;
@@ -22,21 +22,47 @@ type MeshMessage = {
   sent_at: string;
 };
 
-// ── Channel registry ──────────────────────────────────────────────────────────
-
-const CHANNELS: Record<string, { label: string; color: string; agency: Agency; canTranscribe: boolean }> = {
-  "wfd-ch2-scene":       { label: "Ch.2 On Scene",        color: "#f0a500", agency: "WFD",  canTranscribe: true },
-  "wfd-ch6-ce":          { label: "Ch.6 Combined Events", color: "#fb923c", agency: "WFD",  canTranscribe: true },
-  "wb-patrol-whistler":  { label: "Whistler Patrol",      color: "#38bdf8", agency: "WB",   canTranscribe: true },
-  "wb-patrol-blackcomb": { label: "Blackcomb Patrol",     color: "#22d3ee", agency: "WB",   canTranscribe: true },
-  "wb-lift-ops":         { label: "Lift Ops",             color: "#67e8f9", agency: "WB",   canTranscribe: false },
-  "wb-ops":              { label: "WB Operations",        color: "#a5f3fc", agency: "WB",   canTranscribe: false },
-  "wb-heliski":          { label: "Heliskiing",           color: "#7dd3fc", agency: "WB",   canTranscribe: false },
-  "bcws-titanium":       { label: "NRS Titanium",         color: "#4ade80", agency: "BCWS", canTranscribe: true },
-  "bcws-platinum":       { label: "NRS Platinum",         color: "#86efac", agency: "BCWS", canTranscribe: true },
+type ChannelMeta = {
+  label: string;
+  color: string;
+  canTranscribe: boolean;
+  freq: string;
+  pl: string;
+  d2?: boolean;
+  category?: "ofc" | "metal" | "colour";
 };
 
-const ALL_CHANNELS = Object.keys(CHANNELS);
+// ── Whistler mode channels ────────────────────────────────────────────────────
+
+const WHISTLER_CHANNELS: Record<string, ChannelMeta> = {
+  "wfd-ch2-scene":       { label: "WFD On Scene",      color: "#f0a500", canTranscribe: true,  freq: "151.355", pl: "CSQ"   },
+  "wfd-ch6-ce":          { label: "WFD Comb. Events",  color: "#fb923c", canTranscribe: true,  freq: "153.710", pl: "CSQ"   },
+  "wb-patrol-whistler":  { label: "Whistler Patrol",   color: "#38bdf8", canTranscribe: false, freq: "151.625", pl: "103.5" },
+  "wb-patrol-blackcomb": { label: "Blackcomb Patrol",  color: "#22d3ee", canTranscribe: false, freq: "151.985", pl: "110.9" },
+  "wb-lift-ops":         { label: "Lift Ops",          color: "#67e8f9", canTranscribe: false, freq: "152.060", pl: "107.2" },
+  "wb-ops":              { label: "WB Operations",     color: "#a5f3fc", canTranscribe: false, freq: "153.305", pl: "107.2" },
+  "wb-heliski":          { label: "WB Heliskiing",     color: "#7dd3fc", canTranscribe: false, freq: "153.530", pl: "CSQ"   },
+  "nrs-silver-local":    { label: "NRS Silver",        color: "#86efac", canTranscribe: false, freq: "163.890", pl: "CSQ",  d2: true },
+};
+
+// ── Deployment mode channels ──────────────────────────────────────────────────
+
+const DEPLOYMENT_CHANNELS: Record<string, ChannelMeta> = {
+  "bcws-ofc1":  { label: "OFC 1",      color: "#fb923c", canTranscribe: true, freq: "155.460", pl: "CSQ", category: "ofc"    },
+  "bcws-ofc2":  { label: "OFC 2",      color: "#f97316", canTranscribe: true, freq: "150.350", pl: "CSQ", category: "ofc"    },
+  "nrs-gold":   { label: "NRS Gold",   color: "#ffd700", canTranscribe: true, freq: "163.830", pl: "CSQ", category: "metal", d2: true },
+  "nrs-silver": { label: "NRS Silver", color: "#c0c0c0", canTranscribe: true, freq: "163.890", pl: "CSQ", category: "metal", d2: true },
+  "nrs-bronze": { label: "NRS Bronze", color: "#cd7f32", canTranscribe: true, freq: "163.980", pl: "CSQ", category: "metal", d2: true },
+  "nrs-copper": { label: "NRS Copper", color: "#b87333", canTranscribe: true, freq: "164.910", pl: "CSQ", category: "metal", d2: true },
+  "nrs-nickel": { label: "NRS Nickel", color: "#9ca3af", canTranscribe: true, freq: "159.270", pl: "CSQ", category: "metal", d2: true },
+  "nrs-iron":   { label: "NRS Iron",   color: "#6b7280", canTranscribe: true, freq: "168.885", pl: "CSQ", category: "metal", d2: true },
+  "nrs-zinc":   { label: "NRS Zinc",   color: "#94a3b8", canTranscribe: true, freq: "155.850", pl: "CSQ", category: "metal"  },
+};
+
+// Combined registry for transcript lookup
+const ALL_CHANNEL_REGISTRY: Record<string, ChannelMeta> = { ...WHISTLER_CHANNELS, ...DEPLOYMENT_CHANNELS };
+
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws";
 const TAILSCALE_BASE = "https://firebox.tail4bb545.ts.net";
 
 function formatTime(iso: string) {
@@ -47,12 +73,11 @@ function formatTime(iso: string) {
   } catch { return iso; }
 }
 
-// ── Audio manager (single active stream) ─────────────────────────────────────
+// ── Audio manager ─────────────────────────────────────────────────────────────
 
 class AudioManager {
   private audio: HTMLAudioElement | null = null;
   private currentChannel: string | null = null;
-
   play(channel: string) {
     if (this.currentChannel === channel) return;
     if (this.audio) { this.audio.pause(); this.audio.src = ""; }
@@ -60,59 +85,105 @@ class AudioManager {
     this.audio.play().catch(() => {});
     this.currentChannel = channel;
   }
-
   stop() {
     if (this.audio) { this.audio.pause(); this.audio.src = ""; }
     this.currentChannel = null;
     this.audio = null;
   }
-
   getChannel() { return this.currentChannel; }
 }
 
 const audioMgr = new AudioManager();
 
-// ── Top bar ───────────────────────────────────────────────────────────────────
+// ── Mode selector ─────────────────────────────────────────────────────────────
 
-function TopBar({ mode, setMode, agency, setAgency, meshUnread, onInfo }:
-  { mode: Mode; setMode: (m: Mode) => void; agency: Agency; setAgency: (a: Agency) => void;
-    meshUnread: boolean; onInfo: () => void }) {
+function ModeSelector({ onSelect }: { onSelect: (m: OpMode) => void }) {
   return (
-    <div className="flex items-center justify-between px-3 border-b border-[#222]"
-         style={{ height: 52, background: "#0a0a0a", flexShrink: 0 }}>
-      {/* Agency filter */}
-      <div className="flex gap-1">
-        {(["all","WFD","WB","BCWS"] as Agency[]).map(a => (
-          <button key={a} onClick={() => setAgency(a)}
-            className="px-3 py-1 rounded-full text-xs font-semibold transition-colors"
-            style={agency === a
-              ? { background: "#f0a500", color: "#000" }
-              : { background: "#1a1a1a", color: "#666" }}>
-            {a === "all" ? "All" : a}
+    <div style={{
+      position: "absolute", inset: 0, background: "#0a0a0a", zIndex: 50,
+      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 32,
+    }}>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ fontSize: 22, fontWeight: 700, color: "#fff", letterSpacing: 3 }}>FireBox</div>
+        <div style={{ fontSize: 12, color: "#555", marginTop: 6 }}>Select Operating Mode</div>
+      </div>
+      <div style={{ display: "flex", gap: 20 }}>
+        {([
+          {
+            mode: "whistler" as const, icon: "🏔️", title: "WHISTLER",
+            lines: ["WFD + WB channels", "NRS Silver (local)"],
+            color: "#38bdf8",
+          },
+          {
+            mode: "deployment" as const, icon: "🔥", title: "DEPLOYMENT",
+            lines: ["OFC 1 + OFC 2", "All NRS metals", "Colour channels (per deployment)"],
+            color: "#f0a500",
+          },
+        ]).map(({ mode, icon, title, lines, color }) => (
+          <button key={mode} onClick={() => onSelect(mode)}
+            style={{
+              width: 210, padding: "22px 18px", borderRadius: 16, background: "#141414",
+              border: `1px solid ${color}40`, cursor: "pointer", textAlign: "left",
+            }}>
+            <div style={{ fontSize: 30, marginBottom: 12 }}>{icon}</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color, marginBottom: 10 }}>{title}</div>
+            {lines.map(l => (
+              <div key={l} style={{ fontSize: 11, color: "#666", marginTop: 4 }}>· {l}</div>
+            ))}
           </button>
         ))}
       </div>
+    </div>
+  );
+}
 
-      {/* Mode toggle + info */}
-      <div className="flex items-center gap-2">
-        <div className="flex rounded-lg overflow-hidden border border-[#2a2a2a]">
-          <button onClick={() => setMode("channels")}
-            className="px-3 py-1 text-xs font-medium transition-colors"
-            style={mode === "channels" ? { background: "#f0a500", color: "#000" } : { background: "#1a1a1a", color: "#666" }}>
-            Channels
-          </button>
-          <button onClick={() => setMode("monitor")}
-            className="px-3 py-1 text-xs font-medium transition-colors"
-            style={mode === "monitor" ? { background: "#f0a500", color: "#000" } : { background: "#1a1a1a", color: "#666" }}>
-            Monitor
-          </button>
+// ── Top bar ───────────────────────────────────────────────────────────────────
+
+function TopBar({ view, setView, opMode, onModeSwitch, meshUnread, onInfo }: {
+  view: View; setView: (v: View) => void; opMode: OpMode;
+  onModeSwitch: () => void; meshUnread: boolean; onInfo: () => void;
+}) {
+  return (
+    <div style={{
+      height: 52, background: "#0a0a0a", borderBottom: "1px solid #222",
+      display: "flex", alignItems: "center", justifyContent: "space-between",
+      padding: "0 12px", flexShrink: 0,
+    }}>
+      <button onClick={onModeSwitch}
+        style={{
+          display: "flex", alignItems: "center", gap: 6, padding: "5px 12px",
+          borderRadius: 8, background: "#141414", border: "1px solid #2a2a2a",
+          color: "#ccc", fontSize: 12, fontWeight: 600, cursor: "pointer",
+        }}>
+        {opMode === "whistler" ? "🏔️ WHISTLER" : "🔥 DEPLOYMENT"}
+        <span style={{ color: "#444", fontSize: 10 }}>▾</span>
+      </button>
+
+      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", borderRadius: 8, overflow: "hidden", border: "1px solid #2a2a2a" }}>
+          {(["channels", "monitor"] as View[]).map(v => (
+            <button key={v} onClick={() => setView(v)}
+              style={{
+                padding: "5px 14px", fontSize: 12, fontWeight: 500, cursor: "pointer", border: "none",
+                background: view === v ? "#f0a500" : "#1a1a1a",
+                color: view === v ? "#000" : "#666",
+              }}>
+              {v === "channels" ? "Channels" : "Monitor"}
+            </button>
+          ))}
         </div>
         <button onClick={onInfo}
-          className="w-8 h-8 rounded-full flex items-center justify-center text-sm relative"
-          style={{ background: "#1a1a1a", color: "#888" }}>
+          style={{
+            width: 32, height: 32, borderRadius: "50%", background: "#1a1a1a",
+            color: "#888", fontSize: 14, border: "none", cursor: "pointer",
+            position: "relative", display: "flex", alignItems: "center", justifyContent: "center",
+          }}>
           ℹ
           {meshUnread && (
-            <span className="absolute top-0 right-0 w-2 h-2 rounded-full bg-[#4ade80] animate-pulse" />
+            <span style={{
+              position: "absolute", top: 2, right: 2, width: 8, height: 8,
+              borderRadius: "50%", background: "#4ade80",
+            }} />
           )}
         </button>
       </div>
@@ -120,51 +191,41 @@ function TopBar({ mode, setMode, agency, setAgency, meshUnread, onInfo }:
   );
 }
 
-// ── Channel grid ──────────────────────────────────────────────────────────────
+// ── Whistler channel grid ─────────────────────────────────────────────────────
 
-function ChannelGrid({ agency, activeChannels, onToggle }:
-  { agency: Agency; activeChannels: string[]; onToggle: (ch: string) => void }) {
-  const visible = ALL_CHANNELS.filter(ch =>
-    agency === "all" || CHANNELS[ch].agency === agency
-  );
-
+function WhistlerGrid({ activeChannels, onToggle }: {
+  activeChannels: string[]; onToggle: (ch: string) => void;
+}) {
   return (
-    <div className="flex-1 overflow-y-auto p-3">
+    <div style={{ flex: 1, overflowY: "auto", padding: 12 }}>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
-        {visible.map(ch => {
-          const meta = CHANNELS[ch];
+        {Object.entries(WHISTLER_CHANNELS).map(([ch, meta]) => {
           const active = activeChannels.includes(ch);
+          const agency = ch.startsWith("wfd") ? "WFD" : ch.startsWith("wb") ? "WB" : "NRS";
           return (
             <button key={ch} onClick={() => meta.canTranscribe && onToggle(ch)}
-              className="rounded-xl p-3 text-left transition-all"
               style={{
+                borderRadius: 12, padding: 12, textAlign: "left",
                 background: active ? `${meta.color}18` : "#141414",
                 border: `1px solid ${active ? meta.color + "60" : "#222"}`,
-                opacity: meta.canTranscribe ? 1 : 0.6,
+                opacity: meta.canTranscribe || meta.d2 ? 1 : 0.65,
                 cursor: meta.canTranscribe ? "pointer" : "default",
                 minHeight: 80,
               }}>
-              <div className="flex items-start justify-between mb-2">
-                <span className="text-xs font-semibold leading-tight" style={{ color: meta.color }}>
-                  {meta.agency}
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: meta.color }}>{agency}</span>
+                <span style={{ fontSize: 10 }}>
+                  {meta.d2
+                    ? <span style={{ color: "#555", fontSize: 9, fontWeight: 600 }}>D2</span>
+                    : active
+                    ? <span style={{ color: "#4ade80" }}>● ON</span>
+                    : meta.canTranscribe
+                    ? <span style={{ color: "#444" }}>OFF</span>
+                    : <span>🔊</span>}
                 </span>
-                {active ? (
-                  <span className="flex items-center gap-1 text-xs" style={{ color: "#4ade80" }}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#4ade80] animate-pulse inline-block" />
-                    ON
-                  </span>
-                ) : meta.canTranscribe ? (
-                  <span className="text-xs" style={{ color: "#444" }}>OFF</span>
-                ) : (
-                  <span className="text-xs">🔊</span>
-                )}
               </div>
-              <div className="text-xs font-medium leading-snug" style={{ color: "#ccc" }}>
-                {meta.label}
-              </div>
-              {!meta.canTranscribe && (
-                <div className="text-xs mt-1" style={{ color: "#444" }}>Audio only</div>
-              )}
+              <div style={{ fontSize: 11, fontWeight: 600, color: "#ccc", lineHeight: 1.3 }}>{meta.label}</div>
+              <div style={{ fontSize: 10, color: "#444", marginTop: 4 }}>{meta.freq} MHz</div>
             </button>
           );
         })}
@@ -173,115 +234,215 @@ function ChannelGrid({ agency, activeChannels, onToggle }:
   );
 }
 
-// ── Monitor view ──────────────────────────────────────────────────────────────
+// ── Deployment channel grid ───────────────────────────────────────────────────
 
-function TranscriptItem({ tx }: { tx: Transcript }) {
-  const meta = CHANNELS[tx.channel] ?? { color: "#888" };
+const SECTION_ORDER = ["ofc", "metal", "colour"] as const;
+const SECTION_LABELS: Record<string, string> = {
+  ofc: "OFC — Fire Dept Coordination",
+  metal: "NRS Metals — Simplex",
+  colour: "NRS Colours — Repeater",
+};
+
+function DeploymentGrid({ activeChannels, onToggle }: {
+  activeChannels: string[]; onToggle: (ch: string) => void;
+}) {
+  const bySection: Record<string, string[]> = { ofc: [], metal: [], colour: [] };
+  for (const ch of Object.keys(DEPLOYMENT_CHANNELS)) {
+    const cat = DEPLOYMENT_CHANNELS[ch].category ?? "colour";
+    bySection[cat].push(ch);
+  }
+
   return (
-    <div className="px-3 py-2 border-b border-[#1a1a1a]">
-      <div className="flex items-center justify-between mb-0.5">
-        {tx.speaker && tx.speaker !== "Unknown" && (
-          <span className="text-xs px-1.5 py-0.5 rounded"
-            style={tx.speaker.toLowerCase() === "dispatch"
-              ? { color: "#64b5f6", background: "#64b5f610" }
-              : { color: "#f59e0b", background: "#f59e0b18" }}>
-            {tx.speaker}
-          </span>
-        )}
-        <span className="text-xs font-mono ml-auto" style={{ color: "#444" }}>
-          {formatTime(tx.timestamp)}
-        </span>
-      </div>
-      <p className="text-sm leading-snug" style={{ color: "#e0e0e0" }}>{tx.transcript}</p>
+    <div style={{ flex: 1, overflowY: "auto", padding: 12 }}>
+      {SECTION_ORDER.map(section => {
+        const keys = bySection[section];
+        return (
+          <div key={section} style={{ marginBottom: 16 }}>
+            <div style={{
+              fontSize: 10, fontWeight: 700, color: "#f0a500", marginBottom: 8,
+              textTransform: "uppercase", letterSpacing: 1,
+            }}>
+              {SECTION_LABELS[section]}
+            </div>
+            {section === "colour" && keys.length === 0 ? (
+              <div style={{
+                borderRadius: 10, border: "1px dashed #2a2a2a", padding: "12px 16px",
+                fontSize: 11, color: "#444",
+              }}>
+                Colour channels are zone-assigned. Add per deployment when frequencies are confirmed.
+              </div>
+            ) : (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
+                {keys.map(ch => {
+                  const meta = DEPLOYMENT_CHANNELS[ch];
+                  const active = activeChannels.includes(ch);
+                  return (
+                    <button key={ch} onClick={() => onToggle(ch)}
+                      style={{
+                        borderRadius: 10, padding: "10px 12px", textAlign: "left",
+                        background: active ? `${meta.color}18` : "#141414",
+                        border: `1px solid ${active ? meta.color + "60" : "#222"}`,
+                        cursor: "pointer", minHeight: 68,
+                      }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
+                        <span style={{ fontSize: 11, fontWeight: 700, color: meta.color }}>{meta.label}</span>
+                        <span style={{ fontSize: 10 }}>
+                          {meta.d2
+                            ? <span style={{ color: active ? "#f0a500" : "#555", fontSize: 9, fontWeight: 600 }}>
+                                {active ? "● D2" : "D2"}
+                              </span>
+                            : active
+                            ? <span style={{ color: "#4ade80" }}>● ON</span>
+                            : <span style={{ color: "#444" }}>OFF</span>}
+                        </span>
+                      </div>
+                      <div style={{ fontSize: 10, color: "#555" }}>{meta.freq} MHz</div>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
 
-function ChannelSlot({ channelKey, primary, transcripts, playing, onPlay, onSwap, onAdd }:
-  { channelKey: string | null; primary: boolean; transcripts: Transcript[];
-    playing: boolean; onPlay: () => void; onSwap?: () => void; onAdd: () => void }) {
+// ── Monitor view ──────────────────────────────────────────────────────────────
+
+function TranscriptItem({ tx }: { tx: Transcript }) {
+  const meta = ALL_CHANNEL_REGISTRY[tx.channel] ?? { color: "#888" };
+  return (
+    <div style={{ padding: "8px 12px", borderBottom: "1px solid #1a1a1a" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 2 }}>
+        {tx.speaker && tx.speaker !== "Unknown" && (
+          <span style={{
+            fontSize: 11, padding: "1px 6px", borderRadius: 4,
+            ...(tx.speaker.toLowerCase() === "dispatch"
+              ? { color: "#64b5f6", background: "#64b5f610" }
+              : { color: "#f59e0b", background: "#f59e0b18" }),
+          }}>
+            {tx.speaker}
+          </span>
+        )}
+        <span style={{ fontSize: 11, fontFamily: "monospace", color: "#444", marginLeft: "auto" }}>
+          {formatTime(tx.timestamp)}
+        </span>
+      </div>
+      <p style={{ fontSize: 13, lineHeight: 1.4, color: "#e0e0e0", margin: 0 }}>{tx.transcript}</p>
+    </div>
+  );
+}
+
+function ChannelSlot({ channelKey, primary, transcripts, playing, onPlay, onSwap, onAdd }: {
+  channelKey: string | null; primary: boolean; transcripts: Transcript[];
+  playing: boolean; onPlay: () => void; onSwap?: () => void; onAdd: () => void;
+}) {
   if (!channelKey) {
     return (
       <button onClick={onAdd}
-        className="flex-1 flex items-center justify-center rounded-xl border border-dashed border-[#2a2a2a] text-[#444] text-sm gap-2 m-1"
-        style={{ minHeight: primary ? 200 : 90 }}>
+        style={{
+          flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
+          borderRadius: 12, border: "1px dashed #2a2a2a", color: "#444", fontSize: 13,
+          margin: 4, minHeight: primary ? 200 : 90, cursor: "pointer", background: "transparent",
+        }}>
         + Add Channel
       </button>
     );
   }
-  const meta = CHANNELS[channelKey] ?? { label: channelKey, color: "#888" };
+  const meta = ALL_CHANNEL_REGISTRY[channelKey] ?? { label: channelKey, color: "#888" };
   const feed = transcripts.filter(t => t.channel === channelKey).slice(0, primary ? 20 : 4);
 
   return (
-    <div className="flex flex-col rounded-xl border overflow-hidden m-1"
-         style={{ flex: primary ? "0 0 auto" : 1, border: `1px solid ${meta.color}40`,
-                  background: "#0f0f0f", width: primary ? "calc(100% - 230px)" : "auto", minWidth: 0 }}>
-      {/* Slot header */}
-      <div className="flex items-center justify-between px-3 py-2 border-b border-[#1a1a1a]">
-        <span className="text-xs font-semibold" style={{ color: meta.color }}>{meta.label}</span>
-        <div className="flex items-center gap-2">
+    <div style={{
+      display: "flex", flexDirection: "column", borderRadius: 12, overflow: "hidden",
+      border: `1px solid ${meta.color}40`, background: "#0f0f0f", margin: 4,
+      flex: primary ? "0 0 auto" : 1,
+      width: primary ? "calc(100% - 230px)" : "auto", minWidth: 0,
+    }}>
+      <div style={{
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "8px 12px", borderBottom: "1px solid #1a1a1a",
+      }}>
+        <span style={{ fontSize: 12, fontWeight: 600, color: meta.color }}>{meta.label}</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <button onClick={onPlay}
-            className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium"
-            style={playing
-              ? { background: meta.color + "30", color: meta.color }
-              : { background: "#1a1a1a", color: "#666" }}>
+            style={{
+              padding: "3px 8px", borderRadius: 6, fontSize: 11, fontWeight: 500,
+              border: "none", cursor: "pointer",
+              ...(playing
+                ? { background: meta.color + "30", color: meta.color }
+                : { background: "#1a1a1a", color: "#666" }),
+            }}>
             {playing ? "● LIVE" : "▶"}
           </button>
           {!primary && onSwap && (
             <button onClick={onSwap}
-              className="text-xs px-2 py-1 rounded" style={{ background: "#1a1a1a", color: "#555" }}>
+              style={{
+                padding: "3px 8px", borderRadius: 6, fontSize: 11,
+                background: "#1a1a1a", color: "#555", border: "none", cursor: "pointer",
+              }}>
               ↑
             </button>
           )}
         </div>
       </div>
-      {/* Transcript feed */}
-      <div className="flex-1 overflow-y-auto" style={{ maxHeight: primary ? 280 : 120 }}>
-        {feed.length === 0 ? (
-          <p className="text-xs p-3" style={{ color: "#333" }}>No recent traffic</p>
-        ) : (
-          feed.map((tx, i) => <TranscriptItem key={i} tx={tx} />)
-        )}
+      <div style={{ flex: 1, overflowY: "auto", maxHeight: primary ? 280 : 120 }}>
+        {feed.length === 0
+          ? <p style={{ fontSize: 11, padding: 12, color: "#333" }}>No recent traffic</p>
+          : feed.map((tx, i) => <TranscriptItem key={i} tx={tx} />)}
       </div>
     </div>
   );
 }
 
-function ChannelPicker({ onPick, onClose }:
-  { onPick: (ch: string) => void; onClose: () => void }) {
+function ChannelPicker({ channels, onPick, onClose }: {
+  channels: Record<string, ChannelMeta>; onPick: (ch: string) => void; onClose: () => void;
+}) {
   return (
-    <div className="absolute inset-0 z-20 flex items-center justify-center"
-         style={{ background: "rgba(0,0,0,0.85)" }} onClick={onClose}>
-      <div className="rounded-xl border border-[#333] p-4 w-72" style={{ background: "#141414" }}
+    <div style={{
+      position: "absolute", inset: 0, zIndex: 20, display: "flex",
+      alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.85)",
+    }} onClick={onClose}>
+      <div style={{ borderRadius: 12, border: "1px solid #333", padding: 16, width: 280, background: "#141414" }}
            onClick={e => e.stopPropagation()}>
-        <div className="flex justify-between mb-3">
-          <span className="text-sm font-semibold text-white">Select Channel</span>
-          <button onClick={onClose} className="text-[#666] text-lg leading-none">×</button>
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
+          <span style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>Select Channel</span>
+          <button onClick={onClose}
+            style={{ color: "#666", fontSize: 18, lineHeight: 1, background: "none", border: "none", cursor: "pointer" }}>
+            ×
+          </button>
         </div>
-        <div className="flex flex-col gap-2">
-          {ALL_CHANNELS.map(ch => {
-            const meta = CHANNELS[ch];
-            return (
-              <button key={ch} onClick={() => onPick(ch)}
-                className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-left"
-                style={{ background: "#1a1a1a", color: "#ccc" }}>
-                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: meta.color }} />
-                <span>{meta.agency} — {meta.label}</span>
-              </button>
-            );
-          })}
+        <div style={{ display: "flex", flexDirection: "column", gap: 6, maxHeight: 300, overflowY: "auto" }}>
+          {Object.entries(channels).map(([ch, meta]) => (
+            <button key={ch} onClick={() => onPick(ch)}
+              style={{
+                display: "flex", alignItems: "center", gap: 10, padding: "8px 12px",
+                borderRadius: 8, fontSize: 12, textAlign: "left", color: "#ccc",
+                background: "#1a1a1a", border: "none", cursor: "pointer",
+              }}>
+              <span style={{ width: 8, height: 8, borderRadius: "50%", background: meta.color, flexShrink: 0 }} />
+              {meta.label}
+              <span style={{ marginLeft: "auto", fontSize: 10, color: "#444" }}>{meta.freq}</span>
+            </button>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-function MonitorView({ transcripts, meshMessages }:
-  { transcripts: Transcript[]; meshMessages: MeshMessage[] }) {
-  const [primary, setPrimary] = useState<string | null>("wfd-ch2-scene");
-  const [secondary, setSecondary] = useState<string | null>("wfd-ch6-ce");
+function MonitorView({ transcripts, meshMessages, opMode }: {
+  transcripts: Transcript[]; meshMessages: MeshMessage[]; opMode: OpMode;
+}) {
+  const defaultPrimary = opMode === "whistler" ? "wfd-ch2-scene" : "bcws-ofc1";
+  const defaultSecondary = opMode === "whistler" ? "wfd-ch6-ce" : "bcws-ofc2";
+  const [primary, setPrimary] = useState<string | null>(defaultPrimary);
+  const [secondary, setSecondary] = useState<string | null>(defaultSecondary);
   const [playingChannel, setPlayingChannel] = useState<string | null>(null);
   const [picker, setPicker] = useState<"primary" | "secondary" | null>(null);
+  const channels = opMode === "whistler" ? WHISTLER_CHANNELS : DEPLOYMENT_CHANNELS;
 
   const play = (ch: string) => {
     if (playingChannel === ch) { audioMgr.stop(); setPlayingChannel(null); }
@@ -289,61 +450,58 @@ function MonitorView({ transcripts, meshMessages }:
   };
 
   return (
-    <div className="flex-1 flex flex-col overflow-hidden relative">
-      {/* Channel slots */}
-      <div className="flex flex-1 overflow-hidden" style={{ minHeight: 0 }}>
+    <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative" }}>
+      <div style={{ display: "flex", flex: 1, overflow: "hidden", minHeight: 0 }}>
         {primary ? (
-          <ChannelSlot
-            channelKey={primary} primary transcripts={transcripts}
-            playing={playingChannel === primary}
-            onPlay={() => play(primary)}
-            onAdd={() => setPicker("primary")}
-          />
+          <ChannelSlot channelKey={primary} primary transcripts={transcripts}
+            playing={playingChannel === primary} onPlay={() => play(primary)}
+            onAdd={() => setPicker("primary")} />
         ) : (
           <button onClick={() => setPicker("primary")}
-            className="flex-1 flex items-center justify-center text-[#444] text-sm border border-dashed border-[#2a2a2a] rounded-xl m-1">
+            style={{
+              flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
+              color: "#444", fontSize: 13, border: "1px dashed #2a2a2a", borderRadius: 12,
+              margin: 4, cursor: "pointer", background: "transparent",
+            }}>
             + Primary Channel
           </button>
         )}
-
-        <div className="flex flex-col" style={{ width: 220, flexShrink: 0 }}>
-          <ChannelSlot
-            channelKey={secondary} primary={false} transcripts={transcripts}
+        <div style={{ width: 220, flexShrink: 0, display: "flex", flexDirection: "column" }}>
+          <ChannelSlot channelKey={secondary} primary={false} transcripts={transcripts}
             playing={playingChannel === secondary}
             onPlay={() => secondary && play(secondary)}
             onSwap={() => { const tmp = primary; setPrimary(secondary); setSecondary(tmp); }}
-            onAdd={() => setPicker("secondary")}
-          />
+            onAdd={() => setPicker("secondary")} />
           <button onClick={() => setPicker("secondary")}
-            className="m-1 flex items-center justify-center text-[#444] text-xs border border-dashed border-[#2a2a2a] rounded-xl py-3">
+            style={{
+              margin: 4, display: "flex", alignItems: "center", justifyContent: "center",
+              color: "#444", fontSize: 11, border: "1px dashed #2a2a2a", borderRadius: 12,
+              padding: "10px 0", cursor: "pointer", background: "transparent",
+            }}>
             + Add Channel
           </button>
         </div>
       </div>
 
-      {/* Mesh message strip */}
       {meshMessages.length > 0 && (
-        <div className="flex items-center gap-2 px-3 py-2 border-t border-[#1a1a1a]"
-             style={{ background: "#0a0a0a", height: 44, flexShrink: 0, overflow: "hidden" }}>
-          <span className="text-xs flex-shrink-0" style={{ color: "#4ade80" }}>📡</span>
-          <span className="text-xs truncate" style={{ color: "#aaa" }}>
-            <span style={{ color: "#4ade80", marginRight: 6 }}>
-              {meshMessages[0].sender ?? "Mesh"}
-            </span>
+        <div style={{
+          display: "flex", alignItems: "center", gap: 8, padding: "0 12px",
+          height: 44, borderTop: "1px solid #1a1a1a", background: "#0a0a0a",
+          flexShrink: 0, overflow: "hidden",
+        }}>
+          <span style={{ fontSize: 12, color: "#4ade80", flexShrink: 0 }}>📡</span>
+          <span style={{ fontSize: 12, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#aaa" }}>
+            <span style={{ color: "#4ade80", marginRight: 6 }}>{meshMessages[0].sender ?? "Mesh"}</span>
             {meshMessages[0].message}
           </span>
-          <span className="text-xs flex-shrink-0" style={{ color: "#444" }}>
-            {formatTime(meshMessages[0].sent_at)}
-          </span>
+          <span style={{ fontSize: 11, color: "#444", flexShrink: 0 }}>{formatTime(meshMessages[0].sent_at)}</span>
         </div>
       )}
 
-      {/* Channel picker modal */}
       {picker && (
-        <ChannelPicker
+        <ChannelPicker channels={channels}
           onPick={ch => { picker === "primary" ? setPrimary(ch) : setSecondary(ch); setPicker(null); }}
-          onClose={() => setPicker(null)}
-        />
+          onClose={() => setPicker(null)} />
       )}
     </div>
   );
@@ -351,43 +509,60 @@ function MonitorView({ transcripts, meshMessages }:
 
 // ── Info panel ────────────────────────────────────────────────────────────────
 
-function InfoPanel({ onClose }: { onClose: () => void }) {
+function InfoPanel({ onClose, opMode }: { onClose: () => void; opMode: OpMode }) {
+  const freqRows: [string, string, string, string][] = opMode === "whistler"
+    ? [
+        ["WFD On Scene",       "151.355", "CSQ",   "#f0a500"],
+        ["WFD Comb. Events",   "153.710", "CSQ",   "#fb923c"],
+        ["Whistler Patrol",    "151.625", "103.5", "#38bdf8"],
+        ["Blackcomb Patrol",   "151.985", "110.9", "#22d3ee"],
+        ["WB Lift Ops",        "152.060", "107.2", "#67e8f9"],
+        ["WB Operations",      "153.305", "107.2", "#a5f3fc"],
+        ["WB Heliskiing",      "153.530", "CSQ",   "#7dd3fc"],
+        ["NRS Silver (local)", "163.890", "CSQ",   "#86efac"],
+      ]
+    : [
+        ["OFC 1",      "155.460", "CSQ", "#fb923c"],
+        ["OFC 2",      "150.350", "CSQ", "#f97316"],
+        ["NRS Gold",   "163.830", "CSQ", "#ffd700"],
+        ["NRS Silver", "163.890", "CSQ", "#c0c0c0"],
+        ["NRS Bronze", "163.980", "CSQ", "#cd7f32"],
+        ["NRS Copper", "164.910", "CSQ", "#b87333"],
+        ["NRS Nickel", "159.270", "CSQ", "#9ca3af"],
+        ["NRS Iron",   "168.885", "CSQ", "#6b7280"],
+        ["NRS Zinc",   "155.850", "CSQ", "#94a3b8"],
+      ];
+
   return (
-    <div className="flex-1 overflow-y-auto p-4" style={{ background: "#0d0d0d" }}>
-      <div className="flex items-center justify-between mb-4">
-        <span className="font-bold text-white">FireBox Reference</span>
-        <button onClick={onClose} className="text-[#666] text-2xl leading-none px-2">×</button>
+    <div style={{ flex: 1, overflowY: "auto", padding: 16, background: "#0d0d0d" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
+        <span style={{ fontWeight: 700, color: "#fff" }}>FireBox Reference</span>
+        <button onClick={onClose}
+          style={{ color: "#666", fontSize: 22, lineHeight: 1, padding: "0 8px", background: "none", border: "none", cursor: "pointer" }}>
+          ×
+        </button>
       </div>
 
-      {/* Frequency table */}
-      <div className="mb-5">
-        <h2 className="text-xs font-semibold uppercase mb-2" style={{ color: "#f0a500" }}>Frequencies</h2>
-        <div className="rounded-xl border border-[#222] overflow-hidden text-xs">
-          {[
-            ["WFD Ch.2 On Scene",        "151.355", "CSQ",   "#f0a500"],
-            ["WFD Ch.6 Combined Events",  "153.710", "CSQ",   "#fb923c"],
-            ["WB Whistler Patrol",        "151.625", "103.5", "#38bdf8"],
-            ["WB Blackcomb Patrol",       "151.985", "110.9", "#22d3ee"],
-            ["WB Lift Ops",               "152.060", "107.2", "#67e8f9"],
-            ["NRS Titanium (BCWS)",        "152.465", "CSQ",   "#4ade80"],
-            ["NRS Platinum (BCWS)",        "152.780", "CSQ",   "#86efac"],
-            ["WB Misc Ops",               "153.305", "107.2", "#a5f3fc"],
-            ["WB Heliskiing",             "153.530", "CSQ",   "#7dd3fc"],
-          ].map(([label, freq, pl, color]) => (
-            <div key={freq + label} className="flex items-center px-3 py-2 border-b border-[#1a1a1a] last:border-0">
-              <span className="w-2 h-2 rounded-full mr-2 flex-shrink-0" style={{ background: color as string }} />
-              <span className="flex-1" style={{ color: "#ccc" }}>{label}</span>
-              <span className="font-mono mr-3" style={{ color: "#888" }}>{freq}</span>
-              <span className="font-mono" style={{ color: "#555" }}>PL {pl}</span>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 10, fontWeight: 700, color: "#f0a500", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>
+          {opMode === "whistler" ? "Whistler Frequencies" : "Inter-Agency Frequencies"}
+        </h2>
+        <div style={{ borderRadius: 12, border: "1px solid #222", overflow: "hidden", fontSize: 11 }}>
+          {freqRows.map(([label, freq, pl, color]) => (
+            <div key={freq + label}
+              style={{ display: "flex", alignItems: "center", padding: "7px 12px", borderBottom: "1px solid #1a1a1a" }}>
+              <span style={{ width: 8, height: 8, borderRadius: "50%", background: color, marginRight: 8, flexShrink: 0 }} />
+              <span style={{ flex: 1, color: "#ccc" }}>{label}</span>
+              <span style={{ fontFamily: "monospace", color: "#888", marginRight: 12 }}>{freq}</span>
+              <span style={{ fontFamily: "monospace", color: "#555" }}>PL {pl}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Pi maintenance */}
-      <div className="mb-5">
-        <h2 className="text-xs font-semibold uppercase mb-2" style={{ color: "#f0a500" }}>Pi Access</h2>
-        <div className="rounded-xl border border-[#222] p-3 text-xs space-y-2" style={{ color: "#888" }}>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 10, fontWeight: 700, color: "#f0a500", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Pi Access</h2>
+        <div style={{ borderRadius: 12, border: "1px solid #222", padding: 12, fontSize: 11, color: "#888", lineHeight: 2.2 }}>
           <div><span style={{ color: "#ccc" }}>SSH:</span> ssh brew@192.168.8.210</div>
           <div><span style={{ color: "#ccc" }}>Tailscale:</span> ssh brew@100.84.254.62</div>
           <div><span style={{ color: "#ccc" }}>Logs:</span> tail -f /home/brew/recordings/push.log</div>
@@ -395,25 +570,25 @@ function InfoPanel({ onClose }: { onClose: () => void }) {
         </div>
       </div>
 
-      {/* Cron schedule */}
-      <div className="mb-5">
-        <h2 className="text-xs font-semibold uppercase mb-2" style={{ color: "#f0a500" }}>Pipeline</h2>
-        <div className="rounded-xl border border-[#222] p-3 text-xs space-y-2" style={{ color: "#888" }}>
+      <div style={{ marginBottom: 20 }}>
+        <h2 style={{ fontSize: 10, fontWeight: 700, color: "#f0a500", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Pipeline</h2>
+        <div style={{ borderRadius: 12, border: "1px solid #222", padding: 12, fontSize: 11, color: "#888", lineHeight: 2.2 }}>
           <div>Transcribe: every 2 min (Whisper + GPT)</div>
-          <div>Push to cloud: every 30s (Supabase)</div>
-          <div>Transcript lag: ~2 min normal</div>
+          <div>Push to cloud: every 30s</div>
+          <div>Lag: ~2 min normal</div>
         </div>
       </div>
 
-      {/* BCWS callsigns */}
       <div>
-        <h2 className="text-xs font-semibold uppercase mb-2" style={{ color: "#f0a500" }}>BCWS Reference</h2>
-        <div className="rounded-xl border border-[#222] p-3 text-xs space-y-1" style={{ color: "#888" }}>
+        <h2 style={{ fontSize: 10, fontWeight: 700, color: "#f0a500", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>BCWS Reference</h2>
+        <div style={{ borderRadius: 12, border: "1px solid #222", padding: 12, fontSize: 11, color: "#888", lineHeight: 2.2 }}>
           <div>SPS 145 = Michel Brew, Whistler</div>
-          <div>T101 = Type 1 Tender, unit 01</div>
-          <div>TT101 = Tactical Tender</div>
+          <div>T101 = Type 1 Tender · TT101 = Tactical Tender</div>
           <div>Sierra [Town] 8xx = SPC crew</div>
-          <div>NRS colours: Titanium → Platinum → Silver → Gold…</div>
+          <div>NRS metals = simplex · Colours = repeater pairs (zone-assigned)</div>
+          {opMode === "deployment" && (
+            <div style={{ color: "#555", marginTop: 6 }}>D2 badge = requires second RTL-SDR dongle</div>
+          )}
         </div>
       </div>
     </div>
@@ -423,14 +598,27 @@ function InfoPanel({ onClose }: { onClose: () => void }) {
 // ── Main app ──────────────────────────────────────────────────────────────────
 
 export default function FireBoxApp() {
-  const [mode, setMode] = useState<Mode>("channels");
-  const [agency, setAgency] = useState<Agency>("all");
+  const [opMode, setOpMode] = useState<OpMode | null>(null);
+  const [view, setView] = useState<View>("channels");
   const [activeChannels, setActiveChannels] = useState<string[]>(["wfd-ch2-scene", "wfd-ch6-ce"]);
   const [transcripts, setTranscripts] = useState<Transcript[]>([]);
   const [meshMessages, setMeshMessages] = useState<MeshMessage[]>([]);
   const [meshUnread, setMeshUnread] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const lastMeshId = useRef(0);
+
+  // Restore mode from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem("firebox_mode") as OpMode | null;
+    if (stored === "whistler" || stored === "deployment") setOpMode(stored);
+  }, []);
+
+  const selectMode = (m: OpMode) => {
+    localStorage.setItem("firebox_mode", m);
+    setOpMode(m);
+    setView("channels");
+    setShowInfo(false);
+  };
 
   // Load active channels from API
   useEffect(() => {
@@ -454,11 +642,8 @@ export default function FireBoxApp() {
   const fetchMesh = useCallback(async () => {
     try {
       const r = await fetch(
-        `https://bdgmpkbbohbucwoiucyw.supabase.co/rest/v1/firebox_mesh?order=sent_at.desc&limit=20`,
-        { headers: {
-          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws",
-        }}
+        "https://bdgmpkbbohbucwoiucyw.supabase.co/rest/v1/firebox_mesh?order=sent_at.desc&limit=20",
+        { headers: { "apikey": SUPABASE_ANON, "Authorization": `Bearer ${SUPABASE_ANON}` } }
       );
       if (!r.ok) return;
       const msgs: MeshMessage[] = await r.json();
@@ -478,7 +663,6 @@ export default function FireBoxApp() {
     return () => { clearInterval(t1); clearInterval(t2); };
   }, [fetchTranscripts, fetchMesh]);
 
-  // Toggle transcription for a channel
   const toggleChannel = async (ch: string) => {
     const updated = activeChannels.includes(ch)
       ? activeChannels.filter(c => c !== ch)
@@ -495,25 +679,39 @@ export default function FireBoxApp() {
 
   const openInfo = () => { setShowInfo(true); setMeshUnread(false); };
 
+  // No mode selected — show full-screen mode selector
+  if (!opMode) {
+    return (
+      <div style={{
+        width: 800, height: 480, background: "#0d0d0d", color: "#e0e0e0",
+        fontFamily: "system-ui, sans-serif", overflow: "hidden",
+        userSelect: "none", position: "relative", margin: "0 auto",
+      }}>
+        <ModeSelector onSelect={selectMode} />
+      </div>
+    );
+  }
+
   return (
     <div style={{
       width: 800, height: 480, background: "#0d0d0d", color: "#e0e0e0",
       fontFamily: "system-ui, sans-serif", display: "flex", flexDirection: "column",
-      overflow: "hidden", userSelect: "none", position: "relative",
-      margin: "0 auto",
+      overflow: "hidden", userSelect: "none", position: "relative", margin: "0 auto",
     }}>
       <TopBar
-        mode={mode} setMode={setMode}
-        agency={agency} setAgency={setAgency}
+        view={view} setView={setView}
+        opMode={opMode} onModeSwitch={() => setOpMode(null)}
         meshUnread={meshUnread} onInfo={openInfo}
       />
 
       {showInfo ? (
-        <InfoPanel onClose={() => setShowInfo(false)} />
-      ) : mode === "channels" ? (
-        <ChannelGrid agency={agency} activeChannels={activeChannels} onToggle={toggleChannel} />
+        <InfoPanel onClose={() => setShowInfo(false)} opMode={opMode} />
+      ) : view === "monitor" ? (
+        <MonitorView transcripts={transcripts} meshMessages={meshMessages} opMode={opMode} />
+      ) : opMode === "whistler" ? (
+        <WhistlerGrid activeChannels={activeChannels} onToggle={toggleChannel} />
       ) : (
-        <MonitorView transcripts={transcripts} meshMessages={meshMessages} />
+        <DeploymentGrid activeChannels={activeChannels} onToggle={toggleChannel} />
       )}
     </div>
   );
