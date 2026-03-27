@@ -130,7 +130,9 @@ function FireBoxFeed() {
     return () => clearInterval(id);
   }, [fetchTranscripts, live]);
 
-  const channels = Array.from(new Set(transcripts.map((t) => t.channel)));
+  // Always show all monitored channels as tabs, even before any traffic arrives
+  const MONITORED_CHANNELS = ["wfd-dispatch", "wfd-garibaldi"];
+  const activeChannels = Array.from(new Set([...MONITORED_CHANNELS, ...transcripts.map((t) => t.channel)]));
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0d0d0d] text-white">
@@ -170,7 +172,7 @@ function FireBoxFeed() {
       {/* Channel filter tabs */}
       <div className="border-b border-[#222] px-6">
         <div className="max-w-3xl mx-auto flex gap-1 pt-3 pb-0 overflow-x-auto">
-          {["all", ...channels].map((ch) => {
+          {["all", ...activeChannels].map((ch) => {
             const style = ch === "all" ? { label: "All Channels", color: "#aaa" } : channelStyle(ch);
             return (
               <button
