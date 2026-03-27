@@ -44,12 +44,12 @@ function channelStyle(channel: string) {
 
 function formatTime(iso: string) {
   try {
-    return new Date(iso).toLocaleTimeString("en-CA", {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: false,
-    });
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return iso;
+    const h = String(d.getHours()).padStart(2, "0");
+    const m = String(d.getMinutes()).padStart(2, "0");
+    const s = String(d.getSeconds()).padStart(2, "0");
+    return `${h}:${m}:${s}`;
   } catch {
     return iso;
   }
