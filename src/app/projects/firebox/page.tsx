@@ -20,7 +20,7 @@ type Transcript = {
 // Channel display names and accent colours for the feed.
 // Add new channels here as rtl_airband picks up more frequencies.
 const CHANNEL_STYLE: Record<string, { label: string; color: string }> = {
-  "wfd-dispatch": { label: "WFR Ch.1", color: "#ff6b35" },
+  "wfd-dispatch": { label: "WFD Ch.2 On Scene", color: "#ff6b35" },
   "wfd-garibaldi": { label: "WFD Garibaldi", color: "#00a8ff" },
 };
 
