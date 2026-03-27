@@ -1,9 +1,18 @@
 {
-  "updated_at": "2026-03-27T17:00:31.157Z",
+  "updated_at": "2026-03-27T23:00:31.549Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Site C camp to be repurposed for North Coast Transmission Line project: BC Hydro",
+        "link": "https://globalnews.ca/news/11749034/site-c-worker-camp-repurposed-north-coast-transmission-line-project/",
+        "description": "Hydro says about 85 per cent of the camp, which includes 21 dormitories and the construction site office, will be relocated to sites between Prince George and Terrace.",
+        "pubDate": "Fri, 27 Mar 2026 18:16:23 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/05/site-c-camp.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
@@ -21,6 +30,14 @@
         "description": "The combined Wildland Fire Canada Conference and Canadian Smoke Forum unites wildland fire management agencies, Indigenous knowledge holders, scientists and community members from across Canada and around the world. This biennial conference focuses on wildland fire management, science and knowledge sharing with the latest research, technology and practices. The last WFCC was in 2024 in [&#8230;]",
         "pubDate": "Thu, 12 Mar 2026 05:57:29 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Recently launched app rates wildfire risk for properties across Canada",
+        "link": "https://globalnews.ca/news/11749469/wildfire-risk-calculator/",
+        "description": "A program calculating wildfire risks for properties is available. It hopes to keep Canadians informed on the effects of the increasing fire possibility in their area.",
+        "pubDate": "Fri, 27 Mar 2026 21:57:29 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/03/3f24fc3b0a678ed16b866a123ad1760b12fde15ef7a193c08e98a516e9c884e6.jpg?quality=65&#038;strip=all"
       }
     ]
   }
