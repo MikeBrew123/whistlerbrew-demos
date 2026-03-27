@@ -2,74 +2,59 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "edge";
 
-// Shared secret the Pi must include when POSTing transcripts.
-// Set this as FIREBOX_INGEST_KEY in Cloudflare Pages environment variables.
-const INGEST_KEY = (process.env.FIREBOX_INGEST_KEY as string) ?? "firebox-pi-secret";
+// Supabase project (iambrew@gmail.com account — firebox project)
+const SUPABASE_URL      = (process.env.SUPABASE_URL      ?? "https://bdgmpkbbohbucwoiucyw.supabase.co");
+const SUPABASE_ANON_KEY = (process.env.SUPABASE_ANON_KEY ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws");
 
-// How many transcripts to keep in the live feed (most recent N)
-const MAX_ENTRIES = 100;
+// Shared secret the Pi must include when POSTing transcripts
+const INGEST_KEY = (process.env.FIREBOX_INGEST_KEY ?? "firebox-pi-secret");
 
-// Minimal KV type — Cloudflare provides the real implementation at runtime
-interface KVNamespace {
-  get(key: string): Promise<string | null>;
-  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
-}
+const TABLE = `${SUPABASE_URL}/rest/v1/firebox_transcripts`;
+const HEADERS = {
+  apikey:        SUPABASE_ANON_KEY,
+  Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+  "Content-Type": "application/json",
+};
 
-interface Env {
-  FIREBOX_TRANSCRIPTS: KVNamespace;
-}
-
-// ── GET — return recent transcripts for the page to display ──────────────────
+// ── GET — return recent transcripts for the page ──────────────────────────────
 export async function GET(request: NextRequest) {
-  const env = (process.env as unknown) as Env;
-  const kv = env.FIREBOX_TRANSCRIPTS;
-
-  // Optional: filter by channel via ?channel=wfd-dispatch
   const { searchParams } = new URL(request.url);
   const channelFilter = searchParams.get("channel");
 
-  // Fetch the index of transcript keys (most recent first)
-  const indexRaw = await kv.get("index");
-  if (!indexRaw) {
-    return NextResponse.json({ transcripts: [] });
-  }
+  const url = new URL(TABLE);
+  url.searchParams.set("order", "recorded_at.desc");
+  url.searchParams.set("limit", "100");
+  if (channelFilter) url.searchParams.set("channel", `eq.${channelFilter}`);
 
-  const index: string[] = JSON.parse(indexRaw);
+  const res = await fetch(url.toString(), { headers: HEADERS });
+  if (!res.ok) return NextResponse.json({ transcripts: [] });
 
-  // Fetch each transcript entry
-  const entries = await Promise.all(
-    index.map(async (key) => {
-      const raw = await kv.get(key);
-      return raw ? JSON.parse(raw) : null;
-    })
-  );
+  const rows: Array<{
+    channel: string; filename: string; recorded_at: string;
+    speaker: string | null; transcript: string;
+  }> = await res.json();
 
-  const transcripts = entries
-    .filter(Boolean)
-    .filter((e) => !channelFilter || e.channel === channelFilter);
+  const transcripts = rows.map((r) => ({
+    channel:    r.channel,
+    filename:   r.filename,
+    timestamp:  r.recorded_at,
+    speaker:    r.speaker ?? undefined,
+    transcript: r.transcript,
+  }));
 
   return NextResponse.json({ transcripts });
 }
 
-// ── POST — receive a new transcript from the Pi ──────────────────────────────
+// ── POST — receive a new transcript from the Pi ───────────────────────────────
 export async function POST(request: NextRequest) {
-  const env = (process.env as unknown) as Env;
-  const kv = env.FIREBOX_TRANSCRIPTS;
-
-  // Verify the ingest key so random internet traffic can't pollute the feed
-  const authHeader = request.headers.get("x-firebox-key");
-  if (authHeader !== INGEST_KEY) {
+  if (request.headers.get("x-firebox-key") !== INGEST_KEY) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   let body: {
-    channel: string;
-    filename: string;
-    timestamp: string; // ISO 8601
-    transcript: string;
-    speaker?: string; // e.g. "Dispatch", "Engine 1", "Whistler Ranger 1"
+    channel: string; filename: string; timestamp: string;
+    transcript: string; speaker?: string;
   };
-
   try {
     body = await request.json();
   } catch {
@@ -80,18 +65,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  // Store each transcript under a unique key
-  const key = `tx_${body.timestamp}_${body.channel}`;
-  await kv.put(key, JSON.stringify(body), {
-    // Keep transcripts for 30 days then auto-expire
-    expirationTtl: 60 * 60 * 24 * 30,
+  const res = await fetch(TABLE, {
+    method: "POST",
+    headers: { ...HEADERS, Prefer: "return=minimal" },
+    body: JSON.stringify({
+      channel:     body.channel,
+      filename:    body.filename,
+      recorded_at: body.timestamp,
+      speaker:     body.speaker ?? null,
+      transcript:  body.transcript,
+    }),
   });
 
-  // Update the index — prepend new key, trim to MAX_ENTRIES
-  const indexRaw = await kv.get("index");
-  const index: string[] = indexRaw ? JSON.parse(indexRaw) : [];
-  const updated = [key, ...index.filter((k) => k !== key)].slice(0, MAX_ENTRIES);
-  await kv.put("index", JSON.stringify(updated));
+  if (!res.ok) {
+    const err = await res.text();
+    return NextResponse.json({ error: err }, { status: 500 });
+  }
 
-  return NextResponse.json({ ok: true, key });
+  return NextResponse.json({ ok: true });
 }

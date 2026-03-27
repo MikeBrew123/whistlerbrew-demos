@@ -138,11 +138,11 @@ function FireBoxFeed() {
     }
   }, [channelFilter]);
 
-  // Poll every 8 seconds when live
+  // Poll every 30 seconds when live
   useEffect(() => {
     fetchTranscripts();
     if (!live) return;
-    const id = setInterval(fetchTranscripts, 8000);
+    const id = setInterval(fetchTranscripts, 30000);
     return () => clearInterval(id);
   }, [fetchTranscripts, live]);
 
@@ -191,7 +191,7 @@ function FireBoxFeed() {
 
       {/* Channel filter tabs */}
       <div className="border-b border-[#222] px-6">
-        <div className="max-w-3xl mx-auto flex gap-1 pt-3 pb-0 overflow-x-auto">
+        <div className="max-w-3xl mx-auto flex flex-wrap gap-1 pt-3 pb-0">
           {["all", ...activeChannels].map((ch) => {
             const style = ch === "all" ? { label: "All Channels", color: "#aaa" } : channelStyle(ch);
             return (
