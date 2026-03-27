@@ -67,15 +67,20 @@ export default function Projects() {
             </p>
           </Link>
 
-          <div className="p-6 bg-[#1e1e1e] border border-[#333] rounded-lg opacity-50">
-            <span className="inline-block px-2 py-1 text-xs font-semibold bg-[#333] rounded mb-3">
-              COMING SOON
+          <Link
+            href="/projects/firebox"
+            className="block p-6 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#ff6b35] transition-colors group"
+          >
+            <span className="inline-block px-2 py-1 text-xs font-semibold bg-[#ff6b35] rounded mb-3">
+              LIVE
             </span>
-            <h2 className="text-xl font-semibold mb-2">More Projects</h2>
+            <h2 className="text-xl font-semibold mb-2 group-hover:text-[#ff6b35] transition-colors">
+              FireBox
+            </h2>
             <p className="text-[#b0b0b0] text-sm">
-              Additional tools and demos will be added here.
+              Live WFD radio transcripts from the Sea to Sky corridor. Powered by Whisper AI.
             </p>
-          </div>
+          </Link>
         </div>
       </main>
 

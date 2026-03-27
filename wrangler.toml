@@ -2,3 +2,7 @@ name = "whistlerbrew-demos"
 pages_build_output_dir = ".vercel/output/static"
 compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2026-01-24"
+
+[[kv_namespaces]]
+binding = "FIREBOX_TRANSCRIPTS"
+id = "051c1d49e1c749d19a57ef13a7a7601a"
