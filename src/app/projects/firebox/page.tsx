@@ -114,29 +114,50 @@ function FireBoxFeed() {
   const [channelFilter, setChannelFilter] = useState<string>("all");
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [live, setLive] = useState(true);
+  const [offset, setOffset] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const feedRef = useRef<HTMLDivElement>(null);
   const prevCountRef = useRef(0);
+  const PAGE_SIZE = 50;
 
   const fetchTranscripts = useCallback(async () => {
     try {
-      const url = channelFilter === "all"
-        ? "/api/firebox"
-        : `/api/firebox?channel=${channelFilter}`;
+      const base = channelFilter === "all" ? "/api/firebox" : `/api/firebox?channel=${channelFilter}`;
+      const url = `${base}${channelFilter === "all" ? "?" : "&"}limit=${PAGE_SIZE}&offset=0`;
       const res = await fetch(url);
       if (!res.ok) return;
       const data = await res.json();
-      setTranscripts(data.transcripts ?? []);
+      const txs = data.transcripts ?? [];
+      setTranscripts(txs);
+      setOffset(PAGE_SIZE);
+      setHasMore(txs.length === PAGE_SIZE);
       setLastUpdated(new Date());
-
-      // Auto-scroll to top when new entries arrive
-      if (data.transcripts.length > prevCountRef.current && feedRef.current) {
+      if (txs.length > prevCountRef.current && feedRef.current) {
         feedRef.current.scrollTo({ top: 0, behavior: "smooth" });
       }
-      prevCountRef.current = data.transcripts.length;
-    } catch {
-      // Silently ignore fetch errors — will retry on next poll
-    }
+      prevCountRef.current = txs.length;
+    } catch { /* retry on next poll */ }
   }, [channelFilter]);
+
+  const loadMore = async () => {
+    setLoadingMore(true);
+    try {
+      const base = channelFilter === "all" ? "/api/firebox" : `/api/firebox?channel=${channelFilter}`;
+      const url = `${base}${channelFilter === "all" ? "?" : "&"}limit=${PAGE_SIZE}&offset=${offset}`;
+      const res = await fetch(url);
+      if (!res.ok) return;
+      const data = await res.json();
+      const more = data.transcripts ?? [];
+      setTranscripts(prev => [...prev, ...more]);
+      setOffset(o => o + PAGE_SIZE);
+      setHasMore(more.length === PAGE_SIZE);
+    } catch { /* ignore */ }
+    setLoadingMore(false);
+  };
+
+  // Reset pagination when channel changes
+  useEffect(() => { setOffset(0); setHasMore(true); }, [channelFilter]);
 
   // Poll every 30 seconds when live
   useEffect(() => {
@@ -275,6 +296,19 @@ function FireBoxFeed() {
                 </div>
               );
             })
+          )}
+          {/* Load More */}
+          {hasMore && transcripts.length > 0 && (
+            <div className="pt-2 pb-6 text-center">
+              <button
+                onClick={loadMore}
+                disabled={loadingMore}
+                className="px-5 py-2 text-sm border border-[#333] rounded-lg text-[#666]
+                           hover:border-[#555] hover:text-[#aaa] transition-colors disabled:opacity-40"
+              >
+                {loadingMore ? "Loading…" : "Load more"}
+              </button>
+            </div>
           )}
         </div>
       </main>

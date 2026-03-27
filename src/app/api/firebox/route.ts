@@ -21,9 +21,13 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const channelFilter = searchParams.get("channel");
 
+  const limit  = Math.min(parseInt(searchParams.get("limit")  ?? "50"), 100);
+  const offset = Math.max(parseInt(searchParams.get("offset") ?? "0"),  0);
+
   const url = new URL(TABLE);
   url.searchParams.set("order", "recorded_at.desc");
-  url.searchParams.set("limit", "100");
+  url.searchParams.set("limit", String(limit));
+  url.searchParams.set("offset", String(offset));
   if (channelFilter) url.searchParams.set("channel", `eq.${channelFilter}`);
 
   const res = await fetch(url.toString(), { headers: HEADERS });
