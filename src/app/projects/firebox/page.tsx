@@ -18,8 +18,8 @@ type Transcript = {
 
 // Channel display names and accent colours for the feed
 const CHANNEL_STYLE: Record<string, { label: string; color: string }> = {
-  "wfd-dispatch": { label: "WFD Dispatch", color: "#ff6b35" },
-  "wfd-garibaldi": { label: "WFD Garibaldi", color: "#00a8ff" },
+  "wfd-dispatch": { label: "WFD Ch.2 On Scene", color: "#ff6b35" },
+  "wfd-garibaldi": { label: "WFD Ch.5 Garibaldi", color: "#00a8ff" },
 };
 
 function channelStyle(channel: string) {
