@@ -67,6 +67,7 @@ export async function POST(request: NextRequest) {
     filename: string;
     timestamp: string; // ISO 8601
     transcript: string;
+    speaker?: string; // e.g. "Dispatch", "Engine 1", "Whistler Ranger 1"
   };
 
   try {

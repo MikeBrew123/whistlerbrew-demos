@@ -14,12 +14,14 @@ type Transcript = {
   filename: string;
   timestamp: string;
   transcript: string;
+  speaker?: string; // Identified by GPT-4o-mini: "Dispatch", "Engine 1", etc.
 };
 
-// Channel display names and accent colours for the feed
+// Channel display names and accent colours for the feed.
+// Add new channels here as rtl_airband picks up more frequencies.
 const CHANNEL_STYLE: Record<string, { label: string; color: string }> = {
-  "wfd-dispatch": { label: "WFD Ch.2 On Scene", color: "#ff6b35" },
-  "wfd-garibaldi": { label: "WFD Ch.5 Garibaldi", color: "#00a8ff" },
+  "wfd-dispatch": { label: "WFR Ch.1", color: "#ff6b35" },
+  "wfd-garibaldi": { label: "WFD Garibaldi", color: "#00a8ff" },
 };
 
 function channelStyle(channel: string) {
@@ -209,12 +211,26 @@ function FireBoxFeed() {
                              hover:border-[#333] transition-colors"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span
-                      className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                      style={{ color: style.color, backgroundColor: `${style.color}18` }}
-                    >
-                      {style.label}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      {/* Channel badge */}
+                      <span
+                        className="text-xs font-semibold px-2 py-0.5 rounded-full"
+                        style={{ color: style.color, backgroundColor: `${style.color}18` }}
+                      >
+                        {style.label}
+                      </span>
+                      {/* Speaker badge — Dispatch = blue, field units = amber */}
+                      {tx.speaker && tx.speaker !== "Unknown" && (
+                        <span
+                          className="text-xs px-2 py-0.5 rounded-full"
+                          style={tx.speaker.toLowerCase() === "dispatch"
+                            ? { color: "#64b5f6", backgroundColor: "#64b5f610" }
+                            : { color: "#f59e0b", backgroundColor: "#f59e0b18" }}
+                        >
+                          {tx.speaker}
+                        </span>
+                      )}
+                    </div>
                     <span className="text-[#444] text-xs font-mono">
                       {formatTime(tx.timestamp)}
                     </span>
