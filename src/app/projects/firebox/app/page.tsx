@@ -30,8 +30,22 @@ type ChannelMeta = {
   freq: string;
   pl: string;
   d2?: boolean;
-  category?: "ofc" | "metal" | "colour";
+  category?: "ofc" | "metal" | "colour" | "fire";
 };
+
+// ── NRS Tones (T1–T9, duplex/repeater channels only) ──────────────────────────
+
+const NRS_TONES = [
+  { key: "T1", hz: "114.8" },
+  { key: "T2", hz: "123.0" },
+  { key: "T3", hz: "131.8" },
+  { key: "T4", hz: "141.3" },
+  { key: "T5", hz: "151.4" },
+  { key: "T6", hz: "162.2" },
+  { key: "T7", hz: "173.8" },
+  { key: "T8", hz: "186.2" },
+  { key: "T9", hz: "192.8" },
+];
 
 // ── Whistler mode channels ────────────────────────────────────────────────────
 
@@ -47,10 +61,14 @@ const WHISTLER_CHANNELS: Record<string, ChannelMeta> = {
 };
 
 // ── Deployment mode channels ──────────────────────────────────────────────────
+// Colour channels: RX (receive/output) frequency listed. TX freq is different — see inter-agency agreement.
+// Tones T1–T9 are zone-specific (set per deployment in the UI). No tone needed for simplex/metals.
 
 const DEPLOYMENT_CHANNELS: Record<string, ChannelMeta> = {
+  // OFC — Fire dept coordination
   "bcws-ofc1":  { label: "OFC 1",      color: "#fb923c", canTranscribe: true, freq: "155.460", pl: "CSQ", category: "ofc"    },
   "bcws-ofc2":  { label: "OFC 2",      color: "#f97316", canTranscribe: true, freq: "150.350", pl: "CSQ", category: "ofc"    },
+  // NRS Metals — simplex (TX=RX, no tone)
   "nrs-gold":   { label: "NRS Gold",   color: "#ffd700", canTranscribe: true, freq: "163.830", pl: "CSQ", category: "metal", d2: true },
   "nrs-silver": { label: "NRS Silver", color: "#c0c0c0", canTranscribe: true, freq: "163.890", pl: "CSQ", category: "metal", d2: true },
   "nrs-bronze": { label: "NRS Bronze", color: "#cd7f32", canTranscribe: true, freq: "163.980", pl: "CSQ", category: "metal", d2: true },
@@ -58,9 +76,31 @@ const DEPLOYMENT_CHANNELS: Record<string, ChannelMeta> = {
   "nrs-nickel": { label: "NRS Nickel", color: "#9ca3af", canTranscribe: true, freq: "159.270", pl: "CSQ", category: "metal", d2: true },
   "nrs-iron":   { label: "NRS Iron",   color: "#6b7280", canTranscribe: true, freq: "168.885", pl: "CSQ", category: "metal", d2: true },
   "nrs-zinc":   { label: "NRS Zinc",   color: "#94a3b8", canTranscribe: true, freq: "155.850", pl: "CSQ", category: "metal"  },
+  // NRS Colours — repeater (RX freq listed, tone = zone-specific)
+  "nrs-colour-red":    { label: "Red",    color: "#ef4444", canTranscribe: true, freq: "163.935", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-purple": { label: "Purple", color: "#a855f7", canTranscribe: true, freq: "163.965", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-green":  { label: "Green",  color: "#22c55e", canTranscribe: true, freq: "163.995", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-pink":   { label: "Pink",   color: "#f472b6", canTranscribe: true, freq: "164.055", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-blue":   { label: "Blue",   color: "#3b82f6", canTranscribe: true, freq: "164.085", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-orange": { label: "Orange", color: "#f97316", canTranscribe: true, freq: "164.145", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-brown":  { label: "Brown",  color: "#92400e", canTranscribe: true, freq: "164.175", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-yellow": { label: "Yellow", color: "#eab308", canTranscribe: true, freq: "164.205", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-grey":   { label: "Grey",   color: "#9ca3af", canTranscribe: true, freq: "164.235", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-black":  { label: "Black",  color: "#64748b", canTranscribe: true, freq: "164.265", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-white":  { label: "White",  color: "#e2e8f0", canTranscribe: true, freq: "162.585", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-maroon": { label: "Maroon", color: "#9f1239", canTranscribe: true, freq: "164.115", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-lime":   { label: "Lime",   color: "#84cc16", canTranscribe: true, freq: "166.335", pl: "zone", category: "colour", d2: true },
+  "nrs-colour-navy":   { label: "Navy",   color: "#3b82f6", canTranscribe: true, freq: "159.465", pl: "zone", category: "colour", d2: true },
+  // Fire channels — A series (repeater), B series (simplex)
+  "nrs-fire-a1": { label: "Fire A1", color: "#f0a500", canTranscribe: true, freq: "167.670", pl: "CSQ", category: "fire", d2: true },
+  "nrs-fire-a2": { label: "Fire A2", color: "#f0a500", canTranscribe: true, freq: "166.710", pl: "CSQ", category: "fire", d2: true },
+  "nrs-fire-a3": { label: "Fire A3", color: "#f0a500", canTranscribe: true, freq: "167.070", pl: "CSQ", category: "fire", d2: true },
+  "nrs-fire-b1": { label: "Fire B1", color: "#fb923c", canTranscribe: true, freq: "169.950", pl: "CSQ", category: "fire", d2: true },
+  "nrs-fire-b2": { label: "Fire B2", color: "#fb923c", canTranscribe: true, freq: "171.030", pl: "CSQ", category: "fire", d2: true },
+  "nrs-fire-b3": { label: "Fire B3", color: "#fb923c", canTranscribe: true, freq: "172.050", pl: "CSQ", category: "fire", d2: true },
 };
 
-// Combined registry for transcript lookup
+// Combined registry for transcript display lookup
 const ALL_CHANNEL_REGISTRY: Record<string, ChannelMeta> = { ...WHISTLER_CHANNELS, ...DEPLOYMENT_CHANNELS };
 
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws";
@@ -117,7 +157,7 @@ function ModeSelector({ onSelect }: { onSelect: (m: OpMode) => void }) {
           },
           {
             mode: "deployment" as const, icon: "🔥", title: "DEPLOYMENT",
-            lines: ["OFC 1 + OFC 2", "All NRS metals", "Colour channels (per deployment)"],
+            lines: ["OFC 1 + OFC 2", "All NRS metals", "14 colour channels", "Fire A/B channels"],
             color: "#f0a500",
           },
         ]).map(({ mode, icon, title, lines, color }) => (
@@ -181,10 +221,7 @@ function TopBar({ view, setView, opMode, onModeSwitch, meshUnread, onInfo }: {
           }}>
           ℹ
           {meshUnread && (
-            <span style={{
-              position: "absolute", top: 2, right: 2, width: 8, height: 8,
-              borderRadius: "50%", background: "#4ade80",
-            }} />
+            <span style={{ position: "absolute", top: 2, right: 2, width: 8, height: 8, borderRadius: "50%", background: "#4ade80" }} />
           )}
         </button>
       </div>
@@ -235,28 +272,86 @@ function WhistlerGrid({ activeChannels, onToggle }: {
   );
 }
 
+// ── Tone picker modal ─────────────────────────────────────────────────────────
+
+function TonePicker({ channelLabel, currentTone, onSelect, onClear, onClose }: {
+  channelLabel: string; currentTone: string | null;
+  onSelect: (tone: string) => void; onClear: () => void; onClose: () => void;
+}) {
+  return (
+    <div style={{
+      position: "absolute", inset: 0, zIndex: 30, display: "flex",
+      alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.88)",
+    }} onClick={onClose}>
+      <div style={{ borderRadius: 14, border: "1px solid #333", padding: 18, width: 300, background: "#141414" }}
+           onClick={e => e.stopPropagation()}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
+          <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{channelLabel}</span>
+          <button onClick={onClose}
+            style={{ color: "#666", fontSize: 18, lineHeight: 1, background: "none", border: "none", cursor: "pointer" }}>×</button>
+        </div>
+        <div style={{ fontSize: 10, color: "#555", marginBottom: 14 }}>Select zone tone — check your handheld radio or district map</div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
+          {NRS_TONES.map(({ key, hz }) => {
+            const selected = currentTone === key;
+            return (
+              <button key={key} onClick={() => { onSelect(key); onClose(); }}
+                style={{
+                  borderRadius: 8, padding: "10px 0", border: `1px solid ${selected ? "#f0a500" : "#2a2a2a"}`,
+                  background: selected ? "#f0a50018" : "#1a1a1a", cursor: "pointer", textAlign: "center",
+                }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: selected ? "#f0a500" : "#ccc" }}>{key}</div>
+                <div style={{ fontSize: 9, color: "#555", marginTop: 2 }}>{hz} Hz</div>
+              </button>
+            );
+          })}
+        </div>
+
+        {currentTone && (
+          <button onClick={() => { onClear(); onClose(); }}
+            style={{
+              width: "100%", marginTop: 10, padding: "8px 0", borderRadius: 8,
+              background: "transparent", border: "1px solid #2a2a2a",
+              fontSize: 11, color: "#555", cursor: "pointer",
+            }}>
+            Clear tone
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ── Deployment channel grid ───────────────────────────────────────────────────
 
-const SECTION_ORDER = ["ofc", "metal", "colour"] as const;
+const SECTION_ORDER = ["ofc", "metal", "colour", "fire"] as const;
 const SECTION_LABELS: Record<string, string> = {
-  ofc: "OFC — Fire Dept Coordination",
-  metal: "NRS Metals — Simplex",
-  colour: "NRS Colours — Repeater",
+  ofc:    "OFC — Fire Dept Coordination",
+  metal:  "NRS Metals — Simplex (no tone)",
+  colour: "NRS Colours — Repeater (zone tone required)",
+  fire:   "Fire Channels",
 };
 
-function DeploymentGrid({ activeChannels, onToggle }: {
+function DeploymentGrid({ activeChannels, onToggle, colourTones, onSetTone }: {
   activeChannels: string[]; onToggle: (ch: string) => void;
+  colourTones: Record<string, string>; onSetTone: (ch: string, tone: string | null) => void;
 }) {
-  const bySection: Record<string, string[]> = { ofc: [], metal: [], colour: [] };
+  const [tonePicking, setTonePicking] = useState<string | null>(null);
+
+  const bySection: Record<string, string[]> = { ofc: [], metal: [], colour: [], fire: [] };
   for (const ch of Object.keys(DEPLOYMENT_CHANNELS)) {
     const cat = DEPLOYMENT_CHANNELS[ch].category ?? "colour";
     bySection[cat].push(ch);
   }
 
   return (
-    <div style={{ flex: 1, overflowY: "auto", padding: 12 }}>
+    <div style={{ flex: 1, overflowY: "auto", padding: 12, position: "relative" }}>
       {SECTION_ORDER.map(section => {
         const keys = bySection[section];
+        if (!keys.length) return null;
+        const isColour = section === "colour";
+
         return (
           <div key={section} style={{ marginBottom: 16 }}>
             <div style={{
@@ -265,14 +360,9 @@ function DeploymentGrid({ activeChannels, onToggle }: {
             }}>
               {SECTION_LABELS[section]}
             </div>
-            {section === "colour" && keys.length === 0 ? (
-              <div style={{
-                borderRadius: 10, border: "1px dashed #2a2a2a", padding: "12px 16px",
-                fontSize: 11, color: "#444",
-              }}>
-                Colour channels are zone-assigned. Add per deployment when frequencies are confirmed.
-              </div>
-            ) : (
+
+            {/* OFC + Metal + Fire: 3-col card grid */}
+            {!isColour && (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
                 {keys.map(ch => {
                   const meta = DEPLOYMENT_CHANNELS[ch];
@@ -283,9 +373,9 @@ function DeploymentGrid({ activeChannels, onToggle }: {
                         borderRadius: 10, padding: "10px 12px", textAlign: "left",
                         background: active ? `${meta.color}18` : "#141414",
                         border: `1px solid ${active ? meta.color + "60" : "#222"}`,
-                        cursor: "pointer", minHeight: 68,
+                        cursor: "pointer", minHeight: 62,
                       }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
                         <span style={{ fontSize: 11, fontWeight: 700, color: meta.color }}>{meta.label}</span>
                         <span style={{ fontSize: 10 }}>
                           {meta.d2
@@ -303,9 +393,72 @@ function DeploymentGrid({ activeChannels, onToggle }: {
                 })}
               </div>
             )}
+
+            {/* Colours: compact 2-col list with tone selector */}
+            {isColour && (
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
+                {keys.map(ch => {
+                  const meta = DEPLOYMENT_CHANNELS[ch];
+                  const active = activeChannels.includes(ch);
+                  const tone = colourTones[ch] ?? null;
+                  const toneInfo = tone ? NRS_TONES.find(t => t.key === tone) : null;
+                  return (
+                    <div key={ch}
+                      style={{
+                        display: "flex", alignItems: "center", gap: 6,
+                        borderRadius: 8, padding: "6px 10px",
+                        background: active ? `${meta.color}10` : "#141414",
+                        border: `1px solid ${active ? meta.color + "50" : "#222"}`,
+                      }}>
+                      {/* Colour swatch + name */}
+                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: meta.color, flexShrink: 0 }} />
+                      <span style={{ fontSize: 11, fontWeight: 600, color: "#ccc", flex: 1, minWidth: 0 }}>{meta.label}</span>
+
+                      {/* Tone picker button */}
+                      <button onClick={() => setTonePicking(ch)}
+                        style={{
+                          padding: "2px 7px", borderRadius: 6, fontSize: 9, fontWeight: 700,
+                          border: `1px solid ${tone ? "#f0a500" : "#2a2a2a"}`,
+                          background: tone ? "#f0a50018" : "#1a1a1a",
+                          color: tone ? "#f0a500" : "#555",
+                          cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap",
+                        }}>
+                        {tone ? `${tone} · ${toneInfo?.hz}` : "set tone"}
+                      </button>
+
+                      {/* ON/OFF toggle */}
+                      <button onClick={() => onToggle(ch)}
+                        style={{
+                          padding: "2px 7px", borderRadius: 6, fontSize: 9, fontWeight: 700,
+                          border: `1px solid ${active ? "#4ade8060" : "#2a2a2a"}`,
+                          background: active ? "#4ade8018" : "#1a1a1a",
+                          color: active ? "#4ade80" : "#444",
+                          cursor: "pointer", flexShrink: 0,
+                        }}>
+                        {active ? "ON" : "OFF"}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         );
       })}
+
+      {/* Tone picker modal */}
+      {tonePicking && (() => {
+        const meta = DEPLOYMENT_CHANNELS[tonePicking];
+        return (
+          <TonePicker
+            channelLabel={`${meta.label} — ${meta.freq} MHz rx`}
+            currentTone={colourTones[tonePicking] ?? null}
+            onSelect={tone => onSetTone(tonePicking, tone)}
+            onClear={() => onSetTone(tonePicking, null)}
+            onClose={() => setTonePicking(null)}
+          />
+        );
+      })()}
     </div>
   );
 }
@@ -411,9 +564,7 @@ function ChannelPicker({ channels, onPick, onClose }: {
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
           <span style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>Select Channel</span>
           <button onClick={onClose}
-            style={{ color: "#666", fontSize: 18, lineHeight: 1, background: "none", border: "none", cursor: "pointer" }}>
-            ×
-          </button>
+            style={{ color: "#666", fontSize: 18, lineHeight: 1, background: "none", border: "none", cursor: "pointer" }}>×</button>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 6, maxHeight: 300, overflowY: "auto" }}>
           {Object.entries(channels).map(([ch, meta]) => (
@@ -561,6 +712,27 @@ function InfoPanel({ onClose, opMode }: { onClose: () => void; opMode: OpMode })
         </div>
       </div>
 
+      {opMode === "deployment" && (
+        <div style={{ marginBottom: 20 }}>
+          <h2 style={{ fontSize: 10, fontWeight: 700, color: "#f0a500", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>
+            NRS Zone Tones (Colour Channels)
+          </h2>
+          <div style={{ borderRadius: 12, border: "1px solid #222", overflow: "hidden", fontSize: 11 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", }}>
+              {NRS_TONES.map(({ key, hz }) => (
+                <div key={key} style={{ padding: "6px 12px", borderBottom: "1px solid #1a1a1a", borderRight: "1px solid #1a1a1a" }}>
+                  <span style={{ fontWeight: 700, color: "#f0a500" }}>{key}</span>
+                  <span style={{ color: "#666", marginLeft: 6, fontFamily: "monospace" }}>{hz} Hz</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ padding: "8px 12px", fontSize: 10, color: "#444" }}>
+              Zone tone set per district. Check handheld radio or district map. Not used on simplex/metal channels.
+            </div>
+          </div>
+        </div>
+      )}
+
       <div style={{ marginBottom: 20 }}>
         <h2 style={{ fontSize: 10, fontWeight: 700, color: "#f0a500", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Pi Access</h2>
         <div style={{ borderRadius: 12, border: "1px solid #222", padding: 12, fontSize: 11, color: "#888", lineHeight: 2.2 }}>
@@ -602,16 +774,21 @@ export default function FireBoxApp() {
   const [opMode, setOpMode] = useState<OpMode | null>(null);
   const [view, setView] = useState<View>("channels");
   const [activeChannels, setActiveChannels] = useState<string[]>(["wfd-ch2-scene", "wfd-ch6-ce"]);
+  const [colourTones, setColourTones] = useState<Record<string, string>>({});
   const [transcripts, setTranscripts] = useState<Transcript[]>([]);
   const [meshMessages, setMeshMessages] = useState<MeshMessage[]>([]);
   const [meshUnread, setMeshUnread] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const lastMeshId = useRef(0);
 
-  // Restore mode from localStorage on mount
+  // Restore mode + colour tones from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem("firebox_mode") as OpMode | null;
     if (stored === "whistler" || stored === "deployment") setOpMode(stored);
+    try {
+      const tones = JSON.parse(localStorage.getItem("firebox_colour_tones") ?? "{}");
+      if (typeof tones === "object") setColourTones(tones);
+    } catch {}
   }, []);
 
   const selectMode = (m: OpMode) => {
@@ -619,6 +796,14 @@ export default function FireBoxApp() {
     setOpMode(m);
     setView("channels");
     setShowInfo(false);
+  };
+
+  const handleSetTone = (ch: string, tone: string | null) => {
+    const updated = { ...colourTones };
+    if (tone === null) delete updated[ch];
+    else updated[ch] = tone;
+    setColourTones(updated);
+    localStorage.setItem("firebox_colour_tones", JSON.stringify(updated));
   };
 
   // Load active channels from API
@@ -629,7 +814,6 @@ export default function FireBoxApp() {
       .catch(() => {});
   }, []);
 
-  // Poll transcripts every 15s
   const fetchTranscripts = useCallback(async () => {
     try {
       const r = await fetch("/api/firebox?limit=80");
@@ -639,7 +823,6 @@ export default function FireBoxApp() {
     } catch {}
   }, []);
 
-  // Poll mesh messages every 10s
   const fetchMesh = useCallback(async () => {
     try {
       const r = await fetch(
@@ -680,7 +863,6 @@ export default function FireBoxApp() {
 
   const openInfo = () => { setShowInfo(true); setMeshUnread(false); };
 
-  // No mode selected — show full-screen mode selector
   if (!opMode) {
     return (
       <div style={{
@@ -712,7 +894,10 @@ export default function FireBoxApp() {
       ) : opMode === "whistler" ? (
         <WhistlerGrid activeChannels={activeChannels} onToggle={toggleChannel} />
       ) : (
-        <DeploymentGrid activeChannels={activeChannels} onToggle={toggleChannel} />
+        <DeploymentGrid
+          activeChannels={activeChannels} onToggle={toggleChannel}
+          colourTones={colourTones} onSetTone={handleSetTone}
+        />
       )}
     </div>
   );
