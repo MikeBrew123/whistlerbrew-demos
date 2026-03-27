@@ -20,11 +20,22 @@ type Transcript = {
 // Channel display names and accent colours for the feed.
 // Add new channels here as rtl_airband picks up more frequencies.
 const CHANNEL_STYLE: Record<string, { label: string; color: string }> = {
-  "wfd-ch1-dispatch": { label: "WFD Ch.1 Dispatch",       color: "#ff6b35" },
-  "wfd-ch2-scene":    { label: "WFD Ch.2 On Scene",        color: "#f0a500" },
-  "wfd-ch6-ce":       { label: "WFD Ch.6 Combined Events", color: "#a78bfa" },
-  "wfd-garibaldi":    { label: "WFD Ch.5 Garibaldi",       color: "#00a8ff" },
-  "wfd-dispatch":     { label: "WFD Ch.2 On Scene",        color: "#f0a500" }, // legacy
+  // WFD Fire channels
+  "wfd-ch1-dispatch":   { label: "WFD Ch.1 Dispatch",       color: "#ff6b35" },
+  "wfd-ch2-scene":      { label: "WFD Ch.2 On Scene",        color: "#f0a500" },
+  "wfd-ch6-ce":         { label: "WFD Ch.6 Combined Events", color: "#fb923c" },
+  // Whistler Blackcomb
+  "wb-patrol-whistler": { label: "WB Whistler Patrol",       color: "#38bdf8" },
+  "wb-patrol-blackcomb":{ label: "WB Blackcomb Patrol",      color: "#22d3ee" },
+  "wb-lift-ops":        { label: "WB Lift Ops",              color: "#67e8f9" },
+  "wb-ops":             { label: "WB Operations",            color: "#a5f3fc" },
+  "wb-heliski":         { label: "WB Heliskiing",            color: "#7dd3fc" },
+  // BCWS NRS
+  "bcws-titanium":      { label: "NRS Titanium",             color: "#4ade80" },
+  "bcws-platinum":      { label: "NRS Platinum",             color: "#86efac" },
+  // Legacy keys
+  "wfd-garibaldi":      { label: "WFD Ch.5 Garibaldi",       color: "#00a8ff" },
+  "wfd-dispatch":       { label: "WFD Ch.2 On Scene",        color: "#f0a500" },
 };
 
 function channelStyle(channel: string) {
@@ -136,7 +147,11 @@ function FireBoxFeed() {
   }, [fetchTranscripts, live]);
 
   // Always show all monitored channels as tabs, even before any traffic arrives
-  const MONITORED_CHANNELS = ["wfd-ch1-dispatch", "wfd-ch2-scene", "wfd-ch6-ce"];
+  const MONITORED_CHANNELS = [
+    "wfd-ch1-dispatch", "wfd-ch2-scene", "wfd-ch6-ce",
+    "wb-patrol-whistler", "wb-patrol-blackcomb", "wb-lift-ops",
+    "wb-ops", "wb-heliski", "bcws-titanium", "bcws-platinum",
+  ];
   const activeChannels = Array.from(new Set([...MONITORED_CHANNELS, ...transcripts.map((t) => t.channel)]));
 
   return (
