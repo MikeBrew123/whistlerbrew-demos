@@ -220,7 +220,7 @@ function FireBoxFeed() {
             </span>
             <audio
               controls
-              src={`https://firebox.tail4bb545.ts.net/${channelFilter}`}
+              src={`https://firebox.tail4bb545.ts.net/${channelFilter}.mp3`}
               className="w-full h-8"
               style={{ colorScheme: "dark" }}
             />
