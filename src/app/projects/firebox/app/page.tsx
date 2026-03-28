@@ -608,8 +608,8 @@ function ChannelPicker({ channels, onPick, onClose }: {
   );
 }
 
-function MonitorView({ transcripts, meshMessages, opMode }: {
-  transcripts: Transcript[]; meshMessages: MeshMessage[]; opMode: OpMode;
+function MonitorView({ transcripts, meshTranscripts, opMode }: {
+  transcripts: Transcript[]; meshTranscripts: Transcript[]; opMode: OpMode;
 }) {
   const defaultPrimary = opMode === "whistler" ? "wfd-ch2-scene" : "bcws-ofc1";
   const defaultSecondary = opMode === "whistler" ? "wfd-ch6-ce" : "bcws-ofc2";
@@ -658,18 +658,20 @@ function MonitorView({ transcripts, meshMessages, opMode }: {
         </div>
       </div>
 
-      {meshMessages.length > 0 && (
+      {meshTranscripts.length > 0 && (
         <div style={{
           display: "flex", alignItems: "center", gap: 8, padding: "0 12px",
           height: 44, borderTop: "1px solid #1a1a1a", background: "#0a0a0a",
           flexShrink: 0, overflow: "hidden",
         }}>
-          <span style={{ fontSize: 12, color: "#4ade80", flexShrink: 0 }}>📡</span>
-          <span style={{ fontSize: 12, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#aaa" }}>
-            <span style={{ color: "#4ade80", marginRight: 6 }}>{meshMessages[0].sender ?? "Mesh"}</span>
-            {meshMessages[0].message}
+          <span style={{ fontSize: 12, color: meshTranscripts[0].channel === "mesh-weather" ? "#38bdf8" : "#4ade80", flexShrink: 0 }}>
+            {meshTranscripts[0].channel === "mesh-weather" ? "📡 WX" : "📡"}
           </span>
-          <span style={{ fontSize: 11, color: "#444", flexShrink: 0 }}>{formatTime(meshMessages[0].sent_at)}</span>
+          <span style={{ fontSize: 12, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#aaa" }}>
+            <span style={{ color: "#888", marginRight: 6 }}>{meshTranscripts[0].speaker ?? "Mesh"}</span>
+            {meshTranscripts[0].transcript}
+          </span>
+          <span style={{ fontSize: 11, color: "#444", flexShrink: 0 }}>{formatTime(meshTranscripts[0].timestamp)}</span>
         </div>
       )}
 
@@ -846,29 +848,14 @@ export default function FireBoxApp() {
     } catch {}
   }, []);
 
-  const fetchMesh = useCallback(async () => {
-    try {
-      const r = await fetch(
-        "https://bdgmpkbbohbucwoiucyw.supabase.co/rest/v1/firebox_mesh?order=sent_at.desc&limit=20",
-        { headers: { "apikey": SUPABASE_ANON, "Authorization": `Bearer ${SUPABASE_ANON}` } }
-      );
-      if (!r.ok) return;
-      const msgs: MeshMessage[] = await r.json();
-      if (msgs.length > 0 && msgs[0].id > lastMeshId.current) {
-        if (lastMeshId.current > 0) setMeshUnread(true);
-        lastMeshId.current = msgs[0].id;
-      }
-      setMeshMessages(msgs);
-    } catch {}
-  }, []);
-
   useEffect(() => {
     fetchTranscripts();
-    fetchMesh();
     const t1 = setInterval(fetchTranscripts, 15000);
-    const t2 = setInterval(fetchMesh, 10000);
-    return () => { clearInterval(t1); clearInterval(t2); };
-  }, [fetchTranscripts, fetchMesh]);
+    return () => clearInterval(t1);
+  }, [fetchTranscripts]);
+
+  // Derive mesh messages from transcripts
+  const meshTranscripts = transcripts.filter(t => t.channel.startsWith("mesh-"));
 
   const toggleChannel = async (ch: string) => {
     const updated = activeChannels.includes(ch)
@@ -913,7 +900,7 @@ export default function FireBoxApp() {
       {showInfo ? (
         <InfoPanel onClose={() => setShowInfo(false)} opMode={opMode} />
       ) : view === "monitor" ? (
-        <MonitorView transcripts={transcripts} meshMessages={meshMessages} opMode={opMode} />
+        <MonitorView transcripts={transcripts} meshTranscripts={meshTranscripts} opMode={opMode} />
       ) : opMode === "whistler" ? (
         <WhistlerGrid activeChannels={activeChannels} onToggle={toggleChannel} />
       ) : (
