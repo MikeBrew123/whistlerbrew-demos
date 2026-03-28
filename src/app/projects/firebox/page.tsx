@@ -80,6 +80,106 @@ function ageLabel(iso: string): { text: string; color: string } {
   return { text: "stale", color: "#555" };
 }
 
+// ── Mesh compose ───────────────────────────────────────────────────────────────
+
+const OUTBOX_URL = `${SUPABASE_URL}/rest/v1/firebox_outbox`;
+const SB_HEADERS = { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` };
+
+async function sendMesh(message: string): Promise<boolean> {
+  try {
+    const r = await fetch(OUTBOX_URL, {
+      method: "POST",
+      headers: { ...SB_HEADERS, "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify({ message }),
+    });
+    return r.ok;
+  } catch { return false; }
+}
+
+function MeshCompose({ replyTo, onClose }: { replyTo?: string; onClose: () => void }) {
+  const [text, setText]   = useState(replyTo ? `↩ ` : "");
+  const [busy, setBusy]   = useState(false);
+  const [sent, setSent]   = useState(false);
+  const taRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => { taRef.current?.focus(); }, []);
+
+  const submit = async () => {
+    if (!text.trim() || busy) return;
+    setBusy(true);
+    const ok = await sendMesh(text.trim());
+    setBusy(false);
+    if (ok) { setSent(true); setTimeout(onClose, 1200); }
+  };
+
+  return (
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 100,
+      background: "rgba(0,0,0,0.85)", backdropFilter: "blur(6px)",
+      display: "flex", alignItems: "center", justifyContent: "center", padding: 24,
+    }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
+      <div style={{
+        width: "100%", maxWidth: 480,
+        background: "#0a1a0a", border: "1px solid #1a3a1a",
+        borderRadius: 16, overflow: "hidden",
+        boxShadow: "0 24px 64px rgba(0,0,0,0.6)",
+      }}>
+        {/* Header */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px", borderBottom: "1px solid #0d1f0d" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ fontSize: 14 }}>📡</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "#4ade80" }}>Send Mesh Message</span>
+          </div>
+          <button onClick={onClose} style={{ background: "none", border: "none", color: "#555", fontSize: 18, cursor: "pointer", lineHeight: 1 }}>×</button>
+        </div>
+
+        {/* Body */}
+        <div style={{ padding: 20 }}>
+          {sent ? (
+            <div style={{ textAlign: "center", padding: "24px 0", color: "#4ade80" }}>
+              <div style={{ fontSize: 28, marginBottom: 8 }}>✓</div>
+              <div style={{ fontSize: 13 }}>Message queued — Brew1 will transmit shortly</div>
+            </div>
+          ) : (
+            <>
+              <textarea
+                ref={taRef}
+                value={text}
+                onChange={e => setText(e.target.value)}
+                onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit(); }}
+                placeholder="Type a message…"
+                rows={4}
+                style={{
+                  width: "100%", boxSizing: "border-box",
+                  background: "#060e06", border: "1px solid #1a3a1a",
+                  borderRadius: 10, padding: "12px 14px",
+                  color: "#c8f0c8", fontSize: 14, lineHeight: 1.5,
+                  resize: "none", outline: "none", fontFamily: "inherit",
+                }}
+              />
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 12 }}>
+                <span style={{ fontSize: 11, color: "#2a5a2a" }}>⌘↵ to send · transmits via Brew1</span>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <button onClick={onClose} style={{
+                    padding: "8px 16px", borderRadius: 8, border: "1px solid #1a3a1a",
+                    background: "transparent", color: "#555", fontSize: 13, cursor: "pointer",
+                  }}>Cancel</button>
+                  <button onClick={submit} disabled={busy || !text.trim()} style={{
+                    padding: "8px 20px", borderRadius: 8, border: "none",
+                    background: busy ? "#1a3a1a" : "#166534",
+                    color: busy ? "#2a5a2a" : "#4ade80",
+                    fontSize: 13, fontWeight: 600, cursor: busy ? "default" : "pointer",
+                  }}>{busy ? "Sending…" : "Send"}</button>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Weather panel ───────────────────────────────────────────────────────────────
 
 function WeatherNodeCard({ nodeHistory }: { nodeHistory: WeatherReading[] }) {
@@ -291,6 +391,7 @@ function FireBoxFeed() {
   const [meshMessages,   setMeshMessages]   = useState<Transcript[]>([]);
   const [weatherHistory, setWeatherHistory] = useState<WeatherReading[]>([]);
   const [channelFilter,  setFilter]         = useState<string>("all");
+  const [compose,        setCompose]        = useState<{ replyTo?: string } | null>(null);
   const [lastUpdated,  setLastUpdated]  = useState<Date | null>(null);
   const [live,   setLive]       = useState(true);
   const [offset, setOffset]     = useState(0);
@@ -408,10 +509,16 @@ function FireBoxFeed() {
               {live ? "LIVE" : "PAUSED"}
             </span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             {lastUpdated && (
               <span style={{ fontSize: 11, color: "#444" }}>Updated {formatTime(lastUpdated.toISOString())}</span>
             )}
+            <button onClick={() => setCompose({})} style={{
+              fontSize: 12, padding: "5px 14px", borderRadius: 8,
+              border: "1px solid #1a3a1a", background: "#0a1a0a",
+              color: "#4ade80", cursor: "pointer", display: "flex", alignItems: "center", gap: 5,
+              fontWeight: 600,
+            }}>📡 Mesh</button>
             <button onClick={() => setLive(v => !v)} style={{
               fontSize: 12, padding: "5px 12px", borderRadius: 8,
               border: "1px solid #222", background: "transparent",
@@ -528,6 +635,13 @@ function FireBoxFeed() {
                     fontSize: 14, lineHeight: 1.55, margin: 0,
                     color: isMesh ? s.color + "dd" : "#d0d0d0",
                   }}>{tx.transcript}</p>
+                  {isMesh && !isWx && (
+                    <button onClick={() => setCompose({ replyTo: tx.speaker ?? undefined })} style={{
+                      marginTop: 10, padding: "4px 12px", borderRadius: 6,
+                      border: "1px solid #1a3a1a", background: "transparent",
+                      color: "#2a6a2a", fontSize: 11, cursor: "pointer",
+                    }}>↩ Reply</button>
+                  )}
                 </div>
               );
             })
@@ -548,6 +662,8 @@ function FireBoxFeed() {
       <footer style={{ borderTop: "1px solid #141414", padding: "12px 24px", textAlign: "center", fontSize: 11, color: "#2a2a2a" }}>
         WhistlerBrew FireBox · Sea to Sky Radio
       </footer>
+
+      {compose && <MeshCompose replyTo={compose.replyTo} onClose={() => setCompose(null)} />}
 
       <style>{`
         @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
