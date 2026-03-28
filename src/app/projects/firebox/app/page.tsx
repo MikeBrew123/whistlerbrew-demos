@@ -120,6 +120,69 @@ function formatTime(iso: string) {
   } catch { return iso; }
 }
 
+function parseWeather(transcript: string): { temp?: number; humidity?: number; pressure?: number } {
+  const out: { temp?: number; humidity?: number; pressure?: number } = {};
+  for (const part of transcript.split("|").map(p => p.trim())) {
+    const t = part.match(/^Temp:\s*([\d.]+)C$/);       if (t) out.temp     = parseFloat(t[1]);
+    const h = part.match(/^Humidity:\s*([\d.]+)%$/);    if (h) out.humidity = parseFloat(h[1]);
+    const p = part.match(/^Pressure:\s*([\d.]+)\s*hPa$/); if (p) out.pressure = parseFloat(p[1]);
+  }
+  return out;
+}
+
+// ── Kiosk weather bar ─────────────────────────────────────────────────────────
+
+function KioskWeatherBar({ weatherTranscripts }: { weatherTranscripts: Transcript[] }) {
+  // Latest reading per node
+  const byNode: Record<string, Transcript> = {};
+  for (const t of weatherTranscripts) {
+    const node = t.speaker ?? "Node";
+    if (!byNode[node]) byNode[node] = t;
+  }
+  const nodes = Object.entries(byNode);
+  if (nodes.length === 0) return null;
+
+  return (
+    <div style={{
+      height: 36, background: "#060d06", borderBottom: "1px solid #172617",
+      display: "flex", alignItems: "center", flexShrink: 0, overflow: "hidden",
+    }}>
+      <style>{`@keyframes kWxPulse { 0%,100%{opacity:1} 50%{opacity:0.35} }`}</style>
+      <div style={{
+        flexShrink: 0, height: "100%", padding: "0 10px",
+        display: "flex", alignItems: "center", borderRight: "1px solid #172617",
+      }}>
+        <span style={{ fontSize: 9, fontWeight: 800, letterSpacing: 1.5, color: "#38bdf8" }}>WX</span>
+      </div>
+      {nodes.map(([node, tx]) => {
+        const w = parseWeather(tx.transcript);
+        const crossover = w.temp != null && w.humidity != null && w.temp >= w.humidity;
+        const extreme   = w.temp != null && w.humidity != null && w.temp >= 30 && w.humidity <= 15;
+        const accent    = extreme ? "#ef4444" : crossover ? "#f97316" : "#38bdf8";
+        return (
+          <div key={node} style={{
+            display: "flex", alignItems: "center", gap: 7, padding: "0 12px",
+            height: "100%", borderRight: "1px solid #172617",
+            borderLeft: crossover ? `2px solid ${accent}` : "2px solid transparent",
+            animation: extreme ? "kWxPulse 1.2s ease-in-out infinite" : undefined,
+          }}>
+            <span style={{ fontSize: 9, color: "#2d6a2d", letterSpacing: 0.5 }}>{node}</span>
+            {w.temp     != null && <span style={{ fontSize: 12, fontWeight: 700, color: accent,    fontFamily: "monospace" }}>{w.temp.toFixed(1)}°C</span>}
+            {w.humidity != null && <span style={{ fontSize: 12, fontWeight: 600, color: crossover ? accent : "#64b5f6", fontFamily: "monospace" }}>{w.humidity.toFixed(0)}%</span>}
+            {w.pressure != null && <span style={{ fontSize: 9, color: "#2d4a2d", fontFamily: "monospace" }}>{w.pressure.toFixed(0)}hPa</span>}
+            {crossover && (
+              <span style={{
+                fontSize: 8, fontWeight: 800, letterSpacing: 0.5, padding: "1px 4px",
+                borderRadius: 3, color: accent, background: `${accent}18`,
+              }}>{extreme ? "EXTREME" : "XOVER"}</span>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 // ── Audio manager ─────────────────────────────────────────────────────────────
 
 class AudioManager {
@@ -1076,6 +1139,8 @@ export default function FireBoxApp() {
       />
 
       <MeshTicker messages={meshTranscripts} onReply={() => setShowCompose(true)} />
+
+      <KioskWeatherBar weatherTranscripts={meshTranscripts.filter(t => t.channel === "mesh-weather")} />
 
       {showInfo ? (
         <InfoPanel onClose={() => setShowInfo(false)} opMode={opMode} />
