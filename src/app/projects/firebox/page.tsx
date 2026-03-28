@@ -15,21 +15,42 @@ type Transcript = {
 
 const TRANSCRIBE_CHANNELS = new Set(["wfd-ch2-scene", "wfd-ch6-ce"]);
 
-const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string; icon?: string }> = {
-  "wfd-ch2-scene":       { label: "WFD On Scene",        code: "WFD·CH2",  color: "#f0a500" },
-  "wfd-ch6-ce":          { label: "WFD Comb. Events",    code: "WFD·CH6",  color: "#fb923c" },
-  "wb-patrol-whistler":  { label: "WB Whistler Patrol",  code: "WB·PTRL-W",color: "#38bdf8" },
-  "wb-patrol-blackcomb": { label: "WB Blackcomb Patrol", code: "WB·PTRL-B",color: "#22d3ee" },
-  "wb-lift-ops":         { label: "WB Lift Ops",         code: "WB·LIFT",  color: "#67e8f9" },
-  "wb-ops":              { label: "WB Operations",       code: "WB·OPS",   color: "#a5f3fc" },
-  "wb-heliski":          { label: "WB Heliskiing",       code: "WB·HELI",  color: "#7dd3fc" },
-  "mesh-text":           { label: "Mesh · Text",         code: "MESH·TXT", color: "#39d353", icon: "📡" },
-  "mesh-weather":        { label: "Mesh · Weather",      code: "MESH·WX",  color: "#38bdf8", icon: "🌡" },
+// D2 = requires Dongle 2 (150.5 MHz center) · D2D = Dongle 2 deployment profile (163.9 MHz) · D3 = Dongle 3 (142.5 MHz)
+const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string; icon?: string; dongle?: string }> = {
+  // ── Dongle 1 (151.22–153.78 MHz) ──────────────────────────────────────────
+  "wfd-ch2-scene":       { label: "WFD On Scene",          code: "WFD·CH2",   color: "#f0a500" },
+  "wfd-ch6-ce":          { label: "WFD Comb. Events",      code: "WFD·CH6",   color: "#fb923c" },
+  "wb-lift-ops":         { label: "WB Lift Ops",           code: "WB·LIFT",   color: "#67e8f9" },
+  "wb-ops":              { label: "WB Operations",         code: "WB·OPS",    color: "#a5f3fc" },
+  "wb-heliski":          { label: "WB Heliskiing",         code: "WB·HELI",   color: "#7dd3fc" },
+  // ── Dongle 2 (149.22–151.78 MHz) ──────────────────────────────────────────
+  "wfd-ch5-garibaldi":   { label: "WFD Garibaldi M/A",     code: "WFD·CH5",   color: "#fdba74", dongle: "D2" },
+  "bcas-whistler":       { label: "BCAS Whistler",         code: "BCAS·W",    color: "#f87171", dongle: "D2" },
+  "pep-sar1":            { label: "PEP SAR 1",             code: "SAR·1",     color: "#c084fc", dongle: "D2" },
+  "pep-sar2":            { label: "PEP SAR 2",             code: "SAR·2",     color: "#a78bfa", dongle: "D2" },
+  "canada-sar":          { label: "Canada-Wide SAR",       code: "SAR·CAN",   color: "#818cf8", dongle: "D2" },
+  // ── Dongle 2 — Deployment profile (162–165 MHz) ───────────────────────────
+  "wfd-ch3-lost-lake":   { label: "WFD Lost Lake",         code: "WFD·CH3",   color: "#fbbf24", dongle: "D2D" },
+  "wfd-ch4-cheakamus":   { label: "WFD Cheakamus",         code: "WFD·CH4",   color: "#fcd34d", dongle: "D2D" },
+  // ── Dongle 3 (142.5 MHz) ──────────────────────────────────────────────────
+  "ehs-mount-london":    { label: "EHS Mt. London",        code: "EHS·MTNLN", color: "#fb7185", dongle: "D3" },
+  // ── Mesh ──────────────────────────────────────────────────────────────────
+  "mesh-text":           { label: "Mesh · Text",           code: "MESH·TXT",  color: "#39d353", icon: "📡" },
+  "mesh-weather":        { label: "Mesh · Weather",        code: "MESH·WX",   color: "#38bdf8", icon: "🌡" },
 };
 
+// Channels actively captured by Dongle 1 right now
 const MONITORED_CHANNELS = [
-  "wfd-ch2-scene","wfd-ch6-ce",
-  "wb-patrol-whistler","wb-patrol-blackcomb","wb-lift-ops","wb-ops","wb-heliski",
+  "wfd-ch2-scene", "wfd-ch6-ce",
+  "wb-lift-ops", "wb-ops", "wb-heliski",
+];
+
+// Planned channels (D2/D3 not yet connected) — shown in UI with dongle badge
+const PLANNED_CHANNELS = [
+  "wfd-ch5-garibaldi", "bcas-whistler",
+  "pep-sar1", "pep-sar2", "canada-sar",
+  "wfd-ch3-lost-lake", "wfd-ch4-cheakamus",
+  "ehs-mount-london",
 ];
 
 function ch(channel: string) {
@@ -541,11 +562,13 @@ function FireBoxFeed() {
 
   const activeChannels = Array.from(new Set([
     ...MONITORED_CHANNELS,
+    ...PLANNED_CHANNELS,
     ...transcripts.map(t => t.channel).filter(c => !c.startsWith("mesh-")),
   ]));
 
   const isMeshFilter = channelFilter.startsWith("mesh-");
-  const isAudioOnly  = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter) && !isMeshFilter;
+  const isPlanned    = PLANNED_CHANNELS.includes(channelFilter);
+  const isAudioOnly  = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter) && !isMeshFilter && !isPlanned;
   const filteredTx   = channelFilter === "all"
     ? transcripts
     : transcripts.filter(t => t.channel === channelFilter);
@@ -617,25 +640,35 @@ function FireBoxFeed() {
       <div style={{ borderBottom: "1px solid #0e1a0e", padding: "0 24px", overflowX: "auto", background: "#060b06" }}>
         <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", gap: 1, paddingTop: 8 }}>
           {(["all", ...activeChannels, "mesh-text", "mesh-weather"] as string[]).map(c => {
-            const s  = c === "all" ? { label: "ALL", code: "ALL", color: "#4a6a4a" } : ch(c);
-            const active = channelFilter === c;
-            const isMesh = c.startsWith("mesh-");
-            const audioOnly = c !== "all" && !TRANSCRIBE_CHANNELS.has(c) && !isMesh;
+            const s       = c === "all" ? { label: "ALL", code: "ALL", color: "#4a6a4a", dongle: undefined } : ch(c);
+            const active  = channelFilter === c;
+            const isMesh  = c.startsWith("mesh-");
+            const planned = PLANNED_CHANNELS.includes(c);
+            const dongle  = (s as { dongle?: string }).dongle;
+            const dongleColor = dongle === "D3" ? "#fb7185" : dongle === "D2D" ? "#fbbf24" : "#a78bfa";
             return (
               <button key={c} onClick={() => setFilter(c)} className="fb-tab" style={{
-                padding: "5px 12px 7px", cursor: "pointer", border: "none",
+                padding: "5px 10px 7px", cursor: "pointer", border: "none",
                 borderBottom: active ? `2px solid ${s.color}` : "2px solid transparent",
-                borderTop: "1px solid transparent",
+                borderTop: planned && !active ? "1px solid #1a1a1a" : "1px solid transparent",
                 background: active ? `${s.color}12` : "transparent",
-                color: active ? s.color : "#2a4a2a",
+                color: active ? s.color : planned ? "#283828" : "#2a4a2a",
                 fontFamily: "'Rajdhani',sans-serif", fontWeight: active ? 700 : 600,
                 fontSize: 10, letterSpacing: active ? 2 : 1.5,
                 whiteSpace: "nowrap", transition: "all 0.15s",
                 display: "flex", alignItems: "center", gap: 4,
+                opacity: planned && !active ? 0.6 : 1,
               }}>
-                {audioOnly && <span style={{ opacity: 0.5, fontSize: 9 }}>♪</span>}
                 {isMesh && <span style={{ fontSize: 9 }}>{(CHANNEL_STYLE[c] as { icon?: string })?.icon}</span>}
                 {s.code ?? s.label}
+                {dongle && (
+                  <span style={{
+                    fontSize: 7, fontFamily: "'JetBrains Mono',monospace",
+                    color: active ? dongleColor : dongleColor + "80",
+                    letterSpacing: 0, fontWeight: 700,
+                    padding: "0 3px", border: `1px solid ${dongleColor}40`,
+                  }}>{dongle}</span>
+                )}
               </button>
             );
           })}
@@ -643,7 +676,7 @@ function FireBoxFeed() {
       </div>
 
       {/* ── Audio player ── */}
-      {channelFilter !== "all" && !isMeshFilter && (
+      {channelFilter !== "all" && !isMeshFilter && !isPlanned && (
         <div style={{ borderBottom: "1px solid #0e1a0e", padding: "8px 24px", background: "#050905" }}>
           <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", alignItems: "center", gap: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
@@ -660,7 +693,19 @@ function FireBoxFeed() {
       <main style={{ flex: 1, overflowY: "auto", padding: "16px 24px" }} ref={feedRef}>
         <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", flexDirection: "column", gap: 8 }}>
 
-          {isAudioOnly ? (
+          {isPlanned ? (
+            <div style={{ textAlign: "center", padding: "80px 0" }}>
+              {(() => { const s = ch(channelFilter); const d = (s as {dongle?:string}).dongle ?? "D2"; const dc = d === "D3" ? "#fb7185" : d === "D2D" ? "#fbbf24" : "#a78bfa"; return (
+                <>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: dc, letterSpacing: 2, marginBottom: 12,
+                    padding: "4px 14px", border: `1px solid ${dc}40`, display: "inline-block" }}>{d} REQUIRED</div>
+                  <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: 4, color: s.color, marginBottom: 8 }}>{s.code}</div>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1e3a1e" }}>{s.label.toUpperCase()}</div>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1a2a1a", marginTop: 8 }}>DONGLE NOT YET CONNECTED · PENDING HARDWARE</div>
+                </>
+              ); })()}
+            </div>
+          ) : isAudioOnly ? (
             <div style={{ textAlign: "center", padding: "80px 0" }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 32, color: "#1a3a1a", marginBottom: 16 }}>♪</div>
               <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: 4, color: "#2a5a2a" }}>{ch(channelFilter).code}</div>
