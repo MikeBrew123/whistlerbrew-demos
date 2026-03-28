@@ -92,6 +92,35 @@ function QualityBadge({ signal, readability }: { signal?: number; readability?: 
 
 type WeatherReading = { ts: string; node: string; temp?: number; humidity?: number; pressure?: number; };
 
+type Incident = {
+  id: string; name: string; start_at: string;
+  end_at?: string; status: "active" | "closed"; notes?: string;
+};
+
+// ── Keyword alerting ──────────────────────────────────────────────────────────
+const ALERT_KEYWORDS = [
+  "mayday","may day","structure fire","working fire","evacuation","evacuate",
+  "missing person","overrun","spot fire","cardiac","unconscious","entrapment",
+];
+function detectKeyword(text: string): string | null {
+  const lower = text.toLowerCase();
+  return ALERT_KEYWORDS.find(k => lower.includes(k)) ?? null;
+}
+
+// ── Incident helpers ──────────────────────────────────────────────────────────
+function fmtIncidentDuration(start: string, end?: string): string {
+  const ms  = new Date(end ?? new Date()).getTime() - new Date(start).getTime();
+  const h   = Math.floor(ms / 3600000);
+  const m   = Math.floor((ms % 3600000) / 60000);
+  return h > 0 ? `${h}h ${m}m` : `${m}m`;
+}
+
+function fmtDate(iso: string) {
+  return new Date(iso).toLocaleString("en-CA", {
+    month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false,
+  });
+}
+
 function parseWeather(transcript: string, speaker?: string, ts?: string): WeatherReading {
   const r: WeatherReading = { ts: ts ?? "", node: speaker ?? "?" };
   for (const part of transcript.split("|")) {
@@ -514,7 +543,16 @@ function FireBoxFeed() {
   const [offset,  setOffset]  = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [nodeAliases, setNodeAliases] = useState<Record<string, string>>({});
+  const [nodeAliases,    setNodeAliases]    = useState<Record<string, string>>({});
+  const [incidents,      setIncidents]      = useState<Incident[]>([]);
+  const [showIncident,   setShowIncident]   = useState(false);
+  const [showExport,     setShowExport]     = useState<Incident | null>(null);
+  const [exportData,     setExportData]     = useState<string>("");
+  const [exportLoading,  setExportLoading]  = useState(false);
+  const [keyword,        setKeyword]        = useState<string | null>(null);
+  const [incidentForm,   setIncidentForm]   = useState({ name: "", start_at: "" });
+
+  const activeIncident = incidents.find(i => i.status === "active") ?? null;
 
   // Resolve display name: alias map → raw speaker value
   const resolveName = useCallback((speaker?: string) => {
@@ -590,13 +628,92 @@ function FireBoxFeed() {
   // Fetch node aliases once on mount, refresh every 5 min
   useEffect(() => {
     const load = () => fetch("/api/firebox-provision")
-      .then(r => r.ok ? r.json() : {})
-      .then(d => setNodeAliases(d))
-      .catch(() => {});
-    load();
-    const t = setInterval(load, 300000);
-    return () => clearInterval(t);
+      .then(r => r.ok ? r.json() : {}).then(d => setNodeAliases(d)).catch(() => {});
+    load(); const t = setInterval(load, 300000); return () => clearInterval(t);
   }, []);
+
+  // Fetch incidents
+  const fetchIncidents = useCallback(async () => {
+    const r = await fetch("/api/firebox-incidents").catch(() => null);
+    if (r?.ok) { const d = await r.json(); setIncidents(d.incidents ?? []); }
+  }, []);
+  useEffect(() => { fetchIncidents(); }, [fetchIncidents]);
+
+  // Keyword scan — check newest 3 transcripts on each fetch
+  useEffect(() => {
+    for (const tx of transcripts.slice(0, 3)) {
+      const hit = detectKeyword(tx.transcript);
+      if (hit) { setKeyword(hit); return; }
+    }
+  }, [transcripts]);
+
+  const startIncident = async () => {
+    if (!incidentForm.name.trim()) return;
+    await fetch("/api/firebox-incidents", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: incidentForm.name, start_at: incidentForm.start_at || undefined }),
+    });
+    setShowIncident(false); setIncidentForm({ name: "", start_at: "" }); fetchIncidents();
+  };
+
+  const endIncident = async (id: string) => {
+    await fetch("/api/firebox-incidents", {
+      method: "PATCH", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, status: "closed" }),
+    });
+    fetchIncidents();
+  };
+
+  const exportIncident = async (inc: Incident) => {
+    setExportLoading(true); setShowExport(inc);
+    const r = await fetch(`/api/firebox-incidents?id=${inc.id}`, { method: "DELETE" }).catch(() => null);
+    if (!r?.ok) { setExportLoading(false); return; }
+    const d = await r.json();
+    const txs: Array<{ channel: string; recorded_at: string; speaker: string | null; transcript: string }> = d.transcripts ?? [];
+
+    const CHANNEL_LABELS: Record<string, string> = {
+      "wfd-ch2-scene": "WFD ON SCENE", "wfd-ch6-ce": "WFD COMB.EVENTS",
+      "mesh-text": "MESH·TEXT", "mesh-weather": "MESH·WEATHER",
+    };
+    const speakers = new Set(txs.map(t => t.speaker).filter(Boolean));
+    const byCh: Record<string, number> = {};
+    txs.forEach(t => { byCh[t.channel] = (byCh[t.channel] ?? 0) + 1; });
+
+    const lines = [
+      "╔══════════════════════════════════════════════════════╗",
+      "║            FIREBOX DEBRIEF EXPORT                    ║",
+      "╚══════════════════════════════════════════════════════╝",
+      "",
+      `INCIDENT : ${inc.name}`,
+      `START    : ${fmtDate(inc.start_at)}`,
+      `END      : ${inc.end_at ? fmtDate(inc.end_at) : "ONGOING"}`,
+      `DURATION : ${fmtIncidentDuration(inc.start_at, inc.end_at)}`,
+      `EXPORTED : ${fmtDate(new Date().toISOString())}`,
+      "",
+      "── UNITS DEPLOYED ────────────────────────────────────",
+      Array.from(speakers).join(" · ") || "(none recorded)",
+      "",
+      "── CHANNEL ACTIVITY ──────────────────────────────────",
+      ...Object.entries(byCh).map(([ch, n]) => `  ${(CHANNEL_LABELS[ch] ?? ch).padEnd(22)} ${n} transmissions`),
+      "",
+      `── TRANSCRIPTS (${txs.length} total) ──────────────────────────`,
+      "",
+      ...txs.filter(t => !t.channel.startsWith("mesh-weather")).map(t =>
+        `[${new Date(t.recorded_at).toLocaleTimeString("en-CA",{hour12:false})}] ${(CHANNEL_LABELS[t.channel]??t.channel).padEnd(18)} ${t.speaker ? `[${t.speaker}] ` : ""}${t.transcript}`
+      ),
+      "",
+      "── WEATHER READINGS ──────────────────────────────────",
+      "",
+      ...txs.filter(t => t.channel === "mesh-weather").map(t =>
+        `[${new Date(t.recorded_at).toLocaleTimeString("en-CA",{hour12:false})}] ${t.speaker ?? ""} ${t.transcript}`
+      ),
+      "",
+      "══════════════════════════════════════════════════════",
+      "Paste this block into Claude to generate your debrief.",
+      "══════════════════════════════════════════════════════",
+    ];
+    setExportData(lines.join("\n")); setExportLoading(false);
+  };
 
   useEffect(() => { setOffset(0); setHasMore(true); }, [channelFilter]);
   useEffect(() => {
@@ -664,6 +781,12 @@ function FireBoxFeed() {
                 ↻ {formatTime(lastUpdated.toISOString())}
               </span>
             )}
+            <button onClick={() => setShowIncident(true)} className="fb-btn" style={{
+              padding: "5px 12px", border: `1px solid ${activeIncident ? "#f0a50040" : "#1a3a1a"}`,
+              background: activeIncident ? "#1a0e00" : "#060e06",
+              color: activeIncident ? "#f0a500" : "#2a5a2a", cursor: "pointer",
+              fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: 1.5,
+            }}>{activeIncident ? `⚡ ${activeIncident.name.toUpperCase()}` : "+ INCIDENT"}</button>
             <button onClick={() => setCompose({})} className="fb-btn" style={{
               padding: "5px 14px", border: "1px solid #1a3a1a", background: "#060e06",
               color: "#39d353", cursor: "pointer", display: "flex", alignItems: "center", gap: 5,
@@ -677,6 +800,23 @@ function FireBoxFeed() {
           </div>
         </div>
       </header>
+
+      {/* ── Keyword alert ── */}
+      {keyword && (
+        <div style={{
+          background: "#3a0000", borderBottom: "1px solid #ff000040",
+          padding: "8px 24px", display: "flex", alignItems: "center", justifyContent: "space-between",
+          animation: "pulse 1s ease-in-out 3",
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ fontSize: 16 }}>🚨</span>
+            <span style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 800, fontSize: 13, letterSpacing: 2, color: "#ff4444" }}>
+              KEYWORD DETECTED: {keyword.toUpperCase()}
+            </span>
+          </div>
+          <button onClick={() => setKeyword(null)} style={{ background: "none", border: "none", color: "#ff444480", cursor: "pointer", fontSize: 18 }}>×</button>
+        </div>
+      )}
 
       {/* ── Mesh ticker ── */}
       <MeshTicker messages={meshMessages} />
@@ -862,6 +1002,121 @@ function FireBoxFeed() {
       </footer>
 
       {compose && <MeshCompose replyTo={compose.replyTo} onClose={() => setCompose(null)} />}
+
+      {/* ── Incident Modal ── */}
+      {showIncident && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 50, background: "rgba(0,0,0,0.85)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
+          onClick={() => setShowIncident(false)}>
+          <div style={{ background: "#0a110a", border: "1px solid #1e3a1e", borderRadius: 16, padding: 28, width: "100%", maxWidth: 480 }}
+            onClick={e => e.stopPropagation()}>
+            <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: 3, color: "#f0a500", marginBottom: 20 }}>⚡ INCIDENT MANAGEMENT</div>
+
+            {/* Active incident */}
+            {activeIncident && (
+              <div style={{ background: "#1a0e00", border: "1px solid #f0a50030", borderRadius: 10, padding: 16, marginBottom: 20 }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "#f0a500", letterSpacing: 1, marginBottom: 6 }}>{activeIncident.name}</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#6a4a00", marginBottom: 12 }}>
+                  {fmtDate(activeIncident.start_at)} · {fmtIncidentDuration(activeIncident.start_at)} elapsed
+                </div>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <button onClick={() => exportIncident(activeIncident)} style={{
+                    flex: 1, padding: "9px 0", borderRadius: 8, border: "1px solid #39d35340",
+                    background: "#060e06", color: "#39d353", fontFamily: "'Rajdhani',sans-serif",
+                    fontWeight: 700, fontSize: 12, letterSpacing: 1, cursor: "pointer",
+                  }}>📋 EXPORT DEBRIEF</button>
+                  <button onClick={() => { endIncident(activeIncident.id); setShowIncident(false); }} style={{
+                    flex: 1, padding: "9px 0", borderRadius: 8, border: "1px solid #ff444430",
+                    background: "#1a0000", color: "#ff6666", fontFamily: "'Rajdhani',sans-serif",
+                    fontWeight: 700, fontSize: 12, letterSpacing: 1, cursor: "pointer",
+                  }}>■ END INCIDENT</button>
+                </div>
+              </div>
+            )}
+
+            {/* Past incidents */}
+            {incidents.filter(i => i.status === "closed").length > 0 && (
+              <div style={{ marginBottom: 20 }}>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a4a2a", letterSpacing: 2, marginBottom: 8 }}>PAST INCIDENTS</div>
+                {incidents.filter(i => i.status === "closed").map(inc => (
+                  <div key={inc.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid #0e1a0e" }}>
+                    <div>
+                      <div style={{ fontSize: 12, color: "#6a8a6a", fontWeight: 600 }}>{inc.name}</div>
+                      <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a4a2a" }}>{fmtDate(inc.start_at)} · {fmtIncidentDuration(inc.start_at, inc.end_at)}</div>
+                    </div>
+                    <button onClick={() => exportIncident(inc)} style={{
+                      padding: "4px 10px", borderRadius: 6, border: "1px solid #1a3a1a",
+                      background: "transparent", color: "#39d353", fontSize: 10, cursor: "pointer",
+                      fontFamily: "'JetBrains Mono',monospace",
+                    }}>EXPORT</button>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Start new */}
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a4a2a", letterSpacing: 2, marginBottom: 10 }}>START NEW INCIDENT</div>
+            <input value={incidentForm.name} onChange={e => setIncidentForm(f => ({ ...f, name: e.target.value }))}
+              placeholder="Incident name (e.g. Spring Startup Training)"
+              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, marginBottom: 10, boxSizing: "border-box",
+                background: "#060e06", border: "1px solid #1e3a1e", color: "#b8d8a0",
+                fontFamily: "'Rajdhani',sans-serif", fontSize: 13, outline: "none" }} />
+            <input type="datetime-local" value={incidentForm.start_at} onChange={e => setIncidentForm(f => ({ ...f, start_at: e.target.value }))}
+              style={{ width: "100%", padding: "10px 12px", borderRadius: 8, marginBottom: 16, boxSizing: "border-box",
+                background: "#060e06", border: "1px solid #1e3a1e", color: "#6a8a6a",
+                fontFamily: "'JetBrains Mono',monospace", fontSize: 11, outline: "none" }} />
+            <div style={{ fontSize: 10, fontFamily: "'JetBrains Mono',monospace", color: "#1e3a1e", marginBottom: 16 }}>
+              Leave date blank to start now. Starting a new incident auto-closes any active one.
+            </div>
+            <button onClick={startIncident} disabled={!incidentForm.name.trim()} style={{
+              width: "100%", padding: "12px 0", borderRadius: 8,
+              background: incidentForm.name.trim() ? "#0d2a0d" : "#0a110a",
+              border: `1px solid ${incidentForm.name.trim() ? "#39d353" : "#1a2a1a"}`,
+              color: incidentForm.name.trim() ? "#39d353" : "#1a2a1a",
+              fontFamily: "'Rajdhani',sans-serif", fontWeight: 800, fontSize: 14, letterSpacing: 2,
+              cursor: incidentForm.name.trim() ? "pointer" : "default",
+            }}>START INCIDENT →</button>
+          </div>
+        </div>
+      )}
+
+      {/* ── Export Modal ── */}
+      {showExport && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 50, background: "rgba(0,0,0,0.9)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
+          onClick={() => setShowExport(null)}>
+          <div style={{ background: "#080d08", border: "1px solid #1e3a1e", borderRadius: 16, padding: 24, width: "100%", maxWidth: 700, maxHeight: "85vh", display: "flex", flexDirection: "column" }}
+            onClick={e => e.stopPropagation()}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 800, fontSize: 14, letterSpacing: 3, color: "#39d353" }}>
+                📋 DEBRIEF EXPORT · {showExport.name.toUpperCase()}
+              </div>
+              <button onClick={() => setShowExport(null)} style={{ background: "none", border: "none", color: "#2a5a2a", fontSize: 22, cursor: "pointer" }}>×</button>
+            </div>
+            {exportLoading ? (
+              <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#2a5a2a", letterSpacing: 2 }}>
+                LOADING TRANSCRIPTS…
+              </div>
+            ) : (
+              <>
+                <textarea readOnly value={exportData} style={{
+                  flex: 1, background: "#040804", border: "1px solid #0e1a0e", borderRadius: 8,
+                  color: "#6a9a6a", fontFamily: "'JetBrains Mono',monospace", fontSize: 10,
+                  lineHeight: 1.6, padding: 14, resize: "none", outline: "none", minHeight: 300,
+                }} />
+                <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
+                  <button onClick={() => navigator.clipboard.writeText(exportData)} style={{
+                    flex: 1, padding: "11px 0", borderRadius: 8, border: "1px solid #39d35340",
+                    background: "#060e06", color: "#39d353", fontFamily: "'Rajdhani',sans-serif",
+                    fontWeight: 700, fontSize: 13, letterSpacing: 2, cursor: "pointer",
+                  }}>📋 COPY TO CLIPBOARD</button>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#1e3a1e", display: "flex", alignItems: "center", maxWidth: 200, lineHeight: 1.5 }}>
+                    Paste into Claude to generate your debrief report.
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

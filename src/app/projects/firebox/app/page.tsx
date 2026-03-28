@@ -400,9 +400,10 @@ function ModeSelector({ onSelect }: { onSelect: (m: OpMode) => void }) {
 
 // ── Top bar ───────────────────────────────────────────────────────────────────
 
-function TopBar({ view, setView, opMode, onModeSwitch, meshUnread, onInfo }: {
+function TopBar({ view, setView, opMode, onModeSwitch, meshUnread, onInfo, activeIncident }: {
   view: View; setView: (v: View) => void; opMode: OpMode;
   onModeSwitch: () => void; meshUnread: boolean; onInfo: () => void;
+  activeIncident?: { name: string; start_at: string } | null;
 }) {
   return (
     <div style={{
@@ -410,15 +411,27 @@ function TopBar({ view, setView, opMode, onModeSwitch, meshUnread, onInfo }: {
       display: "flex", alignItems: "center", justifyContent: "space-between",
       padding: "0 12px", flexShrink: 0,
     }}>
-      <button onClick={onModeSwitch}
-        style={{
-          display: "flex", alignItems: "center", gap: 6, padding: "5px 12px",
-          borderRadius: 8, background: "#141414", border: "1px solid #2a2a2a",
-          color: "#ccc", fontSize: 12, fontWeight: 600, cursor: "pointer",
-        }}>
-        {opMode === "whistler" ? "🏔️ WHISTLER" : "🔥 DEPLOYMENT"}
-        <span style={{ color: "#444", fontSize: 10 }}>▾</span>
-      </button>
+      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <button onClick={onModeSwitch}
+          style={{
+            display: "flex", alignItems: "center", gap: 6, padding: "5px 12px",
+            borderRadius: 8, background: "#141414", border: "1px solid #2a2a2a",
+            color: "#ccc", fontSize: 12, fontWeight: 600, cursor: "pointer",
+          }}>
+          {opMode === "whistler" ? "🏔️ WHISTLER" : "🔥 DEPLOYMENT"}
+          <span style={{ color: "#444", fontSize: 10 }}>▾</span>
+        </button>
+        {activeIncident && (
+          <div style={{
+            padding: "3px 10px", borderRadius: 6, background: "#1a0e00",
+            border: "1px solid #f0a50030", maxWidth: 200, overflow: "hidden",
+          }}>
+            <div style={{ fontSize: 9, fontWeight: 800, color: "#f0a500", letterSpacing: 1, whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden" }}>
+              ⚡ {activeIncident.name.toUpperCase()}
+            </div>
+          </div>
+        )}
+      </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         <div style={{ display: "flex", borderRadius: 8, overflow: "hidden", border: "1px solid #2a2a2a" }}>
@@ -1093,6 +1106,21 @@ export default function FireBoxApp() {
       .catch(() => {});
   }, []);
 
+  // Active incident (read-only on kiosk — manage from web)
+  const [activeIncident, setActiveIncident] = useState<{ name: string; start_at: string } | null>(null);
+  useEffect(() => {
+    fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : {})
+      .then(d => {
+        const active = (d.incidents ?? []).find((i: { status: string }) => i.status === "active");
+        setActiveIncident(active ?? null);
+      }).catch(() => {});
+    const t = setInterval(() => {
+      fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : {})
+        .then(d => { const a = (d.incidents ?? []).find((i: { status: string }) => i.status === "active"); setActiveIncident(a ?? null); }).catch(() => {});
+    }, 60000);
+    return () => clearInterval(t);
+  }, []);
+
   const fetchTranscripts = useCallback(async () => {
     try {
       const r = await fetch("/api/firebox?limit=80");
@@ -1168,6 +1196,7 @@ export default function FireBoxApp() {
         view={view} setView={setView}
         opMode={opMode} onModeSwitch={() => setOpMode(null)}
         meshUnread={meshUnread} onInfo={openInfo}
+        activeIncident={activeIncident}
       />
 
       <MeshTicker messages={meshTranscripts} onReply={() => setShowCompose(true)} />
