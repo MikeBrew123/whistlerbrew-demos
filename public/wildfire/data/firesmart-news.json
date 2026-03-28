@@ -1,18 +1,9 @@
 {
-  "updated_at": "2026-03-27T23:00:31.549Z",
+  "updated_at": "2026-03-28T05:00:31.754Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Site C camp to be repurposed for North Coast Transmission Line project: BC Hydro",
-        "link": "https://globalnews.ca/news/11749034/site-c-worker-camp-repurposed-north-coast-transmission-line-project/",
-        "description": "Hydro says about 85 per cent of the camp, which includes 21 dormitories and the construction site office, will be relocated to sites between Prince George and Terrace.",
-        "pubDate": "Fri, 27 Mar 2026 18:16:23 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/05/site-c-camp.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
