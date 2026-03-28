@@ -100,8 +100,14 @@ const DEPLOYMENT_CHANNELS: Record<string, ChannelMeta> = {
   "nrs-fire-b3": { label: "Fire B3", color: "#fb923c", canTranscribe: true, freq: "172.050", pl: "CSQ", category: "fire", d2: true },
 };
 
+// Meshtastic channels
+const MESH_CHANNELS: Record<string, ChannelMeta> = {
+  "mesh-text":    { label: "Mesh · Text",    color: "#4ade80", canTranscribe: false, freq: "", pl: "" },
+  "mesh-weather": { label: "Mesh · Weather", color: "#38bdf8", canTranscribe: false, freq: "", pl: "" },
+};
+
 // Combined registry for transcript display lookup
-const ALL_CHANNEL_REGISTRY: Record<string, ChannelMeta> = { ...WHISTLER_CHANNELS, ...DEPLOYMENT_CHANNELS };
+const ALL_CHANNEL_REGISTRY: Record<string, ChannelMeta> = { ...WHISTLER_CHANNELS, ...DEPLOYMENT_CHANNELS, ...MESH_CHANNELS };
 
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws";
 const TAILSCALE_BASE = "https://firebox.tail4bb545.ts.net";
@@ -467,10 +473,23 @@ function DeploymentGrid({ activeChannels, onToggle, colourTones, onSetTone }: {
 
 function TranscriptItem({ tx }: { tx: Transcript }) {
   const meta = ALL_CHANNEL_REGISTRY[tx.channel] ?? { color: "#888" };
+  const isMesh = tx.channel.startsWith("mesh-");
+  const isWeather = tx.channel === "mesh-weather";
   return (
     <div style={{ padding: "8px 12px", borderBottom: "1px solid #1a1a1a" }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 2 }}>
-        {tx.speaker && tx.speaker !== "Unknown" && (
+      <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
+        {/* Mesh badge */}
+        {isMesh && (
+          <span style={{
+            fontSize: 10, padding: "1px 6px", borderRadius: 4, fontWeight: 700,
+            color: isWeather ? "#38bdf8" : "#4ade80",
+            background: isWeather ? "#38bdf810" : "#4ade8010",
+          }}>
+            {isWeather ? "📡 WX" : "📡 MESH"}
+          </span>
+        )}
+        {/* Speaker badge (radio) */}
+        {!isMesh && tx.speaker && tx.speaker !== "Unknown" && (
           <span style={{
             fontSize: 11, padding: "1px 6px", borderRadius: 4,
             ...(tx.speaker.toLowerCase() === "dispatch"
@@ -479,6 +498,10 @@ function TranscriptItem({ tx }: { tx: Transcript }) {
           }}>
             {tx.speaker}
           </span>
+        )}
+        {/* Node name for mesh */}
+        {isMesh && tx.speaker && (
+          <span style={{ fontSize: 10, color: "#555" }}>{tx.speaker}</span>
         )}
         <span style={{ fontSize: 11, fontFamily: "monospace", color: "#444", marginLeft: "auto" }}>
           {formatTime(tx.timestamp)}
