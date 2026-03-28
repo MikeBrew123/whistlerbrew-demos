@@ -5,40 +5,35 @@ import Link from "next/link";
 import { useEffect, useState, useRef, useCallback } from "react";
 
 const FIREBOX_PASSWORD = "FireBox";
-
 const SUPABASE_URL  = "https://bdgmpkbbohbucwoiucyw.supabase.co";
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws";
 
 type Transcript = {
-  channel: string;
-  filename: string;
-  timestamp: string;
-  transcript: string;
-  speaker?: string;
+  channel: string; filename: string;
+  timestamp: string; transcript: string; speaker?: string;
 };
 
 const TRANSCRIBE_CHANNELS = new Set(["wfd-ch2-scene", "wfd-ch6-ce"]);
 
-const CHANNEL_STYLE: Record<string, { label: string; color: string; icon?: string }> = {
-  "wfd-ch2-scene":       { label: "WFD On Scene",        color: "#f0a500" },
-  "wfd-ch6-ce":          { label: "WFD Comb. Events",    color: "#fb923c" },
-  "wb-patrol-whistler":  { label: "WB Whistler Patrol",  color: "#38bdf8" },
-  "wb-patrol-blackcomb": { label: "WB Blackcomb Patrol", color: "#22d3ee" },
-  "wb-lift-ops":         { label: "WB Lift Ops",         color: "#67e8f9" },
-  "wb-ops":              { label: "WB Operations",       color: "#a5f3fc" },
-  "wb-heliski":          { label: "WB Heliskiing",       color: "#7dd3fc" },
-  "mesh-text":           { label: "Mesh · Text",         color: "#4ade80", icon: "📡" },
-  "mesh-weather":        { label: "Mesh · Weather",      color: "#38bdf8", icon: "🌡" },
+const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string; icon?: string }> = {
+  "wfd-ch2-scene":       { label: "WFD On Scene",        code: "WFD·CH2",  color: "#f0a500" },
+  "wfd-ch6-ce":          { label: "WFD Comb. Events",    code: "WFD·CH6",  color: "#fb923c" },
+  "wb-patrol-whistler":  { label: "WB Whistler Patrol",  code: "WB·PTRL-W",color: "#38bdf8" },
+  "wb-patrol-blackcomb": { label: "WB Blackcomb Patrol", code: "WB·PTRL-B",color: "#22d3ee" },
+  "wb-lift-ops":         { label: "WB Lift Ops",         code: "WB·LIFT",  color: "#67e8f9" },
+  "wb-ops":              { label: "WB Operations",       code: "WB·OPS",   color: "#a5f3fc" },
+  "wb-heliski":          { label: "WB Heliskiing",       code: "WB·HELI",  color: "#7dd3fc" },
+  "mesh-text":           { label: "Mesh · Text",         code: "MESH·TXT", color: "#39d353", icon: "📡" },
+  "mesh-weather":        { label: "Mesh · Weather",      code: "MESH·WX",  color: "#38bdf8", icon: "🌡" },
 };
 
 const MONITORED_CHANNELS = [
-  "wfd-ch2-scene", "wfd-ch6-ce",
-  "wb-patrol-whistler", "wb-patrol-blackcomb",
-  "wb-lift-ops", "wb-ops", "wb-heliski",
+  "wfd-ch2-scene","wfd-ch6-ce",
+  "wb-patrol-whistler","wb-patrol-blackcomb","wb-lift-ops","wb-ops","wb-heliski",
 ];
 
 function ch(channel: string) {
-  return CHANNEL_STYLE[channel] ?? { label: channel, color: "#888" };
+  return CHANNEL_STYLE[channel] ?? { label: channel, code: channel.toUpperCase(), color: "#666" };
 }
 
 function formatTime(iso: string) {
@@ -49,39 +44,83 @@ function formatTime(iso: string) {
   } catch { return iso; }
 }
 
-type WeatherReading = {
-  ts: string; node: string;
-  temp?: number; humidity?: number; pressure?: number;
-};
+type WeatherReading = { ts: string; node: string; temp?: number; humidity?: number; pressure?: number; };
 
 function parseWeather(transcript: string, speaker?: string, ts?: string): WeatherReading {
   const r: WeatherReading = { ts: ts ?? "", node: speaker ?? "?" };
   for (const part of transcript.split("|")) {
     const t = part.trim();
-    if (t.startsWith("Temp:"))      r.temp     = parseFloat(t.replace("Temp:", "").replace("C","").trim());
-    if (t.startsWith("Humidity:"))  r.humidity = parseFloat(t.replace("Humidity:", "").replace("%","").trim());
-    if (t.startsWith("Pressure:"))  r.pressure = parseFloat(t.replace("Pressure:", "").replace("hPa","").trim());
+    if (t.startsWith("Temp:"))     r.temp     = parseFloat(t.replace("Temp:","").replace("C","").trim());
+    if (t.startsWith("Humidity:")) r.humidity = parseFloat(t.replace("Humidity:","").replace("%","").trim());
+    if (t.startsWith("Pressure:")) r.pressure = parseFloat(t.replace("Pressure:","").replace("hPa","").trim());
   }
   return r;
 }
 
 function trendArrow(curr?: number, old?: number, thr = 0.5): { sym: string; color: string } {
-  if (curr == null || old == null) return { sym: "—", color: "#444" };
-  if (curr > old + thr) return { sym: "↑", color: "#4ade80" };
-  if (curr < old - thr) return { sym: "↓", color: "#f87171" };
-  return { sym: "→", color: "#888" };
+  if (curr == null || old == null) return { sym: "—", color: "#2a3a2a" };
+  if (curr > old + thr) return { sym: "↑", color: "#39d353" };
+  if (curr < old - thr) return { sym: "↓", color: "#ff6b6b" };
+  return { sym: "→", color: "#4a6a3a" };
 }
 
 function ageLabel(iso: string): { text: string; color: string } {
   const sec = (Date.now() - new Date(iso).getTime()) / 1000;
-  if (sec < 300)  return { text: `${Math.round(sec / 60)} min ago`,  color: "#4ade80" };
-  if (sec < 1800) return { text: `${Math.round(sec / 60)} min ago`,  color: "#f0a500" };
-  if (sec < 7200) return { text: `${Math.round(sec / 3600)} hr ago`, color: "#f0a500" };
-  return { text: "stale", color: "#555" };
+  if (sec < 300)  return { text: `${Math.round(sec/60)}m ago`, color: "#39d353" };
+  if (sec < 1800) return { text: `${Math.round(sec/60)}m ago`, color: "#f0a500" };
+  if (sec < 7200) return { text: `${Math.round(sec/3600)}h ago`, color: "#f0a500" };
+  return { text: "stale", color: "#3a3a3a" };
 }
 
-// ── Mesh compose ───────────────────────────────────────────────────────────────
+function useClock() {
+  const [t, setT] = useState("");
+  useEffect(() => {
+    const tick = () => setT(new Date().toLocaleTimeString("en-CA", { hour12: false }));
+    tick(); const id = setInterval(tick, 1000); return () => clearInterval(id);
+  }, []);
+  return t;
+}
 
+// ── Corner bracket decoration ─────────────────────────────────────────────────
+function Brackets({ color = "#1a2e1a", size = 7 }: { color?: string; size?: number }) {
+  const s = (extra: React.CSSProperties): React.CSSProperties => ({
+    position: "absolute", width: size, height: size,
+    borderColor: color, borderStyle: "solid", pointerEvents: "none", ...extra,
+  });
+  return (
+    <>
+      <span style={s({ top: 0, left: 0, borderWidth: "2px 0 0 2px" })} />
+      <span style={s({ top: 0, right: 0, borderWidth: "2px 2px 0 0" })} />
+      <span style={s({ bottom: 0, left: 0, borderWidth: "0 0 2px 2px" })} />
+      <span style={s({ bottom: 0, right: 0, borderWidth: "0 2px 2px 0" })} />
+    </>
+  );
+}
+
+// ── Global styles ─────────────────────────────────────────────────────────────
+const CSS = `
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&family=Barlow+Condensed:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @keyframes pulse     { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  @keyframes blink     { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+  @keyframes fbTicker  { 0%{transform:translateX(100vw)} 100%{transform:translateX(-100%)} }
+  @keyframes slideIn   { from{opacity:0;transform:translateX(-6px)} to{opacity:1;transform:translateX(0)} }
+  @keyframes ripple    { 0%{box-shadow:0 0 0 0 rgba(255,68,68,0.4)} 70%{box-shadow:0 0 0 8px rgba(255,68,68,0)} 100%{box-shadow:0 0 0 0 rgba(255,68,68,0)} }
+  @keyframes scanPulse { 0%,100%{opacity:0.03} 50%{opacity:0.06} }
+
+  .fb-card   { animation: slideIn 0.2s ease both; }
+  .fb-reply:hover  { border-color: #1a4a1a !important; color: #39d353 !important; background: #081408 !important; }
+  .fb-tab:hover    { color: #b8d8a0 !important; background: #0f160f !important; }
+  .fb-btn:hover    { opacity: 0.8; }
+  .fb-textarea:focus { border-color: #f0a500 !important; outline: none; }
+  .crossover-card  { animation: ripple 2s ease-in-out infinite; }
+`;
+
+function FireBoxStyles() { return <style dangerouslySetInnerHTML={{ __html: CSS }} />; }
+
+// ── Mesh compose ───────────────────────────────────────────────────────────────
 const OUTBOX_URL = `${SUPABASE_URL}/rest/v1/firebox_outbox`;
 const SB_HEADERS = { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` };
 
@@ -97,11 +136,10 @@ async function sendMesh(message: string): Promise<boolean> {
 }
 
 function MeshCompose({ replyTo, onClose }: { replyTo?: string; onClose: () => void }) {
-  const [text, setText]   = useState(replyTo ? `↩ ` : "");
-  const [busy, setBusy]   = useState(false);
-  const [sent, setSent]   = useState(false);
+  const [text, setText] = useState(replyTo ? `↩ ` : "");
+  const [busy, setBusy] = useState(false);
+  const [sent, setSent] = useState(false);
   const taRef = useRef<HTMLTextAreaElement>(null);
-
   useEffect(() => { taRef.current?.focus(); }, []);
 
   const submit = async () => {
@@ -109,67 +147,82 @@ function MeshCompose({ replyTo, onClose }: { replyTo?: string; onClose: () => vo
     setBusy(true);
     const ok = await sendMesh(text.trim());
     setBusy(false);
-    if (ok) { setSent(true); setTimeout(onClose, 1200); }
+    if (ok) { setSent(true); setTimeout(onClose, 1400); }
   };
 
   return (
     <div style={{
-      position: "fixed", inset: 0, zIndex: 100,
-      background: "rgba(0,0,0,0.85)", backdropFilter: "blur(6px)",
+      position: "fixed", inset: 0, zIndex: 200,
+      background: "rgba(2,6,2,0.92)", backdropFilter: "blur(8px)",
       display: "flex", alignItems: "center", justifyContent: "center", padding: 24,
     }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
       <div style={{
-        width: "100%", maxWidth: 480,
-        background: "#0a1a0a", border: "1px solid #1a3a1a",
-        borderRadius: 16, overflow: "hidden",
-        boxShadow: "0 24px 64px rgba(0,0,0,0.6)",
+        width: "100%", maxWidth: 500, position: "relative",
+        background: "#080e08",
+        border: "1px solid #1c2e1c",
       }}>
-        {/* Header */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px", borderBottom: "1px solid #0d1f0d" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontSize: 14 }}>📡</span>
-            <span style={{ fontSize: 13, fontWeight: 700, color: "#4ade80" }}>Send Mesh Message</span>
+        <Brackets color="#2a4a2a" size={9} />
+
+        {/* Title bar */}
+        <div style={{
+          borderBottom: "1px solid #1c2e1c", padding: "10px 20px",
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          background: "#0b120b",
+        }}>
+          <span style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: 3, color: "#39d353" }}>
+            ▶ MESH TRANSMIT
+          </span>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#2a4a2a", letterSpacing: 1 }}>
+              VIA BREW1
+            </span>
+            <button onClick={onClose} className="fb-btn" style={{ background: "none", border: "none", color: "#3a5a3a", fontSize: 18, cursor: "pointer", lineHeight: 1, padding: "0 2px" }}>×</button>
           </div>
-          <button onClick={onClose} style={{ background: "none", border: "none", color: "#555", fontSize: 18, cursor: "pointer", lineHeight: 1 }}>×</button>
         </div>
 
-        {/* Body */}
-        <div style={{ padding: 20 }}>
+        <div style={{ padding: "16px 20px 20px" }}>
           {sent ? (
-            <div style={{ textAlign: "center", padding: "24px 0", color: "#4ade80" }}>
-              <div style={{ fontSize: 28, marginBottom: 8 }}>✓</div>
-              <div style={{ fontSize: 13 }}>Message queued — Brew1 will transmit shortly</div>
+            <div style={{ textAlign: "center", padding: "28px 0" }}>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 28, color: "#39d353", marginBottom: 10 }}>✓</div>
+              <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: 2, color: "#39d353" }}>MESSAGE QUEUED</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#2a5a2a", marginTop: 6 }}>Brew1 will transmit within 5 seconds</div>
             </div>
           ) : (
             <>
-              <textarea
-                ref={taRef}
-                value={text}
-                onChange={e => setText(e.target.value)}
-                onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit(); }}
-                placeholder="Type a message…"
-                rows={4}
-                style={{
-                  width: "100%", boxSizing: "border-box",
-                  background: "#060e06", border: "1px solid #1a3a1a",
-                  borderRadius: 10, padding: "12px 14px",
-                  color: "#c8f0c8", fontSize: 14, lineHeight: 1.5,
-                  resize: "none", outline: "none", fontFamily: "inherit",
-                }}
-              />
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 12 }}>
-                <span style={{ fontSize: 11, color: "#2a5a2a" }}>⌘↵ to send · transmits via Brew1</span>
+              {/* Prompt line */}
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: "#39d353", marginTop: 11, flexShrink: 0 }}>▶</span>
+                <textarea
+                  ref={taRef} value={text} rows={4}
+                  onChange={e => setText(e.target.value)}
+                  onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit(); }}
+                  placeholder="Enter message…"
+                  className="fb-textarea"
+                  style={{
+                    flex: 1, background: "#040a04",
+                    border: "1px solid #1a2e1a", padding: "10px 12px",
+                    color: "#b8d8a0", fontSize: 13, lineHeight: 1.6,
+                    resize: "none", fontFamily: "'JetBrains Mono',monospace",
+                    transition: "border-color 0.2s",
+                  }}
+                />
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 14 }}>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1e3a1e", letterSpacing: 0.5 }}>⌘↵ transmit</span>
                 <div style={{ display: "flex", gap: 8 }}>
-                  <button onClick={onClose} style={{
-                    padding: "8px 16px", borderRadius: 8, border: "1px solid #1a3a1a",
-                    background: "transparent", color: "#555", fontSize: 13, cursor: "pointer",
-                  }}>Cancel</button>
-                  <button onClick={submit} disabled={busy || !text.trim()} style={{
-                    padding: "8px 20px", borderRadius: 8, border: "none",
-                    background: busy ? "#1a3a1a" : "#166534",
-                    color: busy ? "#2a5a2a" : "#4ade80",
-                    fontSize: 13, fontWeight: 600, cursor: busy ? "default" : "pointer",
-                  }}>{busy ? "Sending…" : "Send"}</button>
+                  <button onClick={onClose} className="fb-btn" style={{
+                    padding: "7px 16px", border: "1px solid #1c2e1c", background: "transparent",
+                    color: "#3a5a3a", fontSize: 11, cursor: "pointer",
+                    fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, letterSpacing: 2,
+                  }}>ABORT</button>
+                  <button onClick={submit} disabled={busy || !text.trim()} className="fb-btn" style={{
+                    padding: "7px 20px", border: "none",
+                    background: busy ? "#0d200d" : "#0f2a0f",
+                    color: busy ? "#2a5a2a" : "#39d353",
+                    fontSize: 11, fontWeight: 700, cursor: busy ? "default" : "pointer",
+                    fontFamily: "'Rajdhani',sans-serif", letterSpacing: 2,
+                    borderLeft: `3px solid ${busy ? "#1a3a1a" : "#39d353"}`,
+                  }}>{busy ? "SENDING…" : "TRANSMIT"}</button>
                 </div>
               </div>
             </>
@@ -180,8 +233,7 @@ function MeshCompose({ replyTo, onClose }: { replyTo?: string; onClose: () => vo
   );
 }
 
-// ── Weather panel ───────────────────────────────────────────────────────────────
-
+// ── Weather node card ──────────────────────────────────────────────────────────
 function WeatherNodeCard({ nodeHistory }: { nodeHistory: WeatherReading[] }) {
   const latest = nodeHistory[0];
   const old    = nodeHistory.length >= 5 ? nodeHistory[nodeHistory.length - 1] : undefined;
@@ -191,74 +243,70 @@ function WeatherNodeCard({ nodeHistory }: { nodeHistory: WeatherReading[] }) {
   const tHum  = trendArrow(latest.humidity, old?.humidity, 2);
   const tPres = trendArrow(latest.pressure, old?.pressure, 0.5);
 
-  const hourLabel = old
-    ? `${Math.round((new Date(latest.ts).getTime() - new Date(old.ts).getTime()) / 60000)}m`
-    : "";
-
+  const tSpan = old ? Math.round((new Date(latest.ts).getTime() - new Date(old.ts).getTime()) / 60000) : 0;
   const crossover = latest.temp != null && latest.humidity != null && latest.temp >= latest.humidity;
   const extreme   = latest.temp != null && latest.humidity != null && latest.temp >= 30 && latest.humidity <= 15;
 
   return (
-    <div style={{
-      display: "flex", alignItems: "center", gap: 0,
-      padding: "8px 16px",
-      background: crossover ? (extreme ? "#1a050080" : "#100a0080") : "#060d1080",
-      borderRadius: 10,
-      border: `1px solid ${crossover ? (extreme ? "#ef444440" : "#f0a50040") : "#0e1f25"}`,
-      borderTop: crossover ? `2px solid ${extreme ? "#ef4444" : "#f0a500"}` : "2px solid transparent",
-      flex: "0 0 auto",
-      transition: "all 0.4s ease",
+    <div className={crossover ? "crossover-card" : ""} style={{
+      position: "relative", flex: "0 0 auto",
+      padding: "10px 16px 10px 14px",
+      background: crossover ? (extreme ? "#130400" : "#0e0900") : "#090e09",
+      border: `1px solid ${crossover ? (extreme ? "#5a1a1a" : "#4a2a00") : "#1a2a1a"}`,
+      borderTop: `2px solid ${crossover ? (extreme ? "#ff4444" : "#f0a500") : "#1a3a1a"}`,
+      transition: "border-color 0.4s",
+      minWidth: 280,
     }}>
+      <Brackets color={crossover ? (extreme ? "#5a1a1a" : "#4a2a00") : "#1a2e1a"} size={6} />
 
-      {/* Node label */}
-      <div style={{ marginRight: 14, minWidth: 44 }}>
-        <div style={{ fontSize: 8, fontWeight: 800, letterSpacing: 1.2, color: "#1e6e8e", marginBottom: 2 }}>WX NODE</div>
-        <div style={{ fontSize: 11, fontWeight: 700, color: "#38bdf8" }}>{latest.node}</div>
+      {/* Node ID + age */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+        <div>
+          <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 8, fontWeight: 700, letterSpacing: 2.5, color: crossover ? "#6a3a00" : "#1e4a1e", marginBottom: 2 }}>WX NODE</div>
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, fontWeight: 700, color: crossover ? "#fb923c" : "#38bdf8" }}>{latest.node}</div>
+        </div>
+        <div style={{ textAlign: "right" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end", marginBottom: 2 }}>
+            <span style={{ width: 4, height: 4, borderRadius: "50%", background: age.color, animation: "pulse 2s ease-in-out infinite", display: "inline-block" }} />
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: age.color }}>{age.text}</span>
+          </div>
+          {tSpan > 0 && <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a4a2a" }}>{tSpan}m trend</div>}
+        </div>
       </div>
 
-      <div style={{ width: 1, height: 32, background: "#0e1f25", marginRight: 14, flexShrink: 0 }} />
-
-      {/* Metrics */}
-      {[
-        { label: "TEMP",  val: latest.temp     != null ? `${latest.temp.toFixed(1)}°C`      : "—", trend: tTemp },
-        { label: "RH",    val: latest.humidity != null ? `${Math.round(latest.humidity)}%`  : "—", trend: tHum  },
-        { label: "hPa",   val: latest.pressure != null ? `${latest.pressure.toFixed(1)}`    : "—", trend: tPres },
-      ].map(({ label, val, trend }) => (
-        <div key={label} style={{ marginRight: 14, flexShrink: 0 }}>
-          <div style={{ fontSize: 8, letterSpacing: 1, color: "#2a5a70", fontWeight: 700, marginBottom: 1 }}>{label}</div>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 3 }}>
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#e0f4ff", fontFamily: "monospace" }}>{val}</span>
-            <span style={{ fontSize: 13, fontWeight: 700, color: trend.color }}>{trend.sym}</span>
+      {/* Metrics row */}
+      <div style={{ display: "flex", gap: 16, alignItems: "flex-end" }}>
+        {[
+          { key: "TEMP",  val: latest.temp     != null ? `${latest.temp.toFixed(1)}°` : "—",      unit: "C", trend: tTemp },
+          { key: "RH",    val: latest.humidity != null ? `${Math.round(latest.humidity)}`  : "—", unit: "%", trend: tHum  },
+          { key: "hPa",   val: latest.pressure != null ? `${latest.pressure.toFixed(1)}`   : "—", unit: "",  trend: tPres },
+        ].map(({ key, val, unit, trend }) => (
+          <div key={key}>
+            <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 8, fontWeight: 700, letterSpacing: 2, color: "#2a4a2a", marginBottom: 1 }}>{key}</div>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 2 }}>
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 18, fontWeight: 700, color: crossover && key !== "hPa" ? (extreme ? "#ff6b6b" : "#fbbf24") : "#c8e8b0", letterSpacing: -1 }}>{val}</span>
+              {unit && <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#3a5a3a" }}>{unit}</span>}
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 14, fontWeight: 700, color: trend.color, marginLeft: 2 }}>{trend.sym}</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      {/* Crossover badge */}
-      {crossover && (
-        <div style={{
-          marginLeft: 6, marginRight: 6,
-          padding: "3px 8px", borderRadius: 5,
-          background: extreme ? "#7f1d1d" : "#78350f",
-          border: `1px solid ${extreme ? "#ef4444" : "#f0a500"}`,
-          animation: extreme ? "pulse 1.2s ease-in-out infinite" : undefined,
-          flexShrink: 0,
-        }}>
-          <div style={{ fontSize: 8, fontWeight: 800, letterSpacing: 1.2, color: extreme ? "#fca5a5" : "#fcd34d" }}>
-            {extreme ? "⚠ EXTREME" : "⚠ CROSSOVER"}
+        {crossover && (
+          <div style={{
+            marginLeft: "auto",
+            padding: "4px 10px",
+            background: extreme ? "#2a0000" : "#1e1000",
+            border: `1px solid ${extreme ? "#ff4444" : "#f0a500"}`,
+            animation: extreme ? "blink 1.2s step-end infinite" : undefined,
+          }}>
+            <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 9, fontWeight: 700, letterSpacing: 2, color: extreme ? "#ff6b6b" : "#fbbf24" }}>
+              {extreme ? "⚠ EXTREME" : "⚠ CROSSOVER"}
+            </div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, color: extreme ? "#ff4444" : "#f0a500", marginTop: 1 }}>
+              T{latest.temp?.toFixed(0)}≥RH{latest.humidity?.toFixed(0)}
+            </div>
           </div>
-          <div style={{ fontSize: 8, color: extreme ? "#f87171" : "#f0a500" }}>
-            {extreme ? "high spread" : `T${latest.temp?.toFixed(0)}≥RH${latest.humidity?.toFixed(0)}`}
-          </div>
-        </div>
-      )}
-
-      {/* Age */}
-      <div style={{ marginLeft: crossover ? 0 : 6, textAlign: "right", flexShrink: 0 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 3, fontSize: 9, color: age.color }}>
-          <span style={{ width: 4, height: 4, borderRadius: "50%", background: age.color, display: "inline-block" }} />
-          {age.text}
-        </div>
-        {hourLabel && <div style={{ fontSize: 9, color: "#2a5a70", marginTop: 2 }}>{hourLabel} trend</div>}
+        )}
       </div>
     </div>
   );
@@ -266,21 +314,16 @@ function WeatherNodeCard({ nodeHistory }: { nodeHistory: WeatherReading[] }) {
 
 function WeatherPanel({ history }: { history: WeatherReading[] }) {
   if (history.length === 0) return null;
-
-  // Group by node — supports multiple weather sensors
   const nodes = new Map<string, WeatherReading[]>();
   for (const r of history) {
     if (!nodes.has(r.node)) nodes.set(r.node, []);
     nodes.get(r.node)!.push(r);
   }
-
   return (
-    <div style={{ background: "#04090c", borderBottom: "1px solid #0a1820", padding: "8px 24px" }}>
+    <div style={{ borderBottom: "1px solid #0e1a0e", padding: "8px 24px", background: "#060b06" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 2 }}>
-          {Array.from(nodes.entries()).map(([node, nodeHistory]) => (
-            <WeatherNodeCard key={node} nodeHistory={nodeHistory} />
-          ))}
+          {Array.from(nodes.entries()).map(([node, nh]) => <WeatherNodeCard key={node} nodeHistory={nh} />)}
         </div>
       </div>
     </div>
@@ -288,55 +331,36 @@ function WeatherPanel({ history }: { history: WeatherReading[] }) {
 }
 
 // ── Mesh ticker ────────────────────────────────────────────────────────────────
-
 function MeshTicker({ messages }: { messages: Transcript[] }) {
-  const latest = messages[0];
+  const latest = messages.filter(m => m.channel !== "mesh-weather")[0];
   if (!latest) return null;
-
-  const isWx   = latest.channel === "mesh-weather";
-  const icon   = isWx ? "🌡" : "📡";
-  const label  = `${icon} ${latest.speaker ?? "Mesh"}: ${latest.transcript}`;
-  const secs   = Math.max(14, label.length * 0.22);
-
+  const label = `${latest.speaker ?? "MESH"} ▶ ${latest.transcript}`;
+  const secs  = Math.max(16, label.length * 0.21);
   return (
-    <div style={{
-      height: 36, background: "#050e05", borderBottom: "1px solid #0d1a0d",
-      display: "flex", alignItems: "center", overflow: "hidden",
-    }}>
-      <style>{`
-        @keyframes fbTicker {
-          0%   { transform: translateX(100vw); }
-          100% { transform: translateX(-100%); }
-        }
-      `}</style>
-
-      {/* Pill */}
+    <div style={{ height: 30, background: "#040904", borderBottom: "1px solid #0b160b", display: "flex", alignItems: "center", overflow: "hidden" }}>
+      {/* Label pill */}
       <div style={{
         flexShrink: 0, padding: "0 14px", height: "100%",
         display: "flex", alignItems: "center", gap: 8,
-        borderRight: "1px solid #0d1a0d",
+        borderRight: "1px solid #0b160b", background: "#060e06",
       }}>
-        <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: 1.5, color: "#2d6a2d" }}>MESH</span>
+        <span style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 9, letterSpacing: 3, color: "#1a4a1a" }}>MESH</span>
         <span style={{
-          fontSize: 9, fontWeight: 700, padding: "1px 6px",
-          borderRadius: 10, background: "#0d2a0d", color: "#4ade80",
+          fontFamily: "'JetBrains Mono',monospace", fontSize: 9,
+          padding: "1px 5px", background: "#0b1e0b",
+          color: "#39d353",
         }}>{messages.length}</span>
       </div>
-
-      {/* Scrolling content */}
+      {/* Scrolling text */}
       <div style={{ flex: 1, overflow: "hidden" }}>
         <div key={latest.timestamp} style={{
           animation: `fbTicker ${secs}s linear 1 forwards`,
-          whiteSpace: "nowrap", fontSize: 12,
-          color: isWx ? "#7dd3fc" : "#86efac",
-          lineHeight: "36px", paddingLeft: 12,
+          whiteSpace: "nowrap", fontFamily: "'JetBrains Mono',monospace",
+          fontSize: 11, color: "#39d353", lineHeight: "30px", paddingLeft: 14,
+          letterSpacing: 0.3,
         }}>
           {label}
-          {messages.length > 1 && (
-            <span style={{ color: "#1e3a1e", marginLeft: 32 }}>
-              + {messages.length - 1} more message{messages.length > 2 ? "s" : ""}
-            </span>
-          )}
+          {messages.length > 1 && <span style={{ color: "#1a3a1a", marginLeft: 40 }}>+{messages.length - 1} more</span>}
         </div>
       </div>
     </div>
@@ -344,61 +368,109 @@ function MeshTicker({ messages }: { messages: Transcript[] }) {
 }
 
 // ── Login ──────────────────────────────────────────────────────────────────────
-
 function LoginScreen({ onAuth }: { onAuth: () => void }) {
   const [value, setValue] = useState("");
-  const [error, setError]  = useState(false);
+  const [error, setError] = useState(false);
+  const [shake, setShake] = useState(false);
+  const clock = useClock();
+
   const submit = () => {
     if (value === FIREBOX_PASSWORD) { sessionStorage.setItem("firebox_auth","true"); onAuth(); }
-    else { setError(true); setValue(""); }
+    else { setError(true); setShake(true); setValue(""); setTimeout(() => setShake(false), 400); }
   };
+
   return (
-    <div style={{ minHeight: "100vh", background: "#0a0a0a", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 32 }}>
-      <Image src="/logo.png" alt="WhistlerBrew" width={180} height={45} style={{ height: "auto", marginBottom: 40, opacity: 0.8 }} />
-      <div style={{ width: "100%", maxWidth: 360, background: "#111", border: "1px solid #1e1e1e", borderRadius: 16, padding: 32 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
-          <span style={{ fontSize: 22 }}>📻</span>
-          <h1 style={{ fontSize: 20, fontWeight: 700, color: "#fff", margin: 0 }}>FireBox</h1>
+    <div style={{
+      minHeight: "100vh",
+      background: "#060b06",
+      backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(57,211,83,0.015) 3px, rgba(57,211,83,0.015) 4px)",
+      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+      padding: 32, fontFamily: "'Rajdhani',sans-serif",
+    }}>
+      <FireBoxStyles />
+
+      {/* Status bar */}
+      <div style={{
+        position: "fixed", top: 0, left: 0, right: 0, height: 32,
+        borderBottom: "1px solid #0e1a0e", background: "#040904",
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "0 24px",
+      }}>
+        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1a3a1a", letterSpacing: 1 }}>FIREBOX v2 · SEA TO SKY</span>
+        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1a3a1a" }}>{clock}</span>
+      </div>
+
+      <div style={{ width: "100%", maxWidth: 380, position: "relative" }}>
+        <Brackets color="#1a3a1a" size={10} />
+
+        <div style={{
+          border: "1px solid #1a2e1a",
+          background: "#080e08",
+          padding: "36px 36px 32px",
+          transform: shake ? "translateX(-4px)" : "none",
+          transition: "transform 0.08s",
+        }}>
+          {/* Header */}
+          <div style={{ textAlign: "center", marginBottom: 32 }}>
+            <div style={{ fontSize: 10, letterSpacing: 5, color: "#1a3a1a", marginBottom: 12 }}>WHISTLER, BC · 50°07′N 122°57′W</div>
+            <div style={{ fontSize: 36, fontWeight: 700, letterSpacing: 6, color: "#b8d8a0" }}>FIREBOX</div>
+            <div style={{ fontSize: 10, letterSpacing: 4, color: "#2a5a2a", marginTop: 8 }}>AUTHENTICATION REQUIRED</div>
+            <div style={{ width: 40, height: 1, background: "#1a3a1a", margin: "16px auto 0" }} />
+          </div>
+
+          <div style={{ marginBottom: 8 }}>
+            <div style={{ fontSize: 9, letterSpacing: 3, color: "#1e4a1e", marginBottom: 6 }}>ACCESS CODE</div>
+            <input
+              type="password" value={value} autoFocus
+              onChange={e => { setValue(e.target.value); setError(false); }}
+              onKeyDown={e => e.key === "Enter" && submit()}
+              className="fb-textarea"
+              style={{
+                width: "100%", background: "#040904",
+                border: `1px solid ${error ? "#ff4444" : "#1a2e1a"}`,
+                padding: "11px 14px", color: "#b8d8a0", fontSize: 13,
+                fontFamily: "'JetBrains Mono',monospace",
+                transition: "border-color 0.2s",
+              }}
+            />
+            {error && (
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#ff4444", marginTop: 6, letterSpacing: 1 }}>
+                ✕ ACCESS DENIED
+              </div>
+            )}
+          </div>
+
+          <button onClick={submit} className="fb-btn" style={{
+            width: "100%", padding: "12px 0", border: "none", marginTop: 16,
+            background: "#f0a500", color: "#000",
+            fontFamily: "'Rajdhani',sans-serif", fontWeight: 700,
+            fontSize: 13, letterSpacing: 4, cursor: "pointer",
+          }}>AUTHENTICATE</button>
+
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            <Image src="/logo.png" alt="WhistlerBrew" width={100} height={25} style={{ height: "auto", opacity: 0.2 }} />
+          </div>
         </div>
-        <p style={{ color: "#555", fontSize: 13, marginBottom: 24, lineHeight: 1.5 }}>
-          Live WFD radio transcripts. Enter access code to continue.
-        </p>
-        <input
-          type="password" value={value} autoFocus
-          onChange={e => { setValue(e.target.value); setError(false); }}
-          onKeyDown={e => e.key === "Enter" && submit()}
-          placeholder="Access code"
-          style={{
-            width: "100%", background: "#0d0d0d", border: `1px solid ${error ? "#ef4444" : "#222"}`,
-            borderRadius: 10, padding: "12px 16px", color: "#fff", fontSize: 14,
-            outline: "none", boxSizing: "border-box", marginBottom: 8,
-          }}
-        />
-        {error && <p style={{ color: "#ef4444", fontSize: 12, marginBottom: 8 }}>Incorrect code. Try again.</p>}
-        <button onClick={submit} style={{
-          width: "100%", padding: "13px 0", borderRadius: 10, border: "none",
-          background: "#f0a500", color: "#000", fontWeight: 700, fontSize: 14, cursor: "pointer",
-        }}>Enter</button>
       </div>
     </div>
   );
 }
 
 // ── Main feed ─────────────────────────────────────────────────────────────────
-
 function FireBoxFeed() {
   const [transcripts,    setTranscripts]    = useState<Transcript[]>([]);
   const [meshMessages,   setMeshMessages]   = useState<Transcript[]>([]);
   const [weatherHistory, setWeatherHistory] = useState<WeatherReading[]>([]);
   const [channelFilter,  setFilter]         = useState<string>("all");
   const [compose,        setCompose]        = useState<{ replyTo?: string } | null>(null);
-  const [lastUpdated,  setLastUpdated]  = useState<Date | null>(null);
-  const [live,   setLive]       = useState(true);
-  const [offset, setOffset]     = useState(0);
-  const [hasMore, setHasMore]   = useState(true);
-  const [loading, setLoading]   = useState(false);
-  const feedRef  = useRef<HTMLDivElement>(null);
-  const prevRef  = useRef(0);
+  const [lastUpdated,    setLastUpdated]    = useState<Date | null>(null);
+  const [live,    setLive]    = useState(true);
+  const [offset,  setOffset]  = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const feedRef = useRef<HTMLDivElement>(null);
+  const prevRef = useRef(0);
+  const clock   = useClock();
   const PAGE = 50;
 
   const fetchFeed = useCallback(async () => {
@@ -432,7 +504,6 @@ function FireBoxFeed() {
 
   const fetchWeather = useCallback(async () => {
     try {
-      // 60 entries = ~1 hour of data at 60s intervals
       const url = `${SUPABASE_URL}/rest/v1/firebox_transcripts?channel=eq.mesh-weather&order=recorded_at.desc&limit=60`;
       const r = await fetch(url, { headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` } });
       if (!r.ok) return;
@@ -459,14 +530,11 @@ function FireBoxFeed() {
   };
 
   useEffect(() => { setOffset(0); setHasMore(true); }, [channelFilter]);
-
   useEffect(() => {
-    fetchFeed();
-    fetchMesh();
-    fetchWeather();
+    fetchFeed(); fetchMesh(); fetchWeather();
     if (!live) return;
-    const t1 = setInterval(fetchFeed,   30000);
-    const t2 = setInterval(fetchMesh,   15000);
+    const t1 = setInterval(fetchFeed,    30000);
+    const t2 = setInterval(fetchMesh,    15000);
     const t3 = setInterval(fetchWeather, 60000);
     return () => { clearInterval(t1); clearInterval(t2); clearInterval(t3); };
   }, [fetchFeed, fetchMesh, fetchWeather, live]);
@@ -476,204 +544,233 @@ function FireBoxFeed() {
     ...transcripts.map(t => t.channel).filter(c => !c.startsWith("mesh-")),
   ]));
 
-  const isMeshFilter  = channelFilter.startsWith("mesh-");
-  const isAudioOnly   = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter) && !isMeshFilter;
-  const filteredTx    = channelFilter === "all"
+  const isMeshFilter = channelFilter.startsWith("mesh-");
+  const isAudioOnly  = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter) && !isMeshFilter;
+  const filteredTx   = channelFilter === "all"
     ? transcripts
     : transcripts.filter(t => t.channel === channelFilter);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0a0a0a", color: "#e0e0e0", fontFamily: "system-ui, sans-serif", display: "flex", flexDirection: "column" }}>
+    <div style={{
+      minHeight: "100vh", background: "#060b06", color: "#b8d8a0",
+      fontFamily: "'Rajdhani',sans-serif",
+      backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(57,211,83,0.012) 3px,rgba(57,211,83,0.012) 4px)",
+      display: "flex", flexDirection: "column",
+    }}>
+      <FireBoxStyles />
 
-      {/* Header */}
+      {/* ── Header ── */}
       <header style={{
         position: "sticky", top: 0, zIndex: 10,
-        background: "#0a0a0a", borderBottom: "1px solid #1a1a1a",
+        background: "#050a05", borderBottom: "1px solid #0e1a0e",
         padding: "0 24px",
       }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <Link href="/projects" style={{ color: "#444", textDecoration: "none", fontSize: 13 }}>← Projects</Link>
-            <span style={{ color: "#1e1e1e" }}>|</span>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ fontSize: 16 }}>📻</span>
-              <span style={{ fontWeight: 700, fontSize: 16 }}>FireBox</span>
+        <div style={{ maxWidth: 760, margin: "0 auto", height: 52, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+
+          {/* Left: nav + title + live status */}
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <Link href="/projects" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1e3a1e", textDecoration: "none", letterSpacing: 1 }}>← BACK</Link>
+            <div style={{ width: 1, height: 20, background: "#0e1a0e" }} />
+            <div>
+              <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: 5, color: "#c8e8b0", lineHeight: 1 }}>FIREBOX</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, color: "#1e3a1e", letterSpacing: 1.5, marginTop: 1 }}>SEA TO SKY RADIO</div>
             </div>
-            <span style={{
-              display: "flex", alignItems: "center", gap: 5, fontSize: 11,
-              padding: "3px 8px", borderRadius: 20,
-              background: live ? "#0d2a0d" : "#1a1a1a",
-              color: live ? "#4ade80" : "#555",
+            <div style={{
+              display: "flex", alignItems: "center", gap: 5,
+              padding: "3px 10px", border: `1px solid ${live ? "#0e2e0e" : "#1e1e1e"}`,
+              background: live ? "#060e06" : "transparent",
             }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: live ? "#4ade80" : "#444", animation: live ? "pulse 2s ease-in-out infinite" : "none" }} />
-              {live ? "LIVE" : "PAUSED"}
-            </span>
+              <span style={{ width: 5, height: 5, background: live ? "#39d353" : "#333", borderRadius: "50%", animation: live ? "pulse 2s ease-in-out infinite" : "none" }} />
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: live ? "#39d353" : "#333", letterSpacing: 2 }}>{live ? "LIVE" : "PAUSED"}</span>
+            </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+
+          {/* Right: clock + buttons */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 14, color: "#2a5a2a", letterSpacing: 1 }}>{clock}</span>
             {lastUpdated && (
-              <span style={{ fontSize: 11, color: "#444" }}>Updated {formatTime(lastUpdated.toISOString())}</span>
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#1a3a1a" }}>
+                ↻ {formatTime(lastUpdated.toISOString())}
+              </span>
             )}
-            <button onClick={() => setCompose({})} style={{
-              fontSize: 12, padding: "5px 14px", borderRadius: 8,
-              border: "1px solid #1a3a1a", background: "#0a1a0a",
-              color: "#4ade80", cursor: "pointer", display: "flex", alignItems: "center", gap: 5,
-              fontWeight: 600,
-            }}>📡 Mesh</button>
-            <button onClick={() => setLive(v => !v)} style={{
-              fontSize: 12, padding: "5px 12px", borderRadius: 8,
-              border: "1px solid #222", background: "transparent",
-              color: "#666", cursor: "pointer",
-            }}>{live ? "Pause" : "Resume"}</button>
+            <button onClick={() => setCompose({})} className="fb-btn" style={{
+              padding: "5px 14px", border: "1px solid #1a3a1a", background: "#060e06",
+              color: "#39d353", cursor: "pointer", display: "flex", alignItems: "center", gap: 5,
+              fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: 2,
+            }}>📡 MESH</button>
+            <button onClick={() => setLive(v => !v)} className="fb-btn" style={{
+              padding: "5px 12px", border: "1px solid #1a1a1a", background: "transparent",
+              color: "#2a4a2a", cursor: "pointer",
+              fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 10, letterSpacing: 2,
+            }}>{live ? "PAUSE" : "RESUME"}</button>
           </div>
         </div>
       </header>
 
-      {/* Mesh ticker */}
+      {/* ── Mesh ticker ── */}
       <MeshTicker messages={meshMessages} />
 
-      {/* Weather panel */}
+      {/* ── Weather ── */}
       <WeatherPanel history={weatherHistory} />
 
-      {/* Channel tabs */}
-      <div style={{ borderBottom: "1px solid #1a1a1a", padding: "0 24px", overflowX: "auto" }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", gap: 2, paddingTop: 10 }}>
+      {/* ── Channel tabs ── */}
+      <div style={{ borderBottom: "1px solid #0e1a0e", padding: "0 24px", overflowX: "auto", background: "#060b06" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", gap: 1, paddingTop: 8 }}>
           {(["all", ...activeChannels, "mesh-text", "mesh-weather"] as string[]).map(c => {
-            const s = c === "all" ? { label: "All", color: "#888" } : ch(c);
+            const s  = c === "all" ? { label: "ALL", code: "ALL", color: "#4a6a4a" } : ch(c);
             const active = channelFilter === c;
-            const audioOnly = c !== "all" && !TRANSCRIBE_CHANNELS.has(c) && !c.startsWith("mesh-");
             const isMesh = c.startsWith("mesh-");
+            const audioOnly = c !== "all" && !TRANSCRIBE_CHANNELS.has(c) && !isMesh;
             return (
-              <button key={c} onClick={() => setFilter(c)} style={{
-                padding: "7px 14px", fontSize: 11, fontWeight: active ? 600 : 400,
-                borderRadius: "8px 8px 0 0", border: "none", cursor: "pointer",
+              <button key={c} onClick={() => setFilter(c)} className="fb-tab" style={{
+                padding: "5px 12px 7px", cursor: "pointer", border: "none",
                 borderBottom: active ? `2px solid ${s.color}` : "2px solid transparent",
-                background: active ? `${s.color}10` : "transparent",
-                color: active ? s.color : "#555",
-                whiteSpace: "nowrap",
+                borderTop: "1px solid transparent",
+                background: active ? `${s.color}12` : "transparent",
+                color: active ? s.color : "#2a4a2a",
+                fontFamily: "'Rajdhani',sans-serif", fontWeight: active ? 700 : 600,
+                fontSize: 10, letterSpacing: active ? 2 : 1.5,
+                whiteSpace: "nowrap", transition: "all 0.15s",
                 display: "flex", alignItems: "center", gap: 4,
               }}>
-                {audioOnly && <span style={{ opacity: 0.5, fontSize: 10 }}>🔊</span>}
-                {isMesh && <span style={{ fontSize: 10 }}>{(CHANNEL_STYLE[c] as { icon?: string })?.icon}</span>}
-                {s.label}
+                {audioOnly && <span style={{ opacity: 0.5, fontSize: 9 }}>♪</span>}
+                {isMesh && <span style={{ fontSize: 9 }}>{(CHANNEL_STYLE[c] as { icon?: string })?.icon}</span>}
+                {s.code ?? s.label}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Audio player */}
+      {/* ── Audio player ── */}
       {channelFilter !== "all" && !isMeshFilter && (
-        <div style={{ borderBottom: "1px solid #1a1a1a", padding: "10px 24px", background: "#0a0a0a" }}>
-          <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#444", whiteSpace: "nowrap" }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#4ade80", animation: "pulse 2s ease-in-out infinite" }} />
-              Live audio
-            </span>
+        <div style={{ borderBottom: "1px solid #0e1a0e", padding: "8px 24px", background: "#050905" }}>
+          <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+              <span style={{ width: 5, height: 5, background: "#39d353", borderRadius: "50%", animation: "pulse 2s ease-in-out infinite" }} />
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#1e4a1e", letterSpacing: 2 }}>LIVE AUDIO</span>
+            </div>
             <audio controls src={`https://firebox.tail4bb545.ts.net/${channelFilter}.mp3`}
-              style={{ width: "100%", height: 32, colorScheme: "dark" } as React.CSSProperties} />
+              style={{ width: "100%", height: 28, colorScheme: "dark" } as React.CSSProperties} />
           </div>
         </div>
       )}
 
-      {/* Feed */}
-      <main style={{ flex: 1, overflowY: "auto", padding: "20px 24px" }} ref={feedRef}>
-        <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", flexDirection: "column", gap: 10 }}>
+      {/* ── Feed ── */}
+      <main style={{ flex: 1, overflowY: "auto", padding: "16px 24px" }} ref={feedRef}>
+        <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", flexDirection: "column", gap: 8 }}>
 
           {isAudioOnly ? (
-            <div style={{ textAlign: "center", padding: "80px 0", color: "#444" }}>
-              <div style={{ fontSize: 48, marginBottom: 16 }}>🔊</div>
-              <p style={{ fontSize: 15, color: "#666", marginBottom: 6 }}>{ch(channelFilter).label}</p>
-              <p style={{ fontSize: 13, marginBottom: 4 }}>Audio monitoring only — transcription not active.</p>
-              <p style={{ fontSize: 12, color: "#333" }}>Use the player above to listen live.</p>
+            <div style={{ textAlign: "center", padding: "80px 0" }}>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 32, color: "#1a3a1a", marginBottom: 16 }}>♪</div>
+              <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: 4, color: "#2a5a2a" }}>{ch(channelFilter).code}</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#1a3a1a", marginTop: 8 }}>AUDIO MONITORING · NO TRANSCRIPTION</div>
             </div>
+
           ) : filteredTx.length === 0 ? (
-            <div style={{ textAlign: "center", padding: "80px 0", color: "#333" }}>
-              <div style={{ fontSize: 40, marginBottom: 16 }}>📡</div>
-              <p style={{ fontSize: 16, color: "#444" }}>No transmissions yet</p>
-              <p style={{ fontSize: 13, marginTop: 6 }}>Waiting for radio traffic…</p>
+            <div style={{ textAlign: "center", padding: "80px 0" }}>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 3, color: "#1a3a1a", marginBottom: 16, animation: "pulse 3s ease-in-out infinite" }}>● ● ●</div>
+              <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 14, letterSpacing: 4, color: "#2a5a2a" }}>MONITORING</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1a3a1a", marginTop: 8 }}>AWAITING RADIO TRAFFIC</div>
             </div>
-          ) : (
-            filteredTx.map((tx, i) => {
-              const s = ch(tx.channel);
-              const isMesh = tx.channel.startsWith("mesh-");
-              const isWx   = tx.channel === "mesh-weather";
-              return (
-                <div key={`${tx.timestamp}-${i}`} style={{
-                  background: isMesh ? `${s.color}08` : "#111",
-                  border: `1px solid ${isMesh ? s.color + "25" : "#1e1e1e"}`,
-                  borderRadius: 12, padding: "14px 16px",
-                  borderLeft: isMesh ? `3px solid ${s.color}60` : `3px solid ${s.color}30`,
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-                      {/* Channel badge */}
-                      <span style={{
-                        fontSize: 11, fontWeight: 600, padding: "2px 8px", borderRadius: 6,
-                        color: s.color, background: `${s.color}15`,
-                        display: "flex", alignItems: "center", gap: 4,
-                      }}>
-                        {isMesh && <span>{isWx ? "🌡" : "📡"}</span>}
-                        {s.label}
-                      </span>
-                      {/* Speaker */}
-                      {tx.speaker && tx.speaker !== "Unknown" && (
-                        <span style={{
-                          fontSize: 11, padding: "2px 8px", borderRadius: 6,
-                          ...(isMesh
-                            ? { color: s.color + "cc", background: `${s.color}10` }
-                            : tx.speaker.toLowerCase() === "dispatch"
-                              ? { color: "#64b5f6", background: "#64b5f610" }
-                              : { color: "#f59e0b", background: "#f59e0b18" }),
-                        }}>{tx.speaker}</span>
-                      )}
-                    </div>
-                    <span style={{ fontSize: 11, fontFamily: "monospace", color: "#333" }}>
-                      {formatTime(tx.timestamp)}
+
+          ) : filteredTx.map((tx, i) => {
+            const s      = ch(tx.channel);
+            const isMesh = tx.channel.startsWith("mesh-");
+            const isWx   = tx.channel === "mesh-weather";
+            const isDisp = tx.speaker?.toLowerCase() === "dispatch";
+
+            return (
+              <div key={`${tx.timestamp}-${i}`} className="fb-card" style={{
+                position: "relative",
+                background: isMesh ? "#090f09" : "#080d08",
+                borderLeft: `3px solid ${s.color}`,
+                borderBottom: `1px solid ${isMesh ? s.color + "20" : "#0e1a0e"}`,
+                borderTop: "1px solid transparent",
+                borderRight: "1px solid transparent",
+                padding: "12px 16px",
+                animationDelay: `${Math.min(i * 0.03, 0.3)}s`,
+              }}>
+                {/* Row 1: channel code, speaker, timestamp */}
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    {/* Channel code */}
+                    <span style={{
+                      fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700,
+                      color: s.color, letterSpacing: 1,
+                      paddingRight: 8, borderRight: `1px solid ${s.color}30`,
+                    }}>
+                      {isMesh && <span style={{ marginRight: 4 }}>{isWx ? "🌡" : "📡"}</span>}
+                      {s.code}
                     </span>
+                    {/* Speaker */}
+                    {tx.speaker && tx.speaker !== "Unknown" && (
+                      <span style={{
+                        fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: 1.5,
+                        color: isMesh ? s.color + "cc"
+                          : isDisp ? "#64b5f6"
+                          : "#f59e0b",
+                      }}>
+                        [{tx.speaker.toUpperCase()}]
+                      </span>
+                    )}
                   </div>
-                  <p style={{
-                    fontSize: 14, lineHeight: 1.55, margin: 0,
-                    color: isMesh ? s.color + "dd" : "#d0d0d0",
-                  }}>{tx.transcript}</p>
-                  {isMesh && !isWx && (
-                    <button onClick={() => setCompose({ replyTo: tx.speaker ?? undefined })} style={{
-                      marginTop: 10, padding: "4px 12px", borderRadius: 6,
-                      border: "1px solid #1a3a1a", background: "transparent",
-                      color: "#2a6a2a", fontSize: 11, cursor: "pointer",
-                    }}>↩ Reply</button>
-                  )}
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#1e3a1e" }}>
+                    {formatTime(tx.timestamp)}
+                  </span>
                 </div>
-              );
-            })
-          )}
+
+                {/* Transcript text */}
+                <p style={{
+                  fontFamily: "'Barlow Condensed',sans-serif", fontSize: 15, fontWeight: 500,
+                  lineHeight: 1.5, margin: 0, letterSpacing: 0.3,
+                  color: isMesh ? s.color + "e0" : "#a8c890",
+                }}>{tx.transcript}</p>
+
+                {/* Reply button for mesh-text */}
+                {isMesh && !isWx && (
+                  <button
+                    onClick={() => setCompose({ replyTo: tx.speaker ?? undefined })}
+                    className="fb-reply"
+                    style={{
+                      marginTop: 10, padding: "3px 12px",
+                      border: "1px solid #0e2e0e", background: "transparent",
+                      color: "#1e4a1e", fontSize: 10, cursor: "pointer",
+                      fontFamily: "'JetBrains Mono',monospace", letterSpacing: 1,
+                      transition: "all 0.15s",
+                    }}
+                  >↩ REPLY</button>
+                )}
+              </div>
+            );
+          })}
 
           {hasMore && filteredTx.length > 0 && (
-            <div style={{ textAlign: "center", padding: "12px 0 24px" }}>
-              <button onClick={loadMore} disabled={loading} style={{
-                padding: "8px 20px", fontSize: 12, borderRadius: 8,
-                border: "1px solid #222", background: "transparent",
-                color: "#555", cursor: loading ? "default" : "pointer", opacity: loading ? 0.4 : 1,
-              }}>{loading ? "Loading…" : "Load more"}</button>
+            <div style={{ textAlign: "center", padding: "16px 0 24px" }}>
+              <button onClick={loadMore} disabled={loading} className="fb-btn" style={{
+                padding: "7px 24px", border: "1px solid #1a2a1a", background: "transparent",
+                color: "#2a4a2a", cursor: loading ? "default" : "pointer", opacity: loading ? 0.4 : 1,
+                fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: 2,
+                transition: "all 0.15s",
+              }}>{loading ? "LOADING…" : "LOAD MORE"}</button>
             </div>
           )}
+
         </div>
       </main>
 
-      <footer style={{ borderTop: "1px solid #141414", padding: "12px 24px", textAlign: "center", fontSize: 11, color: "#2a2a2a" }}>
-        WhistlerBrew FireBox · Sea to Sky Radio
+      {/* ── Footer ── */}
+      <footer style={{ borderTop: "1px solid #0b160b", padding: "8px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#1a2e1a", letterSpacing: 1 }}>WHISTLERBREW FIREBOX · SEA TO SKY RADIO NETWORK</span>
+        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#1a2e1a" }}>50°07′N 122°57′W</span>
       </footer>
 
       {compose && <MeshCompose replyTo={compose.replyTo} onClose={() => setCompose(null)} />}
-
-      <style>{`
-        @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-      `}</style>
     </div>
   );
 }
 
 // ── Root ───────────────────────────────────────────────────────────────────────
-
 export default function FireBoxPage() {
   const [authed,  setAuthed]  = useState(false);
   const [checked, setChecked] = useState(false);
