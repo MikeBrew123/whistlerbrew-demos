@@ -4,43 +4,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef, useCallback } from "react";
 
-// The FireBox page has its own simple password, separate from the main site auth.
-// This keeps the live radio feed accessible to demo guests without sharing
-// the main WhistlerBrew login.
 const FIREBOX_PASSWORD = "FireBox";
+
+const SUPABASE_URL  = "https://bdgmpkbbohbucwoiucyw.supabase.co";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkZ21wa2Jib2hidWN3b2l1Y3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Nzk3ODEsImV4cCI6MjA5MDE1NTc4MX0.WAuh1vJsqxkdQKoBQ6i_qfHiJyKM-TSJ9BLtn8EyUws";
 
 type Transcript = {
   channel: string;
   filename: string;
   timestamp: string;
   transcript: string;
-  speaker?: string; // Identified by GPT-4o-mini: "Dispatch", "Engine 1", etc.
+  speaker?: string;
 };
 
-// Channels actively transcribed (Whisper + GPT pipeline running).
-// All other channels: live audio available but no transcript.
 const TRANSCRIBE_CHANNELS = new Set(["wfd-ch2-scene", "wfd-ch6-ce"]);
 
-// Channel display names and accent colours for the feed.
-const CHANNEL_STYLE: Record<string, { label: string; color: string }> = {
-  // WFD Fire channels — transcription active
-  "wfd-ch2-scene":      { label: "WFD Ch.2 On Scene",        color: "#f0a500" },
-  "wfd-ch6-ce":         { label: "WFD Ch.6 Combined Events", color: "#fb923c" },
-  // Whistler Blackcomb — audio only
-  "wb-patrol-whistler": { label: "WB Whistler Patrol",       color: "#38bdf8" },
-  "wb-patrol-blackcomb":{ label: "WB Blackcomb Patrol",      color: "#22d3ee" },
-  "wb-lift-ops":        { label: "WB Lift Ops",              color: "#67e8f9" },
-  "wb-ops":             { label: "WB Operations",            color: "#a5f3fc" },
-  "wb-heliski":         { label: "WB Heliskiing",            color: "#7dd3fc" },
-  // BCWS NRS — audio only
-  "bcws-titanium":      { label: "NRS Titanium",             color: "#4ade80" },
-  "bcws-platinum":      { label: "NRS Platinum",             color: "#86efac" },
-  // Legacy keys
-  "wfd-garibaldi":      { label: "WFD Ch.5 Garibaldi",       color: "#00a8ff" },
-  "wfd-dispatch":       { label: "WFD Ch.2 On Scene",        color: "#f0a500" },
+const CHANNEL_STYLE: Record<string, { label: string; color: string; icon?: string }> = {
+  "wfd-ch2-scene":       { label: "WFD On Scene",        color: "#f0a500" },
+  "wfd-ch6-ce":          { label: "WFD Comb. Events",    color: "#fb923c" },
+  "wb-patrol-whistler":  { label: "WB Whistler Patrol",  color: "#38bdf8" },
+  "wb-patrol-blackcomb": { label: "WB Blackcomb Patrol", color: "#22d3ee" },
+  "wb-lift-ops":         { label: "WB Lift Ops",         color: "#67e8f9" },
+  "wb-ops":              { label: "WB Operations",       color: "#a5f3fc" },
+  "wb-heliski":          { label: "WB Heliskiing",       color: "#7dd3fc" },
+  "mesh-text":           { label: "Mesh · Text",         color: "#4ade80", icon: "📡" },
+  "mesh-weather":        { label: "Mesh · Weather",      color: "#38bdf8", icon: "🌡" },
 };
 
-function channelStyle(channel: string) {
+const MONITORED_CHANNELS = [
+  "wfd-ch2-scene", "wfd-ch6-ce",
+  "wb-patrol-whistler", "wb-patrol-blackcomb",
+  "wb-lift-ops", "wb-ops", "wb-heliski",
+];
+
+function ch(channel: string) {
   return CHANNEL_STYLE[channel] ?? { label: channel, color: "#888" };
 }
 
@@ -48,62 +45,102 @@ function formatTime(iso: string) {
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return iso;
-    const h = String(d.getHours()).padStart(2, "0");
-    const m = String(d.getMinutes()).padStart(2, "0");
-    const s = String(d.getSeconds()).padStart(2, "0");
-    return `${h}:${m}:${s}`;
-  } catch {
-    return iso;
-  }
+    return `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}:${String(d.getSeconds()).padStart(2,"0")}`;
+  } catch { return iso; }
 }
 
-// ── Login screen ──────────────────────────────────────────────────────────────
+// ── Mesh ticker ────────────────────────────────────────────────────────────────
+
+function MeshTicker({ messages }: { messages: Transcript[] }) {
+  const latest = messages[0];
+  if (!latest) return null;
+
+  const isWx   = latest.channel === "mesh-weather";
+  const icon   = isWx ? "🌡" : "📡";
+  const label  = `${icon} ${latest.speaker ?? "Mesh"}: ${latest.transcript}`;
+  const secs   = Math.max(14, label.length * 0.22);
+
+  return (
+    <div style={{
+      height: 36, background: "#050e05", borderBottom: "1px solid #0d1a0d",
+      display: "flex", alignItems: "center", overflow: "hidden",
+    }}>
+      <style>{`
+        @keyframes fbTicker {
+          0%   { transform: translateX(100vw); }
+          100% { transform: translateX(-100%); }
+        }
+      `}</style>
+
+      {/* Pill */}
+      <div style={{
+        flexShrink: 0, padding: "0 14px", height: "100%",
+        display: "flex", alignItems: "center", gap: 8,
+        borderRight: "1px solid #0d1a0d",
+      }}>
+        <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: 1.5, color: "#2d6a2d" }}>MESH</span>
+        <span style={{
+          fontSize: 9, fontWeight: 700, padding: "1px 6px",
+          borderRadius: 10, background: "#0d2a0d", color: "#4ade80",
+        }}>{messages.length}</span>
+      </div>
+
+      {/* Scrolling content */}
+      <div style={{ flex: 1, overflow: "hidden" }}>
+        <div key={latest.timestamp} style={{
+          animation: `fbTicker ${secs}s linear 1 forwards`,
+          whiteSpace: "nowrap", fontSize: 12,
+          color: isWx ? "#7dd3fc" : "#86efac",
+          lineHeight: "36px", paddingLeft: 12,
+        }}>
+          {label}
+          {messages.length > 1 && (
+            <span style={{ color: "#1e3a1e", marginLeft: 32 }}>
+              + {messages.length - 1} more message{messages.length > 2 ? "s" : ""}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Login ──────────────────────────────────────────────────────────────────────
 
 function LoginScreen({ onAuth }: { onAuth: () => void }) {
   const [value, setValue] = useState("");
-  const [error, setError] = useState(false);
-
+  const [error, setError]  = useState(false);
   const submit = () => {
-    if (value === FIREBOX_PASSWORD) {
-      sessionStorage.setItem("firebox_auth", "true");
-      onAuth();
-    } else {
-      setError(true);
-      setValue("");
-    }
+    if (value === FIREBOX_PASSWORD) { sessionStorage.setItem("firebox_auth","true"); onAuth(); }
+    else { setError(true); setValue(""); }
   };
-
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-[#0d0d0d]">
-      <Image src="/logo.png" alt="WhistlerBrew" width={200} height={50} className="mb-8 h-auto" />
-      <div className="w-full max-w-sm bg-[#1a1a1a] border border-[#333] rounded-xl p-8">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-2xl">📻</span>
-          <h1 className="text-xl font-bold text-white">FireBox</h1>
+    <div style={{ minHeight: "100vh", background: "#0a0a0a", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 32 }}>
+      <Image src="/logo.png" alt="WhistlerBrew" width={180} height={45} style={{ height: "auto", marginBottom: 40, opacity: 0.8 }} />
+      <div style={{ width: "100%", maxWidth: 360, background: "#111", border: "1px solid #1e1e1e", borderRadius: 16, padding: 32 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+          <span style={{ fontSize: 22 }}>📻</span>
+          <h1 style={{ fontSize: 20, fontWeight: 700, color: "#fff", margin: 0 }}>FireBox</h1>
         </div>
-        <p className="text-[#888] text-sm mb-6">
+        <p style={{ color: "#555", fontSize: 13, marginBottom: 24, lineHeight: 1.5 }}>
           Live WFD radio transcripts. Enter access code to continue.
         </p>
         <input
-          type="password"
-          value={value}
-          onChange={(e) => { setValue(e.target.value); setError(false); }}
-          onKeyDown={(e) => e.key === "Enter" && submit()}
+          type="password" value={value} autoFocus
+          onChange={e => { setValue(e.target.value); setError(false); }}
+          onKeyDown={e => e.key === "Enter" && submit()}
           placeholder="Access code"
-          autoFocus
-          className="w-full bg-[#111] border border-[#333] rounded-lg px-4 py-3 text-white
-                     placeholder-[#555] focus:outline-none focus:border-[#ff6b35] mb-3"
+          style={{
+            width: "100%", background: "#0d0d0d", border: `1px solid ${error ? "#ef4444" : "#222"}`,
+            borderRadius: 10, padding: "12px 16px", color: "#fff", fontSize: 14,
+            outline: "none", boxSizing: "border-box", marginBottom: 8,
+          }}
         />
-        {error && (
-          <p className="text-red-400 text-xs mb-3">Incorrect code. Try again.</p>
-        )}
-        <button
-          onClick={submit}
-          className="w-full bg-[#ff6b35] hover:bg-[#e55a25] text-white font-semibold
-                     py-3 rounded-lg transition-colors"
-        >
-          Enter
-        </button>
+        {error && <p style={{ color: "#ef4444", fontSize: 12, marginBottom: 8 }}>Incorrect code. Try again.</p>}
+        <button onClick={submit} style={{
+          width: "100%", padding: "13px 0", borderRadius: 10, border: "none",
+          background: "#f0a500", color: "#000", fontWeight: 700, fontSize: 14, cursor: "pointer",
+        }}>Enter</button>
       </div>
     </div>
   );
@@ -112,247 +149,266 @@ function LoginScreen({ onAuth }: { onAuth: () => void }) {
 // ── Main feed ─────────────────────────────────────────────────────────────────
 
 function FireBoxFeed() {
-  const [transcripts, setTranscripts] = useState<Transcript[]>([]);
-  const [channelFilter, setChannelFilter] = useState<string>("all");
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
-  const [live, setLive] = useState(true);
-  const [offset, setOffset] = useState(0);
-  const [hasMore, setHasMore] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const feedRef = useRef<HTMLDivElement>(null);
-  const prevCountRef = useRef(0);
-  const PAGE_SIZE = 50;
+  const [transcripts,  setTranscripts]  = useState<Transcript[]>([]);
+  const [meshMessages, setMeshMessages] = useState<Transcript[]>([]);
+  const [channelFilter, setFilter]      = useState<string>("all");
+  const [lastUpdated,  setLastUpdated]  = useState<Date | null>(null);
+  const [live,   setLive]       = useState(true);
+  const [offset, setOffset]     = useState(0);
+  const [hasMore, setHasMore]   = useState(true);
+  const [loading, setLoading]   = useState(false);
+  const feedRef  = useRef<HTMLDivElement>(null);
+  const prevRef  = useRef(0);
+  const PAGE = 50;
 
-  const fetchTranscripts = useCallback(async () => {
+  const fetchFeed = useCallback(async () => {
     try {
-      const base = channelFilter === "all" ? "/api/firebox" : `/api/firebox?channel=${channelFilter}`;
-      const url = `${base}${channelFilter === "all" ? "?" : "&"}limit=${PAGE_SIZE}&offset=0`;
-      const res = await fetch(url);
-      if (!res.ok) return;
-      const data = await res.json();
-      const txs = data.transcripts ?? [];
+      const q = channelFilter === "all" ? "" : `&channel=${channelFilter}`;
+      const r = await fetch(`/api/firebox?limit=${PAGE}&offset=0${q}`);
+      if (!r.ok) return;
+      const d = await r.json();
+      const txs: Transcript[] = d.transcripts ?? [];
       setTranscripts(txs);
-      setOffset(PAGE_SIZE);
-      setHasMore(txs.length === PAGE_SIZE);
+      setOffset(PAGE);
+      setHasMore(txs.length === PAGE);
       setLastUpdated(new Date());
-      if (txs.length > prevCountRef.current && feedRef.current) {
-        feedRef.current.scrollTo({ top: 0, behavior: "smooth" });
-      }
-      prevCountRef.current = txs.length;
-    } catch { /* retry on next poll */ }
+      if (txs.length > prevRef.current) feedRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+      prevRef.current = txs.length;
+    } catch {}
   }, [channelFilter]);
 
-  const loadMore = async () => {
-    setLoadingMore(true);
+  const fetchMesh = useCallback(async () => {
     try {
-      const base = channelFilter === "all" ? "/api/firebox" : `/api/firebox?channel=${channelFilter}`;
-      const url = `${base}${channelFilter === "all" ? "?" : "&"}limit=${PAGE_SIZE}&offset=${offset}`;
-      const res = await fetch(url);
-      if (!res.ok) return;
-      const data = await res.json();
-      const more = data.transcripts ?? [];
-      setTranscripts(prev => [...prev, ...more]);
-      setOffset(o => o + PAGE_SIZE);
-      setHasMore(more.length === PAGE_SIZE);
-    } catch { /* ignore */ }
-    setLoadingMore(false);
+      const url = `${SUPABASE_URL}/rest/v1/firebox_transcripts?channel=in.(mesh-text,mesh-weather)&order=recorded_at.desc&limit=10`;
+      const r = await fetch(url, { headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` } });
+      if (!r.ok) return;
+      const rows = await r.json();
+      setMeshMessages(rows.map((row: Record<string, string>) => ({
+        channel: row.channel, filename: row.filename,
+        timestamp: row.recorded_at, transcript: row.transcript, speaker: row.speaker,
+      })));
+    } catch {}
+  }, []);
+
+  const loadMore = async () => {
+    setLoading(true);
+    try {
+      const q = channelFilter === "all" ? "" : `&channel=${channelFilter}`;
+      const r = await fetch(`/api/firebox?limit=${PAGE}&offset=${offset}${q}`);
+      if (!r.ok) return;
+      const d = await r.json();
+      const more: Transcript[] = d.transcripts ?? [];
+      setTranscripts(p => [...p, ...more]);
+      setOffset(o => o + PAGE);
+      setHasMore(more.length === PAGE);
+    } catch {}
+    setLoading(false);
   };
 
-  // Reset pagination when channel changes
   useEffect(() => { setOffset(0); setHasMore(true); }, [channelFilter]);
 
-  // Poll every 30 seconds when live
   useEffect(() => {
-    fetchTranscripts();
+    fetchFeed();
+    fetchMesh();
     if (!live) return;
-    const id = setInterval(fetchTranscripts, 30000);
-    return () => clearInterval(id);
-  }, [fetchTranscripts, live]);
+    const t1 = setInterval(fetchFeed,  30000);
+    const t2 = setInterval(fetchMesh,  15000);
+    return () => { clearInterval(t1); clearInterval(t2); };
+  }, [fetchFeed, fetchMesh, live]);
 
-  // All monitored channels — tabs always shown regardless of traffic
-  const MONITORED_CHANNELS = [
-    "wfd-ch2-scene", "wfd-ch6-ce",
-    "wb-patrol-whistler", "wb-patrol-blackcomb", "wb-lift-ops",
-    "wb-ops", "wb-heliski", "bcws-titanium", "bcws-platinum",
-  ];
-  const activeChannels = Array.from(new Set([...MONITORED_CHANNELS, ...transcripts.map((t) => t.channel)]));
-  const isAudioOnly = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter);
+  const activeChannels = Array.from(new Set([
+    ...MONITORED_CHANNELS,
+    ...transcripts.map(t => t.channel).filter(c => !c.startsWith("mesh-")),
+  ]));
+
+  const isMeshFilter  = channelFilter.startsWith("mesh-");
+  const isAudioOnly   = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter) && !isMeshFilter;
+  const filteredTx    = channelFilter === "all"
+    ? transcripts
+    : transcripts.filter(t => t.channel === channelFilter);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0d0d0d] text-white">
+    <div style={{ minHeight: "100vh", background: "#0a0a0a", color: "#e0e0e0", fontFamily: "system-ui, sans-serif", display: "flex", flexDirection: "column" }}>
+
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-[#0d0d0d]/95 backdrop-blur border-b border-[#222] px-6 py-4">
-        <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/projects" className="text-[#555] hover:text-white transition-colors text-sm">
-              ← Projects
-            </Link>
-            <span className="text-[#333]">|</span>
-            <span className="text-lg font-bold">📻 FireBox</span>
-            {/* Live indicator */}
-            <span className={`flex items-center gap-1.5 text-xs px-2 py-0.5 rounded-full
-              ${live ? "bg-green-900/40 text-green-400" : "bg-[#222] text-[#666]"}`}>
-              <span className={`w-1.5 h-1.5 rounded-full ${live ? "bg-green-400 animate-pulse" : "bg-[#555]"}`} />
+      <header style={{
+        position: "sticky", top: 0, zIndex: 10,
+        background: "#0a0a0a", borderBottom: "1px solid #1a1a1a",
+        padding: "0 24px",
+      }}>
+        <div style={{ maxWidth: 760, margin: "0 auto", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <Link href="/projects" style={{ color: "#444", textDecoration: "none", fontSize: 13 }}>← Projects</Link>
+            <span style={{ color: "#1e1e1e" }}>|</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 16 }}>📻</span>
+              <span style={{ fontWeight: 700, fontSize: 16 }}>FireBox</span>
+            </div>
+            <span style={{
+              display: "flex", alignItems: "center", gap: 5, fontSize: 11,
+              padding: "3px 8px", borderRadius: 20,
+              background: live ? "#0d2a0d" : "#1a1a1a",
+              color: live ? "#4ade80" : "#555",
+            }}>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: live ? "#4ade80" : "#444", animation: live ? "pulse 2s ease-in-out infinite" : "none" }} />
               {live ? "LIVE" : "PAUSED"}
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             {lastUpdated && (
-              <span className="text-[#555] text-xs hidden sm:block">
-                Updated {formatTime(lastUpdated.toISOString())}
-              </span>
+              <span style={{ fontSize: 11, color: "#444" }}>Updated {formatTime(lastUpdated.toISOString())}</span>
             )}
-            <button
-              onClick={() => setLive((v) => !v)}
-              className="text-xs px-3 py-1.5 border border-[#333] rounded-lg
-                         hover:border-[#ff6b35] hover:text-[#ff6b35] transition-colors"
-            >
-              {live ? "Pause" : "Resume"}
-            </button>
+            <button onClick={() => setLive(v => !v)} style={{
+              fontSize: 12, padding: "5px 12px", borderRadius: 8,
+              border: "1px solid #222", background: "transparent",
+              color: "#666", cursor: "pointer",
+            }}>{live ? "Pause" : "Resume"}</button>
           </div>
         </div>
       </header>
 
-      {/* Channel filter tabs */}
-      <div className="border-b border-[#222] px-6">
-        <div className="max-w-3xl mx-auto flex flex-wrap gap-1 pt-3 pb-0">
-          {["all", ...activeChannels].map((ch) => {
-            const style = ch === "all" ? { label: "All Channels", color: "#aaa" } : channelStyle(ch);
-            const audioOnly = ch !== "all" && !TRANSCRIBE_CHANNELS.has(ch);
+      {/* Mesh ticker */}
+      <MeshTicker messages={meshMessages} />
+
+      {/* Channel tabs */}
+      <div style={{ borderBottom: "1px solid #1a1a1a", padding: "0 24px", overflowX: "auto" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", gap: 2, paddingTop: 10 }}>
+          {(["all", ...activeChannels, "mesh-text", "mesh-weather"] as string[]).map(c => {
+            const s = c === "all" ? { label: "All", color: "#888" } : ch(c);
+            const active = channelFilter === c;
+            const audioOnly = c !== "all" && !TRANSCRIBE_CHANNELS.has(c) && !c.startsWith("mesh-");
+            const isMesh = c.startsWith("mesh-");
             return (
-              <button
-                key={ch}
-                onClick={() => setChannelFilter(ch)}
-                className={`px-3 py-2 text-xs font-medium rounded-t-lg border-b-2 transition-colors whitespace-nowrap flex items-center gap-1
-                  ${channelFilter === ch
-                    ? "border-[#ff6b35] text-white"
-                    : "border-transparent text-[#666] hover:text-[#aaa]"}`}
-              >
-                {audioOnly && <span className="opacity-60">🔊</span>}
-                {style.label}
+              <button key={c} onClick={() => setFilter(c)} style={{
+                padding: "7px 14px", fontSize: 11, fontWeight: active ? 600 : 400,
+                borderRadius: "8px 8px 0 0", border: "none", cursor: "pointer",
+                borderBottom: active ? `2px solid ${s.color}` : "2px solid transparent",
+                background: active ? `${s.color}10` : "transparent",
+                color: active ? s.color : "#555",
+                whiteSpace: "nowrap",
+                display: "flex", alignItems: "center", gap: 4,
+              }}>
+                {audioOnly && <span style={{ opacity: 0.5, fontSize: 10 }}>🔊</span>}
+                {isMesh && <span style={{ fontSize: 10 }}>{(CHANNEL_STYLE[c] as { icon?: string })?.icon}</span>}
+                {s.label}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Listen Live bar — embedded audio player, shows when a channel is selected */}
-      {channelFilter !== "all" && (
-        <div className="border-b border-[#222] px-6 py-3 bg-[#0d0d0d]">
-          <div className="max-w-3xl mx-auto flex items-center gap-3">
-            <span className="flex items-center gap-1.5 text-xs text-[#555] whitespace-nowrap">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              Live
+      {/* Audio player */}
+      {channelFilter !== "all" && !isMeshFilter && (
+        <div style={{ borderBottom: "1px solid #1a1a1a", padding: "10px 24px", background: "#0a0a0a" }}>
+          <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#444", whiteSpace: "nowrap" }}>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#4ade80", animation: "pulse 2s ease-in-out infinite" }} />
+              Live audio
             </span>
-            <audio
-              controls
-              src={`https://firebox.tail4bb545.ts.net/${channelFilter}.mp3`}
-              className="w-full h-8"
-              style={{ colorScheme: "dark" }}
-            />
+            <audio controls src={`https://firebox.tail4bb545.ts.net/${channelFilter}.mp3`}
+              style={{ width: "100%", height: 32, colorScheme: "dark" } as React.CSSProperties} />
           </div>
         </div>
       )}
 
       {/* Feed */}
-      <main className="flex-1 overflow-y-auto px-6 py-6" ref={feedRef}>
-        <div className="max-w-3xl mx-auto space-y-3">
+      <main style={{ flex: 1, overflowY: "auto", padding: "20px 24px" }} ref={feedRef}>
+        <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", flexDirection: "column", gap: 10 }}>
+
           {isAudioOnly ? (
-            <div className="text-center py-16 text-[#555]">
-              <div className="text-5xl mb-5">🔊</div>
-              <p className="text-base font-medium text-[#888] mb-1">{channelStyle(channelFilter).label}</p>
-              <p className="text-sm mb-6">Audio monitoring only — transcription not active on this channel.</p>
-              <p className="text-xs text-[#444] mb-8">Use the player above to listen live.</p>
-              <button
-                onClick={() => alert("To enable transcription for this channel, add it to TRANSCRIBE_CHANNELS in transcribe.py on the Pi.")}
-                className="px-4 py-2 text-xs border border-[#333] rounded-lg text-[#555]
-                           hover:border-[#ff6b35] hover:text-[#ff6b35] transition-colors"
-              >
-                ▶ Enable Transcription
-              </button>
+            <div style={{ textAlign: "center", padding: "80px 0", color: "#444" }}>
+              <div style={{ fontSize: 48, marginBottom: 16 }}>🔊</div>
+              <p style={{ fontSize: 15, color: "#666", marginBottom: 6 }}>{ch(channelFilter).label}</p>
+              <p style={{ fontSize: 13, marginBottom: 4 }}>Audio monitoring only — transcription not active.</p>
+              <p style={{ fontSize: 12, color: "#333" }}>Use the player above to listen live.</p>
             </div>
-          ) : transcripts.length === 0 ? (
-            <div className="text-center py-20 text-[#444]">
-              <div className="text-4xl mb-4">📡</div>
-              <p className="text-lg">No transmissions yet</p>
-              <p className="text-sm mt-2">Waiting for radio traffic…</p>
+          ) : filteredTx.length === 0 ? (
+            <div style={{ textAlign: "center", padding: "80px 0", color: "#333" }}>
+              <div style={{ fontSize: 40, marginBottom: 16 }}>📡</div>
+              <p style={{ fontSize: 16, color: "#444" }}>No transmissions yet</p>
+              <p style={{ fontSize: 13, marginTop: 6 }}>Waiting for radio traffic…</p>
             </div>
           ) : (
-            transcripts.map((tx, i) => {
-              const style = channelStyle(tx.channel);
+            filteredTx.map((tx, i) => {
+              const s = ch(tx.channel);
+              const isMesh = tx.channel.startsWith("mesh-");
+              const isWx   = tx.channel === "mesh-weather";
               return (
-                <div
-                  key={`${tx.timestamp}-${i}`}
-                  className="bg-[#141414] border border-[#222] rounded-xl p-4
-                             hover:border-[#333] transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
+                <div key={`${tx.timestamp}-${i}`} style={{
+                  background: isMesh ? `${s.color}08` : "#111",
+                  border: `1px solid ${isMesh ? s.color + "25" : "#1e1e1e"}`,
+                  borderRadius: 12, padding: "14px 16px",
+                  borderLeft: isMesh ? `3px solid ${s.color}60` : `3px solid ${s.color}30`,
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                       {/* Channel badge */}
-                      <span
-                        className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                        style={{ color: style.color, backgroundColor: `${style.color}18` }}
-                      >
-                        {style.label}
+                      <span style={{
+                        fontSize: 11, fontWeight: 600, padding: "2px 8px", borderRadius: 6,
+                        color: s.color, background: `${s.color}15`,
+                        display: "flex", alignItems: "center", gap: 4,
+                      }}>
+                        {isMesh && <span>{isWx ? "🌡" : "📡"}</span>}
+                        {s.label}
                       </span>
-                      {/* Speaker badge — Dispatch = blue, field units = amber */}
+                      {/* Speaker */}
                       {tx.speaker && tx.speaker !== "Unknown" && (
-                        <span
-                          className="text-xs px-2 py-0.5 rounded-full"
-                          style={tx.speaker.toLowerCase() === "dispatch"
-                            ? { color: "#64b5f6", backgroundColor: "#64b5f610" }
-                            : { color: "#f59e0b", backgroundColor: "#f59e0b18" }}
-                        >
-                          {tx.speaker}
-                        </span>
+                        <span style={{
+                          fontSize: 11, padding: "2px 8px", borderRadius: 6,
+                          ...(isMesh
+                            ? { color: s.color + "cc", background: `${s.color}10` }
+                            : tx.speaker.toLowerCase() === "dispatch"
+                              ? { color: "#64b5f6", background: "#64b5f610" }
+                              : { color: "#f59e0b", background: "#f59e0b18" }),
+                        }}>{tx.speaker}</span>
                       )}
                     </div>
-                    <span className="text-[#444] text-xs font-mono">
+                    <span style={{ fontSize: 11, fontFamily: "monospace", color: "#333" }}>
                       {formatTime(tx.timestamp)}
                     </span>
                   </div>
-                  <p className="text-[#e0e0e0] text-sm leading-relaxed">{tx.transcript}</p>
+                  <p style={{
+                    fontSize: 14, lineHeight: 1.55, margin: 0,
+                    color: isMesh ? s.color + "dd" : "#d0d0d0",
+                  }}>{tx.transcript}</p>
                 </div>
               );
             })
           )}
-          {/* Load More */}
-          {hasMore && transcripts.length > 0 && (
-            <div className="pt-2 pb-6 text-center">
-              <button
-                onClick={loadMore}
-                disabled={loadingMore}
-                className="px-5 py-2 text-sm border border-[#333] rounded-lg text-[#666]
-                           hover:border-[#555] hover:text-[#aaa] transition-colors disabled:opacity-40"
-              >
-                {loadingMore ? "Loading…" : "Load more"}
-              </button>
+
+          {hasMore && filteredTx.length > 0 && (
+            <div style={{ textAlign: "center", padding: "12px 0 24px" }}>
+              <button onClick={loadMore} disabled={loading} style={{
+                padding: "8px 20px", fontSize: 12, borderRadius: 8,
+                border: "1px solid #222", background: "transparent",
+                color: "#555", cursor: loading ? "default" : "pointer", opacity: loading ? 0.4 : 1,
+              }}>{loading ? "Loading…" : "Load more"}</button>
             </div>
           )}
         </div>
       </main>
 
-      <footer className="border-t border-[#1a1a1a] px-6 py-3 text-center text-[#333] text-xs">
-        WhistlerBrew FireBox · Sea to Sky WFD Radio
+      <footer style={{ borderTop: "1px solid #141414", padding: "12px 24px", textAlign: "center", fontSize: 11, color: "#2a2a2a" }}>
+        WhistlerBrew FireBox · Sea to Sky Radio
       </footer>
+
+      <style>{`
+        @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+      `}</style>
     </div>
   );
 }
 
-// ── Root component ────────────────────────────────────────────────────────────
+// ── Root ───────────────────────────────────────────────────────────────────────
 
 export default function FireBoxPage() {
-  const [authed, setAuthed] = useState(false);
+  const [authed,  setAuthed]  = useState(false);
   const [checked, setChecked] = useState(false);
-
   useEffect(() => {
-    if (sessionStorage.getItem("firebox_auth") === "true") {
-      setAuthed(true);
-    }
+    if (sessionStorage.getItem("firebox_auth") === "true") setAuthed(true);
     setChecked(true);
   }, []);
-
   if (!checked) return null;
-  if (!authed) return <LoginScreen onAuth={() => setAuthed(true)} />;
+  if (!authed)  return <LoginScreen onAuth={() => setAuthed(true)} />;
   return <FireBoxFeed />;
 }
