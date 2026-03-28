@@ -11,6 +11,7 @@ const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 type Transcript = {
   channel: string; filename: string;
   timestamp: string; transcript: string; speaker?: string;
+  signal?: number; readability?: number;
 };
 
 const TRANSCRIBE_CHANNELS = new Set(["wfd-ch2-scene", "wfd-ch6-ce"]);
@@ -71,6 +72,22 @@ function formatTime(iso: string) {
     const day = String(d.getDate()).padStart(2,"0");
     return `${mon}-${day} ${time}`;
   } catch { return iso; }
+}
+
+function QualityBadge({ signal, readability }: { signal?: number; readability?: number }) {
+  if (!signal && !readability) return null;
+  const s = signal ?? "–";
+  const r = readability ?? "–";
+  const sum = (signal ?? 0) + (readability ?? 0);
+  const color = sum >= 9 ? "#39d353" : sum >= 7 ? "#f0a500" : sum >= 5 ? "#fb923c" : "#ef4444";
+  return (
+    <span style={{
+      fontFamily: "'JetBrains Mono',monospace",
+      fontSize: 9, fontWeight: 700,
+      color, letterSpacing: 0.5,
+      opacity: 0.85,
+    }}>{s}×{r}</span>
+  );
 }
 
 type WeatherReading = { ts: string; node: string; temp?: number; humidity?: number; pressure?: number; };
@@ -752,9 +769,11 @@ function FireBoxFeed() {
                       fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700,
                       color: s.color, letterSpacing: 1,
                       paddingRight: 8, borderRight: `1px solid ${s.color}30`,
+                      display: "flex", alignItems: "center", gap: 6,
                     }}>
                       {isMesh && <span style={{ marginRight: 4 }}>{isWx ? "🌡" : "📡"}</span>}
                       {s.code}
+                      <QualityBadge signal={tx.signal} readability={tx.readability} />
                     </span>
                     {/* Speaker */}
                     {tx.speaker && tx.speaker !== "Unknown" && (

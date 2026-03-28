@@ -36,14 +36,17 @@ export async function GET(request: NextRequest) {
   const rows: Array<{
     channel: string; filename: string; recorded_at: string;
     speaker: string | null; transcript: string;
+    signal: number | null; readability: number | null;
   }> = await res.json();
 
   const transcripts = rows.map((r) => ({
-    channel:    r.channel,
-    filename:   r.filename,
-    timestamp:  r.recorded_at,
-    speaker:    r.speaker ?? undefined,
-    transcript: r.transcript,
+    channel:     r.channel,
+    filename:    r.filename,
+    timestamp:   r.recorded_at,
+    speaker:     r.speaker     ?? undefined,
+    transcript:  r.transcript,
+    signal:      r.signal      ?? undefined,
+    readability: r.readability ?? undefined,
   }));
 
   return NextResponse.json({ transcripts });
