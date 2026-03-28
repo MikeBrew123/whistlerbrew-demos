@@ -59,9 +59,17 @@ function ch(channel: string) {
 
 function formatTime(iso: string) {
   try {
-    const d = new Date(iso);
+    const d   = new Date(iso);
     if (isNaN(d.getTime())) return iso;
-    return `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}:${String(d.getSeconds()).padStart(2,"0")}`;
+    const now = new Date();
+    const isToday = d.getFullYear() === now.getFullYear()
+                 && d.getMonth()    === now.getMonth()
+                 && d.getDate()     === now.getDate();
+    const time = `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}:${String(d.getSeconds()).padStart(2,"0")}`;
+    if (isToday) return time;
+    const mon = String(d.getMonth() + 1).padStart(2,"0");
+    const day = String(d.getDate()).padStart(2,"0");
+    return `${mon}-${day} ${time}`;
   } catch { return iso; }
 }
 
