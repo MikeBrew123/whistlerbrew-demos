@@ -145,32 +145,66 @@ const audioMgr = new AudioManager();
 // ── Mesh ticker ───────────────────────────────────────────────────────────────
 
 function MeshTicker({ messages, onReply }: { messages: Transcript[]; onReply: () => void }) {
-  if (messages.length === 0) return null;
-  const tickerText = messages.slice(0, 8).map(m =>
-    `${m.channel === "mesh-weather" ? "🌡" : "💬"} ${m.speaker ?? "Mesh"}: ${m.transcript}`
-  ).join("     ·     ");
+  const latest = messages[0];
+  const hasMsg = !!latest;
+  const icon   = latest?.channel === "mesh-weather" ? "🌡" : "📡";
+  const label  = hasMsg ? `${icon} ${latest.speaker ?? "Mesh"}: ${latest.transcript}` : null;
+  const secs   = label ? Math.max(12, label.length * 0.22) : 0;
 
   return (
     <div style={{
-      height: 34, background: "#061206", borderBottom: "1px solid #1a3a1a",
-      display: "flex", alignItems: "center", overflow: "hidden", flexShrink: 0,
+      height: 38, background: "#050e05", borderBottom: "1px solid #172617",
+      display: "flex", alignItems: "center", flexShrink: 0, overflow: "hidden",
     }}>
-      <style>{`@keyframes meshScroll { 0% { transform: translateX(820px); } 100% { transform: translateX(-100%); } }`}</style>
-      <div style={{ flex: 1, overflow: "hidden", position: "relative" }}>
-        <div style={{
-          animation: `meshScroll ${Math.max(15, tickerText.length * 0.18)}s linear infinite`,
-          whiteSpace: "nowrap", fontSize: 11, color: "#86efac", lineHeight: "34px",
-          willChange: "transform",
-        }}>
-          {tickerText}
-        </div>
+      <style>{`
+        @keyframes meshScroll {
+          0%   { transform: translateX(680px); }
+          100% { transform: translateX(-100%); }
+        }
+      `}</style>
+
+      {/* Label pill */}
+      <div style={{
+        flexShrink: 0, height: "100%", padding: "0 12px",
+        display: "flex", alignItems: "center", gap: 6,
+        borderRight: "1px solid #172617", background: "#050e05",
+      }}>
+        <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: 1, color: "#2d6a2d" }}>MESH</span>
+        {messages.length > 0 && (
+          <span style={{
+            fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 10,
+            background: "#1a3a1a", color: "#4ade80",
+          }}>{messages.length}</span>
+        )}
       </div>
+
+      {/* Scrolling text */}
+      <div style={{ flex: 1, overflow: "hidden", position: "relative", height: "100%" }}>
+        {hasMsg ? (
+          <div key={label} style={{
+            animation: `meshScroll ${secs}s linear 1 forwards`,
+            whiteSpace: "nowrap", fontSize: 12, color: "#86efac",
+            lineHeight: "38px", paddingLeft: 8,
+          }}>
+            {label}
+          </div>
+        ) : (
+          <div style={{ fontSize: 11, color: "#1e3a1e", lineHeight: "38px", paddingLeft: 12 }}>
+            No mesh traffic
+          </div>
+        )}
+      </div>
+
+      {/* Reply button */}
       <button onClick={onReply} style={{
-        flexShrink: 0, height: 34, padding: "0 14px", fontSize: 11, fontWeight: 700,
-        background: "#0d2a0d", color: "#4ade80", border: "none", borderLeft: "1px solid #1a3a1a",
+        flexShrink: 0, height: "100%", padding: "0 18px",
+        fontSize: 12, fontWeight: 700, letterSpacing: 0.5,
+        background: hasMsg ? "#0d2a0d" : "#050e05",
+        color: hasMsg ? "#4ade80" : "#1e3a1e",
+        border: "none", borderLeft: "1px solid #172617",
         cursor: "pointer",
       }}>
-        Reply
+        ⌨ Reply
       </button>
     </div>
   );
@@ -183,33 +217,53 @@ function MeshCompose({ onSend, onClose }: { onSend: (msg: string) => void; onClo
   const submit = () => { if (text.trim()) { onSend(text.trim()); onClose(); } };
   return (
     <div style={{
-      position: "absolute", inset: 0, zIndex: 40, background: "rgba(0,0,0,0.92)",
-      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16,
+      position: "absolute", inset: 0, zIndex: 40, background: "#050e05",
+      display: "flex", flexDirection: "column",
     }}>
-      <div style={{ width: 480, borderRadius: 16, border: "1px solid #1a3a1a", background: "#0a1a0a", padding: 20 }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: "#4ade80", marginBottom: 4 }}>📡 Send Mesh Message</div>
-        <div style={{ fontSize: 10, color: "#3a5a3a", marginBottom: 14 }}>Broadcast → all nodes on mesh</div>
+      {/* Header */}
+      <div style={{
+        height: 52, display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "0 16px", borderBottom: "1px solid #172617", flexShrink: 0,
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <span style={{ fontSize: 14, fontWeight: 800, color: "#4ade80", letterSpacing: 1 }}>📡 MESH REPLY</span>
+          <span style={{ fontSize: 11, color: "#2d6a2d" }}>→ Broadcast · all nodes</span>
+        </div>
+        <button onClick={onClose} style={{
+          width: 36, height: 36, borderRadius: 8, fontSize: 18, lineHeight: 1,
+          background: "#0a1a0a", border: "1px solid #172617", color: "#4ade80", cursor: "pointer",
+        }}>×</button>
+      </div>
+
+      {/* Input */}
+      <div style={{ flex: 1, padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
         <textarea
           autoFocus value={text} onChange={e => setText(e.target.value)}
-          onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(); } }}
-          placeholder="Type message…"
+          placeholder="Type your message…"
           style={{
-            width: "100%", height: 80, padding: 10, borderRadius: 8, resize: "none",
-            background: "#0f0f0f", border: "1px solid #1a3a1a", color: "#e0e0e0",
-            fontSize: 13, fontFamily: "system-ui, sans-serif", boxSizing: "border-box",
+            flex: 1, width: "100%", padding: 14, borderRadius: 10, resize: "none",
+            background: "#0a1a0a", border: `1px solid ${text.trim() ? "#2d6a2d" : "#172617"}`,
+            color: "#e0e0e0", fontSize: 15, fontFamily: "system-ui, sans-serif",
+            boxSizing: "border-box", outline: "none",
           }}
         />
-        <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
-          <button onClick={onClose} style={{
-            flex: 1, padding: "10px 0", borderRadius: 8, background: "transparent",
-            border: "1px solid #222", color: "#555", fontSize: 13, cursor: "pointer",
-          }}>Cancel</button>
-          <button onClick={submit} disabled={!text.trim()} style={{
-            flex: 2, padding: "10px 0", borderRadius: 8,
-            background: text.trim() ? "#0d2a0d" : "#111", border: `1px solid ${text.trim() ? "#4ade80" : "#222"}`,
-            color: text.trim() ? "#4ade80" : "#333", fontSize: 13, fontWeight: 700, cursor: text.trim() ? "pointer" : "default",
-          }}>Send</button>
-        </div>
+      </div>
+
+      {/* Action buttons — large touch targets */}
+      <div style={{
+        display: "flex", gap: 0, flexShrink: 0,
+        borderTop: "1px solid #172617", height: 64,
+      }}>
+        <button onClick={onClose} style={{
+          flex: 1, fontSize: 14, fontWeight: 600, background: "#050e05",
+          border: "none", borderRight: "1px solid #172617", color: "#3a5a3a", cursor: "pointer",
+        }}>Cancel</button>
+        <button onClick={submit} disabled={!text.trim()} style={{
+          flex: 2, fontSize: 15, fontWeight: 800, letterSpacing: 0.5,
+          background: text.trim() ? "#0d2a0d" : "#060e06",
+          border: "none", color: text.trim() ? "#4ade80" : "#1a3a1a",
+          cursor: text.trim() ? "pointer" : "default",
+        }}>SEND →</button>
       </div>
     </div>
   );
@@ -221,34 +275,58 @@ function ModeSelector({ onSelect }: { onSelect: (m: OpMode) => void }) {
   return (
     <div style={{
       position: "absolute", inset: 0, background: "#0a0a0a", zIndex: 50,
-      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 32,
+      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 24,
     }}>
+      {/* Logo — screen blend mode removes white bg */}
       <div style={{ textAlign: "center" }}>
-        <Image src="/firebox-logo.png" alt="FireBox" width={320} height={160} style={{ objectFit: "contain" }} />
-        <div style={{ fontSize: 12, color: "#555", marginTop: 4 }}>Select Operating Mode</div>
+        <Image
+          src="/firebox-logo.png" alt="FireBox" width={280} height={140}
+          style={{ objectFit: "contain", mixBlendMode: "screen" }}
+        />
+        <div style={{ fontSize: 11, color: "#444", letterSpacing: 2, textTransform: "uppercase", marginTop: 2 }}>
+          Select Operating Mode
+        </div>
       </div>
-      <div style={{ display: "flex", gap: 20 }}>
+
+      {/* Mode cards — full width, touch-friendly */}
+      <div style={{ display: "flex", gap: 16, padding: "0 32px", width: "100%", boxSizing: "border-box" }}>
         {([
           {
-            mode: "whistler" as const, icon: "🏔️", title: "WHISTLER",
-            lines: ["WFD + WB channels", "NRS Silver (local)"],
+            mode: "whistler" as const,
+            icon: "🏔️", title: "WHISTLER",
+            sub: "Local operations",
+            lines: ["WFD On Scene + Comb. Events", "WB Patrol + Lift + Heli", "NRS Silver (local)"],
             color: "#38bdf8",
           },
           {
-            mode: "deployment" as const, icon: "🔥", title: "DEPLOYMENT",
-            lines: ["OFC 1 + OFC 2", "All NRS metals", "14 colour channels", "Fire A/B channels"],
+            mode: "deployment" as const,
+            icon: "🔥", title: "DEPLOYMENT",
+            sub: "BCWS inter-agency",
+            lines: ["OFC 1 + OFC 2", "All NRS metals (simplex)", "14 colour channels + Fire A/B"],
             color: "#f0a500",
           },
-        ]).map(({ mode, icon, title, lines, color }) => (
+        ]).map(({ mode, icon, title, sub, lines, color }) => (
           <button key={mode} onClick={() => onSelect(mode)}
             style={{
-              width: 210, padding: "22px 18px", borderRadius: 16, background: "#141414",
-              border: `1px solid ${color}40`, cursor: "pointer", textAlign: "left",
+              flex: 1, padding: "20px 20px 22px", borderRadius: 14, background: "#111",
+              border: `1px solid ${color}30`, cursor: "pointer", textAlign: "left",
+              transition: "border-color 0.15s",
             }}>
-            <div style={{ fontSize: 30, marginBottom: 12 }}>{icon}</div>
-            <div style={{ fontSize: 13, fontWeight: 700, color, marginBottom: 10 }}>{title}</div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+              <span style={{ fontSize: 26 }}>{icon}</span>
+              <div>
+                <div style={{ fontSize: 14, fontWeight: 800, color, letterSpacing: 1 }}>{title}</div>
+                <div style={{ fontSize: 10, color: "#555", marginTop: 1 }}>{sub}</div>
+              </div>
+            </div>
             {lines.map(l => (
-              <div key={l} style={{ fontSize: 11, color: "#666", marginTop: 4 }}>· {l}</div>
+              <div key={l} style={{
+                fontSize: 11, color: "#555", marginTop: 6,
+                display: "flex", alignItems: "center", gap: 6,
+              }}>
+                <span style={{ width: 4, height: 4, borderRadius: "50%", background: color + "60", flexShrink: 0 }} />
+                {l}
+              </div>
             ))}
           </button>
         ))}
@@ -733,18 +811,26 @@ function MonitorView({ transcripts, meshTranscripts, opMode }: {
 
       {meshTranscripts.length > 0 && (
         <div style={{
-          display: "flex", alignItems: "center", gap: 8, padding: "0 12px",
-          height: 44, borderTop: "1px solid #1a1a1a", background: "#0a0a0a",
-          flexShrink: 0, overflow: "hidden",
+          borderTop: "1px solid #172617", background: "#050e05",
+          flexShrink: 0, maxHeight: 96, overflowY: "auto",
         }}>
-          <span style={{ fontSize: 12, color: meshTranscripts[0].channel === "mesh-weather" ? "#38bdf8" : "#4ade80", flexShrink: 0 }}>
-            {meshTranscripts[0].channel === "mesh-weather" ? "📡 WX" : "📡"}
-          </span>
-          <span style={{ fontSize: 12, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#aaa" }}>
-            <span style={{ color: "#888", marginRight: 6 }}>{meshTranscripts[0].speaker ?? "Mesh"}</span>
-            {meshTranscripts[0].transcript}
-          </span>
-          <span style={{ fontSize: 11, color: "#444", flexShrink: 0 }}>{formatTime(meshTranscripts[0].timestamp)}</span>
+          {meshTranscripts.slice(0, 3).map((m, i) => (
+            <div key={i} style={{
+              display: "flex", alignItems: "baseline", gap: 8,
+              padding: "5px 12px", borderBottom: i < 2 ? "1px solid #0d1a0d" : "none",
+            }}>
+              <span style={{ fontSize: 10, color: m.channel === "mesh-weather" ? "#38bdf8" : "#4ade80", flexShrink: 0 }}>
+                {m.channel === "mesh-weather" ? "🌡" : "📡"}
+              </span>
+              <span style={{ fontSize: 10, fontWeight: 700, color: "#2d6a2d", flexShrink: 0 }}>{m.speaker ?? "Mesh"}</span>
+              <span style={{ fontSize: 11, color: "#6b9e6b", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                {m.transcript}
+              </span>
+              <span style={{ fontSize: 10, color: "#1e3a1e", flexShrink: 0, fontFamily: "monospace" }}>
+                {formatTime(m.timestamp)}
+              </span>
+            </div>
+          ))}
         </div>
       )}
 
