@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-27T05:00:41.507Z",
+  "updated_at": "2026-03-28T05:00:40.739Z",
   "fires": [
     {
       "country": "United States",
@@ -95,19 +95,19 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
+      "canada": 0,
       "world": 1
     },
     "items_out": {
       "canada": 0,
       "world_fires": 13
     },
-    "deduped": 2,
-    "rerouted": 2,
+    "deduped": 0,
+    "rerouted": 1,
     "notes": [
-      "Removed 2 LaGuardia Airport collision articles from both canada and world buckets - not wildfire related, routed to discard",
-      "Preserved 13 existing active wildfire entries across United States and Europe",
-      "No Canadian wildfire news in input after deduplication"
+      "Rerouted BBC LaGuardia Airport crash article from world_fires to excluded items — airport collision not a wildfire",
+      "Preserved all 13 active wildfire entries from existing_fires",
+      "No new wildfire articles added to world_fires in this update"
     ]
   }
 }
