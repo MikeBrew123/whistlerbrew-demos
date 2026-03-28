@@ -142,6 +142,79 @@ class AudioManager {
 
 const audioMgr = new AudioManager();
 
+// ── Mesh ticker ───────────────────────────────────────────────────────────────
+
+function MeshTicker({ messages, onReply }: { messages: Transcript[]; onReply: () => void }) {
+  if (messages.length === 0) return null;
+  const tickerText = messages.slice(0, 8).map(m =>
+    `${m.channel === "mesh-weather" ? "🌡" : "💬"} ${m.speaker ?? "Mesh"}: ${m.transcript}`
+  ).join("     ·     ");
+
+  return (
+    <div style={{
+      height: 34, background: "#061206", borderBottom: "1px solid #1a3a1a",
+      display: "flex", alignItems: "center", overflow: "hidden", flexShrink: 0,
+    }}>
+      <style>{`@keyframes meshScroll { 0% { transform: translateX(820px); } 100% { transform: translateX(-100%); } }`}</style>
+      <div style={{ flex: 1, overflow: "hidden", position: "relative" }}>
+        <div style={{
+          animation: `meshScroll ${Math.max(15, tickerText.length * 0.18)}s linear infinite`,
+          whiteSpace: "nowrap", fontSize: 11, color: "#86efac", lineHeight: "34px",
+          willChange: "transform",
+        }}>
+          {tickerText}
+        </div>
+      </div>
+      <button onClick={onReply} style={{
+        flexShrink: 0, height: 34, padding: "0 14px", fontSize: 11, fontWeight: 700,
+        background: "#0d2a0d", color: "#4ade80", border: "none", borderLeft: "1px solid #1a3a1a",
+        cursor: "pointer",
+      }}>
+        Reply
+      </button>
+    </div>
+  );
+}
+
+// ── Mesh compose overlay ───────────────────────────────────────────────────────
+
+function MeshCompose({ onSend, onClose }: { onSend: (msg: string) => void; onClose: () => void }) {
+  const [text, setText] = useState("");
+  const submit = () => { if (text.trim()) { onSend(text.trim()); onClose(); } };
+  return (
+    <div style={{
+      position: "absolute", inset: 0, zIndex: 40, background: "rgba(0,0,0,0.92)",
+      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16,
+    }}>
+      <div style={{ width: 480, borderRadius: 16, border: "1px solid #1a3a1a", background: "#0a1a0a", padding: 20 }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: "#4ade80", marginBottom: 4 }}>📡 Send Mesh Message</div>
+        <div style={{ fontSize: 10, color: "#3a5a3a", marginBottom: 14 }}>Broadcast → all nodes on mesh</div>
+        <textarea
+          autoFocus value={text} onChange={e => setText(e.target.value)}
+          onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(); } }}
+          placeholder="Type message…"
+          style={{
+            width: "100%", height: 80, padding: 10, borderRadius: 8, resize: "none",
+            background: "#0f0f0f", border: "1px solid #1a3a1a", color: "#e0e0e0",
+            fontSize: 13, fontFamily: "system-ui, sans-serif", boxSizing: "border-box",
+          }}
+        />
+        <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
+          <button onClick={onClose} style={{
+            flex: 1, padding: "10px 0", borderRadius: 8, background: "transparent",
+            border: "1px solid #222", color: "#555", fontSize: 13, cursor: "pointer",
+          }}>Cancel</button>
+          <button onClick={submit} disabled={!text.trim()} style={{
+            flex: 2, padding: "10px 0", borderRadius: 8,
+            background: text.trim() ? "#0d2a0d" : "#111", border: `1px solid ${text.trim() ? "#4ade80" : "#222"}`,
+            color: text.trim() ? "#4ade80" : "#333", fontSize: 13, fontWeight: 700, cursor: text.trim() ? "pointer" : "default",
+          }}>Send</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Mode selector ─────────────────────────────────────────────────────────────
 
 function ModeSelector({ onSelect }: { onSelect: (m: OpMode) => void }) {
@@ -801,10 +874,10 @@ export default function FireBoxApp() {
   const [activeChannels, setActiveChannels] = useState<string[]>(["wfd-ch2-scene", "wfd-ch6-ce"]);
   const [colourTones, setColourTones] = useState<Record<string, string>>({});
   const [transcripts, setTranscripts] = useState<Transcript[]>([]);
-  const [meshMessages, setMeshMessages] = useState<MeshMessage[]>([]);
   const [meshUnread, setMeshUnread] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const lastMeshId = useRef(0);
+  const [showCompose, setShowCompose] = useState(false);
+  const lastMeshTs = useRef("");
 
   // Restore mode + colour tones from localStorage on mount
   useEffect(() => {
@@ -854,8 +927,27 @@ export default function FireBoxApp() {
     return () => clearInterval(t1);
   }, [fetchTranscripts]);
 
-  // Derive mesh messages from transcripts
+  // Derive mesh messages from transcripts + track unread
   const meshTranscripts = transcripts.filter(t => t.channel.startsWith("mesh-"));
+  useEffect(() => {
+    if (meshTranscripts.length > 0 && meshTranscripts[0].timestamp !== lastMeshTs.current) {
+      if (lastMeshTs.current) setMeshUnread(true);
+      lastMeshTs.current = meshTranscripts[0].timestamp;
+    }
+  }, [meshTranscripts]);
+
+  const sendMesh = async (message: string) => {
+    await fetch(`https://bdgmpkbbohbucwoiucyw.supabase.co/rest/v1/firebox_outbox`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_ANON,
+        "Authorization": `Bearer ${SUPABASE_ANON}`,
+        "Prefer": "return=minimal",
+      },
+      body: JSON.stringify({ message }),
+    });
+  };
 
   const toggleChannel = async (ch: string) => {
     const updated = activeChannels.includes(ch)
@@ -897,6 +989,8 @@ export default function FireBoxApp() {
         meshUnread={meshUnread} onInfo={openInfo}
       />
 
+      <MeshTicker messages={meshTranscripts} onReply={() => setShowCompose(true)} />
+
       {showInfo ? (
         <InfoPanel onClose={() => setShowInfo(false)} opMode={opMode} />
       ) : view === "monitor" ? (
@@ -909,6 +1003,8 @@ export default function FireBoxApp() {
           colourTones={colourTones} onSetTone={handleSetTone}
         />
       )}
+
+      {showCompose && <MeshCompose onSend={sendMesh} onClose={() => setShowCompose(false)} />}
     </div>
   );
 }
