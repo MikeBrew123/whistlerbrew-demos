@@ -21,7 +21,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const nodeId   = (body.node_id   ?? "").trim().replace(/^!/, "").toLowerCase();
+  const raw      = (body.node_id ?? "").trim().replace(/^!/, "");
+  // Accept decimal (2896881048) or hex (acaae598)
+  const nodeId   = /^\d+$/.test(raw)
+    ? parseInt(raw, 10).toString(16).padStart(8, "0")
+    : raw.toLowerCase();
   const callSign = (body.call_sign ?? "").trim().toUpperCase();
 
   if (!/^[0-9a-f]{8}$/.test(nodeId))

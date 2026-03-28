@@ -7,15 +7,18 @@ import { Suspense } from "react";
 
 // ── Node nickname map — update as you add nodes ──────────────────────────────
 const NODE_NAMES: Record<string, string> = {
-  // "abcd1234": "Brew1 — Base Node",
+  "acaae598": "FireBox Node 1",
+  "aca94dd0": "FireBox Node 2",
 };
 
 // ── Inner component (uses useSearchParams) ────────────────────────────────────
 
 function SetupForm() {
   const params  = useSearchParams();
-  const nodeRaw = (params.get("node") ?? "").replace(/^!/, "").toLowerCase();
-  const nodeId  = /^[0-9a-f]{8}$/.test(nodeRaw) ? nodeRaw : null;
+  const nodeRaw = (params.get("node") ?? "").replace(/^!/, "");
+  const nodeId  = /^\d+$/.test(nodeRaw)
+    ? parseInt(nodeRaw, 10).toString(16).padStart(8, "0")
+    : /^[0-9a-f]{8}$/i.test(nodeRaw) ? nodeRaw.toLowerCase() : null;
 
   const [callSign, setCallSign] = useState("");
   const [status,   setStatus]   = useState<"idle" | "sending" | "done" | "error">("idle");
