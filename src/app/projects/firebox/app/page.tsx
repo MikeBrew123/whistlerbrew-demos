@@ -464,34 +464,45 @@ function TopBar({ view, setView, opMode, onModeSwitch, meshUnread, onInfo, activ
 
 // ── Whistler channel grid ─────────────────────────────────────────────────────
 
-function WhistlerGrid({ activeChannels, onToggle }: {
+function WhistlerGrid({ activeChannels, onToggle, extraChannels = [], onRemoveExtra, onOpenAdd }: {
   activeChannels: string[]; onToggle: (ch: string) => void;
+  extraChannels?: string[]; onRemoveExtra?: (ch: string) => void; onOpenAdd?: () => void;
 }) {
+  const allKeys = [...Object.keys(WHISTLER_CHANNELS), ...extraChannels];
   return (
     <div style={{ flex: 1, overflowY: "auto", padding: 12 }}>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
-        {Object.entries(WHISTLER_CHANNELS).map(([ch, meta]) => {
+        {allKeys.map(ch => {
+          const meta = ALL_CHANNEL_REGISTRY[ch];
+          if (!meta) return null;
           const active = activeChannels.includes(ch);
-          const agency = ch.startsWith("wfd") ? "WFD" : ch.startsWith("wb") ? "WB" : "NRS";
+          const isExtra = extraChannels.includes(ch);
+          const agency = ch.startsWith("wfd") ? "WFD" : ch.startsWith("wb") ? "WB" : ch.startsWith("bcws") ? "BCWS" : "NRS";
           return (
             <button key={ch} onClick={() => meta.canTranscribe && onToggle(ch)}
               style={{
-                borderRadius: 12, padding: 12, textAlign: "left",
+                borderRadius: 12, padding: 12, textAlign: "left", position: "relative",
                 background: active ? `${meta.color}18` : "#141414",
-                border: `1px solid ${active ? meta.color + "60" : "#222"}`,
+                border: `1px solid ${active ? meta.color + "60" : isExtra ? "#2a2420" : "#222"}`,
                 opacity: meta.canTranscribe || meta.d2 ? 1 : 0.65,
-                cursor: meta.canTranscribe ? "pointer" : "default",
-                minHeight: 80,
+                cursor: meta.canTranscribe ? "pointer" : "default", minHeight: 80,
               }}>
+              {isExtra && onRemoveExtra && (
+                <span onClick={e => { e.stopPropagation(); onRemoveExtra(ch); }}
+                  style={{
+                    position: "absolute", top: 5, right: 5, width: 16, height: 16,
+                    borderRadius: "50%", background: "#2a1a1a", border: "1px solid #444",
+                    color: "#888", fontSize: 10, cursor: "pointer",
+                    display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 1,
+                  }}>×</span>
+              )}
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
                 <span style={{ fontSize: 10, fontWeight: 700, color: meta.color }}>{agency}</span>
                 <span style={{ fontSize: 10 }}>
                   {meta.d2
-                    ? <span style={{ color: "#555", fontSize: 9, fontWeight: 600 }}>D2</span>
-                    : active
-                    ? <span style={{ color: "#4ade80" }}>● ON</span>
-                    : meta.canTranscribe
-                    ? <span style={{ color: "#444" }}>OFF</span>
+                    ? <span style={{ color: active ? "#f0a500" : "#555", fontSize: 9, fontWeight: 600 }}>{active ? "● D2" : "D2"}</span>
+                    : active ? <span style={{ color: "#4ade80" }}>● ON</span>
+                    : meta.canTranscribe ? <span style={{ color: "#444" }}>OFF</span>
                     : <span>🔊</span>}
                 </span>
               </div>
@@ -500,6 +511,11 @@ function WhistlerGrid({ activeChannels, onToggle }: {
             </button>
           );
         })}
+        <button onClick={onOpenAdd} style={{
+          borderRadius: 12, minHeight: 80, background: "transparent",
+          border: "1px dashed #252525", color: "#383838", fontSize: 22,
+          cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+        }}>+</button>
       </div>
     </div>
   );
@@ -566,9 +582,10 @@ const SECTION_LABELS: Record<string, string> = {
   fire:   "Fire Channels",
 };
 
-function DeploymentGrid({ activeChannels, onToggle, colourTones, onSetTone }: {
+function DeploymentGrid({ activeChannels, onToggle, colourTones, onSetTone, extraChannels = [], onRemoveExtra, onOpenAdd }: {
   activeChannels: string[]; onToggle: (ch: string) => void;
   colourTones: Record<string, string>; onSetTone: (ch: string, tone: string | null) => void;
+  extraChannels?: string[]; onRemoveExtra?: (ch: string) => void; onOpenAdd?: () => void;
 }) {
   const [tonePicking, setTonePicking] = useState<string | null>(null);
 
@@ -678,6 +695,53 @@ function DeploymentGrid({ activeChannels, onToggle, colourTones, onSetTone }: {
           </div>
         );
       })}
+
+      {/* Extra channels section */}
+      {extraChannels.length > 0 && (
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 10, fontWeight: 700, color: "#555", marginBottom: 8, textTransform: "uppercase", letterSpacing: 1 }}>
+            Added Channels
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
+            {extraChannels.map(ch => {
+              const meta = ALL_CHANNEL_REGISTRY[ch];
+              if (!meta) return null;
+              const active = activeChannels.includes(ch);
+              return (
+                <button key={ch} onClick={() => onToggle(ch)}
+                  style={{
+                    borderRadius: 10, padding: "10px 12px", textAlign: "left", position: "relative",
+                    background: active ? `${meta.color}18` : "#141414",
+                    border: `1px solid ${active ? meta.color + "60" : "#2a2420"}`,
+                    cursor: "pointer", minHeight: 62,
+                  }}>
+                  {onRemoveExtra && (
+                    <span onClick={e => { e.stopPropagation(); onRemoveExtra(ch); }}
+                      style={{
+                        position: "absolute", top: 4, right: 4, width: 16, height: 16,
+                        borderRadius: "50%", background: "#2a1a1a", border: "1px solid #444",
+                        color: "#888", fontSize: 10, cursor: "pointer",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                      }}>×</span>
+                  )}
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: meta.color }}>{meta.label}</span>
+                    {meta.d2 && <span style={{ color: active ? "#f0a500" : "#555", fontSize: 9, fontWeight: 600 }}>{active ? "● D2" : "D2"}</span>}
+                  </div>
+                  <div style={{ fontSize: 10, color: "#555" }}>{meta.freq} MHz</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Add channel button */}
+      <button onClick={onOpenAdd} style={{
+        width: "100%", padding: "10px 0", borderRadius: 10, marginBottom: 12,
+        background: "transparent", border: "1px dashed #252525",
+        color: "#383838", fontSize: 13, cursor: "pointer",
+      }}>+ Add Channel</button>
 
       {/* Tone picker modal */}
       {tonePicking && (() => {
@@ -839,6 +903,68 @@ function ChannelPicker({ channels, onPick, onClose }: {
               <span style={{ marginLeft: "auto", fontSize: 10, color: "#444" }}>{meta.freq}</span>
             </button>
           ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Add-channel picker (shows channels from the other mode) ───────────────────
+
+function AddChannelPicker({ opMode, currentExtras, onPick, onClose }: {
+  opMode: OpMode; currentExtras: string[];
+  onPick: (ch: string) => void; onClose: () => void;
+}) {
+  const pool = opMode === "whistler" ? DEPLOYMENT_CHANNELS : WHISTLER_CHANNELS;
+  const available = Object.entries(pool).filter(([ch]) => !currentExtras.includes(ch));
+  const byCategory: Record<string, [string, ChannelMeta][]> = {};
+  for (const [ch, meta] of available) {
+    const cat = meta.category ?? (opMode === "deployment" ? "wb" : "other");
+    if (!byCategory[cat]) byCategory[cat] = [];
+    byCategory[cat].push([ch, meta]);
+  }
+  const CAT_LABEL: Record<string, string> = {
+    ofc: "OFC", metal: "NRS Metals", colour: "NRS Colours", fire: "Fire",
+    wb: "Whistler Blackcomb", other: "Other",
+  };
+  return (
+    <div style={{
+      position: "absolute", inset: 0, zIndex: 30, display: "flex",
+      alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.88)",
+    }} onClick={onClose}>
+      <div style={{ borderRadius: 12, border: "1px solid #333", padding: 16, width: 320, maxHeight: 360, background: "#141414", display: "flex", flexDirection: "column" }}
+           onClick={e => e.stopPropagation()}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4, flexShrink: 0 }}>
+          <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>Add Channel</span>
+          <button onClick={onClose} style={{ color: "#666", fontSize: 18, lineHeight: 1, background: "none", border: "none", cursor: "pointer" }}>×</button>
+        </div>
+        <div style={{ fontSize: 10, color: "#444", marginBottom: 12, flexShrink: 0 }}>
+          Channels outside {opMode === "whistler" ? "Whistler" : "Deployment"} mode
+        </div>
+        <div style={{ overflowY: "auto", flex: 1 }}>
+          {Object.entries(byCategory).map(([cat, entries]) => (
+            <div key={cat} style={{ marginBottom: 10 }}>
+              <div style={{ fontSize: 9, fontWeight: 700, color: "#555", letterSpacing: 1, marginBottom: 5 }}>
+                {CAT_LABEL[cat] ?? cat.toUpperCase()}
+              </div>
+              {entries.map(([ch, meta]) => (
+                <button key={ch} onClick={() => onPick(ch)}
+                  style={{
+                    display: "flex", alignItems: "center", gap: 10, padding: "7px 10px", width: "100%",
+                    borderRadius: 7, fontSize: 12, textAlign: "left", color: "#ccc", marginBottom: 4,
+                    background: "#1a1a1a", border: "none", cursor: "pointer",
+                  }}>
+                  <span style={{ width: 8, height: 8, borderRadius: "50%", background: meta.color, flexShrink: 0 }} />
+                  <span style={{ flex: 1 }}>{meta.label}</span>
+                  <span style={{ fontSize: 10, color: "#444" }}>{meta.freq}</span>
+                  {meta.d2 && <span style={{ fontSize: 9, color: "#555", fontWeight: 700 }}>D2</span>}
+                </button>
+              ))}
+            </div>
+          ))}
+          {available.length === 0 && (
+            <div style={{ fontSize: 12, color: "#444", padding: 8 }}>All channels already added.</div>
+          )}
         </div>
       </div>
     </div>
@@ -1048,6 +1174,8 @@ export default function FireBoxApp() {
   const [view, setView] = useState<View>("channels");
   const [activeChannels, setActiveChannels] = useState<string[]>(["wfd-ch2-scene", "wfd-ch6-ce"]);
   const [colourTones, setColourTones] = useState<Record<string, string>>({});
+  const [extraChannels, setExtraChannels] = useState<string[]>([]);
+  const [showAddChannel, setShowAddChannel] = useState(false);
   const [transcripts, setTranscripts] = useState<Transcript[]>([]);
   const [meshUnread, setMeshUnread] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -1082,6 +1210,28 @@ export default function FireBoxApp() {
       if (typeof tones === "object") setColourTones(tones);
     } catch {}
   }, []);
+
+  // Load per-mode extra channels when mode changes
+  useEffect(() => {
+    if (!opMode) return;
+    try {
+      const stored = JSON.parse(localStorage.getItem(`firebox_extra_${opMode}`) ?? "[]");
+      setExtraChannels(Array.isArray(stored) ? stored : []);
+    } catch { setExtraChannels([]); }
+  }, [opMode]);
+
+  const addExtra = (ch: string) => {
+    const updated = [...extraChannels, ch];
+    setExtraChannels(updated);
+    if (opMode) localStorage.setItem(`firebox_extra_${opMode}`, JSON.stringify(updated));
+    setShowAddChannel(false);
+  };
+
+  const removeExtra = (ch: string) => {
+    const updated = extraChannels.filter(c => c !== ch);
+    setExtraChannels(updated);
+    if (opMode) localStorage.setItem(`firebox_extra_${opMode}`, JSON.stringify(updated));
+  };
 
   const selectMode = (m: OpMode) => {
     localStorage.setItem("firebox_mode", m);
@@ -1208,15 +1358,22 @@ export default function FireBoxApp() {
       ) : view === "monitor" ? (
         <MonitorView transcripts={transcripts} meshTranscripts={meshTranscripts} opMode={opMode} nodeAliases={nodeAliases} />
       ) : opMode === "whistler" ? (
-        <WhistlerGrid activeChannels={activeChannels} onToggle={toggleChannel} />
+        <WhistlerGrid activeChannels={activeChannels} onToggle={toggleChannel}
+          extraChannels={extraChannels} onRemoveExtra={removeExtra}
+          onOpenAdd={() => setShowAddChannel(true)} />
       ) : (
         <DeploymentGrid
           activeChannels={activeChannels} onToggle={toggleChannel}
           colourTones={colourTones} onSetTone={handleSetTone}
-        />
+          extraChannels={extraChannels} onRemoveExtra={removeExtra}
+          onOpenAdd={() => setShowAddChannel(true)} />
       )}
 
       {showCompose && <MeshCompose onSend={sendMesh} onClose={() => setShowCompose(false)} />}
+      {showAddChannel && opMode && (
+        <AddChannelPicker opMode={opMode} currentExtras={extraChannels}
+          onPick={addExtra} onClose={() => setShowAddChannel(false)} />
+      )}
     </div>
   );
 }
