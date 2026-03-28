@@ -781,6 +781,12 @@ function FireBoxFeed() {
                 ↻ {formatTime(lastUpdated.toISOString())}
               </span>
             )}
+            <Link href="/projects/firebox/map" style={{
+              padding: "5px 12px", border: "1px solid #1a3a1a", background: "#060e06",
+              color: "#38bdf8", cursor: "pointer", textDecoration: "none",
+              fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: 2,
+              display: "inline-block", lineHeight: "normal",
+            }}>🗺 MAP</Link>
             <button onClick={() => setShowIncident(true)} className="fb-btn" style={{
               padding: "5px 12px", border: `1px solid ${activeIncident ? "#f0a50040" : "#1a3a1a"}`,
               background: activeIncident ? "#1a0e00" : "#060e06",
