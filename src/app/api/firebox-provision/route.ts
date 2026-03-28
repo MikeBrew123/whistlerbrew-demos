@@ -42,15 +42,22 @@ export async function POST(request: NextRequest) {
   // ── 1. Read current aliases, merge, write back ─────────────────────────────
   const existing = await fetch(`${CONFIG_URL}?key=eq.node_aliases&select=value`, { headers: HEADERS });
   const rows     = existing.ok ? await existing.json() : [];
+  const rowExists = rows.length > 0;
   const aliases  = (rows[0]?.value ?? {}) as Record<string, string>;
   aliases[nodeId] = callSign;
 
-  // Upsert via POST with resolution=merge-duplicates
-  await fetch(CONFIG_URL, {
-    method: "POST",
-    headers: { ...HEADERS, "Prefer": "resolution=merge-duplicates,return=minimal" },
-    body: JSON.stringify({ key: "node_aliases", value: aliases, updated_at: new Date().toISOString() }),
-  });
+  const body = JSON.stringify({ key: "node_aliases", value: aliases, updated_at: new Date().toISOString() });
+  if (rowExists) {
+    // Row exists — PATCH it
+    await fetch(`${CONFIG_URL}?key=eq.node_aliases`, {
+      method: "PATCH", headers: { ...HEADERS, "Prefer": "return=minimal" }, body,
+    });
+  } else {
+    // Row doesn't exist yet — INSERT
+    await fetch(CONFIG_URL, {
+      method: "POST", headers: { ...HEADERS, "Prefer": "return=minimal" }, body,
+    });
+  }
 
   // ── 2. Queue outbox command (bridge acks + logs it) ────────────────────────
   await fetch(OUTBOX_URL, {
