@@ -514,6 +514,18 @@ function FireBoxFeed() {
   const [offset,  setOffset]  = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [nodeAliases, setNodeAliases] = useState<Record<string, string>>({});
+
+  // Resolve display name: alias map → raw speaker value
+  const resolveName = useCallback((speaker?: string) => {
+    if (!speaker) return speaker;
+    // Try matching by hex suffix (e.g. "e598" → alias for node ending in e598)
+    const lower = speaker.toLowerCase();
+    for (const [hex, alias] of Object.entries(nodeAliases)) {
+      if (hex.endsWith(lower) || hex === lower) return alias;
+    }
+    return speaker;
+  }, [nodeAliases]);
   const feedRef = useRef<HTMLDivElement>(null);
   const prevRef = useRef(0);
   const clock   = useClock();
@@ -574,6 +586,17 @@ function FireBoxFeed() {
     } catch {}
     setLoading(false);
   };
+
+  // Fetch node aliases once on mount, refresh every 5 min
+  useEffect(() => {
+    const load = () => fetch("/api/firebox-provision")
+      .then(r => r.ok ? r.json() : {})
+      .then(d => setNodeAliases(d))
+      .catch(() => {});
+    load();
+    const t = setInterval(load, 300000);
+    return () => clearInterval(t);
+  }, []);
 
   useEffect(() => { setOffset(0); setHasMore(true); }, [channelFilter]);
   useEffect(() => {
@@ -748,7 +771,8 @@ function FireBoxFeed() {
             const s      = ch(tx.channel);
             const isMesh = tx.channel.startsWith("mesh-");
             const isWx   = tx.channel === "mesh-weather";
-            const isDisp = tx.speaker?.toLowerCase() === "dispatch";
+            const displaySpeaker = resolveName(tx.speaker);
+            const isDisp = displaySpeaker?.toLowerCase() === "dispatch";
 
             return (
               <div key={`${tx.timestamp}-${i}`} className="fb-card" style={{
@@ -776,14 +800,14 @@ function FireBoxFeed() {
                       <QualityBadge signal={tx.signal} readability={tx.readability} />
                     </span>
                     {/* Speaker */}
-                    {tx.speaker && tx.speaker !== "Unknown" && (
+                    {displaySpeaker && displaySpeaker !== "Unknown" && (
                       <span style={{
                         fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: 1.5,
                         color: isMesh ? s.color + "cc"
                           : isDisp ? "#64b5f6"
                           : "#f59e0b",
                       }}>
-                        [{tx.speaker.toUpperCase()}]
+                        [{displaySpeaker.toUpperCase()}]
                       </span>
                     )}
                   </div>
@@ -802,7 +826,7 @@ function FireBoxFeed() {
                 {/* Reply button for mesh-text */}
                 {isMesh && !isWx && (
                   <button
-                    onClick={() => setCompose({ replyTo: tx.speaker ?? undefined })}
+                    onClick={() => setCompose({ replyTo: displaySpeaker ?? undefined })}
                     className="fb-reply"
                     style={{
                       marginTop: 10, padding: "3px 12px",

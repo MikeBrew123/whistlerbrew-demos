@@ -685,10 +685,19 @@ function DeploymentGrid({ activeChannels, onToggle, colourTones, onSetTone }: {
 
 // ── Monitor view ──────────────────────────────────────────────────────────────
 
-function TranscriptItem({ tx }: { tx: Transcript }) {
+function TranscriptItem({ tx, nodeAliases = {} }: { tx: Transcript; nodeAliases?: Record<string, string> }) {
   const meta = ALL_CHANNEL_REGISTRY[tx.channel] ?? { color: "#888" };
   const isMesh = tx.channel.startsWith("mesh-");
   const isWeather = tx.channel === "mesh-weather";
+  const resolveName = (s?: string) => {
+    if (!s) return s;
+    const lower = s.toLowerCase();
+    for (const [hex, alias] of Object.entries(nodeAliases)) {
+      if (hex.endsWith(lower) || hex === lower) return alias;
+    }
+    return s;
+  };
+  const displaySpeaker = resolveName(tx.speaker);
   return (
     <div style={{ padding: "8px 12px", borderBottom: "1px solid #1a1a1a" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
@@ -703,19 +712,19 @@ function TranscriptItem({ tx }: { tx: Transcript }) {
           </span>
         )}
         {/* Speaker badge (radio) */}
-        {!isMesh && tx.speaker && tx.speaker !== "Unknown" && (
+        {!isMesh && displaySpeaker && displaySpeaker !== "Unknown" && (
           <span style={{
             fontSize: 11, padding: "1px 6px", borderRadius: 4,
-            ...(tx.speaker.toLowerCase() === "dispatch"
+            ...(displaySpeaker.toLowerCase() === "dispatch"
               ? { color: "#64b5f6", background: "#64b5f610" }
               : { color: "#f59e0b", background: "#f59e0b18" }),
           }}>
-            {tx.speaker}
+            {displaySpeaker}
           </span>
         )}
         {/* Node name for mesh */}
-        {isMesh && tx.speaker && (
-          <span style={{ fontSize: 10, color: "#555" }}>{tx.speaker}</span>
+        {isMesh && displaySpeaker && (
+          <span style={{ fontSize: 10, color: "#555" }}>{displaySpeaker}</span>
         )}
         <span style={{ fontSize: 11, fontFamily: "monospace", color: "#444", marginLeft: "auto" }}>
           {formatTime(tx.timestamp)}
@@ -726,9 +735,10 @@ function TranscriptItem({ tx }: { tx: Transcript }) {
   );
 }
 
-function ChannelSlot({ channelKey, primary, transcripts, playing, onPlay, onSwap, onAdd }: {
+function ChannelSlot({ channelKey, primary, transcripts, playing, onPlay, onSwap, onAdd, nodeAliases = {} }: {
   channelKey: string | null; primary: boolean; transcripts: Transcript[];
   playing: boolean; onPlay: () => void; onSwap?: () => void; onAdd: () => void;
+  nodeAliases?: Record<string, string>;
 }) {
   if (!channelKey) {
     return (
@@ -782,7 +792,7 @@ function ChannelSlot({ channelKey, primary, transcripts, playing, onPlay, onSwap
       <div style={{ flex: 1, overflowY: "auto", maxHeight: primary ? 280 : 120 }}>
         {feed.length === 0
           ? <p style={{ fontSize: 11, padding: 12, color: "#333" }}>No recent traffic</p>
-          : feed.map((tx, i) => <TranscriptItem key={i} tx={tx} />)}
+          : feed.map((tx, i) => <TranscriptItem key={i} tx={tx} nodeAliases={nodeAliases} />)}
       </div>
     </div>
   );
@@ -822,8 +832,9 @@ function ChannelPicker({ channels, onPick, onClose }: {
   );
 }
 
-function MonitorView({ transcripts, meshTranscripts, opMode }: {
+function MonitorView({ transcripts, meshTranscripts, opMode, nodeAliases = {} }: {
   transcripts: Transcript[]; meshTranscripts: Transcript[]; opMode: OpMode;
+  nodeAliases?: Record<string, string>;
 }) {
   const defaultPrimary = opMode === "whistler" ? "wfd-ch2-scene" : "bcws-ofc1";
   const defaultSecondary = opMode === "whistler" ? "wfd-ch6-ce" : "bcws-ofc2";
@@ -844,7 +855,7 @@ function MonitorView({ transcripts, meshTranscripts, opMode }: {
         {primary ? (
           <ChannelSlot channelKey={primary} primary transcripts={transcripts}
             playing={playingChannel === primary} onPlay={() => play(primary)}
-            onAdd={() => setPicker("primary")} />
+            onAdd={() => setPicker("primary")} nodeAliases={nodeAliases} />
         ) : (
           <button onClick={() => setPicker("primary")}
             style={{
@@ -860,7 +871,7 @@ function MonitorView({ transcripts, meshTranscripts, opMode }: {
             playing={playingChannel === secondary}
             onPlay={() => secondary && play(secondary)}
             onSwap={() => { const tmp = primary; setPrimary(secondary); setSecondary(tmp); }}
-            onAdd={() => setPicker("secondary")} />
+            onAdd={() => setPicker("secondary")} nodeAliases={nodeAliases} />
           <button onClick={() => setPicker("secondary")}
             style={{
               margin: 4, display: "flex", alignItems: "center", justifyContent: "center",
@@ -885,7 +896,9 @@ function MonitorView({ transcripts, meshTranscripts, opMode }: {
               <span style={{ fontSize: 10, color: m.channel === "mesh-weather" ? "#38bdf8" : "#4ade80", flexShrink: 0 }}>
                 {m.channel === "mesh-weather" ? "🌡" : "📡"}
               </span>
-              <span style={{ fontSize: 10, fontWeight: 700, color: "#2d6a2d", flexShrink: 0 }}>{m.speaker ?? "Mesh"}</span>
+              <span style={{ fontSize: 10, fontWeight: 700, color: "#2d6a2d", flexShrink: 0 }}>
+                {(() => { const s = m.speaker; if (!s) return "Mesh"; const l = s.toLowerCase(); for (const [hex, alias] of Object.entries(nodeAliases)) { if (hex.endsWith(l) || hex === l) return alias; } return s; })()}
+              </span>
               <span style={{ fontSize: 11, color: "#6b9e6b", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {m.transcript}
               </span>
@@ -1026,7 +1039,26 @@ export default function FireBoxApp() {
   const [meshUnread, setMeshUnread] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showCompose, setShowCompose] = useState(false);
+  const [nodeAliases, setNodeAliases] = useState<Record<string, string>>({});
   const lastMeshTs = useRef("");
+
+  // Fetch node aliases, refresh every 5 min
+  useEffect(() => {
+    const load = () => fetch("/api/firebox-provision")
+      .then(r => r.ok ? r.json() : {}).then(setNodeAliases).catch(() => {});
+    load();
+    const t = setInterval(load, 300000);
+    return () => clearInterval(t);
+  }, []);
+
+  const resolveName = (speaker?: string) => {
+    if (!speaker) return speaker;
+    const lower = speaker.toLowerCase();
+    for (const [hex, alias] of Object.entries(nodeAliases)) {
+      if (hex.endsWith(lower) || hex === lower) return alias;
+    }
+    return speaker;
+  };
 
   // Restore mode + colour tones from localStorage on mount
   useEffect(() => {
@@ -1145,7 +1177,7 @@ export default function FireBoxApp() {
       {showInfo ? (
         <InfoPanel onClose={() => setShowInfo(false)} opMode={opMode} />
       ) : view === "monitor" ? (
-        <MonitorView transcripts={transcripts} meshTranscripts={meshTranscripts} opMode={opMode} />
+        <MonitorView transcripts={transcripts} meshTranscripts={meshTranscripts} opMode={opMode} nodeAliases={nodeAliases} />
       ) : opMode === "whistler" ? (
         <WhistlerGrid activeChannels={activeChannels} onToggle={toggleChannel} />
       ) : (
