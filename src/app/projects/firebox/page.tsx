@@ -49,6 +49,144 @@ function formatTime(iso: string) {
   } catch { return iso; }
 }
 
+type WeatherReading = {
+  ts: string; node: string;
+  temp?: number; humidity?: number; pressure?: number;
+};
+
+function parseWeather(transcript: string, speaker?: string, ts?: string): WeatherReading {
+  const r: WeatherReading = { ts: ts ?? "", node: speaker ?? "?" };
+  for (const part of transcript.split("|")) {
+    const t = part.trim();
+    if (t.startsWith("Temp:"))      r.temp     = parseFloat(t.replace("Temp:", "").replace("C","").trim());
+    if (t.startsWith("Humidity:"))  r.humidity = parseFloat(t.replace("Humidity:", "").replace("%","").trim());
+    if (t.startsWith("Pressure:"))  r.pressure = parseFloat(t.replace("Pressure:", "").replace("hPa","").trim());
+  }
+  return r;
+}
+
+function trendArrow(curr?: number, old?: number, thr = 0.5): { sym: string; color: string } {
+  if (curr == null || old == null) return { sym: "—", color: "#444" };
+  if (curr > old + thr) return { sym: "↑", color: "#4ade80" };
+  if (curr < old - thr) return { sym: "↓", color: "#f87171" };
+  return { sym: "→", color: "#888" };
+}
+
+function ageLabel(iso: string): { text: string; color: string } {
+  const sec = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (sec < 300)  return { text: `${Math.round(sec / 60)} min ago`,  color: "#4ade80" };
+  if (sec < 1800) return { text: `${Math.round(sec / 60)} min ago`,  color: "#f0a500" };
+  if (sec < 7200) return { text: `${Math.round(sec / 3600)} hr ago`, color: "#f0a500" };
+  return { text: "stale", color: "#555" };
+}
+
+// ── Weather panel ───────────────────────────────────────────────────────────────
+
+function WeatherNodeCard({ nodeHistory }: { nodeHistory: WeatherReading[] }) {
+  const latest = nodeHistory[0];
+  const old    = nodeHistory.length >= 5 ? nodeHistory[nodeHistory.length - 1] : undefined;
+  const age    = ageLabel(latest.ts);
+
+  const tTemp = trendArrow(latest.temp,     old?.temp,     0.5);
+  const tHum  = trendArrow(latest.humidity, old?.humidity, 2);
+  const tPres = trendArrow(latest.pressure, old?.pressure, 0.5);
+
+  const hourLabel = old
+    ? `${Math.round((new Date(latest.ts).getTime() - new Date(old.ts).getTime()) / 60000)}m`
+    : "";
+
+  const crossover = latest.temp != null && latest.humidity != null && latest.temp >= latest.humidity;
+  const extreme   = latest.temp != null && latest.humidity != null && latest.temp >= 30 && latest.humidity <= 15;
+
+  return (
+    <div style={{
+      display: "flex", alignItems: "center", gap: 0,
+      padding: "8px 16px",
+      background: crossover ? (extreme ? "#1a050080" : "#100a0080") : "#060d1080",
+      borderRadius: 10,
+      border: `1px solid ${crossover ? (extreme ? "#ef444440" : "#f0a50040") : "#0e1f25"}`,
+      borderTop: crossover ? `2px solid ${extreme ? "#ef4444" : "#f0a500"}` : "2px solid transparent",
+      flex: "0 0 auto",
+      transition: "all 0.4s ease",
+    }}>
+
+      {/* Node label */}
+      <div style={{ marginRight: 14, minWidth: 44 }}>
+        <div style={{ fontSize: 8, fontWeight: 800, letterSpacing: 1.2, color: "#1e6e8e", marginBottom: 2 }}>WX NODE</div>
+        <div style={{ fontSize: 11, fontWeight: 700, color: "#38bdf8" }}>{latest.node}</div>
+      </div>
+
+      <div style={{ width: 1, height: 32, background: "#0e1f25", marginRight: 14, flexShrink: 0 }} />
+
+      {/* Metrics */}
+      {[
+        { label: "TEMP",  val: latest.temp     != null ? `${latest.temp.toFixed(1)}°C`      : "—", trend: tTemp },
+        { label: "RH",    val: latest.humidity != null ? `${Math.round(latest.humidity)}%`  : "—", trend: tHum  },
+        { label: "hPa",   val: latest.pressure != null ? `${latest.pressure.toFixed(1)}`    : "—", trend: tPres },
+      ].map(({ label, val, trend }) => (
+        <div key={label} style={{ marginRight: 14, flexShrink: 0 }}>
+          <div style={{ fontSize: 8, letterSpacing: 1, color: "#2a5a70", fontWeight: 700, marginBottom: 1 }}>{label}</div>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 3 }}>
+            <span style={{ fontSize: 16, fontWeight: 700, color: "#e0f4ff", fontFamily: "monospace" }}>{val}</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: trend.color }}>{trend.sym}</span>
+          </div>
+        </div>
+      ))}
+
+      {/* Crossover badge */}
+      {crossover && (
+        <div style={{
+          marginLeft: 6, marginRight: 6,
+          padding: "3px 8px", borderRadius: 5,
+          background: extreme ? "#7f1d1d" : "#78350f",
+          border: `1px solid ${extreme ? "#ef4444" : "#f0a500"}`,
+          animation: extreme ? "pulse 1.2s ease-in-out infinite" : undefined,
+          flexShrink: 0,
+        }}>
+          <div style={{ fontSize: 8, fontWeight: 800, letterSpacing: 1.2, color: extreme ? "#fca5a5" : "#fcd34d" }}>
+            {extreme ? "⚠ EXTREME" : "⚠ CROSSOVER"}
+          </div>
+          <div style={{ fontSize: 8, color: extreme ? "#f87171" : "#f0a500" }}>
+            {extreme ? "high spread" : `T${latest.temp?.toFixed(0)}≥RH${latest.humidity?.toFixed(0)}`}
+          </div>
+        </div>
+      )}
+
+      {/* Age */}
+      <div style={{ marginLeft: crossover ? 0 : 6, textAlign: "right", flexShrink: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 3, fontSize: 9, color: age.color }}>
+          <span style={{ width: 4, height: 4, borderRadius: "50%", background: age.color, display: "inline-block" }} />
+          {age.text}
+        </div>
+        {hourLabel && <div style={{ fontSize: 9, color: "#2a5a70", marginTop: 2 }}>{hourLabel} trend</div>}
+      </div>
+    </div>
+  );
+}
+
+function WeatherPanel({ history }: { history: WeatherReading[] }) {
+  if (history.length === 0) return null;
+
+  // Group by node — supports multiple weather sensors
+  const nodes = new Map<string, WeatherReading[]>();
+  for (const r of history) {
+    if (!nodes.has(r.node)) nodes.set(r.node, []);
+    nodes.get(r.node)!.push(r);
+  }
+
+  return (
+    <div style={{ background: "#04090c", borderBottom: "1px solid #0a1820", padding: "8px 24px" }}>
+      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+        <div style={{ display: "flex", gap: 10, overflowX: "auto", paddingBottom: 2 }}>
+          {Array.from(nodes.entries()).map(([node, nodeHistory]) => (
+            <WeatherNodeCard key={node} nodeHistory={nodeHistory} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Mesh ticker ────────────────────────────────────────────────────────────────
 
 function MeshTicker({ messages }: { messages: Transcript[] }) {
@@ -149,9 +287,10 @@ function LoginScreen({ onAuth }: { onAuth: () => void }) {
 // ── Main feed ─────────────────────────────────────────────────────────────────
 
 function FireBoxFeed() {
-  const [transcripts,  setTranscripts]  = useState<Transcript[]>([]);
-  const [meshMessages, setMeshMessages] = useState<Transcript[]>([]);
-  const [channelFilter, setFilter]      = useState<string>("all");
+  const [transcripts,    setTranscripts]    = useState<Transcript[]>([]);
+  const [meshMessages,   setMeshMessages]   = useState<Transcript[]>([]);
+  const [weatherHistory, setWeatherHistory] = useState<WeatherReading[]>([]);
+  const [channelFilter,  setFilter]         = useState<string>("all");
   const [lastUpdated,  setLastUpdated]  = useState<Date | null>(null);
   const [live,   setLive]       = useState(true);
   const [offset, setOffset]     = useState(0);
@@ -190,6 +329,19 @@ function FireBoxFeed() {
     } catch {}
   }, []);
 
+  const fetchWeather = useCallback(async () => {
+    try {
+      // 60 entries = ~1 hour of data at 60s intervals
+      const url = `${SUPABASE_URL}/rest/v1/firebox_transcripts?channel=eq.mesh-weather&order=recorded_at.desc&limit=60`;
+      const r = await fetch(url, { headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` } });
+      if (!r.ok) return;
+      const rows = await r.json();
+      setWeatherHistory(rows.map((row: Record<string, string>) =>
+        parseWeather(row.transcript, row.speaker, row.recorded_at)
+      ));
+    } catch {}
+  }, []);
+
   const loadMore = async () => {
     setLoading(true);
     try {
@@ -210,11 +362,13 @@ function FireBoxFeed() {
   useEffect(() => {
     fetchFeed();
     fetchMesh();
+    fetchWeather();
     if (!live) return;
-    const t1 = setInterval(fetchFeed,  30000);
-    const t2 = setInterval(fetchMesh,  15000);
-    return () => { clearInterval(t1); clearInterval(t2); };
-  }, [fetchFeed, fetchMesh, live]);
+    const t1 = setInterval(fetchFeed,   30000);
+    const t2 = setInterval(fetchMesh,   15000);
+    const t3 = setInterval(fetchWeather, 60000);
+    return () => { clearInterval(t1); clearInterval(t2); clearInterval(t3); };
+  }, [fetchFeed, fetchMesh, fetchWeather, live]);
 
   const activeChannels = Array.from(new Set([
     ...MONITORED_CHANNELS,
@@ -269,6 +423,9 @@ function FireBoxFeed() {
 
       {/* Mesh ticker */}
       <MeshTicker messages={meshMessages} />
+
+      {/* Weather panel */}
+      <WeatherPanel history={weatherHistory} />
 
       {/* Channel tabs */}
       <div style={{ borderBottom: "1px solid #1a1a1a", padding: "0 24px", overflowX: "auto" }}>
