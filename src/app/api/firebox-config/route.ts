@@ -25,24 +25,32 @@ export async function GET() {
   return NextResponse.json({ active_channels });
 }
 
-// POST /api/firebox-config — update active_channels list
-// Body: { active_channels: string[] }
+async function upsertKey(key: string, value: unknown) {
+  const check = await fetch(`${TABLE}?key=eq.${key}&select=key`, { headers: HEADERS });
+  const rows = check.ok ? await check.json() : [];
+  const body = JSON.stringify({ key, value, updated_at: new Date().toISOString() });
+  if (rows.length > 0) {
+    await fetch(`${TABLE}?key=eq.${key}`, {
+      method: "PATCH", headers: { ...HEADERS, "Prefer": "return=minimal" }, body,
+    });
+  } else {
+    await fetch(TABLE, {
+      method: "POST", headers: { ...HEADERS, "Prefer": "return=minimal" }, body,
+    });
+  }
+}
+
+// POST /api/firebox-config — update active_channels and/or firebox_mode
+// Body: { active_channels?: string[], firebox_mode?: string }
 // Requires x-firebox-key header
 export async function POST(req: NextRequest) {
   if (req.headers.get("x-firebox-key") !== INGEST_KEY) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const body = await req.json();
-  const channels: string[] = body.active_channels ?? [];
-
-  const res = await fetch(`${TABLE}?key=eq.active_channels`, {
-    method: "PATCH",
-    headers: { ...HEADERS, "Prefer": "return=minimal" },
-    body: JSON.stringify({ value: channels, updated_at: new Date().toISOString() }),
-  });
-
-  if (!res.ok && res.status !== 204) {
-    return NextResponse.json({ error: "Failed to update config" }, { status: 502 });
-  }
-  return NextResponse.json({ ok: true, active_channels: channels });
+  const promises: Promise<void>[] = [];
+  if (body.active_channels !== undefined) promises.push(upsertKey("active_channels", body.active_channels));
+  if (body.firebox_mode    !== undefined) promises.push(upsertKey("firebox_mode",    body.firebox_mode));
+  await Promise.all(promises);
+  return NextResponse.json({ ok: true });
 }

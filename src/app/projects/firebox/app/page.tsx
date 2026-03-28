@@ -1233,11 +1233,24 @@ export default function FireBoxApp() {
     if (opMode) localStorage.setItem(`firebox_extra_${opMode}`, JSON.stringify(updated));
   };
 
+  const MODE_DEFAULT_CHANNELS: Record<OpMode, string[]> = {
+    whistler:   ["wfd-ch2-scene", "wfd-ch6-ce"],
+    deployment: ["wfd-ch6-ce", "bcws-ofc1", "nrs-zinc"],
+  };
+
   const selectMode = (m: OpMode) => {
     localStorage.setItem("firebox_mode", m);
     setOpMode(m);
     setView("channels");
     setShowInfo(false);
+    const channels = MODE_DEFAULT_CHANNELS[m];
+    setActiveChannels(channels);
+    // Push to Supabase — Pi watcher picks up within 30s and switches rtl_airband config
+    fetch("/api/firebox-config", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-firebox-key": "firebox-pi-secret" },
+      body: JSON.stringify({ firebox_mode: m, active_channels: channels }),
+    }).catch(() => {});
   };
 
   const handleSetTone = (ch: string, tone: string | null) => {
