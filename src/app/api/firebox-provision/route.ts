@@ -46,16 +46,16 @@ export async function POST(request: NextRequest) {
   const aliases  = (rows[0]?.value ?? {}) as Record<string, string>;
   aliases[nodeId] = callSign;
 
-  const body = JSON.stringify({ key: "node_aliases", value: aliases, updated_at: new Date().toISOString() });
+  const payload = JSON.stringify({ key: "node_aliases", value: aliases, updated_at: new Date().toISOString() });
   if (rowExists) {
     // Row exists — PATCH it
     await fetch(`${CONFIG_URL}?key=eq.node_aliases`, {
-      method: "PATCH", headers: { ...HEADERS, "Prefer": "return=minimal" }, body,
+      method: "PATCH", headers: { ...HEADERS, "Prefer": "return=minimal" }, body: payload,
     });
   } else {
     // Row doesn't exist yet — INSERT
     await fetch(CONFIG_URL, {
-      method: "POST", headers: { ...HEADERS, "Prefer": "return=minimal" }, body,
+      method: "POST", headers: { ...HEADERS, "Prefer": "return=minimal" }, body: payload,
     });
   }
 
