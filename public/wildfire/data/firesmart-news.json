@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-03-29T10:00:31.142Z",
+  "updated_at": "2026-03-29T16:00:31.217Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Future uncertain for Surrey potato farm as land is owned by federal government",
+        "link": "https://globalnews.ca/news/11749736/future-uncertain-surrey-potato-farm-land-owned-federal-government/",
+        "description": "Every year, the Heppell family grows roughly 50 million servings of potatoes and other crops on a 220-acre parcel near 192nd Street and 36th Avenue.",
+        "pubDate": "Sat, 28 Mar 2026 01:00:37 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2024/06/image.png"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -29,6 +38,14 @@
         "pubDate": "Fri, 27 Mar 2026 23:16:35 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/02/d039840320546504b486143a48043cefca80fff0a4424d866051af267bb1a624.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Vancouver Vaisakhi Parade route changed this year following Lapu Lapu tragedy",
+        "link": "https://globalnews.ca/news/11749291/vancouver-vaisakhi-parade-route-changed-2026-lapu-lapu-tragedy/",
+        "description": "Sgt. Adam Donaldson with the VPD said, 'The city provided VPD with the route change and what VPD's job is to make a plan for the preparations for the route change.'",
+        "pubDate": "Fri, 27 Mar 2026 20:46:51 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2024/04/processed-135E4090-791A-47C8-96CE-4560ED65B4D51.jpeg?quality=65&#038;strip=all"
       }
     ]
   }
