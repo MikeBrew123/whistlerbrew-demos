@@ -97,7 +97,7 @@ export default function FireBoxMap() {
 
   // ── Fetch active incident ──────────────────────────────────────────────────
   useEffect(() => {
-    fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : {})
+    fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : { incidents: [] })
       .then(d => {
         const active = (d.incidents ?? []).find((i: {status:string}) => i.status === "active");
         setIncident(active ?? null);

@@ -1272,13 +1272,13 @@ export default function FireBoxApp() {
   // Active incident (read-only on kiosk — manage from web)
   const [activeIncident, setActiveIncident] = useState<{ name: string; start_at: string } | null>(null);
   useEffect(() => {
-    fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : {})
+    fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : { incidents: [] })
       .then(d => {
         const active = (d.incidents ?? []).find((i: { status: string }) => i.status === "active");
         setActiveIncident(active ?? null);
       }).catch(() => {});
     const t = setInterval(() => {
-      fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : {})
+      fetch("/api/firebox-incidents").then(r => r.ok ? r.json() : { incidents: [] })
         .then(d => { const a = (d.incidents ?? []).find((i: { status: string }) => i.status === "active"); setActiveIncident(a ?? null); }).catch(() => {});
     }, 60000);
     return () => clearInterval(t);
