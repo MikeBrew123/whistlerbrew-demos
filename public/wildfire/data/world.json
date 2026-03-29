@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-28T23:00:41.663Z",
+  "updated_at": "2026-03-29T10:00:41.199Z",
   "fires": [
     {
       "country": "United States",
@@ -105,10 +105,11 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided - maintaining existing 13 active fires from previous data",
+      "No new articles provided in input",
       "All existing fires retained as Active status",
-      "No fires exceeded 60-day containment threshold",
-      "No Canadian news items in input"
+      "No fires contained >60 days ago to remove",
+      "No duplicates across sources to deduplicate",
+      "All 13 existing world fires preserved"
     ]
   }
 }
