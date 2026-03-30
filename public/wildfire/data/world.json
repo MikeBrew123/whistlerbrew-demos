@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-29T22:00:42.336Z",
+  "updated_at": "2026-03-30T16:00:40.582Z",
   "fires": [
     {
       "country": "United States",
@@ -105,11 +105,9 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new Canada news received",
-      "No new world news received",
-      "All 13 existing fires retained (all Active status, none contained >60 days)",
-      "No deduplication required - no duplicate entries in existing_fires",
-      "No misrouted items detected"
+      "No new articles provided; existing fires preserved",
+      "All 13 existing fires retained with Active status",
+      "No deduplication or rerouting required"
     ]
   }
 }
