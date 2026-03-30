@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-03-30T04:00:31.100Z",
+  "updated_at": "2026-03-30T10:00:31.483Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Future uncertain for Surrey potato farm as land is owned by federal government",
+        "link": "https://globalnews.ca/news/11749736/future-uncertain-surrey-potato-farm-land-owned-federal-government/",
+        "description": "Every year, the Heppell family grows roughly 50 million servings of potatoes and other crops on a 220-acre parcel near 192nd Street and 36th Avenue.",
+        "pubDate": "Sat, 28 Mar 2026 01:00:37 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2024/06/image.png"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -16,11 +25,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "WFCC returns to Canada in 2026",
-        "link": "https://wildfiretoday.com/wfcc-returns-to-canada-in-2026/",
-        "description": "The combined Wildland Fire Canada Conference and Canadian Smoke Forum unites wildland fire management agencies, Indigenous knowledge holders, scientists and community members from across Canada and around the world. This biennial conference focuses on wildland fire management, science and knowledge sharing with the latest research, technology and practices. The last WFCC was in 2024 in [&#8230;]",
-        "pubDate": "Thu, 12 Mar 2026 05:57:29 +0000",
-        "source": "Wildfire Today"
+        "title": "DRIPA legislation will be front and centre when B.C. MLAs return to the legislature",
+        "link": "https://globalnews.ca/news/11749508/dripa-legislation-front-centre-bc-mlas-return-legislature/",
+        "description": "'We want to see a clear path forward,' Scott McInnis, Conservative MLA for Columbia River-Revelstoke and the critic for Indigenous Relations and Reconciliation, told Global News.",
+        "pubDate": "Fri, 27 Mar 2026 23:16:35 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/02/d039840320546504b486143a48043cefca80fff0a4424d866051af267bb1a624.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Recently launched app rates wildfire risk for properties across Canada",
