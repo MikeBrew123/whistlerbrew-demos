@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-30T16:00:40.582Z",
+  "updated_at": "2026-03-30T22:00:42.271Z",
   "fires": [
     {
       "country": "United States",
@@ -96,18 +96,18 @@
   "last_report": {
     "items_in": {
       "canada": 0,
-      "world": 0
+      "world": 1
     },
     "items_out": {
       "canada": 0,
       "world_fires": 13
     },
     "deduped": 0,
-    "rerouted": 0,
+    "rerouted": 1,
     "notes": [
-      "No new articles provided; existing fires preserved",
-      "All 13 existing fires retained with Active status",
-      "No deduplication or rerouting required"
+      "Removed 1 non-wildfire article (cops/firefighters brawl in New York) - misrouted to world_fires as it is not about wildfires",
+      "Preserved all 13 existing active fires",
+      "No duplicates detected across sources"
     ]
   }
 }
