@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-30T22:00:42.271Z",
+  "updated_at": "2026-03-31T04:00:40.919Z",
   "fires": [
     {
       "country": "United States",
@@ -105,9 +105,9 @@
     "deduped": 0,
     "rerouted": 1,
     "notes": [
-      "Removed 1 non-wildfire article (cops/firefighters brawl in New York) - misrouted to world_fires as it is not about wildfires",
-      "Preserved all 13 existing active fires",
-      "No duplicates detected across sources"
+      "Rerouted 1 item from world to non-wildfire: 'Cops, firefighters brawl during charity hockey game' (charity event, not wildfire news)",
+      "Preserved all 13 active existing fires",
+      "No duplicates found across sources"
     ]
   }
 }
