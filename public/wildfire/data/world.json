@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-03-31T10:00:40.868Z",
+  "updated_at": "2026-04-01T04:00:42.971Z",
   "fires": [
+    {
+      "country": "Thailand",
+      "name": "Chiang Mai Air Pollution (Fire Season)",
+      "status": "Active",
+      "summary": "Peak fire season in Chiang Mai causing severe air pollution with city ranking among world's most polluted. Health impacts reported including nosebleeds in children.",
+      "link": "https://www.bbc.com/news/articles/c0le03ne05ro?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/acf3/live/02dc7f90-2d73-11f1-85a0-b9e8a127d116.jpg"
+    },
     {
       "country": "United States",
       "name": "Nebraska Panhandle Fires",
@@ -100,14 +108,15 @@
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 13
+      "world_fires": 14
     },
     "deduped": 0,
-    "rerouted": 1,
+    "rerouted": 0,
     "notes": [
-      "Rerouted: 'Cops, firefighters brawl during charity hockey game' from world to removed—not wildfire-related content",
-      "Preserved all 13 active wildfire records from existing_fires",
-      "No new wildfire articles to merge"
+      "Added new Thailand wildfire story to world_fires (Chiang Mai air pollution from peak fire season)",
+      "Preserved all 13 existing US and Europe fires as Active status",
+      "Image preserved for Thailand article",
+      "No duplicates detected across sources"
     ]
   }
 }
