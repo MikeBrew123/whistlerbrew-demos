@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-01T04:00:42.971Z",
+  "updated_at": "2026-04-01T16:00:43.450Z",
   "fires": [
     {
       "country": "Thailand",
@@ -7,7 +7,7 @@
       "status": "Active",
       "summary": "Peak fire season in Chiang Mai causing severe air pollution with city ranking among world's most polluted. Health impacts reported including nosebleeds in children.",
       "link": "https://www.bbc.com/news/articles/c0le03ne05ro?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/acf3/live/02dc7f90-2d73-11f1-85a0-b9e8a127d116.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ae12/live/429a49e0-2d74-11f1-85a0-b9e8a127d116.jpg"
     },
     {
       "country": "United States",
@@ -113,10 +113,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Added new Thailand wildfire story to world_fires (Chiang Mai air pollution from peak fire season)",
-      "Preserved all 13 existing US and Europe fires as Active status",
-      "Image preserved for Thailand article",
-      "No duplicates detected across sources"
+      "Thailand article merged with existing Chiang Mai fire entry, image updated to most recent from input",
+      "All 13 existing_fires entries preserved as Active status",
+      "No duplicates found between input and existing fires",
+      "All fires remain Active, none dropped for >60 day containment"
     ]
   }
 }
