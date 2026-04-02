@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-02T04:00:42.935Z",
+  "updated_at": "2026-04-02T10:00:41.952Z",
   "fires": [
     {
       "country": "Thailand",
@@ -13,92 +13,79 @@
       "country": "United States",
       "name": "Nebraska Panhandle Fires",
       "status": "Active",
-      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Nearly 800,000 acres consumed across multiple fires. Conditions beginning to ease. 15% contained.",
-      "link": "https://news.google.com/search?q=nebraska+panhandle+wildfire"
+      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Nearly 800,000 acres consumed across multiple fires. Conditions beginning to ease. 15% contained."
     },
     {
       "country": "United States",
       "name": "Colorado Wildfires (South of Colorado Springs)",
       "status": "Active",
-      "summary": "Multiple active wildfires in Colorado including fire near Highway 115 with 7,385 acres burned and 0% containment. Evacuation orders lifted. Fire continues to spread rapidly.",
-      "link": "https://news.google.com/search?q=colorado+wildfire+2026"
+      "summary": "Multiple active wildfires in Colorado including fire near Highway 115 with 7,385 acres burned and 0% containment. Evacuation orders lifted. Fire continues to spread rapidly."
     },
     {
       "country": "United States",
       "name": "Belmore State Forest Wildfire",
       "status": "Active",
-      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment. Sheriff's Deputy died assisting with evacuations.",
-      "link": "https://news.google.com/search?q=belmore+state+forest+wildfire"
+      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment. Sheriff's Deputy died assisting with evacuations."
     },
     {
       "country": "United States",
       "name": "Casper Area Wildfire",
       "status": "Active",
-      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures. Natrona County breaks wildfire record.",
-      "link": "https://news.google.com/search?q=casper+wyoming+wildfire"
+      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures. Natrona County breaks wildfire record."
     },
     {
       "country": "United States",
       "name": "Sevier County Wildfire",
       "status": "Active",
-      "summary": "50-acre wildfire in Sevier County, Utah near Vernal, driven by winds, putting structures at risk.",
-      "link": "https://news.google.com/search?q=sevier+county+utah+wildfire"
+      "summary": "50-acre wildfire in Sevier County, Utah near Vernal, driven by winds, putting structures at risk."
     },
     {
       "country": "United States",
       "name": "Cross Creek Wildfire",
       "status": "Active",
-      "summary": "Wildfire in marshland near Cross Creek, Florida prompting family evacuations.",
-      "link": "https://news.google.com/search?q=cross+creek+florida+wildfire"
+      "summary": "Wildfire in marshland near Cross Creek, Florida prompting family evacuations."
     },
     {
       "country": "United States",
       "name": "Nacimiento Wildfire",
       "status": "Active",
-      "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts.",
-      "link": "https://news.google.com/search?q=nacimiento+wildfire+new+mexico"
+      "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts."
     },
     {
       "country": "United States",
       "name": "Bastrop State Park Wildfire",
       "status": "Active",
-      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire.",
-      "link": "https://news.google.com/search?q=bastrop+state+park+wildfire"
+      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire."
     },
     {
       "country": "United States",
       "name": "Mossy Pond Area Wildfire",
       "status": "Active",
-      "summary": "500-acre wildfire in Mossy Pond area displacing 43 people with 15 dwellings destroyed.",
-      "link": "https://news.google.com/search?q=mossy+pond+area+wildfire"
+      "summary": "500-acre wildfire in Mossy Pond area displacing 43 people with 15 dwellings destroyed."
     },
     {
       "country": "United States",
       "name": "Mitchell County Wildfire",
       "status": "Active",
-      "summary": "125-acre wildfire burning near Tennessee line in Mitchell County, North Carolina.",
-      "link": "https://news.google.com/search?q=mitchell+county+north+carolina+wildfire"
+      "summary": "125-acre wildfire burning near Tennessee line in Mitchell County, North Carolina."
     },
     {
       "country": "United States",
       "name": "Alabama/Georgia Regional Wildfire",
       "status": "Active",
-      "summary": "Wildfire spanning approximately 117 acres across Alabama-Georgia region.",
-      "link": "https://news.google.com/search?q=alabama+georgia+wildfire+2026"
+      "summary": "Wildfire spanning approximately 117 acres across Alabama-Georgia region."
     },
     {
       "country": "United States",
       "name": "US Wildfire Season 2026",
       "status": "Active",
-      "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts.",
-      "link": "https://news.google.com/search?q=us+wildfire+season+2026"
+      "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts."
     },
     {
       "country": "Europe",
       "name": "European Wildfire Preparedness",
       "status": "Active",
-      "summary": "Europe dangerously unprepared for worsening wildfires according to recent report.",
-      "link": "https://news.google.com/search?q=europe+wildfire+preparedness"
+      "summary": "Europe dangerously unprepared for worsening wildfires according to recent report."
     }
   ],
   "last_report": {
@@ -113,10 +100,9 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Input world article on Chiang Mai matched existing Thailand fire entry—preserved with image",
-      "All existing fires retained (all Active status)",
-      "No duplicates detected across input and existing data",
-      "No Canadian content provided"
+      "Merged BBC Chiang Mai article with existing Thailand fire entry, preserving image",
+      "Retained all 13 existing fire entries from existing_fires as all are marked Active",
+      "No deduplications needed across sources"
     ]
   }
 }
