@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-01T16:00:43.450Z",
+  "updated_at": "2026-04-02T04:00:42.935Z",
   "fires": [
     {
       "country": "Thailand",
@@ -113,10 +113,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Thailand article merged with existing Chiang Mai fire entry, image updated to most recent from input",
-      "All 13 existing_fires entries preserved as Active status",
-      "No duplicates found between input and existing fires",
-      "All fires remain Active, none dropped for >60 day containment"
+      "Input world article on Chiang Mai matched existing Thailand fire entry—preserved with image",
+      "All existing fires retained (all Active status)",
+      "No duplicates detected across input and existing data",
+      "No Canadian content provided"
     ]
   }
 }
