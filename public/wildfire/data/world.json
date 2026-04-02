@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-02T10:00:41.952Z",
+  "updated_at": "2026-04-02T16:00:41.603Z",
   "fires": [
     {
       "country": "Thailand",
@@ -91,7 +91,7 @@
   "last_report": {
     "items_in": {
       "canada": 0,
-      "world": 1
+      "world": 0
     },
     "items_out": {
       "canada": 0,
@@ -100,9 +100,9 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Merged BBC Chiang Mai article with existing Thailand fire entry, preserving image",
-      "Retained all 13 existing fire entries from existing_fires as all are marked Active",
-      "No deduplications needed across sources"
+      "No new content provided; all items preserved from existing_fires",
+      "14 active fires maintained across Thailand, United States (12 fires), and Europe",
+      "Image preserved for Thailand fire entry"
     ]
   }
 }
