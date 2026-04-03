@@ -121,6 +121,78 @@
     }
     .slide.active { opacity: 1; pointer-events: auto; }
 
+    /* ===== WEATHER BAR ===== */
+    #weather-bar {
+      height: 52px;
+      background: #1a2330;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      gap: 0;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .wx-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-right: 24px;
+      white-space: nowrap;
+    }
+
+    .wx-items {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .wx-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 22px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      white-space: nowrap;
+    }
+    .wx-item:last-child { border-right: none; }
+
+    .wx-item-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .wx-item-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--offwhite);
+      letter-spacing: -0.01em;
+      font-variant-numeric: tabular-nums;
+    }
+    .wx-item-value.danger-low    { color: #7ec8e3; }
+    .wx-item-value.danger-mod    { color: var(--yellow); }
+    .wx-item-value.danger-high   { color: var(--orange); }
+    .wx-item-value.danger-vhigh  { color: var(--red); }
+    .wx-item-value.danger-ext    { color: #ff00ff; }
+
+    .wx-source {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--muted);
+      opacity: 0.6;
+      white-space: nowrap;
+      padding-left: 16px;
+    }
+
     /* ===== FOOTER ===== */
     #footer {
       height: 50px;
@@ -593,6 +665,20 @@
   <!-- SLIDES -->
   <div id="slides-wrapper">
     <!-- Injected by JS -->
+  </div>
+
+  <!-- WEATHER BAR -->
+  <div id="weather-bar">
+    <div class="wx-label">🔥 Fire Wx</div>
+    <div class="wx-items" id="wx-items">
+      <div class="wx-item"><span class="wx-item-label">Temp</span><span class="wx-item-value">—</span></div>
+      <div class="wx-item"><span class="wx-item-label">RH</span><span class="wx-item-value">—</span></div>
+      <div class="wx-item"><span class="wx-item-label">Wind</span><span class="wx-item-value">—</span></div>
+      <div class="wx-item"><span class="wx-item-label">FFMC</span><span class="wx-item-value">—</span></div>
+      <div class="wx-item"><span class="wx-item-label">ISI</span><span class="wx-item-value">—</span></div>
+      <div class="wx-item"><span class="wx-item-label">FWI</span><span class="wx-item-value">—</span></div>
+    </div>
+    <div class="wx-source" id="wx-source">Loading…</div>
   </div>
 
   <!-- FOOTER -->
@@ -1083,6 +1169,83 @@ async function loadAndRender() {
 }
 
 // ============================================================
+//  WEATHER BAR
+// ============================================================
+
+const WHISTLER = { lat: 50.1163, lon: -122.9574 };
+
+function windDeg2Dir(deg) {
+  const dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+  return dirs[Math.round(deg / 22.5) % 16];
+}
+
+function fwiClass(fwi) {
+  if (fwi === null || fwi === undefined) return '';
+  if (fwi < 5)  return 'danger-low';
+  if (fwi < 12) return 'danger-mod';
+  if (fwi < 20) return 'danger-high';
+  if (fwi < 30) return 'danger-vhigh';
+  return 'danger-ext';
+}
+
+async function fetchWeatherBar() {
+  let temp = '—', rh = '—', wind = '—', ffmc = '—', isi = '—', fwi = '—';
+  let source = '—';
+
+  // 1. Basic weather from Open-Meteo (Whistler coords, no API key needed)
+  try {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${WHISTLER.lat}&longitude=${WHISTLER.lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m&wind_speed_unit=kmh&timezone=America%2FVancouver`;
+    const d = await fetch(url).then(r => r.json());
+    const c = d.current;
+    temp = `${Math.round(c.temperature_2m)}°C`;
+    rh   = `${Math.round(c.relative_humidity_2m)}%`;
+    wind = `${Math.round(c.wind_speed_10m)} ${windDeg2Dir(c.wind_direction_10m)}`;
+    source = 'Wx: Whistler';
+  } catch(e) { /* leave defaults */ }
+
+  // 2. Fire weather indices from CWFIS (Pemberton Base — nearest BC station with FWI)
+  try {
+    const bbox = 'lat%20BETWEEN%2049.9%20AND%2050.5%20AND%20lon%20BETWEEN%20-123.2%20AND%20-122.5';
+    const url = `https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=public:firewx_stns_current&outputFormat=application/json&CQL_FILTER=prov%3D%27BC%27%20AND%20${bbox}`;
+    const d = await fetch(url).then(r => r.json());
+    // Find station with FWI data, prefer closest to Whistler
+    const stns = (d.features || [])
+      .map(f => f.properties)
+      .filter(p => p.ffmc !== null && p.ffmc !== undefined)
+      .sort((a, b) => {
+        const distA = Math.abs(a.lat - WHISTLER.lat) + Math.abs(a.lon - WHISTLER.lon);
+        const distB = Math.abs(b.lat - WHISTLER.lat) + Math.abs(b.lon - WHISTLER.lon);
+        return distA - distB;
+      });
+    if (stns.length > 0) {
+      const s = stns[0];
+      ffmc = s.ffmc !== null ? Number(s.ffmc).toFixed(1) : '—';
+      isi  = s.isi  !== null ? Number(s.isi).toFixed(1)  : '—';
+      fwi  = s.fwi  !== null ? Number(s.fwi).toFixed(1)  : '—';
+      const stnName = (s.name || 'CWFIS').split(' ').slice(0,2).join(' ');
+      source += ` · FWI: ${stnName}`;
+    }
+  } catch(e) { /* leave defaults */ }
+
+  // Update DOM
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString('en-CA', { hour: 'numeric', minute: '2-digit', hour12: true });
+
+  const fwiVal = fwi !== '—' ? parseFloat(fwi) : null;
+  const cls = fwiClass(fwiVal);
+
+  document.getElementById('wx-items').innerHTML = `
+    <div class="wx-item"><span class="wx-item-label">Temp</span><span class="wx-item-value">${temp}</span></div>
+    <div class="wx-item"><span class="wx-item-label">RH</span><span class="wx-item-value">${rh}</span></div>
+    <div class="wx-item"><span class="wx-item-label">Wind</span><span class="wx-item-value">${wind}</span></div>
+    <div class="wx-item"><span class="wx-item-label">FFMC</span><span class="wx-item-value">${ffmc}</span></div>
+    <div class="wx-item"><span class="wx-item-label">ISI</span><span class="wx-item-value">${isi}</span></div>
+    <div class="wx-item"><span class="wx-item-label">FWI</span><span class="wx-item-value ${cls}">${fwi}</span></div>
+  `;
+  document.getElementById('wx-source').textContent = `${source} · ${timeStr}`;
+}
+
+// ============================================================
 //  SCALE TO FIT (handles any TV resolution)
 // ============================================================
 
@@ -1103,9 +1266,11 @@ window.addEventListener('load', () => {
   setInterval(updateClock, 10000);
 
   loadAndRender();
+  fetchWeatherBar();
 
   // Re-fetch data every 30 min
   setInterval(loadAndRender, REFRESH_MS);
+  setInterval(fetchWeatherBar, REFRESH_MS);
 });
 </script>
 
