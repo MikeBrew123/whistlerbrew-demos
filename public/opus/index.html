@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Opus Athletics — Menu Board</title>
 
   <!-- PapaParse: reliable CSV parser, handles commas inside quotes, etc. -->
@@ -29,8 +29,8 @@
     }
 
     html, body {
-      width: 1920px;
-      height: 1080px;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
       background: var(--bg);
       font-family: 'Inter', sans-serif;
@@ -42,8 +42,10 @@
     #app {
       display: flex;
       flex-direction: column;
+      /* Fixed design canvas — JS scales this to fit any TV */
       width: 1920px;
       height: 1080px;
+      transform-origin: top left;
     }
 
     /* ===== HEADER ===== */
@@ -800,6 +802,18 @@ function updateClock() {
 // ============================================================
 // BOOT
 // ============================================================
+// ============================================================
+// SCALE TO FIT — shrinks the 1920×1080 canvas proportionally
+// to fill whatever screen the TV browser actually has.
+// Runs on load and whenever the window is resized.
+// ============================================================
+function scaleToFit() {
+  const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+  document.getElementById('app').style.transform = `scale(${scale})`;
+}
+scaleToFit();
+window.addEventListener('resize', scaleToFit);
+
 updateClock();
 setInterval(updateClock, 1000);
 
