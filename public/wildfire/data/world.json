@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-03T10:00:40.901Z",
+  "updated_at": "2026-04-03T16:00:39.991Z",
   "fires": [
     {
       "country": "Thailand",
@@ -100,11 +100,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided; maintained existing 14 active fires from persistent data",
-      "All existing fires retained as Active status",
-      "Thailand fire preserved with image asset",
-      "Nebraska, Colorado, Florida, Wyoming, Utah, New Mexico, Texas, North Carolina, Alabama/Georgia fires maintained",
-      "US Wildfire Season 2026 and European Preparedness entries retained as broad regional advisories"
+      "No new articles provided for processing",
+      "All 14 existing fires retained - status is Active",
+      "No fires eligible for removal (none contained >60 days ago)",
+      "Image preserved for Thailand fire entry"
     ]
   }
 }
