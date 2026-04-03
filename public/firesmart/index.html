@@ -907,9 +907,10 @@ function renderFunEntry(slide, row) {
     statsDiv.innerHTML = `<div class="stats-heading">📊 ${row['Title']}</div>`;
     const grid = el('div', 'stats-grid');
 
-    // Parse description: "Requested: 3 · Assigned: 1 · ..."
+    // Parse description: "Stat: N · Stat: N || Goal note"
     const desc = row['Description'] || '';
-    const parts = desc.split(/[·\|,]/).map(p => p.trim()).filter(Boolean);
+    const [statsPart, goalPart] = desc.split('||').map(s => s.trim());
+    const parts = statsPart.split(/[·]/).map(p => p.trim()).filter(Boolean);
     const colorSeq = ['blue','yellow','red','orange','green'];
     parts.forEach((p, i) => {
       const [label, num] = p.split(':').map(s => s.trim());
@@ -919,6 +920,13 @@ function renderFunEntry(slide, row) {
     });
 
     statsDiv.appendChild(grid);
+
+    if (goalPart) {
+      const goalEl = el('div', '', goalPart);
+      goalEl.style.cssText = 'font-size:16px;font-weight:600;color:var(--muted);letter-spacing:0.08em;text-align:right;margin-top:12px;';
+      statsDiv.appendChild(goalEl);
+    }
+
     slide.appendChild(statsDiv);
     return;
   }
