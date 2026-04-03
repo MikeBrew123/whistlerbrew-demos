@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920">
+  <title>Opus Athletics — Menu Board</title>
+
+  <!-- PapaParse: reliable CSV parser, handles commas inside quotes, etc. -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- Google Fonts: clean, readable at TV distance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #2DD4A8;
+      --teal-dark: #0D9488;
+      --black: #111111;
+      --bg: #0F0F0F;
+      --surface: #1A1A1A;
+      --surface2: #242424;
+      --text: #FFFFFF;
+      --text-muted: #A0A0A0;
+      --price: #2DD4A8;
+    }
+
+    html, body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== LAYOUT ===== */
+    #app {
+      display: flex;
+      flex-direction: column;
+      width: 1920px;
+      height: 1080px;
+    }
+
+    /* ===== HEADER ===== */
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 100px;
+      background: var(--surface);
+      border-bottom: 3px solid var(--teal);
+      flex-shrink: 0;
+    }
+
+    #logo-area {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    #logo-bear {
+      height: 72px;
+      width: auto;
+    }
+
+    #gym-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    #gym-name .main {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: var(--text);
+    }
+
+    #gym-name .sub {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--teal);
+      text-transform: uppercase;
+    }
+
+    #header-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    #tax-note {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    #slide-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+    }
+
+    #clock {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      font-variant-numeric: tabular-nums;
+      min-width: 120px;
+      text-align: right;
+    }
+
+    /* ===== SLIDE CONTAINER ===== */
+    #slides-wrapper {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Each slide is absolutely positioned, fades in/out */
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ===== MENU SLIDE (product grid) ===== */
+    .menu-slide {
+      background: var(--bg);
+      padding: 40px 60px;
+      display: grid;
+      /* 3 columns, 2 rows = 6 products per page */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    /* ===== PRODUCT CARD ===== */
+    .product-card {
+      background: var(--surface);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 20px 28px;
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .product-img-wrap {
+      width: 130px;
+      height: 130px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* Emoji placeholder when no image */
+    .product-img-wrap .img-placeholder {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .product-name {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 12px;
+      /* Truncate long descriptions */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product-price {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--price);
+      letter-spacing: -0.01em;
+    }
+
+    /* ===== FEATURED SLIDE ===== */
+    .featured-slide {
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+    }
+
+    .featured-inner {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 22px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .featured-name {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .featured-desc {
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .featured-teal {
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* ===== FOOTER (progress bar + dots) ===== */
+    #footer {
+      height: 56px;
+      background: var(--surface);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    #dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 0 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: var(--teal);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    #progress-bar-wrap {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    #progress-bar {
+      height: 4px;
+      background: var(--teal);
+      width: 0%;
+      transition: width linear;
+    }
+
+    /* ===== COMMUNITY SLIDE ===== */
+    .community-slide {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      padding: 36px 60px 40px;
+    }
+
+    .community-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+
+    .community-header h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .community-header .insta-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* Card with image — image-dominant layout */
+    .community-card {
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .community-card-img {
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .community-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .community-card-img .comm-placeholder {
+      font-size: 48px;
+    }
+
+    .community-card-body {
+      padding: 16px 20px;
+      flex-shrink: 0;
+    }
+
+    .community-card-badge {
+      display: inline-block;
+      background: rgba(45,212,168,0.15);
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+
+    .community-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .community-card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Text-only card — no image, description fills space */
+    .community-card.text-only {
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .community-card.text-only .community-card-body {
+      padding: 0;
+    }
+
+    .community-card.text-only .community-card-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .community-card.text-only .community-card-desc {
+      font-size: 15px;
+      -webkit-line-clamp: 4;
+    }
+
+    /* ===== LOADING STATE ===== */
+    #loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: var(--bg);
+      z-index: 10;
+    }
+
+    #loading .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top-color: var(--teal);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #loading p {
+      font-size: 18px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <!-- HEADER: logo, current slide title, clock -->
+  <header id="header">
+    <div id="logo-area">
+      <img id="logo-bear" src="opus-logo.webp" alt="Opus Athletics">
+      <div id="gym-name">
+        <span class="main">OPUS ATHLETICS</span>
+        <span class="sub">Home of CrossFit Whistler · Est. 2006</span>
+      </div>
+    </div>
+    <div id="header-center">
+      <div id="slide-title">Loading…</div>
+      <div id="tax-note">All prices include taxes</div>
+    </div>
+    <div id="clock">--:--</div>
+  </header>
+
+  <!-- SLIDES WRAPPER: slides injected here by JS -->
+  <div id="slides-wrapper">
+    <div id="loading">
+      <div class="spinner"></div>
+      <p>Loading menu data…</p>
+    </div>
+  </div>
+
+  <!-- FOOTER: nav dots + progress bar -->
+  <footer id="footer">
+    <div id="dots"></div>
+    <div id="progress-bar-wrap">
+      <div id="progress-bar"></div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// ============================================================
+// CONFIGURATION — update these if Sheet/folder IDs change
+// ============================================================
+// Published ID from File → Share → Publish to web (different from the edit URL ID)
+const PUBLISHED_ID = '2PACX-1vThAfruMjrCwTpzCeCgaegtIvEhjDrTqTzCbHgVKb0Ms6oend2Afep0wy1qsFDn7no8I-DUTPg0zJx-';
+
+// GID = the hidden numeric ID for each tab in the spreadsheet.
+// Found in the URL when you click a tab: ?gid=377294785
+const TABS = [
+  { name: 'Accessories',          gid: '377294785',   icon: '🏋️',  type: 'menu' },
+  { name: 'Apparel',              gid: '1298331153',  icon: '👕',  type: 'menu' },
+  { name: 'Drinks & Food',        gid: '1125335801',  icon: '🥤',  type: 'menu' },
+  { name: 'Proteins & Supplements', gid: '1042558855', icon: '💊', type: 'menu' },
+];
+const FEATURED_GID   = '1431260558';
+const COMMUNITY_GID  = '1276591351';
+
+// How long each slide type stays on screen (milliseconds)
+const MENU_DURATION    = 8000;
+const FEATURED_DURATION = 10000;
+
+// Items per page on a menu slide (3 columns × 2 rows)
+const ITEMS_PER_PAGE = 6;
+
+// Auto-reload data every 30 minutes (so owner edits appear without rebooting)
+const DATA_REFRESH_MS = 30 * 60 * 1000;
+
+// Placeholder emojis per category when no product image is available
+const PLACEHOLDER = {
+  'Accessories': '🏋️',
+  'Apparel': '👕',
+  'Drinks & Food': '🥤',
+  'Proteins & Supplements': '💊',
+  '_featured': '⭐',
+};
+
+// ============================================================
+// UTILITY: Convert a Google Drive "view" URL to an embeddable
+// thumbnail URL. Drive files must be shared "Anyone with link".
+//
+// Input:  https://drive.google.com/file/d/FILEID/view?usp=...
+// Output: https://lh3.googleusercontent.com/d/FILEID
+// ============================================================
+function driveToImg(url) {
+  if (!url || !url.includes('drive.google.com')) return '';
+  const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if (!match) return '';
+  // lh3.googleusercontent.com/d/{id} is the clean embed URL for public Drive files
+  return `https://lh3.googleusercontent.com/d/${match[1]}`;
+}
+
+// ============================================================
+// UTILITY: Fetch a Google Sheets tab as CSV
+// ============================================================
+async function fetchCSV(gid) {
+  // "pub" URL only works after File → Share → Publish to web in Google Sheets
+  const url = `https://docs.google.com/spreadsheets/d/e/${PUBLISHED_ID}/pub?gid=${gid}&single=true&output=csv`;
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`Sheet fetch failed for gid=${gid}`);
+  const text = await resp.text();
+  return Papa.parse(text, { header: true, skipEmptyLines: true }).data;
+}
+
+// ============================================================
+// BUILD SLIDES from fetched data
+// Returns an array of slide config objects.
+// ============================================================
+function buildSlides(menuData, featuredData) {
+  const slides = [];
+  const featuredSlides = featuredData.map(row => ({ type: 'featured', data: row }));
+  let featuredIdx = 0;
+
+  TABS.forEach(tab => {
+    const rows = menuData[tab.gid] || [];
+
+    // Chunk products into pages of ITEMS_PER_PAGE
+    for (let i = 0; i < rows.length; i += ITEMS_PER_PAGE) {
+      const chunk = rows.slice(i, i + ITEMS_PER_PAGE);
+      slides.push({
+        type: 'menu',
+        category: tab.name,
+        icon: tab.icon,
+        products: chunk,
+        duration: MENU_DURATION,
+      });
+    }
+
+    // After each category, interleave a featured slide (cycling through them)
+    if (featuredSlides.length > 0) {
+      slides.push({
+        ...featuredSlides[featuredIdx % featuredSlides.length],
+        duration: FEATURED_DURATION,
+      });
+      featuredIdx++;
+    }
+  });
+
+  // Community slide goes at the end of each full loop
+  return slides;
+}
+
+function buildCommunitySlide(rows) {
+  return { type: 'community', items: rows.slice(0, 6), duration: 12000 };
+}
+
+// ============================================================
+// RENDER: Turn a slide config into an HTML element
+// ============================================================
+function renderSlide(slide, index) {
+  const el = document.createElement('div');
+  el.className = 'slide';
+  el.dataset.index = index;
+
+  if (slide.type === 'menu') {
+    el.classList.add('menu-slide');
+    slide.products.forEach(product => {
+      const imgUrl = driveToImg(product.Image || '');
+      const placeholder = PLACEHOLDER[slide.category] || '📦';
+
+      el.innerHTML += `
+        <div class="product-card">
+          <div class="product-img-wrap">
+            ${imgUrl
+              ? `<img src="${imgUrl}" alt="${product.Item}" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'img-placeholder\\'>${placeholder}</span>'">`
+              : `<span class="img-placeholder">${placeholder}</span>`
+            }
+          </div>
+          <div class="product-info">
+            <div class="product-name">${product.Item || ''}</div>
+            ${product.Description ? `<div class="product-desc">${product.Description}</div>` : ''}
+            <div class="product-price">$${parseFloat(product.Price || 0).toFixed(2)}</div>
+          </div>
+        </div>
+      `;
+    });
+
+  } else if (slide.type === 'community') {
+    el.classList.add('community-slide');
+    el.innerHTML = `
+      <div class="community-header">
+        <h2>📸 Community</h2>
+        <span class="insta-note">Add posts via the Community & Announcements tab in the Google Sheet</span>
+      </div>
+      <div class="community-grid">
+        ${slide.items.map(item => {
+          const imgUrl = driveToImg(item.Image || '');
+          const hasImg = !!imgUrl;
+          return `
+            <div class="community-card ${hasImg ? '' : 'text-only'}">
+              ${hasImg ? `<div class="community-card-img"><img src="${imgUrl}" alt="${item.Title}" onerror="this.parentElement.innerHTML='<span class=\\'comm-placeholder\\'>📸</span>'"></div>` : ''}
+              <div class="community-card-body">
+                ${item.Badge ? `<div class="community-card-badge">${item.Badge}</div>` : ''}
+                <div class="community-card-title">${item.Title || ''}</div>
+                ${item.Description ? `<div class="community-card-desc">${item.Description}</div>` : ''}
+                ${item.Date ? `<div class="community-card-desc" style="margin-top:6px;color:var(--teal)">${item.Date}${item.Location ? ' · ' + item.Location : ''}</div>` : ''}
+              </div>
+            </div>`;
+        }).join('')}
+      </div>`;
+
+  } else if (slide.type === 'featured') {
+    el.classList.add('featured-slide');
+    const d = slide.data;
+    const badge = d.Badge || 'Featured';
+    // Make teal any text between · separators for visual rhythm
+    const descHtml = (d.Description || '')
+      .split(' · ')
+      .map((part, i) => i % 2 === 1 ? `<span class="featured-teal">${part}</span>` : part)
+      .join(' · ');
+
+    el.innerHTML = `
+      <div class="featured-inner">
+        <div class="featured-badge">${badge}</div>
+        <div class="featured-name">${d.Name || ''}</div>
+        <div class="featured-desc">${descHtml}</div>
+      </div>
+    `;
+  }
+
+  return el;
+}
+
+// ============================================================
+// SLIDE CONTROLLER
+// Handles timing, transitions, dots, progress bar, header title
+// ============================================================
+let slides = [];
+let currentIdx = 0;
+let timer = null;
+let progressTimer = null;
+
+function showSlide(idx) {
+  // Clear old active slide
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+
+  const slide = slides[idx];
+  const el = document.querySelector(`.slide[data-index="${idx}"]`);
+  if (!el) return;
+
+  el.classList.add('active');
+
+  // Update header title
+  const titleEl = document.getElementById('slide-title');
+  if (slide.type === 'menu') {
+    titleEl.textContent = `${slide.icon} ${slide.category}`;
+  } else if (slide.type === 'community') {
+    titleEl.textContent = '📸 Community';
+  } else {
+    titleEl.textContent = '⭐ Featured';
+  }
+
+  // Animate progress bar
+  const bar = document.getElementById('progress-bar');
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  void bar.offsetWidth; // force reflow to restart animation
+  bar.style.transition = `width ${slide.duration}ms linear`;
+  bar.style.width = '100%';
+
+  // Schedule next slide
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    currentIdx = (currentIdx + 1) % slides.length;
+    showSlide(currentIdx);
+  }, slide.duration);
+}
+
+// ============================================================
+// LOAD DATA and initialise the display
+// ============================================================
+async function loadAndInit() {
+  try {
+    // Fetch all menu tabs in parallel
+    const menuData = {};
+    await Promise.all(
+      TABS.map(async tab => {
+        menuData[tab.gid] = await fetchCSV(tab.gid);
+      })
+    );
+    const featuredData   = await fetchCSV(FEATURED_GID);
+    const communityData  = await fetchCSV(COMMUNITY_GID);
+
+    // Build slide configs — community slide appended at end of loop
+    slides = [...buildSlides(menuData, featuredData), buildCommunitySlide(communityData)];
+
+    // Create DOM elements for each slide
+    const wrapper = document.getElementById('slides-wrapper');
+    wrapper.innerHTML = ''; // clear loading spinner
+    slides.forEach((slide, i) => {
+      wrapper.appendChild(renderSlide(slide, i));
+    });
+
+    // Build nav dots (one per slide)
+    const dotsEl = document.getElementById('dots');
+    dotsEl.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dotsEl.appendChild(dot);
+    });
+
+    // Start the show
+    currentIdx = 0;
+    showSlide(0);
+
+  } catch (err) {
+    console.error('Menu load failed:', err);
+    document.getElementById('loading').innerHTML =
+      `<p style="color:#ff6b6b">Failed to load menu data.<br>Check internet connection.</p>`;
+  }
+}
+
+// ============================================================
+// CLOCK — updates every second
+// ============================================================
+function updateClock() {
+  const now = new Date();
+  const h = now.getHours();
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  const h12 = ((h % 12) || 12);
+  document.getElementById('clock').textContent = `${h12}:${m} ${ampm}`;
+}
+
+// ============================================================
+// BOOT
+// ============================================================
+updateClock();
+setInterval(updateClock, 1000);
+
+// Load data now, then refresh every 30 min automatically
+loadAndInit();
+setInterval(loadAndInit, DATA_REFRESH_MS);
+</script>
+</body>
+</html>
