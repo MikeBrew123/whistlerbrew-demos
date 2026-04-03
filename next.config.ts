@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       { source: '/pushup', destination: '/pushup/index.html', permanent: false },
       { source: '/wildfire', destination: '/wildfire/index.html', permanent: false },
       { source: '/opus', destination: '/opus/index.html', permanent: false },
+      { source: '/firesmart', destination: '/firesmart/index.html', permanent: false },
     ];
   },
 };

@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FireSmart Whistler — Office Display</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== BRAND ===== */
+    :root {
+      --charcoal:   #212A34;
+      --yellow:     #EFCB17;
+      --bluegray:   #DFE3EC;
+      --offwhite:   #F8FAFE;
+      --surface:    #2A3441;
+      --surface2:   #323E4D;
+      --muted:      #8A9BB0;
+      --red:        #E83E25;
+      --darkblue:   #1E5093;
+      --lightblue:  #57B3E5;
+      --plantgreen: #43B649;
+      --orange:     #F47521;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: var(--charcoal);
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--offwhite);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== FIXED 1920×1080 CANVAS — JS scales to fit any TV ===== */
+    #app {
+      display: flex;
+      flex-direction: column;
+      width: 1920px;
+      height: 1080px;
+      transform-origin: top left;
+      overflow: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 96px;
+      background: var(--surface);
+      border-bottom: 4px solid var(--yellow);
+      flex-shrink: 0;
+    }
+
+    #logo-area {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #logo-img {
+      height: 60px;
+      width: auto;
+    }
+
+    #logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    #logo-text .org  { font-size: 26px; font-weight: 900; letter-spacing: 0.05em; color: var(--offwhite); }
+    #logo-text .sub  { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; color: var(--yellow); text-transform: uppercase; }
+
+    #header-center {
+      text-align: center;
+    }
+    #slide-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--yellow);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    #date-label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    #clock {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--offwhite);
+      letter-spacing: 0.04em;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      min-width: 150px;
+    }
+
+    /* ===== SLIDE SYSTEM ===== */
+    #slides-wrapper {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.7s ease-in-out;
+      pointer-events: none;
+    }
+    .slide.active { opacity: 1; pointer-events: auto; }
+
+    /* ===== FOOTER ===== */
+    #footer {
+      height: 50px;
+      background: var(--surface);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .dot.active { background: var(--yellow); transform: scale(1.4); }
+
+    /* ===== PROGRESS BAR ===== */
+    #progress-bar {
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 3px;
+      background: var(--yellow);
+      opacity: 0.6;
+      transition: width linear;
+      width: 0;
+    }
+
+    /* ===== THIS WEEK SLIDE ===== */
+    .week-slide {
+      background: var(--charcoal);
+      padding: 32px 48px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .week-slide-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--yellow);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      flex: 1;
+    }
+
+    .day-col {
+      background: var(--surface);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid transparent;
+    }
+    .day-col.today {
+      border-color: var(--yellow);
+      background: #2f3d4e;
+    }
+
+    .day-header {
+      padding: 14px 18px;
+      background: var(--surface2);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .day-col.today .day-header { background: rgba(239,203,23,0.15); }
+
+    .day-name {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--offwhite);
+    }
+    .day-col.today .day-name { color: var(--yellow); }
+
+    .day-date {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .day-events {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .day-empty {
+      color: var(--muted);
+      font-size: 13px;
+      padding: 6px 4px;
+      opacity: 0.5;
+    }
+
+    .event-entry {
+      display: flex;
+      gap: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--surface2);
+    }
+
+    .event-accent {
+      width: 5px;
+      flex-shrink: 0;
+    }
+
+    .event-body {
+      padding: 10px 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .event-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--offwhite);
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .event-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .event-type-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 100px;
+      margin-top: 5px;
+      color: #fff;
+    }
+
+    /* ===== EVENTS SLIDE ===== */
+    .events-slide {
+      background: var(--charcoal);
+      padding: 36px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .events-slide-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--yellow);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      flex: 1;
+    }
+    .events-grid.one   { grid-template-columns: 1fr; }
+    .events-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .events-grid.four  { grid-template-columns: repeat(2, 1fr); }
+
+    .event-card {
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .event-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .event-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .event-card-img-placeholder {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, var(--surface2), #1a2533);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      flex-shrink: 0;
+    }
+
+    .event-card-body {
+      padding: 20px 24px;
+      flex: 1;
+    }
+
+    .event-card-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--charcoal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    .event-card-title {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--offwhite);
+      margin-bottom: 8px;
+    }
+
+    .event-card-date {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--yellow);
+      margin-bottom: 4px;
+    }
+
+    .event-card-location {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .event-card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ===== VACATIONS SLIDE ===== */
+    .vacations-slide {
+      background: var(--charcoal);
+      padding: 40px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .vacations-slide-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--yellow);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .vacation-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .vacation-row {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 22px 32px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      border-left: 6px solid var(--yellow);
+    }
+
+    .vacation-name {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--offwhite);
+      min-width: 250px;
+    }
+
+    .vacation-dates {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--bluegray);
+      flex: 1;
+    }
+
+    .vacation-notes {
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .vacation-badge {
+      display: inline-block;
+      padding: 7px 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge-away      { background: var(--orange);   color: #fff; }
+    .badge-returning { background: var(--plantgreen); color: #fff; }
+    .badge-tentative { background: var(--muted);    color: var(--charcoal); }
+    .badge-confirmed { background: var(--lightblue); color: var(--charcoal); }
+
+    /* ===== FUN SLIDE ===== */
+    .fun-slide {
+      background: var(--charcoal);
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+    }
+
+    /* Layout when there's an image */
+    .fun-with-img {
+      display: flex;
+      width: 100%;
+    }
+    .fun-img-panel {
+      flex: 1;
+      overflow: hidden;
+    }
+    .fun-img-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .fun-text-panel {
+      width: 520px;
+      flex-shrink: 0;
+      padding: 60px 48px;
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+    .fun-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--charcoal);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 22px;
+      border-radius: 100px;
+      align-self: flex-start;
+    }
+    .fun-title {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--offwhite);
+    }
+    .fun-desc {
+      font-size: 22px;
+      color: var(--bluegray);
+      line-height: 1.5;
+    }
+
+    /* Stats card layout (no image) */
+    .fun-stats-slide {
+      width: 100%;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+    }
+    .stats-heading {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--yellow);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .stats-grid {
+      display: flex;
+      gap: 24px;
+    }
+    .stat-card {
+      flex: 1;
+      background: var(--surface);
+      border-radius: 18px;
+      padding: 32px 28px;
+      text-align: center;
+      border-bottom: 5px solid var(--yellow);
+    }
+    .stat-card.red   { border-color: var(--red); }
+    .stat-card.blue  { border-color: var(--lightblue); }
+    .stat-card.green { border-color: var(--plantgreen); }
+    .stat-card.orange { border-color: var(--orange); }
+    .stat-card.yellow { border-color: var(--yellow); }
+
+    .stat-number {
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--offwhite);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ===== LOADING / ERROR ===== */
+    #loading-screen {
+      position: fixed; inset: 0;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: var(--muted);
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading-screen">Loading FireSmart Display…</div>
+
+<div id="app" style="display:none">
+  <!-- HEADER -->
+  <div id="header">
+    <div id="logo-area">
+      <img id="logo-img" src="firesmart-logo.png" alt="FireSmart"
+           onerror="this.style.display='none'; document.getElementById('logo-text-fallback').style.display='flex'">
+      <div id="logo-text-fallback" style="display:none; flex-direction:column; line-height:1.15;">
+        <span class="org">FireSmart</span>
+        <span class="sub">Whistler · Sea to Sky</span>
+      </div>
+      <div id="logo-sub" style="font-size:12px;font-weight:600;letter-spacing:0.18em;color:var(--yellow);text-transform:uppercase;margin-left:4px;align-self:flex-end;padding-bottom:6px;">Whistler</div>
+    </div>
+    <div id="header-center">
+      <div id="slide-label">This Week</div>
+      <div id="date-label"></div>
+    </div>
+    <div id="clock">12:00</div>
+  </div>
+
+  <!-- SLIDES -->
+  <div id="slides-wrapper">
+    <!-- Injected by JS -->
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer">
+    <div id="progress-bar"></div>
+    <!-- Dots injected by JS -->
+  </div>
+</div>
+
+<script>
+// ============================================================
+//  CONFIG
+// ============================================================
+
+// After Sheet is published to web (File → Share → Publish to web),
+// paste the 2PACX-... ID here:
+const PUBLISHED_ID = '2PACX-1vQyeGi4XhUtqVsGY0PO4BSR44YU09MFNkC-WGonddLsGwzlkOK5I6-38PzRcunlZ0omKh0_RIYBXHDT';
+
+const GID = {
+  thisWeek:  '1311545551',
+  events:    '320214153',
+  vacations: '1646156140',
+  fun:       '1434883666',
+};
+
+// Slide durations in milliseconds
+const DURATIONS = {
+  thisWeek:  12000,
+  events:    10000,
+  vacations: 10000,
+  fun:       10000,
+};
+
+// Refresh data every 30 minutes
+const REFRESH_MS = 30 * 60 * 1000;
+
+// ============================================================
+//  UTILITIES
+// ============================================================
+
+function csvURL(gid) {
+  return `https://docs.google.com/spreadsheets/d/e/${PUBLISHED_ID}/pub?gid=${gid}&single=true&output=csv`;
+}
+
+function driveToImg(url) {
+  if (!url) return null;
+  const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if (!m) return null;
+  return `https://lh3.googleusercontent.com/d/${m[1]}`;
+}
+
+function fetchCSV(gid) {
+  return new Promise((resolve) => {
+    Papa.parse(csvURL(gid), {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: r => resolve(r.data),
+      error: () => resolve([]),
+    });
+  });
+}
+
+function el(tag, cls, html) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function typeColor(type) {
+  if (!type) return 'var(--yellow)';
+  const t = type.toLowerCase();
+  if (t.includes('train')) return 'var(--orange)';
+  if (t.includes('meet'))  return 'var(--lightblue)';
+  if (t.includes('alert') || t.includes('urgent') || t.includes('wmp')) return 'var(--red)';
+  if (t.includes('holid') || t.includes('off'))   return 'var(--muted)';
+  if (t.includes('event') || t.includes('conf'))  return 'var(--plantgreen)';
+  return 'var(--yellow)';
+}
+
+function colorHex(color) {
+  if (!color) return 'var(--yellow)';
+  const map = {
+    green: 'var(--plantgreen)', orange: 'var(--orange)',
+    red: 'var(--red)', blue: 'var(--lightblue)',
+    yellow: 'var(--yellow)', teal: '#2DD4A8',
+  };
+  return map[color.toLowerCase()] || typeColor(color);
+}
+
+function badgeClass(status) {
+  if (!status) return 'badge-away';
+  const s = status.toLowerCase();
+  if (s.includes('return')) return 'badge-returning';
+  if (s.includes('tentative')) return 'badge-tentative';
+  if (s.includes('confirm')) return 'badge-confirmed';
+  return 'badge-away';
+}
+
+function todayStr() {
+  return new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+// Returns the Mon–Sat of the current display week (starting Monday)
+function weekDates() {
+  const today = new Date();
+  const dow = today.getDay(); // 0=Sun
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    days.push(d);
+  }
+  // Return Wed (index 2), Thu (3), Fri (4), Sat (5)
+  return [days[2], days[3], days[4], days[5]];
+}
+
+function fmtDate(d) {
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+function isToday(d) {
+  const today = new Date();
+  return d.getDate() === today.getDate() &&
+         d.getMonth() === today.getMonth() &&
+         d.getFullYear() === today.getFullYear();
+}
+
+// Match a sheet Date string to a JS Date from weekDates()
+function matchesDate(sheetDate, jsDate) {
+  if (!sheetDate) return false;
+  const s = sheetDate.trim().toLowerCase();
+  const ref = fmtDate(jsDate).toLowerCase();         // "apr 2"
+  const ref2 = jsDate.toLocaleDateString('en-US', {  // "April 2, 2026"
+    month: 'long', day: 'numeric', year: 'numeric'
+  }).toLowerCase();
+  // Also try day name
+  const dayName = jsDate.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
+  return s.includes(ref) || s === ref2 || s === dayName ||
+         s.startsWith(ref.replace('.','')) || s.startsWith(jsDate.getDate() + ',') ||
+         s.startsWith(jsDate.getDate() + ' ');
+}
+
+// ============================================================
+//  SLIDE BUILDERS
+// ============================================================
+
+// --- THIS WEEK ---
+function buildThisWeek(rows) {
+  const slide = el('div', 'slide week-slide');
+  slide.id = 'slide-thisweek';
+
+  const title = el('div', 'week-slide-title', '📅 This Week');
+  slide.appendChild(title);
+
+  const grid = el('div', 'week-grid');
+
+  const cols = weekDates();
+  const DAYS = ['Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  cols.forEach((date, i) => {
+    const col = el('div', 'day-col' + (isToday(date) ? ' today' : ''));
+
+    const hdr = el('div', 'day-header');
+    hdr.innerHTML = `<div class="day-name">${DAYS[i]}</div><div class="day-date">${fmtDate(date)}</div>`;
+    col.appendChild(hdr);
+
+    const evts = el('div', 'day-events');
+
+    // Match rows by Date column, fallback to Day column
+    const dayRows = rows.filter(r => {
+      const sheetDate = r['Date'] || '';
+      const sheetDay  = (r['Day'] || '').toLowerCase();
+      return matchesDate(sheetDate, date) ||
+             sheetDay === DAYS[i].toLowerCase();
+    });
+
+    if (dayRows.length === 0) {
+      evts.appendChild(el('div', 'day-empty', '—'));
+    } else {
+      dayRows.forEach(r => {
+        if (!r['Title']) return;
+        const accent = colorHex(r['Color'] || r['Type']);
+        const entry = el('div', 'event-entry');
+        const bar   = el('div', 'event-accent');
+        bar.style.background = accent;
+        const body  = el('div', 'event-body');
+        body.innerHTML = `<div class="event-title">${r['Title']}</div>` +
+          (r['Description'] ? `<div class="event-desc">${r['Description']}</div>` : '') +
+          (r['Type'] ? `<div><span class="event-type-badge" style="background:${typeColor(r['Type'])}">${r['Type']}</span></div>` : '');
+        entry.appendChild(bar);
+        entry.appendChild(body);
+        evts.appendChild(entry);
+      });
+    }
+
+    col.appendChild(evts);
+    grid.appendChild(col);
+  });
+
+  slide.appendChild(grid);
+  return slide;
+}
+
+// --- EVENTS ---
+function buildEvents(rows) {
+  const slide = el('div', 'slide events-slide');
+  slide.id = 'slide-events';
+
+  slide.appendChild(el('div', 'events-slide-title', '🗓 Upcoming Events'));
+
+  const count = Math.min(rows.length, 4);
+  const gridClass = ['', 'one', '', 'three', 'four'][Math.min(count, 4)] || 'four';
+  const grid = el('div', `events-grid ${gridClass}`);
+
+  rows.slice(0, 4).forEach(r => {
+    const card = el('div', 'event-card');
+    const imgUrl = driveToImg(r['Image']);
+
+    if (imgUrl) {
+      const imgWrap = el('div', 'event-card-img');
+      const img = document.createElement('img');
+      img.src = imgUrl;
+      img.alt = r['Title'] || '';
+      img.onerror = function() { this.parentElement.innerHTML = '🔥'; };
+      imgWrap.appendChild(img);
+      card.appendChild(imgWrap);
+    } else {
+      card.appendChild(el('div', 'event-card-img-placeholder', '🔥'));
+    }
+
+    const body = el('div', 'event-card-body');
+    if (r['Badge']) {
+      body.appendChild(el('div', 'event-card-badge', r['Badge']));
+    }
+    body.appendChild(el('div', 'event-card-title', r['Title'] || ''));
+    if (r['Date']) body.appendChild(el('div', 'event-card-date', r['Date']));
+    if (r['Location']) body.appendChild(el('div', 'event-card-location', '📍 ' + r['Location']));
+    if (r['Description']) body.appendChild(el('div', 'event-card-desc', r['Description']));
+
+    card.appendChild(body);
+    grid.appendChild(card);
+  });
+
+  if (rows.length === 0) {
+    grid.appendChild(el('div', '', '<p style="color:var(--muted);font-size:24px;padding:40px">No upcoming events.</p>'));
+  }
+
+  slide.appendChild(grid);
+  return slide;
+}
+
+// --- VACATIONS ---
+function buildVacations(rows) {
+  const slide = el('div', 'slide vacations-slide');
+  slide.id = 'slide-vacations';
+
+  slide.appendChild(el('div', 'vacations-slide-title', '✈️ Team — Away'));
+
+  const list = el('div', 'vacation-list');
+
+  if (rows.length === 0) {
+    list.appendChild(el('div', '', '<p style="color:var(--muted);font-size:24px;padding:20px">Everyone\'s in the office!</p>'));
+  } else {
+    rows.forEach(r => {
+      if (!r['Name']) return;
+      const row = el('div', 'vacation-row');
+
+      const dates = [r['Start Date'], r['End Date']].filter(Boolean).join(' → ');
+
+      row.innerHTML = `
+        <div class="vacation-name">${r['Name']}</div>
+        <div class="vacation-dates">${dates}</div>
+        ${r['Notes'] ? `<div class="vacation-notes">${r['Notes']}</div>` : ''}
+        <span class="vacation-badge ${badgeClass(r['Status'])}">${r['Status'] || 'Away'}</span>
+      `;
+      list.appendChild(row);
+    });
+  }
+
+  slide.appendChild(list);
+  return slide;
+}
+
+// --- FUN ---
+function buildFun(rows) {
+  const slide = el('div', 'slide fun-slide');
+  slide.id = 'slide-fun';
+
+  if (rows.length === 0) {
+    slide.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;width:100%;font-size:36px;color:var(--muted)">🦊 Nothing here yet — add something fun!</div>`;
+    return slide;
+  }
+
+  // Rotate through fun entries (show first, cycle in showSlide if multiple)
+  slide._funRows = rows;
+  slide._funIndex = 0;
+  renderFunEntry(slide, rows[0]);
+  return slide;
+}
+
+function renderFunEntry(slide, row) {
+  slide.innerHTML = '';
+
+  // Special: Assessment Stats
+  if ((row['Title'] || '').toLowerCase().includes('assessment') ||
+      (row['Title'] || '').toLowerCase().includes('stat')) {
+    const statsDiv = el('div', 'fun-stats-slide');
+    statsDiv.innerHTML = `<div class="stats-heading">📊 ${row['Title']}</div>`;
+    const grid = el('div', 'stats-grid');
+
+    // Parse description: "Requested: 3 · Assigned: 1 · ..."
+    const desc = row['Description'] || '';
+    const parts = desc.split(/[·\|,]/).map(p => p.trim()).filter(Boolean);
+    const colorSeq = ['blue','yellow','red','orange','green'];
+    parts.forEach((p, i) => {
+      const [label, num] = p.split(':').map(s => s.trim());
+      const card = el('div', `stat-card ${colorSeq[i % colorSeq.length]}`);
+      card.innerHTML = `<div class="stat-number">${num || '–'}</div><div class="stat-label">${label || p}</div>`;
+      grid.appendChild(card);
+    });
+
+    statsDiv.appendChild(grid);
+    slide.appendChild(statsDiv);
+    return;
+  }
+
+  // Image layout
+  const imgUrl = driveToImg(row['Image']);
+  if (imgUrl) {
+    const wrap = el('div', 'fun-with-img');
+
+    const imgPanel = el('div', 'fun-img-panel');
+    const img = document.createElement('img');
+    img.src = imgUrl;
+    img.alt = row['Title'] || '';
+    img.onerror = function() { this.parentElement.style.background = '#1a2533'; this.style.display='none'; };
+    imgPanel.appendChild(img);
+    wrap.appendChild(imgPanel);
+
+    const textPanel = el('div', 'fun-text-panel');
+    if (row['Badge']) textPanel.appendChild(el('div', 'fun-badge', row['Badge']));
+    textPanel.appendChild(el('div', 'fun-title', row['Title'] || ''));
+    if (row['Description']) textPanel.appendChild(el('div', 'fun-desc', row['Description']));
+    if (row['Date']) textPanel.appendChild(el('div', '', `<span style="font-size:14px;color:var(--muted)">${row['Date']}</span>`));
+    wrap.appendChild(textPanel);
+
+    slide.appendChild(wrap);
+  } else {
+    // Text only
+    const wrap = el('div', 'fun-stats-slide');
+    if (row['Badge']) wrap.appendChild(el('div', 'fun-badge', row['Badge']));
+    wrap.appendChild(el('div', 'fun-title', row['Title'] || ''));
+    if (row['Description']) wrap.appendChild(el('div', 'fun-desc', row['Description']));
+    slide.appendChild(wrap);
+  }
+}
+
+// ============================================================
+//  ROTATION ENGINE
+// ============================================================
+
+const SLIDE_ORDER = ['thisweek', 'events', 'vacations', 'fun'];
+const SLIDE_LABELS = {
+  thisweek:  'This Week',
+  events:    'Upcoming Events',
+  vacations: 'Team Away',
+  fun:       'Team Corner',
+};
+const SLIDE_DURATIONS = {
+  thisweek:  DURATIONS.thisWeek,
+  events:    DURATIONS.events,
+  vacations: DURATIONS.vacations,
+  fun:       DURATIONS.fun,
+};
+
+let currentSlide = 0;
+let rotationTimer = null;
+let progressTimer = null;
+
+function showSlide(index) {
+  const wrapper  = document.getElementById('slides-wrapper');
+  const allSlides = wrapper.querySelectorAll('.slide');
+  const key = SLIDE_ORDER[index];
+
+  allSlides.forEach((s, i) => {
+    s.classList.toggle('active', i === index);
+  });
+
+  // Cycle fun entries on each show
+  const funSlide = document.getElementById('slide-fun');
+  if (key === 'fun' && funSlide && funSlide._funRows && funSlide._funRows.length > 0) {
+    renderFunEntry(funSlide, funSlide._funRows[funSlide._funIndex]);
+    funSlide._funIndex = (funSlide._funIndex + 1) % funSlide._funRows.length;
+  }
+
+  // Update header label
+  document.getElementById('slide-label').textContent = SLIDE_LABELS[key] || '';
+
+  // Update dots
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === index));
+
+  // Progress bar
+  const bar = document.getElementById('progress-bar');
+  const dur = SLIDE_DURATIONS[key];
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      bar.style.transition = `width ${dur}ms linear`;
+      bar.style.width = '100%';
+    });
+  });
+
+  // Next slide
+  clearTimeout(rotationTimer);
+  rotationTimer = setTimeout(() => {
+    currentSlide = (currentSlide + 1) % SLIDE_ORDER.length;
+    showSlide(currentSlide);
+  }, dur);
+}
+
+// ============================================================
+//  CLOCK + DATE
+// ============================================================
+
+function updateClock() {
+  const now = new Date();
+  const h = now.getHours() % 12 || 12;
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const ampm = now.getHours() < 12 ? 'AM' : 'PM';
+  document.getElementById('clock').textContent = `${h}:${m} ${ampm}`;
+
+  document.getElementById('date-label').textContent = now.toLocaleDateString('en-CA', {
+    weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
+  });
+}
+
+// ============================================================
+//  BOOTSTRAP
+// ============================================================
+
+async function loadAndRender() {
+  const [weekRows, eventRows, vacRows, funRows] = await Promise.all([
+    fetchCSV(GID.thisWeek),
+    fetchCSV(GID.events),
+    fetchCSV(GID.vacations),
+    fetchCSV(GID.fun),
+  ]);
+
+  const wrapper = document.getElementById('slides-wrapper');
+  wrapper.innerHTML = '';
+
+  const slides = [
+    buildThisWeek(weekRows),
+    buildEvents(eventRows),
+    buildVacations(vacRows),
+    buildFun(funRows),
+  ];
+
+  slides.forEach(s => wrapper.appendChild(s));
+
+  // Build footer dots
+  const footer = document.getElementById('footer');
+  footer.innerHTML = '<div id="progress-bar"></div>';
+  SLIDE_ORDER.forEach((_, i) => {
+    const dot = el('div', 'dot');
+    footer.appendChild(dot);
+  });
+
+  // Hide loading, show app
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+
+  currentSlide = 0;
+  showSlide(0);
+}
+
+// ============================================================
+//  SCALE TO FIT (handles any TV resolution)
+// ============================================================
+
+function scaleToFit() {
+  const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+  document.getElementById('app').style.transform = `scale(${scale})`;
+}
+
+// ============================================================
+//  INIT
+// ============================================================
+
+window.addEventListener('load', () => {
+  scaleToFit();
+  window.addEventListener('resize', scaleToFit);
+
+  updateClock();
+  setInterval(updateClock, 10000);
+
+  loadAndRender();
+
+  // Re-fetch data every 30 min
+  setInterval(loadAndRender, REFRESH_MS);
+});
+</script>
+
+</body>
+</html>
