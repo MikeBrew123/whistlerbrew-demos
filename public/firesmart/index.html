@@ -993,7 +993,23 @@ function renderFunEntry(slide, row) {
   if ((row['Title'] || '').toLowerCase().includes('assessment') ||
       (row['Title'] || '').toLowerCase().includes('stat')) {
     const statsDiv = el('div', 'fun-stats-slide');
-    statsDiv.innerHTML = `<div class="stats-heading">📊 ${row['Title']}</div>`;
+    // Optional image alongside stats
+    const imgUrl = driveToImg(row['Image']);
+    const statsInner = el('div', '');
+    statsInner.style.cssText = 'display:flex;align-items:center;gap:40px;flex:1;';
+    if (imgUrl) {
+      const imgEl = document.createElement('img');
+      imgEl.src = imgUrl;
+      imgEl.alt = '';
+      imgEl.style.cssText = 'height:280px;width:auto;object-fit:contain;flex-shrink:0;';
+      imgEl.onerror = function() { this.style.display='none'; };
+      statsInner.appendChild(imgEl);
+    }
+    const statsContent = el('div', '');
+    statsContent.style.cssText = 'flex:1;display:flex;flex-direction:column;gap:24px;';
+    statsContent.innerHTML = `<div class="stats-heading">📊 ${row['Title']}</div>`;
+    statsInner.appendChild(statsContent);
+    statsDiv.appendChild(statsInner);
     const grid = el('div', 'stats-grid');
 
     // Parse description: "Stat: N · Stat: N || Goal note"
@@ -1008,12 +1024,12 @@ function renderFunEntry(slide, row) {
       grid.appendChild(card);
     });
 
-    statsDiv.appendChild(grid);
+    statsContent.appendChild(grid);
 
     if (goalPart) {
       const goalEl = el('div', '', goalPart);
       goalEl.style.cssText = 'font-size:16px;font-weight:600;color:var(--muted);letter-spacing:0.08em;text-align:right;margin-top:12px;';
-      statsDiv.appendChild(goalEl);
+      statsContent.appendChild(goalEl);
     }
 
     slide.appendChild(statsDiv);
