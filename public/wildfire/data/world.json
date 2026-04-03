@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-02T16:00:41.603Z",
+  "updated_at": "2026-04-03T04:00:40.052Z",
   "fires": [
     {
       "country": "Thailand",
@@ -13,79 +13,92 @@
       "country": "United States",
       "name": "Nebraska Panhandle Fires",
       "status": "Active",
-      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Nearly 800,000 acres consumed across multiple fires. Conditions beginning to ease. 15% contained."
+      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Nearly 800,000 acres consumed across multiple fires. Conditions beginning to ease. 15% contained.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Colorado Wildfires (South of Colorado Springs)",
       "status": "Active",
-      "summary": "Multiple active wildfires in Colorado including fire near Highway 115 with 7,385 acres burned and 0% containment. Evacuation orders lifted. Fire continues to spread rapidly."
+      "summary": "Multiple active wildfires in Colorado including fire near Highway 115 with 7,385 acres burned and 0% containment. Evacuation orders lifted. Fire continues to spread rapidly.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Belmore State Forest Wildfire",
       "status": "Active",
-      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment. Sheriff's Deputy died assisting with evacuations."
+      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment. Sheriff's Deputy died assisting with evacuations.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Casper Area Wildfire",
       "status": "Active",
-      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures. Natrona County breaks wildfire record."
+      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures. Natrona County breaks wildfire record.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Sevier County Wildfire",
       "status": "Active",
-      "summary": "50-acre wildfire in Sevier County, Utah near Vernal, driven by winds, putting structures at risk."
+      "summary": "50-acre wildfire in Sevier County, Utah near Vernal, driven by winds, putting structures at risk.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Cross Creek Wildfire",
       "status": "Active",
-      "summary": "Wildfire in marshland near Cross Creek, Florida prompting family evacuations."
+      "summary": "Wildfire in marshland near Cross Creek, Florida prompting family evacuations.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Nacimiento Wildfire",
       "status": "Active",
-      "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts."
+      "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Bastrop State Park Wildfire",
       "status": "Active",
-      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire."
+      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Mossy Pond Area Wildfire",
       "status": "Active",
-      "summary": "500-acre wildfire in Mossy Pond area displacing 43 people with 15 dwellings destroyed."
+      "summary": "500-acre wildfire in Mossy Pond area displacing 43 people with 15 dwellings destroyed.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Mitchell County Wildfire",
       "status": "Active",
-      "summary": "125-acre wildfire burning near Tennessee line in Mitchell County, North Carolina."
+      "summary": "125-acre wildfire burning near Tennessee line in Mitchell County, North Carolina.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "Alabama/Georgia Regional Wildfire",
       "status": "Active",
-      "summary": "Wildfire spanning approximately 117 acres across Alabama-Georgia region."
+      "summary": "Wildfire spanning approximately 117 acres across Alabama-Georgia region.",
+      "link": ""
     },
     {
       "country": "United States",
       "name": "US Wildfire Season 2026",
       "status": "Active",
-      "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts."
+      "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts.",
+      "link": ""
     },
     {
       "country": "Europe",
       "name": "European Wildfire Preparedness",
       "status": "Active",
-      "summary": "Europe dangerously unprepared for worsening wildfires according to recent report."
+      "summary": "Europe dangerously unprepared for worsening wildfires according to recent report.",
+      "link": ""
     }
   ],
   "last_report": {
@@ -100,9 +113,13 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new content provided; all items preserved from existing_fires",
-      "14 active fires maintained across Thailand, United States (12 fires), and Europe",
-      "Image preserved for Thailand fire entry"
+      "No new Canada news provided in input",
+      "No new world news provided in input",
+      "All 14 fires preserved from existing_fires as Active status",
+      "No fires dropped (none contained >60 days ago)",
+      "No deduplication needed (no duplicate sources)",
+      "Thai image preserved for Chiang Mai fire",
+      "No rerouting needed"
     ]
   }
 }
