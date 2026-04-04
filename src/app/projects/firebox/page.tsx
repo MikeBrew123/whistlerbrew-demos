@@ -36,7 +36,18 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
   "nrs-gold":            { label: "NRS Gold",              code: "NRS·GOLD",  color: "#f59e0b" },
   "nrs-silver":          { label: "NRS Silver",            code: "NRS·SLVR",  color: "#94a3b8" },
   "nrs-bronze":          { label: "NRS Bronze",            code: "NRS·BRNZ",  color: "#b45309" },
+  "nrs-white":           { label: "NRS White",             code: "NRS·WHT",   color: "#e2e8f0" },
+  "nrs-red":             { label: "NRS Red",               code: "NRS·RED",   color: "#ef4444" },
+  "nrs-purple":          { label: "NRS Purple",            code: "NRS·PURP",  color: "#a855f7" },
+  "nrs-green":           { label: "NRS Green",             code: "NRS·GRN",   color: "#22c55e" },
+  "nrs-pink":            { label: "NRS Pink",              code: "NRS·PNK",   color: "#ec4899" },
+  "nrs-blue":            { label: "NRS Blue",              code: "NRS·BLUE",  color: "#3b82f6" },
+  "nrs-maroon":          { label: "NRS Maroon",            code: "NRS·MARN",  color: "#9f1239" },
+  "nrs-orange":          { label: "NRS Orange",            code: "NRS·ORG",   color: "#f97316" },
   "nrs-brown":           { label: "NRS Brown",             code: "NRS·BRWN",  color: "#92400e" },
+  "nrs-yellow":          { label: "NRS Yellow",            code: "NRS·YLW",   color: "#eab308" },
+  "nrs-grey":            { label: "NRS Grey",              code: "NRS·GREY",  color: "#6b7280" },
+  "nrs-black":           { label: "NRS Black",             code: "NRS·BLK",   color: "#374151" },
   // ── Dongle 3 (142.5 MHz) ──────────────────────────────────────────────────
   "ehs-mount-london":    { label: "EHS Mt. London",        code: "EHS·MTNLN", color: "#fb7185", dongle: "D3" },
   // ── Mesh ──────────────────────────────────────────────────────────────────
@@ -46,7 +57,13 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
 
 // Channels per mode — controlled by firebox_config active_mode in Supabase
 const HOME_CHANNELS       = ["wfd-ch2-scene", "wfd-ch6-ce", "wb-lift-ops", "wb-ops", "wb-heliski"];
-const DEPLOYMENT_CHANNELS = ["wfd-ch3-lost-lake", "wfd-ch4-cheakamus", "nrs-gold", "nrs-silver", "nrs-bronze", "nrs-brown"];
+const DEPLOYMENT_CHANNELS = [
+  "wfd-ch3-lost-lake", "wfd-ch4-cheakamus",
+  "nrs-gold", "nrs-silver", "nrs-bronze",
+  "nrs-white", "nrs-red", "nrs-purple", "nrs-green", "nrs-pink",
+  "nrs-blue", "nrs-maroon", "nrs-orange", "nrs-brown", "nrs-yellow",
+  "nrs-grey", "nrs-black",
+];
 
 // Planned channels (D2/D3 not yet connected) — shown in UI with dongle badge
 const PLANNED_CHANNELS = [
