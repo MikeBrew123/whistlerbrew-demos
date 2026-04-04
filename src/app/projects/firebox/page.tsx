@@ -48,6 +48,7 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
   "nrs-yellow":          { label: "NRS Yellow",            code: "NRS·YLW",   color: "#eab308" },
   "nrs-grey":            { label: "NRS Grey",              code: "NRS·GREY",  color: "#6b7280" },
   "nrs-black":           { label: "NRS Black",             code: "NRS·BLK",   color: "#374151" },
+  "nrs-copper":          { label: "NRS Copper",            code: "NRS·COPR",  color: "#b45309" },
   // ── Dongle 3 (142.5 MHz) ──────────────────────────────────────────────────
   "ehs-mount-london":    { label: "EHS Mt. London",        code: "EHS·MTNLN", color: "#fb7185", dongle: "D3" },
   // ── Mesh ──────────────────────────────────────────────────────────────────
@@ -58,8 +59,7 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
 // Channels per mode — controlled by firebox_config active_mode in Supabase
 const HOME_CHANNELS       = ["wfd-ch2-scene", "wfd-ch6-ce", "wb-lift-ops", "wb-ops", "wb-heliski"];
 const DEPLOYMENT_CHANNELS = [
-  "wfd-ch3-lost-lake", "wfd-ch4-cheakamus",
-  "nrs-gold", "nrs-silver", "nrs-bronze",
+  "nrs-gold", "nrs-silver", "nrs-bronze", "nrs-copper",
   "nrs-white", "nrs-red", "nrs-purple", "nrs-green", "nrs-pink",
   "nrs-blue", "nrs-maroon", "nrs-orange", "nrs-brown", "nrs-yellow",
   "nrs-grey", "nrs-black",
