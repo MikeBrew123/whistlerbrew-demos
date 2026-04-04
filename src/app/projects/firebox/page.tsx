@@ -36,6 +36,7 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
   "nrs-gold":            { label: "NRS Gold",              code: "NRS·GOLD",  color: "#f59e0b" },
   "nrs-silver":          { label: "NRS Silver",            code: "NRS·SLVR",  color: "#94a3b8" },
   "nrs-bronze":          { label: "NRS Bronze",            code: "NRS·BRNZ",  color: "#b45309" },
+  "nrs-brown":           { label: "NRS Brown",             code: "NRS·BRWN",  color: "#92400e" },
   // ── Dongle 3 (142.5 MHz) ──────────────────────────────────────────────────
   "ehs-mount-london":    { label: "EHS Mt. London",        code: "EHS·MTNLN", color: "#fb7185", dongle: "D3" },
   // ── Mesh ──────────────────────────────────────────────────────────────────
@@ -45,7 +46,7 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
 
 // Channels per mode — controlled by firebox_config active_mode in Supabase
 const HOME_CHANNELS       = ["wfd-ch2-scene", "wfd-ch6-ce", "wb-lift-ops", "wb-ops", "wb-heliski"];
-const DEPLOYMENT_CHANNELS = ["wfd-ch3-lost-lake", "wfd-ch4-cheakamus", "nrs-gold", "nrs-silver", "nrs-bronze"];
+const DEPLOYMENT_CHANNELS = ["wfd-ch3-lost-lake", "wfd-ch4-cheakamus", "nrs-gold", "nrs-silver", "nrs-bronze", "nrs-brown"];
 
 // Planned channels (D2/D3 not yet connected) — shown in UI with dongle badge
 const PLANNED_CHANNELS = [
