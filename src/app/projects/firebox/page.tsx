@@ -847,7 +847,7 @@ function FireBoxFeed() {
                 fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: 1.5,
                 opacity: modeSending ? 0.5 : 1,
               }}
-            >{activeMode === "deployment" ? "🔥 DEPLOY" : "🏠 HOME"}</button>
+            >{activeMode === "deployment" ? "🔥 DEPLOY" : "🏔 WHISTLER"}</button>
             <button onClick={() => setCompose({})} className="fb-btn" style={{
               padding: "5px 14px", border: "1px solid #1a3a1a", background: "#060e06",
               color: "#39d353", cursor: "pointer", display: "flex", alignItems: "center", gap: 5,
