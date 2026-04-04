@@ -1,7 +1,16 @@
 {
-  "updated_at": "2026-04-03T22:00:31.306Z",
+  "updated_at": "2026-04-04T04:00:30.954Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Air quality being monitored after barge fire near stal̕əw̓asəm Bridge",
+        "link": "https://globalnews.ca/news/11758534/air-quality-monitored-barge-fire-stal%cc%95%c9%99w%cc%93as%c9%99m-bridge/",
+        "description": "Surrey Fire and Rescue Services says crews were called around 11 p.m. on Thursday to a fire on Musqueam Drive, which burned through the night.",
+        "pubDate": "Fri, 03 Apr 2026 16:48:34 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/04/surrey-fire-barge.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
