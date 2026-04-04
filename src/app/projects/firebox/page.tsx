@@ -30,9 +30,12 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
   "pep-sar1":            { label: "PEP SAR 1",             code: "SAR·1",     color: "#c084fc", dongle: "D2" },
   "pep-sar2":            { label: "PEP SAR 2",             code: "SAR·2",     color: "#a78bfa", dongle: "D2" },
   "canada-sar":          { label: "Canada-Wide SAR",       code: "SAR·CAN",   color: "#818cf8", dongle: "D2" },
-  // ── Dongle 2 — Deployment profile (162–165 MHz) ───────────────────────────
-  "wfd-ch3-lost-lake":   { label: "WFD Lost Lake",         code: "WFD·CH3",   color: "#fbbf24", dongle: "D2D" },
-  "wfd-ch4-cheakamus":   { label: "WFD Cheakamus",         code: "WFD·CH4",   color: "#fcd34d", dongle: "D2D" },
+  // ── Deployment profile (162–165 MHz) — active on Dongle 1 in deployment mode ─
+  "wfd-ch3-lost-lake":   { label: "WFD Lost Lake",         code: "WFD·CH3",   color: "#fbbf24" },
+  "wfd-ch4-cheakamus":   { label: "WFD Cheakamus",         code: "WFD·CH4",   color: "#fcd34d" },
+  "nrs-gold":            { label: "NRS Gold",              code: "NRS·GOLD",  color: "#f59e0b" },
+  "nrs-silver":          { label: "NRS Silver",            code: "NRS·SLVR",  color: "#94a3b8" },
+  "nrs-bronze":          { label: "NRS Bronze",            code: "NRS·BRNZ",  color: "#b45309" },
   // ── Dongle 3 (142.5 MHz) ──────────────────────────────────────────────────
   "ehs-mount-london":    { label: "EHS Mt. London",        code: "EHS·MTNLN", color: "#fb7185", dongle: "D3" },
   // ── Mesh ──────────────────────────────────────────────────────────────────
@@ -40,17 +43,14 @@ const CHANNEL_STYLE: Record<string, { label: string; color: string; code: string
   "mesh-weather":        { label: "Mesh · Weather",        code: "MESH·WX",   color: "#38bdf8", icon: "🌡" },
 };
 
-// Channels actively captured by Dongle 1 right now
-const MONITORED_CHANNELS = [
-  "wfd-ch2-scene", "wfd-ch6-ce",
-  "wb-lift-ops", "wb-ops", "wb-heliski",
-];
+// Channels per mode — controlled by firebox_config active_mode in Supabase
+const HOME_CHANNELS       = ["wfd-ch2-scene", "wfd-ch6-ce", "wb-lift-ops", "wb-ops", "wb-heliski"];
+const DEPLOYMENT_CHANNELS = ["wfd-ch3-lost-lake", "wfd-ch4-cheakamus", "nrs-gold", "nrs-silver", "nrs-bronze"];
 
 // Planned channels (D2/D3 not yet connected) — shown in UI with dongle badge
 const PLANNED_CHANNELS = [
   "wfd-ch5-garibaldi", "bcas-whistler",
   "pep-sar1", "pep-sar2", "canada-sar",
-  "wfd-ch3-lost-lake", "wfd-ch4-cheakamus",
   "ehs-mount-london",
 ];
 
@@ -551,6 +551,10 @@ function FireBoxFeed() {
   const [exportLoading,  setExportLoading]  = useState(false);
   const [keyword,        setKeyword]        = useState<string | null>(null);
   const [incidentForm,   setIncidentForm]   = useState({ name: "", start_at: "" });
+  const [activeMode,     setActiveMode]     = useState<"home" | "deployment">("home");
+  const [modeSending,    setModeSending]    = useState(false);
+
+  const MONITORED_CHANNELS = activeMode === "deployment" ? DEPLOYMENT_CHANNELS : HOME_CHANNELS;
 
   const activeIncident = incidents.find(i => i.status === "active") ?? null;
 
@@ -638,6 +642,26 @@ function FireBoxFeed() {
     if (r?.ok) { const d = await r.json(); setIncidents(d.incidents ?? []); }
   }, []);
   useEffect(() => { fetchIncidents(); }, [fetchIncidents]);
+
+  // Fetch + poll active mode from Supabase firebox_config
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const r = await fetch(`${SUPABASE_URL}/rest/v1/firebox_config?key=eq.active_mode&select=value`, { headers: SB_HEADERS });
+        if (!r.ok) return;
+        const rows = await r.json();
+        if (rows[0]?.value) setActiveMode(rows[0].value as "home" | "deployment");
+      } catch {}
+    };
+    load(); const t = setInterval(load, 15000); return () => clearInterval(t);
+  }, []);
+
+  const sendMode = async (mode: "home" | "deployment") => {
+    setModeSending(true);
+    await sendMesh(`__SET_MODE__:${mode}`);
+    setActiveMode(mode);
+    setModeSending(false);
+  };
 
   // Keyword scan — check newest 3 transcripts on each fetch
   useEffect(() => {
@@ -793,6 +817,19 @@ function FireBoxFeed() {
               color: activeIncident ? "#f0a500" : "#2a5a2a", cursor: "pointer",
               fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: 1.5,
             }}>{activeIncident ? `⚡ ${activeIncident.name.toUpperCase()}` : "+ INCIDENT"}</button>
+            <button
+              onClick={() => sendMode(activeMode === "home" ? "deployment" : "home")}
+              disabled={modeSending}
+              className="fb-btn"
+              style={{
+                padding: "5px 12px", border: `1px solid ${activeMode === "deployment" ? "#7a200080" : "#1a5c2e80"}`,
+                background: activeMode === "deployment" ? "#1a0a00" : "#001a0a",
+                color: activeMode === "deployment" ? "#fb923c" : "#39d353",
+                cursor: modeSending ? "default" : "pointer",
+                fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: 1.5,
+                opacity: modeSending ? 0.5 : 1,
+              }}
+            >{activeMode === "deployment" ? "🔥 DEPLOY" : "🏠 HOME"}</button>
             <button onClick={() => setCompose({})} className="fb-btn" style={{
               padding: "5px 14px", border: "1px solid #1a3a1a", background: "#060e06",
               color: "#39d353", cursor: "pointer", display: "flex", alignItems: "center", gap: 5,
