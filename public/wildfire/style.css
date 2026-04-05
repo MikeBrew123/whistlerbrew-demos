@@ -228,6 +228,26 @@ a:hover { text-decoration: underline; }
   transition: color 0.15s;
 }
 
+.zone-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.n24-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 3px;
+  background: #1a2a1a;
+  color: #39d353;
+  border: 1px solid #39d35355;
+  white-space: nowrap;
+}
+
 .danger-pill {
   font-size: 0.65rem;
   font-weight: 700;

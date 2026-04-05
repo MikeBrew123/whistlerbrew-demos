@@ -58,6 +58,22 @@ function formatAge(iso) {
   return `${Math.floor(diff / 1440)}d ago`;
 }
 
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d)) return '';
+  return d.toLocaleString('en-CA', { month: 'short', day: 'numeric', timeZone: 'America/Vancouver' });
+}
+
+function countNews24h(zone) {
+  const cutoff = Date.now() - 86400000;
+  const zoneCount = (zone.zone_news || []).filter(n => n.published && new Date(n.published) > cutoff).length;
+  const fsZones = (WF.firesmartNews && WF.firesmartNews.zones) || {};
+  const fsItems = [...(fsZones[zone.id] || []), ...(fsZones['all'] || [])];
+  const fsCount = fsItems.filter(it => it.pubDate && new Date(it.pubDate) > cutoff).length;
+  return zoneCount + fsCount;
+}
+
 function startCountdown(updatedAt, nextUpdate) {
   document.getElementById('last-updated').textContent = `Updated ${formatAge(updatedAt)}`;
   if (countdownInterval) clearInterval(countdownInterval);
@@ -218,10 +234,14 @@ function renderZoneCard(zone) {
   const isNA = !zone.danger_rating || zone.danger_rating === 'N/A';
   const dangerBg = zone.danger_colour || '#7F8C8D';
 
-  // Hide pill entirely when off-season / no rating
   const pillHtml = isNA
     ? ''
     : `<span class="danger-pill" style="background:${dangerBg}22;color:${dangerBg};border:1px solid ${dangerBg}55">${zone.danger_rating}</span>`;
+
+  const news24 = countNews24h(zone);
+  const n24Html = news24 > 0
+    ? `<span class="n24-badge">N24 · ${news24}</span>`
+    : '';
 
   const evacBadge = hasOrder
     ? '<div class="zone-card-evac-badge">⚠ Evac Orders Active</div>'
@@ -242,7 +262,7 @@ function renderZoneCard(zone) {
     <div class="zone-card" style="border-left-color:${borderColour}" onclick="showZoneView('${zone.id}')">
       <div class="zone-card-header">
         <span class="zone-card-name">${zone.name}</span>
-        ${pillHtml}
+        <div class="zone-card-badges">${pillHtml}${n24Html}</div>
       </div>
       ${countsHtml}
       <div class="zone-card-weather">${zone.weather_summary}</div>
@@ -630,7 +650,9 @@ function renderEvacNotices(notices) {
 }
 
 function renderNewsItem(n) {
+  const date = n.published ? formatDate(n.published) : '';
   const age = n.age || (n.published ? formatAge(n.published) : '');
+  const dateStr = date && age ? `${date} · ${age}` : (date || age);
   const thumb = n.thumbnail || n.image || '';
   const hasThumb = thumb.startsWith('http');
   return `<li class="news-item${hasThumb ? ' has-thumb' : ''}">
@@ -638,7 +660,7 @@ function renderNewsItem(n) {
     <div class="news-body">
       <div class="news-title"><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a></div>
       ${n.summary ? `<div class="news-summary">${n.summary}</div>` : ''}
-      <div class="news-meta"><span>${n.source || ''}</span><span>${age}</span></div>
+      <div class="news-meta"><span>${n.source || ''}</span><span>${dateStr}</span></div>
     </div>
   </li>`;
 }
