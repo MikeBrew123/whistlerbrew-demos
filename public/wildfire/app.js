@@ -305,7 +305,7 @@ function renderWorldFireCard(fw) {
     <div class="world-fire-card">
       <span class="world-flag">${flag}</span>
       <div class="world-fire-info">
-        <div class="world-fire-name"><a href="${fw.link}" target="_blank" rel="noopener">${fw.name}</a></div>
+        <div class="world-fire-name">${fw.link ? `<a href="${fw.link}" target="_blank" rel="noopener">${fw.name}</a>` : fw.name}</div>
         <div class="world-fire-loc">${fw.region}, ${fw.country}</div>
         <div class="world-fire-summary">${fw.summary}</div>
         <div class="world-fire-stats">
