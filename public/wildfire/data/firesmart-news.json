@@ -1,20 +1,11 @@
 {
-  "updated_at": "2026-04-06T04:00:31.532Z",
+  "updated_at": "2026-04-06T10:00:31.982Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
-    "northwest": [
-      {
-        "title": "Town of Smithers extends private security contract at homeless encampment",
-        "link": "https://globalnews.ca/news/11758723/smithers-extends-private-security-contract-homeless-encampment/",
-        "description": "In February, the town of Smithers said it was selected as one of the Ministry of Housing and Municipal Affairs and BC Housing’s HEART and HEARTH communities.",
-        "pubDate": "Sat, 04 Apr 2026 01:41:00 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/04/processed-A3CAEBBE-76CC-4657-8989-8E45040392A4.jpeg?quality=65&#038;strip=all"
-      }
-    ],
+    "northwest": [],
     "southeast": [],
     "all": [
       {
