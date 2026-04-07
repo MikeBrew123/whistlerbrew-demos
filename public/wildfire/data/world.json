@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-07T04:00:39.309Z",
+  "updated_at": "2026-04-07T10:00:41.600Z",
   "fires": [
     {
       "country": "Thailand",
@@ -101,9 +101,8 @@
     "rerouted": 0,
     "notes": [
       "No new articles provided in input",
-      "Preserved all 14 existing active fires from existing_fires",
-      "No deduplication or rerouting required",
-      "Image field preserved for Thailand entry"
+      "Preserved all 14 active fires from existing_fires",
+      "All fires remain Active status; no fires exceeded 60-day containment threshold"
     ]
   }
 }
