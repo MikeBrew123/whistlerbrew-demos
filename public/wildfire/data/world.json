@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-07T22:00:39.526Z",
+  "updated_at": "2026-04-08T10:00:39.967Z",
   "fires": [
     {
       "country": "Thailand",
@@ -13,92 +13,79 @@
       "country": "United States",
       "name": "Nebraska Panhandle Fires",
       "status": "Active",
-      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Nearly 800,000 acres consumed across multiple fires. Conditions beginning to ease. 15% contained.",
-      "link": ""
+      "summary": "Largest wildfire in Nebraska history, burning over 640,000 acres with 1 fatality. Nearly 800,000 acres consumed across multiple fires. Conditions beginning to ease. 15% contained."
     },
     {
       "country": "United States",
       "name": "Colorado Wildfires (South of Colorado Springs)",
       "status": "Active",
-      "summary": "Multiple active wildfires in Colorado including fire near Highway 115 with 7,385 acres burned and 0% containment. Evacuation orders lifted. Fire continues to spread rapidly.",
-      "link": ""
+      "summary": "Multiple active wildfires in Colorado including fire near Highway 115 with 7,385 acres burned and 0% containment. Evacuation orders lifted. Fire continues to spread rapidly."
     },
     {
       "country": "United States",
       "name": "Belmore State Forest Wildfire",
       "status": "Active",
-      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment. Sheriff's Deputy died assisting with evacuations.",
-      "link": ""
+      "summary": "Large wildfire in Belmore State Forest, Clay County, Florida. Fire Rescue actively working on containment. Sheriff's Deputy died assisting with evacuations."
     },
     {
       "country": "United States",
       "name": "Casper Area Wildfire",
       "status": "Active",
-      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures. Natrona County breaks wildfire record.",
-      "link": ""
+      "summary": "Wildfire near Casper, Wyoming prompting evacuations amid record-high temperatures. Natrona County breaks wildfire record."
     },
     {
       "country": "United States",
       "name": "Sevier County Wildfire",
       "status": "Active",
-      "summary": "50-acre wildfire in Sevier County, Utah near Vernal, driven by winds, putting structures at risk.",
-      "link": ""
+      "summary": "50-acre wildfire in Sevier County, Utah near Vernal, driven by winds, putting structures at risk."
     },
     {
       "country": "United States",
       "name": "Cross Creek Wildfire",
       "status": "Active",
-      "summary": "Wildfire in marshland near Cross Creek, Florida prompting family evacuations.",
-      "link": ""
+      "summary": "Wildfire in marshland near Cross Creek, Florida prompting family evacuations."
     },
     {
       "country": "United States",
       "name": "Nacimiento Wildfire",
       "status": "Active",
-      "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts.",
-      "link": ""
+      "summary": "Wildfire in New Mexico with firefighters actively engaged in containment efforts."
     },
     {
       "country": "United States",
       "name": "Bastrop State Park Wildfire",
       "status": "Active",
-      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire.",
-      "link": ""
+      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire."
     },
     {
       "country": "United States",
       "name": "Mossy Pond Area Wildfire",
       "status": "Active",
-      "summary": "500-acre wildfire in Mossy Pond area displacing 43 people with 15 dwellings destroyed.",
-      "link": ""
+      "summary": "500-acre wildfire in Mossy Pond area displacing 43 people with 15 dwellings destroyed."
     },
     {
       "country": "United States",
       "name": "Mitchell County Wildfire",
       "status": "Active",
-      "summary": "125-acre wildfire burning near Tennessee line in Mitchell County, North Carolina.",
-      "link": ""
+      "summary": "125-acre wildfire burning near Tennessee line in Mitchell County, North Carolina."
     },
     {
       "country": "United States",
       "name": "Alabama/Georgia Regional Wildfire",
       "status": "Active",
-      "summary": "Wildfire spanning approximately 117 acres across Alabama-Georgia region.",
-      "link": ""
+      "summary": "Wildfire spanning approximately 117 acres across Alabama-Georgia region."
     },
     {
       "country": "United States",
       "name": "US Wildfire Season 2026",
       "status": "Active",
-      "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts.",
-      "link": ""
+      "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts."
     },
     {
       "country": "Europe",
       "name": "European Wildfire Preparedness",
       "status": "Active",
-      "summary": "Europe dangerously unprepared for worsening wildfires according to recent report.",
-      "link": ""
+      "summary": "Europe dangerously unprepared for worsening wildfires according to recent report."
     }
   ],
   "last_report": {
@@ -113,9 +100,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new input data provided; existing fires preserved",
-      "All 14 existing fires retained as Active status",
-      "No fires older than 60 days available for removal"
+      "No new articles provided in input",
+      "All 14 fires retained from existing_fires (all Active status)",
+      "No fires dropped (none contained >60 days ago)",
+      "Image preserved for Thailand fire"
     ]
   }
 }
