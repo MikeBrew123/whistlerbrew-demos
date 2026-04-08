@@ -82,13 +82,21 @@
   ],
   "news": [
     {
-      "title": "Province fined $100K after 2022 death of Manitoba Wildfire Service worker in ATV crash",
-      "url": "https://ca.news.yahoo.com/province-fined-100k-2022-death-174233318.html",
-      "source": "CBC",
-      "published": "2026-03-27",
-      "description": "",
-      "image": "https://media.zenfs.com/en/cbc.ca/2a3eb9ffeb7a0f8b837059b2c3d08800"
+      "title": "Saskatchewan 'more prepared than ever' for fire season, public safety agency says",
+      "url": "https://globalnews.ca/news/11770208/saskatchewan-wildfire-season-outlook/",
+      "source": "Global News",
+      "published": "2026-04-08",
+      "description": "The province's forecast for fire season shows northern and central areas with a better outlook than 2025 – but the drought in southwestern sections remains.",
+      "image": "https://globalnews.ca/wp-content/uploads/2025/05/Wildfire-May-27-Still.jpg?quality=65&#038;strip=all"
+    },
+    {
+      "title": "New Brunswick launches wildfire season early, anticipating hot and dry conditions this summer",
+      "url": "https://globalnews.ca/news/11769742/wildfire-season-new-brunswick/",
+      "source": "Global News",
+      "published": "2026-04-08",
+      "description": "Wildfire season is kicking off early in New Brunswick this year and the province says it will be another hot, dry summer.",
+      "image": "https://globalnews.ca/wp-content/uploads/2025/08/Image-10.jpg?quality=65&#038;strip=all"
     }
   ],
-  "last_news_update": "2026-04-08T04:00:39.603Z"
+  "last_news_update": "2026-04-08T22:00:43.566Z"
 }
