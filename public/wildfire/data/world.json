@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-08T10:00:39.967Z",
+  "updated_at": "2026-04-08T16:00:40.879Z",
   "fires": [
     {
       "country": "Thailand",
@@ -101,9 +101,8 @@
     "rerouted": 0,
     "notes": [
       "No new articles provided in input",
-      "All 14 fires retained from existing_fires (all Active status)",
-      "No fires dropped (none contained >60 days ago)",
-      "Image preserved for Thailand fire"
+      "All 14 existing fires retained with Active status",
+      "Images preserved where present (Thailand fire)"
     ]
   }
 }
