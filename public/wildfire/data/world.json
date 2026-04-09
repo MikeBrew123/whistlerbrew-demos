@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-04-08T16:00:40.879Z",
+  "updated_at": "2026-04-09T10:00:43.185Z",
   "fires": [
+    {
+      "country": "Brazil",
+      "name": "Rio Olympic Velodrome Fire",
+      "status": "Active",
+      "summary": "Fire damaged roof of Rio's Olympic velodrome. Around 80 firefighters and 20 fire trucks tackled the blaze. No injuries reported.",
+      "link": "https://www.bbc.com/news/videos/cn430515jzxo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0529/live/f7adf260-336d-11f1-9d5c-8ba507d7dbde.jpg"
+    },
     {
       "country": "Thailand",
       "name": "Chiang Mai Air Pollution (Fire Season)",
@@ -90,19 +98,19 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 0,
-      "world": 0
+      "canada": 2,
+      "world": 1
     },
     "items_out": {
-      "canada": 0,
-      "world_fires": 14
+      "canada": 1,
+      "world_fires": 15
     },
-    "deduped": 0,
+    "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "No new articles provided in input",
-      "All 14 existing fires retained with Active status",
-      "Images preserved where present (Thailand fire)"
+      "Deduplicated Saskatchewan wildfire preparedness article (Global News vs CBC) - kept Global News version with image and earlier publish date",
+      "Reclassified Rio velodrome fire from world news to world_fires as active fire incident",
+      "Preserved all 14 existing active fires from inventory"
     ]
   }
 }
