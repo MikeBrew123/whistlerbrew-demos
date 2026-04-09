@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-09T04:00:31.096Z",
+  "updated_at": "2026-04-09T10:00:31.924Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -9,6 +9,13 @@
     "southeast": [],
     "all": [
       {
+        "title": "The smell of danger &#8211; understanding wildfire smoke exposure",
+        "link": "https://wildfiretoday.com/the-smell-of-danger-understanding-wildfire-smoke-exposure/",
+        "description": "By Anthony White At a laboratory in Australia, researchers are trying to develop rapid, accessible tests that can protect firefighters, military personnel, and the wider community from the escalating health burden of wildfire smoke and polluted air. The olfactory tissue, located high in the nasal cavity, directly connects the outside world to the brain, making [&#8230;]",
+        "pubDate": "Thu, 09 Apr 2026 06:29:10 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "User feedback on the Interagency Fuel Treatment Decision Support System",
         "link": "https://wildfiretoday.com/user-feedback-on-the-interagency-fuel-treatment-decision-support-system/",
         "description": "By Josh Hyde, Eva Strand, Peter Noble and Kim Ernstrom Land and fire managers are often tasked to plan complex fuel treatments and apply the best available science across jurisdictions to prioritize, plan, and conduct prescribed burns and other fire mitigation tactics. Decision support systems – information systems designed to support management decision making – [&#8230;]",
@@ -16,17 +23,17 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "Wildfire magazine &#8211; latest issue",
+        "link": "https://wildfiretoday.com/wildfire-magazine-latest-issue-2/",
+        "description": "Wildfire magazine, Issue 4, 2025. Wildfire is published quarterly for the greater global wildland fire community and for members of the International Association of Wildland Fire. The magazine serves as a storytelling and network building platform, exemplifying our role as a unique supporter and unifier of fire professionals across the globe. https://issuu.com/wildfiremagazine-iawf/docs/wildfire-m",
+        "pubDate": "Tue, 24 Mar 2026 04:26:55 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "When are wildfire evacuations most dangerous? Research finds leaving late risks lives",
         "link": "https://wildfiretoday.com/when-are-wildfire-evacuations-most-dangerous-research-finds-leaving-late-risks-lives/",
         "description": "&#8220;Once you&#8217;re on the road, it may already be too late.&#8221; The somber warning was recently given by researchers who analyzed hundreds of self-recorded videos from people evacuating from wildfires. They were studying driving behaviour during emergency evacuations to learn why and when people choose to evacuate and understand how those decisions put lives at [&#8230;]",
         "pubDate": "Sun, 22 Mar 2026 22:57:12 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "This is why we train &#8211; chainsaw graduates get inspired",
-        "link": "https://wildfiretoday.com/this-is-why-we-train-chainsaw-graduates-get-inspired/",
-        "description": "Trainers like what they do, and they are going to tell you why. At Yukon First Nations Wildfire, training is all about helping people and being safe. Here&#8217;s a bit of inspiration and enthusiasm from graduates of the recent Chainsaw Train the Trainer course, out of Whitehorse, Yukon Territory, Canada.",
-        "pubDate": "Wed, 18 Mar 2026 20:46:02 +0000",
         "source": "Wildfire Today"
       }
     ]
