@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-09T10:00:43.185Z",
+  "updated_at": "2026-04-10T04:00:42.121Z",
   "fires": [
     {
       "country": "Brazil",
@@ -98,19 +98,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 2,
-      "world": 1
+      "canada": 1,
+      "world": 15
     },
     "items_out": {
       "canada": 1,
       "world_fires": 15
     },
-    "deduped": 1,
+    "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Saskatchewan wildfire preparedness article (Global News vs CBC) - kept Global News version with image and earlier publish date",
-      "Reclassified Rio velodrome fire from world news to world_fires as active fire incident",
-      "Preserved all 14 existing active fires from inventory"
+      "All existing fires preserved as Active status",
+      "No duplicates detected across input sources",
+      "No fires required rerouting between buckets",
+      "All images preserved where present"
     ]
   }
 }
