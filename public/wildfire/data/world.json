@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T16:00:41.156Z",
+  "updated_at": "2026-04-10T22:00:43.070Z",
   "fires": [
     {
       "country": "Brazil",
@@ -98,20 +98,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 0,
+      "canada": 1,
       "world": 0
     },
     "items_out": {
-      "canada": 0,
+      "canada": 1,
       "world_fires": 15
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles ingested in this cycle",
-      "All 15 fires retained from existing_fires as all have Active status",
-      "No duplicates to consolidate",
-      "No misrouted items between buckets"
+      "All existing fires retained - all marked Active status",
+      "No input world articles provided",
+      "No duplicates detected across sources",
+      "All image fields preserved from existing_fires"
     ]
   }
 }
