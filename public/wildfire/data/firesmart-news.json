@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-04-10T22:00:31.803Z",
+  "updated_at": "2026-04-11T04:00:31.486Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Okanagan snowpack at lowest in 40 years as drought fears ramp up",
+        "link": "https://globalnews.ca/news/11774303/okanagan-snowpack-lowest-40-years-drought-fears/",
+        "description": "The chair of the Okanagan Basin Water Board says as drought fears ramp up, so too does planning as the region braces for what could be a very dry summer.",
+        "pubDate": "Sat, 11 Apr 2026 02:03:31 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2024/07/Okanagan-drought-low-water.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -35,14 +44,6 @@
         "description": "&#8220;Once you&#8217;re on the road, it may already be too late.&#8221; The somber warning was recently given by researchers who analyzed hundreds of self-recorded videos from people evacuating from wildfires. They were studying driving behaviour during emergency evacuations to learn why and when people choose to evacuate and understand how those decisions put lives at [&#8230;]",
         "pubDate": "Sun, 22 Mar 2026 22:57:12 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "WATCH: Global Okanagan News at 5:30 p.m. &#8211; April 9",
-        "link": "https://globalnews.ca/news/9913127/watch-global-okanagan-news-at-530/",
-        "description": "Watch the online news edition of Global Okanagan at 5:30 p.m.",
-        "pubDate": "Thu, 09 Apr 2026 22:00:38 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/10/GLOBALNEWS_OKANAGAN-show-thumbnail-NEW.jpg?quality=65&#038;strip=all"
       }
     ]
   }
