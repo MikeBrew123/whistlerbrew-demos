@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T22:00:43.070Z",
+  "updated_at": "2026-04-11T04:00:41.132Z",
   "fires": [
     {
       "country": "Brazil",
@@ -98,20 +98,19 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
+      "canada": 0,
       "world": 0
     },
     "items_out": {
-      "canada": 1,
+      "canada": 0,
       "world_fires": 15
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing fires retained - all marked Active status",
-      "No input world articles provided",
-      "No duplicates detected across sources",
-      "All image fields preserved from existing_fires"
+      "No new articles provided in input",
+      "All 15 existing fires retained as Active status",
+      "No fires exceeded 60-day containment threshold for removal"
     ]
   }
 }
