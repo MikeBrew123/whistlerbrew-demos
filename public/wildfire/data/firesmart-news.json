@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-11T04:00:31.486Z",
+  "updated_at": "2026-04-11T10:00:31.365Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -32,18 +32,19 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Wildfire magazine &#8211; latest issue",
-        "link": "https://wildfiretoday.com/wildfire-magazine-latest-issue-2/",
-        "description": "Wildfire magazine, Issue 4, 2025. Wildfire is published quarterly for the greater global wildland fire community and for members of the International Association of Wildland Fire. The magazine serves as a storytelling and network building platform, exemplifying our role as a unique supporter and unifier of fire professionals across the globe. https://issuu.com/wildfiremagazine-iawf/docs/wildfire-m",
-        "pubDate": "Tue, 24 Mar 2026 04:26:55 +0000",
-        "source": "Wildfire Today"
-      },
-      {
         "title": "When are wildfire evacuations most dangerous? Research finds leaving late risks lives",
         "link": "https://wildfiretoday.com/when-are-wildfire-evacuations-most-dangerous-research-finds-leaving-late-risks-lives/",
         "description": "&#8220;Once you&#8217;re on the road, it may already be too late.&#8221; The somber warning was recently given by researchers who analyzed hundreds of self-recorded videos from people evacuating from wildfires. They were studying driving behaviour during emergency evacuations to learn why and when people choose to evacuate and understand how those decisions put lives at [&#8230;]",
         "pubDate": "Sun, 22 Mar 2026 22:57:12 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "B.C.&#8217;s drought conditions show &#8216;strong regional divide&#8217; between north and south",
+        "link": "https://globalnews.ca/news/11773646/bc-drought-conditions-strong-regional-divide-north-south/",
+        "description": "A low snowpack could mean drought and water restrictions for parts of the province this year, but it's not a guarantee, hydrologist Jonathan Boyd said.",
+        "pubDate": "Fri, 10 Apr 2026 18:55:58 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/10/8c78ef46521df2c68bedb03889f8a9f22d4c48e36f268aef105a20fb106c0bab_d45897.jpg?quality=65&#038;strip=all"
       }
     ]
   }
