@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-11T04:00:41.132Z",
+  "updated_at": "2026-04-11T10:00:40.717Z",
   "fires": [
     {
       "country": "Brazil",
@@ -110,7 +110,7 @@
     "notes": [
       "No new articles provided in input",
       "All 15 existing fires retained as Active status",
-      "No fires exceeded 60-day containment threshold for removal"
+      "No fires older than 60 days in existing dataset to remove"
     ]
   }
 }
