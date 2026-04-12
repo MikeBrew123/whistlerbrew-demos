@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-12T10:00:43.004Z",
+  "updated_at": "2026-04-12T16:00:42.648Z",
   "fires": [
     {
       "country": "Brazil",
@@ -121,11 +121,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new Canada news provided",
-      "No new world news provided",
-      "All 15 existing fires preserved as Active status",
-      "No fires contained >60 days ago to remove",
-      "Images preserved where available"
+      "No new articles provided in input",
+      "Preserved all 15 active fires from existing_fires",
+      "All images preserved from existing data",
+      "No fires removed as none exceeded 60-day containment threshold"
     ]
   }
 }
