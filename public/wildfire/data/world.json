@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-14T22:00:17.524Z",
+  "updated_at": "2026-04-15T10:00:17.268Z",
   "fires": [
     {
       "country": "Brazil",
@@ -121,11 +121,11 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new Canada news or world fire articles provided in input",
-      "Preserved all 15 existing_fires as Active status",
-      "All fires maintained with images where present",
-      "No deduplication required",
-      "No rerouting needed"
+      "No new items provided in canada or world arrays",
+      "All 15 existing fires retained with Active status",
+      "Images preserved for Rio Olympic Velodrome Fire and Chiang Mai Air Pollution entries",
+      "No duplicates to merge",
+      "No contained fires >60 days to remove"
     ]
   }
 }
