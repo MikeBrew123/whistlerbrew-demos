@@ -626,6 +626,142 @@
       text-transform: uppercase;
     }
 
+    /* ===== CHIPPER SCHEDULE ===== */
+    .chipper-slide {
+      background: var(--charcoal);
+      padding: 36px 60px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      height: 100%;
+      overflow: hidden;
+    }
+    .chipper-slide-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+    /* Current-week block */
+    .chipper-current-block {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 20px 28px;
+      border-left: 5px solid var(--yellow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .chipper-current-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+    .chipper-days-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .chipper-day-cell {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+    .chipper-day-cell.today {
+      background: #2a2e1a;
+      outline: 2px solid var(--yellow);
+    }
+    .chipper-day-name {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .chipper-day-cell.today .chipper-day-name { color: var(--yellow); }
+    /* Upcoming rows */
+    .chipper-upcoming-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .chipper-upcoming-row {
+      display: grid;
+      grid-template-columns: 100px repeat(4, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+    .chipper-upcoming-date {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: right;
+      padding-right: 8px;
+    }
+    .chipper-upcoming-cell {
+      background: var(--surface2);
+      border-radius: 7px;
+      padding: 7px 8px;
+      text-align: center;
+    }
+    /* Zone badges (shared) */
+    .zone-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .zone-badge.north    { background: #0e2a3a; color: var(--lightblue); }
+    .zone-badge.south    { background: #0e2a14; color: var(--plantgreen); }
+    .zone-badge.center   { background: #2a1800; color: var(--orange); }
+    .zone-badge.catchup  { background: #2a2200; color: var(--yellow); }
+    .zone-badge.open     { background: var(--surface2); color: var(--muted); }
+    .zone-badge.booked   { background: #2a0e2a; color: #C97BFF; }
+    .zone-badge.cleanup  { background: #2a0a08; color: var(--red); }
+    /* Full schedule table */
+    .chipper-full-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    .chipper-full-table th {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 4px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--surface2);
+    }
+    .chipper-full-table td {
+      padding: 3px 8px;
+      border-bottom: 1px solid #1e252f55;
+      color: var(--offwhite);
+    }
+    .chipper-full-table tr.month-header td {
+      background: var(--surface);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      padding: 5px 8px 3px;
+    }
+    .chipper-full-table tr.current-week td {
+      background: #2a2e1a;
+    }
+    .chipper-full-table tr.current-week td:first-child {
+      border-left: 3px solid var(--yellow);
+    }
+
     /* ===== LOADING / ERROR ===== */
     #loading-screen {
       position: fixed; inset: 0;
@@ -1068,24 +1204,194 @@ function renderFunEntry(slide, row) {
 }
 
 // ============================================================
+//  CHIPPER SCHEDULE DATA + BUILDERS
+// ============================================================
+
+// Each entry: { month, label, wed (start date), sat, zoneDays: [wed,thu,fri], satZone }
+// wed = JS Date of that Wednesday. zone strings: 'north','south','center','catchup','open','cleanup'
+// satZone = zone key or booked strata name string
+const CHIPPER = (() => {
+  const d = (m, day) => new Date(2026, m, day); // month is 0-indexed
+  const Z = { N:'north', S:'south', C:'center', X:'catchup', O:'open', L:'cleanup' };
+  return [
+    { label:'Apr 1–4',     date:d(3,1),  days:[Z.O,Z.O,Z.O],     sat:'open' },
+    { label:'Apr 8–11',    date:d(3,8),  days:[Z.O,Z.O,Z.O],     sat:'open' },
+    { label:'Apr 15–18',   date:d(3,15), days:[Z.N,Z.N,Z.N],     sat:'open' },
+    { label:'Apr 22–25',   date:d(3,22), days:[Z.N,Z.X,Z.N],     sat:'open' },
+    { label:'Apr 29–May 2',date:d(3,29), days:[Z.S,Z.S,Z.S],     sat:'HighPointe & The Rise' },
+    { label:'May 6–9',     date:d(4,6),  days:[Z.S,Z.X,Z.S],     sat:'Rimrock Estates' },
+    { label:'May 13–16',   date:d(4,13), days:[Z.C,Z.C,Z.C],     sat:'open' },
+    { label:'May 20–23',   date:d(4,20), days:[Z.C,Z.X,Z.C],     sat:'2109 Nordic Drive' },
+    { label:'May 27–30',   date:d(4,27), days:[Z.N,Z.N,Z.N],     sat:'Telemark' },
+    { label:'Jun 3–6',     date:d(5,3),  days:[Z.N,Z.X,Z.N],     sat:'The Heights' },
+    { label:'Jun 10–13',   date:d(5,10), days:[Z.S,Z.S,Z.S],     sat:'Aspen Ridge' },
+    { label:'Jun 17–20',   date:d(5,17), days:[Z.S,Z.X,Z.S],     sat:'open' },
+    { label:'Jun 24–27',   date:d(5,24), days:[Z.C,Z.C,Z.C],     sat:'Castle Ridge' },
+    { label:'Jul 1–4',     date:d(6,1),  days:[Z.C,Z.X,Z.C],     sat:'open' },
+    { label:'Jul 8–11',    date:d(6,8),  days:[Z.N,Z.N,Z.N],     sat:'open' },
+    { label:'Jul 15–18',   date:d(6,15), days:[Z.N,Z.X,Z.N],     sat:'open' },
+    { label:'Jul 22–25',   date:d(6,22), days:[Z.S,Z.S,Z.S],     sat:'open' },
+    { label:'Jul 29–Aug 1',date:d(6,29), days:[Z.S,Z.X,Z.S],     sat:'open' },
+    { label:'Aug 5–8',     date:d(7,5),  days:[Z.C,Z.C,Z.C],     sat:'open' },
+    { label:'Aug 12–15',   date:d(7,12), days:[Z.C,Z.X,Z.C],     sat:'open' },
+    { label:'Aug 19–22',   date:d(7,19), days:[Z.N,Z.N,Z.N],     sat:'open' },
+    { label:'Aug 26–29',   date:d(7,26), days:[Z.N,Z.X,Z.N],     sat:'open' },
+    { label:'Sep 2–5',     date:d(8,2),  days:[Z.S,Z.S,Z.S],     sat:'open' },
+    { label:'Sep 9–12',    date:d(8,9),  days:[Z.S,Z.X,Z.S],     sat:'open' },
+    { label:'Sep 16–19',   date:d(8,16), days:[Z.C,Z.C,Z.C],     sat:'open' },
+    { label:'Sep 23–26',   date:d(8,23), days:[Z.C,Z.X,Z.C],     sat:'open' },
+    { label:'Sep 30–Oct 3',date:d(8,30), days:[Z.L,Z.L,Z.L],     sat:'cleanup' },
+    { label:'Oct 7–10',    date:d(9,7),  days:[Z.L,Z.L,Z.L],     sat:'cleanup' },
+    { label:'Oct 14–15',   date:d(9,14), days:[Z.L,Z.L,null],    sat:null },
+  ];
+})();
+
+function chipperCurrentWeekIndex() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  // Find the week whose Wed–Sat window contains today, or the next upcoming week
+  for (let i = 0; i < CHIPPER.length; i++) {
+    const wed = new Date(CHIPPER[i].date); wed.setHours(0,0,0,0);
+    const sat = new Date(wed); sat.setDate(sat.getDate() + 3);
+    if (today >= wed && today <= sat) return i;
+  }
+  // Not in active week — find the next upcoming Wednesday
+  for (let i = 0; i < CHIPPER.length; i++) {
+    const wed = new Date(CHIPPER[i].date); wed.setHours(0,0,0,0);
+    if (wed > today) return i;
+  }
+  return CHIPPER.length - 1;
+}
+
+function zoneBadge(key, label) {
+  if (!key) return '';
+  const cls = ['north','south','center','catchup','open','cleanup'].includes(key) ? key : 'booked';
+  const text = {
+    north:'North Zone', south:'South Zone', center:'Center Zone',
+    catchup:'Catch-up', open:'Available', cleanup:'Cleanup'
+  }[key] || label || key;
+  return `<span class="zone-badge ${cls}">${text}</span>`;
+}
+
+function chipperSatKey(w) {
+  if (!w.sat || w.sat === null) return null;
+  const zone = ['north','south','center','open','cleanup'].find(k => w.sat === k);
+  return zone ? { key: zone, label: null } : { key: 'booked', label: w.sat };
+}
+
+function buildChipperCurrent() {
+  const slide = el('div', 'slide chipper-slide');
+  slide.id = 'slide-chipper';
+  const ci = chipperCurrentWeekIndex();
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  const title = el('div', 'chipper-slide-title', '🪵 Chipper Schedule');
+  slide.appendChild(title);
+
+  // Current week block
+  const week = CHIPPER[ci];
+  const block = el('div', 'chipper-current-block');
+  const lbl = el('div', 'chipper-current-label', `This Week  ·  ${week.label}  ·  Wed – Sat`);
+  block.appendChild(lbl);
+
+  const dayNames = ['Wednesday','Thursday','Friday','Saturday'];
+  const dayOffsets = [0,1,2,3];
+  const dayZones = [...week.days.map(d => ({ key: d, label: null })), chipperSatKey(week)];
+
+  const grid = el('div', 'chipper-days-row');
+  dayNames.forEach((name, i) => {
+    const dayDate = new Date(week.date); dayDate.setDate(dayDate.getDate() + i);
+    const isToday = dayDate.getTime() === today.getTime();
+    const cell = el('div', 'chipper-day-cell' + (isToday ? ' today' : ''));
+    const dn = el('div', 'chipper-day-name', name);
+    cell.appendChild(dn);
+    const dz = dayZones[i];
+    if (dz) cell.innerHTML += zoneBadge(dz.key, dz.label);
+    grid.appendChild(cell);
+  });
+  block.appendChild(grid);
+  slide.appendChild(block);
+
+  // Next 3 weeks
+  const upcoming = el('div', 'chipper-upcoming-rows');
+  for (let j = 1; j <= 3; j++) {
+    const wi = ci + j;
+    if (wi >= CHIPPER.length) break;
+    const w2 = CHIPPER[wi];
+    const row = el('div', 'chipper-upcoming-row');
+    row.innerHTML = `<div class="chipper-upcoming-date">${w2.label}</div>`;
+    const dz2 = [...w2.days.map(d => ({ key: d, label: null })), chipperSatKey(w2)];
+    dz2.forEach(dz => {
+      const cell = el('div', 'chipper-upcoming-cell');
+      if (dz) cell.innerHTML = zoneBadge(dz.key, dz.label);
+      row.appendChild(cell);
+    });
+    upcoming.appendChild(row);
+  }
+  slide.appendChild(upcoming);
+  return slide;
+}
+
+function buildChipperFull() {
+  const slide = el('div', 'slide chipper-slide');
+  slide.id = 'slide-chipper-full';
+  const ci = chipperCurrentWeekIndex();
+
+  const title = el('div', 'chipper-slide-title', '🪵 Chipper Schedule — Full Season');
+  slide.appendChild(title);
+
+  const table = document.createElement('table');
+  table.className = 'chipper-full-table';
+  table.innerHTML = `<thead><tr>
+    <th>Week</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+  </tr></thead>`;
+  const tbody = document.createElement('tbody');
+
+  let lastMonth = '';
+  CHIPPER.forEach((w, i) => {
+    const monthName = w.date.toLocaleString('en-CA', { month: 'long' });
+    if (monthName !== lastMonth) {
+      lastMonth = monthName;
+      const mRow = document.createElement('tr');
+      mRow.className = 'month-header';
+      mRow.innerHTML = `<td colspan="5">${monthName.toUpperCase()}</td>`;
+      tbody.appendChild(mRow);
+    }
+    const dz = [...w.days.map(d => ({ key: d, label: null })), chipperSatKey(w)];
+    const tr = document.createElement('tr');
+    if (i === ci) tr.className = 'current-week';
+    tr.innerHTML = `<td>${w.label}</td>` + dz.map(d =>
+      `<td>${d ? zoneBadge(d.key, d.label) : '—'}</td>`
+    ).join('');
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  slide.appendChild(table);
+  return slide;
+}
+
+// ============================================================
 //  ROTATION ENGINE
 // ============================================================
 
-const SLIDE_ORDER = ['thisweek', 'events', 'vacations', 'fun'];
+const SLIDE_ORDER = ['thisweek', 'events', 'vacations', 'fun', 'chipper'];
 const SLIDE_LABELS = {
   thisweek:  'This Week',
   events:    'Upcoming Events',
   vacations: 'Team Away',
   fun:       'Team Corner',
+  chipper:   'Chipper Schedule',
 };
 const SLIDE_DURATIONS = {
   thisweek:  DURATIONS.thisWeek,
   events:    DURATIONS.events,
   vacations: DURATIONS.vacations,
   fun:       DURATIONS.fun,
+  chipper:   15000,
+  chipperFull: 25000,
 };
 
 let currentSlide = 0;
+let chipperCount = 0;   // increments each time chipper slide is shown; full shown every 4th
 let rotationTimer = null;
 let progressTimer = null;
 
@@ -1094,15 +1400,26 @@ function showSlide(index) {
   const allSlides = wrapper.querySelectorAll('.slide');
   const key = SLIDE_ORDER[index];
 
-  allSlides.forEach((s, i) => {
-    s.classList.toggle('active', i === index);
-  });
+  // Deactivate all slides first
+  allSlides.forEach(s => s.classList.remove('active'));
 
   // Cycle fun entries on each show
   const funSlide = document.getElementById('slide-fun');
   if (key === 'fun' && funSlide && funSlide._funRows && funSlide._funRows.length > 0) {
     renderFunEntry(funSlide, funSlide._funRows[funSlide._funIndex]);
     funSlide._funIndex = (funSlide._funIndex + 1) % funSlide._funRows.length;
+  }
+
+  // Chipper: alternate full/current every 4th showing
+  let effectiveKey = key;
+  if (key === 'chipper') {
+    chipperCount++;
+    const showFull = (chipperCount % 4 === 0);
+    const target = showFull ? 'slide-chipper-full' : 'slide-chipper';
+    document.getElementById(target).classList.add('active');
+    effectiveKey = showFull ? 'chipperFull' : 'chipper';
+  } else {
+    allSlides[index].classList.add('active');
   }
 
   // Update header label
@@ -1113,7 +1430,7 @@ function showSlide(index) {
 
   // Progress bar
   const bar = document.getElementById('progress-bar');
-  const dur = SLIDE_DURATIONS[key];
+  const dur = SLIDE_DURATIONS[effectiveKey] || SLIDE_DURATIONS[key];
   bar.style.transition = 'none';
   bar.style.width = '0%';
   requestAnimationFrame(() => {
@@ -1167,6 +1484,8 @@ async function loadAndRender() {
     buildEvents(eventRows),
     buildVacations(vacRows),
     buildFun(funRows),
+    buildChipperCurrent(),
+    buildChipperFull(),
   ];
 
   slides.forEach(s => wrapper.appendChild(s));
