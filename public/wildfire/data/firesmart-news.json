@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-16T04:00:58.808Z",
+  "updated_at": "2026-04-16T10:00:58.182Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,63 +7,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Is the US Forest Service&#8217;s reorganization a &#8216;dismantling&#8217; or a needed shift? Experts weigh in on wildland fire&#8217;s impact",
-        "link": "https://wildfiretoday.com/is-the-us-forest-services-reorganization-a-dismantling-or-a-needed-shift-experts-weigh-in-on-wildland-fires-impact/",
-        "description": "The United States Department of Agriculture&#8217;s recent announcement to make sweeping structural changes to the nation&#8217;s Forest Service has brought confusion and uncertainty countrywide, ahead of what&#8217;s expected to be a very active wildfire year. Numerous former Forest Service staff and communities have since shared their views on the announcement across multiple platforms, with som",
-        "pubDate": "Mon, 13 Apr 2026 02:37:11 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "The smell of danger &#8211; understanding wildfire smoke exposure",
-        "link": "https://wildfiretoday.com/the-smell-of-danger-understanding-wildfire-smoke-exposure/",
-        "description": "By Anthony White At a laboratory in Australia, researchers are trying to develop rapid, accessible tests that can protect firefighters, military personnel, and the wider community from the escalating health burden of wildfire smoke and polluted air. The olfactory tissue, located high in the nasal cavity, directly connects the outside world to the brain, making [&#8230;]",
-        "pubDate": "Thu, 09 Apr 2026 06:29:10 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "User feedback on the Interagency Fuel Treatment Decision Support System",
-        "link": "https://wildfiretoday.com/user-feedback-on-the-interagency-fuel-treatment-decision-support-system/",
-        "description": "By Josh Hyde, Eva Strand, Peter Noble and Kim Ernstrom Land and fire managers are often tasked to plan complex fuel treatments and apply the best available science across jurisdictions to prioritize, plan, and conduct prescribed burns and other fire mitigation tactics. Decision support systems – information systems designed to support management decision making – [&#8230;]",
-        "pubDate": "Tue, 07 Apr 2026 02:24:40 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Europe&#8217;s 2025 wildfire season was its worst ever, by far",
-        "link": "https://wildfiretoday.com/europes-2025-wildfire-season-was-its-worst-ever-by-far/",
-        "description": "Wildfires burned over 2.7 million acres (1.1 million hectares) across the European Union in 2025, by far the highest burned area total recorded since record keeping began. The EU&#8217;s Joint Research Centre recently released its 2025 analysis wildfires, which found the historic season started early in March, with over 379,000 acres (153,000 hectares) burning. Intensity [&#8230;]",
-        "pubDate": "Mon, 06 Apr 2026 03:21:08 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Forest Service to undergo &#8216;sweeping restructuring,&#8217; close all regional offices",
-        "link": "https://wildfiretoday.com/forest-service-to-undergo-sweeping-restructuring-close-all-regional-offices/",
-        "description": "The United States Department of Agriculture this week announced the nation&#8217;s Forest Service will soon go through massive changes, including the shift of its headquarters across the country. The agency&#8217;s headquarters will move from Washington D.C. to Salt Lake City, Utah, according to a press release sent out on Tuesday. The agency will also close [&#8230;]",
-        "pubDate": "Sat, 04 Apr 2026 10:24:20 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Almeda Aftermath: the impact of an Oregon wildfire",
-        "link": "https://wildfiretoday.com/almeda-aftermath-the-impact-of-an-oregon-wildfire/",
-        "description": "By Jennie Englund The Ashland Pond, a riparian area at the foot of Southern Oregon’s Cascade and Siskiyou mountains, was just waking up on the morning of September 8, 2020. Red-wing blackbirds’ throats warmed in the rust-colored wind, and a family of otters slid over the dry bank to find food. The creatures were oblivious [&#8230;]",
-        "pubDate": "Thu, 02 Apr 2026 00:53:26 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "It was big, but the Morrill Fire isn&#8217;t the largest wildfire in Nebraska&#8217;s history",
-        "link": "https://wildfiretoday.com/it-was-big-but-the-morrill-fire-isnt-the-largest-wildfire-in-nebraskas-history/",
-        "description": "Fire crews recently fully contained the Morrill Fire after it burned 642,029 acres, according to local managers. Officials on Saturday transferred command of the fire to local departments after containing the fire on Tuesday, less than two weeks after the fire started. Crews patrolling the fire&#8217;s interior didn&#8217;t observe any fire activity, despite there being [&#8230;]",
-        "pubDate": "Mon, 30 Mar 2026 04:13:30 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Europe launches broad strategy on growing wildfire threats",
-        "link": "https://wildfiretoday.com/europe-launches-broad-strategy-on-growing-wildfire-threats/",
-        "description": "The European Commission has launched a new strategy to tackle the rising wildfire threat following a summer that burnt one million hectares, an area bigger than Cyprus. The European Commission’s integrated wildfire strategy covers prevention, preparedness, response and recovery. It cites European Environment Agency’s European Climate Risk Assessment on how fire risk is spreading well [&#8230;]",
-        "pubDate": "Thu, 26 Mar 2026 00:31:23 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
