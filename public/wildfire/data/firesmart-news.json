@@ -1,10 +1,19 @@
 {
-  "updated_at": "2026-04-16T10:00:58.182Z",
+  "updated_at": "2026-04-16T16:00:58.544Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "Lytton was razed by fire. Some fear financial ruin is next for the tiny B.C. village",
+        "link": "https://globalnews.ca/news/11803873/lytton-was-razed-by-fire-some-fear-financial-ruin-is-next-for-the-tiny-b-c-village/",
+        "description": "Ross and Judith Urquhart have called Lytton, B.C., home for half a century, leaving only for as long it took to rebuild after a raging wildfire forced them to flee in 2021.",
+        "pubDate": "Thu, 16 Apr 2026 12:13:30 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/04/4d08df595be80c00e4c221de906d6dc2f99c96c147ba735cafc76ff054f7d618.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "northwest": [],
     "southeast": [],
     "all": []
