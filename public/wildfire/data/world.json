@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-16T10:00:17.362Z",
+  "updated_at": "2026-04-16T16:00:20.384Z",
   "fires": [
     {
       "country": "Brazil",
@@ -111,19 +111,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 0,
+      "canada": 1,
       "world": 0
     },
     "items_out": {
-      "canada": 0,
+      "canada": 1,
       "world_fires": 15
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided in input",
-      "All 15 existing fires retained - all marked Active status",
-      "Images preserved where available (Brazil and Thailand fires)"
+      "No new world articles provided for processing",
+      "All 15 existing fires retained as Active status",
+      "Canada news article about Lytton fire (2021 retrospective) preserved with image",
+      "No fires older than 60 days dropped from active list"
     ]
   }
 }
