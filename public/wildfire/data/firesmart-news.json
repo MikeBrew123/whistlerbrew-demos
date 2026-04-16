@@ -1,10 +1,16 @@
 {
-  "updated_at": "2026-04-16T16:00:58.544Z",
+  "updated_at": "2026-04-16T22:00:58.667Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [
+    "kamloops": [
+      {
+        "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
+        "link": "https://globalnews.ca/news/11804435/bc-2026-wildfire-drought-danger/",
+        "description": "Western parts of the Cariboo Fire Centre (Chilcotin) and the Kamloops Fire Centre are also experiencing moderate drought conditions and could see more fires.",
+        "pubDate": "Thu, 16 Apr 2026 18:12:53 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/12/canada-extreme-weather.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Lytton was razed by fire. Some fear financial ruin is next for the tiny B.C. village",
         "link": "https://globalnews.ca/news/11803873/lytton-was-razed-by-fire-some-fear-financial-ruin-is-next-for-the-tiny-b-c-village/",
@@ -14,8 +20,36 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/04/4d08df595be80c00e4c221de906d6dc2f99c96c147ba735cafc76ff054f7d618.jpg?quality=65&#038;strip=all"
       }
     ],
+    "prince-george": [
+      {
+        "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
+        "link": "https://globalnews.ca/news/11804435/bc-2026-wildfire-drought-danger/",
+        "description": "Western parts of the Cariboo Fire Centre (Chilcotin) and the Kamloops Fire Centre are also experiencing moderate drought conditions and could see more fires.",
+        "pubDate": "Thu, 16 Apr 2026 18:12:53 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/12/canada-extreme-weather.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "cariboo": [
+      {
+        "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
+        "link": "https://globalnews.ca/news/11804435/bc-2026-wildfire-drought-danger/",
+        "description": "Western parts of the Cariboo Fire Centre (Chilcotin) and the Kamloops Fire Centre are also experiencing moderate drought conditions and could see more fires.",
+        "pubDate": "Thu, 16 Apr 2026 18:12:53 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/12/canada-extreme-weather.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "The smell of danger &#8211; understanding wildfire smoke exposure",
+        "link": "https://wildfiretoday.com/the-smell-of-danger-understanding-wildfire-smoke-exposure/",
+        "description": "By Anthony White At a laboratory in Australia, researchers are trying to develop rapid, accessible tests that can protect firefighters, military personnel, and the wider community from the escalating health burden of wildfire smoke and polluted air. The olfactory tissue, located high in the nasal cavity, directly connects the outside world to the brain, making [&#8230;]",
+        "pubDate": "Thu, 09 Apr 2026 06:29:10 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
