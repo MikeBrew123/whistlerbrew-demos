@@ -861,11 +861,13 @@ function csvURL(gid) {
 
 function driveToImg(url) {
   if (!url) return null;
-  // Google Drive: convert to direct embed URL
+  // Google Drive share link — proxy through edge function (bypasses ORB)
   const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
-  // Any other http/https URL: pass through directly
-  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  if (m) return `https://whistlerbrew.com/api/firesmart-img?id=${m[1]}`;
+  // Any external image URL — also proxy to avoid ORB blocks
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return `https://whistlerbrew.com/api/firesmart-img?src=${encodeURIComponent(url)}`;
+  }
   return null;
 }
 
