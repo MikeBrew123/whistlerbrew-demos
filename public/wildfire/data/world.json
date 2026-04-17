@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-17T04:00:17.211Z",
+  "updated_at": "2026-04-17T16:00:17.740Z",
   "fires": [
     {
       "country": "Brazil",
@@ -121,9 +121,9 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided for processing",
-      "All existing fires preserved as Active",
-      "Images retained for fires with image fields"
+      "No new articles provided - retained all existing active fires",
+      "All 15 existing fires preserved with Active status",
+      "No fires dropped (none contained >60 days ago in existing data)"
     ]
   }
 }
