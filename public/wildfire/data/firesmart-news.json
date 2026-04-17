@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-16T22:00:58.667Z",
+  "updated_at": "2026-04-17T04:00:59.910Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -20,16 +20,7 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/04/4d08df595be80c00e4c221de906d6dc2f99c96c147ba735cafc76ff054f7d618.jpg?quality=65&#038;strip=all"
       }
     ],
-    "prince-george": [
-      {
-        "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
-        "link": "https://globalnews.ca/news/11804435/bc-2026-wildfire-drought-danger/",
-        "description": "Western parts of the Cariboo Fire Centre (Chilcotin) and the Kamloops Fire Centre are also experiencing moderate drought conditions and could see more fires.",
-        "pubDate": "Thu, 16 Apr 2026 18:12:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/12/canada-extreme-weather.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [
       {
         "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
