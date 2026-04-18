@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-18T04:00:17.430Z",
+  "updated_at": "2026-04-18T10:00:17.377Z",
   "fires": [
     {
       "country": "Brazil",
@@ -121,10 +121,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided in canada or world arrays",
-      "All 15 existing fires preserved with Active status",
-      "Images preserved for Brazil and Thailand fires",
-      "No deduplication required"
+      "No new Canada news articles provided",
+      "No new world articles provided",
+      "All 15 existing active fires preserved from previous dataset",
+      "No fires removed (none contained >60 days ago)"
     ]
   }
 }
