@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-18T10:00:17.377Z",
+  "updated_at": "2026-04-18T16:00:18.602Z",
   "fires": [
     {
       "country": "Brazil",
@@ -111,20 +111,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 0,
+      "canada": 1,
       "world": 0
     },
     "items_out": {
-      "canada": 0,
+      "canada_news": 1,
       "world_fires": 15
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new Canada news articles provided",
-      "No new world articles provided",
-      "All 15 existing active fires preserved from previous dataset",
-      "No fires removed (none contained >60 days ago)"
+      "All 15 existing fires retained as Active status",
+      "1 new Canadian article added to canada_news",
+      "No duplicates found across sources",
+      "All images preserved where present"
     ]
   }
 }
