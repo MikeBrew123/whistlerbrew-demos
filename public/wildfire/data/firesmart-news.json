@@ -1,37 +1,10 @@
 {
-  "updated_at": "2026-04-18T10:00:58.201Z",
+  "updated_at": "2026-04-18T16:00:57.994Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
-        "link": "https://globalnews.ca/news/11804435/bc-2026-wildfire-drought-danger/",
-        "description": "Western parts of the Cariboo Fire Centre (Chilcotin) and the Kamloops Fire Centre are also experiencing moderate drought conditions and could see more fires.",
-        "pubDate": "Thu, 16 Apr 2026 18:12:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/12/canada-extreme-weather.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
-        "link": "https://globalnews.ca/news/11804435/bc-2026-wildfire-drought-danger/",
-        "description": "Western parts of the Cariboo Fire Centre (Chilcotin) and the Kamloops Fire Centre are also experiencing moderate drought conditions and could see more fires.",
-        "pubDate": "Thu, 16 Apr 2026 18:12:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/12/canada-extreme-weather.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "cariboo": [
-      {
-        "title": "Northeast B.C. biggest area of concern for wildfires in 2026 season",
-        "link": "https://globalnews.ca/news/11804435/bc-2026-wildfire-drought-danger/",
-        "description": "Western parts of the Cariboo Fire Centre (Chilcotin) and the Kamloops Fire Centre are also experiencing moderate drought conditions and could see more fires.",
-        "pubDate": "Thu, 16 Apr 2026 18:12:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/12/canada-extreme-weather.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "kamloops": [],
+    "prince-george": [],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
