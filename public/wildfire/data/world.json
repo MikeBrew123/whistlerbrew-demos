@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-18T16:00:18.602Z",
+  "updated_at": "2026-04-19T16:00:19.832Z",
   "fires": [
     {
       "country": "Brazil",
@@ -115,16 +115,16 @@
       "world": 0
     },
     "items_out": {
-      "canada_news": 1,
+      "canada": 1,
       "world_fires": 15
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All 15 existing fires retained as Active status",
-      "1 new Canadian article added to canada_news",
+      "All existing fires retained as Active status",
+      "Nova Scotia court ruling news retained in canada_news bucket (policy/legal issue, not fire incident)",
       "No duplicates found across sources",
-      "All images preserved where present"
+      "No misrouted items detected"
     ]
   }
 }
