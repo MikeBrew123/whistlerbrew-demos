@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-20T04:00:20.404Z",
+  "updated_at": "2026-04-20T16:00:19.207Z",
   "fires": [
     {
       "country": "Brazil",
@@ -121,10 +121,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Nova Scotia court ruling is policy/legal news, not active wildfire coverage—retained in canada_news as editorial content",
-      "All existing_fires entries maintained as Active status",
-      "No world articles provided for processing",
-      "Images preserved where present"
+      "Canada article is water main break, not wildfire-related but retained per input",
+      "All existing fires preserved as status Active",
+      "No new world fire articles provided in input",
+      "15 existing world fires maintained in database"
     ]
   }
 }
