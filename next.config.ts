@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       { source: '/wildfire', destination: '/wildfire/index.html', permanent: false },
       { source: '/opus', destination: '/opus/index.html', permanent: false },
       { source: '/firesmart', destination: '/firesmart/index.html', permanent: false },
+      { source: '/simtable', destination: '/simtable/index.html', permanent: false },
     ];
   },
 };
