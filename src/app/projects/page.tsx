@@ -42,7 +42,12 @@ export default function Projects() {
 
       <main className="w-full max-w-4xl">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">Projects</h1>
+          <div className="flex items-baseline gap-3 flex-wrap">
+            <h1 className="text-3xl font-bold">Projects</h1>
+            <span className="text-xs text-[#f87171] italic">
+              These are just test applications and not supported by or for actual deployments — do not use!
+            </span>
+          </div>
           <button
             onClick={handleLogout}
             className="px-4 py-2 border border-[#333] rounded-md text-[#b0b0b0] hover:border-[#00a8ff] hover:text-[#00a8ff] transition-colors text-sm"
