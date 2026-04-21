@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-20T16:00:19.207Z",
+  "updated_at": "2026-04-21T22:00:17.151Z",
   "fires": [
     {
       "country": "Brazil",
@@ -111,20 +111,19 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
+      "canada": 0,
       "world": 0
     },
     "items_out": {
-      "canada_news": 1,
+      "canada": 0,
       "world_fires": 15
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Canada article is water main break, not wildfire-related but retained per input",
-      "All existing fires preserved as status Active",
-      "No new world fire articles provided in input",
-      "15 existing world fires maintained in database"
+      "No new items received",
+      "All 15 existing fires preserved (all Active status)",
+      "Images preserved for Rio Olympic Velodrome Fire and Chiang Mai Air Pollution entries"
     ]
   }
 }
