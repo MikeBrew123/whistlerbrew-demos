@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Order Menu - BC Wildfire Service</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;700;900&display=swap');
+
+        :root {
+            --fire-orange: #FF6B2C;
+            --fire-orange-dark: #E85A1F;
+            --tactical-black: #0A0E14;
+            --steel-gray: #2D3541;
+            --steel-light: #434E5E;
+            --smoke-gray: #6B7280;
+            --alert-red: #EF4444;
+            --warning-yellow: #FCD34D;
+            --success-green: #10B981;
+            --highlight: #60A5FA;
+            --bg-dark: #13171E;
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Tactical header with command center aesthetic */
+        .header {
+            background: linear-gradient(135deg, var(--tactical-black) 0%, var(--steel-gray) 100%);
+            border-bottom: 4px solid var(--fire-orange);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .fire-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--fire-orange);
+            clip-path: polygon(50% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%);
+            animation: pulse-fire 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-fire {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+        }
+
+        .header-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success-green);
+            box-shadow: 0 0 8px var(--success-green);
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Tactical grid layout */
+        .resource-categories {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-card {
+            background: var(--steel-gray);
+            border: 2px solid var(--steel-light);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            border-color: var(--fire-orange);
+            box-shadow: 0 8px 24px rgba(255, 107, 44, 0.2);
+        }
+
+        .category-header {
+            background: linear-gradient(90deg, var(--fire-orange) 0%, var(--fire-orange-dark) 100%);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .category-header.bcws {
+            background: linear-gradient(90deg, var(--steel-light) 0%, var(--smoke-gray) 100%);
+        }
+
+        .category-header.contractor {
+            background: linear-gradient(90deg, var(--highlight) 0%, #3B82F6 100%);
+        }
+
+        .category-header.other {
+            background: linear-gradient(90deg, var(--warning-yellow) 0%, #F59E0B 100%);
+        }
+
+        .category-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.125rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .category-total {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.25rem 1rem;
+            border-radius: 4px;
+        }
+
+        /* Resource items table */
+        .resources-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .resources-table thead {
+            background: var(--tactical-black);
+        }
+
+        .resources-table th {
+            padding: 1rem;
+            text-align: left;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--fire-orange);
+        }
+
+        .resources-table tbody tr {
+            border-bottom: 1px solid var(--steel-light);
+            transition: background 0.2s ease;
+        }
+
+        .resources-table tbody tr:hover {
+            background: rgba(255, 107, 44, 0.05);
+        }
+
+        .resources-table td {
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .resource-name {
+            font-weight: 600;
+        }
+
+        .resource-name.no-charge {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .rate-cell {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .rate-cell.no-charge {
+            color: var(--smoke-gray);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Quantity input */
+        .qty-input {
+            width: 80px;
+            padding: 0.5rem;
+            background: var(--tactical-black);
+            border: 2px solid var(--steel-light);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .qty-input:focus {
+            outline: none;
+            border-color: var(--fire-orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 44, 0.2);
+        }
+
+        .qty-input::-webkit-inner-spin-button,
+        .qty-input::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+
+        /* Subtotal row */
+        .subtotal-row {
+            background: var(--tactical-black) !important;
+            font-weight: 700;
+        }
+
+        .subtotal-row td {
+            padding: 1rem;
+            border-top: 2px solid var(--fire-orange);
+            border-bottom: 2px solid var(--fire-orange);
+        }
+
+        .subtotal-amount {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            color: var(--fire-orange);
+        }
+
+        /* Grand total card */
+        .grand-total {
+            background: linear-gradient(135deg, var(--tactical-black) 0%, var(--steel-gray) 100%);
+            border: 3px solid var(--fire-orange);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(255, 107, 44, 0.3);
+            animation: slide-up 0.6s ease-out;
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .grand-total-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .grand-total-amount {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--fire-orange);
+            text-shadow: 0 4px 12px rgba(255, 107, 44, 0.5);
+            letter-spacing: -2px;
+        }
+
+        /* Action buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--steel-gray);
+            border-radius: 8px;
+            border: 2px solid var(--steel-light);
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            background: var(--fire-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--fire-orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 44, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--steel-light);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--smoke-gray);
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: var(--alert-red);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #DC2626;
+            transform: translateY(-2px);
+        }
+
+        /* Collapsible sections */
+        .category-body {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .category-card.collapsed .category-body {
+            max-height: 0;
+        }
+
+        .collapse-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card.collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1rem;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .resources-table {
+                font-size: 0.75rem;
+            }
+
+            .grand-total-amount {
+                font-size: 2.5rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                margin: 0.5in;
+                size: letter;
+            }
+
+            * {
+                color: black !important;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 9pt !important;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .header {
+                position: static;
+                background: white !important;
+                border-bottom: 2px solid black !important;
+                box-shadow: none;
+                page-break-after: avoid;
+                padding: 0.5rem 0 !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .header-content {
+                padding: 0 !important;
+            }
+
+            h1 {
+                font-size: 14pt !important;
+                color: black !important;
+                margin: 0 !important;
+            }
+
+            .header-meta {
+                font-size: 8pt !important;
+                color: black !important;
+            }
+
+            .fire-icon {
+                display: none;
+            }
+
+            .status-indicator {
+                display: none;
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .resource-categories {
+                gap: 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .category-card {
+                page-break-inside: avoid;
+                border: 1px solid black !important;
+                box-shadow: none;
+                margin-bottom: 0.5rem !important;
+                background: white !important;
+            }
+
+            .category-header {
+                background: #333 !important;
+                color: white !important;
+                padding: 0.3rem 0.5rem !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .category-title {
+                font-size: 10pt !important;
+                color: white !important;
+            }
+
+            .category-total {
+                font-size: 10pt !important;
+                color: white !important;
+                background: rgba(0, 0, 0, 0.3) !important;
+            }
+
+            .collapse-icon {
+                display: none;
+            }
+
+            .category-body {
+                max-height: none !important;
+                padding: 0 !important;
+            }
+
+            .resources-table {
+                font-size: 8pt !important;
+                margin: 0 !important;
+            }
+
+            .resources-table th {
+                padding: 0.25rem 0.5rem !important;
+                font-size: 7pt !important;
+                color: black !important;
+                background: #f0f0f0 !important;
+                border-bottom: 1px solid black !important;
+            }
+
+            .resources-table td {
+                padding: 0.2rem 0.5rem !important;
+                font-size: 8pt !important;
+                color: black !important;
+                border-bottom: 1px solid #ddd !important;
+            }
+
+            .resource-name,
+            .resource-name.no-charge {
+                color: black !important;
+                font-style: normal !important;
+                font-weight: 600 !important;
+            }
+
+            .rate-cell,
+            .rate-cell.no-charge {
+                color: black !important;
+                font-weight: 600 !important;
+            }
+
+            .qty-input {
+                border: 1px solid black !important;
+                background: white !important;
+                color: black !important;
+                font-weight: 700 !important;
+                padding: 0.1rem 0.3rem !important;
+                width: 60px !important;
+            }
+
+            .subtotal-row {
+                background: #e0e0e0 !important;
+                border-top: 2px solid black !important;
+                border-bottom: 2px solid black !important;
+            }
+
+            .subtotal-row td {
+                padding: 0.3rem 0.5rem !important;
+                font-weight: 700 !important;
+                color: black !important;
+                border-bottom: 2px solid black !important;
+            }
+
+            .subtotal-amount {
+                color: black !important;
+                font-size: 9pt !important;
+                font-weight: 700 !important;
+            }
+
+            .grand-total {
+                page-break-inside: avoid;
+                background: white !important;
+                border: 2px solid black !important;
+                padding: 0.5rem !important;
+                margin-top: 0.5rem !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .grand-total-label {
+                font-size: 10pt !important;
+                color: black !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .grand-total-amount {
+                color: black !important;
+                font-size: 18pt !important;
+                font-weight: 900 !important;
+            }
+
+            /* Expand all collapsed sections for printing */
+            .category-card.collapsed .category-body {
+                max-height: none !important;
+            }
+
+            /* Hide rows with zero quantity when printing */
+            .print-hidden {
+                display: none !important;
+            }
+
+            /* Hide entire category sections with no items when printing */
+            .print-hidden-section {
+                display: none !important;
+            }
+
+            /* Compact spacing for fitting on one page */
+            tbody tr:hover {
+                background: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <div class="fire-icon"></div>
+                <div>
+                    <h1>Resource Order Menu</h1>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">BC Wildfire Service - Structure Protection</div>
+                </div>
+            </div>
+            <div class="header-meta">
+                <span><div class="status-indicator"></div> SYSTEM ACTIVE</span>
+                <span id="current-time"></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- BCWS Resources -->
+        <div class="resource-categories">
+            <div class="category-card">
+                <div class="category-header bcws" onclick="toggleCategory(this)">
+                    <span class="category-title">BCWS Resources</span>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="category-total" data-category="bcws">$0.00</span>
+                        <span class="collapse-icon">▼</span>
+                    </div>
+                </div>
+                <div class="category-body">
+                    <table class="resources-table">
+                        <thead>
+                            <tr>
+                                <th>Resource Type</th>
+                                <th>Quantity</th>
+                                <th>Hourly Rate</th>
+                                <th>Daily Rate (12hrs)</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="resource-name no-charge">SPS - Branch Director</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name no-charge">SPS - Div/Grp Supervisor</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name no-charge">SPS - Task Force Leader</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name no-charge">SPS - Staging/Base Manager</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name no-charge">SPS - Safety Officer</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name no-charge">BCWS Type 1 Trailer (deployed)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name no-charge">BCWS Type 2 Trailer (deployed)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name no-charge">BCWS Type 2 Trailer (standby)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="0" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell no-charge">N/C</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr class="subtotal-row">
+                                <td colspan="4" style="text-align: right;">BCWS TOTAL:</td>
+                                <td class="subtotal-amount" data-subtotal="bcws">$0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Fire Department -->
+            <div class="category-card">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-title">Fire Department</span>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="category-total" data-category="fd">$0.00</span>
+                        <span class="collapse-icon">▼</span>
+                    </div>
+                </div>
+                <div class="category-body">
+                    <table class="resources-table">
+                        <thead>
+                            <tr>
+                                <th>Resource Type</th>
+                                <th>Quantity</th>
+                                <th>Hourly Rate</th>
+                                <th>Daily Rate (12hrs)</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Engines -->
+                            <tr>
+                                <td class="resource-name">Engine - Structure 1</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="8604" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$717/hr</td>
+                                <td class="rate-cell">$8,604</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Engine - Structure 2</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="7008" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$584/hr</td>
+                                <td class="rate-cell">$7,008</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Engine - Wildland 3</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="5412" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$451/hr</td>
+                                <td class="rate-cell">$5,412</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Engine - Wildland 4</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="4488" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$374/hr</td>
+                                <td class="rate-cell">$4,488</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Engine - Wildland 5</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="3684" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$307/hr</td>
+                                <td class="rate-cell">$3,684</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Engine - Wildland 6</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="2832" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$236/hr</td>
+                                <td class="rate-cell">$2,832</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Engine - Wildland 7</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="2016" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$168/hr</td>
+                                <td class="rate-cell">$2,016</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <!-- Tenders -->
+                            <tr>
+                                <td class="resource-name">Tender - Support 1</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="7008" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$584/hr</td>
+                                <td class="rate-cell">$7,008</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Tender - Support 2</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="5412" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$451/hr</td>
+                                <td class="rate-cell">$5,412</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Tender - Support 3</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="4488" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$374/hr</td>
+                                <td class="rate-cell">$4,488</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Tender - Tactical 1</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="3684" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$307/hr</td>
+                                <td class="rate-cell">$3,684</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Tender - Tactical 2</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="2832" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$236/hr</td>
+                                <td class="rate-cell">$2,832</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <!-- SPU & Specialty -->
+                            <tr>
+                                <td class="resource-name">SPU (deployed)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="4234" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">—</td>
+                                <td class="rate-cell">$4,234</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">SPU (standby)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="2117" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">—</td>
+                                <td class="rate-cell">$2,117</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Mobile Command Unit (2 personnel)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="6132" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$511/hr</td>
+                                <td class="rate-cell">$6,132</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Mobile Command Unit (3 personnel)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="7224" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$602/hr</td>
+                                <td class="rate-cell">$7,224</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <!-- Boats -->
+                            <tr>
+                                <td class="resource-name">Boat - 25HP</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="1596" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$133/hr</td>
+                                <td class="rate-cell">$1,596</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Boat - 50HP</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="2016" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$168/hr</td>
+                                <td class="rate-cell">$2,016</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Boat - 1500 USGPM</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="7584" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$632/hr</td>
+                                <td class="rate-cell">$7,584</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <!-- Personnel -->
+                            <tr>
+                                <td class="resource-name">FD Branch Director</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="1092" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$91/hr</td>
+                                <td class="rate-cell">$1,092</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">FD Div/Grp Supervisor</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="960" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$80/hr</td>
+                                <td class="rate-cell">$960</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr class="subtotal-row">
+                                <td colspan="4" style="text-align: right;">FIRE DEPARTMENT TOTAL:</td>
+                                <td class="subtotal-amount" data-subtotal="fd">$0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Contractor -->
+            <div class="category-card">
+                <div class="category-header contractor" onclick="toggleCategory(this)">
+                    <span class="category-title">Contractor</span>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="category-total" data-category="contractor">$0.00</span>
+                        <span class="collapse-icon">▼</span>
+                    </div>
+                </div>
+                <div class="category-body">
+                    <table class="resources-table">
+                        <thead>
+                            <tr>
+                                <th>Resource Type</th>
+                                <th>Quantity</th>
+                                <th>Hourly Rate</th>
+                                <th>Daily Rate (12hrs)</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="resource-name">Type 2 Trailer (deployed, >6hrs)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="12888" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$1,074/hr</td>
+                                <td class="rate-cell">$12,888</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Type 2 Trailer (deployed, <6hrs)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="6444" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$537/hr</td>
+                                <td class="rate-cell">$6,444</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">5 Person Crew (standby)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="12888" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$1,074/hr</td>
+                                <td class="rate-cell">$12,888</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">5 Person Crew (deployed)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="2148" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">—</td>
+                                <td class="rate-cell">$2,148</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr class="subtotal-row">
+                                <td colspan="4" style="text-align: right;">CONTRACTOR TOTAL:</td>
+                                <td class="subtotal-amount" data-subtotal="contractor">$0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Other -->
+            <div class="category-card">
+                <div class="category-header other" onclick="toggleCategory(this)">
+                    <span class="category-title">Other</span>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="category-total" data-category="other">$0.00</span>
+                        <span class="collapse-icon">▼</span>
+                    </div>
+                </div>
+                <div class="category-body">
+                    <table class="resources-table">
+                        <thead>
+                            <tr>
+                                <th>Resource Type</th>
+                                <th>Quantity</th>
+                                <th>Hourly Rate</th>
+                                <th>Daily Rate (12hrs)</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="resource-name">Big Water (deployed)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="1790" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">—</td>
+                                <td class="rate-cell">$1,790</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Big Water (standby)</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="10740" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$895/hr</td>
+                                <td class="rate-cell">$10,740</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="resource-name">Rescue Unit</td>
+                                <td><input type="number" class="qty-input" min="0" value="0" data-rate="3684" data-type="daily" onchange="calculate()"></td>
+                                <td class="rate-cell">$307/hr</td>
+                                <td class="rate-cell">$3,684</td>
+                                <td class="rate-cell">$0.00</td>
+                            </tr>
+                            <tr class="subtotal-row">
+                                <td colspan="4" style="text-align: right;">OTHER TOTAL:</td>
+                                <td class="subtotal-amount" data-subtotal="other">$0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grand Total -->
+        <div class="grand-total">
+            <div class="grand-total-label">Daily Total Cost</div>
+            <div class="grand-total-amount" id="grand-total">$0.00</div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+            <button class="btn btn-primary" onclick="saveOrder()">💾 Save Order</button>
+            <button class="btn btn-secondary" onclick="exportToExcel()">📊 Export to Excel</button>
+            <button class="btn btn-secondary" onclick="printOrder()">🖨️ Print</button>
+            <button class="btn btn-danger" onclick="clearAll()">🗑️ Clear All</button>
+        </div>
+    </div>
+
+    <script>
+        // Update time display
+        function updateTime() {
+            const now = new Date();
+            const timeStr = now.toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('current-time').textContent = timeStr;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Toggle category collapse
+        function toggleCategory(header) {
+            const card = header.closest('.category-card');
+            card.classList.toggle('collapsed');
+        }
+
+        // Calculate totals
+        function calculate() {
+            const categories = {
+                bcws: 0,
+                fd: 0,
+                contractor: 0,
+                other: 0
+            };
+
+            // Calculate each row
+            document.querySelectorAll('.qty-input').forEach(input => {
+                const qty = parseInt(input.value) || 0;
+                const rate = parseFloat(input.dataset.rate) || 0;
+                const subtotal = qty * rate;
+
+                // Update row subtotal
+                const subtotalCell = input.closest('tr').querySelector('td:last-child');
+                subtotalCell.textContent = formatCurrency(subtotal);
+
+                // Add to category total
+                const table = input.closest('table');
+                const categoryHeader = table.closest('.category-card').querySelector('.category-header');
+
+                if (categoryHeader.classList.contains('bcws')) {
+                    categories.bcws += subtotal;
+                } else if (categoryHeader.classList.contains('contractor')) {
+                    categories.contractor += subtotal;
+                } else if (categoryHeader.classList.contains('other')) {
+                    categories.other += subtotal;
+                } else {
+                    categories.fd += subtotal;
+                }
+            });
+
+            // Update category totals
+            Object.keys(categories).forEach(cat => {
+                const totalEl = document.querySelector(`[data-category="${cat}"]`);
+                const subtotalEl = document.querySelector(`[data-subtotal="${cat}"]`);
+                if (totalEl) totalEl.textContent = formatCurrency(categories[cat]);
+                if (subtotalEl) subtotalEl.textContent = formatCurrency(categories[cat]);
+            });
+
+            // Update grand total
+            const grandTotal = Object.values(categories).reduce((a, b) => a + b, 0);
+            document.getElementById('grand-total').textContent = formatCurrency(grandTotal);
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2
+            }).format(amount);
+        }
+
+        function saveOrder() {
+            const data = {};
+            const timestamp = new Date().toISOString();
+
+            document.querySelectorAll('.qty-input').forEach(input => {
+                const qty = parseInt(input.value) || 0;
+                if (qty > 0) {
+                    const row = input.closest('tr');
+                    const resourceName = row.querySelector('.resource-name').textContent.trim();
+                    const rate = parseFloat(input.dataset.rate) || 0;
+                    const subtotal = qty * rate;
+
+                    data[resourceName] = {
+                        quantity: qty,
+                        rate: rate,
+                        subtotal: subtotal
+                    };
+                }
+            });
+
+            const saveData = {
+                timestamp: timestamp,
+                resources: data,
+                grandTotal: document.getElementById('grand-total').textContent
+            };
+
+            localStorage.setItem('resourceOrder', JSON.stringify(saveData));
+
+            // Show success notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--success-green);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 4px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                font-family: 'JetBrains Mono', monospace;
+                font-weight: 700;
+                z-index: 1000;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.textContent = '✅ Order saved successfully!';
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        function loadOrder() {
+            const saved = localStorage.getItem('resourceOrder');
+            if (!saved) return;
+
+            try {
+                const saveData = JSON.parse(saved);
+                const resources = saveData.resources || saveData; // Handle old format
+
+                document.querySelectorAll('.qty-input').forEach(input => {
+                    const row = input.closest('tr');
+                    const resourceName = row.querySelector('.resource-name').textContent.trim();
+
+                    if (resources[resourceName]) {
+                        const qty = resources[resourceName].quantity || resources[resourceName];
+                        input.value = qty;
+                    }
+                });
+
+                calculate();
+                console.log('✅ Loaded saved order from:', saveData.timestamp || 'unknown');
+            } catch (e) {
+                console.error('Failed to load saved order:', e);
+            }
+        }
+
+        function exportToExcel() {
+            const now = new Date();
+            const dateStr = now.toISOString().split('T')[0];
+            const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-');
+            const filename = `Resource_Order_${dateStr}_${timeStr}.csv`;
+
+            // Build CSV content
+            let csv = 'BC Wildfire Service - Resource Order Menu\n';
+            csv += `Generated: ${now.toLocaleString()}\n\n`;
+
+            csv += 'Category,Resource Type,Quantity,Hourly Rate,Daily Rate,Subtotal\n';
+
+            // Collect all data by category
+            const categories = ['bcws', 'fd', 'contractor', 'other'];
+            const categoryNames = {
+                'bcws': 'BCWS Resources',
+                'fd': 'Fire Department',
+                'contractor': 'Contractor',
+                'other': 'Other'
+            };
+
+            categories.forEach(category => {
+                const categoryCard = document.querySelector(`[data-category="${category}"]`).closest('.category-card');
+                const rows = categoryCard.querySelectorAll('tbody tr:not(.subtotal-row)');
+
+                rows.forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    if (cells.length < 5) return;
+
+                    const resourceName = cells[0].textContent.trim();
+                    const qtyInput = cells[1].querySelector('input');
+                    const qty = qtyInput ? (parseInt(qtyInput.value) || 0) : 0;
+                    const hourlyRate = cells[2].textContent.trim();
+                    const dailyRate = cells[3].textContent.trim();
+                    const subtotal = cells[4].textContent.trim();
+
+                    // Only include rows with quantity > 0 or all rows (configurable)
+                    if (qty > 0) {
+                        csv += `"${categoryNames[category]}","${resourceName}",${qty},"${hourlyRate}","${dailyRate}","${subtotal}"\n`;
+                    }
+                });
+
+                // Add category total
+                const categoryTotal = document.querySelector(`[data-subtotal="${category}"]`).textContent;
+                csv += `"${categoryNames[category]} TOTAL","","","","","${categoryTotal}"\n`;
+                csv += '\n';
+            });
+
+            // Add grand total
+            const grandTotal = document.getElementById('grand-total').textContent;
+            csv += `"DAILY TOTAL COST","","","","","${grandTotal}"\n`;
+
+            // Create download link
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+
+            link.setAttribute('href', url);
+            link.setAttribute('download', filename);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Show success notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--highlight);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 4px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                font-family: 'JetBrains Mono', monospace;
+                font-weight: 700;
+                z-index: 1000;
+            `;
+            notification.textContent = '📊 Exported to ' + filename;
+            document.body.appendChild(notification);
+
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        function printOrder() {
+            // Expand all collapsed sections before printing
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.classList.remove('collapsed');
+            });
+
+            // Hide rows with zero quantity and empty sections
+            preparePrintView();
+
+            // Wait for layout to settle, then print
+            setTimeout(() => {
+                window.print();
+            }, 100);
+        }
+
+        function preparePrintView() {
+            // Hide all rows with quantity = 0
+            document.querySelectorAll('.qty-input').forEach(input => {
+                const qty = parseInt(input.value) || 0;
+                const row = input.closest('tr');
+
+                if (qty === 0) {
+                    row.classList.add('print-hidden');
+                } else {
+                    row.classList.remove('print-hidden');
+                }
+            });
+
+            // Hide entire category sections if all items are zero
+            document.querySelectorAll('.category-card').forEach(card => {
+                const inputs = card.querySelectorAll('.qty-input');
+                const hasAnyQuantity = Array.from(inputs).some(input => parseInt(input.value) > 0);
+
+                if (!hasAnyQuantity) {
+                    card.classList.add('print-hidden-section');
+                } else {
+                    card.classList.remove('print-hidden-section');
+                }
+            });
+        }
+
+        function restorePrintView() {
+            // Show all rows again
+            document.querySelectorAll('.print-hidden').forEach(el => {
+                el.classList.remove('print-hidden');
+            });
+
+            // Show all sections again
+            document.querySelectorAll('.print-hidden-section').forEach(el => {
+                el.classList.remove('print-hidden-section');
+            });
+        }
+
+        // Listen for print events
+        window.addEventListener('beforeprint', preparePrintView);
+        window.addEventListener('afterprint', restorePrintView);
+
+        function clearAll() {
+            if (confirm('⚠️ Clear all quantities? This cannot be undone.')) {
+                document.querySelectorAll('.qty-input').forEach(input => {
+                    input.value = 0;
+                });
+                calculate();
+
+                // Show notification
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: var(--alert-red);
+                    color: white;
+                    padding: 1rem 2rem;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                    font-family: 'JetBrains Mono', monospace;
+                    font-weight: 700;
+                    z-index: 1000;
+                `;
+                notification.textContent = '🗑️ All quantities cleared';
+                document.body.appendChild(notification);
+
+                setTimeout(() => notification.remove(), 2000);
+            }
+        }
+
+        // Initialize - load saved data and calculate
+        loadOrder();
+        calculate();
+    </script>
+</body>
+</html>

@@ -67,6 +67,36 @@ export default function Projects() {
             </p>
           </Link>
 
+          <a
+            href="/simtable/"
+            className="block p-6 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#ffd166] transition-colors group"
+          >
+            <span className="inline-block px-2 py-1 text-xs font-semibold bg-[#ffd166] text-black rounded mb-3">
+              BETA
+            </span>
+            <h2 className="text-xl font-semibold mb-2 group-hover:text-[#ffd166] transition-colors">
+              SimTable
+            </h2>
+            <p className="text-[#b0b0b0] text-sm">
+              BCWS Structure Protection training simulator — fire spread on real BC terrain with tactical decision layer. Exercise presets for Riondel and Fraser Lake.
+            </p>
+          </a>
+
+          <a
+            href="/sitrep"
+            className="block p-6 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#ef4444] transition-colors group"
+          >
+            <span className="inline-block px-2 py-1 text-xs font-semibold bg-[#ef4444] rounded mb-3">
+              LIVE
+            </span>
+            <h2 className="text-xl font-semibold mb-2 group-hover:text-[#ef4444] transition-colors">
+              SitRep — Resource Order
+            </h2>
+            <p className="text-[#b0b0b0] text-sm">
+              BC Wildfire resource ordering menu. Fast-entry incident tracker and resource request builder.
+            </p>
+          </a>
+
           <Link
             href="/projects/firebox"
             className="block p-6 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#ff6b35] transition-colors group"
