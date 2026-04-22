@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-21T22:00:58.367Z",
+  "updated_at": "2026-04-22T04:00:58.980Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -8,6 +8,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "North America: Hot, dry winter may bring a burning spring",
+        "link": "https://wildfiretoday.com/north-america-hot-dry-winter-may-bring-a-burning-spring/",
+        "description": "As we come into the north-flowing warmth of the North American spring, the impacts of snow drought and heat dome are prepping wildland fuels for what may be a transition to a “super” El Nino. Yet it is spring, and reading the North American Seasonal Fire Assessment and Outlook for April through June we note [&#8230;]",
+        "pubDate": "Tue, 21 Apr 2026 22:47:54 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Wildland firefighters may soon get hazard pay during prescribed fires in the US",
         "link": "https://wildfiretoday.com/wildland-firefighters-may-soon-get-hazard-pay-during-prescribed-fires-in-the-us/",
@@ -55,13 +62,6 @@
         "link": "https://wildfiretoday.com/almeda-aftermath-the-impact-of-an-oregon-wildfire/",
         "description": "By Jennie Englund The Ashland Pond, a riparian area at the foot of Southern Oregon’s Cascade and Siskiyou mountains, was just waking up on the morning of September 8, 2020. Red-wing blackbirds’ throats warmed in the rust-colored wind, and a family of otters slid over the dry bank to find food. The creatures were oblivious [&#8230;]",
         "pubDate": "Thu, 02 Apr 2026 00:53:26 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "It was big, but the Morrill Fire isn&#8217;t the largest wildfire in Nebraska&#8217;s history",
-        "link": "https://wildfiretoday.com/it-was-big-but-the-morrill-fire-isnt-the-largest-wildfire-in-nebraskas-history/",
-        "description": "Fire crews recently fully contained the Morrill Fire after it burned 642,029 acres, according to local managers. Officials on Saturday transferred command of the fire to local departments after containing the fire on Tuesday, less than two weeks after the fire started. Crews patrolling the fire&#8217;s interior didn&#8217;t observe any fire activity, despite there being [&#8230;]",
-        "pubDate": "Mon, 30 Mar 2026 04:13:30 +0000",
         "source": "Wildfire Today"
       }
     ]
