@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-21T22:00:17.151Z",
+  "updated_at": "2026-04-23T10:00:18.185Z",
   "fires": [
     {
       "country": "Brazil",
@@ -121,9 +121,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new items received",
-      "All 15 existing fires preserved (all Active status)",
-      "Images preserved for Rio Olympic Velodrome Fire and Chiang Mai Air Pollution entries"
+      "No new articles provided for deduplication",
+      "All 15 existing fires retained with Active status",
+      "No fires older than 60 days to remove",
+      "All image URLs preserved from existing entries"
     ]
   }
 }
