@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-22T22:00:58.206Z",
+  "updated_at": "2026-04-23T04:00:58.517Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -8,6 +8,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "AI predicts wildfire risk faster than current warning systems, new study finds",
+        "link": "https://wildfiretoday.com/ai-predicts-wildfire-risk-faster-than-current-warning-systems-new-study-finds/",
+        "description": "A wildfire forecasting system powered by artificial intelligence was around 30% better at identifying dangerous fire conditions in advance than the models currently used, according to new research. The Australian and New Zealand researchers&#8217; study, published in the International Journal of Wildland Fire, trained a machine learning model on historical weather and fire data from three [&#8230;",
+        "pubDate": "Thu, 23 Apr 2026 01:39:49 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "North America: Hot, dry winter may bring a burning spring",
         "link": "https://wildfiretoday.com/north-america-hot-dry-winter-may-bring-a-burning-spring/",
@@ -55,13 +62,6 @@
         "link": "https://wildfiretoday.com/forest-service-to-undergo-sweeping-restructuring-close-all-regional-offices/",
         "description": "The United States Department of Agriculture this week announced the nation&#8217;s Forest Service will soon go through massive changes, including the shift of its headquarters across the country. The agency&#8217;s headquarters will move from Washington D.C. to Salt Lake City, Utah, according to a press release sent out on Tuesday. The agency will also close [&#8230;]",
         "pubDate": "Sat, 04 Apr 2026 10:24:20 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Almeda Aftermath: the impact of an Oregon wildfire",
-        "link": "https://wildfiretoday.com/almeda-aftermath-the-impact-of-an-oregon-wildfire/",
-        "description": "By Jennie Englund The Ashland Pond, a riparian area at the foot of Southern Oregon’s Cascade and Siskiyou mountains, was just waking up on the morning of September 8, 2020. Red-wing blackbirds’ throats warmed in the rust-colored wind, and a family of otters slid over the dry bank to find food. The creatures were oblivious [&#8230;]",
-        "pubDate": "Thu, 02 Apr 2026 00:53:26 +0000",
         "source": "Wildfire Today"
       }
     ]
