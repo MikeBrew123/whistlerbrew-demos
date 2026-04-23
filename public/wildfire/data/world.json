@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-23T10:00:18.185Z",
+  "updated_at": "2026-04-23T22:00:17.000Z",
   "fires": [
     {
       "country": "Brazil",
@@ -121,10 +121,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided for deduplication",
-      "All 15 existing fires retained with Active status",
-      "No fires older than 60 days to remove",
-      "All image URLs preserved from existing entries"
+      "No new Canada news articles provided",
+      "No new world articles provided",
+      "Preserved all 15 active existing fires with original images where present",
+      "No deduplication needed - no duplicate stories across sources"
     ]
   }
 }
