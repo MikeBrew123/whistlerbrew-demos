@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-24T16:00:21.657Z",
+  "updated_at": "2026-04-24T22:00:21.320Z",
   "fires": [
     {
       "country": "United States",
@@ -107,19 +107,18 @@
   "last_report": {
     "items_in": {
       "canada": 1,
-      "world": 1
+      "world": 0
     },
     "items_out": {
-      "canada": 1,
+      "canada_news": 1,
       "world_fires": 16
     },
     "deduped": 0,
-    "rerouted": 1,
+    "rerouted": 0,
     "notes": [
-      "Toronto house fire rerouted from world to canada_news (local incident, not wildfire)",
-      "Florida/Georgia BBC article merged into single world_fires entry, deduplicated with existing Belmore/Cross Creek entries",
-      "All existing_fires marked Active preserved",
-      "15 existing fire entries retained as Active status"
+      "All existing fires preserved as Active status",
+      "1 Canadian news article added to canada_news bucket",
+      "No world news articles provided for processing"
     ]
   }
 }
