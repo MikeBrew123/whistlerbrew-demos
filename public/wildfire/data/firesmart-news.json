@@ -1,12 +1,30 @@
 {
-  "updated_at": "2026-04-24T16:01:14.059Z",
+  "updated_at": "2026-04-24T22:01:11.222Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "10 properties under evacuation alert due to wildfire in the Cariboo",
+        "link": "https://globalnews.ca/news/11815937/evacuation-alert-wildfire-cariboo/",
+        "description": "The Xeni Gwet’in First Nation Government, Tŝilhqot’in National Government and Cariboo Regional District issued the alert, which covers 465.96 hectares.",
+        "pubDate": "Fri, 24 Apr 2026 17:33:15 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/04/Konni-Lake-wildfire.png"
+      }
+    ],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Out-of-control wildfire burning south of Hells Gate in Fraser Canyon",
+        "link": "https://globalnews.ca/news/11815979/out-of-control-wildfire-south-hells-gate-fraser-canyon/",
+        "description": "The Ferrabee wildfire was discovered on Thursday on the east side of Highway 1. It is about 40 hectares and is believed to be human-caused, according to the BC Wildfire Service.",
+        "pubDate": "Fri, 24 Apr 2026 17:44:18 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/04/Ferrabee-Wildfire-1-BCWS.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "all": [
       {
         "title": "AI predicts wildfire risk faster than current warning systems, new study finds",
@@ -56,14 +74,6 @@
         "description": "The United States Department of Agriculture this week announced the nation&#8217;s Forest Service will soon go through massive changes, including the shift of its headquarters across the country. The agency&#8217;s headquarters will move from Washington D.C. to Salt Lake City, Utah, according to a press release sent out on Tuesday. The agency will also close [&#8230;]",
         "pubDate": "Sat, 04 Apr 2026 10:24:20 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "B.C. MLA pens letter to return unused funds to Lapu Lapu victims",
-        "link": "https://globalnews.ca/news/11814453/bc-mla-letter-return-unused-funds-united-way-lapu-lapu-victims/",
-        "description": "Mable Elmore, who is the MLA for Vancouver-Kensington, where the incident happened, has written a letter to United Way BC about the money raised.",
-        "pubDate": "Thu, 23 Apr 2026 20:33:02 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/08/3f621bf937fb75cfb1090c6f8c6d044b7d921e77a9d4cada93ff20ae45d439d5.jpg?quality=65&#038;strip=all"
       }
     ]
   }
