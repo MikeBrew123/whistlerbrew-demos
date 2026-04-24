@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-24T10:00:58.492Z",
+  "updated_at": "2026-04-24T16:01:14.059Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -51,18 +51,19 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Europe&#8217;s 2025 wildfire season was its worst ever, by far",
-        "link": "https://wildfiretoday.com/europes-2025-wildfire-season-was-its-worst-ever-by-far/",
-        "description": "Wildfires burned over 2.7 million acres (1.1 million hectares) across the European Union in 2025, by far the highest burned area total recorded since record keeping began. The EU&#8217;s Joint Research Centre recently released its 2025 analysis wildfires, which found the historic season started early in March, with over 379,000 acres (153,000 hectares) burning. Intensity [&#8230;]",
-        "pubDate": "Mon, 06 Apr 2026 03:21:08 +0000",
-        "source": "Wildfire Today"
-      },
-      {
         "title": "Forest Service to undergo &#8216;sweeping restructuring,&#8217; close all regional offices",
         "link": "https://wildfiretoday.com/forest-service-to-undergo-sweeping-restructuring-close-all-regional-offices/",
         "description": "The United States Department of Agriculture this week announced the nation&#8217;s Forest Service will soon go through massive changes, including the shift of its headquarters across the country. The agency&#8217;s headquarters will move from Washington D.C. to Salt Lake City, Utah, according to a press release sent out on Tuesday. The agency will also close [&#8230;]",
         "pubDate": "Sat, 04 Apr 2026 10:24:20 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "B.C. MLA pens letter to return unused funds to Lapu Lapu victims",
+        "link": "https://globalnews.ca/news/11814453/bc-mla-letter-return-unused-funds-united-way-lapu-lapu-victims/",
+        "description": "Mable Elmore, who is the MLA for Vancouver-Kensington, where the incident happened, has written a letter to United Way BC about the money raised.",
+        "pubDate": "Thu, 23 Apr 2026 20:33:02 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/08/3f621bf937fb75cfb1090c6f8c6d044b7d921e77a9d4cada93ff20ae45d439d5.jpg?quality=65&#038;strip=all"
       }
     ]
   }
