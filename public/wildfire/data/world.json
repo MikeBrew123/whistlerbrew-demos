@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-24T22:00:21.320Z",
+  "updated_at": "2026-04-25T22:00:17.913Z",
   "fires": [
     {
       "country": "United States",
@@ -106,19 +106,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
+      "canada": 0,
       "world": 0
     },
     "items_out": {
-      "canada_news": 1,
+      "canada": 0,
       "world_fires": 16
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing fires preserved as Active status",
-      "1 Canadian news article added to canada_news bucket",
-      "No world news articles provided for processing"
+      "No new articles provided in input",
+      "All 16 existing fires preserved as Active",
+      "No fires were contained >60 days ago",
+      "All images preserved from existing data"
     ]
   }
 }
