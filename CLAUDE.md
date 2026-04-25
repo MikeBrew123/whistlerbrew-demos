@@ -1,5 +1,19 @@
 # whistlerbrew-demos — CLAUDE.md
 
+## 📍 Sitemap (keep current!)
+**Single source of truth:** `src/app/projects/lab/page.tsx` — `POLISHED` and `WORKSHOP` arrays.
+
+When you ship anything new (whether or not it's linked from `/projects`), add it to one of those arrays. `/projects/lab` is the hidden full-sitemap page sitting behind the same password gate as `/projects` (linked from a small "lab" footer link).
+
+- **Polished** = ready enough to also have a card on `/projects`
+- **Workshop** = unlinked, in-progress, or experimental
+
+## 📊 Site-wide analytics: Cloudflare Web Analytics
+- **Token:** stored as `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` env var (Cloudflare Pages → Settings → Environment Variables) for the Next.js side. Standalone HTML files embed the token literally in `<script data-cf-beacon='{"token":"..."}'>`.
+- **Files with the snippet:** `src/app/layout.tsx` + `public/wildfire/index.html` + `public/pushup/index.html` (and source `pushup/pushup-challenge.html`) + `public/opus/index.html` + `public/firesmart/index.html` + `public/simtable/index.html` + `public/resource-order-web.html`
+- **When adding a new standalone HTML page**, paste the same `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"<TOKEN>"}'></script>` before `</body>`.
+- Get/rotate the token from: Cloudflare Dash → Analytics & Logs → Web Analytics → whistlerbrew.com
+
 ## ⚠️ LIVE APP WITH REAL USER DATA
 **whistlerbrew.com/pushup** is live and has real participants registered with logged pushups.
 - Never wipe, clear, or destructively modify the Google Sheet

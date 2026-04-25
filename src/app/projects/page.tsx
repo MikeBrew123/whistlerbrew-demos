@@ -119,8 +119,12 @@ export default function Projects() {
         </div>
       </main>
 
-      <footer className="mt-auto pt-12 text-[#b0b0b0] text-sm">
+      <footer className="mt-auto pt-12 text-[#b0b0b0] text-sm flex gap-4 items-center">
         <p>WhistlerBrew.com &copy; 2026</p>
+        <span className="text-[#444]">·</span>
+        <Link href="/projects/lab" className="text-[#666] hover:text-[#00a8ff] transition-colors">
+          lab
+        </Link>
       </footer>
     </div>
   );
