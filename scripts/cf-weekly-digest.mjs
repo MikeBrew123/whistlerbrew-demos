@@ -5,18 +5,20 @@
 //   node scripts/cf-weekly-digest.mjs              # print to stdout
 //   node scripts/cf-weekly-digest.mjs --obsidian   # also save to Obsidian vault
 //   node scripts/cf-weekly-digest.mjs --append     # append to today's daily note
+//   node scripts/cf-weekly-digest.mjs --email      # send via Resend
 //
-// Token: secrets/api-keys.json → .cloudflare.analytics_token
+// Tokens: secrets/api-keys.json → .cloudflare.analytics_token, .resend.{api_key, from, to}
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const { cloudflare } = JSON.parse(
+const SECRETS = JSON.parse(
   fs.readFileSync(path.join(__dirname, "..", "secrets", "api-keys.json"), "utf8")
 );
-const TOKEN = cloudflare.analytics_token;
+const TOKEN = SECRETS.cloudflare.analytics_token;
+const RESEND = SECRETS.resend;
 
 const ZONE_ID = "c15627b6487fd580bebdcb5df407936f";
 const ACCOUNT_ID = "9501eaa888ac0e2cd5766bd98bcf0feb";
@@ -27,6 +29,7 @@ const REPORTS_DIR = path.join(VAULT, "04-Projects", "whistlerbrew-traffic");
 const args = new Set(process.argv.slice(2));
 const flagObsidian = args.has("--obsidian");
 const flagAppend = args.has("--append");
+const flagEmail = args.has("--email");
 
 const days = 7;
 const since = new Date(Date.now() - days * 86400000).toISOString();
@@ -155,6 +158,84 @@ if (flagObsidian) {
   const file = path.join(REPORTS_DIR, `${weekTag}.md`);
   fs.writeFileSync(file, md);
   console.error(`\n✅ Saved to ${file}`);
+}
+
+if (flagEmail) {
+  // Minimal markdown → HTML (covers what this digest produces: headings, tables, lists, bold, code)
+  function md2html(src) {
+    const lines = src.split("\n");
+    const out = [];
+    let inTable = false;
+    let inList = false;
+    for (let i = 0; i < lines.length; i++) {
+      let l = lines[i];
+      if (/^\s*$/.test(l)) {
+        if (inList) { out.push("</ul>"); inList = false; }
+        out.push("");
+        continue;
+      }
+      if (l.startsWith("# ")) { out.push(`<h1>${l.slice(2)}</h1>`); continue; }
+      if (l.startsWith("## ")) { out.push(`<h2>${l.slice(3)}</h2>`); continue; }
+      if (l.startsWith("|") && lines[i + 1]?.startsWith("|") && /^[\s\-|:]+$/.test(lines[i + 1].trim())) {
+        // table header
+        const headers = l.split("|").slice(1, -1).map((c) => c.trim());
+        out.push(`<table style="border-collapse:collapse;margin:8px 0"><thead><tr>${headers.map((h) => `<th style="border:1px solid #ddd;padding:6px 10px;background:#f6f6f6;text-align:left">${h}</th>`).join("")}</tr></thead><tbody>`);
+        i++; // skip separator
+        inTable = true;
+        continue;
+      }
+      if (inTable) {
+        if (!l.startsWith("|")) {
+          out.push("</tbody></table>");
+          inTable = false;
+        } else {
+          const cells = l.split("|").slice(1, -1).map((c) => c.trim());
+          out.push(`<tr>${cells.map((c) => `<td style="border:1px solid #ddd;padding:6px 10px">${inline(c)}</td>`).join("")}</tr>`);
+          continue;
+        }
+      }
+      if (l.startsWith("- ")) {
+        if (!inList) { out.push("<ul>"); inList = true; }
+        out.push(`<li>${inline(l.slice(2))}</li>`);
+        continue;
+      } else if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      if (l.startsWith("---")) { out.push("<hr>"); continue; }
+      out.push(`<p>${inline(l)}</p>`);
+    }
+    if (inList) out.push("</ul>");
+    if (inTable) out.push("</tbody></table>");
+    return out.join("\n");
+  }
+  function inline(s) {
+    return s
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.+?)\*/g, "<em>$1</em>")
+      .replace(/`([^`]+)`/g, "<code style=\"background:#f4f4f4;padding:1px 5px;border-radius:3px;font-family:monospace\">$1</code>");
+  }
+
+  const html = `<!doctype html><html><body style="font-family:-apple-system,sans-serif;max-width:720px;margin:0 auto;padding:20px;color:#222">${md2html(md)}</body></html>`;
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${RESEND.api_key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: RESEND.from,
+      to: [RESEND.to],
+      subject: `WhistlerBrew weekly traffic — ${weekTag} (${totalViews} views)`,
+      html,
+      text: md,
+    }),
+  });
+  const j = await res.json();
+  if (j.id) {
+    console.error(`\n✅ Email sent to ${RESEND.to} (id: ${j.id})`);
+  } else {
+    console.error(`\n❌ Email failed:`, JSON.stringify(j, null, 2));
+    process.exit(1);
+  }
 }
 
 if (flagAppend) {
