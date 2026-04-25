@@ -9,10 +9,9 @@ When you ship anything new (whether or not it's linked from `/projects`), add it
 - **Workshop** = unlinked, in-progress, or experimental
 
 ## 📊 Site-wide analytics: Cloudflare Web Analytics
-- **Token:** stored as `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` env var (Cloudflare Pages → Settings → Environment Variables) for the Next.js side. Standalone HTML files embed the token literally in `<script data-cf-beacon='{"token":"..."}'>`.
-- **Files with the snippet:** `src/app/layout.tsx` + `public/wildfire/index.html` + `public/pushup/index.html` (and source `pushup/pushup-challenge.html`) + `public/opus/index.html` + `public/firesmart/index.html` + `public/simtable/index.html` + `public/resource-order-web.html`
-- **When adding a new standalone HTML page**, paste the same `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"<TOKEN>"}'></script>` before `</body>`.
-- Get/rotate the token from: Cloudflare Dash → Analytics & Logs → Web Analytics → whistlerbrew.com
+- **How it works:** whistlerbrew.com is on Cloudflare DNS, so Web Analytics is **auto-injected at the edge** — no script tag needed in any file. View data at: Cloudflare Dash → Analytics & Logs → Web Analytics → whistlerbrew.com.
+- **Do NOT** paste manual `<script data-cf-beacon>` tags into HTML files — auto-injection already covers it and adding the snippet again can cause double-counting.
+- The Next.js layout has an optional `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` env var hook, but it's empty by default (and should stay empty unless you ever turn off auto-injection).
 
 ## ⚠️ LIVE APP WITH REAL USER DATA
 **whistlerbrew.com/pushup** is live and has real participants registered with logged pushups.
