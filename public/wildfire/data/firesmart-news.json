@@ -1,21 +1,10 @@
 {
-  "updated_at": "2026-04-24T22:01:11.222Z",
+  "updated_at": "2026-04-25T04:00:58.307Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [
-      {
-        "title": "10 properties under evacuation alert due to wildfire in the Cariboo",
-        "link": "https://globalnews.ca/news/11815937/evacuation-alert-wildfire-cariboo/",
-        "description": "The Xeni Gwet’in First Nation Government, Tŝilhqot’in National Government and Cariboo Regional District issued the alert, which covers 465.96 hectares.",
-        "pubDate": "Fri, 24 Apr 2026 17:33:15 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/04/Konni-Lake-wildfire.png"
-      }
-    ],
-    "northwest": [],
-    "southeast": [
       {
         "title": "Out-of-control wildfire burning south of Hells Gate in Fraser Canyon",
         "link": "https://globalnews.ca/news/11815979/out-of-control-wildfire-south-hells-gate-fraser-canyon/",
@@ -23,6 +12,17 @@
         "pubDate": "Fri, 24 Apr 2026 17:44:18 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/04/Ferrabee-Wildfire-1-BCWS.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "northwest": [],
+    "southeast": [
+      {
+        "title": "Nanaimo First Nation sends strongly worded letter to city over proposed development",
+        "link": "https://globalnews.ca/news/11816230/nanaimo-first-nation-strongly-worded-letter-city-proposed-development/",
+        "description": "Nanaimo Forest Products owns a parcel of land near Nanaimo and the company wants to build an industrial park on one part of the property, with another section zoned as parkland.",
+        "pubDate": "Fri, 24 Apr 2026 20:02:27 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/04/6P-NANAIMO-REZONING-FIR_OM01TJI9.jpg?quality=65&#038;strip=all"
       }
     ],
     "all": [
@@ -69,11 +69,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Forest Service to undergo &#8216;sweeping restructuring,&#8217; close all regional offices",
-        "link": "https://wildfiretoday.com/forest-service-to-undergo-sweeping-restructuring-close-all-regional-offices/",
-        "description": "The United States Department of Agriculture this week announced the nation&#8217;s Forest Service will soon go through massive changes, including the shift of its headquarters across the country. The agency&#8217;s headquarters will move from Washington D.C. to Salt Lake City, Utah, according to a press release sent out on Tuesday. The agency will also close [&#8230;]",
-        "pubDate": "Sat, 04 Apr 2026 10:24:20 +0000",
-        "source": "Wildfire Today"
+        "title": "Metro Vancouver hires law firm to investigate leaks to the media",
+        "link": "https://globalnews.ca/news/11814919/metro-vancouver-hires-law-firm-investigate-leaks-media/",
+        "description": "The regional government launched the investigation, which was sparked by a Global News story about management and dysfunction at Metro Vancouver.",
+        "pubDate": "Fri, 24 Apr 2026 03:44:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/04/6P-METRO-VANCOUVER-PUBL_OM01T1R8.jpg?quality=65&#038;strip=all"
       }
     ]
   }
