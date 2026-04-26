@@ -217,8 +217,13 @@ function renderMainView() {
   const grid = document.getElementById('zone-grid');
   grid.innerHTML = f.zones.map(zone => renderZoneCard(zone)).join('');
 
-  // Canada
-  document.getElementById('canada-section').innerHTML = renderCanadaSection(WF.canada);
+  // Canada — patch BC province count from live fires.json
+  const canadaPatched = JSON.parse(JSON.stringify(WF.canada));
+  const bcLive = WF.fires.bc_totals.active || 0;
+  const bcProv = canadaPatched.provinces.find(p => p.id === 'bc');
+  if (bcProv) bcProv.active = bcLive;
+  canadaPatched.ciffc.active_fires = Math.max(canadaPatched.ciffc.active_fires, bcLive);
+  document.getElementById('canada-section').innerHTML = renderCanadaSection(canadaPatched);
 
   // World
   document.getElementById('world-section').innerHTML = WF.world.fires.length
