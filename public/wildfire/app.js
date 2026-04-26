@@ -293,29 +293,34 @@ function renderCanadaSection(canada) {
 }
 
 function renderWorldFireCard(fw) {
-  const flags = { USA: '🇺🇸', Canada: '🇨🇦', Greece: '🇬🇷', Australia: '🇦🇺', Portugal: '🇵🇹', Spain: '🇪🇸', France: '🇫🇷', Argentina: '🇦🇷' };
-  const flag = flags[fw.country] || '🌍';
-  const containHtml = fw.containment_pct > 0
-    ? `<span class="world-stat"><strong>${fw.containment_pct}%</strong> contained</span>` : '';
-  const haText = fw.hectares ? fw.hectares.toLocaleString() + ' ha' : 'Size unknown';
-  const newsHtml = fw.news && fw.news.length
-    ? `<div class="world-fire-sources">Sources: ${fw.news.map(n => `<a href="${n.url}" target="_blank" rel="noopener">${n.source}</a>`).join(' · ')}</div>`
-    : '';
-  return `
-    <div class="world-fire-card">
-      <span class="world-flag">${flag}</span>
-      <div class="world-fire-info">
-        <div class="world-fire-name">${fw.link ? `<a href="${fw.link}" target="_blank" rel="noopener">${fw.name}</a>` : fw.name}</div>
-        <div class="world-fire-loc">${fw.region}, ${fw.country}</div>
-        <div class="world-fire-summary">${fw.summary}</div>
-        <div class="world-fire-stats">
-          <span class="world-stat"><strong>${haText}</strong></span>
-          <span class="world-stat"><strong>${fw.status}</strong></span>
-          ${containHtml}
-        </div>
-        ${newsHtml}
+  const COUNTRY_FLAGS = {
+    'United States': '🇺🇸', 'USA': '🇺🇸', 'Canada': '🇨🇦', 'Greece': '🇬🇷',
+    'Australia': '🇦🇺', 'Portugal': '🇵🇹', 'Spain': '🇪🇸', 'France': '🇫🇷',
+    'Argentina': '🇦🇷', 'Brazil': '🇧🇷', 'Thailand': '🇹🇭', 'Chile': '🇨🇱',
+    'Indonesia': '🇮🇩', 'Mexico': '🇲🇽', 'Italy': '🇮🇹', 'Turkey': '🇹🇷',
+  };
+  const flag = COUNTRY_FLAGS[fw.country] || '🌍';
+  const statusClass = fw.status === 'Active' ? 'wfc-status--active' : 'wfc-status--contained';
+  const haText = fw.hectares ? fw.hectares.toLocaleString() + ' ha' : null;
+  const containText = fw.containment_pct > 0 ? fw.containment_pct + '% contained' : null;
+  const meta = [haText, containText].filter(Boolean).join(' · ');
+  const imgHtml = fw.image
+    ? `<img class="wfc-thumb" src="${fw.image}" alt="" loading="lazy" onerror="this.parentElement.classList.add('wfc-nothumb');this.remove()">`
+    : `<div class="wfc-thumb-flag">${flag}</div>`;
+  const inner = `
+    <div class="wfc-text">
+      <div class="wfc-source">${flag} ${fw.country}</div>
+      <div class="wfc-name">${fw.name}</div>
+      <div class="wfc-summary">${fw.summary}</div>
+      <div class="wfc-footer">
+        <span class="wfc-status ${statusClass}">${fw.status}</span>
+        ${meta ? `<span class="wfc-meta">${meta}</span>` : ''}
       </div>
-    </div>`;
+    </div>
+    <div class="wfc-img-wrap ${fw.image ? '' : 'wfc-nothumb'}">${imgHtml}</div>`;
+  return fw.link
+    ? `<a class="world-fire-card" href="${fw.link}" target="_blank" rel="noopener">${inner}</a>`
+    : `<div class="world-fire-card">${inner}</div>`;
 }
 
 /* ============================================================
