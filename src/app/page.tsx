@@ -14,8 +14,9 @@ export default function Home() {
 
   const handleSubmit = () => {
     if (password === CORRECT_PASSWORD) {
-      sessionStorage.setItem("whistlerbrew_auth", "true");
-      localStorage.setItem("whistlerbrew_auth", "true");
+      const exp = (Date.now() + 7 * 24 * 60 * 60 * 1000).toString();
+      sessionStorage.setItem("wb_auth_exp", exp);
+      localStorage.setItem("wb_auth_exp", exp);
       const params = new URLSearchParams(window.location.search);
       const redirect = params.get("redirect") || "/projects";
       router.push(redirect);

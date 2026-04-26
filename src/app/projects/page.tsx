@@ -10,16 +10,18 @@ export default function Projects() {
   const router = useRouter();
 
   useEffect(() => {
-    const auth = sessionStorage.getItem("whistlerbrew_auth") || localStorage.getItem("whistlerbrew_auth");
-    if (auth !== "true") {
+    const exp = parseInt(sessionStorage.getItem("wb_auth_exp") || localStorage.getItem("wb_auth_exp") || "0");
+    if (exp < Date.now()) {
       router.push("/");
     } else {
+      sessionStorage.setItem("wb_auth_exp", exp.toString());
       setIsAuthenticated(true);
     }
   }, [router]);
 
   const handleLogout = () => {
-    sessionStorage.removeItem("whistlerbrew_auth");
+    sessionStorage.removeItem("wb_auth_exp");
+    localStorage.removeItem("wb_auth_exp");
     router.push("/");
   };
 
