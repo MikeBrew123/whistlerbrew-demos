@@ -82,13 +82,21 @@
   ],
   "news": [
     {
+      "title": "Calgary emergency management agency moving to create urban wildfire plan",
+      "url": "https://globalnews.ca/news/11131049/calgary-emergency-management-agency-moving-to-create-urban-wildfire-plan/",
+      "source": "Global News",
+      "published": "2026-04-23",
+      "description": "Calgary's emergency management agency is working on a new urban wildfire plan as fire season approaches, citing growing risk from the wildland-urban interface.",
+      "image": ""
+    },
+    {
       "title": "Sask. NDP sounds alarm over missing water bombers as wildfire season approaches",
       "url": "https://ca.news.yahoo.com/sask-ndp-sounds-alarm-over-164328804.html",
       "source": "CBC",
-      "published": "2026-04-24",
+      "published": "2026-04-23",
       "description": "",
       "image": "https://media.zenfs.com/en/cbc_videos_73/50264c86e0bff429139b5399be79fe85"
     }
   ],
-  "last_news_update": "2026-04-25T16:00:21.680Z"
+  "last_news_update": "2026-04-25T23:59:00.000Z"
 }
