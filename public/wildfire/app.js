@@ -403,7 +403,7 @@ async function loadZoneFireList(zone) {
   if (!centreId) return;
   const ACTIVE = new Set(['Out of Control', 'Being Held', 'Under Control']);
   const url = `https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0/query`
-    + `?where=FIRE_CENTRE=${centreId}&outFields=FIRE_NUMBER,FIRE_STATUS,INCIDENT_NAME,CURRENT_SIZE,FIRE_CAUSE,GEOGRAPHIC_DESCRIPTION,LATITUDE,LONGITUDE,IGNITION_DATE,FIRE_OF_NOTE_IND,FIRE_URL&f=json&resultRecordCount=200`;
+    + `?where=FIRE_CENTRE=${centreId}&outFields=FIRE_NUMBER,FIRE_STATUS,INCIDENT_NAME,CURRENT_SIZE,FIRE_CAUSE,FIRE_TYPE,RESPONSE_TYPE_DESC,GEOGRAPHIC_DESCRIPTION,LATITUDE,LONGITUDE,IGNITION_DATE,FIRE_OF_NOTE_IND,FIRE_URL,ZONE&f=json&resultRecordCount=200`;
   let fires = [];
   try {
     const resp = await fetch(url);
@@ -422,19 +422,34 @@ async function loadZoneFireList(zone) {
     const ha = f.CURRENT_SIZE != null ? (f.CURRENT_SIZE >= 1000
       ? (f.CURRENT_SIZE / 1000).toFixed(1) + 'k ha'
       : f.CURRENT_SIZE.toFixed(1) + ' ha') : '—';
-    const cause = f.FIRE_CAUSE ? f.FIRE_CAUSE.toLowerCase() : '';
+    const cause    = f.FIRE_CAUSE ? f.FIRE_CAUSE.toLowerCase() : '';
+    const fireType = f.FIRE_TYPE  ? f.FIRE_TYPE.toLowerCase()  : '';
+    const response = f.RESPONSE_TYPE_DESC || '';
     const name = f.INCIDENT_NAME && f.INCIDENT_NAME !== f.FIRE_NUMBER ? f.INCIDENT_NAME : '';
-    const geo = f.GEOGRAPHIC_DESCRIPTION || '';
+    const geo  = f.GEOGRAPHIC_DESCRIPTION || '';
     const date = f.IGNITION_DATE ? new Date(f.IGNITION_DATE).toLocaleDateString('en-CA',{month:'short',day:'numeric'}) : '';
-    const link = f.FIRE_URL ? `href="${f.FIRE_URL}" target="_blank" rel="noopener"` : '';
-    const fon = f.FIRE_OF_NOTE_IND === 'Y' ? '<span class="fire-row-fon">★ FoN</span>' : '';
-    return `<${link ? 'a' : 'div'} class="fire-row" ${link}>
+    const fon  = f.FIRE_OF_NOTE_IND === 'Y' ? '<span class="fire-row-fon">★ FoN</span>' : '';
+    const mapUrl = (f.LATITUDE && f.LONGITUDE)
+      ? `https://www.google.com/maps?q=${f.LATITUDE},${f.LONGITUDE}`  : '';
+    const bcwsUrl = f.FIRE_URL || '';
+    // Build pill tags
+    const pills = [
+      cause    ? `<span class="fire-pill">${cause}</span>` : '',
+      response ? `<span class="fire-pill fire-pill--response">${response} Response</span>` : '',
+    ].filter(Boolean).join('');
+    const links = [
+      bcwsUrl ? `<a class="fire-row-link" href="${bcwsUrl}" target="_blank" rel="noopener">BCWS Incident ↗</a>` : '',
+      mapUrl  ? `<a class="fire-row-link" href="${mapUrl}"  target="_blank" rel="noopener">Map ↗</a>`          : '',
+    ].filter(Boolean).join('');
+    return `<div class="fire-row">
       <div class="fire-row-status" style="background:${color}22;color:${color};border-color:${color}44">${f.FIRE_STATUS}</div>
       <div class="fire-row-info">
         <div class="fire-row-name">${name || geo || f.FIRE_NUMBER} ${fon}</div>
-        <div class="fire-row-meta">${f.FIRE_NUMBER} · ${ha}${cause ? ' · ' + cause : ''}${date ? ' · ignited ' + date : ''}</div>
+        <div class="fire-row-meta">${f.FIRE_NUMBER} · ${ha}${date ? ' · ignited ' + date : ''}</div>
+        ${pills ? `<div class="fire-row-pills">${pills}</div>` : ''}
+        ${links ? `<div class="fire-row-links">${links}</div>` : ''}
       </div>
-    </${link ? 'a' : 'div'}>`;
+    </div>`;
   };
 
   const el = document.getElementById('zone-fire-list');

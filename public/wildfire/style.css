@@ -793,6 +793,45 @@ a.world-fire-card:hover .wfc-name { color: var(--ember); }
   margin-left: 0.3rem;
 }
 
+.fire-row-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+
+.fire-pill {
+  font-size: 0.63rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0.1rem 0.45rem;
+  border-radius: 99px;
+  background: var(--bg3, #1e2530);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.fire-pill--response {
+  background: rgba(52, 152, 219, 0.1);
+  color: #5dade2;
+  border-color: rgba(52,152,219,0.25);
+}
+
+.fire-row-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.fire-row-link {
+  font-size: 0.7rem;
+  color: var(--sky, #5dade2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.fire-row-link:hover { text-decoration: underline; }
+
 .fire-row {
   display: flex;
   align-items: center;
