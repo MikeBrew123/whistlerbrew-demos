@@ -765,6 +765,34 @@ a.world-fire-card:hover .wfc-name { color: var(--ember); }
   font-weight: 600;
 }
 
+.fires-section-label--muted { opacity: 0.5; margin-top: 1.5rem; }
+
+.fire-row-status {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.fire-row-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  margin-top: 0.15rem;
+}
+
+.fire-row-fon {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--fire-red);
+  margin-left: 0.3rem;
+}
+
 .fire-row {
   display: flex;
   align-items: center;

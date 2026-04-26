@@ -348,6 +348,7 @@ function populateZoneView(zone) {
   // Fires tab
   const firesPanel = document.getElementById('zone-tab-fires');
   firesPanel.innerHTML = renderZoneFiresTab(zone);
+  loadZoneFireList(zone);
 
   // News tab — merge zone_news (Workflow B) + FireSmart news (Workflow D)
   const zoneNews = zone.zone_news || [];
@@ -378,22 +379,78 @@ function populateZoneView(zone) {
   document.getElementById('zone-tab-stats').innerHTML = renderZoneStatsTab(zone);
 }
 
+const ZONE_CENTRE_ID = { kamloops: 5, 'prince-george': 4, cariboo: 7, northwest: 3, southeast: 6, coastal: 2 };
+const STATUS_ORDER = { 'Out of Control': 0, 'Being Held': 1, 'Under Control': 2, 'Out': 3 };
+const STATUS_COLOR = { 'Out of Control': '#e74c3c', 'Being Held': '#f1c40f', 'Under Control': '#2ecc71', 'Out': '#7f8c8d' };
+
 function renderZoneFiresTab(zone) {
   const fon = zone.fires_of_note_list || [];
-  const hasEvac = zone.zone_evac_notices && zone.zone_evac_notices.some(n => n.type === 'ORDER');
   let html = `
     <div class="fires-zone-header">
       <div class="fzone-count"><span class="fzone-val">${zone.active_fires}</span><span class="fzone-lbl">Active</span></div>
       <div class="fzone-count"><span class="fzone-val fon">${zone.fires_of_note}</span><span class="fzone-lbl">Fires of Note</span></div>
     </div>`;
-
-  if (fon.length === 0) {
-    html += '<p class="empty-tab">No fires of note in this zone.</p>';
-  } else {
+  if (fon.length) {
     html += '<div class="fires-section-label">Fires of Note</div>';
     html += fon.map(f => renderFireRow(f)).join('');
   }
+  html += '<div id="zone-fire-list"><p class="empty-tab" style="opacity:.5">Loading fires…</p></div>';
   return html;
+}
+
+async function loadZoneFireList(zone) {
+  const centreId = ZONE_CENTRE_ID[zone.id];
+  if (!centreId) return;
+  const ACTIVE = new Set(['Out of Control', 'Being Held', 'Under Control']);
+  const url = `https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0/query`
+    + `?where=FIRE_CENTRE=${centreId}&outFields=FIRE_NUMBER,FIRE_STATUS,INCIDENT_NAME,CURRENT_SIZE,FIRE_CAUSE,GEOGRAPHIC_DESCRIPTION,LATITUDE,LONGITUDE,IGNITION_DATE,FIRE_OF_NOTE_IND,FIRE_URL&f=json&resultRecordCount=200`;
+  let fires = [];
+  try {
+    const resp = await fetch(url);
+    const data = await resp.json();
+    fires = (data.features || []).map(f => f.attributes);
+  } catch (e) { return; }
+
+  fires.sort((a, b) => (STATUS_ORDER[a.FIRE_STATUS] ?? 9) - (STATUS_ORDER[b.FIRE_STATUS] ?? 9)
+    || (b.IGNITION_DATE || 0) - (a.IGNITION_DATE || 0));
+
+  const active = fires.filter(f => ACTIVE.has(f.FIRE_STATUS));
+  const out    = fires.filter(f => f.FIRE_STATUS === 'Out');
+
+  const renderRow = f => {
+    const color = STATUS_COLOR[f.FIRE_STATUS] || '#7f8c8d';
+    const ha = f.CURRENT_SIZE != null ? (f.CURRENT_SIZE >= 1000
+      ? (f.CURRENT_SIZE / 1000).toFixed(1) + 'k ha'
+      : f.CURRENT_SIZE.toFixed(1) + ' ha') : '—';
+    const cause = f.FIRE_CAUSE ? f.FIRE_CAUSE.toLowerCase() : '';
+    const name = f.INCIDENT_NAME && f.INCIDENT_NAME !== f.FIRE_NUMBER ? f.INCIDENT_NAME : '';
+    const geo = f.GEOGRAPHIC_DESCRIPTION || '';
+    const date = f.IGNITION_DATE ? new Date(f.IGNITION_DATE).toLocaleDateString('en-CA',{month:'short',day:'numeric'}) : '';
+    const link = f.FIRE_URL ? `href="${f.FIRE_URL}" target="_blank" rel="noopener"` : '';
+    const fon = f.FIRE_OF_NOTE_IND === 'Y' ? '<span class="fire-row-fon">★ FoN</span>' : '';
+    return `<${link ? 'a' : 'div'} class="fire-row" ${link}>
+      <div class="fire-row-status" style="background:${color}22;color:${color};border-color:${color}44">${f.FIRE_STATUS}</div>
+      <div class="fire-row-info">
+        <div class="fire-row-name">${name || geo || f.FIRE_NUMBER} ${fon}</div>
+        <div class="fire-row-meta">${f.FIRE_NUMBER} · ${ha}${cause ? ' · ' + cause : ''}${date ? ' · ignited ' + date : ''}</div>
+      </div>
+    </${link ? 'a' : 'div'}>`;
+  };
+
+  const el = document.getElementById('zone-fire-list');
+  if (!el) return;
+
+  let html = '';
+  if (active.length) {
+    html += `<div class="fires-section-label">Active Fires (${active.length})</div>`;
+    html += active.map(renderRow).join('');
+  }
+  if (out.length) {
+    html += `<div class="fires-section-label fires-section-label--muted">Out / Extinguished (${out.length})</div>`;
+    html += out.map(renderRow).join('');
+  }
+  if (!fires.length) html = '<p class="empty-tab">No fires on record for this zone.</p>';
+  el.innerHTML = html;
 }
 
 function renderZoneStatsTab(zone) {
