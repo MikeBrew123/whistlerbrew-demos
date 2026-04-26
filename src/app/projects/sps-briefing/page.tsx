@@ -93,10 +93,12 @@ function SPSBriefingInner() {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const auth = sessionStorage.getItem("whistlerbrew_auth");
+    const auth = sessionStorage.getItem("whistlerbrew_auth") || localStorage.getItem("whistlerbrew_auth");
     if (auth !== "true") {
-      router.push("/");
+      const redirect = encodeURIComponent(window.location.pathname + window.location.search);
+      router.push(`/?redirect=${redirect}`);
     } else {
+      sessionStorage.setItem("whistlerbrew_auth", "true");
       setIsAuthenticated(true);
     }
   }, [router]);

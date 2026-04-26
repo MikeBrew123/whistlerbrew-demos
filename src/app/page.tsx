@@ -15,7 +15,10 @@ export default function Home() {
   const handleSubmit = () => {
     if (password === CORRECT_PASSWORD) {
       sessionStorage.setItem("whistlerbrew_auth", "true");
-      router.push("/projects");
+      localStorage.setItem("whistlerbrew_auth", "true");
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get("redirect") || "/projects";
+      router.push(redirect);
     } else {
       setError("Incorrect password, try again");
       setPassword("");

@@ -128,7 +128,7 @@ export default function Lab() {
   const router = useRouter();
 
   useEffect(() => {
-    const auth = sessionStorage.getItem("whistlerbrew_auth");
+    const auth = sessionStorage.getItem("whistlerbrew_auth") || localStorage.getItem("whistlerbrew_auth");
     if (auth !== "true") {
       router.push("/");
     } else {
