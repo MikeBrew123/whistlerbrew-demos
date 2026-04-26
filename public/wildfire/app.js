@@ -437,9 +437,17 @@ async function loadZoneFireList(zone) {
       cause    ? `<span class="fire-pill">${cause}</span>` : '',
       response ? `<span class="fire-pill fire-pill--response">${response} Response</span>` : '',
     ].filter(Boolean).join('');
+    const fireName = name || geo || f.FIRE_NUMBER;
+    const spsParams = new URLSearchParams({
+      fireNumber: f.FIRE_NUMBER || '',
+      community:  fireName,
+      reportTo:   zone.name,
+    }).toString();
+    const spsUrl = `https://whistlerbrew.com/projects/sps-briefing?${spsParams}`;
     const links = [
       bcwsUrl ? `<a class="fire-row-link" href="${bcwsUrl}" target="_blank" rel="noopener">BCWS Incident ↗</a>` : '',
       mapUrl  ? `<a class="fire-row-link" href="${mapUrl}"  target="_blank" rel="noopener">Map ↗</a>`          : '',
+      `<a class="fire-row-link fire-row-link--respond" href="${spsUrl}" target="_blank" rel="noopener">🚒 Respond to this fire</a>`,
     ].filter(Boolean).join('');
     return `<div class="fire-row">
       <div class="fire-row-status" style="background:${color}22;color:${color};border-color:${color}44">${f.FIRE_STATUS}</div>

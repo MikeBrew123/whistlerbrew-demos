@@ -832,6 +832,11 @@ a.world-fire-card:hover .wfc-name { color: var(--ember); }
 
 .fire-row-link:hover { text-decoration: underline; }
 
+.fire-row-link--respond {
+  color: #f39c12;
+  font-weight: 600;
+}
+
 .fire-row {
   display: flex;
   align-items: center;

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState, useRef, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const START_LOCATIONS = [
   "Whistler",
@@ -49,16 +49,17 @@ type BriefingResult = {
   longitude?: number;
 };
 
-export default function SPSBriefing() {
+function SPSBriefingInner() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   // Form state
   const [mode, setMode] = useState<"full" | "community">("full");
   const [startLocation, setStartLocation] = useState("");
-  const [reportTo, setReportTo] = useState("");
-  const [community, setCommunity] = useState("");
-  const [fireNumber, setFireNumber] = useState("");
+  const [reportTo, setReportTo] = useState(() => searchParams.get("reportTo") || "");
+  const [community, setCommunity] = useState(() => searchParams.get("community") || "");
+  const [fireNumber, setFireNumber] = useState(() => searchParams.get("fireNumber") || "");
 
   // UI state
   const [errors, setErrors] = useState<FormErrors>({});
@@ -760,5 +761,13 @@ export default function SPSBriefing() {
         <p>WhistlerBrew.com &copy; 2026</p>
       </footer>
     </div>
+  );
+}
+
+export default function SPSBriefing() {
+  return (
+    <Suspense fallback={null}>
+      <SPSBriefingInner />
+    </Suspense>
   );
 }
