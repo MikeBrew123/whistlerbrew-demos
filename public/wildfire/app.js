@@ -368,6 +368,7 @@ function populateZoneView(zone) {
     dedupedNews.length
       ? `<ul class="news-list">${dedupedNews.map(n => renderNewsItem(n)).join('')}</ul>`
       : '<p class="empty-tab">No news stories for this zone.</p>';
+  loadZoneBlogPosts(zone);
 
   // Roads tab
   document.getElementById('zone-tab-roads').innerHTML =
@@ -474,6 +475,43 @@ async function loadZoneFireList(zone) {
   }
   if (!fires.length) html = '<p class="empty-tab">No fires on record for this zone.</p>';
   el.innerHTML = html;
+}
+
+const ZONE_BLOG_SEARCH = {
+  kamloops: 'Kamloops', 'prince-george': 'Prince George', cariboo: 'Cariboo',
+  northwest: 'Northwest', southeast: 'Southeast', coastal: 'Coastal'
+};
+
+async function loadZoneBlogPosts(zone) {
+  const term = ZONE_BLOG_SEARCH[zone.id];
+  if (!term) return;
+  const url = `https://blog.gov.bc.ca/bcwildfire/wp-json/wp/v2/posts?search=${encodeURIComponent(term)}&per_page=5&_embed=wp:featuredmedia`;
+  let posts = [];
+  try { posts = await fetch(url).then(r => r.ok ? r.json() : []); } catch (e) { return; }
+  if (!posts.length) return;
+
+  const items = posts.map(p => {
+    const media = p._embedded?.['wp:featuredmedia']?.[0];
+    const thumb = media?.source_url || media?.media_details?.sizes?.medium?.source_url || '';
+    return {
+      url: p.link,
+      title: p.title?.rendered?.replace(/&#8217;/g,"'").replace(/&amp;/g,'&').replace(/&#8211;/g,'–') || '',
+      summary: p.excerpt?.rendered?.replace(/<[^>]+>/g,'').replace(/&#8217;/g,"'").replace(/&amp;/g,'&').slice(0,180) || '',
+      source: 'BC Wildfire Blog',
+      published: p.date,
+      thumbnail: thumb,
+    };
+  });
+
+  const el = document.getElementById('zone-tab-news');
+  if (!el) return;
+  const existing = el.querySelector('ul.news-list');
+  const blogHtml = items.map(n => renderNewsItem(n)).join('');
+  if (existing) {
+    existing.insertAdjacentHTML('beforeend', blogHtml);
+  } else {
+    el.innerHTML = `<ul class="news-list">${blogHtml}</ul>`;
+  }
 }
 
 function renderZoneStatsTab(zone) {
