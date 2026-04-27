@@ -104,6 +104,21 @@ export default function Projects() {
             </p>
           </a>
 
+          <a
+            href="/projects/cat/"
+            className="block p-6 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#4ade80] transition-colors group"
+          >
+            <span className="inline-block px-2 py-1 text-xs font-semibold bg-[#4ade80] text-black rounded mb-3">
+              NEW
+            </span>
+            <h2 className="text-xl font-semibold mb-2 group-hover:text-[#4ade80] transition-colors">
+              Community Assessment Tool
+            </h2>
+            <p className="text-[#b0b0b0] text-sm">
+              Draw impact areas on satellite imagery of any BC community. Auto-calculates engines, tenders, TFL/STL configurations, and LACES + DRAW-D defensibility assessment.
+            </p>
+          </a>
+
           <Link
             href="/projects/firebox"
             className="block p-6 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#ff6b35] transition-colors group"
