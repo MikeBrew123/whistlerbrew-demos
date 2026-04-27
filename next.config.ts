@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       { source: '/opus', destination: '/opus/index.html', permanent: false },
       { source: '/firesmart', destination: '/firesmart/index.html', permanent: false },
       { source: '/simtable', destination: '/simtable/index.html', permanent: false },
+      { source: '/cat', destination: '/cat/index.html', permanent: false },
       { source: '/sitrep', destination: '/resource-order-web.html', permanent: false },
     ];
   },

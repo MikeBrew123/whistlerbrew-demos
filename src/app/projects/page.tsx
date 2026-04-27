@@ -105,7 +105,7 @@ export default function Projects() {
           </a>
 
           <a
-            href="/projects/cat/"
+            href="/cat/"
             className="block p-6 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#4ade80] transition-colors group"
           >
             <span className="inline-block px-2 py-1 text-xs font-semibold bg-[#4ade80] text-black rounded mb-3">
