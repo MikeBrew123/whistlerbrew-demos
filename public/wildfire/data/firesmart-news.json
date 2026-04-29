@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-29T10:00:58.510Z",
+  "updated_at": "2026-04-29T16:00:58.881Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -8,13 +8,6 @@
     "northwest": [],
     "southeast": [],
     "all": [
-      {
-        "title": "Weaving Palawa knowledge with Western science",
-        "link": "https://wildfiretoday.com/weaving-palawa-knowledge-with-western-science/",
-        "description": "Fire, in its essence, is about connecting people with place, past with future, ground to air. The 8th International Fire Behaviour and Fuels conference began today in Hobart, Tasmania with a Welcome to Country from Trawlwoolway man Todd Sculthorpe, who asked everyone to think about knowledge that respects and understands fire. Here is his Welcome [&#8230;]",
-        "pubDate": "Tue, 28 Apr 2026 11:17:12 +0000",
-        "source": "Wildfire Today"
-      },
       {
         "title": "AI predicts wildfire risk faster than current warning systems, new study finds",
         "link": "https://wildfiretoday.com/ai-predicts-wildfire-risk-faster-than-current-warning-systems-new-study-finds/",
@@ -56,14 +49,6 @@
         "description": "By Josh Hyde, Eva Strand, Peter Noble and Kim Ernstrom Land and fire managers are often tasked to plan complex fuel treatments and apply the best available science across jurisdictions to prioritize, plan, and conduct prescribed burns and other fire mitigation tactics. Decision support systems – information systems designed to support management decision making – [&#8230;]",
         "pubDate": "Tue, 07 Apr 2026 02:24:40 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Fires, drought and water woes to begin B.C.&#8217;s wildfire season",
-        "link": "https://globalnews.ca/news/11820100/fires-drought-and-water-woes-to-begin-b-c-s-wildfire-season/",
-        "description": "A cluster of wildfires are burning in British Columbia, marking the beginning of a season that has some officials planning for how to conserve water.",
-        "pubDate": "Tue, 28 Apr 2026 12:02:45 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/04/34a564aad771b20758a018c4e276686065b0fb8014d99b7b2942f92996f6cf48.jpg?quality=65&#038;strip=all"
       }
     ]
   }
