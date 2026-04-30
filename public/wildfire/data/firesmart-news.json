@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-30T16:00:17.639Z",
+  "updated_at": "2026-04-30T22:00:17.028Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -9,31 +9,10 @@
     "southeast": [],
     "all": [
       {
-        "title": "AI predicts wildfire risk faster than current warning systems, new study finds",
-        "link": "https://wildfiretoday.com/ai-predicts-wildfire-risk-faster-than-current-warning-systems-new-study-finds/",
-        "description": "A wildfire forecasting system powered by artificial intelligence was around 30% better at identifying dangerous fire conditions in advance than the models currently used, according to new research. The Australian and New Zealand researchers&#8217; study, published in the International Journal of Wildland Fire, trained a machine learning model on historical weather and fire data from three [&#8230;",
-        "pubDate": "Thu, 23 Apr 2026 01:39:49 +0000",
-        "source": "Wildfire Today"
-      },
-      {
         "title": "North America: Hot, dry winter may bring a burning spring",
         "link": "https://wildfiretoday.com/north-america-hot-dry-winter-may-bring-a-burning-spring/",
         "description": "As we come into the north-flowing warmth of the North American spring, the impacts of snow drought and heat dome are prepping wildland fuels for what may be a transition to a “super” El Nino. Yet it is spring, and reading the North American Seasonal Fire Assessment and Outlook for April through June we note [&#8230;]",
         "pubDate": "Tue, 21 Apr 2026 22:47:54 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildland firefighters may soon get hazard pay during prescribed fires in the US",
-        "link": "https://wildfiretoday.com/wildland-firefighters-may-soon-get-hazard-pay-during-prescribed-fires-in-the-us/",
-        "description": "Federal officials are considering a rule change that would make wildland firefighters conducting prescribed fires eligible for hazardous duty pay. The Office of Personnel Management recently posted the proposed rule on the Federal Register, which specified that prescribed burns conducted by General Schedule employees would trigger Hazardous Duty Pay, while Federal Wage System employees would [&#82",
-        "pubDate": "Sun, 19 Apr 2026 23:06:42 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Is the US Forest Service&#8217;s reorganization a &#8216;dismantling&#8217; or a needed shift? Experts weigh in on wildland fire&#8217;s impact",
-        "link": "https://wildfiretoday.com/is-the-us-forest-services-reorganization-a-dismantling-or-a-needed-shift-experts-weigh-in-on-wildland-fires-impact/",
-        "description": "The United States Department of Agriculture&#8217;s recent announcement to make sweeping structural changes to the nation&#8217;s Forest Service has brought confusion and uncertainty countrywide, ahead of what&#8217;s expected to be a very active wildfire year. Numerous former Forest Service staff and communities have since shared their views on the announcement across multiple platforms, with som",
-        "pubDate": "Mon, 13 Apr 2026 02:37:11 +0000",
         "source": "Wildfire Today"
       }
     ]
