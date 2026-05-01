@@ -1,7 +1,16 @@
 {
-  "updated_at": "2026-05-01T04:00:19.547Z",
+  "updated_at": "2026-05-01T10:00:16.056Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Did a meteor spark a fire in a chalet on Mount Washington?",
+        "link": "https://globalnews.ca/news/11823321/meteor-fire-chalet-mount-washington/",
+        "description": "Another witness, Cam Henderson, told Global News that by the time the group made their way toward the fire, the building was fully engulfed.",
+        "pubDate": "Wed, 29 Apr 2026 23:57:32 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/04/comox-valley-meteor.png"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
