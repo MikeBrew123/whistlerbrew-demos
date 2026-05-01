@@ -1,29 +1,13 @@
 {
-  "updated_at": "2026-05-01T16:00:19.498Z",
+  "updated_at": "2026-05-01T22:00:18.008Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Did a meteor spark a fire in a chalet on Mount Washington?",
-        "link": "https://globalnews.ca/news/11823321/meteor-fire-chalet-mount-washington/",
-        "description": "Another witness, Cam Henderson, told Global News that by the time the group made their way toward the fire, the building was fully engulfed.",
-        "pubDate": "Wed, 29 Apr 2026 23:57:32 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/04/comox-valley-meteor.png"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
-      {
-        "title": "Firefighter dies, over 120 homes burn as historic drought fuels southeast wildfires",
-        "link": "https://wildfiretoday.com/firefighter-dies-over-120-homes-burn-as-historic-drought-fuels-southeast-wildfires/",
-        "description": "Numerous Southeast US states are currently experiencing historic levels of drought, fueling wildfires that have caused one death and have destroyed over 120 homes. Over 50% of the southeast region, from Virginia to Mississippi, is experiencing exceptional-to-extreme drought levels, with the entire region under at least a moderate drought category as of Thursday, according to [&#8230;]",
-        "pubDate": "Sat, 25 Apr 2026 00:01:11 +0000",
-        "source": "Wildfire Today"
-      },
       {
         "title": "AI predicts wildfire risk faster than current warning systems, new study finds",
         "link": "https://wildfiretoday.com/ai-predicts-wildfire-risk-faster-than-current-warning-systems-new-study-finds/",
