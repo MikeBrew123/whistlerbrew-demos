@@ -1,20 +1,21 @@
 {
-  "updated_at": "2026-05-04T16:00:16.642Z",
+  "updated_at": "2026-05-04T22:00:20.094Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "B.C. wildfire burning near Cultus Lake as hot weather continues",
+        "link": "https://globalnews.ca/news/11829621/wildfire-sparked-cultus-lake/",
+        "description": "The Wildfire Service said the fire is burning near the Jade Bay Day Use Campground on the east side of Cultus Lake. It is mapped at 0.5 hectares in size.",
+        "pubDate": "Mon, 04 May 2026 20:09:36 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/GFX-CULTUS-LAKE-FIRES.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "North America: Hot, dry winter may bring a burning spring",
-        "link": "https://wildfiretoday.com/north-america-hot-dry-winter-may-bring-a-burning-spring/",
-        "description": "As we come into the north-flowing warmth of the North American spring, the impacts of snow drought and heat dome are prepping wildland fuels for what may be a transition to a “super” El Nino. Yet it is spring, and reading the North American Seasonal Fire Assessment and Outlook for April through June we note [&#8230;]",
-        "pubDate": "Tue, 21 Apr 2026 22:47:54 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
