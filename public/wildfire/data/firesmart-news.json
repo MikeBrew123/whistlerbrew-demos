@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-04T10:00:16.514Z",
+  "updated_at": "2026-05-04T16:00:16.642Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,6 +7,14 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "North America: Hot, dry winter may bring a burning spring",
+        "link": "https://wildfiretoday.com/north-america-hot-dry-winter-may-bring-a-burning-spring/",
+        "description": "As we come into the north-flowing warmth of the North American spring, the impacts of snow drought and heat dome are prepping wildland fuels for what may be a transition to a “super” El Nino. Yet it is spring, and reading the North American Seasonal Fire Assessment and Outlook for April through June we note [&#8230;]",
+        "pubDate": "Tue, 21 Apr 2026 22:47:54 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
