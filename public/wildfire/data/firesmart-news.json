@@ -1,16 +1,7 @@
 {
-  "updated_at": "2026-05-05T16:00:18.031Z",
+  "updated_at": "2026-05-05T22:00:17.190Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "B.C. wildfire burning near Cultus Lake as hot weather continues",
-        "link": "https://globalnews.ca/news/11829621/wildfire-sparked-cultus-lake/",
-        "description": "The Wildfire Service said the fire is burning near the Jade Bay Day Use Campground on the east side of Cultus Lake. It is mapped at 0.5 hectares in size.",
-        "pubDate": "Mon, 04 May 2026 20:09:36 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/GFX-CULTUS-LAKE-FIRES.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
