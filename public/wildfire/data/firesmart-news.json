@@ -1,12 +1,21 @@
 {
-  "updated_at": "2026-05-06T10:00:16.544Z",
+  "updated_at": "2026-05-06T16:00:17.052Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "U.S. tribes demand a say in B.C.&#8217;s economic decisions due to DRIPA",
+        "link": "https://globalnews.ca/news/11831901/us-tribes-demand-say-bc-economic-decisions-dripa/",
+        "description": "This week, a judicial review is underway in Rossland Provincial Court about a magnesium mine, proposed by West High Yield Resources and the Osoyoos Indian Band.",
+        "pubDate": "Tue, 05 May 2026 23:04:18 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/09/set-gfx-SINIXT-SIGN-CASTLEGAR.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "all": [
       {
         "title": "North America: Hot, dry winter may bring a burning spring",
