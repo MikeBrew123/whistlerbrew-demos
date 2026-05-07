@@ -1,21 +1,20 @@
 {
-  "updated_at": "2026-05-07T16:00:18.005Z",
+  "updated_at": "2026-05-07T22:00:17.680Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Campfire, burning bans go into effect early for B.C. Coastal Fire Centre",
-        "link": "https://globalnews.ca/news/11837390/campfire-burning-bans-early-bc-coastal-fire-centre/",
-        "description": "The BC Wildfire Service says that starting at noon on Thursday, May 7, most open burning activities will be prohibited throughout the Coastal Fire Centre, with exceptions.",
-        "pubDate": "Wed, 06 May 2026 20:11:54 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2022/07/campfire-ban.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "North America: Hot, dry winter may bring a burning spring",
+        "link": "https://wildfiretoday.com/north-america-hot-dry-winter-may-bring-a-burning-spring/",
+        "description": "As we come into the north-flowing warmth of the North American spring, the impacts of snow drought and heat dome are prepping wildland fuels for what may be a transition to a “super” El Nino. Yet it is spring, and reading the North American Seasonal Fire Assessment and Outlook for April through June we note [&#8230;]",
+        "pubDate": "Tue, 21 Apr 2026 22:47:54 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
