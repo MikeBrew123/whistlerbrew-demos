@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-07T22:00:17.680Z",
+  "updated_at": "2026-05-08T04:00:16.538Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -9,10 +9,73 @@
     "southeast": [],
     "all": [
       {
-        "title": "North America: Hot, dry winter may bring a burning spring",
-        "link": "https://wildfiretoday.com/north-america-hot-dry-winter-may-bring-a-burning-spring/",
-        "description": "As we come into the north-flowing warmth of the North American spring, the impacts of snow drought and heat dome are prepping wildland fuels for what may be a transition to a “super” El Nino. Yet it is spring, and reading the North American Seasonal Fire Assessment and Outlook for April through June we note [&#8230;]",
-        "pubDate": "Tue, 21 Apr 2026 22:47:54 +0000",
+        "title": "El Niño and La Niña predict US wildfire severity up to a year early, NOAA research finds",
+        "link": "https://wildfiretoday.com/el-nino-and-la-nina-predict-us-wildfire-severity-up-to-a-year-early-noaa-research-finds/",
+        "description": "Recent research published by the National Oceanic and Atmospheric Administration has found that the most influential climate driver on Earth is also an accurate predictor of wildfire severity up to a year in advance. The study, published in the Journal of Geophysical Research: Atmospheres, found that the &#8220;La Niña&#8221; and &#8220;El Niño&#8221; phases of a fluctuating [&#8230;]",
+        "pubDate": "Thu, 07 May 2026 23:49:13 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Destructive wildfire types targeted under new US &#8216;BRUSH Fire Act&#8217;",
+        "link": "https://wildfiretoday.com/destructive-wildfire-types-targeted-under-new-us-brush-fire-act/",
+        "description": "A US bill aimed at improving officials&#8217; understanding of wildfires in ecosystems dominated by small plants recently cleared its first congressional hurdle. The Building Resiliency and Understanding of Shrublands to Halt Fires Act, or BRUSH Fires Act, was introduced by California Rep. Dave Min and seeks to modernize federal wildfire prevention policy, particularly in shrub-dominated [&#8230;]",
+        "pubDate": "Tue, 05 May 2026 00:00:46 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Southern states near peak fire resource allocations as &#8216;Wildfire Awareness Month&#8217; kicks off",
+        "link": "https://wildfiretoday.com/southern-states-near-peak-fire-resource-allocations-as-wildfire-awareness-month-kicks-off/",
+        "description": "May has historically been the start of wildfire season across the United States, but the signifier rings hollow for numerous communities in southern states facing already strained fire resources. Friday marked the first day of Wildfire Awareness Month, when federal, state, and local agencies focus on fire prevention, preparedness, and protecting what matters, the National [&#8230;]",
+        "pubDate": "Sun, 03 May 2026 15:50:32 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Force multipliers &#8211; understanding the Forest Service’s Administratively Determined militia",
+        "link": "https://wildfiretoday.com/force-multipliers-understanding-the-forest-services-administratively-determined-militia/",
+        "description": "By Michael Scott Hill While being briefed pre-season on changes to the wildfire staff for U.S. federal resource agencies, I realized that many people don’t understand the United States Department of Agriculture Forest Service and Department of Interior AD system. We’re called ADs but few people realize the acronym stands for Administratively Determined; we’re the [&#8230;]",
+        "pubDate": "Fri, 01 May 2026 10:32:02 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Green fire breaks in New Caledonia &#8211; a winning poster",
+        "link": "https://wildfiretoday.com/green-fire-breaks-in-new-caledonia-a-winning-poster/",
+        "description": "Congratulations to Vaea Lefeuvre for the winning Poster at our 8th International Fire Behaviour and Fuels conference this week in Hobart, Tasmania. The judges chose Vaea’s poster for its design and message simplicity on green fire breaks in New Caledonia “Linking Functional Traits to Shoot Flammability”. The 93 posters on display made it our biggest [&#8230;]",
+        "pubDate": "Fri, 01 May 2026 05:49:30 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Early career award for fire risk analyst",
+        "link": "https://wildfiretoday.com/early-career-award-for-fire-risk-analyst/",
+        "description": "Congratulations Kelsey Tarabini &#8211; the recipient of the 2026 Early Career Award in Fire Operations Kelsey, a Bushfire Risk Analyst with the Department of Energy, Environment and Climate Action in Victoria, Australia, was presented with her award by IAWF President Trevor Howard and IAWF Director Sarah Harris at the 8th International Fire Behaviour and Fuels [&#8230;]",
+        "pubDate": "Thu, 30 Apr 2026 12:43:09 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Protecting an endangered bat from wildfire leads to global environmental award",
+        "link": "https://wildfiretoday.com/protecting-an-endangered-bat-from-wildfire-leads-to-global-environmental-award/",
+        "description": "Iroro Tanshi&#8217;s passion for protecting wildlife grew through the cracks of her childhood in an industrial, oil-producing town in southern Nigeria. Her efforts to protect an endangered bat has led to an international award for wildfire prevention across her community. While her community had few green spaces, her love for nature was kindled through documentaries. [&#8230;]",
+        "pubDate": "Wed, 29 Apr 2026 21:43:34 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Weaving Palawa knowledge with Western science",
+        "link": "https://wildfiretoday.com/weaving-palawa-knowledge-with-western-science/",
+        "description": "Fire, in its essence, is about connecting people with place, past with future, ground to air. The 8th International Fire Behaviour and Fuels conference began today in Hobart, Tasmania with a Welcome to Country from Trawlwoolway man Todd Sculthorpe, who asked everyone to think about knowledge that respects and understands fire. Here is his Welcome [&#8230;]",
+        "pubDate": "Tue, 28 Apr 2026 11:17:12 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Firefighter dies, over 120 homes burn as historic drought fuels southeast wildfires",
+        "link": "https://wildfiretoday.com/firefighter-dies-over-120-homes-burn-as-historic-drought-fuels-southeast-wildfires/",
+        "description": "Numerous Southeast US states are currently experiencing historic levels of drought, fueling wildfires that have caused one death and have destroyed over 120 homes. Over 50% of the southeast region, from Virginia to Mississippi, is experiencing exceptional-to-extreme drought levels, with the entire region under at least a moderate drought category as of Thursday, according to [&#8230;]",
+        "pubDate": "Sat, 25 Apr 2026 00:01:11 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "AI predicts wildfire risk faster than current warning systems, new study finds",
+        "link": "https://wildfiretoday.com/ai-predicts-wildfire-risk-faster-than-current-warning-systems-new-study-finds/",
+        "description": "A wildfire forecasting system powered by artificial intelligence was around 30% better at identifying dangerous fire conditions in advance than the models currently used, according to new research. The Australian and New Zealand researchers&#8217; study, published in the International Journal of Wildland Fire, trained a machine learning model on historical weather and fire data from three [&#8230;",
+        "pubDate": "Thu, 23 Apr 2026 01:39:49 +0000",
         "source": "Wildfire Today"
       }
     ]
