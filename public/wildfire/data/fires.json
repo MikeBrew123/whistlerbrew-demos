@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-08T19:00:42.350Z",
-  "next_update": "2026-05-08T19:15:42.350Z",
+  "updated_at": "2026-05-08T19:15:42.628Z",
+  "next_update": "2026-05-08T19:30:42.628Z",
   "season_year": 2026,
   "bc_totals": {
-    "active": 25,
+    "active": 24,
     "fires_of_note": 0,
     "season_total": 0,
     "hectares_burned": 1816,
@@ -73,7 +73,7 @@
       "danger_rating": "N/A",
       "danger_colour": "#7F8C8D",
       "weather_summary": "",
-      "active_fires": 5,
+      "active_fires": 4,
       "fires_of_note": 0,
       "zone_summary": "",
       "fires_of_note_list": [],
