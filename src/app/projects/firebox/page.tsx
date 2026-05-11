@@ -86,9 +86,31 @@ const PLANNED_CHANNELS = [
   "ehs-mount-london",
 ];
 
-const ALERT_KEYWORDS = [
-  "mayday","may day","structure fire","working fire","evacuation","evacuate",
-  "missing person","overrun","spot fire","cardiac","unconscious","entrapment",
+// ── Keyword alert system ──────────────────────────────────────────────────────
+const ALERT_LEVELS = {
+  critical: { color: "#ff4444", bg: "#3a0000", border: "#ff000060", label: "CRITICAL", anim: "alertPulseCrit 0.7s ease-in-out infinite" },
+  urgent:   { color: "#fb923c", bg: "#2a1000", border: "#fb923c60", label: "URGENT",   anim: "alertPulse 1.5s ease-in-out infinite" },
+  info:     { color: "#f0a500", bg: "#1c1200", border: "#f0a50060", label: "INFO",     anim: "none" },
+} as const;
+type AlertLevel = keyof typeof ALERT_LEVELS;
+type KeywordRule = { word: string; level: AlertLevel };
+
+const DEFAULT_KEYWORDS: KeywordRule[] = [
+  { word: "mayday",         level: "critical" },
+  { word: "may day",        level: "critical" },
+  { word: "evacuate",       level: "critical" },
+  { word: "evacuation",     level: "critical" },
+  { word: "safe zone",      level: "critical" },
+  { word: "overrun",        level: "critical" },
+  { word: "entrapment",     level: "critical" },
+  { word: "emergency",      level: "urgent" },
+  { word: "mer",            level: "urgent" },
+  { word: "structure fire", level: "urgent" },
+  { word: "working fire",   level: "urgent" },
+  { word: "missing person", level: "urgent" },
+  { word: "cardiac",        level: "urgent" },
+  { word: "unconscious",    level: "urgent" },
+  { word: "spot fire",      level: "info" },
 ];
 
 function ch(channel: string) {
@@ -113,9 +135,12 @@ function formatTime(iso: string, showSecs = false) {
   } catch { return iso; }
 }
 
-function detectKeyword(text: string): string | null {
+function detectKeyword(text: string, rules: KeywordRule[]): KeywordRule | null {
   const lower = text.toLowerCase();
-  return ALERT_KEYWORDS.find(k => lower.includes(k)) ?? null;
+  for (const rule of rules) {
+    if (lower.includes(rule.word.toLowerCase())) return rule;
+  }
+  return null;
 }
 
 type WeatherReading = { ts: string; node: string; temp?: number; humidity?: number; pressure?: number; };
@@ -195,7 +220,8 @@ const CSS = `
   @keyframes fbTicker  { 0%{transform:translateX(100vw)} 100%{transform:translateX(-100%)} }
   @keyframes slideIn   { from{opacity:0;transform:translateX(-6px)} to{opacity:1;transform:translateX(0)} }
   @keyframes ripple    { 0%{box-shadow:0 0 0 0 rgba(255,68,68,0.4)} 70%{box-shadow:0 0 0 8px rgba(255,68,68,0)} 100%{box-shadow:0 0 0 0 rgba(255,68,68,0)} }
-  @keyframes alertPulse { 0%,100%{background:#3a0000} 50%{background:#4a0000} }
+  @keyframes alertPulse     { 0%,100%{opacity:1} 50%{opacity:0.7} }
+  @keyframes alertPulseCrit { 0%,100%{opacity:1} 50%{opacity:0.3} }
   .fb-card   { animation: slideIn 0.2s ease both; }
   .fb-reply:hover  { border-color: #1a4a1a !important; color: #39d353 !important; background: #081408 !important; }
   .fb-tab:hover    { background: #0f160f !important; }
@@ -705,6 +731,124 @@ function ModeConfirmModal({
   );
 }
 
+// ── Keyword Manager Modal ─────────────────────────────────────────────────────
+const LEVEL_ORDER: AlertLevel[] = ["critical", "urgent", "info"];
+
+function KeywordManager({
+  rules, onChange, onClose,
+}: { rules: KeywordRule[]; onChange: (r: KeywordRule[]) => void; onClose: () => void }) {
+  const [newWord, setNewWord] = useState("");
+  const [newLevel, setNewLevel] = useState<AlertLevel>("urgent");
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => { inputRef.current?.focus(); }, []);
+
+  const cycleLevel = (idx: number) => {
+    const next = [...rules];
+    const cur  = LEVEL_ORDER.indexOf(next[idx].level);
+    next[idx]  = { ...next[idx], level: LEVEL_ORDER[(cur + 1) % LEVEL_ORDER.length] };
+    onChange(next);
+  };
+
+  const remove = (idx: number) => onChange(rules.filter((_, i) => i !== idx));
+
+  const add = () => {
+    const w = newWord.trim().toLowerCase();
+    if (!w || rules.some(r => r.word === w)) return;
+    onChange([...rules, { word: w, level: newLevel }]);
+    setNewWord("");
+  };
+
+  return (
+    <div style={{ position: "fixed", inset: 0, zIndex: 300, background: "rgba(0,0,0,0.88)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
+      onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
+      <div style={{ width: "100%", maxWidth: 460, background: "#080d08", border: "1px solid #2a3a1a", position: "relative", display: "flex", flexDirection: "column", maxHeight: "85vh" }}>
+        <Brackets color="#2a4a1a" size={8} />
+
+        {/* Header */}
+        <div style={{ borderBottom: "1px solid #1a2a1a", padding: "12px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", background: "#0a120a", flexShrink: 0 }}>
+          <div>
+            <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 15, letterSpacing: 2, color: "#c8e8b0" }}>🔔 KEYWORD ALERTS</div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#3a6a3a", marginTop: 2 }}>Tap level badge to cycle CRITICAL → URGENT → INFO</div>
+          </div>
+          <button onClick={onClose} className="fb-btn" style={{ background: "none", border: "none", color: "#5a8a5a", fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>
+        </div>
+
+        {/* Legend */}
+        <div style={{ display: "flex", gap: 8, padding: "10px 18px", borderBottom: "1px solid #0e1a0e", flexShrink: 0 }}>
+          {LEVEL_ORDER.map(l => {
+            const lv = ALERT_LEVELS[l];
+            return (
+              <div key={l} style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, color: lv.color, padding: "2px 7px", background: lv.bg, border: `1px solid ${lv.border}` }}>{lv.label}</span>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a" }}>
+                  {l === "critical" ? "Flash + red" : l === "urgent" ? "Pulse + orange" : "Steady + amber"}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Keyword list */}
+        <div style={{ overflowY: "auto", flex: 1, padding: "8px 0" }}>
+          {rules.map((r, i) => {
+            const lv = ALERT_LEVELS[r.level];
+            return (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "7px 18px", borderBottom: "1px solid #0a140a" }}>
+                <button onClick={() => cycleLevel(i)} className="fb-btn" style={{
+                  fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700,
+                  color: lv.color, padding: "3px 9px", background: lv.bg,
+                  border: `1px solid ${lv.border}`, cursor: "pointer", flexShrink: 0,
+                  letterSpacing: 0.5,
+                }}>{lv.label}</button>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: "#9aca80", flex: 1, textTransform: "uppercase", letterSpacing: 0.5 }}>{r.word}</span>
+                <button onClick={() => remove(i)} className="fb-btn" style={{
+                  background: "none", border: "1px solid #2a1a1a", color: "#5a3a3a",
+                  fontSize: 14, cursor: "pointer", padding: "2px 8px", flexShrink: 0,
+                  fontFamily: "'JetBrains Mono',monospace",
+                }}>×</button>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Add new */}
+        <div style={{ borderTop: "1px solid #1a2a1a", padding: "14px 18px", flexShrink: 0, background: "#060e06" }}>
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#3a6a3a", letterSpacing: 1, marginBottom: 10 }}>ADD KEYWORD</div>
+          <div style={{ display: "flex", gap: 8 }}>
+            <input
+              ref={inputRef} value={newWord}
+              onChange={e => setNewWord(e.target.value)}
+              onKeyDown={e => e.key === "Enter" && add()}
+              placeholder="e.g. shelter in place"
+              style={{ flex: 1, background: "#040a04", border: "1px solid #1a2a1a", padding: "9px 12px", color: "#b8d8a0", fontSize: 13, fontFamily: "'Rajdhani',sans-serif", outline: "none" }}
+            />
+            {/* Level picker */}
+            <div style={{ display: "flex", border: "1px solid #1a2a1a" }}>
+              {LEVEL_ORDER.map(l => {
+                const lv = ALERT_LEVELS[l];
+                return (
+                  <button key={l} onClick={() => setNewLevel(l)} className="fb-btn" style={{
+                    padding: "9px 8px", border: "none", borderRight: l !== "info" ? "1px solid #1a2a1a" : "none",
+                    background: newLevel === l ? lv.bg : "transparent",
+                    color: newLevel === l ? lv.color : "#3a5a3a",
+                    fontFamily: "'JetBrains Mono',monospace", fontSize: 9, fontWeight: 700,
+                    cursor: "pointer", letterSpacing: 0.5,
+                  }}>{lv.label}</button>
+                );
+              })}
+            </div>
+            <button onClick={add} disabled={!newWord.trim()} className="fb-btn" style={{
+              padding: "9px 16px", border: "none", background: newWord.trim() ? "#0f2a0f" : "#0a110a",
+              color: newWord.trim() ? "#39d353" : "#2a4a2a", fontSize: 14, fontWeight: 700,
+              cursor: newWord.trim() ? "pointer" : "default", fontFamily: "'Rajdhani',sans-serif",
+            }}>+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Main feed ─────────────────────────────────────────────────────────────────
 function FireBoxFeed() {
   const [transcripts,    setTranscripts]    = useState<Transcript[]>([]);
@@ -723,7 +867,15 @@ function FireBoxFeed() {
   const [showExport,     setShowExport]     = useState<Incident | null>(null);
   const [exportData,     setExportData]     = useState<string>("");
   const [exportLoading,  setExportLoading]  = useState(false);
-  const [keyword,        setKeyword]        = useState<string | null>(null);
+  const [keywordHit,     setKeywordHit]     = useState<KeywordRule | null>(null);
+  const [showKeywordMgr, setShowKeywordMgr] = useState(false);
+  const [keywordList,    setKeywordList]    = useState<KeywordRule[]>(() => {
+    try { return JSON.parse(localStorage.getItem("firebox_keywords") ?? "null") ?? DEFAULT_KEYWORDS; } catch { return DEFAULT_KEYWORDS; }
+  });
+  const saveKeywords = (rules: KeywordRule[]) => {
+    setKeywordList(rules);
+    localStorage.setItem("firebox_keywords", JSON.stringify(rules));
+  };
   const [incidentForm,   setIncidentForm]   = useState({ name: "", start_at: "" });
   const [activeMode,     setActiveMode]     = useState<"home" | "deployment">("home");
   const [modeSending,    setModeSending]    = useState(false);
@@ -853,13 +1005,22 @@ function FireBoxFeed() {
     setModeConfirm(null);
   };
 
-  // Keyword scan — keep alert until manually dismissed
+  // Keyword scan — keep highest-severity hit, update if new critical comes in
   useEffect(() => {
     for (const tx of transcripts.slice(0, 3)) {
-      const hit = detectKeyword(tx.transcript);
-      if (hit) { setKeyword(prev => prev ?? hit); return; }
+      const hit = detectKeyword(tx.transcript, keywordList);
+      if (hit) {
+        setKeywordHit(prev => {
+          if (!prev) return hit;
+          // Upgrade severity if new hit is higher
+          const prevIdx = LEVEL_ORDER.indexOf(prev.level);
+          const hitIdx  = LEVEL_ORDER.indexOf(hit.level);
+          return hitIdx < prevIdx ? hit : prev;
+        });
+        return;
+      }
     }
-  }, [transcripts]);
+  }, [transcripts, keywordList]);
 
   const startIncident = async () => {
     if (!incidentForm.name.trim()) return;
@@ -989,6 +1150,9 @@ function FireBoxFeed() {
             <button onClick={() => setShowSaveAudio(true)} className="fb-btn" style={{ padding: "5px 10px", border: "1px solid #1a2a3a", background: "transparent", color: "#4a8aaa", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 12, whiteSpace: "nowrap" }}>
               💾 Save
             </button>
+            <button onClick={() => setShowKeywordMgr(true)} className="fb-btn" style={{ padding: "5px 10px", border: `1px solid ${keywordHit ? ALERT_LEVELS[keywordHit.level].border : "#1a2a1a"}`, background: keywordHit ? ALERT_LEVELS[keywordHit.level].bg : "transparent", color: keywordHit ? ALERT_LEVELS[keywordHit.level].color : "#5a7a5a", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 12, whiteSpace: "nowrap" }}>
+              🔔 Alerts
+            </button>
             <button onClick={() => setCompose({})} className="fb-btn" style={{ padding: "5px 10px", border: "1px solid #1a3a1a", background: "transparent", color: "#4a8a4a", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 12, whiteSpace: "nowrap" }}>
               📡 Mesh
             </button>
@@ -1004,33 +1168,43 @@ function FireBoxFeed() {
       </header>
 
       {/* ── Keyword alert — persistent until dismissed ── */}
-      {keyword && (
-        <div style={{
-          background: "#3a0000", borderBottom: "2px solid #ff000060",
-          padding: "10px 16px", display: "flex", alignItems: "center", justifyContent: "space-between",
-          animation: "alertPulse 1.5s ease-in-out infinite",
-          flexShrink: 0,
-        }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <span style={{ fontSize: 20 }}>🚨</span>
-            <div>
-              <div style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: 1, color: "#ff6b6b" }}>
-                KEYWORD DETECTED: {keyword.toUpperCase()}
-              </div>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#aa3333", marginTop: 2 }}>
-                Scroll up to find the matching transmission
+      {keywordHit && (() => {
+        const lv = ALERT_LEVELS[keywordHit.level];
+        return (
+          <div style={{
+            background: lv.bg, borderBottom: `2px solid ${lv.border}`,
+            padding: "9px 14px", display: "flex", alignItems: "center", justifyContent: "space-between",
+            animation: lv.anim, flexShrink: 0,
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <span style={{ fontSize: 18 }}>🚨</span>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, color: lv.color, padding: "2px 7px", border: `1px solid ${lv.border}`, background: "rgba(0,0,0,0.3)" }}>{lv.label}</span>
+                  <span style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 800, fontSize: 15, letterSpacing: 1, color: lv.color }}>
+                    {keywordHit.word.toUpperCase()} DETECTED
+                  </span>
+                </div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: `${lv.color}88`, marginTop: 3 }}>
+                  Scroll to top to find the matching transmission
+                </div>
               </div>
             </div>
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <button onClick={() => setShowKeywordMgr(true)} style={{
+                background: "transparent", border: `1px solid ${lv.color}40`, color: `${lv.color}99`,
+                cursor: "pointer", fontSize: 11, padding: "6px 12px",
+                fontFamily: "'JetBrains Mono',monospace",
+              }}>Edit</button>
+              <button onClick={() => setKeywordHit(null)} style={{
+                background: lv.bg, border: `1px solid ${lv.border}`, color: lv.color,
+                cursor: "pointer", fontSize: 12, padding: "6px 14px",
+                fontFamily: "'Rajdhani',sans-serif", fontWeight: 700,
+              }}>Dismiss ×</button>
+            </div>
           </div>
-          <button onClick={() => setKeyword(null)} style={{
-            background: "#5a0000", border: "1px solid #ff444460", color: "#ff8888",
-            cursor: "pointer", fontSize: 13, padding: "8px 16px",
-            fontFamily: "'Rajdhani',sans-serif", fontWeight: 700,
-          }}>
-            Dismiss ×
-          </button>
-        </div>
-      )}
+        );
+      })()}
 
       {/* ── Mesh ticker ── */}
       <MeshTicker messages={meshMessages} />
@@ -1375,6 +1549,7 @@ function FireBoxFeed() {
       {/* ── Modals ── */}
       {compose && <MeshCompose replyTo={compose.replyTo} onClose={() => setCompose(null)} />}
       {showSaveAudio && <SaveAudioModal onClose={() => setShowSaveAudio(false)} />}
+      {showKeywordMgr && <KeywordManager rules={keywordList} onChange={saveKeywords} onClose={() => setShowKeywordMgr(false)} />}
 
       {modeConfirm && (
         <ModeConfirmModal
