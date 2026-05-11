@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextRequest, NextResponse } from "next/server";
 
 const SB_URL  = "https://bdgmpkbbohbucwoiucyw.supabase.co";
