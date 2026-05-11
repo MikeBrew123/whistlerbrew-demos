@@ -938,6 +938,7 @@ function FireBoxFeed() {
   type ScanMode = "off" | "scanning" | "locked";
   const [scanMode,     setScanMode]     = useState<ScanMode>("off");
   const [scanChannels, setScanChannels] = useState<string[]>([]);
+  const [scanSelect,   setScanSelect]   = useState<Set<string>>(new Set());
   const [scanIdx,      setScanIdx]      = useState(0);
   const [scanDwell,    setScanDwell]    = useState(0);
   const DWELL_ACTIVE = 10;
@@ -950,8 +951,12 @@ function FireBoxFeed() {
   const currentScanCh = scanMode !== "off" && scanChannels.length > 0
     ? scanChannels[scanIdx % scanChannels.length] : null;
 
+  const toggleScanSelect = (ch: string) => {
+    setScanSelect(prev => { const n = new Set(prev); n.has(ch) ? n.delete(ch) : n.add(ch); return n; });
+  };
   const startScan = () => {
-    const chans = MONITORED_CHANNELS.filter(c => !c.startsWith("mesh-"));
+    const available = MONITORED_CHANNELS.filter(c => !c.startsWith("mesh-"));
+    const chans = scanSelect.size > 0 ? available.filter(c => scanSelect.has(c)) : available;
     if (!chans.length) return;
     setScanChannels(chans); setScanIdx(0); setScanMode("scanning");
     setFilter("all");
@@ -1384,12 +1389,37 @@ function FireBoxFeed() {
           {/* ── Scanner ── */}
           <div style={{ padding: "8px 10px", borderBottom: "1px solid #0e1a0e" }}>
             {scanMode === "off" ? (
-              <button onClick={startScan} className="fb-btn" style={{
-                width: "100%", padding: "7px 0", minHeight: 34,
-                border: "1px solid #1a3a1a", background: "transparent",
-                color: "#4a8a4a", cursor: "pointer",
-                fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10, letterSpacing: 1,
-              }}>⟳ SCAN</button>
+              <div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a", letterSpacing: 1, marginBottom: 6 }}>SCAN CHANNELS</div>
+                {MONITORED_CHANNELS.filter(c => !c.startsWith("mesh-")).map(c => {
+                  const s = ch(c); const sel = scanSelect.size === 0 || scanSelect.has(c);
+                  return (
+                    <div key={c} onClick={() => toggleScanSelect(c)}
+                      style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 0", cursor: "pointer", opacity: sel ? 1 : 0.35 }}>
+                      <div style={{ width: 10, height: 10, borderRadius: 2, border: `1px solid ${s.color}`,
+                        background: sel ? s.color : "transparent", flexShrink: 0, transition: "background 0.15s" }} />
+                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, color: s.color }}>{s.code}</span>
+                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{s.label}</span>
+                    </div>
+                  );
+                })}
+                <div style={{ display: "flex", gap: 5, marginTop: 8 }}>
+                  {scanSelect.size > 0 && (
+                    <button onClick={() => setScanSelect(new Set())} className="fb-btn" style={{
+                      padding: "5px 0", flex: 1,
+                      border: "1px solid #1a2a1a", background: "transparent",
+                      color: "#3a5a3a", cursor: "pointer",
+                      fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 9,
+                    }}>ALL</button>
+                  )}
+                  <button onClick={startScan} className="fb-btn" style={{
+                    flex: 3, padding: "7px 0",
+                    border: "1px solid #1a3a1a", background: "transparent",
+                    color: "#4a8a4a", cursor: "pointer",
+                    fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10, letterSpacing: 1,
+                  }}>⟳ SCAN</button>
+                </div>
+              </div>
             ) : scanMode === "scanning" ? (
               <div>
                 <div style={{ display: "flex", gap: 5, marginBottom: 7 }}>
