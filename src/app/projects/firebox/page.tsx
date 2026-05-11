@@ -933,6 +933,65 @@ function FireBoxFeed() {
   const [modeSending,    setModeSending]    = useState(false);
   const [modeConfirm,    setModeConfirm]    = useState<"home" | "deployment" | null>(null);
   const [showSaveAudio,  setShowSaveAudio]  = useState(false);
+
+  // ── Scanner ────────────────────────────────────────────────────────────────
+  type ScanMode = "off" | "scanning" | "locked";
+  const [scanMode,     setScanMode]     = useState<ScanMode>("off");
+  const [scanChannels, setScanChannels] = useState<string[]>([]);
+  const [scanIdx,      setScanIdx]      = useState(0);
+  const [scanDwell,    setScanDwell]    = useState(0);
+  const DWELL_ACTIVE = 10;
+  const DWELL_QUIET  = 3;
+  const transcriptsRef = useRef<Transcript[]>([]);
+  const scanAudioRef   = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => { transcriptsRef.current = transcripts; }, [transcripts]);
+
+  const currentScanCh = scanMode !== "off" && scanChannels.length > 0
+    ? scanChannels[scanIdx % scanChannels.length] : null;
+
+  const startScan = () => {
+    const chans = MONITORED_CHANNELS.filter(c => !c.startsWith("mesh-"));
+    if (!chans.length) return;
+    setScanChannels(chans); setScanIdx(0); setScanMode("scanning");
+    setFilter("all");
+  };
+  const stopScan   = () => { setScanMode("off"); setScanChannels([]); };
+  const lockScan   = () => { setScanMode("locked"); if (currentScanCh) setFilter(currentScanCh); };
+  const resumeScan = () => { setScanMode("scanning"); setFilter("all"); };
+
+  // Scan engine — runs when scanning, advances channel after dwell
+  useEffect(() => {
+    if (scanMode !== "scanning" || scanChannels.length === 0) return;
+    const channel = scanChannels[scanIdx % scanChannels.length];
+    const hasActivity = transcriptsRef.current.some(t =>
+      t.channel === channel && Date.now() - new Date(t.timestamp).getTime() < 120000
+    );
+    let remaining = hasActivity ? DWELL_ACTIVE : DWELL_QUIET;
+    setScanDwell(remaining);
+    const timer = setInterval(() => {
+      const fresh = transcriptsRef.current.some(t =>
+        t.channel === channel && Date.now() - new Date(t.timestamp).getTime() < 30000
+      );
+      if (fresh && remaining < DWELL_ACTIVE) remaining = DWELL_ACTIVE;
+      remaining--;
+      setScanDwell(Math.max(0, remaining));
+      if (remaining <= 0) { clearInterval(timer); setScanIdx(p => (p + 1) % scanChannels.length); }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [scanMode, scanIdx, scanChannels]);
+
+  // Audio follows scan
+  useEffect(() => {
+    if (!scanAudioRef.current) return;
+    if (scanMode === "off" || !currentScanCh) { scanAudioRef.current.pause(); return; }
+    const url = `https://firebox.tail4bb545.ts.net/${currentScanCh}.mp3`;
+    if (scanAudioRef.current.src !== url) {
+      scanAudioRef.current.src = url;
+      scanAudioRef.current.play().catch(() => {});
+    }
+  }, [scanMode, currentScanCh]);
+
   // showMore removed — controls now visible in header
   // Per-channel CTCSS tones, persisted in localStorage
   const [channelTones, setChannelTones] = useState<Record<string, string>>(() => {
@@ -1320,6 +1379,72 @@ function FireBoxFeed() {
                 }}
               >🔥 DEPL</button>
             </div>
+          </div>
+
+          {/* ── Scanner ── */}
+          <div style={{ padding: "8px 10px", borderBottom: "1px solid #0e1a0e" }}>
+            {scanMode === "off" ? (
+              <button onClick={startScan} className="fb-btn" style={{
+                width: "100%", padding: "7px 0", minHeight: 34,
+                border: "1px solid #1a3a1a", background: "transparent",
+                color: "#4a8a4a", cursor: "pointer",
+                fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10, letterSpacing: 1,
+              }}>⟳ SCAN</button>
+            ) : scanMode === "scanning" ? (
+              <div>
+                <div style={{ display: "flex", gap: 5, marginBottom: 7 }}>
+                  <button onClick={lockScan} className="fb-btn" style={{
+                    flex: 1, padding: "6px 0",
+                    border: "1px solid #f59e0b60", background: "#130d00",
+                    color: "#f59e0b", cursor: "pointer",
+                    fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10,
+                  }}>🔒 LOCK</button>
+                  <button onClick={stopScan} className="fb-btn" style={{
+                    flex: 1, padding: "6px 0",
+                    border: "1px solid #2a2a2a", background: "transparent",
+                    color: "#5a5a5a", cursor: "pointer",
+                    fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10,
+                  }}>■ STOP</button>
+                </div>
+                {currentScanCh && (() => { const s = ch(currentScanCh); return (
+                  <div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 5 }}>
+                      <span style={{ width: 7, height: 7, borderRadius: "50%", background: s.color, animation: "pulse 0.8s ease-in-out infinite", flexShrink: 0 }} />
+                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: s.color }}>{s.code}</span>
+                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a", marginLeft: "auto" }}>
+                        {scanDwell}s · {(scanIdx % scanChannels.length) + 1}/{scanChannels.length}
+                      </span>
+                    </div>
+                    <div style={{ height: 2, background: "#0e1a0e", borderRadius: 1 }}>
+                      <div style={{ height: 2, background: s.color, borderRadius: 1, transition: "width 1s linear",
+                        width: `${(scanDwell / (transcriptsRef.current.some(t => t.channel === currentScanCh && Date.now() - new Date(t.timestamp).getTime() < 120000) ? DWELL_ACTIVE : DWELL_QUIET)) * 100}%` }} />
+                    </div>
+                  </div>
+                ); })()}
+              </div>
+            ) : ( /* locked */
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 7 }}>
+                  <span style={{ fontSize: 12 }}>🔒</span>
+                  {currentScanCh && <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: ch(currentScanCh).color }}>{ch(currentScanCh).code}</span>}
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#5a4a2a", marginLeft: "auto" }}>LOCKED</span>
+                </div>
+                <div style={{ display: "flex", gap: 5 }}>
+                  <button onClick={resumeScan} className="fb-btn" style={{
+                    flex: 1, padding: "6px 0",
+                    border: "1px solid #1a3a1a", background: "#060e06",
+                    color: "#39d353", cursor: "pointer",
+                    fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10,
+                  }}>▶ RESUME</button>
+                  <button onClick={stopScan} className="fb-btn" style={{
+                    flex: 1, padding: "6px 0",
+                    border: "1px solid #2a2a2a", background: "transparent",
+                    color: "#5a5a5a", cursor: "pointer",
+                    fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10,
+                  }}>■ STOP</button>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* ALL */}
@@ -1769,6 +1894,7 @@ function FireBoxFeed() {
         </div>
       )}
 
+      <audio ref={scanAudioRef} style={{ display: "none" }} preload="none" />
     </div>
   );
 }
