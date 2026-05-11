@@ -95,7 +95,7 @@ function ch(channel: string) {
   return CHANNEL_STYLE[channel] ?? { label: channel, code: channel.toUpperCase(), color: "#666" };
 }
 
-function formatTime(iso: string) {
+function formatTime(iso: string, showSecs = false) {
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return iso;
@@ -105,10 +105,11 @@ function formatTime(iso: string) {
                  && d.getDate()     === now.getDate();
     const hh = String(d.getHours()).padStart(2,"0");
     const mm = String(d.getMinutes()).padStart(2,"0");
-    if (isToday) return `${hh}:${mm}`;
+    const ss = String(d.getSeconds()).padStart(2,"0");
+    if (isToday) return showSecs ? `${hh}:${mm}:${ss}` : `${hh}:${mm}`;
     const mon = String(d.getMonth() + 1).padStart(2,"0");
     const day = String(d.getDate()).padStart(2,"0");
-    return `${mon}-${day}  ${hh}:${mm}`;
+    return `${mon}-${day} ${hh}:${mm}`;
   } catch { return iso; }
 }
 
@@ -728,7 +729,7 @@ function FireBoxFeed() {
   const [modeSending,    setModeSending]    = useState(false);
   const [modeConfirm,    setModeConfirm]    = useState<"home" | "deployment" | null>(null);
   const [showSaveAudio,  setShowSaveAudio]  = useState(false);
-  const [showMore,       setShowMore]       = useState(false);
+  // showMore removed — controls now visible in header
   // Per-channel CTCSS tones, persisted in localStorage
   const [channelTones, setChannelTones] = useState<Record<string, string>>(() => {
     try { return JSON.parse(localStorage.getItem("firebox_tones") ?? "{}"); } catch { return {}; }
@@ -976,40 +977,28 @@ function FireBoxFeed() {
           </div>
 
           {/* Right */}
-          <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
-            {activeIncident && (
-              <button onClick={() => setShowIncident(true)} className="fb-btn" style={{ padding: "6px 12px", border: "1px solid #f0a50060", background: "#1a0e00", color: "#f0a500", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: 0.5, whiteSpace: "nowrap" }}>
-                ⚡ {activeIncident.name.slice(0, 14).toUpperCase()}
-              </button>
-            )}
-            <Link href="/projects/firebox/map" style={{ padding: "6px 12px", border: "1px solid #1a3a3a", background: "#060e10", color: "#38bdf8", textDecoration: "none", fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 13, display: "inline-block", whiteSpace: "nowrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 5, flexShrink: 0 }}>
+            <button onClick={() => setShowIncident(true)} className="fb-btn" style={{
+              padding: "5px 10px", border: `1px solid ${activeIncident ? "#f0a50060" : "#1a2a1a"}`,
+              background: activeIncident ? "#1a0e00" : "transparent",
+              color: activeIncident ? "#f0a500" : "#3a5a3a",
+              cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 12, letterSpacing: 0.5, whiteSpace: "nowrap",
+            }}>
+              {activeIncident ? `⚡ ${activeIncident.name.slice(0, 12).toUpperCase()}` : "⚡ Incident"}
+            </button>
+            <button onClick={() => setShowSaveAudio(true)} className="fb-btn" style={{ padding: "5px 10px", border: "1px solid #1a2a3a", background: "transparent", color: "#4a8aaa", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 12, whiteSpace: "nowrap" }}>
+              💾 Save
+            </button>
+            <button onClick={() => setCompose({})} className="fb-btn" style={{ padding: "5px 10px", border: "1px solid #1a3a1a", background: "transparent", color: "#4a8a4a", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 12, whiteSpace: "nowrap" }}>
+              📡 Mesh
+            </button>
+            <Link href="/projects/firebox/map" style={{ padding: "5px 10px", border: "1px solid #1a3a3a", background: "#060e10", color: "#38bdf8", textDecoration: "none", fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 12, display: "inline-block", whiteSpace: "nowrap" }}>
               🗺 Map
             </Link>
-            <button onClick={() => live ? setLive(false) : setLive(true)} className="fb-btn" style={{ padding: "6px 12px", border: "1px solid #1a2a1a", background: "transparent", color: live ? "#4a7a4a" : "#39d353", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 13, whiteSpace: "nowrap" }}>
-              {live ? "⏸ Pause" : "▶ Resume"}
+            <button onClick={() => setLive(v => !v)} className="fb-btn" style={{ padding: "5px 10px", border: "1px solid #1a2a1a", background: "transparent", color: live ? "#4a7a4a" : "#39d353", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 12, whiteSpace: "nowrap" }}>
+              {live ? "⏸" : "▶"}
             </button>
-            {/* More menu */}
-            <div style={{ position: "relative" }}>
-              <button onClick={() => setShowMore(v => !v)} className="fb-btn" style={{ padding: "6px 12px", border: "1px solid #1a2a1a", background: showMore ? "#0a140a" : "transparent", color: "#5a8a5a", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 14 }}>
-                ⋯
-              </button>
-              {showMore && (
-                <div style={{ position: "absolute", top: "calc(100% + 6px)", right: 0, background: "#080e08", border: "1px solid #1a2a1a", zIndex: 50, minWidth: 180 }}>
-                  <button onClick={() => { setShowIncident(true); setShowMore(false); }} className="fb-btn" style={{ display: "block", width: "100%", padding: "11px 16px", border: "none", borderBottom: "1px solid #0e1a0e", background: "transparent", color: "#c8e8b0", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 14, textAlign: "left" }}>
-                    ⚡ Manage Incident
-                  </button>
-                  <button onClick={() => { setShowSaveAudio(true); setShowMore(false); }} className="fb-btn" style={{ display: "block", width: "100%", padding: "11px 16px", border: "none", borderBottom: "1px solid #0e1a0e", background: "transparent", color: "#7dd3fc", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 14, textAlign: "left" }}>
-                    💾 Save Audio Recording
-                  </button>
-                  <button onClick={() => { setCompose({}); setShowMore(false); }} className="fb-btn" style={{ display: "block", width: "100%", padding: "11px 16px", border: "none", borderBottom: "1px solid #0e1a0e", background: "transparent", color: "#39d353", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 14, textAlign: "left" }}>
-                    📡 Send Mesh Message
-                  </button>
-                  <button onClick={() => { document.documentElement.requestFullscreen?.(); setShowMore(false); }} className="fb-btn" style={{ display: "block", width: "100%", padding: "11px 16px", border: "none", background: "transparent", color: "#6a9a6a", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 14, textAlign: "left" }}>
-                    ⛶ Fullscreen
-                  </button>
-                </div>
-              )}
-            </div>
+            <button onClick={() => document.documentElement.requestFullscreen?.()} className="fb-btn" style={{ padding: "5px 8px", border: "1px solid #1a2a1a", background: "transparent", color: "#3a5a3a", cursor: "pointer", fontSize: 13 }} title="Fullscreen">⛶</button>
           </div>
         </div>
       </header>
@@ -1056,82 +1045,83 @@ function FireBoxFeed() {
         <aside style={{ width: 210, flexShrink: 0, background: "#050a05", borderRight: "1px solid #0e1a0e", display: "flex", flexDirection: "column", overflowY: "auto" }}>
 
           {/* Mode toggle */}
-          <div style={{ padding: "10px 10px 8px", borderBottom: "1px solid #0e1a0e" }}>
-            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#3a6a3a", letterSpacing: 1, marginBottom: 8 }}>RADIO MODE</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+          <div style={{ padding: "8px 10px 6px", borderBottom: "1px solid #0e1a0e" }}>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a5a2a", letterSpacing: 2, marginBottom: 6 }}>RADIO MODE</div>
+            <div style={{ display: "flex", gap: 5 }}>
               <button
                 onClick={() => activeMode !== "home" && !modeSending && setModeConfirm("home")}
                 disabled={modeSending}
                 className="fb-btn"
                 style={{
-                  width: "100%", padding: "9px 0", minHeight: 40,
+                  flex: 1, padding: "7px 4px", minHeight: 36,
                   border: `2px solid ${activeMode === "home" ? "#39d353" : "#1a2a1a"}`,
                   background: activeMode === "home" ? "#081408" : "transparent",
                   color: activeMode === "home" ? "#39d353" : "#3a5a3a",
-                  fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: 1,
+                  fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10, letterSpacing: 0.5,
                   cursor: activeMode === "home" ? "default" : "pointer",
                   opacity: modeSending ? 0.5 : 1,
                 }}
-              >
-                🏔 WHISTLER
-              </button>
+              >🏔 WSLR</button>
               <button
                 onClick={() => activeMode !== "deployment" && !modeSending && setModeConfirm("deployment")}
                 disabled={modeSending}
                 className="fb-btn"
                 style={{
-                  width: "100%", padding: "9px 0", minHeight: 40,
+                  flex: 1, padding: "7px 4px", minHeight: 36,
                   border: `2px solid ${activeMode === "deployment" ? "#fb923c" : "#1a2a1a"}`,
                   background: activeMode === "deployment" ? "#1a0800" : "transparent",
                   color: activeMode === "deployment" ? "#fb923c" : "#3a5a3a",
-                  fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: 1,
+                  fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10, letterSpacing: 0.5,
                   cursor: activeMode === "deployment" ? "default" : "pointer",
                   opacity: modeSending ? 0.5 : 1,
                 }}
-              >
-                🔥 DEPLOY
-              </button>
+              >🔥 DEPL</button>
             </div>
           </div>
 
           {/* ALL */}
           {(() => { const active = channelFilter === "all"; return (
             <button onClick={() => setFilter("all")} className="fb-tab" style={{
-              width: "100%", minHeight: 42, padding: "0 12px", border: "none", cursor: "pointer",
+              width: "100%", minHeight: 38, padding: "0 10px", border: "none", cursor: "pointer",
               borderLeft: `3px solid ${active ? "#4a8a4a" : "transparent"}`,
               background: active ? "#0a120a" : "transparent",
-              display: "flex", alignItems: "center", gap: 10, textAlign: "left",
+              display: "flex", alignItems: "center", gap: 8, textAlign: "left",
             }}>
-              <span style={{ width: 8, height: 8, borderRadius: "50%", background: transcripts.length > 0 ? "#39d353" : "#1a2a1a", flexShrink: 0 }} />
-              <span style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: active ? 700 : 600, fontSize: 14, color: active ? "#7aba7a" : "#3a6a3a" }}>All Channels</span>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: transcripts.length > 0 ? "#39d353" : "#1a2a1a", flexShrink: 0 }} />
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: active ? 700 : 400, fontSize: 11, color: active ? "#7aba7a" : "#3a6a3a", letterSpacing: 0.5 }}>ALL CHANNELS</span>
+              {transcripts.length > 0 && <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#2a5a2a" }}>{transcripts.length}</span>}
             </button>
           ); })()}
 
           {/* Active channels section */}
-          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#3a6a3a", letterSpacing: 1, padding: "10px 12px 4px", borderTop: "1px solid #0b160b" }}>
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a5a2a", letterSpacing: 2, padding: "8px 10px 3px", borderTop: "1px solid #0b160b" }}>
             {activeMode === "deployment" ? "DEPLOYMENT" : "WHISTLER"}
           </div>
           {MONITORED_CHANNELS.map(c => {
             const s = ch(c); const active = channelFilter === c;
             const hasActivity = transcripts.some(t => t.channel === c);
+            const chCount = transcripts.filter(t => t.channel === c).length;
             const tone = channelTones[c] ?? null;
             const isRepeater = COLOR_NRS_CHANNELS.has(c);
             return (
               <button key={c} onClick={() => setFilter(c)} className="fb-tab" style={{
-                width: "100%", minHeight: 44, padding: "0 12px", border: "none", cursor: "pointer",
+                width: "100%", minHeight: 40, padding: "4px 10px", border: "none", cursor: "pointer",
                 borderLeft: `3px solid ${active ? s.color : "transparent"}`,
                 background: active ? `${s.color}14` : "transparent",
-                display: "flex", alignItems: "center", gap: 8, textAlign: "left",
+                display: "flex", alignItems: "center", gap: 7, textAlign: "left",
                 transition: "all 0.15s",
               }}>
                 <span style={{
-                  width: 8, height: 8, borderRadius: "50%", flexShrink: 0,
+                  width: 7, height: 7, borderRadius: "50%", flexShrink: 0,
                   background: hasActivity ? s.color : "#1a2a1a",
                   animation: hasActivity ? "pulse 2s ease-in-out infinite" : "none",
                 }} />
                 <div style={{ flex: 1, overflow: "hidden", minWidth: 0 }}>
-                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: active ? s.color : "#4a8a4a", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{s.code}</div>
-                  <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 12, color: active ? `${s.color}cc` : "#3a5a3a", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{s.label}</div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 5 }}>
+                    <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, color: active ? s.color : "#4a7a4a", letterSpacing: 0.5, flexShrink: 0 }}>{s.code}</span>
+                    {chCount > 0 && <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a5a2a" }}>{chCount}</span>}
+                  </div>
+                  <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 11, color: active ? `${s.color}cc` : "#3a5a3a", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", lineHeight: 1.2 }}>{s.label}</div>
                 </div>
                 {isRepeater && (
                   <ToneBadge channel={c} tone={tone} onCycle={cycleTone} />
@@ -1141,8 +1131,8 @@ function FireBoxFeed() {
           })}
 
           {/* Future channels */}
-          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#2a3a2a", letterSpacing: 1, padding: "10px 12px 4px", marginTop: 4, borderTop: "1px solid #0b160b" }}>
-            FUTURE — NOT YET INSTALLED
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#1e2e1e", letterSpacing: 2, padding: "8px 10px 3px", marginTop: 2, borderTop: "1px solid #0b160b" }}>
+            FUTURE — NOT INSTALLED
           </div>
           {PLANNED_CHANNELS.map(c => {
             const s = ch(c); const active = channelFilter === c;
@@ -1167,7 +1157,7 @@ function FireBoxFeed() {
           })}
 
           {/* Mesh */}
-          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#3a6a3a", letterSpacing: 1, padding: "10px 12px 4px", marginTop: 4, borderTop: "1px solid #0b160b" }}>MESH</div>
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#2a5a2a", letterSpacing: 2, padding: "8px 10px 3px", marginTop: 2, borderTop: "1px solid #0b160b" }}>MESH</div>
           {(["mesh-text", "mesh-weather"] as string[]).map(c => {
             const s = ch(c); const active = channelFilter === c;
             const hasMesh = meshMessages.some(m => m.channel === c);
@@ -1287,51 +1277,58 @@ function FireBoxFeed() {
                 const isWx   = tx.channel === "mesh-weather";
                 const displaySpeaker = resolveName(tx.speaker);
                 const isDisp = displaySpeaker?.toLowerCase() === "dispatch";
-                const speakerLabel = isDisp ? "Dispatch" : (displaySpeaker && displaySpeaker !== "Unknown" ? displaySpeaker.toUpperCase() : null);
+                const speakerLabel = isDisp ? "DISP" : (displaySpeaker && displaySpeaker !== "Unknown" ? displaySpeaker.toUpperCase() : null);
+                const hasQuality = tx.signal != null || tx.readability != null;
 
                 return (
                   <div key={`${tx.timestamp}-${i}`} className="fb-card" style={{
                     position: "relative",
                     background: isMesh ? "#090f09" : "#080d08",
                     borderLeft: `3px solid ${s.color}`,
-                    borderBottom: `1px solid ${isMesh ? `${s.color}20` : "#0e1a0e"}`,
+                    borderBottom: `1px solid ${isMesh ? `${s.color}20` : "#0d180d"}`,
                     borderTop: "1px solid transparent",
                     borderRight: "1px solid transparent",
-                    padding: "10px 14px",
+                    padding: "7px 12px",
                     animationDelay: `${Math.min(i * 0.03, 0.3)}s`,
                   }}>
-                    {/* Row 1: time, channel, speaker */}
-                    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 7 }}>
-                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: "#5a9a5a", letterSpacing: 0.5, flexShrink: 0 }}>
-                        {formatTime(tx.timestamp)}
+                    {/* Row 1: time · code · channel · speaker · quality */}
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5, flexWrap: "nowrap" }}>
+                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: "#4a8a4a", letterSpacing: 0.5, flexShrink: 0 }}>
+                        {formatTime(tx.timestamp, true)}
                       </span>
-                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: s.color, letterSpacing: 0.5, flexShrink: 0 }}>
-                        {isMesh && <span style={{ marginRight: 5 }}>{isWx ? "🌡" : "📡"}</span>}
-                        {s.label}
+                      <span style={{ width: 1, height: 10, background: "#1a2a1a", flexShrink: 0 }} />
+                      <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, color: s.color, letterSpacing: 0.5, flexShrink: 0 }}>
+                        {isMesh ? (isWx ? "🌡" : "📡") : null}{s.code}
                       </span>
+                      {channelFilter === "all" && (
+                        <span style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 11, color: `${s.color}99`, flexShrink: 0, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          {s.label}
+                        </span>
+                      )}
                       {speakerLabel && (
                         <span style={{
-                          fontFamily: "'JetBrains Mono',monospace", fontSize: 11,
+                          fontFamily: "'JetBrains Mono',monospace", fontSize: 10,
                           color: isDisp ? "#64b5f6" : "#f59e0b",
-                          padding: "1px 6px",
-                          background: isDisp ? "#0a1420" : "#1a1000",
-                          border: `1px solid ${isDisp ? "#64b5f620" : "#f59e0b20"}`,
+                          padding: "0px 5px",
+                          background: isDisp ? "#08131e" : "#130d00",
+                          border: `1px solid ${isDisp ? "#64b5f628" : "#f59e0b28"}`,
+                          flexShrink: 0,
                         }}>
                           {speakerLabel}
                         </span>
                       )}
-                      {(tx.signal || tx.readability) && (
-                        <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#3a6a3a" }}>
-                          {tx.signal ?? "–"}×{tx.readability ?? "–"}
+                      {hasQuality && (
+                        <span style={{ marginLeft: "auto", fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#2a5a2a", flexShrink: 0 }} title="Signal × Readability (ITU scale 1–5)">
+                          S{tx.signal ?? "—"}·R{tx.readability ?? "—"}
                         </span>
                       )}
                     </div>
 
                     {/* Transcript */}
                     <p style={{
-                      fontFamily: "'Barlow Condensed',sans-serif", fontSize: 16, fontWeight: 500,
-                      lineHeight: 1.5, margin: 0,
-                      color: isMesh ? `${s.color}e0` : "#b0d098",
+                      fontFamily: "'Barlow Condensed',sans-serif", fontSize: 15, fontWeight: 500,
+                      lineHeight: 1.45, margin: 0,
+                      color: isMesh ? `${s.color}e0` : "#aacf90",
                     }}>{tx.transcript}</p>
 
                     {/* Reply (mesh only) */}
@@ -1340,9 +1337,9 @@ function FireBoxFeed() {
                         onClick={() => setCompose({ replyTo: displaySpeaker ?? undefined })}
                         className="fb-reply"
                         style={{
-                          marginTop: 10, padding: "4px 14px",
+                          marginTop: 8, padding: "3px 12px",
                           border: "1px solid #0e2e0e", background: "transparent",
-                          color: "#2a5a2a", fontSize: 12, cursor: "pointer",
+                          color: "#2a5a2a", fontSize: 11, cursor: "pointer",
                           fontFamily: "'Rajdhani',sans-serif", letterSpacing: 0.5,
                         }}
                       >↩ Reply</button>
@@ -1500,10 +1497,6 @@ function FireBoxFeed() {
         </div>
       )}
 
-      {/* Close More menu on outside click */}
-      {showMore && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 40 }} onClick={() => setShowMore(false)} />
-      )}
     </div>
   );
 }
