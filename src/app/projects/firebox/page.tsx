@@ -876,6 +876,9 @@ function FireBoxFeed() {
     setKeywordList(rules);
     localStorage.setItem("firebox_keywords", JSON.stringify(rules));
   };
+  type AlertLogEntry = { rule: KeywordRule; channel: string; timestamp: string; filename: string };
+  const [alertLog,       setAlertLog]       = useState<AlertLogEntry[]>([]);
+  const seenAlertFiles = useRef<Set<string>>(new Set());
   const [incidentForm,   setIncidentForm]   = useState({ name: "", start_at: "" });
   const [activeMode,     setActiveMode]     = useState<"home" | "deployment">("home");
   const [modeSending,    setModeSending]    = useState(false);
@@ -1005,20 +1008,27 @@ function FireBoxFeed() {
     setModeConfirm(null);
   };
 
-  // Keyword scan — keep highest-severity hit, update if new critical comes in
+  // Keyword scan — log every new hit, surface highest severity in banner
   useEffect(() => {
-    for (const tx of transcripts.slice(0, 3)) {
+    const newEntries: AlertLogEntry[] = [];
+    let topHit: KeywordRule | null = null;
+    for (const tx of transcripts.slice(0, 30)) {
       const hit = detectKeyword(tx.transcript, keywordList);
-      if (hit) {
-        setKeywordHit(prev => {
-          if (!prev) return hit;
-          // Upgrade severity if new hit is higher
-          const prevIdx = LEVEL_ORDER.indexOf(prev.level);
-          const hitIdx  = LEVEL_ORDER.indexOf(hit.level);
-          return hitIdx < prevIdx ? hit : prev;
-        });
-        return;
+      if (!hit) continue;
+      if (!seenAlertFiles.current.has(tx.filename)) {
+        seenAlertFiles.current.add(tx.filename);
+        newEntries.push({ rule: hit, channel: tx.channel, timestamp: tx.timestamp, filename: tx.filename });
       }
+      if (!topHit || LEVEL_ORDER.indexOf(hit.level) < LEVEL_ORDER.indexOf(topHit.level)) topHit = hit;
+    }
+    if (newEntries.length > 0) {
+      setAlertLog(prev => [...newEntries, ...prev].slice(0, 30));
+    }
+    if (topHit) {
+      setKeywordHit(prev => {
+        if (!prev) return topHit;
+        return LEVEL_ORDER.indexOf(topHit!.level) < LEVEL_ORDER.indexOf(prev.level) ? topHit : prev;
+      });
     }
   }, [transcripts, keywordList]);
 
@@ -1536,6 +1546,30 @@ function FireBoxFeed() {
           </main>
         </div>
       </div>
+
+      {/* ── Alert log strip ── */}
+      {alertLog.length > 0 && (
+        <div style={{ flexShrink: 0, borderTop: "1px solid #1a0a0a", background: "#060806", maxHeight: 120, overflowY: "auto" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 14px", borderBottom: "1px solid #0e0a0e", position: "sticky", top: 0, background: "#060806", zIndex: 1 }}>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#4a2a2a", letterSpacing: 2 }}>ALERT LOG — {alertLog.length} EVENT{alertLog.length !== 1 ? "S" : ""}</span>
+            <button onClick={() => { setAlertLog([]); seenAlertFiles.current.clear(); }} className="fb-btn" style={{ background: "none", border: "none", color: "#3a2a2a", fontSize: 10, cursor: "pointer", fontFamily: "'JetBrains Mono',monospace", padding: "2px 6px" }}>CLEAR</button>
+          </div>
+          {alertLog.map((entry, i) => {
+            const lv = ALERT_LEVELS[entry.rule.level];
+            const s  = ch(entry.channel);
+            return (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "5px 14px", borderBottom: "1px solid #0a0e0a" }}>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, fontWeight: 700, color: lv.color, padding: "1px 6px", background: lv.bg, border: `1px solid ${lv.border}`, flexShrink: 0, letterSpacing: 0.5 }}>{lv.label}</span>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: lv.color, fontWeight: 700, flexShrink: 0, textTransform: "uppercase" }}>{entry.rule.word}</span>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#2a4a2a" }}>·</span>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: s.color, flexShrink: 0 }}>{s.code}</span>
+                <span style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 11, color: "#4a6a4a", flexShrink: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1 }}>{s.label}</span>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#3a5a3a", flexShrink: 0 }}>{formatTime(entry.timestamp, true)}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {/* ── Footer ── */}
       <footer style={{ flexShrink: 0, borderTop: "1px solid #0b160b", padding: "5px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
