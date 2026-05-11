@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-11T16:00:16.746Z",
+  "updated_at": "2026-05-11T22:00:16.557Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,6 +7,42 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Aerial resources shifting north as industry calls for more investment in aircraft across Europe",
+        "link": "https://wildfiretoday.com/aerial-resources-shifting-north-as-industry-calls-for-more-investment-in-aircraft-across-europe/",
+        "description": "As Europe and North America get an early taste of wildfire season 2026, the annual south to north migration of aerial firefighting resources is well underway amid European industry calls for more investment in aircraft. Australia’s McDermott Aviation has started to shift its aerial firefighting fleet to Greece, marking the company’s seventh consecutive year supporting [&#8230;]",
+        "pubDate": "Mon, 11 May 2026 05:48:07 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "El Niño and La Niña predict US wildfire severity up to a year early, NOAA research finds",
+        "link": "https://wildfiretoday.com/el-nino-and-la-nina-predict-us-wildfire-severity-up-to-a-year-early-noaa-research-finds/",
+        "description": "Recent research published by the National Oceanic and Atmospheric Administration has found that the most influential climate driver on Earth is also an accurate predictor of wildfire severity up to a year in advance. The study, published in the Journal of Geophysical Research: Atmospheres, found that the &#8220;La Niña&#8221; and &#8220;El Niño&#8221; phases of a fluctuating [&#8230;]",
+        "pubDate": "Thu, 07 May 2026 23:49:13 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Destructive wildfire types targeted under new US &#8216;BRUSH Fire Act&#8217;",
+        "link": "https://wildfiretoday.com/destructive-wildfire-types-targeted-under-new-us-brush-fire-act/",
+        "description": "A US bill aimed at improving officials&#8217; understanding of wildfires in ecosystems dominated by small plants recently cleared its first congressional hurdle. The Building Resiliency and Understanding of Shrublands to Halt Fires Act, or BRUSH Fires Act, was introduced by California Rep. Dave Min and seeks to modernize federal wildfire prevention policy, particularly in shrub-dominated [&#8230;]",
+        "pubDate": "Tue, 05 May 2026 00:00:46 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Southern states near peak fire resource allocations as &#8216;Wildfire Awareness Month&#8217; kicks off",
+        "link": "https://wildfiretoday.com/southern-states-near-peak-fire-resource-allocations-as-wildfire-awareness-month-kicks-off/",
+        "description": "May has historically been the start of wildfire season across the United States, but the signifier rings hollow for numerous communities in southern states facing already strained fire resources. Friday marked the first day of Wildfire Awareness Month, when federal, state, and local agencies focus on fire prevention, preparedness, and protecting what matters, the National [&#8230;]",
+        "pubDate": "Sun, 03 May 2026 15:50:32 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Force multipliers &#8211; understanding the Forest Service’s Administratively Determined militia",
+        "link": "https://wildfiretoday.com/force-multipliers-understanding-the-forest-services-administratively-determined-militia/",
+        "description": "By Michael Scott Hill While being briefed pre-season on changes to the wildfire staff for U.S. federal resource agencies, I realized that many people don’t understand the United States Department of Agriculture Forest Service and Department of Interior AD system. We’re called ADs but few people realize the acronym stands for Administratively Determined; we’re the [&#8230;]",
+        "pubDate": "Fri, 01 May 2026 10:32:02 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
