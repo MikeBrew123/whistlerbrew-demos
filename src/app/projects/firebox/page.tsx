@@ -679,6 +679,10 @@ function FireBoxFeed() {
   const [showSaveAudio,  setShowSaveAudio]  = useState(false);
 
   const MONITORED_CHANNELS = activeMode === "deployment" ? DEPLOYMENT_CHANNELS : HOME_CHANNELS;
+  // In deployment mode all NRS channels are transcribed; home mode only the two WFD channels
+  const transcribeChannels = activeMode === "deployment"
+    ? new Set(DEPLOYMENT_CHANNELS)
+    : new Set(["wfd-ch2-scene", "wfd-ch6-ce"]);
 
   const activeIncident = incidents.find(i => i.status === "active") ?? null;
 
@@ -881,7 +885,7 @@ function FireBoxFeed() {
 
   const isMeshFilter = channelFilter.startsWith("mesh-");
   const isPlanned    = PLANNED_CHANNELS.includes(channelFilter);
-  const isAudioOnly  = channelFilter !== "all" && !TRANSCRIBE_CHANNELS.has(channelFilter) && !isMeshFilter && !isPlanned;
+  const isAudioOnly  = channelFilter !== "all" && !transcribeChannels.has(channelFilter) && !isMeshFilter && !isPlanned;
   const filteredTx   = channelFilter === "all"
     ? transcripts
     : transcripts.filter(t => t.channel === channelFilter);
