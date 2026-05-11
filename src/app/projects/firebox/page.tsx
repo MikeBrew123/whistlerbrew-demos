@@ -272,6 +272,54 @@ function ToneBadge({
   );
 }
 
+// ── Alert detail modal (from log strip) ───────────────────────────────────────
+function AlertDetailModal({ entry, onClose }: { entry: { rule: KeywordRule; channel: string; timestamp: string; transcript: string; speaker?: string }; onClose: () => void }) {
+  const lv = ALERT_LEVELS[entry.rule.level];
+  const chInfo = CHANNEL_STYLE[entry.channel] ?? { label: entry.channel, code: entry.channel.toUpperCase(), color: "#666" };
+  const highlighted = entry.transcript.replace(
+    new RegExp(`(${entry.rule.word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi"),
+    `<mark style="background:${lv.color}33;color:${lv.color};font-weight:700;padding:0 2px">$1</mark>`
+  );
+  return (
+    <div style={{ position: "fixed", inset: 0, zIndex: 400, background: "rgba(0,0,0,0.9)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
+      onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
+      <div style={{ width: "100%", maxWidth: 540, background: "#080d08", border: `1px solid ${lv.border}` }}>
+        <div style={{ borderBottom: `1px solid ${lv.border}`, padding: "11px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", background: lv.bg }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, color: lv.color, padding: "2px 8px", border: `1px solid ${lv.border}` }}>{lv.label}</span>
+            <span style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: 2, color: lv.color }}>{entry.rule.word.toUpperCase()}</span>
+          </div>
+          <button onClick={onClose} className="fb-btn" style={{ background: "none", border: "none", color: `${lv.color}88`, fontSize: 22, cursor: "pointer" }}>×</button>
+        </div>
+        <div style={{ display: "flex", gap: 20, padding: "10px 18px", borderBottom: "1px solid #0e1a0e", background: "#060b06" }}>
+          <div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a", letterSpacing: 1, marginBottom: 3 }}>CHANNEL</div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: chInfo.color, fontWeight: 700 }}>{chInfo.code}</div>
+            <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 11, color: "#4a7a4a" }}>{chInfo.label}</div>
+          </div>
+          <div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a", letterSpacing: 1, marginBottom: 3 }}>TIME</div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#7aba7a" }}>
+              {new Date(entry.timestamp).toLocaleString("en-CA", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false })}
+            </div>
+          </div>
+          {entry.speaker && entry.speaker !== "Unknown" && (
+            <div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a", letterSpacing: 1, marginBottom: 3 }}>SPEAKER</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "#f0a500" }}>{entry.speaker.toUpperCase()}</div>
+            </div>
+          )}
+        </div>
+        <div style={{ padding: "16px 18px 22px" }}>
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#3a5a3a", letterSpacing: 1, marginBottom: 10 }}>TRANSCRIPT</div>
+          <p style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: 18, fontWeight: 500, lineHeight: 1.5, color: "#b0d098" }}
+            dangerouslySetInnerHTML={{ __html: highlighted }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Mesh compose ──────────────────────────────────────────────────────────────
 function MeshCompose({ replyTo, onClose }: { replyTo?: string; onClose: () => void }) {
   const [text, setText] = useState(replyTo ? `↩ ` : "");
@@ -876,8 +924,9 @@ function FireBoxFeed() {
     setKeywordList(rules);
     localStorage.setItem("firebox_keywords", JSON.stringify(rules));
   };
-  type AlertLogEntry = { rule: KeywordRule; channel: string; timestamp: string; filename: string };
+  type AlertLogEntry = { rule: KeywordRule; channel: string; timestamp: string; filename: string; transcript: string; speaker?: string };
   const [alertLog,       setAlertLog]       = useState<AlertLogEntry[]>([]);
+  const [alertDetail,    setAlertDetail]    = useState<AlertLogEntry | null>(null);
   const seenAlertFiles = useRef<Set<string>>(new Set());
   const [incidentForm,   setIncidentForm]   = useState({ name: "", start_at: "" });
   const [activeMode,     setActiveMode]     = useState<"home" | "deployment">("home");
@@ -1008,7 +1057,7 @@ function FireBoxFeed() {
     setModeConfirm(null);
   };
 
-  // Keyword scan — log every new hit, surface highest severity in banner
+  // Keyword scan — log every new hit, push to Supabase, surface highest severity
   useEffect(() => {
     const newEntries: AlertLogEntry[] = [];
     let topHit: KeywordRule | null = null;
@@ -1017,7 +1066,14 @@ function FireBoxFeed() {
       if (!hit) continue;
       if (!seenAlertFiles.current.has(tx.filename)) {
         seenAlertFiles.current.add(tx.filename);
-        newEntries.push({ rule: hit, channel: tx.channel, timestamp: tx.timestamp, filename: tx.filename });
+        const entry: AlertLogEntry = { rule: hit, channel: tx.channel, timestamp: tx.timestamp, filename: tx.filename, transcript: tx.transcript, speaker: tx.speaker };
+        newEntries.push(entry);
+        // Push to Supabase for permanent record
+        fetch(`${SUPABASE_URL}/rest/v1/firebox_alerts`, {
+          method: "POST",
+          headers: { ...SB_HEADERS, "Content-Type": "application/json", Prefer: "return=minimal,resolution=ignore-duplicates" },
+          body: JSON.stringify({ keyword: hit.word, level: hit.level, channel: tx.channel, transcript: tx.transcript, recorded_at: tx.timestamp, filename: tx.filename, speaker: tx.speaker ?? null }),
+        }).catch(() => {});
       }
       if (!topHit || LEVEL_ORDER.indexOf(hit.level) < LEVEL_ORDER.indexOf(topHit.level)) topHit = hit;
     }
@@ -1168,6 +1224,9 @@ function FireBoxFeed() {
             </button>
             <Link href="/projects/firebox/map" style={{ padding: "5px 10px", border: "1px solid #1a3a3a", background: "#060e10", color: "#38bdf8", textDecoration: "none", fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 12, display: "inline-block", whiteSpace: "nowrap" }}>
               🗺 Map
+            </Link>
+            <Link href="/projects/firebox/alerts" style={{ padding: "5px 10px", border: `1px solid ${alertLog.length > 0 ? "#3a2a1a" : "#1a2a1a"}`, background: alertLog.length > 0 ? "#1a0e00" : "transparent", color: alertLog.length > 0 ? "#fb923c" : "#3a5a3a", textDecoration: "none", fontFamily: "'Rajdhani',sans-serif", fontWeight: 700, fontSize: 12, display: "inline-block", whiteSpace: "nowrap" }}>
+              ⚠ History
             </Link>
             <button onClick={() => setLive(v => !v)} className="fb-btn" style={{ padding: "5px 10px", border: "1px solid #1a2a1a", background: "transparent", color: live ? "#4a7a4a" : "#39d353", cursor: "pointer", fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, fontSize: 12, whiteSpace: "nowrap" }}>
               {live ? "⏸" : "▶"}
@@ -1558,13 +1617,16 @@ function FireBoxFeed() {
             const lv = ALERT_LEVELS[entry.rule.level];
             const s  = ch(entry.channel);
             return (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "5px 14px", borderBottom: "1px solid #0a0e0a" }}>
+              <div key={i} onClick={() => setAlertDetail(entry)} style={{ display: "flex", alignItems: "center", gap: 10, padding: "5px 14px", borderBottom: "1px solid #0a0e0a", cursor: "pointer" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "#0a120a")}
+                onMouseLeave={e => (e.currentTarget.style.background = "")}>
                 <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, fontWeight: 700, color: lv.color, padding: "1px 6px", background: lv.bg, border: `1px solid ${lv.border}`, flexShrink: 0, letterSpacing: 0.5 }}>{lv.label}</span>
                 <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: lv.color, fontWeight: 700, flexShrink: 0, textTransform: "uppercase" }}>{entry.rule.word}</span>
                 <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#2a4a2a" }}>·</span>
                 <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: s.color, flexShrink: 0 }}>{s.code}</span>
                 <span style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 11, color: "#4a6a4a", flexShrink: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1 }}>{s.label}</span>
                 <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#3a5a3a", flexShrink: 0 }}>{formatTime(entry.timestamp, true)}</span>
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#2a4a2a" }}>›</span>
               </div>
             );
           })}
@@ -1584,6 +1646,7 @@ function FireBoxFeed() {
       {compose && <MeshCompose replyTo={compose.replyTo} onClose={() => setCompose(null)} />}
       {showSaveAudio && <SaveAudioModal onClose={() => setShowSaveAudio(false)} />}
       {showKeywordMgr && <KeywordManager rules={keywordList} onChange={saveKeywords} onClose={() => setShowKeywordMgr(false)} />}
+      {alertDetail && <AlertDetailModal entry={alertDetail} onClose={() => setAlertDetail(null)} />}
 
       {modeConfirm && (
         <ModeConfirmModal
