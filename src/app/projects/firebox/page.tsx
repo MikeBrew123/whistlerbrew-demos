@@ -934,7 +934,10 @@ function FireBoxFeed() {
   const [alertDetail,    setAlertDetail]    = useState<AlertLogEntry | null>(null);
   const seenAlertFiles = useRef<Set<string>>(new Set());
   const [incidentForm,   setIncidentForm]   = useState({ name: "", start_at: "" });
-  const [activeMode,     setActiveMode]     = useState<"home" | "deployment">("home");
+  const [activeMode,     setActiveMode]     = useState<"home" | "deployment">(() => {
+    if (typeof window === "undefined") return "home";
+    return (localStorage.getItem("firebox_tab") as "home" | "deployment") || "home";
+  });
   const [modeSending,    setModeSending]    = useState(false);
   const [modeConfirm,    setModeConfirm]    = useState<"home" | "deployment" | null>(null);
   const [showSaveAudio,  setShowSaveAudio]  = useState(false);
@@ -1124,7 +1127,11 @@ function FireBoxFeed() {
         const r = await fetch(`${SUPABASE_URL}/rest/v1/firebox_config?key=eq.active_mode&select=value`, { headers: SB_HEADERS });
         if (!r.ok) return;
         const rows = await r.json();
-        if (rows[0]?.value) setActiveMode(rows[0].value as "home" | "deployment");
+        if (rows[0]?.value) {
+          const m = rows[0].value as "home" | "deployment";
+          setActiveMode(m);
+          localStorage.setItem("firebox_tab", m);
+        }
       } catch {}
     };
     load(); const t = setInterval(load, 15000); return () => clearInterval(t);
@@ -1134,6 +1141,7 @@ function FireBoxFeed() {
     setModeSending(true);
     await sendMesh(`__SET_MODE__:${mode}`);
     setActiveMode(mode);
+    localStorage.setItem("firebox_tab", mode);
     setModeSending(false);
     setModeConfirm(null);
   };
