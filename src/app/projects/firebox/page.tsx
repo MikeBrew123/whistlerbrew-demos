@@ -997,9 +997,9 @@ function FireBoxFeed() {
     const el = scanAudioRef.current;
     if (!el) return;
     let url: string | null = null;
-    if (scanMode === "scanning" && currentScanCh) url = `https://firebox.tail4bb545.ts.net/${currentScanCh}.mp3`;
-    else if (scanMode === "locked" && currentScanCh) url = `https://firebox.tail4bb545.ts.net/${currentScanCh}.mp3`;
-    else if (listenCh) url = `https://firebox.tail4bb545.ts.net/${listenCh}.mp3`;
+    if (scanMode === "scanning" && currentScanCh) url = `https://stream.whistlerbrew.com/${currentScanCh}.mp3`;
+    else if (scanMode === "locked" && currentScanCh) url = `https://stream.whistlerbrew.com/${currentScanCh}.mp3`;
+    else if (listenCh) url = `https://stream.whistlerbrew.com/${listenCh}.mp3`;
     if (url) {
       if (el.src !== url) { el.src = url; }
       el.play().catch(() => {});
