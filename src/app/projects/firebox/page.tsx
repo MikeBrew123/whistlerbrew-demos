@@ -45,6 +45,9 @@ const CHANNEL_STYLE: Record<string, {
   "pep-sar1":            { label: "PEP SAR 1",           code: "SAR·1",     color: "#c084fc", dongle: "D2", tx: 149.495 },
   "pep-sar2":            { label: "PEP SAR 2",           code: "SAR·2",     color: "#a78bfa", dongle: "D2", tx: 149.525 },
   "canada-sar":          { label: "Canada-Wide SAR",     code: "SAR·CAN",   color: "#818cf8", dongle: "D2", tx: 149.080 },
+  // ── Deployment — Dongle 2 (154.8 MHz center) ──────────────────────────────────
+  "bcws-ofc1":           { label: "OFC1 Fire Coordination", code: "OFC·1",   color: "#f97316", tx: 155.460 },
+  "nrs-zinc":            { label: "NRS Zinc",             code: "NRS·ZINC",  color: "#71717a", tx: 155.850 },
   // ── Deployment simplex (NRM metal — no tone) ──────────────────────────────────
   "wfd-ch3-lost-lake":   { label: "WFD Lost Lake",       code: "WFD·CH3",   color: "#fbbf24", tx: 162.465 },
   "wfd-ch4-cheakamus":   { label: "WFD Cheakamus",       code: "WFD·CH4",   color: "#fcd34d", tx: 163.650 },
@@ -72,17 +75,19 @@ const CHANNEL_STYLE: Record<string, {
   "mesh-weather": { label: "Mesh · Weather", code: "MESH·WX",  color: "#38bdf8", icon: "🌡" },
 };
 
-const HOME_CHANNELS       = ["wfd-ch2-scene", "wfd-ch6-ce", "wb-lift-ops", "wb-ops", "wb-heliski"];
+const HOME_CHANNELS       = [
+  "wfd-ch2-scene", "wfd-ch6-ce", "wb-lift-ops", "wb-ops", "wb-heliski",
+  "wfd-ch5-garibaldi", "bcas-whistler", "pep-sar1", "pep-sar2", "canada-sar",
+];
 const DEPLOYMENT_CHANNELS = [
   "nrs-gold", "nrs-silver", "nrs-bronze", "nrs-copper",
   "nrs-red", "nrs-purple", "nrs-green", "nrs-pink",
   "nrs-blue", "nrs-maroon", "nrs-orange", "nrs-brown", "nrs-yellow",
   "nrs-grey", "nrs-black", "nrs-white",
+  "wfd-ch6-ce", "bcws-ofc1", "nrs-zinc",
 ];
 
 const PLANNED_CHANNELS = [
-  "wfd-ch5-garibaldi", "bcas-whistler",
-  "pep-sar1", "pep-sar2", "canada-sar",
   "ehs-mount-london",
 ];
 
