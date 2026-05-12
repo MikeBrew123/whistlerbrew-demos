@@ -943,6 +943,7 @@ function FireBoxFeed() {
   const [scanDwell,    setScanDwell]    = useState(0);
   const DWELL_ACTIVE = 10;
   const DWELL_QUIET  = 3;
+  const [listenCh, setListenCh] = useState<string | null>(null);
   const transcriptsRef = useRef<Transcript[]>([]);
   const scanAudioRef   = useRef<HTMLAudioElement | null>(null);
 
@@ -986,16 +987,27 @@ function FireBoxFeed() {
     return () => clearInterval(timer);
   }, [scanMode, scanIdx, scanChannels]);
 
-  // Audio follows scan
+  const tuneIn = (c: string) => {
+    if (scanMode === "scanning") return; // scanner has audio priority
+    setListenCh(prev => prev === c ? null : c);
+  };
+
+  // Audio: scanner takes priority over manual tuning
   useEffect(() => {
-    if (!scanAudioRef.current) return;
-    if (scanMode === "off" || !currentScanCh) { scanAudioRef.current.pause(); return; }
-    const url = `https://firebox.tail4bb545.ts.net/${currentScanCh}.mp3`;
-    if (scanAudioRef.current.src !== url) {
-      scanAudioRef.current.src = url;
-      scanAudioRef.current.play().catch(() => {});
+    const el = scanAudioRef.current;
+    if (!el) return;
+    let url: string | null = null;
+    if (scanMode === "scanning" && currentScanCh) url = `https://firebox.tail4bb545.ts.net/${currentScanCh}.mp3`;
+    else if (scanMode === "locked" && currentScanCh) url = `https://firebox.tail4bb545.ts.net/${currentScanCh}.mp3`;
+    else if (listenCh) url = `https://firebox.tail4bb545.ts.net/${listenCh}.mp3`;
+    if (url) {
+      if (el.src !== url) { el.src = url; }
+      el.play().catch(() => {});
+    } else {
+      el.pause();
+      el.src = "";
     }
-  }, [scanMode, currentScanCh]);
+  }, [scanMode, currentScanCh, listenCh]);
 
   // showMore removed — controls now visible in header
   // Per-channel CTCSS tones, persisted in localStorage
@@ -1524,6 +1536,19 @@ function FireBoxFeed() {
                 {isRepeater && (
                   <ToneBadge channel={c} tone={tone} onCycle={cycleTone} />
                 )}
+                <button
+                  onClick={e => { e.stopPropagation(); tuneIn(c); }}
+                  title={listenCh === c ? "Stop listening" : "Listen live"}
+                  style={{
+                    flexShrink: 0, width: 22, height: 22, border: `1px solid ${listenCh === c ? s.color : "#1a3a1a"}`,
+                    background: listenCh === c ? `${s.color}25` : "transparent",
+                    color: listenCh === c ? s.color : "#2a5a2a",
+                    borderRadius: 3, cursor: scanMode === "scanning" ? "not-allowed" : "pointer",
+                    fontSize: 8, fontFamily: "'JetBrains Mono',monospace",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    opacity: scanMode === "scanning" ? 0.4 : 1,
+                  }}
+                >{listenCh === c ? "■" : "▶"}</button>
               </button>
             );
           })}
@@ -1614,16 +1639,45 @@ function FireBoxFeed() {
                   ⚠ Tone not set — tap T? in sidebar
                 </div>
               )}
-              {/* Live audio player */}
-              {!isMeshFilter && !isPlanned && (
-                <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#2a5a2a", whiteSpace: "nowrap" }}>LIVE AUDIO</span>
-                  <audio controls src={`https://firebox.tail4bb545.ts.net/${channelFilter}.mp3`}
-                    style={{ flex: 1, height: 28, colorScheme: "dark" } as React.CSSProperties} />
-                </div>
+              {/* Live audio button */}
+              {!isMeshFilter && !isPlanned && channelFilter !== "all" && (
+                <button onClick={() => tuneIn(channelFilter)} style={{
+                  marginLeft: "auto", padding: "5px 12px",
+                  border: `1px solid ${listenCh === channelFilter ? ch(channelFilter).color : "#1a3a1a"}`,
+                  background: listenCh === channelFilter ? `${ch(channelFilter).color}20` : "transparent",
+                  color: listenCh === channelFilter ? ch(channelFilter).color : "#3a6a3a",
+                  cursor: scanMode === "scanning" ? "not-allowed" : "pointer",
+                  fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 10, letterSpacing: 1,
+                  opacity: scanMode === "scanning" ? 0.4 : 1,
+                }}>
+                  {listenCh === channelFilter ? "■ STOP" : "▶ LISTEN LIVE"}
+                </button>
               )}
             </div>
           )}
+
+          {/* NOW PLAYING strip */}
+          {(listenCh || (scanMode !== "off" && currentScanCh)) && (() => {
+            const playing = scanMode !== "off" ? currentScanCh! : listenCh!;
+            const s = ch(playing);
+            const isScanning = scanMode === "scanning";
+            return (
+              <div style={{ padding: "6px 16px", background: `${s.color}12`, borderBottom: `1px solid ${s.color}30`, display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: s.color, animation: "pulse 0.8s ease-in-out infinite", flexShrink: 0 }} />
+                <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, color: s.color }}>
+                  {isScanning ? "SCANNING" : "LIVE"} — {s.code}
+                </span>
+                <span style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 12, color: `${s.color}99` }}>{s.label}</span>
+                {!isScanning && (
+                  <button onClick={() => setListenCh(null)} style={{
+                    marginLeft: "auto", padding: "3px 10px", border: `1px solid ${s.color}40`,
+                    background: "transparent", color: "#5a5a5a", cursor: "pointer",
+                    fontFamily: "'JetBrains Mono',monospace", fontSize: 9,
+                  }}>■ STOP</button>
+                )}
+              </div>
+            );
+          })()}
 
           {/* Feed */}
           <main style={{ flex: 1, overflowY: "auto", padding: "12px 16px" }} ref={feedRef}>
