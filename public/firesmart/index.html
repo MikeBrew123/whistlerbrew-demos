@@ -1348,8 +1348,11 @@ function buildChipperFull() {
   </tr></thead>`;
   const tbody = document.createElement('tbody');
 
+  const today = new Date(); today.setHours(0,0,0,0);
   let lastMonth = '';
   CHIPPER.forEach((w, i) => {
+    const sat = new Date(w.date); sat.setDate(sat.getDate() + 3);
+    if (sat < today) return;
     const monthName = w.date.toLocaleString('en-CA', { month: 'long' });
     if (monthName !== lastMonth) {
       lastMonth = monthName;
