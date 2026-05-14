@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-14T16:00:16.555Z",
+  "updated_at": "2026-05-14T22:00:17.447Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -14,6 +14,22 @@
         "description": "Wildfire smoke has well established detrimental links to human health. It increases respiratory issues, is linked to dementia, and can even be fatal among the most vulnerable groups. But scientists are still working to uncover how wildfire smoke affects other living beings, in both the short and long term. Researchers at Oregon State University took [&#8230;]",
         "pubDate": "Thu, 14 May 2026 07:06:17 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "What could a supercharged El Nino mean for Canada?",
+        "link": "https://globalnews.ca/news/11849949/what-could-a-super-el-nino-mean-for-canada/",
+        "description": "There's growing evidence that a supercharged El Nino will develop over the next few months, spelling possible hot and dry conditions to come for large parts of Canada.",
+        "pubDate": "Thu, 14 May 2026 18:57:30 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/el-nino-sun.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "WATCH: Global Okanagan News at 5:30 p.m. &#8211; May 13",
+        "link": "https://globalnews.ca/news/9913127/watch-global-okanagan-news-at-530/",
+        "description": "Watch the online news edition of Global Okanagan at 5:30 p.m.",
+        "pubDate": "Wed, 13 May 2026 22:00:38 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/10/GLOBALNEWS_OKANAGAN-show-thumbnail-NEW.jpg?quality=65&#038;strip=all"
       }
     ]
   }
