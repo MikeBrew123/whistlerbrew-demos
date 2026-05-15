@@ -9,7 +9,7 @@
 <body>
 
 <!-- ============================================================
-     SITE HEADER (always visible)
+     SITE HEADER
      ============================================================ -->
 <header class="site-header">
   <div class="header-inner">
@@ -62,41 +62,44 @@
 
   <!-- Off-season banner (shown when active=0) -->
   <div id="offseason-banner" class="offseason-banner" style="display:none">
-    <strong>🌿 Fire season is quiet.</strong> No active fires in BC. World fire updates are below.
+    <strong>🌿 Fire season is quiet.</strong> No active fires in BC right now. World fire updates are in the feed below.
   </div>
 
-  <!-- BC Zones -->
-  <section class="section-heading">
-    <h2>British Columbia</h2>
-  </section>
+  <!-- ── TWO-COLUMN MAIN GRID ── -->
+  <div class="main-grid">
 
-  <div id="zone-grid" class="zone-grid">
-    <!-- Zone cards injected by app.js -->
-    <div class="zone-card-skeleton"></div>
-    <div class="zone-card-skeleton"></div>
-    <div class="zone-card-skeleton"></div>
-    <div class="zone-card-skeleton"></div>
-    <div class="zone-card-skeleton"></div>
-    <div class="zone-card-skeleton"></div>
-  </div>
+    <!-- LEFT: BC Zones -->
+    <div class="main-left">
+      <section class="section-heading section-heading--bc">
+        <div class="bc-heading-inner">
+          <h2>British Columbia</h2>
+          <span id="bc-active-badge" class="bc-active-badge" style="display:none"></span>
+        </div>
+      </section>
 
-  <!-- Canada -->
-  <section class="section-heading">
-    <h2>Canada</h2>
-  </section>
+      <div id="zone-grid" class="zone-grid">
+        <div class="zone-card-skeleton"></div>
+        <div class="zone-card-skeleton"></div>
+        <div class="zone-card-skeleton"></div>
+        <div class="zone-card-skeleton"></div>
+        <div class="zone-card-skeleton"></div>
+        <div class="zone-card-skeleton"></div>
+      </div>
+    </div>
 
-  <div id="canada-section" class="canada-section">
-    <!-- Injected by app.js -->
-  </div>
+    <!-- RIGHT: News Stream -->
+    <div class="main-right">
+      <section class="section-heading">
+        <h2>Latest News</h2>
+      </section>
+      <div id="news-stream" class="news-stream">
+        <div class="news-stream-skeleton"></div>
+        <div class="news-stream-skeleton"></div>
+        <div class="news-stream-skeleton"></div>
+      </div>
+    </div>
 
-  <!-- World -->
-  <section class="section-heading">
-    <h2>World</h2>
-  </section>
-
-  <div id="world-section" class="world-section">
-    <!-- Injected by app.js -->
-  </div>
+  </div><!-- /.main-grid -->
 
   <footer class="site-footer">
     <p>Data: BC Wildfire Service · CIFFC · CBC · DriveBC · EmergencyInfoBC</p>
@@ -224,6 +227,6 @@
 
 </div>
 
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
