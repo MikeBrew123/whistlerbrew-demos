@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-15T10:00:16.595Z",
+  "updated_at": "2026-05-15T16:00:19.586Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,23 +7,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Carney, Smith confirm energy announcement coming Friday",
-        "link": "https://globalnews.ca/news/11850116/carney-smith-confirm-energy-announcement-coming-friday/",
-        "description": "Prime Minister Mark Carney and Alberta Premier Danielle Smith have confirmed they'll be in Calgary on Friday to announce the next step in their landmark energy pact.",
-        "pubDate": "Thu, 14 May 2026 20:25:15 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/582f7c8ed62d3e4019eff852f341b3cd1ab3889747e2f9a93cabd2d1e4da192f_8309db.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. symposium puts spotlight on dangers associated with strangulation",
-        "link": "https://globalnews.ca/news/11849240/b-c-symposium-puts-spotlight-on-dangers-associated-with-strangulation/",
-        "description": "Charuka Maheswaran was 29 when she met the man she would later marry, have three children with, and who she said eventually beat and strangled her.",
-        "pubDate": "Thu, 14 May 2026 13:31:36 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/8154a13ab9870770b775c2bd697cd9d422b9e83d4a162ee5e79c40e13c5328e0.jpg?quality=65&#038;strip=all"
-      }
-    ]
+    "all": []
   }
 }
