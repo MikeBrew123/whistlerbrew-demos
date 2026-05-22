@@ -1,8 +1,26 @@
 {
-  "updated_at": "2026-05-22T16:00:17.993Z",
+  "updated_at": "2026-05-22T22:00:16.655Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
+    "coastal": [
+      {
+        "title": "Missing Vancouver actor now believed to be victim of a homicide",
+        "link": "https://globalnews.ca/news/11859600/missing-vancouver-actor-victim-homicide/",
+        "description": "In a release, Squamish RCMP said that on May 18, officers received a missing person report for Stewart McLean, who had not been seen since May 15.",
+        "pubDate": "Thu, 21 May 2026 21:59:22 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/stew-mclean.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Memorial Cup arrival sparks hockey fever in Kelowna",
+        "link": "https://globalnews.ca/news/11859767/memorial-cup-arrival-sparks-hockey-fever-kelowna/",
+        "description": "Businesses throughout downtown Kelowna are also ramping up preparations as Memorial Cup displays pop up across the city ahead of the tournament.",
+        "pubDate": "Fri, 22 May 2026 03:47:20 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/IMG_0908.jpeg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
