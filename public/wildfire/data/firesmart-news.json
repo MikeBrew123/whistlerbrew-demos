@@ -1,16 +1,7 @@
 {
-  "updated_at": "2026-05-25T16:00:16.736Z",
+  "updated_at": "2026-05-25T22:00:17.384Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Wildfire sparks overnight response in B.C Maple Ridge forest",
-        "link": "https://globalnews.ca/news/11861641/wildfire-b-c-maple-ridge-forest/",
-        "description": "Fire crews worked overnight to contain a wildfire in steep terrain near Maple Ridge. Officials say there is currently no threat to the public or nearby homes.",
-        "pubDate": "Sat, 23 May 2026 14:48:26 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/Screenshot_23-5-2026_104131_wildfiresituation.nrs_.gov_.bc_.ca_.jpeg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
