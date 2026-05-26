@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-26T04:00:19.276Z",
+  "updated_at": "2026-05-26T10:00:16.494Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,6 +7,14 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Canada begins its aerial firefighting build",
+        "link": "https://wildfiretoday.com/canada-begins-its-aerial-firefighting-build/",
+        "description": "Canada’s long-term pledge to build up its aerial firefighting resources has begun with the lease of 12 aircraft that will be shared nationally for the 2026 wildfire season. As reported in March, Canada has put aside $316.7 million over the next five years for the Canadian Interagency Forest Fire Centre (CIFFC) to manage a national [&#8230;]",
+        "pubDate": "Tue, 26 May 2026 06:40:33 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
