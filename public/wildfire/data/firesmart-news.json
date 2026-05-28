@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-05-28T16:00:16.968Z",
+  "updated_at": "2026-05-28T22:00:17.261Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Massive fire in Penticton as long-term care home under construction ignites",
+        "link": "https://globalnews.ca/news/11872393/massive-fire-penticton-long-term-care-home-under-construction/",
+        "description": "The city said fire and emergency crews were called to a construction site for a 48,000-square-foot, three-storey wood frame building at 453 Green Ave. at 10:12 p.m.",
+        "pubDate": "Thu, 28 May 2026 19:46:24 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/penticton-fire.png"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -23,14 +32,7 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Wildfire smoke triggers health issues in cattle before serious diseases are visible",
-        "link": "https://wildfiretoday.com/wildfire-smoke-triggers-health-issues-in-cattle-before-serious-diseases-are-visible/",
-        "description": "Wildfire smoke has well established detrimental links to human health. It increases respiratory issues, is linked to dementia, and can even be fatal among the most vulnerable groups. But scientists are still working to uncover how wildfire smoke affects other living beings, in both the short and long term. Researchers at Oregon State University took [&#8230;]",
-        "pubDate": "Thu, 14 May 2026 07:06:17 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "How bad will wildfires get this year? Officials set to share outlook",
+        "title": "B.C. will face the &#8216;highest and most sustained&#8217; 2026 wildfire risk",
         "link": "https://globalnews.ca/news/11869858/canada-2026-wildfire-outlook/",
         "description": "The outlook comes after years of intense wildfires with the 2025 wildfire season being Canada’s second-worst on record, with nearly 90,000 kilometres consumed as of September 2025.",
         "pubDate": "Thu, 28 May 2026 14:03:38 +0000",
