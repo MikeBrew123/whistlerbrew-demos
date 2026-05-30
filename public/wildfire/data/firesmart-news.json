@@ -1,17 +1,8 @@
 {
-  "updated_at": "2026-05-29T22:00:17.553Z",
+  "updated_at": "2026-05-30T04:00:16.751Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Massive fire in Penticton as long-term care home under construction ignites",
-        "link": "https://globalnews.ca/news/11872393/massive-fire-penticton-long-term-care-home-under-construction/",
-        "description": "The city said fire and emergency crews were called to a construction site for a 48,000-square-foot, three-storey wood frame building at 453 Green Ave. at 10:12 p.m.",
-        "pubDate": "Thu, 28 May 2026 19:46:24 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/penticton-fire.png"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
