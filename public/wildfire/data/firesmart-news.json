@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-31T16:00:44.135Z",
+  "updated_at": "2026-05-31T22:00:45.265Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -23,11 +23,20 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Wildfire smoke triggers health issues in cattle before serious diseases are visible",
-        "link": "https://wildfiretoday.com/wildfire-smoke-triggers-health-issues-in-cattle-before-serious-diseases-are-visible/",
-        "description": "Wildfire smoke has well established detrimental links to human health. It increases respiratory issues, is linked to dementia, and can even be fatal among the most vulnerable groups. But scientists are still working to uncover how wildfire smoke affects other living beings, in both the short and long term. Researchers at Oregon State University took [&#8230;]",
-        "pubDate": "Thu, 14 May 2026 07:06:17 +0000",
-        "source": "Wildfire Today"
+        "title": "Smoke, heat, rain and flooding; what to expect from Western weather",
+        "link": "https://globalnews.ca/news/11875565/western-canada-rain-heat-warnings-air-quality-wildfires/",
+        "description": "From B.C. to Manitoba, weather warnings are in effect through Sunday. From heavy rain and flooding, to wildfire smoke and high heat, residents are urged to plan for conditions.",
+        "pubDate": "Sun, 31 May 2026 16:52:41 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/WILDFIRE-SASK.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Environment Canada issues rainfall warnings, special statement for B.C., and Alberta",
+        "link": "https://globalnews.ca/news/11875192/alta-weather/",
+        "description": "Heavy rain is forecast across parts of Alberta and southeastern B.C. through next week, raising concerns about flooding, landslides and washouts in some communities.",
+        "pubDate": "Sat, 30 May 2026 19:32:58 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/3a8e20b603f6b45ed1692ce85c905f747bf044306fe4cc31ffc020b9d4c660bc.jpg?quality=65&#038;strip=all"
       }
     ]
   }
