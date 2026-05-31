@@ -1,21 +1,12 @@
 {
-  "updated_at": "2026-05-31T10:00:44.509Z",
+  "updated_at": "2026-05-31T16:00:44.135Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Mama black bear killed in Golden Ears park for aggressive behaviour, conservation says",
-        "link": "https://globalnews.ca/news/11874585/mama-black-bear-killed-golden-ears-park-aggressive-behaviour-conservation/",
-        "description": "The B.C. Conservation Service says it killed a sow black bear in Golden Ears Provincial Park after it was seen displaying aggressive behaviour.",
-        "pubDate": "Fri, 29 May 2026 23:38:11 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/bear-sign-golden-ears.png"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "Water pollution lasts for years after a wildfire burns, new research shows",
@@ -29,6 +20,13 @@
         "link": "https://wildfiretoday.com/canada-begins-its-aerial-firefighting-build/",
         "description": "Canada’s long-term pledge to build up its aerial firefighting resources has begun with the lease of 12 aircraft that will be shared nationally for the 2026 wildfire season. As reported in March, Canada has put aside $316.7 million over the next five years for the Canadian Interagency Forest Fire Centre (CIFFC) to manage a national [&#8230;]",
         "pubDate": "Tue, 26 May 2026 06:40:33 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Wildfire smoke triggers health issues in cattle before serious diseases are visible",
+        "link": "https://wildfiretoday.com/wildfire-smoke-triggers-health-issues-in-cattle-before-serious-diseases-are-visible/",
+        "description": "Wildfire smoke has well established detrimental links to human health. It increases respiratory issues, is linked to dementia, and can even be fatal among the most vulnerable groups. But scientists are still working to uncover how wildfire smoke affects other living beings, in both the short and long term. Researchers at Oregon State University took [&#8230;]",
+        "pubDate": "Thu, 14 May 2026 07:06:17 +0000",
         "source": "Wildfire Today"
       }
     ]
