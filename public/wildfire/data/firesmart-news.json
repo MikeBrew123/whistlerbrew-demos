@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-31T22:00:45.265Z",
+  "updated_at": "2026-06-01T04:00:44.122Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -8,6 +8,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Power agency that destroyed Pacific Northwest wildfire evidence &#8216;completely rewrites&#8217; mitigation plan for 2026",
+        "link": "https://wildfiretoday.com/power-agency-that-destroyed-pacific-northwest-wildfire-evidence-completely-rewrites-mitigation-plan-for-2026/",
+        "description": "The Pacific Northwest&#8217;s federal power agency, recently found guilty of destroying evidence that may have tied it to a disastrous 2020 wildfire, has released its latest fire mitigation plan. The Bonneville Power Administration released this year&#8217;s updated plan on Wednesday, with officials saying the plan had been &#8220;completely rewritten&#8221; to elevate the agency&#8217;s risk mode",
+        "pubDate": "Mon, 01 Jun 2026 02:39:51 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Water pollution lasts for years after a wildfire burns, new research shows",
         "link": "https://wildfiretoday.com/water-pollution-lasts-for-years-after-a-wildfire-burns-new-research-shows/",
@@ -29,14 +36,6 @@
         "pubDate": "Sun, 31 May 2026 16:52:41 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/05/WILDFIRE-SASK.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Environment Canada issues rainfall warnings, special statement for B.C., and Alberta",
-        "link": "https://globalnews.ca/news/11875192/alta-weather/",
-        "description": "Heavy rain is forecast across parts of Alberta and southeastern B.C. through next week, raising concerns about flooding, landslides and washouts in some communities.",
-        "pubDate": "Sat, 30 May 2026 19:32:58 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/3a8e20b603f6b45ed1692ce85c905f747bf044306fe4cc31ffc020b9d4c660bc.jpg?quality=65&#038;strip=all"
       }
     ]
   }
