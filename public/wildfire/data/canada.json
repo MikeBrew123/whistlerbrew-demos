@@ -82,13 +82,29 @@
   ],
   "news": [
     {
+      "title": "Wildfire that forced northern Saskatchewan residents out calmer, but still raging",
+      "url": "https://globalnews.ca/news/11876085/wildfire-that-forced-northern-saskatchewan-residents-out-calmer-but-still-raging/",
+      "source": "Global News Wildfire",
+      "published": "2026-06-01",
+      "description": "Mother Nature has calmed the flames of a wildfire that's forced out some residents of a northern Saskatchewan community.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/06/wildfire-ssak.jpg?quality=65&#038;strip=all"
+    },
+    {
+      "title": "Hammonds Plains residents call for halt to new development over wildfire concerns",
+      "url": "https://globalnews.ca/news/11876401/hammonds-plains-development-wildfire-concerns/",
+      "source": "Global News",
+      "published": "2026-06-01",
+      "description": "Three years after a wildfire destroyed more than 150 homes outside Halifax, a community group is calling for a moratorium on new developments in the area due to safety concerns.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/06/hammonds-plains-development.jpg?quality=65&#038;strip=all"
+    },
+    {
       "title": "Smoke, heat, rain and flooding; what to expect from Western weather",
       "url": "https://globalnews.ca/news/11875565/western-canada-rain-heat-warnings-air-quality-wildfires/",
-      "source": "Global News",
+      "source": "Global News Wildfire",
       "published": "2026-05-31",
       "description": "From B.C. to Manitoba, weather warnings are in effect through Sunday. From heavy rain and flooding, to wildfire smoke and high heat, residents are urged to plan for conditions.",
       "image": "https://globalnews.ca/wp-content/uploads/2026/05/WILDFIRE-SASK.jpg?quality=65&#038;strip=all"
     }
   ],
-  "last_news_update": "2026-06-01T04:00:41.244Z"
+  "last_news_update": "2026-06-01T22:00:42.689Z"
 }
