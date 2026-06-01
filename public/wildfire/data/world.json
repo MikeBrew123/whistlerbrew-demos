@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-31T16:00:39.681Z",
+  "updated_at": "2026-06-01T10:00:39.675Z",
   "fires": [
     {
       "country": "United States",
@@ -106,19 +106,17 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
+      "canada": 2,
       "world": 0
     },
     "items_out": {
       "canada": 1,
       "world_fires": 16
     },
-    "deduped": 0,
+    "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "All existing_fires retained as Active status preserved per merge rules",
-      "New Canadian entry added for Saskatchewan wildfire near Shellbrook",
-      "No world articles provided in input; all world_fires from existing_fires maintained"
+      "Deduplicated duplicate Global News article (kept one with image)"
     ]
   }
 }
