@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-01T10:00:39.675Z",
+  "updated_at": "2026-06-01T16:00:42.606Z",
   "fires": [
     {
       "country": "United States",
@@ -110,13 +110,17 @@
       "world": 0
     },
     "items_out": {
-      "canada": 1,
+      "canada": 2,
       "world_fires": 16
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated duplicate Global News article (kept one with image)"
+      "Deduplicated Saskatchewan wildfire article (duplicate from Global News and Global News Wildfire sources, kept 2026-06-01 version with image)",
+      "All existing_fires preserved as Active status",
+      "No fires removed (none contained >60 days ago)",
+      "No world articles provided in input to process",
+      "Canadian articles retained in canada_news bucket"
     ]
   }
 }
