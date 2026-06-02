@@ -1,13 +1,29 @@
 {
-  "updated_at": "2026-06-02T16:00:45.179Z",
+  "updated_at": "2026-06-02T22:00:44.668Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Chief Const. Norm Lipinski leaves Surrey Police Service",
+        "link": "https://globalnews.ca/news/11886911/chief-const-norm-lipinski-leaves-surrey-police-service/",
+        "description": "The board did not provide any further details about why Chief Const. Norm Lipinski left, but rumours had started circulating on Monday.",
+        "pubDate": "Tue, 02 Jun 2026 17:05:48 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/02/500e7abb3597c7526b4aafeab124bd7d8bc7b9b1d8fe561ef6fbca028a42c844.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Global wildfire report for 2025 notes drop in area burned, as USAID cuts threaten future reports",
+        "link": "https://wildfiretoday.com/global-wildfire-report-for-2025-notes-drop-in-area-burned-as-usaid-cuts-threaten-future-reports/",
+        "description": "Wildfires filled the headlines of 2025 from the US to South Korea to Spain and beyond, but an annual report shows that last year was actually one of the lowest fire years of this century. At the global scale, land area burnt by wildfires in 2025 was nearly 828 million acres, which was the second-lowest [&#8230;]",
+        "pubDate": "Tue, 02 Jun 2026 20:00:38 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Save the environment, and the economy, with prescribed burning, researchers say",
         "link": "https://wildfiretoday.com/save-the-environment-and-the-economy-with-prescribed-burning-researchers-say/",
