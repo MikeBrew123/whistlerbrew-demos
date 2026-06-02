@@ -82,12 +82,12 @@
   ],
   "news": [
     {
-      "title": "Wildfire fighting continues in Saskatchewan as blaze near Prince Albert slows",
-      "url": "https://globalnews.ca/news/11876763/wildfire-saskatchewan-cayford-lobstick/",
-      "source": "Global News",
+      "title": "Wildfire that forced northern Saskatchewan residents out calmer, but still raging",
+      "url": "https://globalnews.ca/news/11876085/wildfire-that-forced-northern-saskatchewan-residents-out-calmer-but-still-raging/",
+      "source": "Global News Wildfire",
       "published": "2026-06-01",
-      "description": "Two fires were said to be of note in Saskatchewan, the east-central Cayford Fire, and the Lobstick Fire, which the SPSA said is slowing after Sunday's precipitation.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/06/sask-wildfire-update-spsa.jpg?quality=65&#038;strip=all"
+      "description": "Mother Nature has calmed the flames of a wildfire that's forced out some residents of a northern Saskatchewan community.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/06/wildfire-ssak.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Smoke, heat, rain and flooding; what to expect from Western weather",
@@ -98,5 +98,5 @@
       "image": "https://globalnews.ca/wp-content/uploads/2026/05/WILDFIRE-SASK.jpg?quality=65&#038;strip=all"
     }
   ],
-  "last_news_update": "2026-06-02T10:00:42.122Z"
+  "last_news_update": "2026-06-02T16:00:42.044Z"
 }
