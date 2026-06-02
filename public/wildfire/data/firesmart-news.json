@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-01T22:00:44.524Z",
+  "updated_at": "2026-06-02T04:00:44.196Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -8,6 +8,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Save the environment, and the economy, with prescribed burning, researchers say",
+        "link": "https://wildfiretoday.com/save-the-environment-and-the-economy-with-prescribed-burning-researchers-say/",
+        "description": "The environmental benefits of fighting bad fire with good fire have been documented for decades, but researchers are now working to show just how much economic good prescribed burning brings. A study recently published in the journal Science integrated and analyzed U.S. Forest Service data from 285 wildfires that intersected with prescribed burning and other [&#8230;]",
+        "pubDate": "Mon, 01 Jun 2026 22:30:51 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Power agency that destroyed Pacific Northwest wildfire evidence &#8216;completely rewrites&#8217; mitigation plan for 2026",
         "link": "https://wildfiretoday.com/power-agency-that-destroyed-pacific-northwest-wildfire-evidence-completely-rewrites-mitigation-plan-for-2026/",
@@ -23,19 +30,18 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "Wildfire science editing award",
+        "link": "https://wildfiretoday.com/wildfire-science-editing-award/",
+        "description": "Congratulations to Dr Xinyan Huang, recipient of the International Journal of Wildland Fire Outstanding Associate Editor Award for 2025. This award honours Associate Editors who have demonstrated sustained excellence in their responsiveness, thoroughness, and timeliness. Dr Huang has served as an Associate Editor of the International Journal of Wildland Fire (IJWF) since 2021. He is [&#8230;]",
+        "pubDate": "Tue, 26 May 2026 23:18:05 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "Canada begins its aerial firefighting build",
         "link": "https://wildfiretoday.com/canada-begins-its-aerial-firefighting-build/",
         "description": "Canada’s long-term pledge to build up its aerial firefighting resources has begun with the lease of 12 aircraft that will be shared nationally for the 2026 wildfire season. As reported in March, Canada has put aside $316.7 million over the next five years for the Canadian Interagency Forest Fire Centre (CIFFC) to manage a national [&#8230;]",
         "pubDate": "Tue, 26 May 2026 06:40:33 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Ontario man dead after canoe capsizes, 2 B.C. people missing after falling off paddle boards",
-        "link": "https://globalnews.ca/news/11875668/bc-ontario-deaths-water-safety/",
-        "description": "Police in Ontario and B.C. dealt with water-sport fatalities over the weekend. As summer nears, officials are reminding people to take proper precautions to ensure their safety.",
-        "pubDate": "Sun, 31 May 2026 20:52:05 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/8709f820e645ee04f235cef1cc66e10c5cdd21955a5296110001245953a2a1d1_2d2542.jpg?quality=65&#038;strip=all"
       }
     ]
   }
