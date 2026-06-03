@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-06-02T22:00:44.668Z",
+  "updated_at": "2026-06-03T04:00:44.794Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
+    "kamloops": [],
+    "prince-george": [],
+    "cariboo": [
       {
-        "title": "Chief Const. Norm Lipinski leaves Surrey Police Service",
-        "link": "https://globalnews.ca/news/11886911/chief-const-norm-lipinski-leaves-surrey-police-service/",
-        "description": "The board did not provide any further details about why Chief Const. Norm Lipinski left, but rumours had started circulating on Monday.",
-        "pubDate": "Tue, 02 Jun 2026 17:05:48 +0000",
+        "title": "B.C. wildfire southwest of Prince George forces evacuation alert",
+        "link": "https://globalnews.ca/news/11887822/bc-wildfire-southwest-prince-george-evacuation-alert/",
+        "description": "Everyone in the evacuation alert area should prepare to leave their home or property at short notice, if required, according to the Cariboo Regional District.",
+        "pubDate": "Tue, 02 Jun 2026 23:47:21 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/02/500e7abb3597c7526b4aafeab124bd7d8bc7b9b1d8fe561ef6fbca028a42c844.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/swede-creek-fire.jpg?quality=65&#038;strip=all"
       }
     ],
-    "prince-george": [],
-    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
@@ -32,24 +32,10 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Power agency that destroyed Pacific Northwest wildfire evidence &#8216;completely rewrites&#8217; mitigation plan for 2026",
-        "link": "https://wildfiretoday.com/power-agency-that-destroyed-pacific-northwest-wildfire-evidence-completely-rewrites-mitigation-plan-for-2026/",
-        "description": "The Pacific Northwest&#8217;s federal power agency, recently found guilty of destroying evidence that may have tied it to a disastrous 2020 wildfire, has released its latest fire mitigation plan. The Bonneville Power Administration released this year&#8217;s updated plan on Wednesday, with officials saying the plan had been &#8220;completely rewritten&#8221; to elevate the agency&#8217;s risk mode",
-        "pubDate": "Mon, 01 Jun 2026 02:39:51 +0000",
-        "source": "Wildfire Today"
-      },
-      {
         "title": "Water pollution lasts for years after a wildfire burns, new research shows",
         "link": "https://wildfiretoday.com/water-pollution-lasts-for-years-after-a-wildfire-burns-new-research-shows/",
         "description": "Contaminants from wildfires can create long term water quality concerns in areas far from the fire-impacted zones as drifting smoke plumes and rainfall runoff challenge standard water filtration techniques. A recently published analysis of 23 studies across 28 watersheds determined that the concentrations of numerous pollutants in waterways experienced significant increases for five years after [&",
         "pubDate": "Wed, 27 May 2026 23:00:16 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildfire science editing award",
-        "link": "https://wildfiretoday.com/wildfire-science-editing-award/",
-        "description": "Congratulations to Dr Xinyan Huang, recipient of the International Journal of Wildland Fire Outstanding Associate Editor Award for 2025. This award honours Associate Editors who have demonstrated sustained excellence in their responsiveness, thoroughness, and timeliness. Dr Huang has served as an Associate Editor of the International Journal of Wildland Fire (IJWF) since 2021. He is [&#8230;]",
-        "pubDate": "Tue, 26 May 2026 23:18:05 +0000",
         "source": "Wildfire Today"
       },
       {
