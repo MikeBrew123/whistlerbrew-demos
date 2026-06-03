@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-03T04:00:42.518Z",
+  "updated_at": "2026-06-03T10:00:42.077Z",
   "fires": [
     {
       "country": "United States",
@@ -117,10 +117,9 @@
     "rerouted": 0,
     "notes": [
       "All 3 Canadian articles retained with images preserved",
-      "All 16 existing world fires retained as Active status",
-      "No duplicate stories detected across sources",
-      "No fires older than 60 days to remove",
-      "No world articles in input to merge or reroute"
+      "All 16 existing world fires retained (all marked Active, none >60 days old)",
+      "No duplicate stories found across sources",
+      "No articles required rerouting between buckets"
     ]
   }
 }
