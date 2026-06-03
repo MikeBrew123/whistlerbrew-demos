@@ -18,8 +18,8 @@ function FireMap({ d, f, statusColor }) {
       scrollWheelZoom: false,
     });
     L.control.zoom({ position: 'topright' }).addTo(map);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 16,
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      maxZoom: 18,
     }).addTo(map);
 
     // Fire marker with glow
@@ -174,9 +174,9 @@ function FireBriefing({ fireId, onBack }) {
             <div style={{ position: 'relative' }}>
               <FireMap d={d} f={f} statusColor={statusColor(f.status)} />
               {/* drive chip overlay */}
-              {d && d.drive && <div style={{ position: 'absolute', left: 14, top: 14, zIndex: 800, background: 'rgba(12,10,8,.82)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 10, padding: '10px 13px', backdropFilter: 'blur(6px)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 7, font: "700 13px 'Archivo'", color: '#fff' }}><Icon name="road" size={15} style={{ color: '#ffb24a' }} /> {d.drive.time} from {d.drive.from}</div>
-                <div style={{ font: `500 11px ${mono}`, color: 'rgba(255,255,255,.7)', marginTop: 5 }}>via {d.drive.via}</div>
+              {d && d.drive && <div style={{ position: 'absolute', left: 14, top: 14, zIndex: 800, background: 'rgba(255,253,249,.92)', border: '1px solid rgba(0,0,0,.12)', borderRadius: 10, padding: '10px 13px', backdropFilter: 'blur(6px)', boxShadow: '0 2px 8px rgba(0,0,0,.12)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 7, font: "700 13px 'Archivo'", color: '#2a241e' }}><Icon name="road" size={15} style={{ color: '#d2691e' }} /> {d.drive.time} from {d.drive.from}</div>
+                <div style={{ font: `500 11px ${mono}`, color: '#6f655a', marginTop: 5 }}>via {d.drive.via}</div>
               </div>}
             </div>
             {/* roads list */}
@@ -236,14 +236,14 @@ function FireBriefing({ fireId, onBack }) {
           {/* Alerts */}
           <Card icon="alert" title="Alerts & Evacuation" accent="#e0412f">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {(d ? d.alerts : []).map((a, i) => {
+              {(f.alerts && f.alerts.length > 0 ? f.alerts : d ? d.alerts : []).map((a, i) => {
                 const c = a.level === 'order' ? '#e0412f' : a.level === 'alert' ? '#e8902f' : '#6f655a';
                 return (
                   <div key={i} style={{ borderLeft: `3px solid ${c}`, background: c + '12', borderRadius: '4px 9px 9px 4px', padding: '10px 12px' }}>
                     <div style={{ font: "800 11px 'Archivo'", letterSpacing: .6, textTransform: 'uppercase', color: c }}>
                       {a.level === 'order' ? 'Evacuation Order' : a.level === 'alert' ? 'Evacuation Alert' : 'Notice'}</div>
-                    <div style={{ font: "600 13px 'Public Sans'", color: t.ink, marginTop: 4 }}>{a.area}</div>
-                    <div style={{ font: `500 10px ${mono}`, color: t.dim, marginTop: 5 }}>{new Date(a.issued).toLocaleString('en-CA', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })} · {a.by}</div>
+                    <div style={{ font: "600 13px 'Public Sans'", color: t.ink, marginTop: 4 }}>{a.area}{a.homes ? ` (${a.homes} properties)` : ''}</div>
+                    <div style={{ font: `500 10px ${mono}`, color: t.dim, marginTop: 5 }}>{a.issued ? new Date(a.issued).toLocaleString('en-CA', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''}{a.by ? ` · ${a.by}` : ''}</div>
                   </div>
                 );
               })}

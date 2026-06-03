@@ -136,8 +136,9 @@
     return Math.max(0, Math.floor((Date.now() - d) / 60000));
   }
 
-  // BCWS ArcGIS public API for individual fire data
+  // BCWS ArcGIS public APIs
   const BCWS_API = 'https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0/query';
+  const EVAC_API = 'https://services6.arcgis.com/ubm4tcTYICKBpist/ArcGIS/rest/services/Evacuation_Orders_and_Alerts/FeatureServer/0/query';
   // FIRE_CENTRE code → design centre ID
   const FC_CODE = { 2: 'coastal', 3: 'kamloops', 4: 'pgeorge', 5: 'northwest', 6: 'southeast', 7: 'cariboo' };
   // BCWS status → design status key
@@ -146,14 +147,35 @@
   // Fetch live data from N8N-fed fires.json + BCWS individual fires + news
   async function loadLiveData() {
     try {
-      const [firesRes, newsRes, bcwsRes] = await Promise.all([
+      const [firesRes, newsRes, bcwsRes, evacRes] = await Promise.all([
         fetch('./data/fires.json'),
         fetch('./data/firesmart-news.json').catch(() => null),
-        fetch(BCWS_API + "?where=FIRE_STATUS<>'Out'&outFields=FIRE_NUMBER,FIRE_OF_NOTE_IND,FIRE_STATUS,FIRE_CAUSE,CURRENT_SIZE,FIRE_CENTRE,GEOGRAPHIC_DESCRIPTION,LATITUDE,LONGITUDE,IGNITION_DATE&f=json&resultRecordCount=200").catch(() => null),
+        fetch(BCWS_API + "?where=FIRE_STATUS<>'Out'&outFields=FIRE_NUMBER,FIRE_OF_NOTE_IND,FIRE_STATUS,FIRE_CAUSE,CURRENT_SIZE,FIRE_CENTRE,GEOGRAPHIC_DESCRIPTION,LATITUDE,LONGITUDE,IGNITION_DATE,INCIDENT_NAME,FIRE_URL&f=json&resultRecordCount=200").catch(() => null),
+        fetch(EVAC_API + "?where=EVENT_TYPE=%27Fire%27&outFields=ORDER_ALERT_STATUS,EVENT_NAME,EVENT_NUMBER,ISSUING_AGENCY,DATE_MODIFIED,ORDER_ALERT_NAME,MULTI_SOURCED_HOMES,MULTI_SOURCED_POPULATION&f=json&resultRecordCount=50").catch(() => null),
       ]);
       if (!firesRes.ok) return;
       const live = await firesRes.json();
       const fsNews = newsRes && newsRes.ok ? await newsRes.json() : { zones: {} };
+
+      // Build evacuation lookup by fire number
+      var evacByFire = {};
+      if (evacRes && evacRes.ok) {
+        var evacData = await evacRes.json();
+        (evacData.features || []).forEach(function(feat) {
+          var a = feat.attributes;
+          var fn = a.EVENT_NUMBER;
+          if (!fn) return;
+          if (!evacByFire[fn]) evacByFire[fn] = [];
+          evacByFire[fn].push({
+            level: (a.ORDER_ALERT_STATUS || '').toLowerCase(),
+            area: a.ORDER_ALERT_NAME || a.EVENT_NAME || '',
+            by: a.ISSUING_AGENCY || '',
+            homes: a.MULTI_SOURCED_HOMES || 0,
+            population: a.MULTI_SOURCED_POPULATION || 0,
+            issued: a.DATE_MODIFIED ? new Date(a.DATE_MODIFIED).toISOString() : '',
+          });
+        });
+      }
 
       // Build real FIRES array from BCWS individual fire data
       if (bcwsRes && bcwsRes.ok) {
@@ -165,9 +187,11 @@
           const centreId = FC_CODE[a.FIRE_CENTRE] || 'coastal';
           const disc = a.IGNITION_DATE ? new Date(a.IGNITION_DATE).toISOString().slice(0, 10) : '';
           const isNew = a.IGNITION_DATE && (now - a.IGNITION_DATE) < day;
+          var evacs = evacByFire[a.FIRE_NUMBER] || [];
           return {
             id: a.FIRE_NUMBER,
-            name: a.GEOGRAPHIC_DESCRIPTION || a.FIRE_NUMBER,
+            name: a.INCIDENT_NAME || a.GEOGRAPHIC_DESCRIPTION || a.FIRE_NUMBER,
+            location: a.GEOGRAPHIC_DESCRIPTION || '',
             centre: centreId,
             status: STATUS_MAP[a.FIRE_STATUS] || 'uc',
             cause: a.FIRE_CAUSE || 'Under Inv.',
@@ -176,7 +200,13 @@
             fon: a.FIRE_OF_NOTE_IND === 'Y',
             lat: a.LATITUDE,
             lng: a.LONGITUDE,
+            fireUrl: a.FIRE_URL || '',
             new: isNew,
+            alerts: evacs,
+            evac: evacs.length > 0 ? {
+              order: evacs.filter(function(e) { return e.level === 'order'; }).reduce(function(s, e) { return s + (e.homes || 0); }, 0),
+              alert: evacs.filter(function(e) { return e.level === 'alert'; }).reduce(function(s, e) { return s + (e.homes || 0); }, 0),
+            } : null,
           };
         });
         // Sort: FoN first, then by size descending
