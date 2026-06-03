@@ -152,17 +152,23 @@ function DirC({ onOpen } = {}) {
               <span style={{ font: "700 9px 'IBM Plex Mono'", color: '#3fb27f', background: 'rgba(63,178,127,.12)', borderRadius: 999, padding: '3px 8px', letterSpacing: 0.5 }}>LIVE</span>
             </div>
             <div style={{ background: t.card, border: `1px solid ${t.line}`, borderRadius: 12, overflow: 'hidden' }}>
-              {W.FEED.slice(0, 7).map((x, i) => (
-                <div key={i} style={{ display: 'flex', gap: 11, padding: '11px 14px', borderTop: i ? `1px solid ${t.line}` : 'none', cursor: 'pointer' }}>
-                  <SourceIcon type={x.type} size={30} />
-                  <div style={{ minWidth: 0 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, font: "700 10px 'Archivo'", color: t.mid }}>
-                      {W.SOURCE[x.type].label}<span style={{ color: t.dim, fontWeight: 500 }}>· {x.src} · {ago(x.mins)}</span>
+              {W.FEED.slice(0, 7).map((x, i) => {
+                const inner = (
+                  <div style={{ display: 'flex', gap: 11, padding: '11px 14px', borderTop: i ? `1px solid ${t.line}` : 'none', cursor: 'pointer' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = t.soft)} onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}>
+                    <SourceIcon type={x.type} size={30} />
+                    <div style={{ minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6, font: "700 10px 'Archivo'", color: t.mid }}>
+                        {(W.SOURCE[x.type] || W.SOURCE.news).label}<span style={{ color: t.dim, fontWeight: 500 }}>· {x.src} · {ago(x.mins)}</span>
+                      </div>
+                      <div style={{ font: "500 12px/1.4 'Public Sans'", color: t.ink, marginTop: 3, textWrap: 'pretty' }}>{x.title}</div>
                     </div>
-                    <div style={{ font: "500 12px/1.4 'Public Sans'", color: t.ink, marginTop: 3, textWrap: 'pretty' }}>{x.title}</div>
                   </div>
-                </div>
-              ))}
+                );
+                return x.link
+                  ? <a key={i} href={x.link} target="_blank" rel="noopener" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>{inner}</a>
+                  : <div key={i}>{inner}</div>;
+              })}
               <div style={{ padding: '10px 14px', borderTop: `1px solid ${t.line}`, font: "700 12px 'Archivo'", color: '#d2691e', textAlign: 'center', cursor: 'pointer' }}>
                 Open full feed · filter by fire
               </div>

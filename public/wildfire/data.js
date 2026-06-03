@@ -128,12 +128,24 @@
     'northwest': 'northwest', 'southeast': 'southeast', 'coastal': 'coastal',
   };
 
-  // Fetch live data from N8N-fed fires.json and merge province/zone counts
+  // Convert a pubDate string to minutes-ago
+  function minsAgo(dateStr) {
+    if (!dateStr) return 999;
+    const d = new Date(dateStr);
+    if (isNaN(d)) return 999;
+    return Math.max(0, Math.floor((Date.now() - d) / 60000));
+  }
+
+  // Fetch live data from N8N-fed fires.json + firesmart-news.json
   async function loadLiveData() {
     try {
-      const res = await fetch('./data/fires.json');
-      if (!res.ok) return;
-      const live = await res.json();
+      const [firesRes, newsRes] = await Promise.all([
+        fetch('./data/fires.json'),
+        fetch('./data/firesmart-news.json').catch(() => null),
+      ]);
+      if (!firesRes.ok) return;
+      const live = await firesRes.json();
+      const fsNews = newsRes && newsRes.ok ? await newsRes.json() : { zones: {} };
 
       // Update province stats
       PROVINCE.active = live.bc_totals.active || 0;
@@ -152,6 +164,47 @@
           centre.liveActive = z.active_fires || 0;
           centre.liveFoN = z.fires_of_note || 0;
         }
+      }
+
+      // Build live feed from zone_news + firesmart-news
+      const liveFeed = [];
+
+      // Zone news from fires.json (populated during active fire season)
+      for (const z of (live.zones || [])) {
+        for (const n of (z.zone_news || [])) {
+          liveFeed.push({
+            type: 'news', src: n.source || 'BC News',
+            mins: minsAgo(n.published), title: n.title || n.headline,
+            link: n.link || n.url,
+          });
+        }
+      }
+
+      // FireSmart / Wildfire Today news
+      const zones = fsNews.zones || {};
+      for (const [zoneId, items] of Object.entries(zones)) {
+        for (const it of (items || [])) {
+          // Skip irrelevant articles (no wildfire/fire keyword)
+          const txt = ((it.title || '') + ' ' + (it.description || '')).toLowerCase();
+          const isRelevant = txt.includes('fire') || txt.includes('wildfire')
+            || txt.includes('burn') || txt.includes('smoke') || txt.includes('evacu')
+            || txt.includes('bcws') || txt.includes('ember') || txt.includes('blaze');
+          if (!isRelevant) continue;
+
+          liveFeed.push({
+            type: 'news', src: it.source || 'Wildfire Today',
+            mins: minsAgo(it.pubDate), title: it.title,
+            link: it.link, image: it.image,
+          });
+        }
+      }
+
+      // Sort by recency and replace placeholder feed if we got real articles
+      if (liveFeed.length > 0) {
+        liveFeed.sort((a, b) => a.mins - b.mins);
+        FEED.length = 0;
+        liveFeed.forEach(item => FEED.push(item));
+        window.WF._liveFeed = true;
       }
 
       // Signal that live data is available
