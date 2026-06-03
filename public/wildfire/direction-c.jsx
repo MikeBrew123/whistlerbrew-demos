@@ -42,7 +42,7 @@ function DirC({ onOpen } = {}) {
             </div>
           ))}
           <div style={{ width: 1, height: 30, background: t.line }} />
-          <div style={{ font: "700 11px 'Archivo'", color: '#d2691e', textAlign: 'right' }}>PREP {W.PROVINCE.prepLevel}<div style={{ font: `500 9px ${mono}`, color: t.dim, marginTop: 4, fontWeight: 400 }}>14:20</div></div>
+          <div style={{ font: "700 11px 'Archivo'", color: '#d2691e', textAlign: 'right' }}>PREP {W.PROVINCE.prepLevel}<div style={{ font: `500 9px ${mono}`, color: t.dim, marginTop: 4, fontWeight: 400 }}>{W._liveLoaded ? new Date(W._liveUpdatedAt).toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Vancouver' }) : '—'}</div></div>
         </div>
       </header>
 
@@ -115,14 +115,15 @@ function DirC({ onOpen } = {}) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 14 }}>
               {W.CENTRES.map((c) => {
                 const fires = W.byCentre(c.id);
+                const activeCount = c.liveActive != null ? c.liveActive : fires.length;
                 return (
                   <div key={c.id} style={{ background: t.card, border: `1px solid ${t.line}`, borderRadius: 12, overflow: 'hidden' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '11px 14px', background: t.soft, borderBottom: `1px solid ${t.line}` }}>
                       <span style={{ font: `700 11px ${mono}`, color: '#d2691e', background: 'rgba(210,105,30,.1)', borderRadius: 5, padding: '3px 6px' }}>{c.prefix}</span>
                       <span style={{ font: "700 14px 'Archivo'", color: t.ink }}>{c.name}</span>
-                      {c.newStarts > 0 && <span style={{ font: "700 10px 'Archivo'", color: '#d2691e', background: 'rgba(210,105,30,.12)', borderRadius: 999, padding: '2px 8px' }}>+{c.newStarts} new</span>}
+                      {c.newStarts > 0 && !W._liveLoaded && <span style={{ font: "700 10px 'Archivo'", color: '#d2691e', background: 'rgba(210,105,30,.12)', borderRadius: 999, padding: '2px 8px' }}>+{c.newStarts} new</span>}
                       <span style={{ flex: 1 }} />
-                      <span style={{ font: "500 11px 'Public Sans'", color: t.dim }}>{fires.length} active</span>
+                      <span style={{ font: "500 11px 'Public Sans'", color: t.dim }}>{activeCount} active</span>
                     </div>
                     <div>
                       {fires.slice(0, 3).map((f) => (

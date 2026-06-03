@@ -28,12 +28,20 @@
 <script type="text/babel" src="briefing.jsx?v=1"></script>
 
 <script type="text/babel">
-const { useState } = React;
+const { useState, useEffect, useCallback } = React;
 
 function App() {
   const [fireId, setFireId] = useState(() => localStorage.getItem('wf-fire') || null);
+  const [, setTick] = useState(0);
   const open = (id) => { setFireId(id); localStorage.setItem('wf-fire', id); window.scrollTo(0, 0); };
   const back = () => { setFireId(null); localStorage.removeItem('wf-fire'); window.scrollTo(0, 0); };
+
+  // Load live data and wire up re-render callback
+  useEffect(() => {
+    window._wfRerender = () => setTick(t => t + 1);
+    if (window.WF && window.WF.loadLiveData) window.WF.loadLiveData();
+    return () => { window._wfRerender = null; };
+  }, []);
 
   return fireId
     ? <div className="fade" key={fireId}><FireBriefing fireId={fireId} onBack={back} /></div>

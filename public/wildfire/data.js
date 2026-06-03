@@ -122,9 +122,51 @@
     lodging: 'Kamloops — 90 min (nearest >available rooms). Base camp staged at Merritt Civic Centre.',
   };
 
+  // Zone ID mapping: live fires.json uses hyphenated IDs, design uses short IDs
+  const ZONE_MAP = {
+    'kamloops': 'kamloops', 'prince-george': 'pgeorge', 'cariboo': 'cariboo',
+    'northwest': 'northwest', 'southeast': 'southeast', 'coastal': 'coastal',
+  };
+
+  // Fetch live data from N8N-fed fires.json and merge province/zone counts
+  async function loadLiveData() {
+    try {
+      const res = await fetch('./data/fires.json');
+      if (!res.ok) return;
+      const live = await res.json();
+
+      // Update province stats
+      PROVINCE.active = live.bc_totals.active || 0;
+      PROVINCE.fireOfNote = live.bc_totals.fires_of_note || 0;
+      PROVINCE.hectares = live.bc_totals.hectares_burned || 0;
+      PROVINCE.crews = live.bc_totals.crews_deployed || 0;
+      PROVINCE.prepLevel = live.bc_totals.preparedness_level || 1;
+      PROVINCE.updated = live.updated_at;
+
+      // Update zone active-fire counts
+      for (const z of (live.zones || [])) {
+        const designId = ZONE_MAP[z.id];
+        if (!designId) continue;
+        const centre = CENTRES.find(c => c.id === designId);
+        if (centre) {
+          centre.liveActive = z.active_fires || 0;
+          centre.liveFoN = z.fires_of_note || 0;
+        }
+      }
+
+      // Signal that live data is available
+      window.WF._liveLoaded = true;
+      window.WF._liveUpdatedAt = live.updated_at;
+
+      // Re-render if React root exists
+      if (window._wfRerender) window._wfRerender();
+    } catch (e) { /* fail silently — placeholder data remains */ }
+  }
+
   window.WF = { STATUS, CENTRES, FIRES, PROVINCE, FEED, SOURCE, BRIEFER,
     centre: (id) => CENTRES.find((c) => c.id === id),
     finder: (id) => FIRES.find((f) => f.id === id),
     byCentre: (cid) => FIRES.filter((f) => f.centre === cid),
+    loadLiveData,
   };
 })();
