@@ -50,11 +50,22 @@ function DirC({ onOpen } = {}) {
         {/* section title */}
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 14 }}>
           <h2 style={{ font: "800 22px/1 'Archivo'", letterSpacing: -0.4, margin: 0 }}>Fires of Note</h2>
-          <span style={{ font: "500 13px 'Public Sans'", color: t.mid }}>Life or property at risk — what's actually happening on the ground.</span>
+          <span style={{ font: "500 13px 'Public Sans'", color: t.mid }}>
+            {W.FIRES.filter(f => f.fon).length === 0 && W._liveLoaded
+              ? "No fires currently designated as Fires of Note."
+              : "Life or property at risk - what is actually happening on the ground."}
+          </span>
         </div>
 
         {/* FoN rich cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 18 }}>
+        {W.FIRES.filter(f => f.fon).length === 0 && W._liveFires ? (
+          <div style={{ background: t.card, border: `1px solid ${t.line}`, borderRadius: 14, padding: '28px 24px', textAlign: 'center', marginBottom: 10 }}>
+            <div style={{ font: "600 15px 'Public Sans'", color: t.mid }}>No Fires of Note in BC right now</div>
+            <div style={{ font: "500 12px 'Public Sans'", color: t.dim, marginTop: 8 }}>When a fire threatens life or property, BCWS designates it a Fire of Note — those fires appear here with full deployment briefings.</div>
+          </div>
+        ) : null}
+
+        <div style={{ display: 'grid', gridTemplateColumns: W.FIRES.filter(f => f.fon).length <= 2 ? 'repeat(2,1fr)' : 'repeat(3,1fr)', gap: 18 }}>
           {W.FIRES.filter((f) => f.fon).map((f) => {
             const fd = feedFor(f.id);
             return (
@@ -77,14 +88,14 @@ function DirC({ onOpen } = {}) {
                   </div>
                   {/* key facts */}
                   <div style={{ display: 'flex', gap: 16, padding: '11px 0', borderTop: `1px solid ${t.line}`, borderBottom: `1px solid ${t.line}`, margin: '4px 0 0' }}>
-                    {[[fmt(f.ha), 'hectares', t.ink], [f.evac.order, 'on order', f.evac.order ? '#e0412f' : t.ink], [f.evac.alert, 'on alert', '#d2691e']].map(([v, l, c]) => (
+                    {[[fmt(f.ha), 'hectares', t.ink], ...(f.evac ? [[f.evac.order, 'on order', f.evac.order ? '#e0412f' : t.ink], [f.evac.alert, 'on alert', '#d2691e']] : [[f.cause || '—', 'cause', t.mid]])].map(([v, l, c]) => (
                       <div key={l}><div style={{ font: `600 17px/1 ${mono}`, color: c }}>{v}</div><div style={{ font: "600 9px 'Archivo'", letterSpacing: 0.4, textTransform: 'uppercase', color: t.dim, marginTop: 5 }}>{l}</div></div>
                     ))}
                   </div>
                   {/* access */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 11, font: "600 12px 'Public Sans'", color: t.ink }}>
+                  {f.drive && <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 11, font: "600 12px 'Public Sans'", color: t.ink }}>
                     <Icon name="road" size={15} style={{ color: '#d2691e' }} /> {f.drive}
-                  </div>
+                  </div>}
                   {/* ground-truth snippet */}
                   {fd && (
                     <div style={{ display: 'flex', gap: 9, marginTop: 11, padding: 10, background: t.soft, borderRadius: 9, border: `1px solid ${t.line}` }}>
@@ -96,11 +107,11 @@ function DirC({ onOpen } = {}) {
                     </div>
                   )}
                   {/* communities + briefer */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 12, flexWrap: 'wrap' }}>
+                  {f.communities && f.communities.length > 0 && <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 12, flexWrap: 'wrap' }}>
                     {f.communities.map((c) => (
                       <span key={c} style={{ font: "600 11px 'Archivo'", color: t.mid, background: t.bg, border: `1px solid ${t.line}`, borderRadius: 999, padding: '4px 10px' }}>{c}</span>
                     ))}
-                  </div>
+                  </div>}
                 </div>
               </div>
             );

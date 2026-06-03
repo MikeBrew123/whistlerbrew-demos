@@ -67,7 +67,7 @@ function FireMap({ d, f, statusColor }) {
     if (pts.length > 1) map.fitBounds(pts, { padding: [40, 40], maxZoom: 11 });
 
     mapRef.current = map;
-    return function() { map.remove(); mapRef.current = null; };
+    return function() { try { map.remove(); } catch(e) {} mapRef.current = null; };
   }, [d, f]);
 
   return React.createElement('div', {
@@ -79,7 +79,13 @@ function FireMap({ d, f, statusColor }) {
 function FireBriefing({ fireId, onBack }) {
   const W = window.WF, WFD = window.WFD;
   const f = W.finder(fireId);
-  const d = WFD.detailFor(fireId);
+  const dRaw = WFD.detailFor(fireId);
+  // Build a minimal detail object from BCWS data when no hand-curated detail exists
+  const d = dRaw || (f && f.lat ? {
+    lat: f.lat, lng: f.lng, summary: null, lastUpdate: W._liveUpdatedAt,
+    ic: null, roads: [], drive: null, cams: [], gallery: [], alerts: [], feed: [],
+    response: null, briefer: null,
+  } : null);
   const t = { ink: '#2a241e', mid: '#6f655a', dim: '#9a9084', line: '#e6ddd0',
     bg: '#f3eee5', card: '#fffdf9', soft: '#faf6ee', warm: '#fff7ef', warmLine: '#f0d9c4' };
   const mono = "'IBM Plex Mono', monospace";
@@ -143,16 +149,17 @@ function FireBriefing({ fireId, onBack }) {
               <StatusPill k={f.status} dark={false} />
             </div>
             <div style={{ font: "500 13px 'Public Sans'", color: t.mid, marginTop: 8 }}>
-              {f.id} · near {f.near} · {W.centre(f.centre).name} Fire Centre · {f.cause} · discovered {new Date(f.disc).toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}
+              {f.id}{f.near ? ` · near ${f.near}` : ''} · {W.centre(f.centre) ? W.centre(f.centre).name : ''} Fire Centre · {f.cause}{f.disc ? ` · discovered ${new Date(f.disc).toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}` : ''}
             </div>
-            {d && <p style={{ font: "500 14px/1.55 'Public Sans'", color: t.ink, marginTop: 12, maxWidth: 620, textWrap: 'pretty' }}>{d.summary}</p>}
-            {d && <div style={{ font: "600 12px 'Archivo'", color: t.mid, marginTop: 8 }}>{d.ic}</div>}
+            {d && d.summary && <p style={{ font: "500 14px/1.55 'Public Sans'", color: t.ink, marginTop: 12, maxWidth: 620, textWrap: 'pretty' }}>{d.summary}</p>}
+            {d && d.ic && <div style={{ font: "600 12px 'Archivo'", color: t.mid, marginTop: 8 }}>{d.ic}</div>}
           </div>
           <div style={{ flex: '0 0 auto', display: 'flex', gap: 26, padding: '14px 22px', background: t.card, border: `1px solid ${t.line}`, borderRadius: 14 }}>
             <Stat v={fmt(f.ha)} l="Hectares" />
-            <Stat v={f.evac ? f.evac.order : 0} l="On Order" c={f.evac && f.evac.order ? '#e0412f' : t.ink} />
-            <Stat v={f.evac ? f.evac.alert : 0} l="On Alert" c="#d2691e" />
-            {d && <Stat v={d.response.personnel} l="Personnel" />}
+            {f.evac && <Stat v={f.evac.order} l="On Order" c={f.evac.order ? '#e0412f' : t.ink} />}
+            {f.evac && <Stat v={f.evac.alert} l="On Alert" c="#d2691e" />}
+            {d && d.response && <Stat v={d.response.personnel} l="Personnel" />}
+            {!f.evac && <Stat v={f.cause || '—'} l="Cause" />}
           </div>
         </div>
       </div>
@@ -167,7 +174,7 @@ function FireBriefing({ fireId, onBack }) {
             <div style={{ position: 'relative' }}>
               <FireMap d={d} f={f} statusColor={statusColor(f.status)} />
               {/* drive chip overlay */}
-              {d && <div style={{ position: 'absolute', left: 14, top: 14, zIndex: 800, background: 'rgba(12,10,8,.82)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 10, padding: '10px 13px', backdropFilter: 'blur(6px)' }}>
+              {d && d.drive && <div style={{ position: 'absolute', left: 14, top: 14, zIndex: 800, background: 'rgba(12,10,8,.82)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 10, padding: '10px 13px', backdropFilter: 'blur(6px)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 7, font: "700 13px 'Archivo'", color: '#fff' }}><Icon name="road" size={15} style={{ color: '#ffb24a' }} /> {d.drive.time} from {d.drive.from}</div>
                 <div style={{ font: `500 11px ${mono}`, color: 'rgba(255,255,255,.7)', marginTop: 5 }}>via {d.drive.via}</div>
               </div>}
@@ -181,7 +188,7 @@ function FireBriefing({ fireId, onBack }) {
                   <span style={{ font: "500 12px 'Public Sans'", color: t.mid }}>{r.note}</span>
                 </div>
               ))}
-              {d && <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 12px', margin: 4, borderRadius: 9, background: t.warm, border: `1px solid ${t.warmLine}`, font: "600 12px 'Public Sans'", color: '#8a5a2a' }}>
+              {d && d.drive && d.drive.note && <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 12px', margin: 4, borderRadius: 9, background: t.warm, border: `1px solid ${t.warmLine}`, font: "600 12px 'Public Sans'", color: '#8a5a2a' }}>
                 <Icon name="alert" size={14} /> {d.drive.note}</div>}
             </div>
           </Card>
@@ -245,10 +252,10 @@ function FireBriefing({ fireId, onBack }) {
           </Card>
 
           {/* Deployment Briefer */}
-          {d && <BrieferCard d={d.briefer} t={t} mono={mono} Card={Card} />}
+          {d && d.briefer && <BrieferCard d={d.briefer} t={t} mono={mono} Card={Card} />}
 
           {/* Response */}
-          {d && <Card icon="crew" title="Response" accent="#6f655a">
+          {d && d.response && <Card icon="crew" title="Response" accent="#6f655a">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, textAlign: 'center' }}>
               {[[d.response.crews, 'Crews'], [d.response.machines, 'Machines'], [d.response.helis, 'Helis'], [d.response.tankers, 'Tankers']].map(([v, l]) => (
                 <div key={l} style={{ background: t.soft, border: `1px solid ${t.line}`, borderRadius: 9, padding: '11px 4px' }}>

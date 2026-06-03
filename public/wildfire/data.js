@@ -136,16 +136,63 @@
     return Math.max(0, Math.floor((Date.now() - d) / 60000));
   }
 
-  // Fetch live data from N8N-fed fires.json + firesmart-news.json
+  // BCWS ArcGIS public API for individual fire data
+  const BCWS_API = 'https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0/query';
+  // FIRE_CENTRE code → design centre ID
+  const FC_CODE = { 2: 'coastal', 3: 'kamloops', 4: 'pgeorge', 5: 'northwest', 6: 'southeast', 7: 'cariboo' };
+  // BCWS status → design status key
+  const STATUS_MAP = { 'Out of Control': 'ooc', 'Being Held': 'bh', 'Under Control': 'uc', 'Out': 'out' };
+
+  // Fetch live data from N8N-fed fires.json + BCWS individual fires + news
   async function loadLiveData() {
     try {
-      const [firesRes, newsRes] = await Promise.all([
+      const [firesRes, newsRes, bcwsRes] = await Promise.all([
         fetch('./data/fires.json'),
         fetch('./data/firesmart-news.json').catch(() => null),
+        fetch(BCWS_API + "?where=FIRE_STATUS<>'Out'&outFields=FIRE_NUMBER,FIRE_OF_NOTE_IND,FIRE_STATUS,FIRE_CAUSE,CURRENT_SIZE,FIRE_CENTRE,GEOGRAPHIC_DESCRIPTION,LATITUDE,LONGITUDE,IGNITION_DATE&f=json&resultRecordCount=200").catch(() => null),
       ]);
       if (!firesRes.ok) return;
       const live = await firesRes.json();
       const fsNews = newsRes && newsRes.ok ? await newsRes.json() : { zones: {} };
+
+      // Build real FIRES array from BCWS individual fire data
+      if (bcwsRes && bcwsRes.ok) {
+        const bcws = await bcwsRes.json();
+        const now = Date.now();
+        const day = 86400000;
+        const realFires = (bcws.features || []).map(function(feat) {
+          const a = feat.attributes;
+          const centreId = FC_CODE[a.FIRE_CENTRE] || 'coastal';
+          const disc = a.IGNITION_DATE ? new Date(a.IGNITION_DATE).toISOString().slice(0, 10) : '';
+          const isNew = a.IGNITION_DATE && (now - a.IGNITION_DATE) < day;
+          return {
+            id: a.FIRE_NUMBER,
+            name: a.GEOGRAPHIC_DESCRIPTION || a.FIRE_NUMBER,
+            centre: centreId,
+            status: STATUS_MAP[a.FIRE_STATUS] || 'uc',
+            cause: a.FIRE_CAUSE || 'Under Inv.',
+            ha: a.CURRENT_SIZE || 0,
+            disc: disc,
+            fon: a.FIRE_OF_NOTE_IND === 'Y',
+            lat: a.LATITUDE,
+            lng: a.LONGITUDE,
+            new: isNew,
+          };
+        });
+        // Sort: FoN first, then by size descending
+        realFires.sort(function(a, b) {
+          if (a.fon !== b.fon) return b.fon ? 1 : -1;
+          return b.ha - a.ha;
+        });
+        if (realFires.length > 0) {
+          FIRES.length = 0;
+          realFires.forEach(function(f) { FIRES.push(f); });
+          window.WF._liveFires = true;
+
+          // Update newStarts count
+          PROVINCE.newStarts24h = realFires.filter(function(f) { return f.new; }).length;
+        }
+      }
 
       // Update province stats
       PROVINCE.active = live.bc_totals.active || 0;
