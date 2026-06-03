@@ -1,232 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BC Wildfire Tracker</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BC Wildfire — Deployment Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #f3eee5; min-height: 100vh; }
+  .fade { min-height: 100vh; animation: fade .26s ease both; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="root"></div>
 
-<!-- ============================================================
-     SITE HEADER
-     ============================================================ -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <span class="header-flame">🔥</span>
-      <span class="header-title">BC Wildfire Tracker</span>
-    </div>
-    <div class="header-meta">
-      <span id="last-updated" class="meta-item">Loading…</span>
-      <span class="meta-sep">·</span>
-      <span id="next-update" class="meta-item">Next update in —</span>
-    </div>
-  </div>
-</header>
+<script src="data.js?v=1"></script>
+<script src="data-detail.js?v=1"></script>
+<script type="text/babel" src="system.jsx?v=1"></script>
+<script type="text/babel" src="direction-c.jsx?v=1"></script>
+<script type="text/babel" src="briefer-card.jsx?v=1"></script>
+<script type="text/babel" src="briefing.jsx?v=1"></script>
 
-<!-- ============================================================
-     LEVEL 1 — MAIN VIEW
-     ============================================================ -->
-<main id="main-view">
+<script type="text/babel">
+const { useState } = React;
 
-  <!-- Loading / Error state -->
-  <div id="load-error" class="load-error" style="display:none">
-    <p>⚠️ Unable to load fire data. Last updated: <span id="error-last-updated">unknown</span></p>
-    <p>Check <a href="https://www.bcwildfire.ca" target="_blank" rel="noopener">bcwildfire.ca</a> for current information.</p>
-  </div>
+function App() {
+  const [fireId, setFireId] = useState(() => localStorage.getItem('wf-fire') || null);
+  const open = (id) => { setFireId(id); localStorage.setItem('wf-fire', id); window.scrollTo(0, 0); };
+  const back = () => { setFireId(null); localStorage.removeItem('wf-fire'); window.scrollTo(0, 0); };
 
-  <!-- Province stats bar -->
-  <section class="stats-bar" id="stats-bar">
-    <div class="stat-box">
-      <span class="stat-value" id="stat-active">—</span>
-      <span class="stat-label">Active Fires</span>
-    </div>
-    <div class="stat-box highlight">
-      <span class="stat-value" id="stat-fon">—</span>
-      <span class="stat-label">Fires of Note</span>
-    </div>
-    <div class="stat-box">
-      <span class="stat-value" id="stat-ha">—</span>
-      <span class="stat-label">Hectares</span>
-    </div>
-    <div class="stat-box">
-      <span class="stat-value" id="stat-crews">—</span>
-      <span class="stat-label">Crews Deployed</span>
-    </div>
-    <div class="stat-box">
-      <span class="stat-value" id="stat-level">—</span>
-      <span class="stat-label">Preparedness</span>
-    </div>
-  </section>
+  return fireId
+    ? <div className="fade" key={fireId}><FireBriefing fireId={fireId} onBack={back} /></div>
+    : <div className="fade"><DirC onOpen={open} /></div>;
+}
 
-  <!-- Off-season banner (shown when active=0) -->
-  <div id="offseason-banner" class="offseason-banner" style="display:none">
-    <strong>🌿 Fire season is quiet.</strong> No active fires in BC right now. World fire updates are in the feed below.
-  </div>
-
-  <!-- ── TWO-COLUMN MAIN GRID ── -->
-  <div class="main-grid">
-
-    <!-- LEFT: BC Zones -->
-    <div class="main-left">
-      <section class="section-heading section-heading--bc">
-        <div class="bc-heading-inner">
-          <h2>British Columbia</h2>
-          <span id="bc-active-badge" class="bc-active-badge" style="display:none"></span>
-        </div>
-      </section>
-
-      <div id="zone-grid" class="zone-grid">
-        <div class="zone-card-skeleton"></div>
-        <div class="zone-card-skeleton"></div>
-        <div class="zone-card-skeleton"></div>
-        <div class="zone-card-skeleton"></div>
-        <div class="zone-card-skeleton"></div>
-        <div class="zone-card-skeleton"></div>
-      </div>
-    </div>
-
-    <!-- RIGHT: News Stream -->
-    <div class="main-right">
-      <section class="section-heading">
-        <h2>Latest News</h2>
-      </section>
-      <div id="news-stream" class="news-stream">
-        <div class="news-stream-skeleton"></div>
-        <div class="news-stream-skeleton"></div>
-        <div class="news-stream-skeleton"></div>
-      </div>
-    </div>
-
-  </div><!-- /.main-grid -->
-
-  <footer class="site-footer">
-    <p>Data: BC Wildfire Service · CIFFC · CBC · DriveBC · EmergencyInfoBC</p>
-    <p>For evacuation orders, always confirm with <a href="https://www.emergencyinfobc.gov.bc.ca" target="_blank" rel="noopener">EmergencyInfoBC</a>. This page is a pointer, not a source of record.</p>
-    <p>Built by <a href="https://mikebrew.ca" target="_blank" rel="noopener">Mike Brew</a> · <a href="https://whistlerbrew.com" target="_blank" rel="noopener">whistlerbrew.com</a></p>
-  </footer>
-
-</main>
-
-<!-- ============================================================
-     LEVEL 2 — ZONE VIEW
-     ============================================================ -->
-<div id="zone-view" style="display:none">
-
-  <nav class="breadcrumb">
-    <button class="btn-back" onclick="showMainView()">← Home</button>
-    <span class="crumb-sep">/</span>
-    <span id="zone-breadcrumb" class="crumb-current">Zone</span>
-  </nav>
-
-  <div class="zone-detail-header">
-    <div>
-      <h1 id="zone-detail-name">Zone Name</h1>
-      <p id="zone-detail-weather" class="zone-weather-text"></p>
-    </div>
-    <div class="zone-header-right">
-      <span id="zone-detail-danger" class="danger-badge"></span>
-    </div>
-  </div>
-
-  <!-- Emergency notices — always above tabs -->
-  <div id="zone-evac-notices"></div>
-
-  <!-- Tabs -->
-  <div class="tab-bar">
-    <button class="tab-btn active" data-tab="zone-tab-fires" onclick="switchTab(this,'zone-tabs')">Fires</button>
-    <button class="tab-btn" data-tab="zone-tab-news" onclick="switchTab(this,'zone-tabs')">News</button>
-    <button class="tab-btn" data-tab="zone-tab-roads" onclick="switchTab(this,'zone-tabs')">Roads</button>
-    <button class="tab-btn" data-tab="zone-tab-stats" onclick="switchTab(this,'zone-tabs')">Stats</button>
-  </div>
-
-  <div id="zone-tabs">
-    <div id="zone-tab-fires" class="tab-panel active"></div>
-    <div id="zone-tab-news" class="tab-panel" style="display:none"></div>
-    <div id="zone-tab-roads" class="tab-panel" style="display:none"></div>
-    <div id="zone-tab-stats" class="tab-panel" style="display:none"></div>
-  </div>
-
-</div>
-
-<!-- ============================================================
-     LEVEL 3 — FIRE VIEW
-     ============================================================ -->
-<div id="fire-view" style="display:none">
-
-  <nav class="breadcrumb">
-    <button class="btn-back" onclick="backToZone()">← <span id="fire-back-label">Zone</span></button>
-    <span class="crumb-sep">/</span>
-    <span id="fire-breadcrumb" class="crumb-current">Fire</span>
-  </nav>
-
-  <div class="fire-detail-header">
-    <div class="fire-identity">
-      <span id="fire-detail-number" class="fire-number-tag"></span>
-      <h1 id="fire-detail-name"></h1>
-    </div>
-    <div class="fire-tags">
-      <span id="fire-status-tag" class="status-tag"></span>
-      <span id="fire-cause-tag" class="cause-tag"></span>
-    </div>
-    <p id="fire-discovered" class="fire-discovered-text"></p>
-  </div>
-
-  <!-- Key stats bar -->
-  <div class="fire-stats-bar">
-    <div class="fstat-box">
-      <span id="fstat-ha" class="fstat-value">—</span>
-      <span class="fstat-label">Hectares</span>
-    </div>
-    <div class="fstat-box">
-      <span id="fstat-crews" class="fstat-value">—</span>
-      <span class="fstat-label">Crews</span>
-    </div>
-    <div class="fstat-box">
-      <span id="fstat-machines" class="fstat-value">—</span>
-      <span class="fstat-label">Machines</span>
-    </div>
-    <div class="fstat-box">
-      <span id="fstat-heli" class="fstat-value">—</span>
-      <span class="fstat-label">Helicopters</span>
-    </div>
-    <div class="fstat-box">
-      <span id="fstat-air" class="fstat-value">—</span>
-      <span class="fstat-label">Airtankers</span>
-    </div>
-    <div class="fstat-box">
-      <span id="fstat-evac" class="fstat-value">—</span>
-      <span class="fstat-label">On Evac Order</span>
-    </div>
-  </div>
-
-  <!-- Emergency notices — always above tabs -->
-  <div id="fire-evac-notices"></div>
-
-  <!-- Tabs -->
-  <div class="tab-bar">
-    <button class="tab-btn active" data-tab="fire-tab-photos" onclick="switchTab(this,'fire-tabs')">Photos</button>
-    <button class="tab-btn" data-tab="fire-tab-map" onclick="switchTab(this,'fire-tabs')">Map</button>
-    <button class="tab-btn" data-tab="fire-tab-response" onclick="switchTab(this,'fire-tabs')">Response</button>
-    <button class="tab-btn" data-tab="fire-tab-weather" onclick="switchTab(this,'fire-tabs')">Weather</button>
-    <button class="tab-btn" data-tab="fire-tab-roads" onclick="switchTab(this,'fire-tabs')">Roads</button>
-    <button class="tab-btn" data-tab="fire-tab-news" onclick="switchTab(this,'fire-tabs')">News</button>
-    <button class="tab-btn" data-tab="fire-tab-social" onclick="switchTab(this,'fire-tabs')">Social</button>
-  </div>
-
-  <div id="fire-tabs">
-    <div id="fire-tab-photos" class="tab-panel active"></div>
-    <div id="fire-tab-map" class="tab-panel" style="display:none"></div>
-    <div id="fire-tab-response" class="tab-panel" style="display:none"></div>
-    <div id="fire-tab-weather" class="tab-panel" style="display:none"></div>
-    <div id="fire-tab-roads" class="tab-panel" style="display:none"></div>
-    <div id="fire-tab-news" class="tab-panel" style="display:none"></div>
-    <div id="fire-tab-social" class="tab-panel" style="display:none"></div>
-  </div>
-
-</div>
-
-<script src="app.js?v=3"></script>
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
 </body>
 </html>

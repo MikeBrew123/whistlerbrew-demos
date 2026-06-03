@@ -3,8 +3,10 @@
    Handles: data loading, navigation, rendering, refresh timer
    ============================================================ */
 
+// Global state
 window.WF = { fires: null, canada: null, world: null };
 
+// Current zone context (for fire detail back button)
 let currentZoneId = null;
 let refreshTimer = null;
 let countdownInterval = null;
@@ -61,16 +63,6 @@ function formatDate(iso) {
   const d = new Date(iso);
   if (isNaN(d)) return '';
   return d.toLocaleString('en-CA', { month: 'short', day: 'numeric', timeZone: 'America/Vancouver' });
-}
-
-function formatDateFull(iso) {
-  if (!iso) return '';
-  const d = new Date(iso);
-  if (isNaN(d)) return '';
-  return d.toLocaleString('en-CA', {
-    month: 'short', day: 'numeric', year: 'numeric',
-    timeZone: 'America/Vancouver'
-  });
 }
 
 function countNews24h(zone) {
@@ -133,6 +125,7 @@ function showZoneView(zoneId) {
   const zv = document.getElementById('zone-view');
   zv.style.display = '';
   populateZoneView(zone);
+  // Reset to first tab
   setActiveTab('zone-tab-fires', 'zone-tabs');
   window.scrollTo(0, 0);
 }
@@ -164,8 +157,10 @@ function backToZone() {
 function switchTab(btn, groupId) {
   const targetId = btn.getAttribute('data-tab');
   const group = document.getElementById(groupId);
+  // Deactivate all buttons in this tab bar
   btn.closest('.tab-bar').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  // Hide/show panels
   group.querySelectorAll('.tab-panel').forEach(p => {
     p.style.display = p.id === targetId ? '' : 'none';
   });
@@ -176,6 +171,7 @@ function setActiveTab(tabId, groupId) {
   group.querySelectorAll('.tab-panel').forEach(p => {
     p.style.display = p.id === tabId ? '' : 'none';
   });
+  // Find the tab bar associated — it's the sibling before the group
   const tabBar = group.previousElementSibling;
   if (tabBar && tabBar.classList.contains('tab-bar')) {
     tabBar.querySelectorAll('.tab-btn').forEach(b => {
@@ -194,7 +190,9 @@ const STATUS_COLOURS = {
   'Out':            '#95A5A6',
 };
 
-function statusColour(status) { return STATUS_COLOURS[status] || '#7F8C8D'; }
+function statusColour(status) {
+  return STATUS_COLOURS[status] || '#7F8C8D';
+}
 
 function statusBgColour(status) {
   const map = {
@@ -230,153 +228,29 @@ function renderMainView() {
   // Off-season banner
   document.getElementById('offseason-banner').style.display = t.active === 0 ? '' : 'none';
 
-  // BC active badge on heading
-  const bcBadge = document.getElementById('bc-active-badge');
-  if (t.active > 0) {
-    bcBadge.textContent = `${t.active} Active`;
-    bcBadge.style.display = '';
-  } else {
-    bcBadge.style.display = 'none';
-  }
-
   // Zone grid
   const grid = document.getElementById('zone-grid');
   grid.innerHTML = f.zones.map(zone => renderZoneCard(zone)).join('');
 
-  // News stream (right column)
-  renderNewsStream();
-}
-
-/* ============================================================
-   NEWS STREAM (right column)
-   ============================================================ */
-function renderNewsStream() {
-  let html = '';
-
-  // ── BC News: zone_news from all zones + firesmart ──
-  const bcNews = [];
-  for (const zone of WF.fires.zones) {
-    for (const n of (zone.zone_news || [])) {
-      bcNews.push({ ...n, _zoneName: zone.name });
-    }
-  }
-  const fsZones = (WF.firesmartNews && WF.firesmartNews.zones) || {};
-  for (const [zoneId, items] of Object.entries(fsZones)) {
-    const zoneName = WF.fires.zones.find(z => z.id === zoneId)?.name || zoneId;
-    for (const it of items) {
-      const n = {
-        url: it.link, title: it.title, summary: it.description,
-        source: it.source, published: it.pubDate, _zoneName: zoneName
-      };
-      if (!bcNews.some(x => x.url === n.url)) bcNews.push(n);
-    }
-  }
-  bcNews.sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0));
-
-  if (bcNews.length) {
-    html += `<div class="stream-label" data-section="bc-news"><span>BC</span></div>`;
-    html += `<ul class="news-list">${bcNews.slice(0, 12).map(n => renderNewsItem(n)).join('')}</ul>`;
-  }
-
-  // BC Blog placeholder — async loaded after render
-  html += `<div id="bc-blog-inject"></div>`;
-
-  // ── Canada ──
+  // Canada — patch BC province count from live fires.json
   const canadaPatched = JSON.parse(JSON.stringify(WF.canada));
   const bcLive = WF.fires.bc_totals.active || 0;
   const bcProv = canadaPatched.provinces.find(p => p.id === 'bc');
   if (bcProv) bcProv.active = bcLive;
   canadaPatched.ciffc.active_fires = Math.max(canadaPatched.ciffc.active_fires, bcLive);
-  html += renderCanadaInStream(canadaPatched);
+  document.getElementById('canada-section').innerHTML = renderCanadaSection(canadaPatched);
 
-  // ── World ──
-  const worldAge = WF.world.updated_at ? formatAge(WF.world.updated_at) : null;
-  const worldDate = WF.world.updated_at ? formatDateFull(WF.world.updated_at) : null;
-  const worldAgeHtml = worldDate
-    ? `<span class="stream-label-age" title="${worldDate}">as of ${worldAge}</span>`
-    : '';
-  html += `<div class="stream-label" data-section="world"><span>World</span>${worldAgeHtml}</div>`;
-  if (WF.world.fires.length) {
-    html += `<div class="world-grid">${WF.world.fires.map(fw => renderWorldFireCard(fw)).join('')}</div>`;
-  } else {
-    html += '<p class="empty-tab">No notable world fires currently tracked.</p>';
-  }
-
-  document.getElementById('news-stream').innerHTML = html;
-
-  // Async: load BCWS blog posts and inject into stream
-  loadBlogPostsForStream();
+  // World
+  document.getElementById('world-section').innerHTML = WF.world.fires.length
+    ? WF.world.fires.map(fw => renderWorldFireCard(fw)).join('')
+    : '<p class="empty-tab">No notable world fires currently tracked.</p>';
 }
 
-function renderCanadaInStream(canada) {
-  const c = canada.ciffc;
-  const provHtml = canada.provinces.map(p => {
-    const isHigh = p.level >= 4;
-    return `<span class="prov-chip ${isHigh ? 'prov-high' : ''}" title="${p.name}: ${p.active} fires">${p.name} ${p.active}</span>`;
-  }).join('');
-
-  const ciffc_age = canada.updated_at ? `<span class="stream-label-age">${formatAge(canada.updated_at)}</span>` : '';
-  let html = `<div class="stream-label" data-section="canada"><span>Canada</span>${ciffc_age}</div>`;
-  html += `
-    <div class="canada-stream-stats">
-      <div class="ciffc-stat">
-        <span class="ciffc-val">${c.active_fires.toLocaleString()}</span>
-        <span class="ciffc-lbl">Active</span>
-      </div>
-      <div class="ciffc-stat">
-        <span class="ciffc-val">${c.ha_burned_ytd >= 1000000
-          ? (c.ha_burned_ytd / 1000000).toFixed(1) + 'M'
-          : c.ha_burned_ytd.toLocaleString()}</span>
-        <span class="ciffc-lbl">Ha YTD</span>
-      </div>
-      <div class="ciffc-stat">
-        <span class="ciffc-val" style="color:${c.preparedness_level <= 1 ? 'var(--text-muted)' : 'var(--fire-red)'}">PL ${c.preparedness_level}</span>
-        <span class="ciffc-lbl">Natl Level</span>
-      </div>
-      ${c.interprovincial_requests ? `<div class="ciffc-stat"><span class="ciffc-val">${c.interprovincial_requests}</span><span class="ciffc-lbl">Inter-prov</span></div>` : ''}
-    </div>
-    <div class="province-bar">${provHtml}</div>`;
-
-  if (canada.news && canada.news.length) {
-    html += `<ul class="news-list">${canada.news.map(n => renderNewsItem(n)).join('')}</ul>`;
-  }
-
-  return html;
-}
-
-/* Async: fetch BCWS blog posts and inject before Canada section */
-async function loadBlogPostsForStream() {
-  try {
-    const url = 'https://blog.gov.bc.ca/bcwildfire/wp-json/wp/v2/posts?per_page=6&_embed=wp:featuredmedia';
-    const posts = await fetch(url).then(r => r.ok ? r.json() : []).catch(() => []);
-    if (!posts.length) return;
-    const items = posts.map(p => {
-      const media = p._embedded?.['wp:featuredmedia']?.[0];
-      const thumb = media?.source_url || media?.media_details?.sizes?.medium?.source_url || '';
-      return {
-        url: p.link,
-        title: (p.title?.rendered || '').replace(/&#8217;/g,"'").replace(/&amp;/g,'&').replace(/&#8211;/g,'–'),
-        summary: (p.excerpt?.rendered || '').replace(/<[^>]+>/g,'').replace(/&#8217;/g,"'").replace(/&amp;/g,'&').slice(0, 200),
-        source: 'BC Wildfire Blog',
-        published: p.date,
-        thumbnail: thumb,
-      };
-    });
-    const inject = document.getElementById('bc-blog-inject');
-    if (!inject) return;
-    inject.innerHTML = `
-      <div class="stream-label stream-label--sub" data-section="bc-blog"><span>BC Wildfire Blog</span></div>
-      <ul class="news-list">${items.map(n => renderNewsItem(n)).join('')}</ul>`;
-  } catch (e) { /* silently fail */ }
-}
-
-/* ============================================================
-   ZONE CARD RENDERING
-   ============================================================ */
 function renderZoneCard(zone) {
   const hasEvac = zone.zone_evac_notices && zone.zone_evac_notices.length > 0;
   const hasOrder = hasEvac && zone.zone_evac_notices.some(n => n.type === 'ORDER');
   const quietState = zone.active_fires === 0;
+
   const isNA = !zone.danger_rating || zone.danger_rating === 'N/A';
   const dangerBg = zone.danger_colour || '#7F8C8D';
 
@@ -385,8 +259,8 @@ function renderZoneCard(zone) {
     : `<span class="danger-pill" style="background:${dangerBg}22;color:${dangerBg};border:1px solid ${dangerBg}55">${zone.danger_rating}</span>`;
 
   const news24 = countNews24h(zone);
-  const newsBadgeHtml = news24 > 0
-    ? `<span class="news-count-badge">${news24} new</span>`
+  const n24Html = news24 > 0
+    ? `<span class="n24-badge">N24 · ${news24}</span>`
     : '';
 
   const evacBadge = hasOrder
@@ -402,35 +276,42 @@ function renderZoneCard(zone) {
         <div class="zone-count"><span class="zone-count-val fon-val">${zone.fires_of_note}</span><span class="zone-count-lbl">Fires of Note</span></div>
       </div>`;
 
-  // News teaser: latest zone news headline
-  const latestNews = (zone.zone_news || [])
-    .filter(n => n.title && n.published)
-    .sort((a, b) => new Date(b.published) - new Date(a.published))[0];
-  const newsTeaserHtml = latestNews
-    ? `<div class="zone-card-news-teaser">
-        <span class="teaser-date">${formatDate(latestNews.published)}</span>
-        <span class="teaser-title">${latestNews.title.slice(0, 72)}${latestNews.title.length > 72 ? '…' : ''}</span>
-       </div>`
-    : '';
-
   const borderColour = hasOrder ? '#C0392B' : hasEvac ? '#E67E22' : isNA ? 'var(--border)' : (zone.danger_colour || '#7F8C8D');
 
   return `
     <div class="zone-card" style="border-left-color:${borderColour}" onclick="showZoneView('${zone.id}')">
       <div class="zone-card-header">
         <span class="zone-card-name">${zone.name}</span>
-        <div class="zone-card-badges">${pillHtml}${newsBadgeHtml}</div>
+        <div class="zone-card-badges">${pillHtml}${n24Html}</div>
       </div>
       ${countsHtml}
-      ${zone.weather_summary ? `<div class="zone-card-weather">${zone.weather_summary}</div>` : ''}
-      ${newsTeaserHtml}
+      <div class="zone-card-weather">${zone.weather_summary}</div>
       ${evacBadge}
     </div>`;
 }
 
-/* ============================================================
-   WORLD FIRE CARD — hero image redesign
-   ============================================================ */
+function renderCanadaSection(canada) {
+  const c = canada.ciffc;
+  const provHtml = canada.provinces.map(p => {
+    const isHigh = p.level >= 4;
+    return `<span class="prov-chip ${isHigh ? 'prov-high' : ''}" title="${p.name}: ${p.active} fires">${p.name} ${p.active}</span>`;
+  }).join('');
+
+  const newsHtml = canada.news.length
+    ? `<ul class="canada-news-list">${canada.news.map(n => renderNewsItem(n)).join('')}</ul>`
+    : '<p class="empty-tab">No national wildfire news.</p>';
+
+  return `
+    <div class="canada-ciffc">
+      <div class="ciffc-stat"><span class="ciffc-val">${c.active_fires.toLocaleString()}</span><span class="ciffc-lbl">Active (Canada)</span></div>
+      <div class="ciffc-stat"><span class="ciffc-val">${c.ha_burned_ytd >= 1000000 ? (c.ha_burned_ytd / 1000000).toFixed(1) + 'M' : c.ha_burned_ytd.toLocaleString()}</span><span class="ciffc-lbl">Hectares YTD</span></div>
+      <div class="ciffc-stat"><span class="ciffc-val" style="color:${c.preparedness_level <= 1 ? 'var(--text-muted)' : 'var(--fire-red)'}">PL ${c.preparedness_level}</span><span class="ciffc-lbl">National Level</span></div>
+      ${c.interprovincial_requests ? `<div class="ciffc-stat"><span class="ciffc-val">${c.interprovincial_requests}</span><span class="ciffc-lbl">Inter-prov Requests</span></div>` : ''}
+    </div>
+    <div class="province-bar">${provHtml}</div>
+    ${newsHtml}`;
+}
+
 function renderWorldFireCard(fw) {
   const COUNTRY_FLAGS = {
     'United States': '🇺🇸', 'USA': '🇺🇸', 'Canada': '🇨🇦', 'Greece': '🇬🇷',
@@ -443,38 +324,20 @@ function renderWorldFireCard(fw) {
   const haText = fw.hectares ? fw.hectares.toLocaleString() + ' ha' : null;
   const containText = fw.containment_pct > 0 ? fw.containment_pct + '% contained' : null;
   const meta = [haText, containText].filter(Boolean).join(' · ');
-
-  // Hero image or flag placeholder
-  const heroHtml = fw.image
-    ? `<div class="wfc-hero">
-        <img class="wfc-hero-img" src="${fw.image}" alt="" loading="lazy"
-          onerror="this.parentElement.classList.add('wfc-hero--nophoto');this.remove()">
-       </div>`
-    : `<div class="wfc-hero wfc-hero--nophoto"><span class="wfc-hero-flag">${flag}</span></div>`;
-
-  // Date: per-card published date if available, else file-level updated_at
-  const dateSrc = fw.published || fw.updated || WF.world.updated_at;
-  const dateStr = dateSrc ? formatDate(dateSrc) : '';
-  const ageStr  = dateSrc ? formatAge(dateSrc)  : '';
-  const dateHtml = dateStr
-    ? `<span class="wfc-date" title="${formatDateFull(dateSrc)}">${dateStr} · ${ageStr}</span>`
-    : '';
-
+  const imgHtml = fw.image
+    ? `<img class="wfc-thumb" src="${fw.image}" alt="" loading="lazy" onerror="this.parentElement.classList.add('wfc-nothumb');this.remove()">`
+    : `<div class="wfc-thumb-flag">${flag}</div>`;
   const inner = `
-    ${heroHtml}
-    <div class="wfc-body">
-      <div class="wfc-meta-top">
-        <span class="wfc-source">${flag} ${fw.country}</span>
-        ${dateHtml}
-      </div>
+    <div class="wfc-text">
+      <div class="wfc-source">${flag} ${fw.country}</div>
       <div class="wfc-name">${fw.name}</div>
       <div class="wfc-summary">${fw.summary}</div>
       <div class="wfc-footer">
         <span class="wfc-status ${statusClass}">${fw.status}</span>
         ${meta ? `<span class="wfc-meta">${meta}</span>` : ''}
       </div>
-    </div>`;
-
+    </div>
+    <div class="wfc-img-wrap ${fw.image ? '' : 'wfc-nothumb'}">${imgHtml}</div>`;
   return fw.link
     ? `<a class="world-fire-card" href="${fw.link}" target="_blank" rel="noopener">${inner}</a>`
     : `<div class="world-fire-card">${inner}</div>`;
@@ -493,13 +356,16 @@ function populateZoneView(zone) {
   db.style.color = zone.danger_colour || '#7F8C8D';
   db.style.border = `1px solid ${zone.danger_colour || '#7F8C8D'}55`;
 
-  document.getElementById('zone-evac-notices').innerHTML = renderEvacNotices(zone.zone_evac_notices);
+  // Evac notices
+  document.getElementById('zone-evac-notices').innerHTML =
+    renderEvacNotices(zone.zone_evac_notices);
 
+  // Fires tab
   const firesPanel = document.getElementById('zone-tab-fires');
   firesPanel.innerHTML = renderZoneFiresTab(zone);
   loadZoneFireList(zone);
 
-  // News tab
+  // News tab — merge zone_news (Workflow B) + FireSmart news (Workflow D)
   const zoneNews = zone.zone_news || [];
   const fsZones = (WF.firesmartNews && WF.firesmartNews.zones) || {};
   const fsItems = [...(fsZones[zone.id] || []), ...(fsZones['all'] || [])];
@@ -513,9 +379,10 @@ function populateZoneView(zone) {
     if (!n.url || seenUrls.has(n.url)) return false;
     seenUrls.add(n.url); return true;
   });
-  document.getElementById('zone-tab-news').innerHTML = dedupedNews.length
-    ? `<ul class="news-list">${dedupedNews.map(n => renderNewsItem(n)).join('')}</ul>`
-    : '<p class="empty-tab">No news stories for this zone.</p>';
+  document.getElementById('zone-tab-news').innerHTML =
+    dedupedNews.length
+      ? `<ul class="news-list">${dedupedNews.map(n => renderNewsItem(n)).join('')}</ul>`
+      : '<p class="empty-tab">No news stories for this zone.</p>';
   loadZoneBlogPosts(zone);
 
   // Roads tab
@@ -524,6 +391,7 @@ function populateZoneView(zone) {
       ? zone.zone_road_closures.map(r => renderRoadClosure(r)).join('')
       : '<p class="empty-tab">No road closures reported for this zone.</p>';
 
+  // Stats tab
   document.getElementById('zone-tab-stats').innerHTML = renderZoneStatsTab(zone);
 }
 
@@ -571,14 +439,16 @@ async function loadZoneFireList(zone) {
       ? (f.CURRENT_SIZE / 1000).toFixed(1) + 'k ha'
       : f.CURRENT_SIZE.toFixed(1) + ' ha') : '—';
     const cause    = f.FIRE_CAUSE ? f.FIRE_CAUSE.toLowerCase() : '';
+    const fireType = f.FIRE_TYPE  ? f.FIRE_TYPE.toLowerCase()  : '';
     const response = f.RESPONSE_TYPE_DESC || '';
     const name = f.INCIDENT_NAME && f.INCIDENT_NAME !== f.FIRE_NUMBER ? f.INCIDENT_NAME : '';
     const geo  = f.GEOGRAPHIC_DESCRIPTION || '';
     const date = f.IGNITION_DATE ? new Date(f.IGNITION_DATE).toLocaleDateString('en-CA',{month:'short',day:'numeric'}) : '';
     const fon  = f.FIRE_OF_NOTE_IND === 'Y' ? '<span class="fire-row-fon">★ FoN</span>' : '';
     const mapUrl = (f.LATITUDE && f.LONGITUDE)
-      ? `https://www.google.com/maps?q=${f.LATITUDE},${f.LONGITUDE}` : '';
+      ? `https://www.google.com/maps?q=${f.LATITUDE},${f.LONGITUDE}`  : '';
     const bcwsUrl = f.FIRE_URL || '';
+    // Build pill tags
     const pills = [
       cause    ? `<span class="fire-pill">${cause}</span>` : '',
       response ? `<span class="fire-pill fire-pill--response">${response} Response</span>` : '',
@@ -608,6 +478,7 @@ async function loadZoneFireList(zone) {
 
   const el = document.getElementById('zone-fire-list');
   if (!el) return;
+
   let html = '';
   if (active.length) {
     html += `<div class="fires-section-label">Active Fires (${active.length})</div>`;
@@ -639,8 +510,8 @@ async function loadZoneBlogPosts(zone) {
     const thumb = media?.source_url || media?.media_details?.sizes?.medium?.source_url || '';
     return {
       url: p.link,
-      title: (p.title?.rendered || '').replace(/&#8217;/g,"'").replace(/&amp;/g,'&').replace(/&#8211;/g,'–'),
-      summary: (p.excerpt?.rendered || '').replace(/<[^>]+>/g,'').replace(/&#8217;/g,"'").replace(/&amp;/g,'&').slice(0,180),
+      title: p.title?.rendered?.replace(/&#8217;/g,"'").replace(/&amp;/g,'&').replace(/&#8211;/g,'–') || '',
+      summary: p.excerpt?.rendered?.replace(/<[^>]+>/g,'').replace(/&#8217;/g,"'").replace(/&amp;/g,'&').slice(0,180) || '',
       source: 'BC Wildfire Blog',
       published: p.date,
       thumbnail: thumb,
@@ -660,9 +531,9 @@ async function loadZoneBlogPosts(zone) {
 
 function renderZoneStatsTab(zone) {
   const fon = zone.fires_of_note_list || [];
-  const totalHa    = fon.reduce((s, f) => s + (f.hectares || 0), 0);
+  const totalHa = fon.reduce((s, f) => s + (f.hectares || 0), 0);
   const totalCrews = fon.reduce((s, f) => s + (f.crews || 0), 0);
-  const totalHeli  = fon.reduce((s, f) => s + (f.helicopters || 0), 0);
+  const totalHeli = fon.reduce((s, f) => s + (f.helicopters || 0), 0);
   return `
     <div class="resources-grid">
       <div class="resource-box"><span class="resource-val">${zone.active_fires}</span><span class="resource-lbl">Active Fires</span></div>
@@ -677,6 +548,7 @@ function renderZoneStatsTab(zone) {
    FIRE VIEW RENDERING
    ============================================================ */
 function populateFireView(fire) {
+  // Header
   document.getElementById('fire-breadcrumb').textContent = fire.name;
   document.getElementById('fire-detail-number').textContent = fire.fire_number;
   document.getElementById('fire-detail-name').textContent = fire.name;
@@ -698,6 +570,7 @@ function populateFireView(fire) {
 
   document.getElementById('fire-discovered').textContent = `Discovered: ${fire.discovered || '—'}`;
 
+  // Stats bar
   document.getElementById('fstat-ha').textContent = fire.hectares.toLocaleString();
   document.getElementById('fstat-crews').textContent = fire.crews;
   document.getElementById('fstat-machines').textContent = fire.machines;
@@ -706,23 +579,39 @@ function populateFireView(fire) {
   const evacProps = (fire.evac_notices || []).filter(n => n.type === 'ORDER').reduce((s, n) => s + (n.properties || 0), 0);
   document.getElementById('fstat-evac').textContent = evacProps > 0 ? evacProps.toLocaleString() : '—';
 
+  // Evac notices
   document.getElementById('fire-evac-notices').innerHTML = renderEvacNotices(fire.evac_notices);
+
+  // Tab: Photos
   document.getElementById('fire-tab-photos').innerHTML = renderPhotosTab(fire);
+
+  // Tab: Map
   document.getElementById('fire-tab-map').innerHTML = renderMapTab(fire);
+
+  // Tab: Response
   document.getElementById('fire-tab-response').innerHTML = renderResponseTab(fire);
+
+  // Tab: Weather
   document.getElementById('fire-tab-weather').innerHTML = renderWeatherTab(fire);
+
+  // Tab: Roads
   document.getElementById('fire-tab-roads').innerHTML = fire.road_closures && fire.road_closures.length
     ? fire.road_closures.map(r => renderRoadClosure(r)).join('')
     : '<p class="empty-tab">No road closures reported for this fire.</p>';
+
+  // Tab: News
   document.getElementById('fire-tab-news').innerHTML = fire.news && fire.news.length
     ? `<ul class="news-list">${fire.news.map(n => renderNewsItem(n)).join('')}</ul>`
     : '<p class="empty-tab">No news stories for this fire.</p>';
+
+  // Tab: Social
   document.getElementById('fire-tab-social').innerHTML = renderSocialTab(fire);
 }
 
 function renderPhotosTab(fire) {
   const photos = fire.photos || [];
   const webcams = fire.webcams || [];
+
   if (!photos.length && !webcams.length) {
     return `<div class="photo-placeholder">
       <p>📷 No photos available yet for this fire.</p>
@@ -752,11 +641,17 @@ function renderMapTab(fire) {
   const src = `https://wildfiresituation.nrs.gov.bc.ca/map?longitude=${fire.lng}&latitude=${fire.lat}&zoom=11`;
   return `
     <div class="map-container">
-      <iframe src="${src}" title="BCWS Wildfire Map — ${fire.fire_number}" loading="lazy"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></iframe>
+      <iframe
+        src="${src}"
+        title="BCWS Wildfire Map — ${fire.fire_number}"
+        loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      </iframe>
       <div class="map-fallback" style="display:none">
         <p style="margin-bottom:0.8rem;color:var(--text-muted)">Map embed unavailable.</p>
-        <a href="${src}" target="_blank" rel="noopener" class="btn-back" style="display:inline-block">View on BCWS Map →</a>
+        <a href="${src}" target="_blank" rel="noopener" class="btn-back" style="display:inline-block">
+          View on BCWS Map →
+        </a>
       </div>
     </div>
     <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.5rem">
@@ -772,16 +667,22 @@ function renderResponseTab(fire) {
       <div class="resource-box"><span class="resource-val">${fire.helicopters}</span><span class="resource-lbl">Helicopters</span></div>
       <div class="resource-box"><span class="resource-val">${fire.airtankers}</span><span class="resource-lbl">Airtankers</span></div>
     </div>`;
+
   if (fire.tactics) {
-    html += `<div class="fires-section-label">Tactics</div><div class="tactics-block">${fire.tactics}</div>`;
+    html += `<div class="fires-section-label">Tactics</div>
+      <div class="tactics-block">${fire.tactics}</div>`;
   }
+
   if (fire.growth_history && fire.growth_history.length) {
     html += '<div class="fires-section-label">Growth History</div>';
     html += '<table class="growth-table"><thead><tr><th>Date</th><th>Size (ha)</th><th>Note</th></tr></thead><tbody>';
+    // Newest first
     const sorted = [...fire.growth_history].reverse();
     html += sorted.map((g, i) => `
       <tr${i === 0 ? ' style="font-weight:700"' : ''}>
-        <td>${g.date}</td><td class="ha-cell">${g.ha.toLocaleString()}</td><td>${g.note}</td>
+        <td>${g.date}</td>
+        <td class="ha-cell">${g.ha.toLocaleString()}</td>
+        <td>${g.note}</td>
       </tr>`).join('');
     html += '</tbody></table>';
   }
@@ -809,7 +710,12 @@ function renderWeatherTab(fire) {
       <thead><tr><th>Date</th><th>High</th><th>Conditions</th><th>Rain %</th></tr></thead>
       <tbody>
         ${wx.forecast.map(d => `
-          <tr><td>${d.date}</td><td>${d.high}°C</td><td>${d.desc}</td><td class="precip-cell">${d.precip_pct}%</td></tr>`).join('')}
+          <tr>
+            <td>${d.date}</td>
+            <td>${d.high}°C</td>
+            <td>${d.desc}</td>
+            <td class="precip-cell">${d.precip_pct}%</td>
+          </tr>`).join('')}
       </tbody>
     </table>`;
 }
@@ -888,7 +794,7 @@ function renderEvacNotices(notices) {
 
 function renderNewsItem(n) {
   const date = n.published ? formatDate(n.published) : '';
-  const age  = n.age || (n.published ? formatAge(n.published) : '');
+  const age = n.age || (n.published ? formatAge(n.published) : '');
   const dateStr = date && age ? `${date} · ${age}` : (date || age);
   const thumb = n.thumbnail || n.image || '';
   const hasThumb = thumb.startsWith('http');
@@ -897,10 +803,7 @@ function renderNewsItem(n) {
     <div class="news-body">
       <div class="news-title"><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a></div>
       ${n.summary ? `<div class="news-summary">${n.summary}</div>` : ''}
-      <div class="news-meta">
-        <span class="news-source">${n.source || ''}</span>
-        ${dateStr ? `<span class="news-date">${dateStr}</span>` : ''}
-      </div>
+      <div class="news-meta"><span>${n.source || ''}</span><span>${dateStr}</span></div>
     </div>
   </li>`;
 }
