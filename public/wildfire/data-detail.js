@@ -4,6 +4,13 @@
   const DETAIL = {
     // ── Churn Creek · near Clinton (the demo click) ──
     C20148: {
+      lat: 51.09, lng: -121.58, // fire centroid
+      base: { lat: 52.13, lng: -122.14, name: 'Williams Lake' }, // base/origin
+      communities: [
+        { lat: 51.09, lng: -121.51, name: 'Clinton' },
+        { lat: 51.02, lng: -121.93, name: 'Canoe Creek' },
+        { lat: 51.25, lng: -121.80, name: 'Big Bar' },
+      ],
       summary: 'Wind-driven growth on the east flank overnight pushed the fire toward the Big Bar Road corridor. Structure protection group established on 38 properties; guard held on the south flank.',
       lastUpdate: '2026-06-02T13:50:00',
       ic: 'IC — T. Whitford · Coastal Unit Crew',
@@ -57,6 +64,13 @@
 
     // ── Wasp Lake · near Merritt ──
     K71042: {
+      lat: 50.18, lng: -120.95, // fire centroid
+      base: { lat: 50.67, lng: -120.33, name: 'Kamloops' },
+      communities: [
+        { lat: 50.11, lng: -120.79, name: 'Merritt' },
+        { lat: 50.20, lng: -120.63, name: 'Lower Nicola' },
+        { lat: 50.15, lng: -121.10, name: 'Shackan' },
+      ],
       summary: 'Aggressive overnight runs on the north flank toward Lower Nicola. Sprinkler kits being set on 60+ interface properties; Hwy 5A closed for fire activity and smoke.',
       lastUpdate: '2026-06-02T14:05:00', ic: 'IC — M. Okafor · Kamloops Unit',
       roads: [
@@ -98,6 +112,13 @@
 
     // ── Damdochax · near Kispiox ──
     R11904: {
+      lat: 55.45, lng: -127.60, // fire centroid
+      base: { lat: 54.78, lng: -127.17, name: 'Smithers' },
+      communities: [
+        { lat: 55.35, lng: -127.68, name: 'Kispiox' },
+        { lat: 55.25, lng: -127.67, name: 'Gitanyow' },
+        { lat: 55.25, lng: -127.67, name: 'Hazelton' },
+      ],
       summary: 'Lightning-caused fire in steep timber NE of Kispiox. No structures on order yet; crews building guard on the south flank to keep it off the Kispiox Valley Rd.',
       lastUpdate: '2026-06-02T12:30:00', ic: 'IC — S. Derrick · Northwest Unit',
       roads: [

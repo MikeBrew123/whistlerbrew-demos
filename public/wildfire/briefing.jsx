@@ -2,6 +2,80 @@
    FireBriefing({ fireId, onBack }). Lead: Map & Roads → Images/Cams →
    News & Social → Alerts → Deployment Briefer → Response. */
 
+// ── Leaflet map component ──
+function FireMap({ d, f, statusColor }) {
+  const ref = React.useRef(null);
+  const mapRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!ref.current || !d || !d.lat || mapRef.current) return;
+    const L = window.L;
+    if (!L) return;
+
+    const map = L.map(ref.current, {
+      center: [d.lat, d.lng],
+      zoom: 10, zoomControl: false, attributionControl: false,
+      scrollWheelZoom: false,
+    });
+    L.control.zoom({ position: 'topright' }).addTo(map);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 16,
+    }).addTo(map);
+
+    // Fire marker with glow
+    const sc = statusColor;
+    const fireIcon = L.divIcon({
+      className: '', iconSize: [28, 28], iconAnchor: [14, 14],
+      html: '<div style="width:28px;height:28px;border-radius:50%;background:' + sc + ';border:3px solid #fff;box-shadow:0 0 20px ' + sc + ',0 0 40px ' + sc + '44;"></div>',
+    });
+    L.marker([d.lat, d.lng], { icon: fireIcon }).addTo(map)
+      .bindTooltip(f.name, { permanent: true, direction: 'bottom', offset: [0, 10],
+        className: 'fire-tooltip' });
+
+    // Base marker
+    if (d.base) {
+      const baseIcon = L.divIcon({
+        className: '', iconSize: [14, 14], iconAnchor: [7, 7],
+        html: '<div style="width:14px;height:14px;border-radius:50%;background:#5b8def;border:2px solid #fff;box-shadow:0 0 8px #5b8def88;"></div>',
+      });
+      L.marker([d.base.lat, d.base.lng], { icon: baseIcon }).addTo(map)
+        .bindTooltip(d.base.name, { permanent: true, direction: 'bottom', offset: [0, 6],
+          className: 'base-tooltip' });
+
+      // Dashed route line
+      L.polyline([[d.base.lat, d.base.lng], [d.lat, d.lng]], {
+        color: '#ffb24a', weight: 2.5, dashArray: '8 6', opacity: 0.8,
+      }).addTo(map);
+    }
+
+    // Community markers
+    if (d.communities) {
+      d.communities.forEach(function(c) {
+        const cIcon = L.divIcon({
+          className: '', iconSize: [10, 10], iconAnchor: [5, 5],
+          html: '<div style="width:10px;height:10px;border-radius:50%;background:#e8902f;border:2px solid #fff;box-shadow:0 0 6px #e8902f66;"></div>',
+        });
+        L.marker([c.lat, c.lng], { icon: cIcon }).addTo(map)
+          .bindTooltip(c.name, { direction: 'top', offset: [0, -6], className: 'comm-tooltip' });
+      });
+    }
+
+    // Fit bounds to show everything
+    const pts = [[d.lat, d.lng]];
+    if (d.base) pts.push([d.base.lat, d.base.lng]);
+    if (d.communities) d.communities.forEach(function(c) { pts.push([c.lat, c.lng]); });
+    if (pts.length > 1) map.fitBounds(pts, { padding: [40, 40], maxZoom: 11 });
+
+    mapRef.current = map;
+    return function() { map.remove(); mapRef.current = null; };
+  }, [d, f]);
+
+  return React.createElement('div', {
+    ref: ref,
+    style: { height: 360, borderRadius: '14px 14px 0 0', overflow: 'hidden' },
+  });
+}
+
 function FireBriefing({ fireId, onBack }) {
   const W = window.WF, WFD = window.WFD;
   const f = W.finder(fireId);
@@ -90,29 +164,13 @@ function FireBriefing({ fireId, onBack }) {
         <div>
           {/* Map & Roads */}
           <Card icon="road" title="Map & Roads" right={<MapBtn small />} pad={0}>
-            <div style={{ position: 'relative', height: 320, background: 'radial-gradient(120% 120% at 30% 20%, #2a3a2e, #3a2c1e 70%)', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', inset: 0, opacity: .5, backgroundImage: 'repeating-linear-gradient(58deg,rgba(255,255,255,.04) 0 1px,transparent 1px 26px),repeating-linear-gradient(-58deg,rgba(255,255,255,.04) 0 1px,transparent 1px 26px)' }} />
-              {/* access route */}
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
-                <path d="M8 86 C 30 78, 38 60, 56 50" fill="none" stroke="#ffb24a" strokeWidth="0.9" strokeDasharray="2 1.6" opacity="0.85" />
-              </svg>
-              {/* fire glow */}
-              <div style={{ position: 'absolute', left: '56%', top: '46%', transform: 'translate(-50%,-50%)' }}>
-                <div style={{ width: 90, height: 90, borderRadius: '50%', background: 'radial-gradient(circle, rgba(224,65,47,.55), transparent 68%)' }} />
-                <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: 18, height: 18, borderRadius: '50%', background: statusColor(f.status), boxShadow: `0 0 18px ${statusColor(f.status)}`, border: '2px solid #fff' }} />
-                <span style={{ position: 'absolute', left: '50%', top: 'calc(50% + 18px)', transform: 'translateX(-50%)', font: "700 12px 'Archivo'", color: '#fff', whiteSpace: 'nowrap', textShadow: '0 1px 4px #000' }}>{f.name}</span>
-              </div>
-              {/* base pin */}
-              <div style={{ position: 'absolute', left: '8%', top: '86%', transform: 'translate(-50%,-50%)', textAlign: 'center' }}>
-                <Icon name="pin" size={20} style={{ color: '#5b8def' }} />
-                <div style={{ font: "700 10px 'Archivo'", color: '#cfe0ff', textShadow: '0 1px 3px #000', whiteSpace: 'nowrap' }}>{d ? d.drive.from : 'Base'}</div>
-              </div>
-              {/* drive chip */}
-              {d && <div style={{ position: 'absolute', left: 14, top: 14, background: 'rgba(12,10,8,.72)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 10, padding: '10px 13px', backdropFilter: 'blur(6px)' }}>
+            <div style={{ position: 'relative' }}>
+              <FireMap d={d} f={f} statusColor={statusColor(f.status)} />
+              {/* drive chip overlay */}
+              {d && <div style={{ position: 'absolute', left: 14, top: 14, zIndex: 800, background: 'rgba(12,10,8,.82)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 10, padding: '10px 13px', backdropFilter: 'blur(6px)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 7, font: "700 13px 'Archivo'", color: '#fff' }}><Icon name="road" size={15} style={{ color: '#ffb24a' }} /> {d.drive.time} from {d.drive.from}</div>
                 <div style={{ font: `500 11px ${mono}`, color: 'rgba(255,255,255,.7)', marginTop: 5 }}>via {d.drive.via}</div>
               </div>}
-              <span style={{ position: 'absolute', right: 12, bottom: 10, font: "600 9px 'IBM Plex Mono'", color: 'rgba(255,255,255,.4)', letterSpacing: 0.5 }}>SCHEMATIC — open BCWS map for live perimeter</span>
             </div>
             {/* roads list */}
             <div style={{ padding: 6 }}>
