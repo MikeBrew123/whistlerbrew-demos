@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-04T04:00:42.940Z",
+  "updated_at": "2026-06-04T16:00:41.917Z",
   "fires": [
     {
       "country": "United States",
@@ -106,20 +106,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 3,
-      "world": 1
+      "canada": 2,
+      "world": 0
     },
     "items_out": {
-      "canada": 2,
+      "canada_news": 2,
       "world_fires": 16
     },
-    "deduped": 1,
+    "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Deduplicated: Removed 'Wildfire that forced northern Saskatchewan residents out calmer, but still raging' (2026-06-01) as duplicate of Red Earth/Shoal Lake story with same image and older publish date",
-      "World article 'She watched a wildfire destroy her town, so she's building fire-proof bunkers' (BBC, 2026-06-03) retained in world_fires context about US wildfire preparedness trends",
-      "All 16 existing fires preserved as Active status",
-      "Images preserved for all entries with image field present"
+      "All 2 Canadian articles retained with images preserved",
+      "All 16 existing world fires retained as Active status",
+      "No duplicates identified across sources",
+      "No fires removed (all Active, none contained >60 days)"
     ]
   }
 }
