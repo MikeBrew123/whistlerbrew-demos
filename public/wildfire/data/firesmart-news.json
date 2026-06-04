@@ -1,18 +1,9 @@
 {
-  "updated_at": "2026-06-04T10:00:44.681Z",
+  "updated_at": "2026-06-04T16:00:45.712Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "B.C. wildfire southwest of Prince George forces evacuation alert",
-        "link": "https://globalnews.ca/news/11887822/bc-wildfire-southwest-prince-george-evacuation-alert/",
-        "description": "Everyone in the evacuation alert area should prepare to leave their home or property at short notice, if required, according to the Cariboo Regional District.",
-        "pubDate": "Tue, 02 Jun 2026 23:47:21 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/swede-creek-fire.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [
       {
         "title": "B.C. wildfire southwest of Prince George forces evacuation alert",
