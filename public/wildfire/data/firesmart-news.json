@@ -1,50 +1,12 @@
 {
-  "updated_at": "2026-06-04T16:00:45.712Z",
+  "updated_at": "2026-06-04T22:00:45.387Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "B.C. wildfire southwest of Prince George forces evacuation alert",
-        "link": "https://globalnews.ca/news/11887822/bc-wildfire-southwest-prince-george-evacuation-alert/",
-        "description": "Everyone in the evacuation alert area should prepare to leave their home or property at short notice, if required, according to the Cariboo Regional District.",
-        "pubDate": "Tue, 02 Jun 2026 23:47:21 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/swede-creek-fire.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Save the environment, and the economy, with prescribed burning, researchers say",
-        "link": "https://wildfiretoday.com/save-the-environment-and-the-economy-with-prescribed-burning-researchers-say/",
-        "description": "The environmental benefits of fighting bad fire with good fire have been documented for decades, but researchers are now working to show just how much economic good prescribed burning brings. A study recently published in the journal Science integrated and analyzed U.S. Forest Service data from 285 wildfires that intersected with prescribed burning and other [&#8230;]",
-        "pubDate": "Mon, 01 Jun 2026 22:30:51 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Power agency that destroyed Pacific Northwest wildfire evidence &#8216;completely rewrites&#8217; mitigation plan for 2026",
-        "link": "https://wildfiretoday.com/power-agency-that-destroyed-pacific-northwest-wildfire-evidence-completely-rewrites-mitigation-plan-for-2026/",
-        "description": "The Pacific Northwest&#8217;s federal power agency, recently found guilty of destroying evidence that may have tied it to a disastrous 2020 wildfire, has released its latest fire mitigation plan. The Bonneville Power Administration released this year&#8217;s updated plan on Wednesday, with officials saying the plan had been &#8220;completely rewritten&#8221; to elevate the agency&#8217;s risk mode",
-        "pubDate": "Mon, 01 Jun 2026 02:39:51 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Water pollution lasts for years after a wildfire burns, new research shows",
-        "link": "https://wildfiretoday.com/water-pollution-lasts-for-years-after-a-wildfire-burns-new-research-shows/",
-        "description": "Contaminants from wildfires can create long term water quality concerns in areas far from the fire-impacted zones as drifting smoke plumes and rainfall runoff challenge standard water filtration techniques. A recently published analysis of 23 studies across 28 watersheds determined that the concentrations of numerous pollutants in waterways experienced significant increases for five years after [&",
-        "pubDate": "Wed, 27 May 2026 23:00:16 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Canada begins its aerial firefighting build",
-        "link": "https://wildfiretoday.com/canada-begins-its-aerial-firefighting-build/",
-        "description": "Canada’s long-term pledge to build up its aerial firefighting resources has begun with the lease of 12 aircraft that will be shared nationally for the 2026 wildfire season. As reported in March, Canada has put aside $316.7 million over the next five years for the Canadian Interagency Forest Fire Centre (CIFFC) to manage a national [&#8230;]",
-        "pubDate": "Tue, 26 May 2026 06:40:33 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
