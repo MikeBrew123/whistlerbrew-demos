@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-04T16:00:41.917Z",
+  "updated_at": "2026-06-05T04:00:41.812Z",
   "fires": [
     {
       "country": "United States",
@@ -116,10 +116,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All 2 Canadian articles retained with images preserved",
-      "All 16 existing world fires retained as Active status",
-      "No duplicates identified across sources",
-      "No fires removed (all Active, none contained >60 days)"
+      "No new world articles provided",
+      "All 16 existing fires retained with Active status",
+      "Saskatchewan wildfire in canada_news matches general active fire situation but specific incident details",
+      "Images preserved for all entries with image field present"
     ]
   }
 }
