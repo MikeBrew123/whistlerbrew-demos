@@ -160,3 +160,17 @@ git push origin main   # triggers Cloudflare Pages auto-deploy (~30s)
 1. Read `docs/project-log/current-status.md`
 2. Check N8N execution history: GET `/api/v1/executions?workflowId={id}&limit=3`
 3. Check live fires.json: `curl -sL https://whistlerbrew.com/wildfire/data/fires.json | python3 -m json.tool | head -20`
+
+---
+
+## Related Project: The Fire Challenge
+
+**Separate repo:** `/Users/mbrew/Developer/fire-challenge/`
+**GitHub:** https://github.com/MikeBrew123/fire-challenge (private)
+**Live:** https://fire-challenge.pages.dev
+
+Daily fitness challenge app for firefighters. Built June 2025. React + Express + PostgreSQL on same Hostinger VPS (Docker container `root-fire-api-1`, Postgres port 5433).
+
+**Read its own CLAUDE.md** at `/Users/mbrew/Developer/fire-challenge/CLAUDE.md` for deploy commands, cron jobs, scaling guide, and credentials. The scaling guide at `docs/project-log/scaling-guide.md` has full migration instructions if the app needs to move to its own server.
+
+**Shares VPS resources** with wildfire tracker — if the VPS feels slow, check `docker stats` for both containers.
