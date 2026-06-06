@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-05T22:00:41.665Z",
+  "updated_at": "2026-06-06T10:00:40.738Z",
   "fires": [
     {
       "country": "United States",
@@ -110,16 +110,16 @@
       "world": 0
     },
     "items_out": {
-      "canada_news": 2,
+      "canada": 2,
       "world_fires": 16
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing fires retained as Active status",
-      "Canadian content properly categorized under canada_news",
-      "No duplicates detected across sources",
-      "Images preserved where available"
+      "All 2 Canadian articles retained with images",
+      "All 16 existing world fires preserved as Active",
+      "No duplicates found between canada and world sources",
+      "No fires >60 days old to remove"
     ]
   }
 }
