@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-07T16:00:44.196Z",
+  "updated_at": "2026-06-07T22:00:44.505Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -8,6 +8,20 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Save the environment, and the economy, with prescribed burning, researchers say",
+        "link": "https://wildfiretoday.com/save-the-environment-and-the-economy-with-prescribed-burning-researchers-say/",
+        "description": "The environmental benefits of fighting bad fire with good fire have been documented for decades, but researchers are now working to show just how much economic good prescribed burning brings. A study recently published in the journal Science integrated and analyzed U.S. Forest Service data from 285 wildfires that intersected with prescribed burning and other [&#8230;]",
+        "pubDate": "Mon, 01 Jun 2026 22:30:51 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Water pollution lasts for years after a wildfire burns, new research shows",
+        "link": "https://wildfiretoday.com/water-pollution-lasts-for-years-after-a-wildfire-burns-new-research-shows/",
+        "description": "Contaminants from wildfires can create long term water quality concerns in areas far from the fire-impacted zones as drifting smoke plumes and rainfall runoff challenge standard water filtration techniques. A recently published analysis of 23 studies across 28 watersheds determined that the concentrations of numerous pollutants in waterways experienced significant increases for five years after [&",
+        "pubDate": "Wed, 27 May 2026 23:00:16 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Canada begins its aerial firefighting build",
         "link": "https://wildfiretoday.com/canada-begins-its-aerial-firefighting-build/",
