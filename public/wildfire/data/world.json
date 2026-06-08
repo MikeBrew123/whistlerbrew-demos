@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-08T10:00:40.865Z",
+  "updated_at": "2026-06-08T16:00:41.968Z",
   "fires": [
     {
       "country": "United States",
@@ -106,21 +106,21 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 2,
-      "world": 0
+      "canada": 3,
+      "world": 16
     },
     "items_out": {
-      "canada": 2,
+      "canada": 3,
       "world_fires": 16
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No duplicates found across sources",
-      "All existing fires retained as Active status",
-      "No fires contained >60 days ago to remove",
-      "Canadian Saskatchewan wildfire reported but not added to world_fires as it is domestic Canadian news",
-      "No world articles required rerouting"
+      "All existing fires retained with Active status",
+      "Canadian house fire (Markham, Ont.) retained in canada_news — structural fire, not wildfire",
+      "Saskatchewan wildfire article retained in canada_news",
+      "No duplicates found across input sources",
+      "All images preserved where present"
     ]
   }
 }
