@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-07T22:00:40.539Z",
+  "updated_at": "2026-06-08T10:00:40.865Z",
   "fires": [
     {
       "country": "United States",
@@ -117,11 +117,10 @@
     "rerouted": 0,
     "notes": [
       "No duplicates found across sources",
-      "All existing fires preserved as Active status",
-      "No fires older than 60 days removed",
-      "No misrouted items detected",
-      "2 Canadian news articles processed",
-      "16 world fire entries maintained from existing dataset"
+      "All existing fires retained as Active status",
+      "No fires contained >60 days ago to remove",
+      "Canadian Saskatchewan wildfire reported but not added to world_fires as it is domestic Canadian news",
+      "No world articles required rerouting"
     ]
   }
 }
