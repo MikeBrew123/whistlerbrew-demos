@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-09T10:00:41.038Z",
+  "updated_at": "2026-06-09T16:00:41.179Z",
   "fires": [
     {
       "country": "United States",
@@ -107,7 +107,7 @@
   "last_report": {
     "items_in": {
       "canada": 2,
-      "world": 16
+      "world": 0
     },
     "items_out": {
       "canada_news": 2,
@@ -116,10 +116,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing active fires retained.",
-      "No duplicate stories found across sources.",
-      "Saskatchewan wildfire from canada bucket matches world_fires context but kept in canada_news as it is Canadian content.",
-      "All images preserved from source data."
+      "All existing fires maintained as Active status",
+      "No duplicates found across Canada news sources",
+      "No world fire articles in input for this iteration",
+      "Saskatchewan wildfire mentioned in Canada news appears to be separate incident not yet in existing_fires"
     ]
   }
 }
