@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-10T10:00:40.647Z",
+  "updated_at": "2026-06-11T04:00:40.187Z",
   "fires": [
     {
       "country": "United States",
@@ -116,10 +116,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing active fires preserved",
+      "All existing fires retained as Active status",
+      "Canadian news items ingested without deduplication needed",
       "No world articles provided in input",
-      "Canada news items are secondary context articles about wildfire season, not specific fire incidents",
-      "All existing world fires maintained with Active status"
+      "Images preserved from existing fire entries"
     ]
   }
 }
