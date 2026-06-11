@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-11T16:00:44.244Z",
+  "updated_at": "2026-06-11T22:00:39.534Z",
   "fires": [
     {
       "country": "United States",
@@ -116,10 +116,11 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing fires preserved as Active status",
-      "No duplicates found across sources",
-      "Canada news items processed and retained",
-      "No world articles ingested this cycle"
+      "All 2 Canada articles retained as unique stories.",
+      "All existing world fires retained as Active status.",
+      "No new world articles provided for processing.",
+      "No duplicates detected across sources.",
+      "No fires exceeded 60-day containment threshold."
     ]
   }
 }
