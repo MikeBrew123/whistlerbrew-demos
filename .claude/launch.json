@@ -18,6 +18,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["http-server", "public/wildfire", "-p", "8768", "--cors", "-c-1"],
       "port": 8768
+    },
+    {
+      "name": "fire-challenge",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/mbrew/Developer/fire-challenge"],
+      "port": 5173
     }
   ]
 }
