@@ -82,19 +82,25 @@
   ],
   "news": [
     {
+      "title": "Saskatchewan had 'significant gaps' in 2025 wildfire preparation, response: report",
+      "url": "https://globalnews.ca/news/11902549/report-saskatchewan-2025-wildfire/",
+      "source": "Global News",
+      "published": "2026-06-12",
+      "description": "The Saskatchewan government and SPSA received a report described by the opposition as \"damning.\" It has 11 recommendations to better manage wildfires.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/06/saskatchewan-wildfire-2025-report-1.jpg?quality=65&strip=all"
+    },
+    {
       "title": "Wildfire that forced northern Saskatchewan residents out calmer, but still raging",
       "url": "https://globalnews.ca/news/11876085/wildfire-that-forced-northern-saskatchewan-residents-out-calmer-but-still-raging/",
       "source": "Global News Wildfire",
-      "published": "2026-06-01",
-      "description": "Northern Saskatchewan wildfire forcing evacuations, conditions calmer but fire continues to burn actively."
+      "published": "2026-06-01"
     },
     {
       "title": "Smoke, heat, rain and flooding; what to expect from Western weather",
       "url": "https://globalnews.ca/news/11875565/western-canada-rain-heat-warnings-air-quality-wildfires/",
       "source": "Global News Wildfire",
-      "published": "2026-05-31",
-      "description": "Western Canada weather forecast includes impacts from wildfires with smoke, heat warnings, and flooding risks."
+      "published": "2026-05-31"
     }
   ],
-  "last_news_update": "2026-06-12T22:00:51.414Z"
+  "last_news_update": "2026-06-13T04:00:41.330Z"
 }
