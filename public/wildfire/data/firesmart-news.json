@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T22:00:44.520Z",
+  "updated_at": "2026-06-14T04:00:49.081Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,35 +7,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Marcos Aerospace Unveils the Quencher concept",
-        "link": "https://wildfiretoday.com/marcos-aerospace-unveils-the-quencher-concept/",
-        "description": "This firefighting aircraft promises to do it all – amphibious, pilotless, day and night ops, fleet coordination and an AI brain. Marcos Aerospace, a Greek aerospace startup based in Athens, has just launched Quencher, an autonomous amphibious aircraft currently in what the company is describing as “the preliminary design phase.” With a 4,500-litre water capacity, [&#8230;]",
-        "pubDate": "Mon, 08 Jun 2026 22:35:50 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Global wildfire report for 2025 notes drop in area burned, as USAID cuts threaten future reports",
-        "link": "https://wildfiretoday.com/global-wildfire-report-for-2025-notes-drop-in-area-burned-as-usaid-cuts-threaten-future-reports/",
-        "description": "Wildfires filled the headlines of 2025 from the US to South Korea to Spain and beyond, but an annual report shows that last year was actually one of the lowest fire years of this century. At the global scale, land area burnt by wildfires in 2025 was nearly 828 million acres, which was the second-lowest [&#8230;]",
-        "pubDate": "Tue, 02 Jun 2026 20:00:38 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Save the environment, and the economy, with prescribed burning, researchers say",
-        "link": "https://wildfiretoday.com/save-the-environment-and-the-economy-with-prescribed-burning-researchers-say/",
-        "description": "The environmental benefits of fighting bad fire with good fire have been documented for decades, but researchers are now working to show just how much economic good prescribed burning brings. A study recently published in the journal Science integrated and analyzed U.S. Forest Service data from 285 wildfires that intersected with prescribed burning and other [&#8230;]",
-        "pubDate": "Mon, 01 Jun 2026 22:30:51 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Water pollution lasts for years after a wildfire burns, new research shows",
-        "link": "https://wildfiretoday.com/water-pollution-lasts-for-years-after-a-wildfire-burns-new-research-shows/",
-        "description": "Contaminants from wildfires can create long term water quality concerns in areas far from the fire-impacted zones as drifting smoke plumes and rainfall runoff challenge standard water filtration techniques. A recently published analysis of 23 studies across 28 watersheds determined that the concentrations of numerous pollutants in waterways experienced significant increases for five years after [&",
-        "pubDate": "Wed, 27 May 2026 23:00:16 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
