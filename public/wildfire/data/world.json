@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-06-16T04:00:42.496Z",
+  "updated_at": "2026-06-16T16:00:42.371Z",
   "fires": [
+    {
+      "country": "United States",
+      "name": "Riverside County Wildfires",
+      "status": "Active",
+      "summary": "Wildfires in Riverside County covering over 2,000 acres with fires raging near passing vehicles.",
+      "link": "https://www.bbc.com/news/videos/cn8q909jld2o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/07d9/live/e691eab0-6962-11f1-9f4a-21531e88e991.jpg"
+    },
     {
       "country": "United States",
       "name": "Florida and Georgia Wildfires",
@@ -71,7 +79,7 @@
       "country": "United States",
       "name": "Bastrop State Park Wildfire",
       "status": "Active",
-      "summary": "46-acre wildfire at Bastrop State Park, Texas. Initially 75% contained, now 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire."
+      "summary": "46-acre wildfire at Bastrop State Park, Texas. 95% contained. Evacuation orders lifted. Stirs trauma from 2011 fire."
     },
     {
       "country": "United States",
@@ -107,19 +115,19 @@
   "last_report": {
     "items_in": {
       "canada": 1,
-      "world": 0
+      "world": 1
     },
     "items_out": {
-      "canada_news": 1,
-      "world_fires": 16
+      "canada": 1,
+      "world_fires": 17
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing fires retained as Active status",
-      "No new world articles provided to merge",
-      "One Canadian news item preserved with image",
-      "No articles required rerouting between buckets"
+      "BBC video of Riverside County fires merged into world_fires as new Active entry",
+      "All existing_fires preserved as Active status",
+      "No fires dropped (none contained >60 days ago)",
+      "Image preserved for all entries where available"
     ]
   }
 }
