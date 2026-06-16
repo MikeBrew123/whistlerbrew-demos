@@ -79,13 +79,13 @@ interface CommunityData {
 
 const REPORT_WILDFIRE = { org: "Report a Wildfire", phone: "1-800-663-5555", note: "or *5555 from a cell" };
 
-const FIRE_CENTRE_CONTACTS: Record<string, { name: string; phone: string }> = {
-  "Kamloops Fire Centre": { name: "BCWS Kamloops Fire Centre", phone: "250-554-5532" },
-  "Northwest Fire Centre": { name: "BCWS Northwest Fire Centre (Smithers)", phone: "250-847-6600" },
-  "Prince George Fire Centre": { name: "BCWS Prince George Fire Centre", phone: "250-565-6194" },
-  "Cariboo Fire Centre": { name: "BCWS Cariboo Fire Centre (Williams Lake)", phone: "250-989-2600" },
-  "Southeast Fire Centre": { name: "BCWS Southeast Fire Centre (Castlegar)", phone: "250-365-4040" },
-  "Coastal Fire Centre": { name: "BCWS Coastal Fire Centre (Parksville)", phone: "250-951-4200" },
+const FIRE_CENTRE_CONTACTS: Record<string, ICSRow> = {
+  "Kamloops Fire Centre": { org: "BCWS Kamloops Fire Centre", phone: "250-554-5532" },
+  "Northwest Fire Centre": { org: "BCWS Northwest Fire Centre (Smithers)", phone: "250-847-6600" },
+  "Prince George Fire Centre": { org: "BCWS Prince George Fire Centre", phone: "250-565-6194" },
+  "Cariboo Fire Centre": { org: "BCWS Cariboo Fire Centre (Williams Lake)", phone: "250-989-2600" },
+  "Southeast Fire Centre": { org: "BCWS Southeast Fire Centre (Castlegar)", phone: "250-365-4040" },
+  "Coastal Fire Centre": { org: "BCWS Coastal Fire Centre (Parksville)", phone: "250-951-4200" },
 };
 
 const STANDARD_INFRASTRUCTURE: ICSRow[] = [
@@ -199,7 +199,7 @@ ${water.map(w => `    <Placemark>
   </Placemark>
   ${fire ? `<Placemark>
     <name>${esc(fire.id)} ${esc(fire.name)}</name>
-    <description>${fire.hectares} ha · ${esc(fire.status)}</description>
+    <description>${fire.sizeHa} ha · ${esc(fire.status)}</description>
     <Style><PolyStyle><color>440000ff</color></PolyStyle><LineStyle><color>ff0000ff</color><width>2</width></LineStyle></Style>
     <Polygon><outerBoundaryIs><LinearRing><coordinates>${fire.perimeter.map(p => `${p[1]},${p[0]},0`).join(' ')}</coordinates></LinearRing></outerBoundaryIs></Polygon>
   </Placemark>` : ''}
@@ -1431,7 +1431,7 @@ function SPSBriefingInner() {
         });
 
         const marker = L.marker([community.lat, community.lng], { icon: communityIcon }).addTo(map);
-        const showLabel = isSelected || community.distanceKm <= 30;
+        const showLabel = isSelected || (community.distanceKm ?? 999) <= 30;
         marker.bindTooltip(community.name + (community.distanceKm ? ` · ${community.distanceKm} km` : ''), { permanent: showLabel, direction: 'top', offset: [0, -15], className: 'sps-tooltip' });
         marker.on('click', () => toggleCommunity(community.id));
         bounds.push([community.lat, community.lng]);
