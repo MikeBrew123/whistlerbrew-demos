@@ -82,11 +82,13 @@
   ],
   "news": [
     {
-      "title": "Wildfire that forced northern Saskatchewan residents out calmer, but still raging",
-      "url": "https://globalnews.ca/news/11876085/wildfire-that-forced-northern-saskatchewan-residents-out-calmer-but-still-raging/",
-      "source": "Global News Wildfire",
-      "published": "2026-06-01"
+      "title": "Kelowna company uses AI to map evacuation routes ahead of wildfire season",
+      "url": "https://globalnews.ca/news/11907073/kelowna-company-ai-evacuation-routes-wildfire-season/",
+      "source": "Global News",
+      "published": "2026-06-16",
+      "description": "A Kelowna, B.C., technology company is working to help emergency officials better understand the condition of back roads that could become critical escape routes during a disaster.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/06/Screenshot-2026-06-15-183853.png"
     }
   ],
-  "last_news_update": "2026-06-15T10:00:40.573Z"
+  "last_news_update": "2026-06-16T10:00:41.154Z"
 }
