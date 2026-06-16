@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 const BC_FIRST_RESPONDERS_WFS =
   "https://openmaps.gov.bc.ca/geo/pub/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=WHSE_IMAGERY_AND_BASE_MAPS.GSR_FIRST_RESPONDERS_SVW&outputFormat=json&srsName=EPSG:4326&CQL_FILTER=RESPONDER_GROUP_TYPE=%27FIRE%27";

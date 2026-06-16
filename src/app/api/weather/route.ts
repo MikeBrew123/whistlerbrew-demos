@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 // Environment Canada GeoMet API (replaced deprecated RSS feeds)
 const EC_API = "https://api.weather.gc.ca/collections/citypageweather-realtime/items";

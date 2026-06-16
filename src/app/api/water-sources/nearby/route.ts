@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 const FWA_LAKES = "https://openmaps.gov.bc.ca/geo/pub/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&srsName=EPSG:4326&maxFeatures=100&sortBy=AREA_HA+D";
 const FWA_STREAMS = "https://openmaps.gov.bc.ca/geo/pub/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP&outputFormat=json&srsName=EPSG:4326&maxFeatures=100&propertyName=GNIS_NAME,STREAM_ORDER";

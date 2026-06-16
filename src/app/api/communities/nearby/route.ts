@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 // BC Geographic Names — includes small towns, rural communities, First Nations villages
 const BC_NAMES_WFS =

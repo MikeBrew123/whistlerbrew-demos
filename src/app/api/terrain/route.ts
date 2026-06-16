@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 const BEC_WFS = "https://openmaps.gov.bc.ca/geo/pub/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=WHSE_FOREST_VEGETATION.BEC_BIOGEOCLIMATIC_POLY&outputFormat=json&srsName=EPSG:4326&maxFeatures=1&propertyName=ZONE_NAME,SUBZONE_NAME,MAP_LABEL,NATURAL_DISTURBANCE,NATURAL_DISTURBANCE_NAME";
 const FUEL_WFS = "https://openmaps.gov.bc.ca/geo/pub/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=WHSE_LAND_AND_NATURAL_RESOURCE.PROT_FUEL_TYPE_SP&outputFormat=json&srsName=EPSG:4326&maxFeatures=1&propertyName=FUEL_TYPE_CD,FT_CONFIDENCE";

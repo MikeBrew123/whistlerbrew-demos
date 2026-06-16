@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import https from "https";
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 const GOOGLE_NEWS_RSS = "https://news.google.com/rss/search";
 
@@ -41,18 +40,6 @@ function parseRssItems(xml: string): NewsItem[] {
   return items;
 }
 
-function fetchWithIPv4(url: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, { family: 4, timeout: 8000 }, (res) => {
-      let data = "";
-      res.on("data", (chunk: Buffer) => { data += chunk.toString(); });
-      res.on("end", () => resolve(data));
-    });
-    req.on("timeout", () => { req.destroy(); reject(new Error("timeout")); });
-    req.on("error", reject);
-  });
-}
-
 export async function POST(request: NextRequest) {
   try {
     const { fireNumber, communityName, fireName } = await request.json();
@@ -68,7 +55,8 @@ export async function POST(request: NextRequest) {
     const query = `(${terms.join(" OR ")}) BC`;
     const url = `${GOOGLE_NEWS_RSS}?q=${encodeURIComponent(query)}&hl=en-CA&gl=CA&ceid=CA:en`;
 
-    const xml = await fetchWithIPv4(url);
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    const xml = await res.text();
     const articles = parseRssItems(xml).slice(0, 8);
 
     return NextResponse.json({ articles });
