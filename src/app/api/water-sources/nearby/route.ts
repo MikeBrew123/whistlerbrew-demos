@@ -36,6 +36,8 @@ interface WaterSource {
   type: string;
   distanceKm: number;
   accessNotes: string;
+  lat: number;
+  lng: number;
 }
 
 async function fetchLakes(lat: number, lng: number, radiusKm: number): Promise<WaterSource[]> {
@@ -62,6 +64,7 @@ async function fetchLakes(lat: number, lng: number, radiusKm: number): Promise<W
             distanceKm: Math.round(dist * 10) / 10,
             accessNotes: area > 50 ? `${Math.round(area)} ha — large lake, multiple access points likely` :
               area > 10 ? `${Math.round(area)} ha` : `${Math.round(area)} ha — small lake`,
+            lat: c[0], lng: c[1],
           });
         }
       } else if (!name && area >= 3) {
@@ -76,6 +79,7 @@ async function fetchLakes(lat: number, lng: number, radiusKm: number): Promise<W
             type: "lake",
             distanceKm: Math.round(dist * 10) / 10,
             accessNotes: "Verify road access",
+            lat: c[0], lng: c[1],
           });
         }
       }
@@ -109,6 +113,7 @@ async function fetchStreams(lat: number, lng: number, radiusKm: number): Promise
           distanceKm: Math.round(dist * 10) / 10,
           accessNotes: order >= 5 ? "Major waterway — multiple access points" :
             order >= 3 ? "Verify draft point access" : "Small stream — limited volume",
+          lat: c[0], lng: c[1],
         });
       }
     }
@@ -146,6 +151,7 @@ async function fetchBoatLaunches(lat: number, lng: number, radiusKm: number): Pr
         type: isBeach ? "beach" : "boat launch",
         distanceKm: Math.round(dist * 10) / 10,
         accessNotes: isBoat && tags.surface ? `${tags.surface} ramp` : "Via OpenStreetMap",
+        lat: elLat, lng: elLng,
       });
     }
     return results;

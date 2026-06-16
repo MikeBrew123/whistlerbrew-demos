@@ -141,7 +141,7 @@ function generateKML(
   fire: FireData | null,
   extras?: {
     fireHalls?: Array<{ name: string; locality: string; phone: string | null; chief: string | null; lat: number; lng: number; distanceKm: number }>;
-    waterSources?: Array<{ name: string; type: string; distanceKm: number; accessNotes: string }>;
+    waterSources?: Array<{ name: string; type: string; distanceKm: number; accessNotes: string; lat: number; lng: number }>;
     weather?: { temp?: string; wind?: string; rh?: string; condition?: string; warnings: string[]; forecast: Array<{ day: string; summary: string }> } | null;
     terrain?: { becZone?: string; becSubzone?: string; becLabel?: string; fuelTypeCode?: string; fuelTypeLabel?: string; ndtFireRisk?: string; elevationM?: number } | null;
   }
@@ -183,6 +183,8 @@ function generateKML(
 ${water.map(w => `    <Placemark>
       <name>💧 ${esc(w.name)}</name>
       <description>${esc(w.type)} · ${w.distanceKm} km\n${esc(w.accessNotes)}</description>
+      <Style><IconStyle><color>ffff6600</color><scale>0.7</scale></IconStyle></Style>
+      <Point><coordinates>${w.lng},${w.lat},0</coordinates></Point>
     </Placemark>`).join('\n')}
   </Folder>` : '';
 
@@ -949,7 +951,7 @@ function SPSBriefingInner() {
   const [nearbyFireHalls, setNearbyFireHalls] = useState<Array<{ name: string; address: string; locality: string; phone: string | null; chief: string | null; website: string | null; lat: number; lng: number; distanceKm: number }>>([]);
   const [detailWeather, setDetailWeather] = useState<{ temp?: string; wind?: string; rh?: string; condition?: string; warnings: string[]; forecast: Array<{ day: string; summary: string }> } | null>(null);
   const [terrainData, setTerrainData] = useState<{ becZone?: string; becSubzone?: string; becLabel?: string; naturalDisturbance?: string; ndtFireRisk?: string; fuelTypeCode?: string; fuelTypeLabel?: string; elevationM?: number } | null>(null);
-  const [waterSources, setWaterSources] = useState<Array<{ name: string; type: string; distanceKm: number; accessNotes: string }>>([]);
+  const [waterSources, setWaterSources] = useState<Array<{ name: string; type: string; distanceKm: number; accessNotes: string; lat: number; lng: number }>>([]);
 
   const mapRef = useRef<HTMLDivElement>(null);
   const leafletMapRef = useRef<any>(null);
