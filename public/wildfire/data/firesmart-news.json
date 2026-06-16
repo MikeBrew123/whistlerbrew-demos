@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-06-16T16:00:44.982Z",
+  "updated_at": "2026-06-16T22:00:44.820Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Tactical evacuations underway as wildfire burns in West Kelowna",
+        "link": "https://globalnews.ca/news/11908169/wildfire-west-kelowna/",
+        "description": "Central Okanagan Emergency Operations said in an updated posted on Tuesday that the wildfire is burning near Kalamoir Regional Park.",
+        "pubDate": "Tue, 16 Jun 2026 19:25:42 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/west-kelowna-fire.png"
+      },
       {
         "title": "Kelowna company uses AI to map evacuation routes ahead of wildfire season",
         "link": "https://globalnews.ca/news/11907073/kelowna-company-ai-evacuation-routes-wildfire-season/",
@@ -36,6 +44,13 @@
         "link": "https://wildfiretoday.com/marcos-aerospace-unveils-the-quencher-concept/",
         "description": "This firefighting aircraft promises to do it all – amphibious, pilotless, day and night ops, fleet coordination and an AI brain. Marcos Aerospace, a Greek aerospace startup based in Athens, has just launched Quencher, an autonomous amphibious aircraft currently in what the company is describing as “the preliminary design phase.” With a 4,500-litre water capacity, [&#8230;]",
         "pubDate": "Mon, 08 Jun 2026 22:35:50 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Global wildfire report for 2025 notes drop in area burned, as USAID cuts threaten future reports",
+        "link": "https://wildfiretoday.com/global-wildfire-report-for-2025-notes-drop-in-area-burned-as-usaid-cuts-threaten-future-reports/",
+        "description": "Wildfires filled the headlines of 2025 from the US to South Korea to Spain and beyond, but an annual report shows that last year was actually one of the lowest fire years of this century. At the global scale, land area burnt by wildfires in 2025 was nearly 828 million acres, which was the second-lowest [&#8230;]",
+        "pubDate": "Tue, 02 Jun 2026 20:00:38 +0000",
         "source": "Wildfire Today"
       },
       {
