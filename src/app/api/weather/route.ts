@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-export const runtime = "edge";
+export const runtime = "nodejs";
 
+// Environment Canada GeoMet API (replaced deprecated RSS feeds)
+const EC_API = "https://api.weather.gc.ca/collections/citypageweather-realtime/items";
 
-// Environment Canada RSS feed URL format: https://weather.gc.ca/rss/city/bc-XX_e.xml
-// BC city codes for Environment Canada forecasts (RSS format: bc-XX)
 const BC_CITY_CODES: Record<string, string> = {
   "100 mile house": "bc-7",
   "abbotsford": "bc-81",
@@ -49,131 +49,71 @@ const BC_CITY_CODES: Record<string, string> = {
   "williams lake": "bc-76",
 };
 
-type ForecastDay = {
-  day: string;
-  summary: string;
-  high?: number;
-  low?: number;
-  pop?: number; // Probability of precipitation
-};
-
+type ForecastDay = { day: string; summary: string; high?: number; low?: number; pop?: number };
 type WeatherResponse = {
   location: string;
-  current?: {
-    temperature?: number;
-    condition?: string;
-    humidity?: number;
-    wind?: string;
-    observedAt?: string;
-  };
+  current?: { temperature?: number; condition?: string; humidity?: number; wind?: string };
   forecast: ForecastDay[];
   warnings: string[];
-  stationName?: string;
   error?: string;
 };
 
-async function fetchEnvironmentCanadaForecast(cityCode: string): Promise<WeatherResponse | null> {
+async function fetchECWeather(cityCode: string): Promise<WeatherResponse | null> {
   try {
-    // Environment Canada RSS feed URL
-    const rssUrl = `https://weather.gc.ca/rss/city/${cityCode}_e.xml`;
-    const response = await fetch(rssUrl, { next: { revalidate: 1800 } }); // Cache for 30 minutes
+    const url = `${EC_API}?lang=en&f=json&identifier=${cityCode}`;
+    const response = await fetch(url);
+    if (!response.ok) return null;
 
-    if (!response.ok) {
-      console.error(`EC RSS returned ${response.status} for ${cityCode}`);
-      return null;
+    const data = await response.json();
+    const features = data.features || [];
+    if (features.length === 0) return null;
+
+    const props = features[0].properties;
+    const cc = props.currentConditions || {};
+    const fg = props.forecastGroup || {};
+    const forecasts = fg.forecasts || [];
+    const rawWarnings = props.warnings || [];
+
+    const location = props.name?.en || "Unknown";
+
+    const windSpeed = cc.wind?.speed?.value?.en;
+    const windDir = cc.wind?.direction?.value?.en;
+    const windGust = cc.wind?.gust?.value?.en;
+    let windStr: string | undefined;
+    if (windSpeed != null && windDir) {
+      windStr = `${windDir} ${windSpeed} km/h`;
+      if (windGust) windStr += ` gusting ${windGust}`;
     }
 
-    const xmlText = await response.text();
-
-    // Parse the RSS XML response
-    const warnings: string[] = [];
-    const forecast: ForecastDay[] = [];
-
-    // Extract location from title (format: "City Name - Weather - Environment Canada")
-    const titleMatch = xmlText.match(/<title>([^<]+) - Weather/);
-    const location = titleMatch ? titleMatch[1].trim() : "Unknown";
-
-    // Extract current conditions from entry with "Current Conditions" in title
-    const currentMatch = xmlText.match(/<entry>[\s\S]*?<title>Current Conditions:\s*([^<]+)<\/title>[\s\S]*?<summary[^>]*>([\s\S]*?)<\/summary>[\s\S]*?<\/entry>/);
-    let current: WeatherResponse["current"] = undefined;
-
-    if (currentMatch) {
-      const titleTemp = currentMatch[1].trim();
-      const summaryText = currentMatch[2].replace(/<!\[CDATA\[|\]\]>/g, "").replace(/<[^>]+>/g, " ").trim();
-
-      // Parse temperature from title like "-5.8°C"
-      const tempMatch = titleTemp.match(/(-?[\d.]+)°C/);
-
-      // Parse humidity and wind from summary
-      const humidityMatch = summaryText.match(/Humidity:\s*(\d+)\s*%/i);
-      const windMatch = summaryText.match(/Wind:\s*([^A-Z][^<\n]*?)(?:\s+Air|$)/i);
-      const conditionMatch = summaryText.match(/Condition:\s*([^<\n]+)/i);
-
-      current = {
-        temperature: tempMatch ? parseFloat(tempMatch[1]) : undefined,
-        condition: conditionMatch ? conditionMatch[1].trim() : undefined,
-        humidity: humidityMatch ? parseInt(humidityMatch[1]) : undefined,
-        wind: windMatch ? windMatch[1].trim() : undefined,
-      };
-    }
-
-    // Extract warnings - look for entries with "WARNING" or "WATCH" or "ADVISORY" in title
-    const warningMatches = xmlText.matchAll(/<entry>[\s\S]*?<title>([^<]*(?:WARNING|WATCH|ADVISORY|ALERT)[^<]*)<\/title>[\s\S]*?<\/entry>/gi);
-    for (const match of warningMatches) {
-      warnings.push(match[1].trim());
-    }
-
-    // Extract forecast entries (category = "Weather Forecasts")
-    const forecastMatches = xmlText.matchAll(/<entry>[\s\S]*?<title>([^<]+)<\/title>[\s\S]*?<category term="Weather Forecasts"\/>[\s\S]*?<summary[^>]*>([\s\S]*?)<\/summary>[\s\S]*?<\/entry>/g);
-    for (const match of forecastMatches) {
-      const title = match[1].trim();
-      const summary = match[2].replace(/<!\[CDATA\[|\]\]>/g, "").replace(/<[^>]+>/g, " ").trim();
-
-      // Parse forecast day name (e.g., "Friday: Mainly sunny. High minus 1.")
-      const dayMatch = title.match(/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)(\s+night)?:/i);
-      if (!dayMatch) continue;
-
-      const dayName = dayMatch[1] + (dayMatch[2] || "");
-
-      const day: ForecastDay = {
-        day: dayName,
-        summary: title.replace(/^[^:]+:\s*/, ""), // Use title text after the day name
-      };
-
-      // Try to extract high/low from title (format: "High minus 1" or "Low minus 11")
-      const highMatch = title.match(/High\s+(minus\s+)?(\d+)/i);
-      const lowMatch = title.match(/Low\s+(minus\s+)?(\d+)/i);
-
-      if (highMatch) {
-        day.high = highMatch[1] ? -parseInt(highMatch[2]) : parseInt(highMatch[2]);
-      }
-      if (lowMatch) {
-        day.low = lowMatch[1] ? -parseInt(lowMatch[2]) : parseInt(lowMatch[2]);
-      }
-
-      // Extract POP from summary
-      const popMatch = summary.match(/POP\s+(\d+)%/i) || summary.match(/(\d+)\s*percent\s+chance/i);
-      if (popMatch) {
-        day.pop = parseInt(popMatch[1]);
-      }
-
-      forecast.push(day);
-    }
-
-    return {
-      location,
-      current,
-      forecast: forecast.slice(0, 6), // Limit to ~3 days
-      warnings,
+    const current = {
+      temperature: cc.temperature?.value?.en ?? undefined,
+      condition: cc.condition?.en ?? undefined,
+      humidity: cc.relativeHumidity?.value?.en ?? undefined,
+      wind: windStr,
     };
+
+    const forecast: ForecastDay[] = forecasts.slice(0, 6).map((f: any) => {
+      const day = f.period?.textForecastName?.en || f.period?.value?.en || "—";
+      const summary = f.textSummary?.en || "";
+      const temps = f.temperatures?.temperature || [];
+      const high = temps.find((t: any) => t.class?.en === "high")?.value?.en;
+      const low = temps.find((t: any) => t.class?.en === "low")?.value?.en;
+
+      return { day, summary, high, low };
+    });
+
+    const warnings: string[] = Array.isArray(rawWarnings)
+      ? rawWarnings.map((w: any) => w.description?.en || w.event?.en || "").filter(Boolean)
+      : [];
+
+    return { location, current, forecast, warnings };
   } catch (error) {
-    console.error("Error fetching EC forecast:", error);
+    console.error("Error fetching EC weather:", error);
     return null;
   }
 }
 
 function findNearestCity(lat: number, lng: number): string | null {
-  // Approximate coordinates for BC cities (matched to EC city codes)
   const cityCoords: Record<string, [number, number]> = {
     "100 mile house": [51.64, -121.29],
     "burns lake": [54.23, -125.76],
@@ -219,7 +159,6 @@ function findNearestCity(lat: number, lng: number): string | null {
     }
   }
 
-  // Only return if within reasonable distance (~200km ≈ 2 degrees)
   return minDistance < 2 ? nearestCity : null;
 }
 
@@ -229,13 +168,10 @@ export async function POST(request: NextRequest) {
     const { latitude, longitude, community } = body;
 
     let cityCode: string | undefined;
-    let searchLocation = community?.toLowerCase().trim();
+    const searchLocation = community?.toLowerCase().trim();
 
-    // If community provided, try to find city code directly
     if (searchLocation) {
       cityCode = BC_CITY_CODES[searchLocation];
-
-      // Try partial match if exact match fails
       if (!cityCode) {
         for (const [city, code] of Object.entries(BC_CITY_CODES)) {
           if (city.includes(searchLocation) || searchLocation.includes(city)) {
@@ -246,33 +182,9 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // If no city code found but we have coordinates, find nearest city
     if (!cityCode && latitude && longitude) {
       const nearestCity = findNearestCity(latitude, longitude);
-      if (nearestCity) {
-        cityCode = BC_CITY_CODES[nearestCity];
-      }
-    }
-
-    // If still no city code, try geocoding the community
-    if (!cityCode && community) {
-      try {
-        const geoRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/geocode`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ address: community }),
-        });
-
-        if (geoRes.ok) {
-          const geoData = await geoRes.json();
-          const nearestCity = findNearestCity(geoData.latitude, geoData.longitude);
-          if (nearestCity) {
-            cityCode = BC_CITY_CODES[nearestCity];
-          }
-        }
-      } catch {
-        // Geocoding failed, continue without
-      }
+      if (nearestCity) cityCode = BC_CITY_CODES[nearestCity];
     }
 
     if (!cityCode) {
@@ -280,12 +192,11 @@ export async function POST(request: NextRequest) {
         location: community || "Unknown",
         forecast: [],
         warnings: [],
-        error: "Could not find weather data for this location. Try a major BC city name.",
+        error: "Could not find weather data for this location.",
       });
     }
 
-    const weather = await fetchEnvironmentCanadaForecast(cityCode);
-
+    const weather = await fetchECWeather(cityCode);
     if (!weather) {
       return NextResponse.json({
         location: community || "Unknown",
@@ -298,9 +209,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(weather);
   } catch (error) {
     console.error("Error in weather API:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch weather data" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to fetch weather data" }, { status: 500 });
   }
 }

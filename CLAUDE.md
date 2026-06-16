@@ -1,12 +1,9 @@
 # whistlerbrew-demos — CLAUDE.md
 
 ## 📍 Sitemap (keep current!)
-**Single source of truth:** `src/app/projects/lab/page.tsx` — `POLISHED` and `WORKSHOP` arrays.
+**Single source of truth:** `src/app/projects/page.tsx` — `PROJECTS` array.
 
-When you ship anything new (whether or not it's linked from `/projects`), add it to one of those arrays. `/projects/lab` is the hidden full-sitemap page sitting behind the same password gate as `/projects` (linked from a small "lab" footer link).
-
-- **Polished** = ready enough to also have a card on `/projects`
-- **Workshop** = unlinked, in-progress, or experimental
+When you ship anything new, add it to the `PROJECTS` array. All projects are visible on `/projects` — no hidden pages.
 
 ## 📊 Site-wide analytics: Cloudflare Web Analytics
 - **How it works:** whistlerbrew.com is on Cloudflare DNS, so Web Analytics is **auto-injected at the edge** — no script tag needed in any file. View data at: Cloudflare Dash → Analytics & Logs → Web Analytics → whistlerbrew.com.
