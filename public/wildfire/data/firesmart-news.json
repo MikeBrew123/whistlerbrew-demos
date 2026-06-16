@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T04:00:45.302Z",
+  "updated_at": "2026-06-16T10:00:44.784Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -17,6 +17,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Bringing wildfire scenario planning to life",
+        "link": "https://wildfiretoday.com/bringing-wildfire-scenario-planning-to-life/",
+        "description": "As fire and other emergencies become more complex, chaotic and concurrent, incident managers may find that traditional pre-season tabletop exercises struggle to cope with these new demands. An emerging Australian company has seized the power of AI to develop a scenario package that moves faster, adapts to sudden changes, reacts to multiple pressures, and responds [&#8230;]",
+        "pubDate": "Tue, 16 Jun 2026 06:01:54 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Wildland firefighter health should be treated as fire infrastructure, urges emerging research focus",
         "link": "https://wildfiretoday.com/wildland-firefighter-health-should-be-treated-as-fire-infrastructure-urges-emerging-research-focus/",
