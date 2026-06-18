@@ -1,15 +1,24 @@
 {
-  "updated_at": "2026-06-17T22:00:44.592Z",
+  "updated_at": "2026-06-18T04:00:44.496Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Mosquito study extends to North Shore this summer",
+        "link": "https://globalnews.ca/news/11910074/mosquito-study-north-shore-bc-summer/",
+        "description": "As the weather gets warmer and climate change affects how long hot and dry weather continues, more mosquitoes can complete their life cycle quicker and the population can grow.",
+        "pubDate": "Wed, 17 Jun 2026 19:10:08 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/f6d8d74398923c75a4228a9dbc487be0422b937ea45a644790b4eceb15f4ab36.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [
       {
-        "title": "Inside Lytton&#8217;s contentious recovery, where concerns smoulder 5 years after wildfire",
-        "link": "https://globalnews.ca/news/11909488/lytton-wildfire-recovery/",
-        "description": "Mayor Denise O'Connor concedes that Lytton, B.C., looks \"pretty empty\" these days, aside from the homes of about 75 residents and a couple other buildings.",
-        "pubDate": "Wed, 17 Jun 2026 13:03:23 +0000",
+        "title": "Intimate partner violence will soon have tougher penalties under new law",
+        "link": "https://globalnews.ca/news/11910306/intimate-partner-violence-penalties-conservative-law/",
+        "description": "The Conservative bill essentially leapfrogged the Liberal government's own intimate partner violence bill that includes many of the same measures as 'Bailey's Law.'",
+        "pubDate": "Wed, 17 Jun 2026 23:08:52 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Lytton-anniversary.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Frank-Caputo-Baileys-Law-e1781736187201.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -17,6 +26,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Linking wildfire risk to social vulnerability",
+        "link": "https://wildfiretoday.com/linking-wildfire-risk-to-social-vulnerability/",
+        "description": "Socially vulnerable groups are significantly over-represented in high wildfire-risk areas across the United States and should be prioritized for targeted mitigation measures, research has found. A study in the International Journal of Wildland Fire identified census tracts across the US where high wildfire risk and high social vulnerability intersect &#8211; and found that American Indian/Alaska [",
+        "pubDate": "Wed, 17 Jun 2026 22:17:21 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Bringing wildfire scenario planning to life",
         "link": "https://wildfiretoday.com/bringing-wildfire-scenario-planning-to-life/",
@@ -32,6 +48,13 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "Wildfire Prevention Act becomes &#8216;Trojan Horse&#8217; for Roadless Rule repeal",
+        "link": "https://wildfiretoday.com/wildfire-prevention-act-becomes-trojan-horse-for-roadless-rule-repeal/",
+        "description": "Support for a once bipartisan piece of wildfire-focused legislation has faltered after Republican lawmakers added a repeal of the Roadless Rule. Energy and Natural Resources Committee Chairman Sen. Mike Lee (R-UT) proposed the amendment to the Wildfire Prevention Act, which would increase fuels treatments in federal forests and had support from both Democrats and Republicans [&#8230;]",
+        "pubDate": "Sat, 13 Jun 2026 23:14:23 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "Marcos Aerospace Unveils the Quencher concept",
         "link": "https://wildfiretoday.com/marcos-aerospace-unveils-the-quencher-concept/",
         "description": "This firefighting aircraft promises to do it all – amphibious, pilotless, day and night ops, fleet coordination and an AI brain. Marcos Aerospace, a Greek aerospace startup based in Athens, has just launched Quencher, an autonomous amphibious aircraft currently in what the company is describing as “the preliminary design phase.” With a 4,500-litre water capacity, [&#8230;]",
@@ -39,11 +62,47 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Save the environment, and the economy, with prescribed burning, researchers say",
-        "link": "https://wildfiretoday.com/save-the-environment-and-the-economy-with-prescribed-burning-researchers-say/",
-        "description": "The environmental benefits of fighting bad fire with good fire have been documented for decades, but researchers are now working to show just how much economic good prescribed burning brings. A study recently published in the journal Science integrated and analyzed U.S. Forest Service data from 285 wildfires that intersected with prescribed burning and other [&#8230;]",
-        "pubDate": "Mon, 01 Jun 2026 22:30:51 +0000",
+        "title": "Elevated fire weather forecasted throughout the US this week",
+        "link": "https://wildfiretoday.com/elevated-fire-weather-forecasted-throughout-the-us-this-week/",
+        "description": "The &#8220;very active&#8221; fire season predicted for the U.S. since the beginning of the year may largely kick off this week, according to forecasts from the National Interagency Fire Center. Elevated fire weather conditions are set across the Southwest and southern Great Basin regions due to strong winds, dry conditions and very warm temperatures, according [&#8230;]",
+        "pubDate": "Sun, 07 Jun 2026 16:24:52 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "US Wildland Fire Service partially funded from significant EPA cuts",
+        "link": "https://wildfiretoday.com/us-wildland-fire-service-partially-funded-from-significant-epa-cuts/",
+        "description": "It&#8217;s been nearly half a year since the U.S. Wildland Fire Service was formally launched, but the new agency has gone without funding since. Lawmakers may soon change that. The U.S. House Committee on Appropriations submitted its funding plan for the Department of the Interior, the environment and related agencies this week, with a specific [&#8230;]",
+        "pubDate": "Fri, 05 Jun 2026 14:32:23 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Europe preps for a wild wildfire summer",
+        "link": "https://wildfiretoday.com/europe-preps-for-a-wild-wildfire-summer/",
+        "description": "Europe has boosted its wildfire preparations ahead of a forecasted busy 2026 season by deploying its largest force yet of firefighters, aircraft and other experts across the continent. The announcement comes as the World Meteorological Organisation issued a Global Seasonal Climate Update that, while highlighting the development of a strong El Nino around the Pacific, [&#8230;]",
+        "pubDate": "Wed, 03 Jun 2026 23:11:38 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "IAWF at Wildfire Camp in Germany",
+        "link": "https://wildfiretoday.com/iawf-at-wildfire-camp-in-germany/",
+        "description": "We are at Interschutz 2026 in Hanover, Germany all this week: 1-6 June 2026. IAWF Vice President Ciaran Nugent is hosting a small display outdoors in the Wildfire Camp with a small group of colleagues. For the first time in its 70-year history the large Interschutz fire and rescue services trade fair in Germany features [&#8230;]",
+        "pubDate": "Tue, 02 Jun 2026 23:11:21 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Global wildfire report for 2025 notes drop in area burned, as USAID cuts threaten future reports",
+        "link": "https://wildfiretoday.com/global-wildfire-report-for-2025-notes-drop-in-area-burned-as-usaid-cuts-threaten-future-reports/",
+        "description": "Wildfires filled the headlines of 2025 from the US to South Korea to Spain and beyond, but an annual report shows that last year was actually one of the lowest fire years of this century. At the global scale, land area burnt by wildfires in 2025 was nearly 828 million acres, which was the second-lowest [&#8230;]",
+        "pubDate": "Tue, 02 Jun 2026 20:00:38 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Inside Lytton&#8217;s contentious recovery, where concerns smoulder 5 years after wildfire",
+        "link": "https://globalnews.ca/news/11909488/lytton-wildfire-recovery/",
+        "description": "Mayor Denise O'Connor concedes that Lytton, B.C., looks \"pretty empty\" these days, aside from the homes of about 75 residents and a couple other buildings.",
+        "pubDate": "Wed, 17 Jun 2026 13:03:23 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Lytton-anniversary.jpg?quality=65&#038;strip=all"
       }
     ]
   }
