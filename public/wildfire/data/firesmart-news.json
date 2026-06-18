@@ -1,24 +1,15 @@
 {
-  "updated_at": "2026-06-18T04:00:44.496Z",
+  "updated_at": "2026-06-18T10:00:44.769Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Mosquito study extends to North Shore this summer",
-        "link": "https://globalnews.ca/news/11910074/mosquito-study-north-shore-bc-summer/",
-        "description": "As the weather gets warmer and climate change affects how long hot and dry weather continues, more mosquitoes can complete their life cycle quicker and the population can grow.",
-        "pubDate": "Wed, 17 Jun 2026 19:10:08 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/f6d8d74398923c75a4228a9dbc487be0422b937ea45a644790b4eceb15f4ab36.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
-        "title": "Intimate partner violence will soon have tougher penalties under new law",
-        "link": "https://globalnews.ca/news/11910306/intimate-partner-violence-penalties-conservative-law/",
-        "description": "The Conservative bill essentially leapfrogged the Liberal government's own intimate partner violence bill that includes many of the same measures as 'Bailey's Law.'",
-        "pubDate": "Wed, 17 Jun 2026 23:08:52 +0000",
+        "title": "Kalamoir Park closed following wildfire, evac alert still in place",
+        "link": "https://globalnews.ca/news/11910841/kalamoir-park-closed-wildfire-evac-alert/",
+        "description": "The Regional District of Central Okanagan says the Kalamoir Regional Park remains closed until further notice while safety and damage assessments are conducted.",
+        "pubDate": "Wed, 17 Jun 2026 23:00:51 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Frank-Caputo-Baileys-Law-e1781736187201.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/WEB-NN-KALAMOIR-PARK-WILDFI_OM01WIGR.png"
       }
     ],
     "prince-george": [],
@@ -95,14 +86,6 @@
         "description": "Wildfires filled the headlines of 2025 from the US to South Korea to Spain and beyond, but an annual report shows that last year was actually one of the lowest fire years of this century. At the global scale, land area burnt by wildfires in 2025 was nearly 828 million acres, which was the second-lowest [&#8230;]",
         "pubDate": "Tue, 02 Jun 2026 20:00:38 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Inside Lytton&#8217;s contentious recovery, where concerns smoulder 5 years after wildfire",
-        "link": "https://globalnews.ca/news/11909488/lytton-wildfire-recovery/",
-        "description": "Mayor Denise O'Connor concedes that Lytton, B.C., looks \"pretty empty\" these days, aside from the homes of about 75 residents and a couple other buildings.",
-        "pubDate": "Wed, 17 Jun 2026 13:03:23 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Lytton-anniversary.jpg?quality=65&#038;strip=all"
       }
     ]
   }
