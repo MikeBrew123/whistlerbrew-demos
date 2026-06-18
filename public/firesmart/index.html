@@ -268,7 +268,7 @@
     .day-col.today .day-header { background: rgba(239,203,23,0.15); }
 
     .day-name {
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -277,7 +277,7 @@
     .day-col.today .day-name { color: var(--yellow); }
 
     .day-date {
-      font-size: 13px;
+      font-size: 18px;
       color: var(--muted);
       margin-top: 2px;
     }
@@ -293,7 +293,7 @@
 
     .day-empty {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 18px;
       padding: 6px 4px;
       opacity: 0.5;
     }
@@ -318,7 +318,7 @@
     }
 
     .event-title {
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--offwhite);
       line-height: 1.2;
@@ -328,7 +328,7 @@
     }
 
     .event-desc {
-      font-size: 12px;
+      font-size: 16px;
       color: var(--muted);
       margin-top: 3px;
       white-space: nowrap;
@@ -338,11 +338,11 @@
 
     .event-type-badge {
       display: inline-block;
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 2px 7px;
+      padding: 4px 12px;
       border-radius: 100px;
       margin-top: 5px;
       color: #fff;
@@ -521,6 +521,86 @@
     .badge-tentative { background: var(--muted);    color: var(--charcoal); }
     .badge-confirmed { background: var(--lightblue); color: var(--charcoal); }
 
+    /* ===== ASSESSMENTS SLIDE ===== */
+    .assessments-slide {
+      background: var(--charcoal);
+      padding: 40px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .assessments-slide-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--yellow);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .assess-section-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .assess-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .assess-row {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      border-left: 5px solid var(--yellow);
+    }
+    .assess-row.scheduled { border-left-color: var(--plantgreen); }
+    .assess-row.assigned  { border-left-color: var(--lightblue); }
+    .assess-row.requested { border-left-color: var(--muted); }
+
+    .assess-assessor {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--offwhite);
+      min-width: 220px;
+    }
+
+    .assess-address {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--bluegray);
+      flex: 1;
+    }
+
+    .assess-datetime {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--yellow);
+      min-width: 200px;
+      text-align: right;
+    }
+
+    .assess-badge {
+      display: inline-block;
+      padding: 5px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge-scheduled { background: var(--plantgreen); color: #fff; }
+    .badge-assigned  { background: var(--lightblue);  color: var(--charcoal); }
+    .badge-requested { background: var(--orange);     color: #fff; }
+
     /* ===== FUN SLIDE ===== */
     .fun-slide {
       background: var(--charcoal);
@@ -654,7 +734,7 @@
       gap: 12px;
     }
     .chipper-current-label {
-      font-size: 12px;
+      font-size: 22px;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -668,7 +748,7 @@
     .chipper-day-cell {
       background: var(--surface2);
       border-radius: 10px;
-      padding: 12px 10px;
+      padding: 18px 14px;
       text-align: center;
     }
     .chipper-day-cell.today {
@@ -676,7 +756,7 @@
       outline: 2px solid var(--yellow);
     }
     .chipper-day-name {
-      font-size: 11px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -697,7 +777,7 @@
       align-items: center;
     }
     .chipper-upcoming-date {
-      font-size: 12px;
+      font-size: 20px;
       font-weight: 600;
       color: var(--muted);
       text-align: right;
@@ -705,16 +785,16 @@
     }
     .chipper-upcoming-cell {
       background: var(--surface2);
-      border-radius: 7px;
-      padding: 7px 8px;
+      border-radius: 10px;
+      padding: 14px 12px;
       text-align: center;
     }
     /* Zone badges (shared) */
     .zone-badge {
       display: inline-block;
-      font-size: 12px;
+      font-size: 20px;
       font-weight: 700;
-      padding: 3px 10px;
+      padding: 5px 14px;
       border-radius: 20px;
       white-space: nowrap;
     }
@@ -729,26 +809,26 @@
     .chipper-full-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11px;
+      font-size: 20px;
     }
     .chipper-full-table th {
-      font-size: 10px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      padding: 4px 8px;
+      padding: 6px 10px;
       text-align: left;
       border-bottom: 1px solid var(--surface2);
     }
     .chipper-full-table td {
-      padding: 3px 8px;
+      padding: 6px 10px;
       border-bottom: 1px solid #1e252f55;
       color: var(--offwhite);
     }
     .chipper-full-table tr.month-header td {
       background: var(--surface);
-      font-size: 10px;
+      font-size: 18px;
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -838,6 +918,7 @@ const GID = {
   events:    '320214153',
   vacations: '1646156140',
   fun:       '1434883666',
+  assessments: '1337696613',
 };
 
 // Slide durations in milliseconds
@@ -846,6 +927,7 @@ const DURATIONS = {
   events:    10000,
   vacations: 10000,
   fun:       10000,
+  assessments: 12000,
 };
 
 // Refresh data every 30 minutes
@@ -1107,6 +1189,45 @@ function buildVacations(rows) {
   return slide;
 }
 
+// --- ASSESSMENTS ---
+function buildAssessments(rows) {
+  const slide = el('div', 'slide assessments-slide');
+  slide.id = 'slide-assessments';
+  slide.appendChild(el('div', 'assessments-slide-title', '📋 Assessment Pipeline'));
+
+  const scheduled = rows.filter(r => (r['Status'] || '').toLowerCase() === 'scheduled');
+  const assigned  = rows.filter(r => (r['Status'] || '').toLowerCase() === 'assigned');
+  const requested = rows.filter(r => (r['Status'] || '').toLowerCase() === 'requested');
+
+  function addSection(label, items, statusClass) {
+    if (!items.length) return;
+    slide.appendChild(el('div', 'assess-section-label', label));
+    const list = el('div', 'assess-list');
+    items.forEach(r => {
+      const row = el('div', `assess-row ${statusClass}`);
+      const assessor = r['Assessor'] || '—';
+      const addr = r['Address'] || '';
+      const dt = r['Date / Time'] || '';
+      row.appendChild(el('span', 'assess-assessor', assessor));
+      row.appendChild(el('span', 'assess-address', addr));
+      row.appendChild(el('span', 'assess-datetime', dt || '—'));
+      const badge = el('span', `assess-badge badge-${statusClass}`, statusClass.charAt(0).toUpperCase() + statusClass.slice(1));
+      row.appendChild(badge);
+      list.appendChild(row);
+    });
+    slide.appendChild(list);
+  }
+
+  addSection('Scheduled', scheduled, 'scheduled');
+  addSection('Assigned', assigned, 'assigned');
+  addSection('Unassigned', requested, 'requested');
+
+  if (!rows.length) {
+    slide.innerHTML += `<div style="display:flex;align-items:center;justify-content:center;flex:1;font-size:36px;color:var(--muted)">No active assessments</div>`;
+  }
+  return slide;
+}
+
 // --- FUN ---
 function buildFun(rows) {
   const slide = el('div', 'slide fun-slide');
@@ -1127,9 +1248,10 @@ function buildFun(rows) {
 function renderFunEntry(slide, row) {
   slide.innerHTML = '';
 
-  // Special: Assessment Stats
+  // Special: Stats cards (check Title and Badge)
   if ((row['Title'] || '').toLowerCase().includes('assessment') ||
-      (row['Title'] || '').toLowerCase().includes('stat')) {
+      (row['Title'] || '').toLowerCase().includes('stat') ||
+      (row['Badge'] || '').toLowerCase() === 'stats') {
     const statsDiv = el('div', 'fun-stats-slide');
     // Optional image alongside stats
     const imgUrl = driveToImg(row['Image']);
@@ -1139,7 +1261,7 @@ function renderFunEntry(slide, row) {
       const imgEl = document.createElement('img');
       imgEl.src = imgUrl;
       imgEl.alt = '';
-      imgEl.style.cssText = 'height:280px;width:auto;object-fit:contain;flex-shrink:0;';
+      imgEl.style.cssText = 'height:160px;width:auto;object-fit:contain;flex-shrink:0;';
       imgEl.onerror = function() { this.style.display='none'; };
       statsInner.appendChild(imgEl);
     }
@@ -1378,20 +1500,22 @@ function buildChipperFull() {
 //  ROTATION ENGINE
 // ============================================================
 
-const SLIDE_ORDER = ['thisweek', 'events', 'vacations', 'fun', 'chipper'];
+const SLIDE_ORDER = ['thisweek', 'events', 'assessments', 'vacations', 'fun', 'chipper'];
 const SLIDE_LABELS = {
-  thisweek:  'This Week',
-  events:    'Upcoming Events',
-  vacations: 'Team Away',
-  fun:       'Team Corner',
-  chipper:   'Chipper Schedule',
+  thisweek:    'This Week',
+  events:      'Upcoming Events',
+  assessments: 'Assessment Pipeline',
+  vacations:   'Team Away',
+  fun:         'Team Corner',
+  chipper:     'Chipper Schedule',
 };
 const SLIDE_DURATIONS = {
-  thisweek:  DURATIONS.thisWeek,
-  events:    DURATIONS.events,
-  vacations: DURATIONS.vacations,
-  fun:       DURATIONS.fun,
-  chipper:   15000,
+  thisweek:    DURATIONS.thisWeek,
+  events:      DURATIONS.events,
+  assessments: DURATIONS.assessments,
+  vacations:   DURATIONS.vacations,
+  fun:         DURATIONS.fun,
+  chipper:     15000,
   chipperFull: 25000,
 };
 
@@ -1474,9 +1598,10 @@ function updateClock() {
 // ============================================================
 
 async function loadAndRender() {
-  const [weekRows, eventRows, vacRows, funRows] = await Promise.all([
+  const [weekRows, eventRows, assessRows, vacRows, funRows] = await Promise.all([
     fetchCSV(GID.thisWeek),
     fetchCSV(GID.events),
+    fetchCSV(GID.assessments),
     fetchCSV(GID.vacations),
     fetchCSV(GID.fun),
   ]);
@@ -1487,6 +1612,7 @@ async function loadAndRender() {
   const slides = [
     buildThisWeek(weekRows),
     buildEvents(eventRows),
+    buildAssessments(assessRows),
     buildVacations(vacRows),
     buildFun(funRows),
     buildChipperCurrent(),
