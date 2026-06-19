@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-06-19T16:00:44.804Z",
+  "updated_at": "2026-06-19T22:00:45.618Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "B.C. gold mine sues province for suddenly suspending mining rights",
-        "link": "https://globalnews.ca/news/11912376/bc-gold-mine-sues-province-suddenly-suspending-mining-rights/",
-        "description": "The Yellow Giant mine on Banks Island began commercial production in 2015, but was shut down by the province that same year after releasing excess tailings and effluent.",
-        "pubDate": "Thu, 18 Jun 2026 22:08:45 +0000",
+        "title": "Evacuation alert lifted for West Kelowna residents following wildfire",
+        "link": "https://globalnews.ca/news/11912085/evacuation-alert-lifted-west-kelowna-wildfire/",
+        "description": "In an update on Thursday, the Regional District of Central Okanagan said it was quiet on the fire overnight and no major issues were reported.",
+        "pubDate": "Thu, 18 Jun 2026 21:21:56 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/7e993eb76a408d657a49d2a55028dd32c4604b6948767b20cbf69654b2514283.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/WEB-NN-KALAMOIR-PARK-WILDFI_OM01WIGR.png"
       }
     ],
     "prince-george": [],
@@ -17,6 +17,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Significant wildfire activity heading into Juneteenth weekend drives National Preparedness Level increase",
+        "link": "https://wildfiretoday.com/significant-wildfire-activity-heading-into-juneteenth-weekend-drives-national-preparedness-level-increase/",
+        "description": "The National Interagency Fire Center increased the National Preparedness Level to PL3 on Thursday, marking a shift toward needed national support as the U.S. nears peak fire season. The increase was driven by significant wildland fire activity across the country, with the potential of additional large fires remaining elevated in the days ahead, the NIFC [&#8230;]",
+        "pubDate": "Fri, 19 Jun 2026 19:27:11 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Linking wildfire risk to social vulnerability",
         "link": "https://wildfiretoday.com/linking-wildfire-risk-to-social-vulnerability/",
@@ -79,21 +86,6 @@
         "description": "We are at Interschutz 2026 in Hanover, Germany all this week: 1-6 June 2026. IAWF Vice President Ciaran Nugent is hosting a small display outdoors in the Wildfire Camp with a small group of colleagues. For the first time in its 70-year history the large Interschutz fire and rescue services trade fair in Germany features [&#8230;]",
         "pubDate": "Tue, 02 Jun 2026 23:11:21 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Global wildfire report for 2025 notes drop in area burned, as USAID cuts threaten future reports",
-        "link": "https://wildfiretoday.com/global-wildfire-report-for-2025-notes-drop-in-area-burned-as-usaid-cuts-threaten-future-reports/",
-        "description": "Wildfires filled the headlines of 2025 from the US to South Korea to Spain and beyond, but an annual report shows that last year was actually one of the lowest fire years of this century. At the global scale, land area burnt by wildfires in 2025 was nearly 828 million acres, which was the second-lowest [&#8230;]",
-        "pubDate": "Tue, 02 Jun 2026 20:00:38 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "&#8216;Australians were purposely trying to drink us dry&#8217;: Vancouver bar on World Cup profit win",
-        "link": "https://globalnews.ca/news/11910903/vancouver-bar-world-cup-profit-win/",
-        "description": "Dublin Calling, a sports bar on Granville Street, has been packed since the tournament began, filling up during the morning games and staying that way throughout the day.",
-        "pubDate": "Thu, 18 Jun 2026 05:13:26 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/set-gfx-fifa-hospitality-1.jpg?quality=65&#038;strip=all"
       }
     ]
   }
