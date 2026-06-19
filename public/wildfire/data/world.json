@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T10:00:40.845Z",
+  "updated_at": "2026-06-19T10:00:41.018Z",
   "fires": [
     {
       "country": "United States",
@@ -114,20 +114,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 0,
-      "world": 1
+      "canada": 1,
+      "world": 0
     },
     "items_out": {
-      "canada": 0,
+      "canada_news": 1,
       "world_fires": 17
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Merged BBC video article with existing Riverside County Wildfires entry, preserved image URL",
-      "Retained all existing_fires marked as Active status",
-      "No duplicates found across canada_news and world inputs",
-      "No fires older than 60 days in contained status to remove"
+      "All existing fires retained as Active status",
+      "No duplicate stories detected across sources",
+      "Single Canada news article preserved with image",
+      "All world fires maintained in world_fires bucket"
     ]
   }
 }
