@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-06-18T22:00:44.593Z",
+  "updated_at": "2026-06-19T04:00:45.985Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "Evacuation alert lifted for West Kelowna residents following wildfire",
-        "link": "https://globalnews.ca/news/11912085/evacuation-alert-lifted-west-kelowna-wildfire/",
-        "description": "In an update on Thursday, the Regional District of Central Okanagan said it was quiet on the fire overnight and no major issues were reported.",
-        "pubDate": "Thu, 18 Jun 2026 21:21:56 +0000",
+        "title": "B.C. gold mine sues province for suddenly suspending mining rights",
+        "link": "https://globalnews.ca/news/11912376/bc-gold-mine-sues-province-suddenly-suspending-mining-rights/",
+        "description": "The Yellow Giant mine on Banks Island began commercial production in 2015, but was shut down by the province that same year after releasing excess tailings and effluent.",
+        "pubDate": "Thu, 18 Jun 2026 22:08:45 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/WEB-NN-KALAMOIR-PARK-WILDFI_OM01WIGR.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/7e993eb76a408d657a49d2a55028dd32c4604b6948767b20cbf69654b2514283.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -39,6 +39,13 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "Wildfire Prevention Act becomes &#8216;Trojan Horse&#8217; for Roadless Rule repeal",
+        "link": "https://wildfiretoday.com/wildfire-prevention-act-becomes-trojan-horse-for-roadless-rule-repeal/",
+        "description": "Support for a once bipartisan piece of wildfire-focused legislation has faltered after Republican lawmakers added a repeal of the Roadless Rule. Energy and Natural Resources Committee Chairman Sen. Mike Lee (R-UT) proposed the amendment to the Wildfire Prevention Act, which would increase fuels treatments in federal forests and had support from both Democrats and Republicans [&#8230;]",
+        "pubDate": "Sat, 13 Jun 2026 23:14:23 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "Marcos Aerospace Unveils the Quencher concept",
         "link": "https://wildfiretoday.com/marcos-aerospace-unveils-the-quencher-concept/",
         "description": "This firefighting aircraft promises to do it all – amphibious, pilotless, day and night ops, fleet coordination and an AI brain. Marcos Aerospace, a Greek aerospace startup based in Athens, has just launched Quencher, an autonomous amphibious aircraft currently in what the company is describing as “the preliminary design phase.” With a 4,500-litre water capacity, [&#8230;]",
@@ -50,6 +57,13 @@
         "link": "https://wildfiretoday.com/elevated-fire-weather-forecasted-throughout-the-us-this-week/",
         "description": "The &#8220;very active&#8221; fire season predicted for the U.S. since the beginning of the year may largely kick off this week, according to forecasts from the National Interagency Fire Center. Elevated fire weather conditions are set across the Southwest and southern Great Basin regions due to strong winds, dry conditions and very warm temperatures, according [&#8230;]",
         "pubDate": "Sun, 07 Jun 2026 16:24:52 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "US Wildland Fire Service partially funded from significant EPA cuts",
+        "link": "https://wildfiretoday.com/us-wildland-fire-service-partially-funded-from-significant-epa-cuts/",
+        "description": "It&#8217;s been nearly half a year since the U.S. Wildland Fire Service was formally launched, but the new agency has gone without funding since. Lawmakers may soon change that. The U.S. House Committee on Appropriations submitted its funding plan for the Department of the Interior, the environment and related agencies this week, with a specific [&#8230;]",
+        "pubDate": "Fri, 05 Jun 2026 14:32:23 +0000",
         "source": "Wildfire Today"
       },
       {
@@ -72,6 +86,14 @@
         "description": "Wildfires filled the headlines of 2025 from the US to South Korea to Spain and beyond, but an annual report shows that last year was actually one of the lowest fire years of this century. At the global scale, land area burnt by wildfires in 2025 was nearly 828 million acres, which was the second-lowest [&#8230;]",
         "pubDate": "Tue, 02 Jun 2026 20:00:38 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "&#8216;Australians were purposely trying to drink us dry&#8217;: Vancouver bar on World Cup profit win",
+        "link": "https://globalnews.ca/news/11910903/vancouver-bar-world-cup-profit-win/",
+        "description": "Dublin Calling, a sports bar on Granville Street, has been packed since the tournament began, filling up during the morning games and staying that way throughout the day.",
+        "pubDate": "Thu, 18 Jun 2026 05:13:26 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/set-gfx-fifa-hospitality-1.jpg?quality=65&#038;strip=all"
       }
     ]
   }
