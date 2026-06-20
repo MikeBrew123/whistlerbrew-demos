@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-06-19T22:00:45.618Z",
+  "updated_at": "2026-06-20T04:00:44.606Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
+    "kamloops": [],
+    "prince-george": [
       {
-        "title": "Evacuation alert lifted for West Kelowna residents following wildfire",
-        "link": "https://globalnews.ca/news/11912085/evacuation-alert-lifted-west-kelowna-wildfire/",
-        "description": "In an update on Thursday, the Regional District of Central Okanagan said it was quiet on the fire overnight and no major issues were reported.",
-        "pubDate": "Thu, 18 Jun 2026 21:21:56 +0000",
+        "title": "Environment Canada issues tornado watch for Prince George region",
+        "link": "https://globalnews.ca/news/11914212/tornado-watch-issued-prince-george-region/",
+        "description": "Environment Canada says in a Friday afternoon update that 'significant damage or destruction to infrastructure, homes and the natural environment is possible.'",
+        "pubDate": "Sat, 20 Jun 2026 00:51:11 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/WEB-NN-KALAMOIR-PARK-WILDFI_OM01WIGR.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2020/05/08178609.jpg?quality=65&#038;strip=all"
       }
     ],
-    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
