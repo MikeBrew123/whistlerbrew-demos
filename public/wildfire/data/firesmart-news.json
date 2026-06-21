@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T22:00:44.474Z",
+  "updated_at": "2026-06-21T04:00:45.116Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -12,7 +12,16 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/06/Screenshot-2026-06-19-215722.png"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Environment Canada issues tornado watch for Prince George region",
+        "link": "https://globalnews.ca/news/11914212/tornado-watch-issued-prince-george-region/",
+        "description": "Environment Canada says in a Friday afternoon update that 'significant damage or destruction to infrastructure, homes and the natural environment is possible.'",
+        "pubDate": "Sat, 20 Jun 2026 00:51:11 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2020/05/08178609.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
