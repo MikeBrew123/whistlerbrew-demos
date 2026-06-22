@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T22:00:44.035Z",
+  "updated_at": "2026-06-22T04:00:44.159Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -25,6 +25,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "From forest to front door &#8211; understanding wildfire spread into communities",
+        "link": "https://wildfiretoday.com/from-forest-to-front-door-understanding-wildfire-spread-into-communities/",
+        "description": "By Ty Burke As California’s population boomed — from 10 million in 1950 to over 40 million today — the number of people living in fire-prone areas multiplied. Over the decades, millions of new homes and commercial buildings sprang up to accommodate the needs of the state’s growing population, and many of those structures stand [&#8230;]",
+        "pubDate": "Mon, 22 Jun 2026 00:11:42 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Significant wildfire activity heading into Juneteenth weekend drives National Preparedness Level increase",
         "link": "https://wildfiretoday.com/significant-wildfire-activity-heading-into-juneteenth-weekend-drives-national-preparedness-level-increase/",
@@ -86,13 +93,6 @@
         "link": "https://wildfiretoday.com/europe-preps-for-a-wild-wildfire-summer/",
         "description": "Europe has boosted its wildfire preparations ahead of a forecasted busy 2026 season by deploying its largest force yet of firefighters, aircraft and other experts across the continent. The announcement comes as the World Meteorological Organisation issued a Global Seasonal Climate Update that, while highlighting the development of a strong El Nino around the Pacific, [&#8230;]",
         "pubDate": "Wed, 03 Jun 2026 23:11:38 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "IAWF at Wildfire Camp in Germany",
-        "link": "https://wildfiretoday.com/iawf-at-wildfire-camp-in-germany/",
-        "description": "We are at Interschutz 2026 in Hanover, Germany all this week: 1-6 June 2026. IAWF Vice President Ciaran Nugent is hosting a small display outdoors in the Wildfire Camp with a small group of colleagues. For the first time in its 70-year history the large Interschutz fire and rescue services trade fair in Germany features [&#8230;]",
-        "pubDate": "Tue, 02 Jun 2026 23:11:21 +0000",
         "source": "Wildfire Today"
       }
     ]
