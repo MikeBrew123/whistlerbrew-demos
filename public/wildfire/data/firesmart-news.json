@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-06-22T10:00:44.351Z",
+  "updated_at": "2026-06-22T16:00:44.989Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Some evacuation orders start to lift as crews tame wildfire near Lytton, B.C.",
+        "link": "https://globalnews.ca/news/11915825/lytton-wildfire-evacuation-orders-lifted/",
+        "description": "Some evacuation orders have started to lift as cooler nights and lighter winds limit the growth of a wildfire near Lytton, British Columbia.",
+        "pubDate": "Mon, 22 Jun 2026 12:01:52 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/61fb8212b094e304ca7e64eeb4f33bdbd4962db8866c171e82b1ffc9d447448a_9a4041.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Firefighters battling wildfire near Lytton, B.C., helped by cooler temperatures",
         "link": "https://globalnews.ca/news/11915383/lytton-bc-wildfire-2026-cool-temperatures/",
@@ -24,77 +32,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "From forest to front door &#8211; understanding wildfire spread into communities",
-        "link": "https://wildfiretoday.com/from-forest-to-front-door-understanding-wildfire-spread-into-communities/",
-        "description": "By Ty Burke As California’s population boomed — from 10 million in 1950 to over 40 million today — the number of people living in fire-prone areas multiplied. Over the decades, millions of new homes and commercial buildings sprang up to accommodate the needs of the state’s growing population, and many of those structures stand [&#8230;]",
-        "pubDate": "Mon, 22 Jun 2026 00:11:42 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Significant wildfire activity heading into Juneteenth weekend drives National Preparedness Level increase",
-        "link": "https://wildfiretoday.com/significant-wildfire-activity-heading-into-juneteenth-weekend-drives-national-preparedness-level-increase/",
-        "description": "The National Interagency Fire Center increased the National Preparedness Level to PL3 on Thursday, marking a shift toward needed national support as the U.S. nears peak fire season. The increase was driven by significant wildland fire activity across the country, with the potential of additional large fires remaining elevated in the days ahead, the NIFC [&#8230;]",
-        "pubDate": "Fri, 19 Jun 2026 19:27:11 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Linking wildfire risk to social vulnerability",
-        "link": "https://wildfiretoday.com/linking-wildfire-risk-to-social-vulnerability/",
-        "description": "Socially vulnerable groups are significantly over-represented in high wildfire-risk areas across the United States and should be prioritized for targeted mitigation measures, research has found. A study in the International Journal of Wildland Fire identified census tracts across the US where high wildfire risk and high social vulnerability intersect &#8211; and found that American Indian/Alaska [",
-        "pubDate": "Wed, 17 Jun 2026 22:17:21 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Bringing wildfire scenario planning to life",
-        "link": "https://wildfiretoday.com/bringing-wildfire-scenario-planning-to-life/",
-        "description": "As fire and other emergencies become more complex, chaotic and concurrent, incident managers may find that traditional pre-season tabletop exercises struggle to cope with these new demands. An emerging Australian company has seized the power of AI to develop a scenario package that moves faster, adapts to sudden changes, reacts to multiple pressures, and responds [&#8230;]",
-        "pubDate": "Tue, 16 Jun 2026 06:01:54 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildland firefighter health should be treated as fire infrastructure, urges emerging research focus",
-        "link": "https://wildfiretoday.com/wildland-firefighter-health-should-be-treated-as-fire-infrastructure-urges-emerging-research-focus/",
-        "description": "The physiological and psychological stress that wildfire personnel are put under every fire season has quickly moved from the margins of fire research to the mainstream, with global pathways for funding increasingly expanding, according to International Journal of Wildland Fire Associate Editor Anthony White. White, in an editorial in the Journal, said he has seen [&#8230;]",
-        "pubDate": "Mon, 15 Jun 2026 07:46:04 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildfire Prevention Act becomes &#8216;Trojan Horse&#8217; for Roadless Rule repeal",
-        "link": "https://wildfiretoday.com/wildfire-prevention-act-becomes-trojan-horse-for-roadless-rule-repeal/",
-        "description": "Support for a once bipartisan piece of wildfire-focused legislation has faltered after Republican lawmakers added a repeal of the Roadless Rule. Energy and Natural Resources Committee Chairman Sen. Mike Lee (R-UT) proposed the amendment to the Wildfire Prevention Act, which would increase fuels treatments in federal forests and had support from both Democrats and Republicans [&#8230;]",
-        "pubDate": "Sat, 13 Jun 2026 23:14:23 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Marcos Aerospace Unveils the Quencher concept",
-        "link": "https://wildfiretoday.com/marcos-aerospace-unveils-the-quencher-concept/",
-        "description": "This firefighting aircraft promises to do it all – amphibious, pilotless, day and night ops, fleet coordination and an AI brain. Marcos Aerospace, a Greek aerospace startup based in Athens, has just launched Quencher, an autonomous amphibious aircraft currently in what the company is describing as “the preliminary design phase.” With a 4,500-litre water capacity, [&#8230;]",
-        "pubDate": "Mon, 08 Jun 2026 22:35:50 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Elevated fire weather forecasted throughout the US this week",
-        "link": "https://wildfiretoday.com/elevated-fire-weather-forecasted-throughout-the-us-this-week/",
-        "description": "The &#8220;very active&#8221; fire season predicted for the U.S. since the beginning of the year may largely kick off this week, according to forecasts from the National Interagency Fire Center. Elevated fire weather conditions are set across the Southwest and southern Great Basin regions due to strong winds, dry conditions and very warm temperatures, according [&#8230;]",
-        "pubDate": "Sun, 07 Jun 2026 16:24:52 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "US Wildland Fire Service partially funded from significant EPA cuts",
-        "link": "https://wildfiretoday.com/us-wildland-fire-service-partially-funded-from-significant-epa-cuts/",
-        "description": "It&#8217;s been nearly half a year since the U.S. Wildland Fire Service was formally launched, but the new agency has gone without funding since. Lawmakers may soon change that. The U.S. House Committee on Appropriations submitted its funding plan for the Department of the Interior, the environment and related agencies this week, with a specific [&#8230;]",
-        "pubDate": "Fri, 05 Jun 2026 14:32:23 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Europe preps for a wild wildfire summer",
-        "link": "https://wildfiretoday.com/europe-preps-for-a-wild-wildfire-summer/",
-        "description": "Europe has boosted its wildfire preparations ahead of a forecasted busy 2026 season by deploying its largest force yet of firefighters, aircraft and other experts across the continent. The announcement comes as the World Meteorological Organisation issued a Global Seasonal Climate Update that, while highlighting the development of a strong El Nino around the Pacific, [&#8230;]",
-        "pubDate": "Wed, 03 Jun 2026 23:11:38 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
