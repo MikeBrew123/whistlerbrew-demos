@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22T10:00:42.060Z",
+  "updated_at": "2026-06-22T16:00:42.006Z",
   "fires": [
     {
       "country": "United States",
@@ -114,8 +114,8 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
-      "world": 17
+      "canada": 2,
+      "world": 0
     },
     "items_out": {
       "canada": 1,
@@ -124,9 +124,10 @@
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Global News duplicate entry (same URL, title, source variation)",
-      "All existing_fires preserved as Active",
-      "No fires removed (none contained >60 days ago)"
+      "Deduplicated Lytton wildfire: kept 2026-06-22 article (most recent with image)",
+      "All world_fires preserved as Active status",
+      "No fires contained >60 days ago to drop",
+      "No misrouted items detected"
     ]
   }
 }
