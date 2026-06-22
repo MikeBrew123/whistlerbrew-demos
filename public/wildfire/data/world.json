@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22T04:00:42.944Z",
+  "updated_at": "2026-06-22T10:00:42.060Z",
   "fires": [
     {
       "country": "United States",
@@ -115,7 +115,7 @@
   "last_report": {
     "items_in": {
       "canada": 1,
-      "world": 0
+      "world": 17
     },
     "items_out": {
       "canada": 1,
@@ -124,10 +124,9 @@
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated 1 duplicate article (Global News vs Global News Wildfire - same URL/content, kept single entry with image)",
-      "All existing_fires retained as Active",
-      "No fires older than 60 days to drop",
-      "No misrouted items detected"
+      "Deduplicated Global News duplicate entry (same URL, title, source variation)",
+      "All existing_fires preserved as Active",
+      "No fires removed (none contained >60 days ago)"
     ]
   }
 }
