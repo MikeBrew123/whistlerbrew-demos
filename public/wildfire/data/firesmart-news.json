@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T16:00:48.092Z",
+  "updated_at": "2026-06-23T22:00:44.711Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,6 +7,14 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Registrations open for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/registrations-open-for-wfcc26-canada/",
+        "description": "Registrations are OPEN for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. #WFCC26 will bring together wildland fire management agencies, Indigenous knowledge holders and experts, scientists, partners, and collaborators from across Canada and around the world. This biennial conference focuses on wildland fire",
+        "pubDate": "Tue, 23 Jun 2026 02:44:21 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
