@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22T22:00:41.624Z",
+  "updated_at": "2026-06-23T16:00:42.590Z",
   "fires": [
     {
       "country": "United States",
@@ -115,19 +115,19 @@
   "last_report": {
     "items_in": {
       "canada": 1,
-      "world": 17
+      "world": 0
     },
     "items_out": {
-      "canada_news": 1,
+      "canada": 1,
       "world_fires": 17
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
       "All existing_fires preserved as Active status",
-      "No duplicates found across sources",
-      "No fires >60 days old to remove",
-      "All images preserved in output"
+      "One Canada article added for Lytton, B.C. wildfire with image",
+      "No world articles provided for deduplication",
+      "All fires maintained in world_fires bucket"
     ]
   }
 }
