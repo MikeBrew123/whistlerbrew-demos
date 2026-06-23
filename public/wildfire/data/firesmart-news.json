@@ -1,37 +1,12 @@
 {
-  "updated_at": "2026-06-23T10:00:44.074Z",
+  "updated_at": "2026-06-23T16:00:48.092Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Some evacuation orders start to lift as crews tame wildfire near Lytton, B.C.",
-        "link": "https://globalnews.ca/news/11915825/lytton-wildfire-evacuation-orders-lifted/",
-        "description": "Some evacuation orders have started to lift as cooler nights and lighter winds limit the growth of a wildfire near Lytton, British Columbia.",
-        "pubDate": "Mon, 22 Jun 2026 12:01:52 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/61fb8212b094e304ca7e64eeb4f33bdbd4962db8866c171e82b1ffc9d447448a_9a4041.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Firefighters battling wildfire near Lytton, B.C., helped by cooler temperatures",
-        "link": "https://globalnews.ca/news/11915383/lytton-bc-wildfire-2026-cool-temperatures/",
-        "description": "The latest estimate puts the size of the out-of-control fire near Lytton, B.C., at about seven square-kilometres, up slightly from Saturday.",
-        "pubDate": "Sun, 21 Jun 2026 19:31:16 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/4af8be9ac50198b7f1353d964796efbaf09fffd19602fdd69d6ffd01da481fad_a16c88.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Registrations open for WFCC26 Canada",
-        "link": "https://wildfiretoday.com/registrations-open-for-wfcc26-canada/",
-        "description": "Registrations are OPEN for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. #WFCC26 will bring together wildland fire management agencies, Indigenous knowledge holders and experts, scientists, partners, and collaborators from across Canada and around the world. This biennial conference focuses on wildland fire",
-        "pubDate": "Tue, 23 Jun 2026 02:44:21 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
