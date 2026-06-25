@@ -1,71 +1,12 @@
 {
-  "updated_at": "2026-06-24T22:00:44.690Z",
+  "updated_at": "2026-06-25T04:03:00.380Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Okanagan Falls to be incorporated as B.C.&#8217;s newest municipality in November",
-        "link": "https://globalnews.ca/news/11937128/bc-okanagan-falls-incorporated-november/",
-        "description": "The B.C. government says Okanagan Falls residents will vote for a mayor and four councillors in the October local elections before becoming a municipality in November.",
-        "pubDate": "Wed, 24 Jun 2026 20:29:21 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/c841ff6b25bb376447161e9581f7f192b5f9b4b9acb29967bad80b18fbce5239_a45ad2.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "USFS allows N95 mask use for wildland firefighters",
-        "link": "https://wildfiretoday.com/usfs-allows-n95-mask-use-for-wildland-firefighters/",
-        "description": "The U.S. Department of Agriculture&#8217;s Forest Service announced on Wednesday that it has authorized wildland firefighters to use N95 respirators on the fire line. A breathing apparatus or mask like an N95 hasn’t historically been a staple of wildland firefighters’ gear, though some have been in testing for years. The added carry capacity is one reason, along [&#8230;]",
-        "pubDate": "Wed, 24 Jun 2026 17:50:18 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildfire risk to heighten globally in 2026 due to &#8216;historic&#8217; El Niño",
-        "link": "https://wildfiretoday.com/wildfire-risk-to-heighten-globally-in-2026-due-to-historic-el-nino/",
-        "description": "A potentially historic El Niño is all but confirmed for 2026, heightening wildfire and other risks across the globe, according to recent reports from the world&#8217;s forecasting agencies. The European Commission&#8217;s Joint Research Centre has determined that an El Niño event this year was &#8220;virtually certain&#8221; based on all seasonal forecast modelling systems. The fluctuating [&#8230",
-        "pubDate": "Wed, 24 Jun 2026 05:38:16 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "From forest to front door &#8211; understanding wildfire spread into communities",
-        "link": "https://wildfiretoday.com/from-forest-to-front-door-understanding-wildfire-spread-into-communities/",
-        "description": "By Ty Burke As California’s population boomed — from 10 million in 1950 to over 40 million today — the number of people living in fire-prone areas multiplied. Over the decades, millions of new homes and commercial buildings sprang up to accommodate the needs of the state’s growing population, and many of those structures stand [&#8230;]",
-        "pubDate": "Mon, 22 Jun 2026 00:11:42 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Significant wildfire activity heading into Juneteenth weekend drives National Preparedness Level increase",
-        "link": "https://wildfiretoday.com/significant-wildfire-activity-heading-into-juneteenth-weekend-drives-national-preparedness-level-increase/",
-        "description": "The National Interagency Fire Center increased the National Preparedness Level to PL3 on Thursday, marking a shift toward needed national support as the U.S. nears peak fire season. The increase was driven by significant wildland fire activity across the country, with the potential of additional large fires remaining elevated in the days ahead, the NIFC [&#8230;]",
-        "pubDate": "Fri, 19 Jun 2026 19:27:11 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Linking wildfire risk to social vulnerability",
-        "link": "https://wildfiretoday.com/linking-wildfire-risk-to-social-vulnerability/",
-        "description": "Socially vulnerable groups are significantly over-represented in high wildfire-risk areas across the United States and should be prioritized for targeted mitigation measures, research has found. A study in the International Journal of Wildland Fire identified census tracts across the US where high wildfire risk and high social vulnerability intersect &#8211; and found that American Indian/Alaska [",
-        "pubDate": "Wed, 17 Jun 2026 22:17:21 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Bringing wildfire scenario planning to life",
-        "link": "https://wildfiretoday.com/bringing-wildfire-scenario-planning-to-life/",
-        "description": "As fire and other emergencies become more complex, chaotic and concurrent, incident managers may find that traditional pre-season tabletop exercises struggle to cope with these new demands. An emerging Australian company has seized the power of AI to develop a scenario package that moves faster, adapts to sudden changes, reacts to multiple pressures, and responds [&#8230;]",
-        "pubDate": "Tue, 16 Jun 2026 06:01:54 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildland firefighter health should be treated as fire infrastructure, urges emerging research focus",
-        "link": "https://wildfiretoday.com/wildland-firefighter-health-should-be-treated-as-fire-infrastructure-urges-emerging-research-focus/",
-        "description": "The physiological and psychological stress that wildfire personnel are put under every fire season has quickly moved from the margins of fire research to the mainstream, with global pathways for funding increasingly expanding, according to International Journal of Wildland Fire Associate Editor Anthony White. White, in an editorial in the Journal, said he has seen [&#8230;]",
-        "pubDate": "Mon, 15 Jun 2026 07:46:04 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
