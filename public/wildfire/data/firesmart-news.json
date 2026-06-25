@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-06-25T10:00:44.652Z",
+  "updated_at": "2026-06-25T16:00:44.188Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Kelowna business turns crash damage into colourful community artwork",
+        "link": "https://globalnews.ca/news/11937385/kelowna-business-turns-crash-damage-colourful-community-artwork/",
+        "description": "Owner Deb Liebholtz was left staring at sheets of plywood covering the damage.\r\n\r\nInstead of seeing an eyesore, she saw an opportunity",
+        "pubDate": "Thu, 25 Jun 2026 01:29:43 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Screenshot-2026-06-24-154210.png"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -20,6 +29,13 @@
         "link": "https://wildfiretoday.com/wildfire-risk-to-heighten-globally-in-2026-due-to-historic-el-nino/",
         "description": "A potentially historic El Niño is all but confirmed for 2026, heightening wildfire and other risks across the globe, according to recent reports from the world&#8217;s forecasting agencies. The European Commission&#8217;s Joint Research Centre has determined that an El Niño event this year was &#8220;virtually certain&#8221; based on all seasonal forecast modelling systems. The fluctuating [&#8230",
         "pubDate": "Wed, 24 Jun 2026 05:38:16 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Registrations open for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/registrations-open-for-wfcc26-canada/",
+        "description": "Registrations are OPEN for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. #WFCC26 will bring together wildland fire management agencies, Indigenous knowledge holders and experts, scientists, partners, and collaborators from across Canada and around the world. This biennial conference focuses on wildland fire",
+        "pubDate": "Tue, 23 Jun 2026 02:44:21 +0000",
         "source": "Wildfire Today"
       },
       {
@@ -55,13 +71,6 @@
         "link": "https://wildfiretoday.com/wildland-firefighter-health-should-be-treated-as-fire-infrastructure-urges-emerging-research-focus/",
         "description": "The physiological and psychological stress that wildfire personnel are put under every fire season has quickly moved from the margins of fire research to the mainstream, with global pathways for funding increasingly expanding, according to International Journal of Wildland Fire Associate Editor Anthony White. White, in an editorial in the Journal, said he has seen [&#8230;]",
         "pubDate": "Mon, 15 Jun 2026 07:46:04 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildfire Prevention Act becomes &#8216;Trojan Horse&#8217; for Roadless Rule repeal",
-        "link": "https://wildfiretoday.com/wildfire-prevention-act-becomes-trojan-horse-for-roadless-rule-repeal/",
-        "description": "Support for a once bipartisan piece of wildfire-focused legislation has faltered after Republican lawmakers added a repeal of the Roadless Rule. Energy and Natural Resources Committee Chairman Sen. Mike Lee (R-UT) proposed the amendment to the Wildfire Prevention Act, which would increase fuels treatments in federal forests and had support from both Democrats and Republicans [&#8230;]",
-        "pubDate": "Sat, 13 Jun 2026 23:14:23 +0000",
         "source": "Wildfire Today"
       }
     ]
