@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-06-27T04:00:44.401Z",
+  "updated_at": "2026-06-27T10:00:43.871Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "As drought deepens, Okanagan leaders unite to protect water supply",
+        "link": "https://globalnews.ca/news/11941030/drought-okanagan-leaders-unite-protect-water-supply/",
+        "description": "The Okanagan's water crisis didn't begin with the scorching summer heat. It began months ago, high in the mountains, where winter failed to deliver enough snow",
+        "pubDate": "Sat, 27 Jun 2026 01:32:03 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Screenshot-2026-06-26-172703.png"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
