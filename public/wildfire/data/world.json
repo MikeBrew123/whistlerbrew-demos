@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-27T10:00:42.281Z",
+  "updated_at": "2026-06-28T04:00:44.311Z",
   "fires": [
     {
       "country": "United States",
@@ -114,20 +114,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
-      "world": 17
+      "canada": 2,
+      "world": 0
     },
     "items_out": {
-      "canada_news": 1,
+      "canada_news": 2,
       "world_fires": 17
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All 17 existing fires retained as Active status",
-      "1 new Canadian fire added (Lytton, B.C.)",
-      "No duplicates found across sources",
-      "All images preserved in output"
+      "All existing_fires retained (all marked Active, none contained >60 days)",
+      "No world articles provided for deduplication",
+      "Canada news items preserved with images intact",
+      "Lynn Lake wildfire (Manitoba) and Lytton wildfire (BC) are separate active incidents"
     ]
   }
 }
