@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T04:00:43.960Z",
+  "updated_at": "2026-06-29T10:00:43.956Z",
   "fires": [
     {
       "country": "United States",
@@ -132,11 +132,9 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing_fires preserved as Active status",
-      "World article on Colorado-Utah Border matched with existing fire entry",
-      "Canada articles remain in canada_news bucket",
-      "No fires contained >60 days ago to remove",
-      "All image fields preserved in output"
+      "BBC Colorado-Utah article merged with existing fire entry, preserved image.",
+      "All existing_fires retained as Active status with no fires >60 days contained.",
+      "No misrouted items detected between buckets."
     ]
   }
 }
