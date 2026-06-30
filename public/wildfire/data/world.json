@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T22:00:45.257Z",
+  "updated_at": "2026-06-30T04:00:45.499Z",
   "fires": [
     {
       "country": "United States",
@@ -122,19 +122,22 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 4,
+      "canada": 3,
       "world": 1
     },
     "items_out": {
       "canada": 3,
       "world_fires": 18
     },
-    "deduped": 1,
+    "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Lynn Lake wildfire stories from June 27 and June 29; kept June 29 version with better image",
+      "Merged BBC article on Colorado-Utah Border Wildfires with existing fire entry, preserving image from existing data",
       "All existing fires retained as Active status",
-      "BBC world fire article integrated into existing Colorado-Utah Border Wildfires entry"
+      "No fires dropped (none contained >60 days ago)",
+      "No deduplication needed across sources",
+      "All Canadian articles preserved in canada_news bucket",
+      "All world fires consolidated in world_fires bucket"
     ]
   }
 }
