@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T16:00:44.114Z",
+  "updated_at": "2026-07-01T22:00:44.794Z",
   "zones": {
     "coastal": [
       {
@@ -16,6 +16,42 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Wildfire risk to heighten globally in 2026 due to &#8216;historic&#8217; El Niño",
+        "link": "https://wildfiretoday.com/wildfire-risk-to-heighten-globally-in-2026-due-to-historic-el-nino/",
+        "description": "A potentially historic El Niño is all but confirmed for 2026, heightening wildfire and other risks across the globe, according to recent reports from the world&#8217;s forecasting agencies. The European Commission&#8217;s Joint Research Centre has determined that an El Niño event this year was &#8220;virtually certain&#8221; based on all seasonal forecast modelling systems. The fluctuating [&#8230",
+        "pubDate": "Wed, 24 Jun 2026 05:38:16 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Registrations open for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/registrations-open-for-wfcc26-canada/",
+        "description": "Registrations are OPEN for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. #WFCC26 will bring together wildland fire management agencies, Indigenous knowledge holders and experts, scientists, partners, and collaborators from across Canada and around the world. This biennial conference focuses on wildland fire",
+        "pubDate": "Tue, 23 Jun 2026 02:44:21 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "From forest to front door &#8211; understanding wildfire spread into communities",
+        "link": "https://wildfiretoday.com/from-forest-to-front-door-understanding-wildfire-spread-into-communities/",
+        "description": "By Ty Burke As California’s population boomed — from 10 million in 1950 to over 40 million today — the number of people living in fire-prone areas multiplied. Over the decades, millions of new homes and commercial buildings sprang up to accommodate the needs of the state’s growing population, and many of those structures stand [&#8230;]",
+        "pubDate": "Mon, 22 Jun 2026 00:11:42 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Significant wildfire activity heading into Juneteenth weekend drives National Preparedness Level increase",
+        "link": "https://wildfiretoday.com/significant-wildfire-activity-heading-into-juneteenth-weekend-drives-national-preparedness-level-increase/",
+        "description": "The National Interagency Fire Center increased the National Preparedness Level to PL3 on Thursday, marking a shift toward needed national support as the U.S. nears peak fire season. The increase was driven by significant wildland fire activity across the country, with the potential of additional large fires remaining elevated in the days ahead, the NIFC [&#8230;]",
+        "pubDate": "Fri, 19 Jun 2026 19:27:11 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Linking wildfire risk to social vulnerability",
+        "link": "https://wildfiretoday.com/linking-wildfire-risk-to-social-vulnerability/",
+        "description": "Socially vulnerable groups are significantly over-represented in high wildfire-risk areas across the United States and should be prioritized for targeted mitigation measures, research has found. A study in the International Journal of Wildland Fire identified census tracts across the US where high wildfire risk and high social vulnerability intersect &#8211; and found that American Indian/Alaska [",
+        "pubDate": "Wed, 17 Jun 2026 22:17:21 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
