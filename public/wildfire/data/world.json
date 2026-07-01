@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-06-30T10:00:44.241Z",
+  "updated_at": "2026-07-01T04:00:48.568Z",
   "fires": [
+    {
+      "country": "Greece",
+      "name": "Thessaloniki Wildfire",
+      "status": "Active",
+      "summary": "Deadly wildfire near Thessaloniki with more than 100 firefighters battling the blaze. At least two lives claimed.",
+      "link": "https://www.bbc.co.uk/news/articles/c0qy3nkex0qo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/95bf/live/b32601a0-74ae-11f1-9c5b-41132a229f02.jpg"
+    },
     {
       "country": "United States",
       "name": "Colorado-Utah Border Wildfires",
@@ -122,21 +130,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 3,
+      "canada": 4,
       "world": 1
     },
     "items_out": {
-      "canada": 3,
-      "world_fires": 18
+      "canada": 4,
+      "world_fires": 19
     },
     "deduped": 0,
-    "rerouted": 0,
+    "rerouted": 1,
     "notes": [
-      "All Canada articles preserved with images intact",
-      "World article merged with existing Colorado-Utah fire entry",
-      "All existing_fires entries retained as Active status",
-      "No fires dropped (none contained >60 days ago)",
-      "No deduplication needed across sources"
+      "Rerouted: Venezuela earthquake/USAR article (non-wildfire) removed from canada_news",
+      "Preserved: All active fires from existing_fires retained",
+      "Preserved: Image URLs maintained across all entries",
+      "New entry: Greece Thessaloniki wildfire added to world_fires from world input"
     ]
   }
 }
