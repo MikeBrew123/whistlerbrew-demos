@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T04:00:48.568Z",
+  "updated_at": "2026-07-01T16:00:49.833Z",
   "fires": [
     {
       "country": "Greece",
@@ -130,20 +130,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 4,
+      "canada": 3,
       "world": 1
     },
     "items_out": {
-      "canada": 4,
+      "canada": 3,
       "world_fires": 19
     },
-    "deduped": 0,
-    "rerouted": 1,
+    "deduped": 1,
+    "rerouted": 0,
     "notes": [
-      "Rerouted: Venezuela earthquake/USAR article (non-wildfire) removed from canada_news",
-      "Preserved: All active fires from existing_fires retained",
-      "Preserved: Image URLs maintained across all entries",
-      "New entry: Greece Thessaloniki wildfire added to world_fires from world input"
+      "Deduplicated Greek wildfire article - retained BBC version with image from world input",
+      "All existing_fires preserved as Active status",
+      "No items rerouted between buckets",
+      "All image fields preserved through output"
     ]
   }
 }
