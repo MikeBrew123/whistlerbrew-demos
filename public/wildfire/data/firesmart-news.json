@@ -1,7 +1,16 @@
 {
-  "updated_at": "2026-07-02T04:00:44.797Z",
+  "updated_at": "2026-07-02T10:00:44.881Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Powell River residents protest encampments as motion to change bylaw is defeated",
+        "link": "https://globalnews.ca/news/11949246/powell-river-residents-protest-encampments-motion-change-bylaw-defeated/",
+        "description": "Resident Nichole Strickland spoke at the council meeting, saying she, like many residents, feels frustrated that their voices are not being heard.",
+        "pubDate": "Wed, 01 Jul 2026 22:35:41 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/set-gfx-POWELL-RIVER-DRONE-GENERIC-SUMMER.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
