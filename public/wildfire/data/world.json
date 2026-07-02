@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T04:00:47.523Z",
+  "updated_at": "2026-07-02T10:00:48.150Z",
   "fires": [
     {
       "country": "Greece",
@@ -131,7 +131,7 @@
   "last_report": {
     "items_in": {
       "canada": 3,
-      "world": 1
+      "world": 0
     },
     "items_out": {
       "canada": 3,
@@ -140,11 +140,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Merged BBC Greek wildfire article with existing Thessaloniki Wildfire entry, preserving image and Active status",
-      "Retained all existing_fires entries as all are marked Active and none were contained >60 days ago",
-      "No misrouted items detected between buckets",
-      "No duplicate stories found across Canadian sources",
-      "World fire entries are distinct blazes; no consolidation needed beyond existing structure"
+      "All 3 Canadian articles retained with images preserved",
+      "All 19 existing world fires retained as Active status",
+      "No duplicates detected across sources",
+      "No fires exceeded 60-day contained threshold for removal"
     ]
   }
 }
