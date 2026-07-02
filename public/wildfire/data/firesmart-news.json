@@ -1,16 +1,7 @@
 {
-  "updated_at": "2026-07-01T22:00:44.794Z",
+  "updated_at": "2026-07-02T04:00:44.797Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Evacuation order remains in place as glacial lake bursts near Pemberton",
-        "link": "https://globalnews.ca/news/11945092/evacuation-order-glacial-lake-bursts-pemberton/",
-        "description": "Technical experts anticipate flood waters are likely to peak in Place Glacier’s downstream water channels late in the day on Wednesday, July 1, the Regional District stated.",
-        "pubDate": "Tue, 30 Jun 2026 20:10:40 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/06/Place-Glacier-Picture.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
