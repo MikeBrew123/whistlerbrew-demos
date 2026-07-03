@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T04:00:48.704Z",
+  "updated_at": "2026-07-03T16:00:47.175Z",
   "fires": [
     {
       "country": "Greece",
@@ -130,7 +130,7 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 4,
+      "canada": 3,
       "world": 0
     },
     "items_out": {
@@ -140,10 +140,11 @@
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Lynn Lake wildfire: kept 2026-07-02 article with most recent status and image",
-      "Preserved all world_fires from existing_fires as all maintain Active status",
-      "No world articles provided in input; maintained existing world fire database",
-      "All Canadian fires retain images where available"
+      "Deduplicated: 2 Lynn Lake articles (06-27 and 07-02) merged, kept 07-02 with latest status and image",
+      "All Canadian articles preserved with images where present",
+      "All existing world fires retained as Active status maintained",
+      "No world articles provided in input",
+      "No fires contained >60 days ago to remove"
     ]
   }
 }
