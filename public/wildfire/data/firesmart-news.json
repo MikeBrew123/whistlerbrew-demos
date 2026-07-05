@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-05T16:00:43.990Z",
+  "updated_at": "2026-07-05T22:00:44.309Z",
   "zones": {
     "coastal": [
       {
-        "title": "Out-of-control wildfire forces evacuation in B.C.&#8217;s Fraser Valley",
+        "title": "Out-of-control wildfire forces evacuation in B.C.&#8217;s Fraser Canyon",
         "link": "https://globalnews.ca/news/11953588/wildfire-evacuation-fraser-valley-bc/",
-        "description": "Residents of North Bend, B.C. are being ordered to evacuate as an out of control wildfire grows in the Fraser Valley. Nearby Boston Bar is also under an evacuation alert.",
+        "description": "Residents of North Bend, B.C. are being ordered to evacuate as an out of control wildfire grows in the Fraser Canyon. Nearby Boston Bar is also under an evacuation alert.",
         "pubDate": "Sun, 05 Jul 2026 15:28:44 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/Boston-Bar-wildfire-e1783263304408.jpg?quality=65&#038;strip=all"
@@ -16,14 +16,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Registrations open for WFCC26 Canada",
-        "link": "https://wildfiretoday.com/registrations-open-for-wfcc26-canada/",
-        "description": "Registrations are OPEN for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. #WFCC26 will bring together wildland fire management agencies, Indigenous knowledge holders and experts, scientists, partners, and collaborators from across Canada and around the world. This biennial conference focuses on wildland fire",
-        "pubDate": "Tue, 23 Jun 2026 02:44:21 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
