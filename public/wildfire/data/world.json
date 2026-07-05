@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T22:00:46.935Z",
+  "updated_at": "2026-07-05T10:00:47.347Z",
   "fires": [
     {
       "country": "Greece",
@@ -130,7 +130,7 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 3,
+      "canada": 4,
       "world": 0
     },
     "items_out": {
@@ -140,10 +140,10 @@
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Lynn Lake wildfire articles (2026-06-27 and 2026-07-02 merged into single entry with most recent date and description)",
-      "All 19 existing active world fires preserved with status Active",
-      "No world fires contained >60 days ago",
-      "Images preserved across all entries where present"
+      "Deduplicated: Manitoba Lynn Lake wildfire (2026-06-27 removed, kept 2026-07-02 as most recent with image)",
+      "Preserved all active fires from existing_fires list",
+      "All Canada articles are active, recent wildfires",
+      "All world fires retain Active status per preservation rules"
     ]
   }
 }
