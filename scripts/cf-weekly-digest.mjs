@@ -24,7 +24,7 @@ const ZONE_ID = "c15627b6487fd580bebdcb5df407936f";
 const ACCOUNT_ID = "9501eaa888ac0e2cd5766bd98bcf0feb";
 const HOST = "whistlerbrew.com";
 const VAULT = "/Users/mbrew/Documents/Brew-Vault";
-const REPORTS_DIR = path.join(VAULT, "04-Projects", "whistlerbrew-traffic");
+const REPORTS_DIR = path.join(VAULT, "04-Systems", "Projects", "WhistlerBrew-Traffic");
 
 const args = new Set(process.argv.slice(2));
 const flagObsidian = args.has("--obsidian");
