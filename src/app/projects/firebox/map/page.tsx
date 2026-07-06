@@ -174,10 +174,10 @@ export default function FireBoxMap() {
       setPicking(false);
     });
     leafletRef.current = map;
-    setTimeout(() => map.invalidateSize(), 100);
-    const onResize = () => map.invalidateSize();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    // Container can be 0-wide at init (flex layout settles late) — keep Leaflet's size current
+    const ro = new ResizeObserver(() => map.invalidateSize());
+    ro.observe(mapDivRef.current);
+    return () => ro.disconnect();
   }, [leafletReady]);
 
   useEffect(() => { pickingRef.current = picking; }, [picking]);
@@ -474,8 +474,10 @@ export default function FireBoxMap() {
       layersRef.current.push(marker);
     });
 
-    // Fit map to all points on first data only
-    if (!didFitRef.current && allPts.length > 0) {
+    // Fit map to all points on first data only — wait until the container has real size
+    const el = mapDivRef.current;
+    if (!didFitRef.current && allPts.length > 0 && el && el.clientWidth > 50 && el.clientHeight > 50) {
+      map.invalidateSize();
       didFitRef.current = true;
       if (allPts.length > 1) {
         const lats = allPts.map(p => p[0]), lons = allPts.map(p => p[1]);
