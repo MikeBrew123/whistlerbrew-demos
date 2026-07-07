@@ -1,16 +1,7 @@
 {
-  "updated_at": "2026-07-07T16:00:44.119Z",
+  "updated_at": "2026-07-07T22:00:44.546Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Drivers stranded for hours after fatal motorcycle crash on Sea-to-Sky Highway",
-        "link": "https://globalnews.ca/news/11955076/deadly-crash-sea-to-sky-highway-drivers-stranded/",
-        "description": "BC Emergency Health Services says two ambulances and an air ambulance were dispatched to the scene, but no one was taken to the hospital.",
-        "pubDate": "Mon, 06 Jul 2026 19:33:35 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Hwy-99-mc-fatal-6.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
