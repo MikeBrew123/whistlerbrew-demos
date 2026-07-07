@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T04:00:48.933Z",
+  "updated_at": "2026-07-07T10:00:48.840Z",
   "fires": [
     {
       "country": "France",
@@ -143,15 +143,16 @@
     },
     "items_out": {
       "canada_news": 3,
-      "world_fires": 21
+      "world_fires": 20
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Manitoba Lynn Lake stories (kept 2026-07-02 with image as it was more recent update)",
-      "Merged new France wildfire article into world_fires as active entry",
-      "Preserved all existing_fires entries as Active status - none qualified for removal",
-      "All image fields preserved in output"
+      "Deduplicated Lynn Lake wildfire: kept 2026-07-02 update (more recent, has image) and dropped 2026-06-27 initial report",
+      "Preserved all existing_fires marked as Active",
+      "All Canadian articles retained in canada_news bucket",
+      "All world fires from existing_fires preserved in world_fires bucket",
+      "Pyrénées-Orientales entry merged from input world article with existing_fires entry"
     ]
   }
 }
