@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T10:00:44.680Z",
+  "updated_at": "2026-07-07T16:00:44.119Z",
   "zones": {
     "coastal": [
       {
@@ -16,15 +16,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Unionized workers who look after regional parks like Grouse Mountain walk off job",
-        "link": "https://globalnews.ca/news/11953758/regional-parks-unionized-workers-walk-off-job/",
-        "description": "The union representing workers who operate and maintain regional services in Metro Vancouver says it is now considering a full-blown strike.",
-        "pubDate": "Sun, 05 Jul 2026 20:32:52 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/downtown-Vancouver-e1783283305339.jpg?quality=65&#038;strip=all"
-      }
-    ]
+    "all": []
   }
 }
