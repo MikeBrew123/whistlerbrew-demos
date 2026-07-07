@@ -1,30 +1,14 @@
 {
-  "updated_at": "2026-07-06T22:00:44.837Z",
+  "updated_at": "2026-07-07T04:00:44.587Z",
   "zones": {
     "coastal": [
       {
-        "title": "Deadly crash on Sea to Sky Highway closes road for hours on Sunday",
+        "title": "Drivers stranded for hours after fatal motorcycle crash on Sea-to-Sky Highway",
         "link": "https://globalnews.ca/news/11955076/deadly-crash-sea-to-sky-highway-drivers-stranded/",
         "description": "BC Emergency Health Services says two ambulances and an air ambulance were dispatched to the scene, but no one was taken to the hospital.",
         "pubDate": "Mon, 06 Jul 2026 19:33:35 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/Hwy-99-mc-fatal-6.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Explosive growth of Brunswick Creek fire triggers air quality warning",
-        "link": "https://globalnews.ca/news/11954636/explosive-growth-brunswick-creek-wildfire-air-quality-warning/",
-        "description": "It has forced evacuations of 155 properties in the North Bend and Fishblue Lake areas of the Fraser Valley Regional District, as well as from the Boothroyd Indian Band.",
-        "pubDate": "Mon, 06 Jul 2026 18:39:24 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/376a9502408788f3c2ed205c2675b9facc3ab5215d0937b0bddf8456f1e2fad0.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Out-of-control wildfire forces evacuation in B.C.&#8217;s Fraser Canyon",
-        "link": "https://globalnews.ca/news/11953588/wildfire-evacuation-fraser-valley-bc/",
-        "description": "Residents of North Bend, B.C. are being ordered to evacuate as an out of control wildfire grows in the Fraser Canyon. Nearby Boston Bar is also under an evacuation alert.",
-        "pubDate": "Sun, 05 Jul 2026 15:28:44 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Boston-Bar-wildfire-e1783263304408.jpg?quality=65&#038;strip=all"
       }
     ],
     "kamloops": [],
@@ -32,6 +16,15 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Unionized workers who look after regional parks like Grouse Mountain walk off job",
+        "link": "https://globalnews.ca/news/11953758/regional-parks-unionized-workers-walk-off-job/",
+        "description": "The union representing workers who operate and maintain regional services in Metro Vancouver says it is now considering a full-blown strike.",
+        "pubDate": "Sun, 05 Jul 2026 20:32:52 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/downtown-Vancouver-e1783283305339.jpg?quality=65&#038;strip=all"
+      }
+    ]
   }
 }
