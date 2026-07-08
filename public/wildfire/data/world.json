@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-08T10:00:48.760Z",
+  "updated_at": "2026-07-08T16:00:51.475Z",
   "fires": [
     {
       "country": "France",
@@ -138,20 +138,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 4,
+      "canada": 6,
       "world": 0
     },
     "items_out": {
-      "canada": 3,
+      "canada": 4,
       "world_fires": 20
     },
-    "deduped": 1,
+    "deduped": 2,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Lynn Lake wildfire: 2026-06-27 entry merged into 2026-07-02 article (more recent with image)",
-      "All existing fires preserved as Active status",
-      "No world articles provided for processing",
-      "Canada: retained 3 active evacuation stories (B.C., Manitoba return-home update, NWT)"
+      "Deduplicated 2 duplicate B.C. wildfire articles from Global News and Global News Wildfire (same URL, same date), kept one with image",
+      "All Canada news items retained as Active fires",
+      "All existing_fires retained as Active status",
+      "No items rerouted between buckets"
     ]
   }
 }
