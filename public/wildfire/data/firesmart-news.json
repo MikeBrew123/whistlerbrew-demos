@@ -1,7 +1,16 @@
 {
-  "updated_at": "2026-07-08T10:00:44.195Z",
+  "updated_at": "2026-07-08T16:00:47.683Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Growing B.C. wildfire closes Highway 1, more evacuation alerts issued",
+        "link": "https://globalnews.ca/news/11957934/wildfires-bc-2/",
+        "description": "A growing B.C. wildfire has forced more evacuations and closed part of the Trans-Canada Highway as officials warn gusty winds could intensify the blaze.",
+        "pubDate": "Wed, 08 Jul 2026 15:01:02 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/d435ee0bfdcb1e0a658dc8d4e84b0f71d3870c61e6846296a1b31bca9798f497_fcc05e.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
