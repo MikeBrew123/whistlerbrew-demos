@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T16:00:49.047Z",
+  "updated_at": "2026-07-08T10:00:48.760Z",
   "fires": [
     {
       "country": "France",
@@ -138,20 +138,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 3,
-      "world": 1
+      "canada": 4,
+      "world": 0
     },
     "items_out": {
-      "canada_news": 3,
+      "canada": 3,
       "world_fires": 20
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Manitoba Lynn Lake wildfire: kept 2026-07-02 article (more recent recovery update) with image",
-      "Merged France BBC article with existing Pyrénées-Orientales fire entry, preserving image",
-      "Preserved all 20 active world fires from existing_fires list",
-      "No contained fires >60 days old found in existing_fires"
+      "Deduplicated Lynn Lake wildfire: 2026-06-27 entry merged into 2026-07-02 article (more recent with image)",
+      "All existing fires preserved as Active status",
+      "No world articles provided for processing",
+      "Canada: retained 3 active evacuation stories (B.C., Manitoba return-home update, NWT)"
     ]
   }
 }
