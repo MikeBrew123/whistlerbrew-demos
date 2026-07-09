@@ -82,12 +82,12 @@
   ],
   "news": [
     {
-      "title": "Out-of-control wildfire forces evacuation in B.C.'s Fraser Canyon",
-      "url": "https://globalnews.ca/news/11953588/wildfire-evacuation-fraser-valley-bc/",
+      "title": "Some structures lost at resort due to Fraser Canyon fires",
+      "url": "https://globalnews.ca/news/11957934/wildfires-bc-2/",
       "source": "Global News Wildfire",
-      "published": "2026-07-05",
-      "description": "Residents of North Bend, B.C. are being ordered to evacuate as an out of control wildfire grows in the Fraser Canyon. Nearby Boston Bar is also under an evacuation alert.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Boston-Bar-wildfire-e1783263304408.jpg?quality=65&strip=all"
+      "published": "2026-07-08",
+      "description": "A growing B.C. wildfire has forced more evacuations and closed part of the Trans-Canada Highway as officials warn gusty winds could intensify the blaze.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Manitoba town residents set to return home after wildfire forced evacuation",
@@ -95,7 +95,7 @@
       "source": "Global News Wildfire",
       "published": "2026-07-02",
       "description": "A social media post by the town of Lynn Lake says that the nearby blaze remains active, and that crews continue to suppress remaining hot spots.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/513e47cf161bffa0d0fb544af541353dd8965a7a6b5e015653ddeb903587f902.jpg?quality=65&strip=all"
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/513e47cf161bffa0d0fb544af541353dd8965a7a6b5e015653ddeb903587f902.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Wildfire forces evacuation of remote Northwest Territories village",
@@ -104,5 +104,5 @@
       "published": "2026-06-29"
     }
   ],
-  "last_news_update": "2026-07-08T04:00:51.683Z"
+  "last_news_update": "2026-07-09T10:00:48.736Z"
 }
