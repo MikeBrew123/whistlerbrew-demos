@@ -82,12 +82,28 @@
   ],
   "news": [
     {
+      "title": "Federal officials set to give wildfire season update as blaze threatens B.C. town",
+      "url": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update-b-c/",
+      "source": "Global News Wildfire",
+      "published": "2026-07-09",
+      "description": "Federal officials are set to provide an update about the national wildfire season today, as an out-of-control fire in British Columbia forced evacuations this week.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/wildfire-e1783597558602.jpg?quality=65&#038;strip=all"
+    },
+    {
       "title": "Some structures lost at resort due to Fraser Canyon fires",
       "url": "https://globalnews.ca/news/11957934/wildfires-bc-2/",
       "source": "Global News Wildfire",
       "published": "2026-07-08",
       "description": "A growing B.C. wildfire has forced more evacuations and closed part of the Trans-Canada Highway as officials warn gusty winds could intensify the blaze.",
       "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes.jpg?quality=65&#038;strip=all"
+    },
+    {
+      "title": "Heat wave could push humidex to 45 in Manitoba, Saskatchewan",
+      "url": "https://globalnews.ca/news/11959085/weather-alert-prairies/",
+      "source": "Global News",
+      "published": "2026-07-09",
+      "description": "A prolonged heat wave is set to push temperatures into the mid-30s across southern Saskatchewan and Manitoba as wildfire smoke lingers in northern regions.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Screenshot-2026-07-09-093504.png"
     },
     {
       "title": "Manitoba town residents set to return home after wildfire forced evacuation",
@@ -104,5 +120,5 @@
       "published": "2026-06-29"
     }
   ],
-  "last_news_update": "2026-07-09T10:00:48.736Z"
+  "last_news_update": "2026-07-09T16:00:54.353Z"
 }
