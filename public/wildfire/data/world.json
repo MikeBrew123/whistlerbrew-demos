@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-08T22:00:48.677Z",
+  "updated_at": "2026-07-09T04:00:48.658Z",
   "fires": [
     {
       "country": "France",
@@ -148,11 +148,10 @@
     "deduped": 2,
     "rerouted": 0,
     "notes": [
-      "Deduplicated: Boston Bar wildfire (2026-07-08 most recent, retained image)",
-      "Deduplicated: Lynn Lake wildfire (2026-07-02 and 2026-06-27 merged into latest, retained image)",
-      "Dropped: NWT evacuation (2026-06-29, older than 60 days threshold check and superseded by more recent BC fires)",
-      "Preserved all Active fires from existing_fires list",
-      "All images preserved through output"
+      "Deduplicated Fraser Canyon wildfire stories (2026-07-08 kept over 2026-07-05)",
+      "Deduplicated Lynn Lake wildfire stories (2026-07-02 return-home kept over 2026-06-27 evacuation)",
+      "Preserved all Active status fires from existing_fires",
+      "All Canadian stories retained in canada_news bucket"
     ]
   }
 }
