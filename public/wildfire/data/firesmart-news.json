@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-07-09T10:00:44.949Z",
+  "updated_at": "2026-07-09T16:00:44.256Z",
   "zones": {
     "coastal": [
       {
-        "title": "Woman rescued after vessel sank off B.C. coast died in hospital",
-        "link": "https://globalnews.ca/news/11958255/woman-rescued-vessel-sank-off-bc-coast-died/",
-        "description": "Six people remain missing and are presumed drowned after the KingFisher, operated by Top Vancouver Fishing Charter Inc., went down suddenly near Roberts Bank.",
-        "pubDate": "Wed, 08 Jul 2026 18:17:12 +0000",
+        "title": "Some structures lost at resort due to Fraser Canyon fires",
+        "link": "https://globalnews.ca/news/11957934/wildfires-bc-2/",
+        "description": "A growing B.C. wildfire has forced more evacuations and closed part of the Trans-Canada Highway as officials warn gusty winds could intensify the blaze.",
+        "pubDate": "Wed, 08 Jul 2026 15:01:02 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/f72eda1b8029de76f404ddf4e54bff744bf5512e03f3466541a1f37d7d4302f8.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes.jpg?quality=65&#038;strip=all"
       }
     ],
     "kamloops": [
@@ -27,12 +27,12 @@
     "southeast": [],
     "all": [
       {
-        "title": "Gibsons mayor says broken BC Ferries ramp has caused chaos for many",
-        "link": "https://globalnews.ca/news/11957365/gibsons-mayor-broken-bc-ferries-ramp-langdale-chaos/",
-        "description": "Many people told Global News they have been left scrambling to book a sailing, despite some vessels leaving with empty space on board.",
-        "pubDate": "Tue, 07 Jul 2026 23:35:14 +0000",
+        "title": "Federal officials set to give wildfire season update as blaze threatens B.C. town",
+        "link": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update-b-c/",
+        "description": "Federal officials are set to provide an update about the national wildfire season today, as an out-of-control fire in British Columbia forced evacuations this week.",
+        "pubDate": "Thu, 09 Jul 2026 11:46:30 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2022/01/bc-ferries.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/wildfire-e1783597558602.jpg?quality=65&#038;strip=all"
       }
     ]
   }
