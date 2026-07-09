@@ -1,10 +1,9 @@
 {
-  "updated_at": "2026-07-08T22:00:44.058Z",
+  "updated_at": "2026-07-09T04:00:43.924Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [
+    "coastal": [
       {
-        "title": "Second wildfire north of Boston Bar now more than 8,000 hectares",
+        "title": "Some structures lost at resort due to Fraser Canyon fires",
         "link": "https://globalnews.ca/news/11957934/wildfires-bc-2/",
         "description": "A growing B.C. wildfire has forced more evacuations and closed part of the Trans-Canada Highway as officials warn gusty winds could intensify the blaze.",
         "pubDate": "Wed, 08 Jul 2026 15:01:02 +0000",
@@ -12,10 +11,35 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes.jpg?quality=65&#038;strip=all"
       }
     ],
+    "kamloops": [
+      {
+        "title": "Kamloops skies turn orange as wildfire smoke drifts into region",
+        "link": "https://globalnews.ca/news/11958827/kamloops-skies-orange-wildfire-smoke-region/",
+        "description": "An air quality alert remains in effect for the region due to drifting smoke from two wildfires in the Boston Bar area. The smoke is making it hard to breathe.",
+        "pubDate": "Wed, 08 Jul 2026 22:37:39 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/IMG_3872-rotated.jpeg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Wildfire aircraft crash in Canada: 3 dead",
+        "link": "https://wildfiretoday.com/wildfire-aircraft-crash-in-canada-3-dead/",
+        "description": "Three people are dead after their plane crashed while working on the Fort Simpson fire in Canada&#8217;s Northwest Territories. Details are still emerging but it appears that the Bird Dog aircraft was working with a larger aerial firefighting tanker on the wildfire. The incident occurred Wednesday night, local time, about 50 kilometers west of Fort [&#8230;]",
+        "pubDate": "Fri, 26 Jun 2026 00:25:00 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Registrations open for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/registrations-open-for-wfcc26-canada/",
+        "description": "Registrations are OPEN for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. #WFCC26 will bring together wildland fire management agencies, Indigenous knowledge holders and experts, scientists, partners, and collaborators from across Canada and around the world. This biennial conference focuses on wildland fire",
+        "pubDate": "Tue, 23 Jun 2026 02:44:21 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
