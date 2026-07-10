@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T04:00:48.658Z",
+  "updated_at": "2026-07-10T10:00:49.133Z",
   "fires": [
     {
       "country": "France",
@@ -138,20 +138,19 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 5,
+      "canada": 6,
       "world": 0
     },
     "items_out": {
-      "canada": 3,
+      "canada": 4,
       "world_fires": 20
     },
     "deduped": 2,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Fraser Canyon wildfire stories (2026-07-08 kept over 2026-07-05)",
-      "Deduplicated Lynn Lake wildfire stories (2026-07-02 return-home kept over 2026-06-27 evacuation)",
-      "Preserved all Active status fires from existing_fires",
-      "All Canadian stories retained in canada_news bucket"
+      "Removed duplicate Fraser Canyon wildfire articles (07-05, 07-08, 07-09): kept 07-08 with image as most recent contextual update",
+      "Removed Lynn Lake duplicate (06-27, 07-02): kept 07-02 return-home update as more recent",
+      "All existing_fires preserved as Active status with no fires contained >60 days ago"
     ]
   }
 }
