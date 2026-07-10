@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-07-09T22:00:44.080Z",
+  "updated_at": "2026-07-10T04:00:44.110Z",
   "zones": {
     "coastal": [
+      {
+        "title": "B.C. resort owner says devastating wildfire was like a &#8216;Michael Bay film&#8217;",
+        "link": "https://globalnews.ca/news/11960420/bc-resort-owner-wildfire-michael-bay-film/",
+        "description": "The owners and staff are now facing their most challenging summer yet after a devastating wildfire swept through their property this week.",
+        "pubDate": "Thu, 09 Jul 2026 23:12:20 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/brunswick-creek-fire-new.png"
+      },
       {
         "title": "Structures lost, highway still closed as crews battle massive Fraser Canyon wildfires",
         "link": "https://globalnews.ca/news/11959932/structures-lost-highway-closed-battle-massive-fraser-canyon-wildfires/",
@@ -12,7 +20,15 @@
       }
     ],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Wildfire aircraft crash in Canada: 3 dead",
+        "link": "https://wildfiretoday.com/wildfire-aircraft-crash-in-canada-3-dead/",
+        "description": "Three people are dead after their plane crashed while working on the Fort Simpson fire in Canada&#8217;s Northwest Territories. Details are still emerging but it appears that the Bird Dog aircraft was working with a larger aerial firefighting tanker on the wildfire. The incident occurred Wednesday night, local time, about 50 kilometers west of Fort [&#8230;]",
+        "pubDate": "Fri, 26 Jun 2026 00:25:00 +0000",
+        "source": "Wildfire Today"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
