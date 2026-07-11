@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T22:00:44.615Z",
+  "updated_at": "2026-07-11T04:00:43.920Z",
   "zones": {
     "coastal": [
       {
@@ -17,6 +17,14 @@
         "pubDate": "Fri, 10 Jul 2026 17:46:38 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/Courtesy-Skilled-Truckers-Canada-2.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C. resort owner says devastating wildfire was like a &#8216;Michael Bay film&#8217;",
+        "link": "https://globalnews.ca/news/11960420/bc-resort-owner-wildfire-michael-bay-film/",
+        "description": "The owners and staff are now facing their most challenging summer yet after a devastating wildfire swept through their property this week.",
+        "pubDate": "Thu, 09 Jul 2026 23:12:20 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/brunswick-creek-fire-new.png"
       }
     ],
     "kamloops": [],
@@ -24,15 +32,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "WATCH: Global Okanagan News at 5:30 p.m. &#8211; July 9",
-        "link": "https://globalnews.ca/news/9913127/watch-global-okanagan-news-at-530/",
-        "description": "Watch the online news edition of Global Okanagan at 5:30 p.m.",
-        "pubDate": "Thu, 09 Jul 2026 22:00:38 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/10/GLOBALNEWS_OKANAGAN-show-thumbnail-NEW.jpg?quality=65&#038;strip=all"
-      }
-    ]
+    "all": []
   }
 }
