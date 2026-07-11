@@ -1,7 +1,19 @@
 {
-  "updated_at": "2026-07-11T04:00:43.920Z",
+  "updated_at": "2026-07-11T10:00:43.855Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Tsleil-Waututh Nation files court challenge against Burrard Inlet dredging plan",
+        "link": "https://globalnews.ca/news/11961385/tsleil-waututh-nation-court-challenge-burrard-inlet-dredging-plan/",
+        "description": "The dredging work near the Second Narrows Bridge would allow oil tankers travelling to Trans Mountain's Burnaby terminal to carry more oil.",
+        "pubDate": "Fri, 10 Jul 2026 18:03:29 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/9ed8dea11565780ee80a1922161ea8790767c6c79ce80956b16b7b1050635e10.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "kamloops": [],
+    "prince-george": [],
+    "cariboo": [
       {
         "title": "Fraser Canyon wildfires continue to threaten residents, property",
         "link": "https://globalnews.ca/news/11961478/fraser-canyon-wildfires-threaten-residents-property/",
@@ -9,29 +21,19 @@
         "pubDate": "Fri, 10 Jul 2026 18:51:27 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/f8ba57c98581fde2da78969c39f35292fc437db682f8ebe13a6ac5f543b60ee7_fefea7.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Truck brings down power lines, starts small brush fire on Malahat",
-        "link": "https://globalnews.ca/news/11961287/truck-down-power-lines-brush-fire-malahat/",
-        "description": "The incident occurred at approximately 3:40 p.m. on July 9. Shawnigan Lake RCMP responded to the area of South Shawnigan Lake Road and the Trans-Canada Highway.",
-        "pubDate": "Fri, 10 Jul 2026 17:46:38 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Courtesy-Skilled-Truckers-Canada-2.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. resort owner says devastating wildfire was like a &#8216;Michael Bay film&#8217;",
-        "link": "https://globalnews.ca/news/11960420/bc-resort-owner-wildfire-michael-bay-film/",
-        "description": "The owners and staff are now facing their most challenging summer yet after a devastating wildfire swept through their property this week.",
-        "pubDate": "Thu, 09 Jul 2026 23:12:20 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/brunswick-creek-fire-new.png"
       }
     ],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "&#8216;Extraordinarily rare&#8217; dolphin sightings reported in B.C.&#8217;s waters",
+        "link": "https://globalnews.ca/news/11960531/extraordinarily-rare-dolphin-sightings-bc-waters/",
+        "description": "Video shot in Esperanza Inlet on the northwest coast of Vancouver Island captured an extremely rare sighting of a long-beaked common dolphin.",
+        "pubDate": "Fri, 10 Jul 2026 02:06:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/long-beaked-common-dolphin.png"
+      }
+    ]
   }
 }
