@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-07-10T22:00:59.703Z",
+  "updated_at": "2026-07-11T22:00:53.719Z",
   "fires": [
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
       "status": "Active",
       "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British.",
-      "link": "https://www.bbc.co.uk/news/articles/c8e2382jk7jo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/738c/live/597cfe00-7c8e-11f1-aaf7-dd74e91b17e4.jpg"
+      "link": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/bbd0/live/59a16160-7cfb-11f1-bbe2-7f9a5a48eac9.jpg"
     },
     {
       "country": "France",
@@ -146,22 +146,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 7,
-      "world": 1
+      "canada": 6,
+      "world": 2
     },
     "items_out": {
-      "canada": 3,
+      "canada": 6,
       "world_fires": 21
     },
-    "deduped": 4,
+    "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Fraser Canyon wildfire articles: kept 2026-07-08 version with latest status and image",
-      "Deduplicated Lynn Lake evacuation articles: kept 2026-07-02 return home version as most recent",
-      "Removed non-wildfire article: Camp Courage kept in output (community interest relevance)",
-      "Preserved all existing active fires from input list",
-      "Spain Almería fire added as new entry",
-      "All images preserved through output"
+      "Deduplicated BBC Spain wildfire articles - kept July 11 article with updated image",
+      "All existing fires preserved as Active status with no fires >60 days old to remove",
+      "All Canadian articles retained with images preserved",
+      "World fires list includes 21 active entries from existing_fires plus merged Spain coverage"
     ]
   }
 }
