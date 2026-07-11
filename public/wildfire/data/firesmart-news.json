@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T16:00:44.280Z",
+  "updated_at": "2026-07-11T22:00:44.285Z",
   "zones": {
     "coastal": [
       {
@@ -25,15 +25,6 @@
     ],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "&#8216;Extraordinarily rare&#8217; dolphin sightings reported in B.C.&#8217;s waters",
-        "link": "https://globalnews.ca/news/11960531/extraordinarily-rare-dolphin-sightings-bc-waters/",
-        "description": "Video shot in Esperanza Inlet on the northwest coast of Vancouver Island captured an extremely rare sighting of a long-beaked common dolphin.",
-        "pubDate": "Fri, 10 Jul 2026 02:06:44 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/long-beaked-common-dolphin.png"
-      }
-    ]
+    "all": []
   }
 }
