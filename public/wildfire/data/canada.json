@@ -82,14 +82,6 @@
   ],
   "news": [
     {
-      "title": "Wildfire season is not as perilous as last year: officials",
-      "url": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-09",
-      "description": "Officials previously warned on May 28 that \"significant wildfire activity\" was expected in B.C. this month in the government's wildfire season preparedness and outlook for 2026.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/wildfire-e1783597558602.jpg?quality=65&#038;strip=all"
-    },
-    {
       "title": "Some structures lost at resort due to Fraser Canyon fires",
       "url": "https://globalnews.ca/news/11957934/wildfires-bc-2/",
       "source": "Global News Wildfire",
@@ -98,25 +90,21 @@
       "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes.jpg?quality=65&#038;strip=all"
     },
     {
-      "title": "Out-of-control wildfire forces evacuation in B.C.'s Fraser Canyon",
-      "url": "https://globalnews.ca/news/11953588/wildfire-evacuation-fraser-valley-bc/",
+      "title": "Wildfire season is not as perilous as last year: officials",
+      "url": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update/",
       "source": "Global News Wildfire",
-      "published": "2026-07-05",
-      "description": "Residents of North Bend, B.C. are being ordered to evacuate as an out of control wildfire grows in the Fraser Canyon. Nearby Boston Bar is also under an evacuation alert.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Boston-Bar-wildfire-e1783263304408.jpg?quality=65&#038;strip=all"
+      "published": "2026-07-09",
+      "description": "Officials previously warned on May 28 that \"significant wildfire activity\" was expected in B.C. this month in the government's wildfire season preparedness and outlook for 2026.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/wildfire-e1783597558602.jpg?quality=65&#038;strip=all"
     },
     {
-      "title": "Manitoba town residents set to return home after wildfire forced evacuation",
-      "url": "https://globalnews.ca/news/11950289/manitoba-lynn-lake-return-home-after-wildfire-evacuation/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-02"
-    },
-    {
-      "title": "Wildfire forces evacuation of remote Northwest Territories village",
-      "url": "https://globalnews.ca/news/11942614/northwest-territories-village-evacuation-wildfire/",
-      "source": "Global News Wildfire",
-      "published": "2026-06-29"
+      "title": "Halifax camp that encourages women to pursue first responder careers marks 20 years",
+      "url": "https://globalnews.ca/news/11961734/camp-courage-20-year-anniversary/",
+      "source": "Global News",
+      "published": "2026-07-10",
+      "description": "Camp Courage, a Nova Scotia camp that encourages young women and gender-diverse youth to explore careers in firefighting and other emergency services, is celebrating 20 years.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/camp-courage.jpg?quality=65&#038;strip=all"
     }
   ],
-  "last_news_update": "2026-07-10T04:00:59.815Z"
+  "last_news_update": "2026-07-11T04:00:52.968Z"
 }
