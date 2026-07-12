@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-11T22:00:53.719Z",
+  "updated_at": "2026-07-12T04:00:53.362Z",
   "fires": [
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
       "status": "Active",
-      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British.",
+      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British. Hundreds of firefighters battling the deadly wildfire.",
       "link": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/bbd0/live/59a16160-7cfb-11f1-bbe2-7f9a5a48eac9.jpg"
     },
@@ -15,7 +15,7 @@
       "status": "Active",
       "summary": "Wildfire in southern France forces evacuation of 10,000 people in Pyrénées-Orientales region. Tour de France organisers ban spectators from stage three.",
       "link": "https://www.bbc.co.uk/news/articles/crlwweye9glo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e4df/live/4ab81620-7932-11f1-9510-1546718f668b.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e4df/live/4ab81620-7932-79f1-9510-1546718f668b.jpg"
     },
     {
       "country": "Greece",
@@ -146,20 +146,21 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 6,
+      "canada": 5,
       "world": 2
     },
     "items_out": {
-      "canada": 6,
+      "canada": 5,
       "world_fires": 21
     },
-    "deduped": 1,
+    "deduped": 2,
     "rerouted": 0,
     "notes": [
-      "Deduplicated BBC Spain wildfire articles - kept July 11 article with updated image",
-      "All existing fires preserved as Active status with no fires >60 days old to remove",
-      "All Canadian articles retained with images preserved",
-      "World fires list includes 21 active entries from existing_fires plus merged Spain coverage"
+      "Deduplicated 2 Fraser Canyon articles (2026-07-08 and 2026-07-05) into single entry with combined description",
+      "Merged BBC video article into Almería Wildfire entry",
+      "Preserved all images through output",
+      "All existing_fires retained as Active status",
+      "No rerouting needed between buckets"
     ]
   }
 }
