@@ -1,13 +1,21 @@
 {
-  "updated_at": "2026-07-12T16:00:56.448Z",
+  "updated_at": "2026-07-12T22:01:17.341Z",
   "fires": [
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
       "status": "Active",
-      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British. Hundreds of firefighters battling the deadly wildfire. Badly burned British couple rescued from ravine.",
+      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British. Hundreds of firefighters battling the deadly wildfire. Badly burned British couple rescued from ravine. Landscape completely charred with homes razed to the ground.",
       "link": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/586b/live/21e5a140-7df6-11f1-a2c7-db8990d0c651.jpg"
+    },
+    {
+      "country": "Thailand",
+      "name": "Bangkok Bar Fire",
+      "status": "Active",
+      "summary": "At least 27 killed in bar fire in Chatuchak district. Firefighters arrived to find patrons running through blasting flames to escape.",
+      "link": "https://www.bbc.co.uk/news/articles/c24yev53q06o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/51a3/live/23c24750-7e34-11f1-b976-0b9c15b0ccfc.jpg"
     },
     {
       "country": "France",
@@ -147,19 +155,20 @@
   "last_report": {
     "items_in": {
       "canada": 7,
-      "world": 3
+      "world": 4
     },
     "items_out": {
       "canada": 7,
-      "world_fires": 21
+      "world_fires": 22
     },
-    "deduped": 3,
-    "rerouted": 0,
+    "deduped": 0,
+    "rerouted": 1,
     "notes": [
-      "Deduplicated 3 Spain wildfire articles: merged BBC reports on Almería wildfire into single entry, retained most recent image (British couple rescue)",
-      "Preserved all Active existing_fires entries; no fires contained >60 days ago to drop",
-      "All Canada articles retained as distinct stories covering different regions and incidents",
-      "All world fires maintained from existing_fires as status is Active"
+      "Bangkok bar fire (Thailand) rerouted from world_news to world_fires as structured fire event",
+      "All Canada articles retained with images preserved",
+      "Spain wildfire enriched with details from multiple BBC articles about same event",
+      "All existing_fires preserved as Active status maintained",
+      "No fires dropped (none exceeded 60-day containment threshold)"
     ]
   }
 }
