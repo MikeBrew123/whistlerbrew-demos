@@ -68,7 +68,8 @@ async function load(){
 function renderBoard(d, updatedAt){
   const ageMin = Math.round((Date.now() - new Date(updatedAt).getTime())/60000);
   const inc = d.incident;
-  const fireBit = inc ? ' · 🔥 ' + (inc.name ? inc.name + ' — ' : '') + (inc.current || '') : '';
+  const fireBit = inc ? ' · 🔥 ' + (inc.name ? inc.name + (inc.number ? ' (' + inc.number + ')' : '') + ' — ' : '')
+    + (inc.current || '') + (inc.currentName ? ' ' + inc.currentName : '') : '';
   document.getElementById('sub').textContent =
     (d.title || 'Board') + fireBit + ' · updated ' + (ageMin < 1 ? 'just now' : ageMin < 60 ? ageMin + ' min ago' : fmtT(updatedAt));
   let html = '';

@@ -155,6 +155,10 @@ try{ const raw = localStorage.getItem(KEY); if(raw){
   S.settings = Object.assign(blank().settings, p.settings || {});
   S.leaders = p.leaders || []; S.directory = p.directory || []; S.incident = p.incident || null;
   S.nocontact = p.nocontact || [];
+  if(S.incident){ // migrate: fires were plain number strings, now {num, name}; incident gained number
+    S.incident.number = S.incident.number || '';
+    S.incident.fires = (S.incident.fires || []).map(f => typeof f === 'string' ? {num:f, name:''} : f);
+  }
 } }catch(e){}
 const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ alert('Storage full — export a backup and remove old T-Card photos.'); } schedulePush(); };
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
@@ -188,18 +192,27 @@ function firePillText(){
   return S.incident.current || S.incident.name || 'SET FIRE #';
 }
 A.setupIncident = (firstRun) => {
-  const inc = S.incident || {type:'single', name:'', fires:[], current:''};
+  const inc = S.incident || {type:'single', name:'', number:'', fires:[], current:''};
+  const curFire = inc.fires.find(f => f.num === inc.current) || {num:inc.current||'', name:''};
   modal(`<h3>${firstRun ? 'New deployment' : 'Deployment details'}</h3>
     <label>Incident type</label>
     <select id="i_type" onchange="document.getElementById('i_namewrap').style.display = this.value==='single' ? 'none' : 'block'">
       ${Object.entries(INC_TYPES).map(([v,l]) => `<option value="${v}" ${inc.type===v?'selected':''}>${l}</option>`).join('')}
     </select>
     <div id="i_namewrap" style="display:${inc.type==='single'?'none':'block'}">
-      <label>Complex / MZOC name</label>
-      <input id="i_name" value="${esc(inc.name||'')}" placeholder="e.g. Grouse Complex">
+      <div class="row">
+        <div style="flex:1.6"><label>Complex / MZOC name</label>
+          <input id="i_name" value="${esc(inc.name||'')}" placeholder="e.g. Grouse Complex"></div>
+        <div><label>Number</label>
+          <input id="i_num" value="${esc(inc.number||'')}" placeholder="e.g. K50000" autocapitalize="characters" style="text-transform:uppercase"></div>
+      </div>
     </div>
-    <label>Fire number you're working</label>
-    <input id="i_fire" value="${esc(inc.current||'')}" placeholder="e.g. K71058" autocapitalize="characters" style="text-transform:uppercase">
+    <div class="row">
+      <div><label>Fire number you're working</label>
+        <input id="i_fire" value="${esc(curFire.num)}" placeholder="e.g. K71058" autocapitalize="characters" style="text-transform:uppercase"></div>
+      <div style="flex:1.4"><label>Fire name</label>
+        <input id="i_firename" value="${esc(curFire.name)}" placeholder="e.g. Casper Creek"></div>
+    </div>
     <div class="row" style="margin-top:16px">
       ${firstRun ? `<button class="secondary" onclick="A.closeModal()">Later</button>` : `<button class="secondary" onclick="A.closeModal()">Cancel</button>`}
       <button class="primary" onclick="A.saveIncident()">${firstRun ? 'Start deployment' : 'Save'}</button>
@@ -207,40 +220,49 @@ A.setupIncident = (firstRun) => {
 };
 A.saveIncident = () => {
   const g = x => document.getElementById(x).value.trim();
-  const type = g('i_type'), fire = g('i_fire').toUpperCase();
-  const name = type === 'single' ? '' : g('i_name');
-  if(!fire){ alert('Fire number is required'); return; }
+  const type = g('i_type'), fireNum = g('i_fire').toUpperCase(), fireName = g('i_firename');
+  if(!fireNum){ alert('Fire number is required'); return; }
   const inc = S.incident || {fires:[]};
-  inc.type = type; inc.name = name;
-  if(!inc.fires.includes(fire)) inc.fires.push(fire);
-  inc.current = fire;
+  inc.type = type;
+  inc.name = type === 'single' ? '' : g('i_name');
+  inc.number = type === 'single' ? '' : g('i_num').toUpperCase();
+  const f = inc.fires.find(x => x.num === fireNum);
+  if(f){ if(fireName) f.name = fireName; }
+  else inc.fires.push({num:fireNum, name:fireName});
+  inc.current = fireNum;
   S.incident = inc;
   save(); A.closeModal(); render();
 };
 A.incidentModal = () => {
   if(!S.incident){ A.setupIncident(true); return; }
   const inc = S.incident;
-  modal(`<h3>${esc(inc.name || INC_TYPES[inc.type] || 'Incident')}</h3>
-    <label>Fire numbers this deployment — tap the one you're working now</label>
-    ${inc.fires.map(f => `<button class="firechip ${f===inc.current?'cur':''}" onclick="A.switchFire('${esc(f)}')">
-      🔥 ${esc(f)} ${f===inc.current?'<small>WORKING</small>':''}</button>`).join('')}
+  const title = inc.type === 'single'
+    ? 'Deployment'
+    : esc(inc.name || INC_TYPES[inc.type]) + (inc.number ? ' <span class="muted" style="font-size:14px">' + esc(inc.number) + '</span>' : '');
+  modal(`<h3>${title}</h3>
+    <label>Fires this deployment — tap the one you're working now</label>
+    ${inc.fires.map(f => `<button class="firechip ${f.num===inc.current?'cur':''}" onclick="A.switchFire('${esc(f.num)}')">
+      🔥 ${esc(f.num)}${f.name ? ' <span style="font-weight:600;font-size:14px">— ' + esc(f.name) + '</span>' : ''} ${f.num===inc.current?'<small>WORKING</small>':''}</button>`).join('')}
     <div class="row" style="margin-top:6px">
-      <input id="i_newfire" placeholder="Add fire number…" autocapitalize="characters" style="text-transform:uppercase">
-      <button class="secondary" style="flex:0 0 92px" onclick="A.addFire()">＋ Add</button>
+      <input id="i_newfire" placeholder="Fire number…" autocapitalize="characters" style="text-transform:uppercase">
+      <input id="i_newfirename" placeholder="Fire name…" style="flex:1.3">
+      <button class="secondary" style="flex:0 0 78px" onclick="A.addFire()">＋ Add</button>
     </div>
-    <p class="notice">Add a fire number when your crews change work locations under the same ${inc.type==='mzoc'?'MZOC':'complex'}. Check-in rounds are stamped with whichever fire is active. Only <b>Reset all data</b> (⚙︎ Settings) ends the deployment.</p>
+    <p class="notice">Add a fire when your crews change work locations under the same ${inc.type==='mzoc'?'MZOC':'complex'}. Check-in rounds are stamped with whichever fire is active. Use <b>End deployment</b> (⚙︎ Settings) when you're done.</p>
     <div class="row" style="margin-top:10px">
-      <button class="secondary" onclick="A.closeModal();A.setupIncident(false)">Edit type / name</button>
+      <button class="secondary" onclick="A.closeModal();A.setupIncident(false)">Edit details</button>
       <button class="primary" onclick="A.closeModal()">Done</button>
     </div>`);
 };
 A.switchFire = f => { S.incident.current = f; save(); render(); A.incidentModal(); };
 A.addFire = () => {
-  const el = document.getElementById('i_newfire');
-  const f = el.value.trim().toUpperCase();
-  if(!f) return;
-  if(!S.incident.fires.includes(f)) S.incident.fires.push(f);
-  S.incident.current = f;
+  const num = document.getElementById('i_newfire').value.trim().toUpperCase();
+  const name = document.getElementById('i_newfirename').value.trim();
+  if(!num) return;
+  const f = S.incident.fires.find(x => x.num === num);
+  if(f){ if(name) f.name = name; }
+  else S.incident.fires.push({num, name});
+  S.incident.current = num;
   save(); render(); A.incidentModal();
 };
 
@@ -786,8 +808,9 @@ function settingsView(){
     <button class="secondary" onclick="document.getElementById('importfile').click()">⬆ Import</button>
   </div>
   <p class="notice">Import accepts full backups <i>and</i> contact-directory files (SPS / SRG lists) — directory contacts power the "From directory" picker and stay on this phone only.${S.directory.length ? ' <b>Directory loaded: '+S.directory.length+' contacts.</b>' : ''}</p>
-  <h2>Danger zone</h2>
-  <button class="secondary danger" onclick="A.wipe()">Reset all data</button>
+  <h2>End of deployment</h2>
+  <button class="secondary danger" onclick="A.endDeployment()">🏁 End deployment — archive, export & clear</button>
+  <p class="notice">Backs everything up to the cloud, gives you a report file for the incident drive, then clears this device for the next deployment.</p>
   <p class="notice" style="text-align:center;margin-top:20px">SPS Deploy · offline-capable · whistlerbrew.com</p>`;
 }
 A.setInterval = v => { const n = parseInt(v,10); if(n > 0){ S.settings.intervalMin = n; save(); } };
@@ -825,7 +848,10 @@ function boardSnapshot(){
   const d = dueInfo();
   return {
     title: S.settings.myName || 'SPS Deploy board',
-    incident: S.incident ? {type:S.incident.type, name:S.incident.name, current:S.incident.current, fires:S.incident.fires} : null,
+    incident: S.incident ? {type:S.incident.type, name:S.incident.name, number:S.incident.number,
+      current:S.incident.current,
+      currentName:(S.incident.fires.find(f => f.num === S.incident.current) || {}).name || '',
+      fires:S.incident.fires} : null,
     nextDue: d ? d.dueAt.toISOString() : null,
     roundOpen: !!openRound(),
     nocontact: openNC().map(e => { const c = crewById(e.crewId);
@@ -864,11 +890,99 @@ A.exportData = () => {
   a.download = 'sps-deploy-backup-' + dayKey() + '.json';
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 };
+/* ---- end of deployment: archive to cloud, export report, then clear ---- */
+let archiveId = null;
+A.endDeployment = () => {
+  archiveId = 'a' + randId(16);
+  const inc = S.incident;
+  const label = inc ? (inc.name ? inc.name + ' ' : '') + (inc.current || inc.number || '') : 'this deployment';
+  modal(`<h3>End deployment — ${esc(label)}</h3>
+    <p class="muted" id="archstate" style="margin:0 0 12px">☁️ Backing up to cloud…</p>
+    <button class="primary" onclick="A.downloadReport()">📄 Save deployment report (for the incident drive)</button>
+    <button class="secondary" style="margin-top:8px" onclick="A.exportData()">⬇ Save raw data backup (JSON)</button>
+    <p class="notice">The report is a single file — check-in log, no-contact events, paperwork times, crews and contacts. Drop it on the incident drive or email it. Save it BEFORE clearing.</p>
+    <button class="secondary danger" style="margin-top:14px" onclick="A.wipe()">🗑 Clear this device & start next deployment</button>
+    <button class="secondary" style="margin-top:8px" onclick="A.closeModal()">Cancel — not done yet</button>`);
+  archiveToCloud();
+};
+function archiveToCloud(){
+  const el = () => document.getElementById('archstate');
+  if(!navigator.onLine){ if(el()) el().textContent = '⚠️ Offline — cloud backup skipped. The report file below is your backup.'; return; }
+  const data = JSON.parse(JSON.stringify(S));
+  data.crews.forEach(c => delete c.photo); // photos too big for the archive
+  delete data.directory;                    // private contact list stays on-device
+  data._meta = {endedAt: now(), app: 'sps-deploy'};
+  fetch(SUPA_URL + '/rest/v1/rpc/sps_archive_put', {method:'POST',
+    headers:{apikey:SUPA_KEY, authorization:'Bearer '+SUPA_KEY, 'content-type':'application/json'},
+    body: JSON.stringify({p_id: archiveId, p_data: data})})
+  .then(r => { if(el()) el().textContent = r.ok
+      ? '☁️ Backed up to cloud — archive ID ' + archiveId + ' (also printed in the report)'
+      : '⚠️ Cloud backup failed — the report file below is your backup.'; })
+  .catch(() => { if(el()) el().textContent = '⚠️ Cloud backup failed — the report file below is your backup.'; });
+}
+A.downloadReport = () => {
+  const inc = S.incident || {type:'single', name:'', number:'', fires:[], current:''};
+  const dates = S.rounds.map(r => dayKey(r.startedAt)).concat(Object.keys(S.paperwork)).sort();
+  const range = dates.length ? fmtDay(dates[0]) + ' – ' + fmtDay(dates[dates.length-1]) : fmtDay(dayKey());
+  const fireLabel = f => esc(f.num) + (f.name ? ' — ' + esc(f.name) : '');
+  const sect = (t, body) => `<h2>${t}</h2>${body}`;
+  const crewsHtml = S.crews.map(c => `
+    <div class="crew"><b>${esc(c.callsign || '')} ${esc(c.name)}</b>${c.archived ? ' <i>(released during deployment)</i>' : ''}
+      ${c.leader ? ' · CL: ' + esc(c.leader) : ''}${c.channel ? ' · Ch: ' + esc(c.channel) : ''}
+      ${c.notes ? `<div class="note">${esc(c.notes)}</div>` : ''}
+      ${c.members.length ? `<table><tr><th>Member</th><th>Role</th><th>Phone</th><th>Notes</th></tr>
+        ${c.members.map(m => `<tr><td>${esc(m.name)}</td><td>${esc(m.role||'')}</td><td>${esc(m.phone||'')}</td><td>${esc(m.notes||'')}</td></tr>`).join('')}</table>` : ''}
+    </div>`).join('');
+  const rounds = [...S.rounds].sort((a,b) => a.startedAt.localeCompare(b.startedAt));
+  const roundsHtml = rounds.length ? `<table><tr><th>Date</th><th>Round</th><th>Fire</th><th>Crew</th><th>Time</th><th>Status</th></tr>
+    ${rounds.flatMap(r => Object.entries(r.checks).sort((a,b) => (a[1].time||'').localeCompare(b[1].time||'')).map(([cid, ck]) => {
+      const c = crewById(cid);
+      return `<tr><td>${fmtDay(dayKey(r.startedAt))}</td><td>${fmtT(r.startedAt)}</td><td>${esc(r.fire||'')}</td>
+        <td>${esc(c ? (c.callsign?c.callsign+' ':'')+c.name : 'removed crew')}</td><td>${fmtT(ck.time)}</td>
+        <td>${ck.missed ? '<b class="bad">NO CONTACT</b>' : 'checked in'}</td></tr>`; })).join('')}</table>` : '<p>No check-in rounds recorded.</p>';
+  const ncHtml = S.nocontact.length ? S.nocontact.map(e => { const c = crewById(e.crewId);
+    return `<div class="crew"><b class="bad">📵 ${esc(c ? (c.callsign?c.callsign+' ':'')+c.name : 'removed crew')}</b> · ${fmtDay(dayKey(e.missedAt))}${e.fire ? ' · '+esc(e.fire) : ''}
+      <div class="note">Missed check-in ${fmtT(e.missedAt)}${e.attempts.map(a => `<br>Attempted ${fmtT(a)} — no answer`).join('')}
+      ${e.escalatedAt ? `<br><b>Fire Centre alerted ${fmtT(e.escalatedAt)}</b>` : ''}
+      ${e.contactAt ? `<br>Contact re-established ${fmtT(e.contactAt)}` : '<br><b class="bad">Not resolved at end of deployment</b>'}</div></div>`; }).join('') : '<p>None — all check-ins made contact.</p>';
+  const pdays = Object.keys(S.paperwork).sort();
+  const paperHtml = pdays.length ? `<table><tr><th>Date</th><th>Crew</th><th>ICS 214 received</th><th>DTR received</th></tr>
+    ${pdays.flatMap(d => Object.entries(S.paperwork[d]).map(([cid, rec]) => { const c = crewById(cid);
+      if(!rec.p214 && !rec.dtr) return '';
+      return `<tr><td>${fmtDay(d)}</td><td>${esc(c ? (c.callsign?c.callsign+' ':'')+c.name : 'removed crew')}</td>
+        <td>${rec.p214 ? fmtT(rec.p214) : '—'}</td><td>${rec.dtr ? fmtT(rec.dtr) : '—'}</td></tr>`; })).join('')}</table>` : '<p>No paperwork recorded.</p>';
+  const leadersHtml = S.leaders.length ? `<table><tr><th>Position</th><th>Name</th><th>Callsign</th><th>Phone</th><th>Notes</th></tr>
+    ${S.leaders.map(l => `<tr><td>${esc(l.position||'')}</td><td>${esc(l.name)}</td><td>${esc(l.callsign||'')}</td><td>${esc(l.phone||'')}</td><td>${esc(l.notes||'')}</td></tr>`).join('')}</table>` : '<p>None recorded.</p>';
+  const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Deployment report — ${esc(inc.current || inc.number || '')}</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;color:#1c2733;line-height:1.45}
+h1{font-size:22px;border-bottom:3px solid #ff7a1a;padding-bottom:8px}h2{font-size:16px;margin-top:26px;color:#444;text-transform:uppercase;letter-spacing:1px}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:14px}th,td{border:1px solid #ccc;padding:6px 9px;text-align:left}th{background:#f2f4f6}
+.crew{margin:12px 0;padding:10px 12px;border:1px solid #ddd;border-radius:8px}.note{color:#555;font-size:14px;margin-top:4px}
+.bad{color:#c0392b}.meta{color:#666;font-size:14px}@media print{.crew{break-inside:avoid}}</style></head><body>
+<h1>SPS Deployment Report</h1>
+<p class="meta">
+<b>${esc(INC_TYPES[inc.type] || 'Incident')}${inc.name ? ': ' + esc(inc.name) : ''}${inc.number ? ' (' + esc(inc.number) + ')' : ''}</b><br>
+Fires worked: ${inc.fires.length ? inc.fires.map(fireLabel).join(' · ') : esc(inc.current || 'n/a')}<br>
+${S.settings.myName ? 'TFL: ' + esc(S.settings.myName) + '<br>' : ''}
+Period: ${range}<br>
+Generated ${new Date().toLocaleString()} · Cloud archive ID: ${archiveId || 'n/a'}</p>
+${sect('Crews (' + S.crews.length + ')', crewsHtml || '<p>None.</p>')}
+${sect('Overhead contacts', leadersHtml)}
+${sect('No-contact events', ncHtml)}
+${sect('Check-in log', roundsHtml)}
+${sect('Paperwork received (ICS 214 / DTR)', paperHtml)}
+</body></html>`;
+  const blob = new Blob([html], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'deployment-' + (inc.current || inc.number || 'report').replace(/[^\w-]/g, '') + '-' + dayKey() + '.html';
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+};
 A.wipe = () => {
-  if(confirm('End of deployment? This deletes ALL crews, check-ins and paperwork records on this device.') && confirm('Really sure? Export a backup first if in doubt.')){
+  if(confirm('Clear ALL deployment data on this device? Make sure the report is saved.') && confirm('Really sure?')){
     const dir = S.directory; // keep the contact directory across deployments
     S = blank(); S.directory = dir;
-    save(); A.go('home'); A.setupIncident(true);
+    save(); A.closeModal(); A.go('home'); A.setupIncident(true);
   }
 };
 document.getElementById('importfile').onchange = e => {
