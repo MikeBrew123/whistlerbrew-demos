@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SPS Deploy — Board</title>
+<meta name="theme-color" content="#0f1419">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#0f1419;--card:#1a222c;--card2:#212b37;--line:#2d3946;--text:#e8edf2;--dim:#8fa0b0;
+  --accent:#ff7a1a;--green:#2ecc71;--red:#ff5252;--amber:#ffc94d;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;}
+header{position:sticky;top:0;background:rgba(15,20,25,.96);border-bottom:1px solid var(--line);padding:14px 16px;}
+header h1{font-size:17px;margin:0;font-weight:700;}
+header h1 span{color:var(--accent);}
+header .sub{color:var(--dim);font-size:13px;margin-top:3px;}
+main{padding:14px;max-width:640px;margin:0 auto;}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin:20px 0 10px;}
+.banner{border-radius:14px;padding:13px 16px;margin-bottom:12px;font-weight:600;}
+.banner.ok{background:#15301f;border:1px solid #2ecc7144;color:#a9e8c3;}
+.banner.due{background:#3a1414;border:1px solid #ff525266;color:#ffb3b3;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 14px;margin-bottom:10px;}
+.rowline{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);}
+.rowline:last-child{border-bottom:none;}
+.cs{background:var(--card2);border:1px solid var(--line);color:var(--accent);font-weight:700;padding:6px 10px;border-radius:9px;font-size:13.5px;min-width:52px;text-align:center;flex-shrink:0;}
+.nm{flex:1;min-width:0;}
+.nm b{display:block;font-size:15.5px;}
+.nm small{color:var(--dim);font-size:12.5px;}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:20px;margin-left:4px;white-space:nowrap;}
+.pill.g{background:#15301f;color:var(--green);}
+.pill.r{background:#3a1414;color:var(--red);}
+.pill.a{background:#332708;color:var(--amber);}
+.pill.dim{background:var(--card2);color:var(--dim);}
+.empty{text-align:center;color:var(--dim);padding:40px 20px;line-height:1.6;}
+.muted{color:var(--dim);font-size:13px;}
+footer{text-align:center;color:var(--dim);font-size:12.5px;padding:20px;}
+</style>
+</head>
+<body>
+<header>
+  <h1><span>SPS</span> DEPLOY — Field board</h1>
+  <div class="sub" id="sub">Loading…</div>
+</header>
+<main id="view"><div class="empty">Loading board…</div></main>
+<footer>Read-only · updates automatically · whistlerbrew.com</footer>
+<script>
+'use strict';
+const SUPA_URL = 'https://kwtdpvnjewtahuxjyltn.supabase.co';
+const SUPA_KEY = 'sb_publishable_bQlgBZ7Otay8D9AErt8daA_2lQI36jk';
+const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtT = iso => iso ? new Date(iso).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', hour12:false}) : '';
+const boardId = new URLSearchParams(location.search).get('b');
+
+async function load(){
+  if(!boardId){ document.getElementById('view').innerHTML = '<div class="empty">No board ID in the link.<br>Ask the TFL to re-send their board link.</div>'; return; }
+  try{
+    const r = await fetch(SUPA_URL + '/rest/v1/rpc/sps_board_get', {method:'POST',
+      headers:{apikey:SUPA_KEY, authorization:'Bearer '+SUPA_KEY, 'content-type':'application/json'},
+      body: JSON.stringify({p_id: boardId})});
+    const body = await r.json();
+    if(!r.ok || !body || !body.data){ document.getElementById('view').innerHTML = '<div class="empty">Board not found — sharing may have been stopped.</div>'; return; }
+    renderBoard(body.data, body.updated_at);
+  }catch(e){
+    document.getElementById('sub').textContent = 'Offline — showing last loaded data';
+  }
+}
+function renderBoard(d, updatedAt){
+  const ageMin = Math.round((Date.now() - new Date(updatedAt).getTime())/60000);
+  document.getElementById('sub').textContent =
+    (d.title || 'Board') + ' · updated ' + (ageMin < 1 ? 'just now' : ageMin < 60 ? ageMin + ' min ago' : fmtT(updatedAt));
+  let html = '';
+  if(ageMin > 180) html += `<div class="banner due">⚠️ Last update ${Math.round(ageMin/60)} hrs ago — TFL may be out of cell range.</div>`;
+  if(d.roundOpen) html += `<div class="banner ok">📻 Check-in round in progress</div>`;
+  else if(d.nextDue){
+    const ms = new Date(d.nextDue) - Date.now();
+    html += ms < 0
+      ? `<div class="banner due">🔴 Check-in overdue (was due ${fmtT(d.nextDue)})</div>`
+      : `<div class="banner ok">🟢 Next check-in ${fmtT(d.nextDue)}</div>`;
+  }
+  const crews = d.crews || [];
+  html += `<h2>Crews (${crews.length}) — paperwork & last check-in</h2><div class="card">`;
+  if(!crews.length) html += `<div class="empty">No active crews on this board.</div>`;
+  crews.forEach(c => {
+    const col = c.missing === 0 ? 'var(--green)' : c.missing === 1 ? 'var(--amber)' : 'var(--red)';
+    html += `<div class="rowline">
+      <div class="cs">${esc(c.callsign || '—')}</div>
+      <div class="nm"><b style="color:${col}">${esc(c.name)}</b>
+        <small>${esc(c.leader ? 'CL: ' + c.leader : '')}${c.lastCheck ? ' · last check-in ' + fmtT(c.lastCheck) + (c.lastMissed ? ' (no contact)' : '') : ''}</small></div>
+      <div>
+        ${c.missing ? `<span class="pill ${c.missing === 1 ? 'a' : 'r'}">${c.missing} outstanding</span>` : `<span class="pill g">✓ paperwork</span>`}
+        <span class="pill ${c.p214 ? 'g' : 'dim'}">214${c.p214 ? ' ✓' : ''}</span>
+        <span class="pill ${c.dtr ? 'g' : 'dim'}">DTR${c.dtr ? ' ✓' : ''}</span>
+      </div>
+    </div>`;
+  });
+  html += `</div><p class="muted">Name colour = previous days' paperwork (green up to date · yellow 1 outstanding · red 2+). The 214/DTR pills are for today.</p>`;
+  document.getElementById('view').innerHTML = html;
+}
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>

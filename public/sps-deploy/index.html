@@ -138,10 +138,16 @@ body.offline .offline-dot{display:block;}
 'use strict';
 /* ============ state ============ */
 const KEY='sps-deploy-v1';
-const blank = () => ({crews:[], rounds:[], paperwork:{}, settings:{intervalMin:120, apiKey:''}});
+const blank = () => ({crews:[], rounds:[], paperwork:{}, leaders:[], directory:[],
+  settings:{intervalMin:120, firstTime:'08:00', apiKey:'', myName:'', share:null}});
 let S = blank();
-try{ const raw = localStorage.getItem(KEY); if(raw) S = Object.assign(blank(), JSON.parse(raw)); }catch(e){}
-const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ alert('Storage full — export a backup and remove old T-Card photos.'); } };
+try{ const raw = localStorage.getItem(KEY); if(raw){
+  const p = JSON.parse(raw);
+  S = Object.assign(blank(), p);
+  S.settings = Object.assign(blank().settings, p.settings || {});
+  S.leaders = p.leaders || []; S.directory = p.directory || [];
+} }catch(e){}
+const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ alert('Storage full — export a backup and remove old T-Card photos.'); } schedulePush(); };
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
 const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const now = () => new Date().toISOString();
@@ -175,12 +181,33 @@ function modal(html){
 A.closeModal = () => { document.getElementById('modalhost').innerHTML = ''; };
 
 /* ============ home / check-in ============ */
-function dueInfo(){
+// Check-ins run on a fixed schedule: firstTime, then every intervalMin,
+// so all crews check in at the same times each day.
+function slotTimes(dayOffset){
+  const [h,m] = (S.settings.firstTime || '08:00').split(':').map(Number);
   const iv = S.settings.intervalMin * 60000;
-  const closed = S.rounds.filter(r => r.closedAt || r.startedAt);
-  if(!closed.length) return null;
-  const last = closed.reduce((a,b) => a.startedAt > b.startedAt ? a : b);
-  return {last, dueAt: new Date(new Date(last.startedAt).getTime() + iv)};
+  const t0 = new Date(); t0.setDate(t0.getDate() + (dayOffset||0)); t0.setHours(h, m, 0, 0);
+  const end = new Date(t0); end.setHours(23, 59, 59, 999);
+  const out = [];
+  for(let t = t0.getTime(); t <= end.getTime(); t += iv) out.push(new Date(t));
+  return out;
+}
+function dueInfo(){
+  const slots = slotTimes(0);
+  if(!slots.length) return null;
+  const today = dayKey();
+  const lastToday = S.rounds.filter(r => dayKey(r.startedAt) === today)
+    .map(r => new Date(r.startedAt).getTime()).sort((a,b) => a-b).pop();
+  // a round covers a slot if it started no earlier than tol before it
+  const tol = Math.min(30, S.settings.intervalMin / 2) * 60000;
+  if(!S.rounds.length){
+    // nothing recorded yet — point at the next upcoming slot, don't alarm
+    const up = slots.find(s => s.getTime() >= Date.now());
+    return up ? {dueAt: up, fresh: true} : {dueAt: slotTimes(1)[0], tomorrow: true};
+  }
+  const next = slots.find(s => !lastToday || s.getTime() > lastToday + tol);
+  if(!next) return {dueAt: slotTimes(1)[0], tomorrow: true};
+  return {dueAt: next, tomorrow: false};
 }
 function homeView(){
   const crews = activeCrews();
@@ -209,12 +236,14 @@ function homeView(){
       const ms = d.dueAt - new Date();
       const mins = Math.round(Math.abs(ms)/60000);
       const hhmm = fmtT(d.dueAt.toISOString());
-      if(ms <= 0) html += `<div class="banner due"><span class="big">🔴</span><span>Check-in OVERDUE — was due ${hhmm} (${mins} min ago)</span></div>`;
+      if(d.tomorrow) html += `<div class="banner ok"><span class="big">🟢</span><span>Done for today — next check-in ${hhmm} tomorrow</span></div>`;
+      else if(ms <= 0) html += `<div class="banner due"><span class="big">🔴</span><span>Check-in OVERDUE — was due ${hhmm} (${mins} min ago)</span></div>`;
       else if(ms <= 15*60000) html += `<div class="banner soon"><span class="big">🟡</span><span>Check-in due at ${hhmm} — in ${mins} min</span></div>`;
-      else html += `<div class="banner ok"><span class="big">🟢</span><span>Next check-in ${hhmm} · last round ${fmtT(d.last.startedAt)}</span></div>`;
+      else html += `<div class="banner ok"><span class="big">🟢</span><span>Next check-in ${hhmm}</span></div>`;
     }
+    const ivLabel = S.settings.intervalMin >= 60 ? (S.settings.intervalMin/60) + ' hr' : S.settings.intervalMin + ' min';
     html += `<button class="primary" onclick="A.startRound()">📻 Start check-in round</button>
-      <p class="muted" style="text-align:center;margin:10px 0 0">Interval: every ${S.settings.intervalMin} min — <a style="color:var(--blue)" onclick="A.go('settings')">change</a></p>`;
+      <p class="muted" style="text-align:center;margin:10px 0 0">Every ${ivLabel} starting ${esc(S.settings.firstTime)} — <a style="color:var(--blue)" onclick="A.go('settings')">change</a></p>`;
   }
 
   // today paperwork snapshot
@@ -272,8 +301,107 @@ function crewsView(){
     html += `<h2>Released / reassigned (${rel.length})</h2>`;
     rel.forEach(c => html += crewLine(c));
   }
+  html += leadersSection();
   return html;
 }
+
+/* ============ overhead / leaders ============ */
+const POSITIONS = ['Branch','Div/Group','TFL D','TFL P','STL D','STL P','STAM','STO','Other'];
+function leadersSection(){
+  let html = `<h2>Overhead on this fire (${S.leaders.length})</h2>`;
+  if(!S.leaders.length) html += `<div class="empty" style="padding:14px">Quick contacts for other leaders — Branch, Div, TFLs, STAM…</div>`;
+  else {
+    html += `<div class="card" style="padding:4px 14px">`;
+    S.leaders.forEach(l => {
+      html += `<div class="memberline">
+        <div class="cs" style="background:var(--card2);border:1px solid var(--line);color:var(--blue);font-weight:700;padding:6px 8px;border-radius:9px;font-size:12.5px;min-width:64px;text-align:center;flex-shrink:0">${esc(l.position||'—')}</div>
+        <div class="mi"><b>${esc(l.name)}</b><small>${esc([l.callsign, l.phone, l.notes].filter(Boolean).join(' · '))}</small></div>
+        ${l.phone ? `<a class="callbtn" href="tel:${esc(l.phone.replace(/[^\d+]/g,''))}">📞</a>` : ''}
+        <button class="editbtn" onclick="A.leaderModal('${l.id}')">✎</button>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+  html += `<div class="row" style="margin-top:10px">
+    <button class="secondary" onclick="A.directoryPicker()">☑ From directory</button>
+    <button class="secondary" onclick="A.leaderModal()">＋ Add leader</button>
+  </div>`;
+  return html;
+}
+A.leaderModal = (id) => {
+  const l = id ? S.leaders.find(x => x.id === id) : {name:'', position:'', phone:'', callsign:'', notes:''};
+  modal(`<h3>${id?'Edit':'Add'} leader</h3>
+    <label>Name</label><input id="l_name" value="${esc(l.name)}">
+    <label>Position</label>
+    <select id="l_pos">${['<option value="">— select —</option>'].concat(POSITIONS.map(p =>
+      `<option ${l.position===p?'selected':''}>${p}</option>`)).join('')}</select>
+    <div class="row">
+      <div><label>Callsign</label><input id="l_cs" value="${esc(l.callsign||'')}"></div>
+      <div><label>Phone</label><input id="l_phone" type="tel" value="${esc(l.phone||'')}"></div>
+    </div>
+    <label>Notes</label><input id="l_notes" value="${esc(l.notes||'')}">
+    <div class="row" style="margin-top:16px">
+      <button class="secondary" onclick="A.closeModal()">Cancel</button>
+      <button class="primary" onclick="A.saveLeader('${id||''}')">Save</button>
+    </div>
+    ${id ? `<button class="secondary danger" style="margin-top:10px" onclick="A.delLeader('${id}')">Remove (left this fire)</button>` : ''}`);
+};
+A.saveLeader = (id) => {
+  const g = x => document.getElementById(x).value.trim();
+  const data = {name:g('l_name'), position:g('l_pos'), callsign:g('l_cs'), phone:g('l_phone'), notes:g('l_notes')};
+  if(!data.name){ alert('Name is required'); return; }
+  if(id) Object.assign(S.leaders.find(x => x.id === id), data);
+  else S.leaders.push(Object.assign({id:uid()}, data));
+  save(); A.closeModal(); render();
+};
+A.delLeader = (id) => { if(confirm('Remove this leader from your list?')){ S.leaders = S.leaders.filter(x => x.id !== id); save(); A.closeModal(); render(); } };
+
+/* directory picker (contacts imported via Settings — kept on-device only) */
+A.directoryPicker = () => {
+  if(!S.directory.length){
+    modal(`<h3>No directory loaded</h3>
+      <p class="notice" style="margin:0 0 14px">Import your SPS / SRG contact list once (Settings → Import) and this becomes a checkbox picker — tick who's on the fire. The list stays on this phone only.</p>
+      <button class="primary" onclick="A.closeModal();A.go('settings')">Open Settings</button>
+      <button class="secondary" style="margin-top:8px" onclick="A.closeModal()">Close</button>`);
+    return;
+  }
+  const groups = {};
+  S.directory.forEach((p, i) => { (groups[p.group || 'Contacts'] = groups[p.group || 'Contacts'] || []).push([p, i]); });
+  const have = new Set(S.leaders.map(l => l.name.toLowerCase()));
+  modal(`<h3>Who's on this fire?</h3>
+    <input id="dirsearch" placeholder="Search name…" oninput="A.dirFilter(this.value)" style="margin-bottom:10px">
+    <div id="dirlist" style="max-height:50vh;overflow-y:auto">
+    ${Object.entries(groups).map(([g, list]) => `
+      <div class="dirgroup"><h2 style="margin:12px 0 6px">${esc(g)}</h2>
+      ${list.map(([p, i]) => `<label class="dirrow" data-name="${esc(p.name.toLowerCase())}" style="display:flex;align-items:center;gap:10px;text-transform:none;font-size:15px;color:var(--text);padding:9px 4px;margin:0;border-bottom:1px solid var(--line)">
+        <input type="checkbox" id="dir_${i}" ${have.has(p.name.toLowerCase())?'checked disabled':''} style="width:22px;height:22px;flex-shrink:0">
+        <span style="flex:1"><b>${esc(p.name)}</b> <small class="muted">${esc([p.callsign, p.phone, p.dept].filter(Boolean).join(' · '))}</small></span>
+      </label>`).join('')}</div>`).join('')}
+    </div>
+    <div class="row" style="margin-top:14px">
+      <button class="secondary" onclick="A.closeModal()">Cancel</button>
+      <button class="primary" onclick="A.importFromDirectory()">Add checked</button>
+    </div>
+    <p class="notice">Already-added people are greyed out. Set each person's position (Branch, Div/Group, TFL…) after adding — tap ✎.</p>`);
+};
+A.dirFilter = (q) => {
+  q = q.trim().toLowerCase();
+  document.querySelectorAll('.dirrow').forEach(r => { r.style.display = !q || r.dataset.name.includes(q) ? 'flex' : 'none'; });
+  document.querySelectorAll('.dirgroup').forEach(g => {
+    g.style.display = [...g.querySelectorAll('.dirrow')].some(r => r.style.display !== 'none') ? '' : 'none';
+  });
+};
+A.importFromDirectory = () => {
+  let n = 0;
+  S.directory.forEach((p, i) => {
+    const cb = document.getElementById('dir_' + i);
+    if(cb && cb.checked && !cb.disabled){
+      S.leaders.push({id:uid(), name:p.name, position:'', callsign:p.callsign||'', phone:p.phone||'', notes:p.dept||''});
+      n++;
+    }
+  });
+  save(); A.closeModal(); render();
+};
 
 /* crew detail */
 function crewView(id){
@@ -459,13 +587,38 @@ function logView(){
 }
 
 /* ============ settings ============ */
+const INTERVALS = [[30,'30 min'],[45,'45 min'],[60,'1 hr'],[90,'1.5 hr'],[120,'2 hr (default)'],[180,'3 hr'],[240,'4 hr']];
 function settingsView(){
+  const sh = S.settings.share;
   return `<button class="back" onclick="A.go('home')">‹ Back</button>
   <h2>Check-ins</h2>
   <div class="card">
-    <label>Check-in interval (minutes)</label>
-    <input type="number" inputmode="numeric" value="${S.settings.intervalMin}" onchange="A.setInterval(this.value)">
-    <p class="notice">Typically 120 (every 2 hrs). The Check-In tab warns when the next round is due.</p>
+    <div class="row">
+      <div><label>Every</label>
+        <select onchange="A.setInterval(this.value)">${INTERVALS.map(([v,l]) =>
+          `<option value="${v}" ${S.settings.intervalMin===v?'selected':''}>${l}</option>`).join('')}</select></div>
+      <div><label>First check-in of day</label>
+        <input type="time" value="${esc(S.settings.firstTime)}" onchange="A.setFirstTime(this.value)"></div>
+    </div>
+    <p class="notice">All crews check in at the same times — e.g. 08:00 then every 2 hrs. The Check-In tab counts down to the next slot and goes red when overdue.</p>
+  </div>
+  <h2>Share with overhead (STAM board)</h2>
+  <div class="card">
+    ${sh ? `
+      <p style="margin:0 0 10px"><span class="pill g">SHARING ON</span> <span class="muted" id="pushstate">${lastPushAt ? 'last update '+fmtT(lastPushAt) : 'waiting for first update…'}</span></p>
+      <label>Read-only board link — send to your STAM / overhead</label>
+      <input readonly value="${boardUrl()}" onclick="this.select()">
+      <div class="row" style="margin-top:10px">
+        <button class="secondary" onclick="A.copyBoardLink(this)">📋 Copy link</button>
+        <button class="secondary danger" onclick="A.stopSharing()">Stop sharing</button>
+      </div>
+      <p class="notice">The board shows crew names, callsigns, check-in status and outstanding 214/DTRs — no phone numbers. It updates whenever you have service; anyone with the link can view it.</p>
+    ` : `
+      <label>Your name / position (shown on the board)</label>
+      <input value="${esc(S.settings.myName||'')}" placeholder="e.g. Brew — TFL P" onchange="A.setMyName(this.value)">
+      <button class="primary" style="margin-top:12px" onclick="A.startSharing()">Create shared board link</button>
+      <p class="notice">Generates a private link your STAM or other overhead can open to see your crews' check-in and paperwork status live. Needs cell service to update; your app keeps working offline regardless.</p>
+    `}
   </div>
   <h2>T-Card scanning (optional)</h2>
   <div class="card">
@@ -473,18 +626,78 @@ function settingsView(){
     <input type="password" value="${esc(S.settings.apiKey||'')}" placeholder="sk-ant-…" onchange="A.setKey(this.value)">
     <p class="notice">With a key set, scanning a T-Card photo reads crew names, callsigns and leaders automatically (needs cell service). Without one, the photo is attached and you type the details. The key is stored only on this device.</p>
   </div>
-  <h2>Backup</h2>
+  <h2>Backup & contact directory</h2>
   <div class="row">
     <button class="secondary" onclick="A.exportData()">⬇ Export</button>
     <button class="secondary" onclick="document.getElementById('importfile').click()">⬆ Import</button>
   </div>
-  <p class="notice">Everything lives on this phone only — export a backup before long gaps between deployments.</p>
+  <p class="notice">Import accepts full backups <i>and</i> contact-directory files (SPS / SRG lists) — directory contacts power the "From directory" picker and stay on this phone only.${S.directory.length ? ' <b>Directory loaded: '+S.directory.length+' contacts.</b>' : ''}</p>
   <h2>Danger zone</h2>
   <button class="secondary danger" onclick="A.wipe()">Reset all data</button>
   <p class="notice" style="text-align:center;margin-top:20px">SPS Deploy · offline-capable · whistlerbrew.com</p>`;
 }
 A.setInterval = v => { const n = parseInt(v,10); if(n > 0){ S.settings.intervalMin = n; save(); } };
+A.setFirstTime = v => { if(/^\d{2}:\d{2}$/.test(v)){ S.settings.firstTime = v; save(); } };
+A.setMyName = v => { S.settings.myName = v.trim(); save(); };
 A.setKey = v => { S.settings.apiKey = v.trim(); save(); };
+
+/* ---- shared STAM board ---- */
+const SUPA_URL = 'https://kwtdpvnjewtahuxjyltn.supabase.co';
+const SUPA_KEY = 'sb_publishable_bQlgBZ7Otay8D9AErt8daA_2lQI36jk';
+let lastPushAt = null, pushTimer = null;
+const boardUrl = () => location.origin + location.pathname.replace(/index\.html$/, '') + 'board.html?b=' + (S.settings.share?.id || '');
+const randId = n => { const a = new Uint8Array(n); crypto.getRandomValues(a);
+  return [...a].map(x => 'abcdefghjkmnpqrstuvwxyz23456789'[x % 31]).join(''); };
+A.startSharing = () => {
+  S.settings.share = {id: randId(12), key: randId(28)};
+  save(); pushBoard(); render();
+};
+A.stopSharing = () => {
+  if(!confirm('Stop sharing? The board link will stop working.')) return;
+  const sh = S.settings.share;
+  S.settings.share = null; save(); render();
+  fetch(SUPA_URL + '/rest/v1/rpc/sps_board_delete', {method:'POST',
+    headers:{apikey:SUPA_KEY, authorization:'Bearer '+SUPA_KEY, 'content-type':'application/json'},
+    body: JSON.stringify({p_id:sh.id, p_key:sh.key})}).catch(()=>{});
+};
+A.copyBoardLink = (btn) => {
+  navigator.clipboard.writeText(boardUrl()).then(() => { btn.textContent = '✓ Copied'; setTimeout(() => render(), 1200); })
+    .catch(() => alert(boardUrl()));
+};
+function boardSnapshot(){
+  const today = dayKey(), pwT = S.paperwork[today] || {};
+  const lastRound = [...S.rounds].sort((a,b) => a.startedAt.localeCompare(b.startedAt)).pop();
+  const d = dueInfo();
+  return {
+    title: S.settings.myName || 'SPS Deploy board',
+    nextDue: d ? d.dueAt.toISOString() : null,
+    roundOpen: !!openRound(),
+    intervalMin: S.settings.intervalMin, firstTime: S.settings.firstTime,
+    crews: activeCrews().map(c => {
+      const lastCk = lastRound && lastRound.checks[c.id];
+      return {name:c.name, callsign:c.callsign||'', leader:c.leader||'',
+        missing: paperMissing(c).n,
+        p214: !!pwT[c.id]?.p214, dtr: !!pwT[c.id]?.dtr,
+        lastCheck: lastCk ? lastCk.time : null, lastMissed: !!(lastCk && lastCk.missed)};
+    })
+  };
+}
+function pushBoard(){
+  const sh = S.settings.share;
+  if(!sh || !navigator.onLine) return;
+  fetch(SUPA_URL + '/rest/v1/rpc/sps_board_upsert', {method:'POST',
+    headers:{apikey:SUPA_KEY, authorization:'Bearer '+SUPA_KEY, 'content-type':'application/json'},
+    body: JSON.stringify({p_id:sh.id, p_key:sh.key, p_data:boardSnapshot()})})
+  .then(r => { if(r.ok){ lastPushAt = now();
+    const el = document.getElementById('pushstate'); if(el) el.textContent = 'last update ' + fmtT(lastPushAt); } })
+  .catch(()=>{});
+}
+function schedulePush(){
+  if(!S.settings.share) return;
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(pushBoard, 2500);
+}
+addEventListener('online', () => schedulePush());
 A.exportData = () => {
   const blob = new Blob([JSON.stringify(S, null, 1)], {type:'application/json'});
   const a = document.createElement('a');
@@ -498,9 +711,20 @@ document.getElementById('importfile').onchange = e => {
   const r = new FileReader();
   r.onload = () => { try{
       const d = JSON.parse(r.result);
+      if(Array.isArray(d.directory) && !Array.isArray(d.crews)){
+        // contact-directory file: merge, don't touch deployment data
+        const have = new Set(S.directory.map(p => (p.name+'|'+(p.group||'')).toLowerCase()));
+        let n = 0;
+        d.directory.forEach(p => { if(p && p.name && !have.has((p.name+'|'+(p.group||'')).toLowerCase())){ S.directory.push({name:p.name, phone:p.phone||'', group:p.group||'', callsign:p.callsign||'', dept:p.dept||''}); n++; } });
+        save(); render(); alert('Directory loaded — '+n+' new contacts ('+S.directory.length+' total). Use "From directory" under Crews → Overhead.');
+        return;
+      }
       if(!Array.isArray(d.crews)) throw 0;
-      S = Object.assign(blank(), d); save(); A.go('home'); alert('Backup restored — '+S.crews.length+' crews.');
-    }catch(err){ alert('Not a valid SPS Deploy backup file.'); } };
+      S = Object.assign(blank(), d);
+      S.settings = Object.assign(blank().settings, d.settings || {});
+      S.leaders = d.leaders || []; S.directory = d.directory || [];
+      save(); A.go('home'); alert('Backup restored — '+S.crews.length+' crews.');
+    }catch(err){ alert('Not a valid SPS Deploy backup or directory file.'); } };
   r.readAsText(f); e.target.value = '';
 };
 
