@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>SPS Deploy</title>
+<meta name="description" content="SPS deployment crew tracker — check-ins, contacts, 214/DTR paperwork. Works offline.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f1419">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SPS Deploy">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#0f1419; --card:#1a222c; --card2:#212b37; --line:#2d3946;
+  --text:#e8edf2; --dim:#8fa0b0; --accent:#ff7a1a; --green:#2ecc71;
+  --red:#ff5252; --amber:#ffc94d; --blue:#4dabff;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{margin:0; padding:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; overscroll-behavior-y:none;}
+body{padding-bottom:calc(70px + env(safe-area-inset-bottom));}
+header{position:sticky; top:0; z-index:20; background:rgba(15,20,25,.96);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  padding:calc(10px + env(safe-area-inset-top)) 16px 10px; display:flex; align-items:center; gap:10px;}
+header h1{font-size:18px; margin:0; font-weight:700; letter-spacing:.3px; flex:1;}
+header h1 span{color:var(--accent);}
+.hbtn{background:none; border:none; color:var(--dim); font-size:22px; padding:6px 8px; cursor:pointer;}
+main{padding:14px 14px 20px; max-width:640px; margin:0 auto;}
+h2{font-size:13px; text-transform:uppercase; letter-spacing:1px; color:var(--dim); margin:22px 0 10px;}
+h2:first-child{margin-top:4px;}
+.card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin-bottom:10px;}
+.banner{border-radius:14px; padding:14px 16px; margin-bottom:14px; font-weight:600; display:flex; align-items:center; gap:10px;}
+.banner .big{font-size:20px;}
+.banner.ok{background:#15301f; border:1px solid #2ecc7144; color:#a9e8c3;}
+.banner.due{background:#3a1414; border:1px solid #ff525266; color:#ffb3b3; animation:pulse 1.6s infinite;}
+.banner.soon{background:#332708; border:1px solid #ffc94d55; color:#ffe0a3;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.72}}
+button.primary{width:100%; background:var(--accent); color:#1a0f00; border:none; border-radius:12px;
+  padding:15px; font-size:17px; font-weight:700; cursor:pointer;}
+button.secondary{width:100%; background:var(--card2); color:var(--text); border:1px solid var(--line);
+  border-radius:12px; padding:13px; font-size:15px; font-weight:600; cursor:pointer;}
+button:active{transform:scale(.985);}
+.row{display:flex; gap:10px;}
+.row>*{flex:1;}
+.crewline{display:flex; align-items:center; gap:12px; padding:13px 14px; background:var(--card);
+  border:1px solid var(--line); border-radius:14px; margin-bottom:8px; cursor:pointer;}
+.crewline .cs{background:var(--card2); border:1px solid var(--line); color:var(--accent); font-weight:700;
+  padding:6px 10px; border-radius:9px; font-size:14px; min-width:52px; text-align:center; flex-shrink:0;}
+.crewline .nm{flex:1; min-width:0;}
+.crewline .nm b{display:block; font-size:16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.crewline .nm small{color:var(--dim); font-size:13px;}
+.chev{color:var(--dim); font-size:18px; flex-shrink:0;}
+.checkrow{display:flex; align-items:center; gap:10px; padding:11px 12px; border-bottom:1px solid var(--line);}
+.checkrow:last-child{border-bottom:none;}
+.checkrow .who{flex:1; min-width:0;}
+.checkrow .who b{font-size:16px;}
+.checkrow .who small{color:var(--dim); display:block; font-size:12.5px;}
+.ckbtn{border:2px solid var(--line); background:var(--card2); color:var(--text); border-radius:11px;
+  padding:11px 16px; font-size:15px; font-weight:700; cursor:pointer; min-width:96px;}
+.ckbtn.done{background:#15301f; border-color:var(--green); color:var(--green);}
+.ckbtn.missed{background:#3a1414; border-color:var(--red); color:var(--red);}
+.miss{background:none; border:none; color:var(--dim); font-size:12px; padding:6px; cursor:pointer; text-decoration:underline;}
+.pill{display:inline-block; font-size:12px; font-weight:700; padding:3px 9px; border-radius:20px;}
+.pill.g{background:#15301f; color:var(--green);}
+.pill.r{background:#3a1414; color:var(--red);}
+.pill.a{background:#332708; color:var(--amber);}
+input,textarea,select{width:100%; background:var(--card2); border:1px solid var(--line); color:var(--text);
+  border-radius:10px; padding:12px; font-size:16px; font-family:inherit;}
+input:focus,textarea:focus{outline:none; border-color:var(--accent);}
+label{display:block; font-size:12.5px; color:var(--dim); margin:12px 0 5px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;}
+label:first-child{margin-top:0;}
+nav{position:fixed; bottom:0; left:0; right:0; z-index:20; display:flex; background:rgba(15,20,25,.97);
+  backdrop-filter:blur(8px); border-top:1px solid var(--line); padding-bottom:env(safe-area-inset-bottom);}
+nav button{flex:1; background:none; border:none; color:var(--dim); padding:9px 0 7px; font-size:11px;
+  font-weight:600; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:2px;}
+nav button .ic{font-size:21px;}
+nav button.on{color:var(--accent);}
+.modal-bg{position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:50; display:flex;
+  align-items:flex-end; justify-content:center;}
+.modal{background:var(--card); border:1px solid var(--line); border-radius:18px 18px 0 0; width:100%;
+  max-width:640px; max-height:88vh; overflow-y:auto; padding:20px 18px calc(24px + env(safe-area-inset-bottom));}
+.modal h3{margin:0 0 14px; font-size:18px;}
+.memberline{display:flex; align-items:center; gap:10px; padding:11px 0; border-bottom:1px solid var(--line);}
+.memberline:last-child{border-bottom:none;}
+.memberline .mi{flex:1; min-width:0;}
+.memberline .mi b{font-size:15.5px;}
+.memberline .mi small{color:var(--dim); display:block; font-size:12.5px;}
+.callbtn{background:#15301f; border:1px solid #2ecc7144; color:var(--green); border-radius:10px;
+  padding:9px 13px; font-size:14px; text-decoration:none; font-weight:700; flex-shrink:0;}
+.editbtn{background:var(--card2); border:1px solid var(--line); color:var(--dim); border-radius:10px;
+  padding:9px 11px; font-size:14px; cursor:pointer; flex-shrink:0;}
+.paperrow{display:flex; align-items:center; gap:8px; padding:11px 12px; border-bottom:1px solid var(--line);}
+.paperrow:last-child{border-bottom:none;}
+.paperrow .who{flex:1; min-width:0;}
+.pbtn{border:2px solid var(--line); background:var(--card2); color:var(--dim); border-radius:10px;
+  padding:9px 6px; font-size:12.5px; font-weight:700; cursor:pointer; width:86px; text-align:center; line-height:1.25;}
+.pbtn.got{background:#15301f; border-color:var(--green); color:var(--green);}
+.datenav{display:flex; align-items:center; gap:8px; margin-bottom:12px;}
+.datenav button{background:var(--card2); border:1px solid var(--line); color:var(--text); border-radius:10px;
+  padding:10px 16px; font-size:17px; cursor:pointer;}
+.datenav .d{flex:1; text-align:center; font-weight:700; font-size:16px;}
+.datenav .d small{display:block; color:var(--dim); font-weight:400; font-size:12px;}
+.empty{text-align:center; color:var(--dim); padding:28px 16px; font-size:14.5px; line-height:1.5;}
+.logday{margin-bottom:6px;}
+.logline{display:flex; gap:10px; padding:8px 12px; font-size:14px; border-bottom:1px solid var(--line);}
+.logline:last-child{border-bottom:none;}
+.logline .t{color:var(--accent); font-weight:700; min-width:48px; font-variant-numeric:tabular-nums;}
+.muted{color:var(--dim); font-size:13px;}
+.back{background:none; border:none; color:var(--blue); font-size:16px; padding:0 0 12px; cursor:pointer; font-weight:600;}
+.danger{color:var(--red) !important; border-color:#ff525244 !important;}
+.tcphoto{width:100%; border-radius:12px; border:1px solid var(--line); margin-bottom:10px;}
+.spin{display:inline-block; width:18px; height:18px; border:3px solid var(--line); border-top-color:var(--accent);
+  border-radius:50%; animation:sp 0.8s linear infinite; vertical-align:-4px;}
+@keyframes sp{to{transform:rotate(360deg)}}
+.notice{font-size:13px; color:var(--dim); line-height:1.45; margin-top:10px;}
+.offline-dot{width:8px; height:8px; border-radius:50%; background:var(--red); display:none;}
+body.offline .offline-dot{display:block;}
+</style>
+</head>
+<body>
+<header>
+  <h1><span>SPS</span> DEPLOY</h1>
+  <div class="offline-dot" title="Offline"></div>
+  <button class="hbtn" onclick="A.go('settings')">⚙︎</button>
+</header>
+<main id="view"></main>
+<nav id="nav"></nav>
+<input type="file" id="tcfile" accept="image/*" capture="environment" style="display:none">
+<input type="file" id="importfile" accept=".json,application/json" style="display:none">
+<div id="modalhost"></div>
+
+<script>
+'use strict';
+/* ============ state ============ */
+const KEY='sps-deploy-v1';
+const blank = () => ({crews:[], rounds:[], paperwork:{}, settings:{intervalMin:120, apiKey:''}});
+let S = blank();
+try{ const raw = localStorage.getItem(KEY); if(raw) S = Object.assign(blank(), JSON.parse(raw)); }catch(e){}
+const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ alert('Storage full — export a backup and remove old T-Card photos.'); } };
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const now = () => new Date().toISOString();
+const fmtT = iso => iso ? new Date(iso).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', hour12:false}) : '';
+const dayKey = d => { const x = d ? new Date(d) : new Date(); return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0'); };
+const fmtDay = k => { const [y,m,d] = k.split('-').map(Number); return new Date(y,m-1,d).toLocaleDateString([], {weekday:'short', month:'short', day:'numeric'}); };
+const activeCrews = () => S.crews.filter(c => !c.archived);
+const crewById = id => S.crews.find(c => c.id === id);
+const openRound = () => S.rounds.find(r => !r.closedAt);
+
+/* ============ routing ============ */
+const A = {};
+let route = {tab:'home'};
+let paperDay = dayKey();
+A.go = (tab, crewId) => { route = {tab, crewId}; render(); window.scrollTo(0,0); };
+
+const TABS = [
+  ['home','⏱','Check-In'], ['crews','👥','Crews'], ['paper','📋','Paperwork'], ['log','🗒','Log']
+];
+function renderNav(){
+  document.getElementById('nav').innerHTML = TABS.map(([id,ic,lb]) =>
+    `<button class="${route.tab===id||(route.tab==='crew'&&id==='crews')?'on':''}" onclick="A.go('${id}')"><span class="ic">${ic}</span>${lb}</button>`).join('');
+}
+
+/* ============ modal ============ */
+function modal(html){
+  const h = document.getElementById('modalhost');
+  h.innerHTML = `<div class="modal-bg" onclick="if(event.target===this)A.closeModal()"><div class="modal">${html}</div></div>`;
+  return h;
+}
+A.closeModal = () => { document.getElementById('modalhost').innerHTML = ''; };
+
+/* ============ home / check-in ============ */
+function dueInfo(){
+  const iv = S.settings.intervalMin * 60000;
+  const closed = S.rounds.filter(r => r.closedAt || r.startedAt);
+  if(!closed.length) return null;
+  const last = closed.reduce((a,b) => a.startedAt > b.startedAt ? a : b);
+  return {last, dueAt: new Date(new Date(last.startedAt).getTime() + iv)};
+}
+function homeView(){
+  const crews = activeCrews();
+  const or = openRound();
+  let html = '';
+
+  if(or){
+    const total = crews.length, done = crews.filter(c => or.checks[c.id]).length;
+    html += `<h2>Check-in in progress — started ${fmtT(or.startedAt)}</h2><div class="card" style="padding:4px 2px">`;
+    if(!crews.length) html += `<div class="empty">No active crews.</div>`;
+    crews.forEach(c => {
+      const ck = or.checks[c.id];
+      html += `<div class="checkrow">
+        <div class="who"><b>${esc(c.callsign||'')} ${esc(c.name)}</b><small>${esc(c.leader||'')}</small></div>
+        ${ck && ck.missed ? `<button class="ckbtn missed" onclick="A.uncheck('${c.id}')">✕ ${fmtT(ck.time)}</button>`
+         : ck ? `<button class="ckbtn done" onclick="A.uncheck('${c.id}')">✓ ${fmtT(ck.time)}</button>`
+         : `<button class="miss" onclick="A.markMissed('${c.id}')">no contact</button>
+            <button class="ckbtn" onclick="A.check('${c.id}')">Check in</button>`}
+      </div>`;
+    });
+    html += `</div>
+      <div style="margin-top:10px"><button class="primary" onclick="A.closeRound()">${done>=total?'✓ All checked — close round':'Close round ('+done+'/'+total+' checked)'}</button></div>`;
+  } else {
+    const d = dueInfo();
+    if(d){
+      const ms = d.dueAt - new Date();
+      const mins = Math.round(Math.abs(ms)/60000);
+      const hhmm = fmtT(d.dueAt.toISOString());
+      if(ms <= 0) html += `<div class="banner due"><span class="big">🔴</span><span>Check-in OVERDUE — was due ${hhmm} (${mins} min ago)</span></div>`;
+      else if(ms <= 15*60000) html += `<div class="banner soon"><span class="big">🟡</span><span>Check-in due at ${hhmm} — in ${mins} min</span></div>`;
+      else html += `<div class="banner ok"><span class="big">🟢</span><span>Next check-in ${hhmm} · last round ${fmtT(d.last.startedAt)}</span></div>`;
+    }
+    html += `<button class="primary" onclick="A.startRound()">📻 Start check-in round</button>
+      <p class="muted" style="text-align:center;margin:10px 0 0">Interval: every ${S.settings.intervalMin} min — <a style="color:var(--blue)" onclick="A.go('settings')">change</a></p>`;
+  }
+
+  // today paperwork snapshot
+  const crews2 = activeCrews();
+  if(crews2.length){
+    const pw = S.paperwork[dayKey()] || {};
+    const g214 = crews2.filter(c => pw[c.id]?.p214).length;
+    const gdtr = crews2.filter(c => pw[c.id]?.dtr).length;
+    html += `<h2>Today's paperwork</h2>
+      <div class="card" style="display:flex;gap:10px;cursor:pointer" onclick="A.go('paper')">
+        <div style="flex:1;text-align:center"><div style="font-size:24px;font-weight:800" class="${g214===crews2.length?'':'  '}">${g214}/${crews2.length}</div><div class="muted">ICS 214</div></div>
+        <div style="flex:1;text-align:center"><div style="font-size:24px;font-weight:800">${gdtr}/${crews2.length}</div><div class="muted">DTR</div></div>
+        <div style="align-self:center" class="chev">›</div>
+      </div>`;
+  }
+
+  html += `<h2>Crews (${crews2.length})</h2>`;
+  if(!crews2.length) html += `<div class="empty">No crews yet.<br>Scan a T-Card or add one manually below.</div>`;
+  crews2.forEach(c => { html += crewLine(c); });
+  html += `<div class="row" style="margin-top:12px">
+    <button class="secondary" onclick="A.scanTC()">📷 Scan T-Card</button>
+    <button class="secondary" onclick="A.addCrewModal()">＋ Add crew</button>
+  </div>`;
+  return html;
+}
+function crewLine(c){
+  return `<div class="crewline" onclick="A.go('crew','${c.id}')">
+    <div class="cs">${esc(c.callsign||'—')}</div>
+    <div class="nm"><b>${esc(c.name)}</b><small>${esc(c.leader ? 'CL: '+c.leader : '')}${c.members.length ? ' · '+c.members.length+(c.members.length===1?' member':' members') : ''}</small></div>
+    <div class="chev">›</div>
+  </div>`;
+}
+A.startRound = () => { S.rounds.push({id:uid(), startedAt:now(), closedAt:null, checks:{}}); save(); render(); };
+A.check = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now()}; save(); render(); };
+A.markMissed = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now(), missed:true}; save(); render(); };
+A.uncheck = id => { const r = openRound(); if(!r) return; if(confirm('Clear this check-in?')){ delete r.checks[id]; save(); render(); } };
+A.closeRound = () => {
+  const r = openRound(); if(!r) return;
+  const missing = activeCrews().filter(c => !r.checks[c.id]);
+  if(missing.length && !confirm(missing.length+' crew(s) not checked in — close anyway? They will be logged as no-contact.')) return;
+  missing.forEach(c => r.checks[c.id] = {time:now(), missed:true});
+  r.closedAt = now(); save(); render();
+};
+
+/* ============ crews tab ============ */
+function crewsView(){
+  const act = activeCrews(), rel = S.crews.filter(c => c.archived);
+  let html = `<div class="row" style="margin-bottom:14px">
+    <button class="primary" onclick="A.scanTC()">📷 Scan T-Card</button>
+    <button class="secondary" onclick="A.addCrewModal()">＋ Add crew</button>
+  </div>`;
+  if(!act.length && !rel.length) html += `<div class="empty">Take a photo of the T-Cards on your board and the crews fill in automatically — or add them by hand.</div>`;
+  act.forEach(c => html += crewLine(c));
+  if(rel.length){
+    html += `<h2>Released / reassigned (${rel.length})</h2>`;
+    rel.forEach(c => html += crewLine(c));
+  }
+  return html;
+}
+
+/* crew detail */
+function crewView(id){
+  const c = crewById(id);
+  if(!c) return `<div class="empty">Crew not found.</div>`;
+  let html = `<button class="back" onclick="A.go('crews')">‹ Crews</button>`;
+  if(c.archived) html += `<div class="banner soon" style="font-size:14px">Released / reassigned — hidden from check-ins & paperwork</div>`;
+  if(c.photo) html += `<img class="tcphoto" src="${c.photo}" alt="T-Card" onclick="A.viewPhoto('${c.id}')">`;
+  html += `<div class="card">
+    <label>Crew name</label><input value="${esc(c.name)}" onchange="A.setCrew('${c.id}','name',this.value)">
+    <div class="row">
+      <div><label>Callsign</label><input value="${esc(c.callsign||'')}" onchange="A.setCrew('${c.id}','callsign',this.value)"></div>
+      <div><label>Radio channel</label><input value="${esc(c.channel||'')}" onchange="A.setCrew('${c.id}','channel',this.value)"></div>
+    </div>
+    <label>Crew leader</label><input value="${esc(c.leader||'')}" onchange="A.setCrew('${c.id}','leader',this.value)">
+    <label>Notes</label><textarea rows="3" placeholder="Tasking, location, equipment…" onchange="A.setCrew('${c.id}','notes',this.value)">${esc(c.notes||'')}</textarea>
+  </div>`;
+  html += `<h2>Members (${c.members.length})</h2><div class="card" style="padding:4px 14px">`;
+  if(!c.members.length) html += `<div class="empty" style="padding:16px">No members yet.</div>`;
+  c.members.forEach(m => {
+    html += `<div class="memberline">
+      <div class="mi"><b>${esc(m.name)}</b><small>${esc([m.role, m.phone, m.notes].filter(Boolean).join(' · '))}</small></div>
+      ${m.phone ? `<a class="callbtn" href="tel:${esc(m.phone.replace(/[^\d+]/g,''))}">📞</a>` : ''}
+      <button class="editbtn" onclick="A.memberModal('${c.id}','${m.id}')">✎</button>
+    </div>`;
+  });
+  html += `</div>
+  <button class="secondary" style="margin-top:8px" onclick="A.memberModal('${c.id}')">＋ Add member</button>
+  <h2>Crew actions</h2>
+  <button class="secondary" onclick="A.attachPhoto('${c.id}')">📷 ${c.photo?'Replace':'Attach'} T-Card photo</button>
+  <button class="secondary danger" style="margin-top:8px" onclick="A.toggleArchive('${c.id}')">${c.archived?'↩ Restore crew':'⇄ Release crew (swapped to another TFL)'}</button>
+  <button class="secondary danger" style="margin-top:8px" onclick="A.deleteCrew('${c.id}')">🗑 Delete crew & records</button>`;
+  return html;
+}
+A.setCrew = (id,f,v) => { const c = crewById(id); if(c){ c[f] = v.trim(); save(); if(f==='name'||f==='callsign'||f==='leader') render(); } };
+A.toggleArchive = id => { const c = crewById(id); c.archived = !c.archived; save(); render(); };
+A.deleteCrew = id => {
+  const c = crewById(id);
+  if(!confirm(`Delete "${c.name}" and all its check-in/paperwork records? Use "Release crew" instead if they were just reassigned.`)) return;
+  S.crews = S.crews.filter(x => x.id !== id);
+  S.rounds.forEach(r => delete r.checks[id]);
+  Object.values(S.paperwork).forEach(d => delete d[id]);
+  save(); A.go('crews');
+};
+A.viewPhoto = id => { const c = crewById(id); if(c?.photo) modal(`<img src="${c.photo}" style="width:100%;border-radius:12px"><button class="secondary" style="margin-top:12px" onclick="A.closeModal()">Close</button>`); };
+
+/* add/edit crew modal */
+A.addCrewModal = (pre) => {
+  pre = pre || {};
+  modal(`<h3>Add crew</h3>
+    ${pre.photo ? `<img class="tcphoto" src="${pre.photo}">` : ''}
+    <label>Crew name</label><input id="f_name" value="${esc(pre.name||'')}" placeholder="e.g. Coastal Fire Crew 3">
+    <div class="row">
+      <div><label>Callsign</label><input id="f_cs" value="${esc(pre.callsign||'')}" placeholder="e.g. C-31"></div>
+      <div><label>Radio channel</label><input id="f_ch" value="${esc(pre.channel||'')}"></div>
+    </div>
+    <label>Crew leader</label><input id="f_lead" value="${esc(pre.leader||'')}">
+    <label>Leader phone</label><input id="f_phone" type="tel" value="${esc(pre.phone||'')}">
+    <div class="row" style="margin-top:16px">
+      <button class="secondary" onclick="A.closeModal()">Cancel</button>
+      <button class="primary" onclick="A.saveNewCrew()">Save crew</button>
+    </div>`);
+  window._pendingPhoto = pre.photo || null;
+  window._pendingMembers = pre.members || [];
+};
+A.saveNewCrew = () => {
+  const g = id => document.getElementById(id).value.trim();
+  const name = g('f_name'); if(!name){ alert('Crew name is required'); return; }
+  const c = {id:uid(), name, callsign:g('f_cs'), channel:g('f_ch'), leader:g('f_lead'), notes:'',
+    members:(window._pendingMembers||[]).map(m => ({id:uid(), name:m.name||'', role:m.role||'', phone:m.phone||'', notes:''})),
+    photo:window._pendingPhoto||null, archived:false, createdAt:now()};
+  const lp = g('f_phone');
+  if(c.leader && lp && !c.members.some(m => m.name.toLowerCase() === c.leader.toLowerCase()))
+    c.members.unshift({id:uid(), name:c.leader, role:'Crew Leader', phone:lp, notes:''});
+  else if(lp && c.members.length && !c.members[0].phone) c.members[0].phone = lp;
+  S.crews.push(c); save(); A.closeModal(); A.go('crew', c.id);
+};
+
+/* member modal */
+A.memberModal = (crewId, memberId) => {
+  const c = crewById(crewId);
+  const m = memberId ? c.members.find(x => x.id === memberId) : {name:'', role:'', phone:'', notes:''};
+  modal(`<h3>${memberId?'Edit':'Add'} member</h3>
+    <label>Name</label><input id="m_name" value="${esc(m.name)}">
+    <div class="row">
+      <div><label>Role</label><input id="m_role" value="${esc(m.role||'')}" placeholder="CL / member / FFT1…"></div>
+      <div><label>Phone</label><input id="m_phone" type="tel" value="${esc(m.phone||'')}"></div>
+    </div>
+    <label>Notes</label><input id="m_notes" value="${esc(m.notes||'')}" placeholder="quals, allergies, etc.">
+    <div class="row" style="margin-top:16px">
+      <button class="secondary" onclick="A.closeModal()">Cancel</button>
+      <button class="primary" onclick="A.saveMember('${crewId}','${memberId||''}')">Save</button>
+    </div>
+    ${memberId ? `<button class="secondary danger" style="margin-top:10px" onclick="A.delMember('${crewId}','${memberId}')">Remove from crew (swapped out)</button>` : ''}`);
+};
+A.saveMember = (crewId, memberId) => {
+  const c = crewById(crewId);
+  const g = id => document.getElementById(id).value.trim();
+  const data = {name:g('m_name'), role:g('m_role'), phone:g('m_phone'), notes:g('m_notes')};
+  if(!data.name){ alert('Name is required'); return; }
+  if(memberId){ Object.assign(c.members.find(x => x.id === memberId), data); }
+  else c.members.push(Object.assign({id:uid()}, data));
+  save(); A.closeModal(); render();
+};
+A.delMember = (crewId, memberId) => {
+  const c = crewById(crewId);
+  if(confirm('Remove this member from the crew?')){ c.members = c.members.filter(x => x.id !== memberId); save(); A.closeModal(); render(); }
+};
+
+/* ============ paperwork ============ */
+function paperView(){
+  const crews = activeCrews();
+  const pw = S.paperwork[paperDay] = S.paperwork[paperDay] || {};
+  let html = `<div class="datenav">
+    <button onclick="A.shiftDay(-1)">‹</button>
+    <div class="d">${fmtDay(paperDay)}${paperDay===dayKey()?'<small>today</small>':'<small>&nbsp;</small>'}</div>
+    <button onclick="A.shiftDay(1)">›</button>
+  </div>`;
+  if(!crews.length) return html + `<div class="empty">No active crews.</div>`;
+  html += `<div class="card" style="padding:4px 12px">`;
+  crews.forEach(c => {
+    const rec = pw[c.id] || {};
+    html += `<div class="paperrow">
+      <div class="who"><b>${esc(c.callsign||'')} ${esc(c.name)}</b></div>
+      <button class="pbtn ${rec.p214?'got':''}" onclick="A.togglePaper('${c.id}','p214')">${rec.p214 ? '✓ 214<br>'+fmtT(rec.p214) : 'ICS 214'}</button>
+      <button class="pbtn ${rec.dtr?'got':''}" onclick="A.togglePaper('${c.id}','dtr')">${rec.dtr ? '✓ DTR<br>'+fmtT(rec.dtr) : 'DTR'}</button>
+    </div>`;
+  });
+  html += `</div><p class="notice">Tap when a crew hands in their ICS 214 or DTR — time of receipt is recorded. Use ‹ › to record yesterday's paperwork handed in this morning.</p>`;
+  return html;
+}
+A.shiftDay = n => { const [y,m,d] = paperDay.split('-').map(Number); paperDay = dayKey(new Date(y, m-1, d+n)); render(); };
+A.togglePaper = (crewId, kind) => {
+  const pw = S.paperwork[paperDay] = S.paperwork[paperDay] || {};
+  const rec = pw[crewId] = pw[crewId] || {};
+  if(rec[kind]){ if(confirm('Clear received-at '+fmtT(rec[kind])+'?')) rec[kind] = null; }
+  else rec[kind] = now();
+  save(); render();
+};
+
+/* ============ log ============ */
+function logView(){
+  const rounds = [...S.rounds].sort((a,b) => b.startedAt.localeCompare(a.startedAt));
+  if(!rounds.length) return `<div class="empty">No check-in rounds yet.<br>Start one from the Check-In tab.</div>`;
+  let html = '', lastDay = '';
+  rounds.forEach(r => {
+    const d = dayKey(r.startedAt);
+    if(d !== lastDay){ html += `<h2>${fmtDay(d)}</h2>`; lastDay = d; }
+    const entries = Object.entries(r.checks);
+    html += `<div class="card logday" style="padding:8px 4px">
+      <div style="padding:4px 12px 8px;font-weight:700">Round ${fmtT(r.startedAt)}${r.closedAt ? ' – '+fmtT(r.closedAt) : ' <span class="pill a">open</span>'}</div>`;
+    if(!entries.length) html += `<div class="muted" style="padding:0 12px 8px">No crews checked.</div>`;
+    entries.sort((a,b) => (a[1].time||'').localeCompare(b[1].time||'')).forEach(([cid, ck]) => {
+      const c = crewById(cid);
+      html += `<div class="logline"><span class="t">${fmtT(ck.time)}</span>
+        <span>${esc(c ? (c.callsign?c.callsign+' ':'')+c.name : 'deleted crew')}</span>
+        ${ck.missed ? '<span class="pill r">no contact</span>' : '<span class="pill g">✓</span>'}</div>`;
+    });
+    html += `</div>`;
+  });
+  return html;
+}
+
+/* ============ settings ============ */
+function settingsView(){
+  return `<button class="back" onclick="A.go('home')">‹ Back</button>
+  <h2>Check-ins</h2>
+  <div class="card">
+    <label>Check-in interval (minutes)</label>
+    <input type="number" inputmode="numeric" value="${S.settings.intervalMin}" onchange="A.setInterval(this.value)">
+    <p class="notice">Typically 120 (every 2 hrs). The Check-In tab warns when the next round is due.</p>
+  </div>
+  <h2>T-Card scanning (optional)</h2>
+  <div class="card">
+    <label>Anthropic API key</label>
+    <input type="password" value="${esc(S.settings.apiKey||'')}" placeholder="sk-ant-…" onchange="A.setKey(this.value)">
+    <p class="notice">With a key set, scanning a T-Card photo reads crew names, callsigns and leaders automatically (needs cell service). Without one, the photo is attached and you type the details. The key is stored only on this device.</p>
+  </div>
+  <h2>Backup</h2>
+  <div class="row">
+    <button class="secondary" onclick="A.exportData()">⬇ Export</button>
+    <button class="secondary" onclick="document.getElementById('importfile').click()">⬆ Import</button>
+  </div>
+  <p class="notice">Everything lives on this phone only — export a backup before long gaps between deployments.</p>
+  <h2>Danger zone</h2>
+  <button class="secondary danger" onclick="A.wipe()">Reset all data</button>
+  <p class="notice" style="text-align:center;margin-top:20px">SPS Deploy · offline-capable · whistlerbrew.com</p>`;
+}
+A.setInterval = v => { const n = parseInt(v,10); if(n > 0){ S.settings.intervalMin = n; save(); } };
+A.setKey = v => { S.settings.apiKey = v.trim(); save(); };
+A.exportData = () => {
+  const blob = new Blob([JSON.stringify(S, null, 1)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'sps-deploy-backup-' + dayKey() + '.json';
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+};
+A.wipe = () => { if(confirm('Delete ALL crews, check-ins and paperwork records on this device?') && confirm('Really sure? Export a backup first if in doubt.')){ S = blank(); save(); A.go('home'); } };
+document.getElementById('importfile').onchange = e => {
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = () => { try{
+      const d = JSON.parse(r.result);
+      if(!Array.isArray(d.crews)) throw 0;
+      S = Object.assign(blank(), d); save(); A.go('home'); alert('Backup restored — '+S.crews.length+' crews.');
+    }catch(err){ alert('Not a valid SPS Deploy backup file.'); } };
+  r.readAsText(f); e.target.value = '';
+};
+
+/* ============ T-Card scan ============ */
+let scanTarget = null; // null = new crews, crewId = attach photo only
+A.scanTC = () => { scanTarget = null; document.getElementById('tcfile').click(); };
+A.attachPhoto = id => { scanTarget = id; document.getElementById('tcfile').click(); };
+document.getElementById('tcfile').onchange = async e => {
+  const f = e.target.files[0]; e.target.value = '';
+  if(!f) return;
+  const {full, thumb} = await downscale(f);
+  if(scanTarget){ const c = crewById(scanTarget); if(c){ c.photo = thumb; save(); render(); } return; }
+  if(S.settings.apiKey && navigator.onLine){
+    modal(`<h3>Reading T-Card…</h3><img class="tcphoto" src="${thumb}"><p class="muted"><span class="spin"></span> Sending photo to Claude…</p>`);
+    try{
+      const crews = await parseTCard(full);
+      if(!crews.length) throw new Error('No crews found on the card');
+      showScanReview(crews, thumb);
+    }catch(err){
+      modal(`<h3>Couldn't auto-read the card</h3><p class="muted">${esc(err.message||err)}</p>
+        <button class="primary" style="margin-top:12px" onclick='A.closeModal();A.addCrewModal({photo:window._scanThumb})'>Add crew manually (photo attached)</button>
+        <button class="secondary" style="margin-top:8px" onclick="A.closeModal()">Cancel</button>`);
+      window._scanThumb = thumb;
+    }
+  } else {
+    window._scanThumb = thumb;
+    A.addCrewModal({photo:thumb});
+    if(!S.settings.apiKey){
+      const el = document.querySelector('.modal h3');
+      if(el) el.insertAdjacentHTML('afterend', `<p class="notice" style="margin:0 0 8px">Tip: add an API key in ⚙︎ Settings and scans fill this in automatically.</p>`);
+    }
+  }
+};
+function downscale(file){
+  return new Promise((res, rej) => {
+    const img = new Image();
+    img.onload = () => {
+      const make = (max, q) => {
+        const sc = Math.min(1, max / Math.max(img.width, img.height));
+        const cv = document.createElement('canvas');
+        cv.width = Math.round(img.width * sc); cv.height = Math.round(img.height * sc);
+        cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+        return cv.toDataURL('image/jpeg', q);
+      };
+      res({full: make(1568, .85), thumb: make(640, .7)});
+      URL.revokeObjectURL(img.src);
+    };
+    img.onerror = () => rej(new Error('Could not read image'));
+    img.src = URL.createObjectURL(file);
+  });
+}
+async function parseTCard(dataUrl){
+  const b64 = dataUrl.split(',')[1];
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method:'POST',
+    headers:{'x-api-key':S.settings.apiKey, 'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true', 'content-type':'application/json'},
+    body: JSON.stringify({model:'claude-sonnet-5', max_tokens:2000, messages:[{role:'user', content:[
+      {type:'image', source:{type:'base64', media_type:'image/jpeg', data:b64}},
+      {type:'text', text:'This photo shows one or more wildfire resource T-Cards (BCWS/ICS style), possibly handwritten. Extract every crew/resource card visible. Reply with ONLY a JSON array, no other text: [{"name":"crew or resource name","callsign":"callsign or resource ID if shown","leader":"crew leader/boss name if shown","phone":"leader phone if shown","channel":"radio channel if shown","members":[{"name":"","role":"","phone":""}]}]. Use "" for anything not legible or not present. Do not invent data.'}
+    ]}]})
+  });
+  if(!resp.ok){
+    const t = await resp.text();
+    let msg = 'API error ' + resp.status;
+    try{ msg = JSON.parse(t).error?.message || msg; }catch(e){}
+    throw new Error(msg);
+  }
+  const data = await resp.json();
+  const text = (data.content||[]).map(b => b.text||'').join('');
+  const m = text.match(/\[[\s\S]*\]/);
+  if(!m) throw new Error('Could not read any crew details from the photo');
+  const arr = JSON.parse(m[0]);
+  return arr.filter(c => c && (c.name || c.callsign));
+}
+function showScanReview(crews, thumb){
+  window._scanCrews = crews; window._scanThumb = thumb;
+  modal(`<h3>Found ${crews.length} crew${crews.length>1?'s':''} on the card</h3>
+    <img class="tcphoto" src="${thumb}">
+    ${crews.map((c,i) => `<label style="display:flex;align-items:center;gap:10px;text-transform:none;font-size:15px;color:var(--text);background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:11px;margin:0 0 8px">
+      <input type="checkbox" id="sc_${i}" checked style="width:22px;height:22px;flex-shrink:0">
+      <span><b>${esc(c.callsign?c.callsign+' — ':'')}${esc(c.name||'(unnamed)')}</b><br>
+      <small class="muted">${esc(c.leader?'CL: '+c.leader:'')}${c.members?.length?' · '+c.members.length+' members':''}</small></span>
+    </label>`).join('')}
+    <div class="row" style="margin-top:14px">
+      <button class="secondary" onclick="A.closeModal()">Cancel</button>
+      <button class="primary" onclick="A.importScanned()">Add selected</button>
+    </div>
+    <p class="notice">Check names against the card — handwriting reads can be imperfect. Everything stays editable.</p>`);
+}
+A.importScanned = () => {
+  let added = 0;
+  (window._scanCrews||[]).forEach((c, i) => {
+    if(!document.getElementById('sc_'+i)?.checked) return;
+    const crew = {id:uid(), name:c.name||c.callsign||'Crew', callsign:c.callsign||'', channel:c.channel||'',
+      leader:c.leader||'', notes:'', archived:false, createdAt:now(),
+      photo:added===0 ? window._scanThumb : null,
+      members:(c.members||[]).filter(m => m && m.name).map(m => ({id:uid(), name:m.name, role:m.role||'', phone:m.phone||'', notes:''}))};
+    if(crew.leader && c.phone && !crew.members.some(m => m.name.toLowerCase() === crew.leader.toLowerCase()))
+      crew.members.unshift({id:uid(), name:crew.leader, role:'Crew Leader', phone:c.phone, notes:''});
+    S.crews.push(crew); added++;
+  });
+  save(); A.closeModal(); A.go('crews');
+};
+
+/* ============ render ============ */
+function render(){
+  const v = document.getElementById('view');
+  if(route.tab === 'home') v.innerHTML = homeView();
+  else if(route.tab === 'crews') v.innerHTML = crewsView();
+  else if(route.tab === 'crew') v.innerHTML = crewView(route.crewId);
+  else if(route.tab === 'paper') v.innerHTML = paperView();
+  else if(route.tab === 'log') v.innerHTML = logView();
+  else if(route.tab === 'settings') v.innerHTML = settingsView();
+  renderNav();
+}
+setInterval(() => { if(route.tab === 'home' && !document.getElementById('modalhost').innerHTML) render(); }, 30000);
+const setOnline = () => document.body.classList.toggle('offline', !navigator.onLine);
+addEventListener('online', setOnline); addEventListener('offline', setOnline); setOnline();
+render();
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>

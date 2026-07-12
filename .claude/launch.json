@@ -20,6 +20,12 @@
       "port": 8768
     },
     {
+      "name": "sps-deploy-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "public/sps-deploy", "-p", "8769", "--cors", "-c-1"],
+      "port": 8769
+    },
+    {
       "name": "fire-challenge",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--prefix", "/Users/mbrew/Developer/fire-challenge"],

@@ -16,6 +16,14 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    name: "SPS Deploy",
+    href: "/sps-deploy/index.html",
+    description: "Offline crew tracker for deployments — T-Card scan, 2-hr check-in rounds with timestamps, contacts, ICS 214/DTR paperwork log. Installable PWA.",
+    status: "NEW",
+    accent: "#ff7a1a",
+    external: true,
+  },
+  {
     name: "SPS Dispatch Briefing",
     href: "/projects/sps-briefing",
     description: "Generate dispatch briefings for BC Wildfire deployments with route info, community intel, and KML exports.",
