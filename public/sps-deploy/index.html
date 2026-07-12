@@ -384,6 +384,23 @@ A.delMember = (crewId, memberId) => {
 };
 
 /* ============ paperwork ============ */
+// Missing 214/DTR items from the crew's first day through yesterday.
+// 0 = up to date (green), 1 = behind (yellow), 2+ = red.
+function paperMissing(c){
+  const today = dayKey();
+  const start = dayKey(c.createdAt || today);
+  if(start >= today) return {n:0, days:0};
+  const [y,m,d0] = start.split('-').map(Number);
+  const d = new Date(y, m-1, d0);
+  let n = 0, days = 0;
+  while(dayKey(d) < today && days < 60){
+    const rec = (S.paperwork[dayKey(d)] || {})[c.id] || {};
+    if(!rec.p214) n++;
+    if(!rec.dtr) n++;
+    d.setDate(d.getDate()+1); days++;
+  }
+  return {n, days};
+}
 function paperView(){
   const crews = activeCrews();
   const pw = S.paperwork[paperDay] = S.paperwork[paperDay] || {};
@@ -396,13 +413,17 @@ function paperView(){
   html += `<div class="card" style="padding:4px 12px">`;
   crews.forEach(c => {
     const rec = pw[c.id] || {};
+    const miss = paperMissing(c);
+    const col = miss.n === 0 ? 'var(--green)' : miss.n === 1 ? 'var(--amber)' : 'var(--red)';
     html += `<div class="paperrow">
-      <div class="who"><b>${esc(c.callsign||'')} ${esc(c.name)}</b></div>
+      <div class="who"><b style="color:${col}">${esc(c.callsign||'')} ${esc(c.name)}</b>
+        ${miss.n ? `<small style="display:block;color:${col}">${miss.n} missing from previous day${miss.days>1?'s':''}</small>` : ''}</div>
       <button class="pbtn ${rec.p214?'got':''}" onclick="A.togglePaper('${c.id}','p214')">${rec.p214 ? '✓ 214<br>'+fmtT(rec.p214) : 'ICS 214'}</button>
       <button class="pbtn ${rec.dtr?'got':''}" onclick="A.togglePaper('${c.id}','dtr')">${rec.dtr ? '✓ DTR<br>'+fmtT(rec.dtr) : 'DTR'}</button>
     </div>`;
   });
-  html += `</div><p class="notice">Tap when a crew hands in their ICS 214 or DTR — time of receipt is recorded. Use ‹ › to record yesterday's paperwork handed in this morning.</p>`;
+  html += `</div><p class="notice">Tap when a crew hands in their ICS 214 or DTR — time of receipt is recorded. Use ‹ › to record yesterday's paperwork handed in this morning.<br>
+  Names: <b style="color:var(--green)">green</b> = up to date · <b style="color:var(--amber)">yellow</b> = 1 item outstanding · <b style="color:var(--red)">red</b> = 2+ outstanding from previous days.</p>`;
   return html;
 }
 A.shiftDay = n => { const [y,m,d] = paperDay.split('-').map(Number); paperDay = dayKey(new Date(y, m-1, d+n)); render(); };
