@@ -1,7 +1,23 @@
 {
-  "updated_at": "2026-07-12T10:00:52.203Z",
+  "updated_at": "2026-07-12T16:00:44.953Z",
   "zones": {
     "coastal": [
+      {
+        "title": "B.C. Wildfire Service calls for compliance amid reports of speeding and drone flights",
+        "link": "https://globalnews.ca/news/11962789/b-c-wildfire-service-calls-for-compliance-amid-reports-of-speeding-and-drone-flights/",
+        "description": "The BC Wildfire Service is issuing a call for compliance, as two out-of-control wildfires continue to burn in the Fraser Canyon.",
+        "pubDate": "Sun, 12 Jul 2026 14:41:09 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/890458592cf22f9f3854a2f6c040dc76d97f65636c411bfeb6e47e793506cec4_1637ec.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Veteran mediator appointed to help settle B.C. nurses&#8217; dispute",
+        "link": "https://globalnews.ca/news/11961888/veteran-mediator-appointed-bc-nurses-dispute/",
+        "description": "Labour Minister Jennifer Whiteside said in a statement on Friday that Vince Ready and Amanda Rogers will act as special mediators to work with the parties for 10 days.",
+        "pubDate": "Fri, 10 Jul 2026 22:35:53 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/03f84a301c8a1f4138eda3ee7a8b56fefd4851989772439fcea7c7db25c96b79_474afe.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Tsleil-Waututh Nation files court challenge against Burrard Inlet dredging plan",
         "link": "https://globalnews.ca/news/11961385/tsleil-waututh-nation-court-challenge-burrard-inlet-dredging-plan/",
@@ -13,26 +29,17 @@
     ],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Veteran mediator appointed to help settle B.C. nurses&#8217; dispute",
-        "link": "https://globalnews.ca/news/11961888/veteran-mediator-appointed-bc-nurses-dispute/",
-        "description": "Labour Minister Jennifer Whiteside said in a statement on Friday that Vince Ready and Amanda Rogers will act as special mediators to work with the parties for 10 days.",
-        "pubDate": "Fri, 10 Jul 2026 22:35:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/03f84a301c8a1f4138eda3ee7a8b56fefd4851989772439fcea7c7db25c96b79_474afe.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
       {
-        "title": "&#8216;Every day matters&#8217;: One B.C. family&#8217;s race to save their little boy",
-        "link": "https://globalnews.ca/news/11960537/every-day-matters-bc-family-race-save-little-boy/",
-        "description": "His family noticed Clyde was stumbling and could no longer use the stairs he was diagnosed with metachromatic leukodystrophy, a genetic disease that attacks the nervous system.",
-        "pubDate": "Fri, 10 Jul 2026 02:16:29 +0000",
+        "title": "Canada orders deportation of &#8216;bottom-tier&#8217; member of Bishnoi gang",
+        "link": "https://globalnews.ca/news/11960244/bottom-tier-indian-extortion-gang-deportation/",
+        "description": "While Bishnoi gang leaders face racketeering charges, Jashandeep Singh is among the lower-level suspects Canada has opted to deport rather than prosecute.",
+        "pubDate": "Fri, 10 Jul 2026 17:25:36 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Untitled-design-1-1.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/operation-hardball-indian-gangs.jpeg?quality=65&#038;strip=all"
       }
     ]
   }
