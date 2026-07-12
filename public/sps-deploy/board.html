@@ -73,6 +73,10 @@ function renderBoard(d, updatedAt){
     (d.title || 'Board') + fireBit + ' · updated ' + (ageMin < 1 ? 'just now' : ageMin < 60 ? ageMin + ' min ago' : fmtT(updatedAt));
   let html = '';
   if(ageMin > 180) html += `<div class="banner due">⚠️ Last update ${Math.round(ageMin/60)} hrs ago — TFL may be out of cell range.</div>`;
+  (d.nocontact || []).forEach(n => {
+    html += `<div class="banner due">📵 <b>NO CONTACT — ${esc(n.callsign ? n.callsign + ' ' : '')}${esc(n.name)}</b><br>
+      <span style="font-weight:400;font-size:14px">Missed ${fmtT(n.missedAt)} check-in${n.attempts ? ' · ' + n.attempts + ' attempts (last ' + fmtT(n.lastAttempt) + ')' : ''}${n.escalatedAt ? ' · 🚨 Fire Centre alerted ' + fmtT(n.escalatedAt) : ''}</span></div>`;
+  });
   if(d.roundOpen) html += `<div class="banner ok">📻 Check-in round in progress</div>`;
   else if(d.nextDue){
     const ms = new Date(d.nextDue) - Date.now();

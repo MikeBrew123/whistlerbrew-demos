@@ -146,14 +146,15 @@ body.offline .offline-dot{display:block;}
 'use strict';
 /* ============ state ============ */
 const KEY='sps-deploy-v1';
-const blank = () => ({crews:[], rounds:[], paperwork:{}, leaders:[], directory:[], incident:null,
-  settings:{intervalMin:120, firstTime:'08:00', apiKey:'', myName:'', share:null}});
+const blank = () => ({crews:[], rounds:[], paperwork:{}, leaders:[], directory:[], incident:null, nocontact:[],
+  settings:{intervalMin:120, firstTime:'08:00', retryMin:5, apiKey:'', myName:'', share:null}});
 let S = blank();
 try{ const raw = localStorage.getItem(KEY); if(raw){
   const p = JSON.parse(raw);
   S = Object.assign(blank(), p);
   S.settings = Object.assign(blank().settings, p.settings || {});
   S.leaders = p.leaders || []; S.directory = p.directory || []; S.incident = p.incident || null;
+  S.nocontact = p.nocontact || [];
 } }catch(e){}
 const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ alert('Storage full — export a backup and remove old T-Card photos.'); } schedulePush(); };
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
@@ -283,7 +284,7 @@ function dueInfo(){
 function homeView(){
   const crews = activeCrews();
   const or = openRound();
-  let html = '';
+  let html = ncCards();
 
   if(or){
     const total = crews.length, done = crews.filter(c => or.checks[c.id]).length;
@@ -348,16 +349,79 @@ function crewLine(c){
   </div>`;
 }
 A.startRound = () => { S.rounds.push({id:uid(), startedAt:now(), closedAt:null, checks:{}, fire:S.incident?.current || ''}); save(); render(); };
-A.check = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now()}; save(); render(); };
-A.markMissed = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now(), missed:true}; save(); render(); };
-A.uncheck = id => { const r = openRound(); if(!r) return; if(confirm('Clear this check-in?')){ delete r.checks[id]; save(); render(); } };
+A.check = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now()};
+  const e = ncFor(id); if(e){ e.contactAt = now(); } save(); render(); };
+A.markMissed = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now(), missed:true}; ncCreate(id, r.id); save(); render(); };
+A.uncheck = id => { const r = openRound(); if(!r) return; if(confirm('Clear this check-in?')){
+  const ck = r.checks[id];
+  if(ck && ck.missed){ const e = ncFor(id); if(e && e.roundId === r.id && !e.attempts.length && !e.escalatedAt) S.nocontact = S.nocontact.filter(x => x !== e); }
+  delete r.checks[id]; save(); render(); } };
 A.closeRound = () => {
   const r = openRound(); if(!r) return;
   const missing = activeCrews().filter(c => !r.checks[c.id]);
   if(missing.length && !confirm(missing.length+' crew(s) not checked in — close anyway? They will be logged as no-contact.')) return;
-  missing.forEach(c => r.checks[c.id] = {time:now(), missed:true});
+  missing.forEach(c => { r.checks[c.id] = {time:now(), missed:true}; ncCreate(c.id, r.id); });
   r.closedAt = now(); save(); render();
 };
+
+/* ---- no-contact tracking & reminders ---- */
+const openNC = () => S.nocontact.filter(e => !e.contactAt && crewById(e.crewId));
+const ncFor = crewId => openNC().find(e => e.crewId === crewId);
+function ncCreate(crewId, roundId){
+  if(ncFor(crewId)) return;
+  S.nocontact.push({id:uid(), crewId, roundId, missedAt:now(), attempts:[], escalatedAt:null, contactAt:null,
+    fire:S.incident?.current || ''});
+  try{ if('Notification' in window && Notification.permission === 'default') Notification.requestPermission(); }catch(e){}
+}
+const ncLastActivity = e => [e.missedAt, ...e.attempts, e.escalatedAt].filter(Boolean).sort().pop();
+const ncDue = e => Date.now() - new Date(ncLastActivity(e)).getTime() >= (S.settings.retryMin || 5) * 60000;
+A.ncAttempt = id => { const e = S.nocontact.find(x => x.id === id); if(e){ e.attempts.push(now()); save(); render(); } };
+A.ncContact = id => { const e = S.nocontact.find(x => x.id === id); if(e){ e.contactAt = now(); save(); render(); } };
+A.ncEscalate = id => { const e = S.nocontact.find(x => x.id === id);
+  if(e && confirm('Record that Fire Centre has been alerted to start looking for this crew?')){ e.escalatedAt = now(); save(); render(); } };
+const ncAlerted = {};
+function ncCheckAlerts(){
+  openNC().forEach(e => {
+    const key = e.id + ':' + ncLastActivity(e);
+    if(ncDue(e) && !ncAlerted[key]){
+      ncAlerted[key] = 1;
+      try{ const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination); o.frequency.value = 880; g.gain.value = .25;
+        o.start(); o.stop(ctx.currentTime + .5); }catch(err){}
+      if(navigator.vibrate) navigator.vibrate([250, 120, 250]);
+      try{ if('Notification' in window && Notification.permission === 'granted'){
+        const c = crewById(e.crewId);
+        new Notification('NO CONTACT: ' + (c ? (c.callsign ? c.callsign + ' ' : '') + c.name : 'crew'),
+          {body:'Try them again — missed the ' + fmtT(e.missedAt) + ' check-in.', tag:e.id});
+      } }catch(err){}
+    }
+  });
+}
+function ncCards(){
+  const events = openNC();
+  if(!events.length) return '';
+  let html = `<h2 style="color:var(--red)">⚠ No contact (${events.length})</h2>`;
+  events.forEach(e => {
+    const c = crewById(e.crewId);
+    const due = ncDue(e);
+    const sinceMin = Math.round((Date.now() - new Date(ncLastActivity(e)).getTime())/60000);
+    const waitMin = Math.max(0, (S.settings.retryMin || 5) - sinceMin);
+    html += `<div class="card" style="border-color:var(--red);${due ? 'animation:pulse 1.6s infinite;' : ''}">
+      <div style="font-weight:800;font-size:16.5px;color:var(--red)">📵 ${esc(c.callsign || '')} ${esc(c.name)}</div>
+      <div class="muted" style="margin:5px 0 11px;line-height:1.5">Missed ${fmtT(e.missedAt)} check-in${e.fire ? ' · '+esc(e.fire) : ''}
+        ${e.attempts.length ? `<br>Tried ${e.attempts.length}× — last attempt ${fmtT(e.attempts[e.attempts.length-1])}` : ''}
+        ${e.escalatedAt ? `<br><b style="color:var(--amber)">🚨 Fire Centre alerted ${fmtT(e.escalatedAt)}</b>` : ''}
+        <br>${due ? '<b style="color:var(--red)">Reminder: try them again now</b>' : 'Next reminder in ' + waitMin + ' min'}</div>
+      <div class="row">
+        <button class="secondary" onclick="A.ncAttempt('${e.id}')">🔁 No answer</button>
+        <button class="secondary" style="color:var(--green);border-color:#2ecc7166" onclick="A.ncContact('${e.id}')">✓ Made contact</button>
+      </div>
+      ${e.escalatedAt ? '' : `<button class="secondary danger" style="margin-top:8px" onclick="A.ncEscalate('${e.id}')">🚨 Alert Fire Centre — start looking</button>`}
+    </div>`;
+  });
+  return html;
+}
 
 /* ============ crews tab ============ */
 function crewsView(){
@@ -515,6 +579,7 @@ A.deleteCrew = id => {
   S.crews = S.crews.filter(x => x.id !== id);
   S.rounds.forEach(r => delete r.checks[id]);
   Object.values(S.paperwork).forEach(d => delete d[id]);
+  S.nocontact = S.nocontact.filter(e => e.crewId !== id);
   save(); A.go('crews');
 };
 A.viewPhoto = id => { const c = crewById(id); if(c?.photo) modal(`<img src="${c.photo}" style="width:100%;border-radius:12px"><button class="secondary" style="margin-top:12px" onclick="A.closeModal()">Close</button>`); };
@@ -637,8 +702,23 @@ A.togglePaper = (crewId, kind) => {
 /* ============ log ============ */
 function logView(){
   const rounds = [...S.rounds].sort((a,b) => b.startedAt.localeCompare(a.startedAt));
-  if(!rounds.length) return `<div class="empty">No check-in rounds yet.<br>Start one from the Check-In tab.</div>`;
   let html = '', lastDay = '';
+  const ncs = [...S.nocontact].sort((a,b) => b.missedAt.localeCompare(a.missedAt));
+  if(ncs.length){
+    html += `<h2 style="color:var(--red)">No-contact events (${ncs.length})</h2>`;
+    ncs.forEach(e => {
+      const c = crewById(e.crewId);
+      html += `<div class="card" style="border-color:${e.contactAt ? 'var(--line)' : 'var(--red)'}">
+        <b>📵 ${esc(c ? (c.callsign ? c.callsign + ' ' : '') + c.name : 'deleted crew')}</b>
+        <span class="muted"> · ${fmtDay(dayKey(e.missedAt))}${e.fire ? ' · ' + esc(e.fire) : ''}</span>
+        <div class="muted" style="margin-top:6px;line-height:1.6">Missed check-in ${fmtT(e.missedAt)}
+          ${e.attempts.map(a => `<br>🔁 Attempted ${fmtT(a)} — no answer`).join('')}
+          ${e.escalatedAt ? `<br><b style="color:var(--amber)">🚨 Fire Centre alerted ${fmtT(e.escalatedAt)}</b>` : ''}
+          ${e.contactAt ? `<br><b style="color:var(--green)">✓ Contact re-established ${fmtT(e.contactAt)}</b>` : '<br><b style="color:var(--red)">Still unreached</b>'}</div>
+      </div>`;
+    });
+  }
+  if(!rounds.length) return html + `<div class="empty">No check-in rounds yet.<br>Start one from the Check-In tab.</div>`;
   rounds.forEach(r => {
     const d = dayKey(r.startedAt);
     if(d !== lastDay){ html += `<h2>${fmtDay(d)}</h2>`; lastDay = d; }
@@ -671,7 +751,10 @@ function settingsView(){
       <div><label>First check-in of day</label>
         <input type="time" value="${esc(S.settings.firstTime)}" onchange="A.setFirstTime(this.value)"></div>
     </div>
-    <p class="notice">All crews check in at the same times — e.g. 08:00 then every 2 hrs. The Check-In tab counts down to the next slot and goes red when overdue.</p>
+    <label>No-contact reminder</label>
+    <select onchange="A.setRetry(this.value)">${[5,10,15,20].map(v =>
+      `<option value="${v}" ${(S.settings.retryMin||5)===v?'selected':''}>every ${v} min</option>`).join('')}</select>
+    <p class="notice">All crews check in at the same times — e.g. 08:00 then every 2 hrs. If a crew is marked no-contact, the app reminds you to try again at this interval until you reach them or alert Fire Centre. Adjust for terrain / comms in your area.</p>
   </div>
   <h2>Share with overhead (STAM board)</h2>
   <div class="card">
@@ -709,6 +792,7 @@ function settingsView(){
 }
 A.setInterval = v => { const n = parseInt(v,10); if(n > 0){ S.settings.intervalMin = n; save(); } };
 A.setFirstTime = v => { if(/^\d{2}:\d{2}$/.test(v)){ S.settings.firstTime = v; save(); } };
+A.setRetry = v => { const n = parseInt(v,10); if(n > 0){ S.settings.retryMin = n; save(); } };
 A.setMyName = v => { S.settings.myName = v.trim(); save(); };
 A.setKey = v => { S.settings.apiKey = v.trim(); save(); };
 
@@ -744,6 +828,9 @@ function boardSnapshot(){
     incident: S.incident ? {type:S.incident.type, name:S.incident.name, current:S.incident.current, fires:S.incident.fires} : null,
     nextDue: d ? d.dueAt.toISOString() : null,
     roundOpen: !!openRound(),
+    nocontact: openNC().map(e => { const c = crewById(e.crewId);
+      return {name:c.name, callsign:c.callsign||'', missedAt:e.missedAt, attempts:e.attempts.length,
+        lastAttempt:e.attempts[e.attempts.length-1] || null, escalatedAt:e.escalatedAt}; }),
     intervalMin: S.settings.intervalMin, firstTime: S.settings.firstTime,
     crews: activeCrews().map(c => {
       const lastCk = lastRound && lastRound.checks[c.id];
@@ -917,12 +1004,19 @@ function render(){
   else if(route.tab === 'paper') v.innerHTML = paperView();
   else if(route.tab === 'log') v.innerHTML = logView();
   else if(route.tab === 'settings') v.innerHTML = settingsView();
+  if(route.tab !== 'home' && openNC().length){
+    const names = openNC().map(e => { const c = crewById(e.crewId); return c ? (c.callsign || c.name) : ''; }).filter(Boolean).join(', ');
+    v.innerHTML = `<div class="banner due" style="cursor:pointer" onclick="A.go('home')">📵 NO CONTACT: ${esc(names)} — tap for actions</div>` + v.innerHTML;
+  }
   const fp = document.getElementById('firepill');
   fp.textContent = firePillText();
   fp.style.opacity = S.incident ? '1' : '.75';
   renderNav();
 }
-setInterval(() => { if(route.tab === 'home' && !document.getElementById('modalhost').innerHTML) render(); }, 30000);
+setInterval(() => {
+  ncCheckAlerts();
+  if(route.tab === 'home' && !document.getElementById('modalhost').innerHTML) render();
+}, 20000);
 const setOnline = () => document.body.classList.toggle('offline', !navigator.onLine);
 addEventListener('online', setOnline); addEventListener('offline', setOnline); setOnline();
 render();
