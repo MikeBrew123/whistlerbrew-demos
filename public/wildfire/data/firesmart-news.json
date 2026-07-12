@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T22:00:44.285Z",
+  "updated_at": "2026-07-12T04:00:44.422Z",
   "zones": {
     "coastal": [
       {
@@ -15,16 +15,25 @@
     "prince-george": [],
     "cariboo": [
       {
-        "title": "Fraser Canyon wildfires continue to threaten residents, property",
-        "link": "https://globalnews.ca/news/11961478/fraser-canyon-wildfires-threaten-residents-property/",
-        "description": "The Ainslie Creek fire is now estimated to be more than 15,500 hectares in size, and the Brunswick Creek fire across the river is now at an estimated 2,600 hectares.",
-        "pubDate": "Fri, 10 Jul 2026 18:51:27 +0000",
+        "title": "Veteran mediator appointed to help settle B.C. nurses&#8217; dispute",
+        "link": "https://globalnews.ca/news/11961888/veteran-mediator-appointed-bc-nurses-dispute/",
+        "description": "Labour Minister Jennifer Whiteside said in a statement on Friday that Vince Ready and Amanda Rogers will act as special mediators to work with the parties for 10 days.",
+        "pubDate": "Fri, 10 Jul 2026 22:35:53 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/f8ba57c98581fde2da78969c39f35292fc437db682f8ebe13a6ac5f543b60ee7_fefea7.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/03f84a301c8a1f4138eda3ee7a8b56fefd4851989772439fcea7c7db25c96b79_474afe.jpg?quality=65&#038;strip=all"
       }
     ],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "&#8216;Every day matters&#8217;: One B.C. family&#8217;s race to save their little boy",
+        "link": "https://globalnews.ca/news/11960537/every-day-matters-bc-family-race-save-little-boy/",
+        "description": "His family noticed Clyde was stumbling and could no longer use the stairs he was diagnosed with metachromatic leukodystrophy, a genetic disease that attacks the nervous system.",
+        "pubDate": "Fri, 10 Jul 2026 02:16:29 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Untitled-design-1-1.jpg?quality=65&#038;strip=all"
+      }
+    ]
   }
 }
