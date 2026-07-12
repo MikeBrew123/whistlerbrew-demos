@@ -120,11 +120,19 @@ nav button.on{color:var(--accent);}
 .notice{font-size:13px; color:var(--dim); line-height:1.45; margin-top:10px;}
 .offline-dot{width:8px; height:8px; border-radius:50%; background:var(--red); display:none;}
 body.offline .offline-dot{display:block;}
+.firepill{background:#33200a; border:1.5px solid var(--accent); color:var(--accent); font-weight:800;
+  font-size:14px; padding:6px 12px; border-radius:20px; cursor:pointer; letter-spacing:.5px; flex-shrink:0;
+  max-width:46vw; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.firechip{display:flex; align-items:center; gap:10px; width:100%; background:var(--card2); border:2px solid var(--line);
+  color:var(--text); border-radius:11px; padding:12px 14px; font-size:16px; font-weight:700; cursor:pointer; margin-bottom:8px; text-align:left;}
+.firechip.cur{border-color:var(--accent); color:var(--accent);}
+.firechip small{margin-left:auto; font-weight:600; color:var(--dim); font-size:12px;}
 </style>
 </head>
 <body>
 <header>
   <h1><span>SPS</span> DEPLOY</h1>
+  <button class="firepill" id="firepill" onclick="A.incidentModal()">SET FIRE #</button>
   <div class="offline-dot" title="Offline"></div>
   <button class="hbtn" onclick="A.go('settings')">⚙︎</button>
 </header>
@@ -138,14 +146,14 @@ body.offline .offline-dot{display:block;}
 'use strict';
 /* ============ state ============ */
 const KEY='sps-deploy-v1';
-const blank = () => ({crews:[], rounds:[], paperwork:{}, leaders:[], directory:[],
+const blank = () => ({crews:[], rounds:[], paperwork:{}, leaders:[], directory:[], incident:null,
   settings:{intervalMin:120, firstTime:'08:00', apiKey:'', myName:'', share:null}});
 let S = blank();
 try{ const raw = localStorage.getItem(KEY); if(raw){
   const p = JSON.parse(raw);
   S = Object.assign(blank(), p);
   S.settings = Object.assign(blank().settings, p.settings || {});
-  S.leaders = p.leaders || []; S.directory = p.directory || [];
+  S.leaders = p.leaders || []; S.directory = p.directory || []; S.incident = p.incident || null;
 } }catch(e){}
 const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ alert('Storage full — export a backup and remove old T-Card photos.'); } schedulePush(); };
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
@@ -171,6 +179,69 @@ function renderNav(){
   document.getElementById('nav').innerHTML = TABS.map(([id,ic,lb]) =>
     `<button class="${route.tab===id||(route.tab==='crew'&&id==='crews')?'on':''}" onclick="A.go('${id}')"><span class="ic">${ic}</span>${lb}</button>`).join('');
 }
+
+/* ============ incident / fire number ============ */
+const INC_TYPES = {single:'Single fire', complex:'Complex', mzoc:'MZOC'};
+function firePillText(){
+  if(!S.incident) return 'SET FIRE #';
+  return S.incident.current || S.incident.name || 'SET FIRE #';
+}
+A.setupIncident = (firstRun) => {
+  const inc = S.incident || {type:'single', name:'', fires:[], current:''};
+  modal(`<h3>${firstRun ? 'New deployment' : 'Deployment details'}</h3>
+    <label>Incident type</label>
+    <select id="i_type" onchange="document.getElementById('i_namewrap').style.display = this.value==='single' ? 'none' : 'block'">
+      ${Object.entries(INC_TYPES).map(([v,l]) => `<option value="${v}" ${inc.type===v?'selected':''}>${l}</option>`).join('')}
+    </select>
+    <div id="i_namewrap" style="display:${inc.type==='single'?'none':'block'}">
+      <label>Complex / MZOC name</label>
+      <input id="i_name" value="${esc(inc.name||'')}" placeholder="e.g. Grouse Complex">
+    </div>
+    <label>Fire number you're working</label>
+    <input id="i_fire" value="${esc(inc.current||'')}" placeholder="e.g. K71058" autocapitalize="characters" style="text-transform:uppercase">
+    <div class="row" style="margin-top:16px">
+      ${firstRun ? `<button class="secondary" onclick="A.closeModal()">Later</button>` : `<button class="secondary" onclick="A.closeModal()">Cancel</button>`}
+      <button class="primary" onclick="A.saveIncident()">${firstRun ? 'Start deployment' : 'Save'}</button>
+    </div>`);
+};
+A.saveIncident = () => {
+  const g = x => document.getElementById(x).value.trim();
+  const type = g('i_type'), fire = g('i_fire').toUpperCase();
+  const name = type === 'single' ? '' : g('i_name');
+  if(!fire){ alert('Fire number is required'); return; }
+  const inc = S.incident || {fires:[]};
+  inc.type = type; inc.name = name;
+  if(!inc.fires.includes(fire)) inc.fires.push(fire);
+  inc.current = fire;
+  S.incident = inc;
+  save(); A.closeModal(); render();
+};
+A.incidentModal = () => {
+  if(!S.incident){ A.setupIncident(true); return; }
+  const inc = S.incident;
+  modal(`<h3>${esc(inc.name || INC_TYPES[inc.type] || 'Incident')}</h3>
+    <label>Fire numbers this deployment — tap the one you're working now</label>
+    ${inc.fires.map(f => `<button class="firechip ${f===inc.current?'cur':''}" onclick="A.switchFire('${esc(f)}')">
+      🔥 ${esc(f)} ${f===inc.current?'<small>WORKING</small>':''}</button>`).join('')}
+    <div class="row" style="margin-top:6px">
+      <input id="i_newfire" placeholder="Add fire number…" autocapitalize="characters" style="text-transform:uppercase">
+      <button class="secondary" style="flex:0 0 92px" onclick="A.addFire()">＋ Add</button>
+    </div>
+    <p class="notice">Add a fire number when your crews change work locations under the same ${inc.type==='mzoc'?'MZOC':'complex'}. Check-in rounds are stamped with whichever fire is active. Only <b>Reset all data</b> (⚙︎ Settings) ends the deployment.</p>
+    <div class="row" style="margin-top:10px">
+      <button class="secondary" onclick="A.closeModal();A.setupIncident(false)">Edit type / name</button>
+      <button class="primary" onclick="A.closeModal()">Done</button>
+    </div>`);
+};
+A.switchFire = f => { S.incident.current = f; save(); render(); A.incidentModal(); };
+A.addFire = () => {
+  const el = document.getElementById('i_newfire');
+  const f = el.value.trim().toUpperCase();
+  if(!f) return;
+  if(!S.incident.fires.includes(f)) S.incident.fires.push(f);
+  S.incident.current = f;
+  save(); render(); A.incidentModal();
+};
 
 /* ============ modal ============ */
 function modal(html){
@@ -276,7 +347,7 @@ function crewLine(c){
     <div class="chev">›</div>
   </div>`;
 }
-A.startRound = () => { S.rounds.push({id:uid(), startedAt:now(), closedAt:null, checks:{}}); save(); render(); };
+A.startRound = () => { S.rounds.push({id:uid(), startedAt:now(), closedAt:null, checks:{}, fire:S.incident?.current || ''}); save(); render(); };
 A.check = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now()}; save(); render(); };
 A.markMissed = id => { const r = openRound(); if(!r) return; r.checks[id] = {time:now(), missed:true}; save(); render(); };
 A.uncheck = id => { const r = openRound(); if(!r) return; if(confirm('Clear this check-in?')){ delete r.checks[id]; save(); render(); } };
@@ -573,7 +644,7 @@ function logView(){
     if(d !== lastDay){ html += `<h2>${fmtDay(d)}</h2>`; lastDay = d; }
     const entries = Object.entries(r.checks);
     html += `<div class="card logday" style="padding:8px 4px">
-      <div style="padding:4px 12px 8px;font-weight:700">Round ${fmtT(r.startedAt)}${r.closedAt ? ' – '+fmtT(r.closedAt) : ' <span class="pill a">open</span>'}</div>`;
+      <div style="padding:4px 12px 8px;font-weight:700">Round ${fmtT(r.startedAt)}${r.closedAt ? ' – '+fmtT(r.closedAt) : ' <span class="pill a">open</span>'}${r.fire ? ' <span class="muted" style="font-weight:600">· 🔥 '+esc(r.fire)+'</span>' : ''}</div>`;
     if(!entries.length) html += `<div class="muted" style="padding:0 12px 8px">No crews checked.</div>`;
     entries.sort((a,b) => (a[1].time||'').localeCompare(b[1].time||'')).forEach(([cid, ck]) => {
       const c = crewById(cid);
@@ -670,6 +741,7 @@ function boardSnapshot(){
   const d = dueInfo();
   return {
     title: S.settings.myName || 'SPS Deploy board',
+    incident: S.incident ? {type:S.incident.type, name:S.incident.name, current:S.incident.current, fires:S.incident.fires} : null,
     nextDue: d ? d.dueAt.toISOString() : null,
     roundOpen: !!openRound(),
     intervalMin: S.settings.intervalMin, firstTime: S.settings.firstTime,
@@ -705,7 +777,13 @@ A.exportData = () => {
   a.download = 'sps-deploy-backup-' + dayKey() + '.json';
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 };
-A.wipe = () => { if(confirm('Delete ALL crews, check-ins and paperwork records on this device?') && confirm('Really sure? Export a backup first if in doubt.')){ S = blank(); save(); A.go('home'); } };
+A.wipe = () => {
+  if(confirm('End of deployment? This deletes ALL crews, check-ins and paperwork records on this device.') && confirm('Really sure? Export a backup first if in doubt.')){
+    const dir = S.directory; // keep the contact directory across deployments
+    S = blank(); S.directory = dir;
+    save(); A.go('home'); A.setupIncident(true);
+  }
+};
 document.getElementById('importfile').onchange = e => {
   const f = e.target.files[0]; if(!f) return;
   const r = new FileReader();
@@ -839,12 +917,16 @@ function render(){
   else if(route.tab === 'paper') v.innerHTML = paperView();
   else if(route.tab === 'log') v.innerHTML = logView();
   else if(route.tab === 'settings') v.innerHTML = settingsView();
+  const fp = document.getElementById('firepill');
+  fp.textContent = firePillText();
+  fp.style.opacity = S.incident ? '1' : '.75';
   renderNav();
 }
 setInterval(() => { if(route.tab === 'home' && !document.getElementById('modalhost').innerHTML) render(); }, 30000);
 const setOnline = () => document.body.classList.toggle('offline', !navigator.onLine);
 addEventListener('online', setOnline); addEventListener('offline', setOnline); setOnline();
 render();
+if(!S.incident) A.setupIncident(true);
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>

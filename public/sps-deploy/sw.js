@@ -1,4 +1,4 @@
-const CACHE = 'sps-deploy-v3';
+const CACHE = 'sps-deploy-v4';
 const ASSETS = ['./', './index.html', './board.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {

@@ -67,8 +67,10 @@ async function load(){
 }
 function renderBoard(d, updatedAt){
   const ageMin = Math.round((Date.now() - new Date(updatedAt).getTime())/60000);
+  const inc = d.incident;
+  const fireBit = inc ? ' · 🔥 ' + (inc.name ? inc.name + ' — ' : '') + (inc.current || '') : '';
   document.getElementById('sub').textContent =
-    (d.title || 'Board') + ' · updated ' + (ageMin < 1 ? 'just now' : ageMin < 60 ? ageMin + ' min ago' : fmtT(updatedAt));
+    (d.title || 'Board') + fireBit + ' · updated ' + (ageMin < 1 ? 'just now' : ageMin < 60 ? ageMin + ' min ago' : fmtT(updatedAt));
   let html = '';
   if(ageMin > 180) html += `<div class="banner due">⚠️ Last update ${Math.round(ageMin/60)} hrs ago — TFL may be out of cell range.</div>`;
   if(d.roundOpen) html += `<div class="banner ok">📻 Check-in round in progress</div>`;
