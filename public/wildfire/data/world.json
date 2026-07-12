@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-07-12T04:00:53.362Z",
+  "updated_at": "2026-07-12T16:00:56.448Z",
   "fires": [
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
       "status": "Active",
-      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British. Hundreds of firefighters battling the deadly wildfire.",
+      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British. Hundreds of firefighters battling the deadly wildfire. Badly burned British couple rescued from ravine.",
       "link": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/bbd0/live/59a16160-7cfb-11f1-bbe2-7f9a5a48eac9.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/586b/live/21e5a140-7df6-11f1-a2c7-db8990d0c651.jpg"
     },
     {
       "country": "France",
@@ -146,21 +146,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 5,
-      "world": 2
+      "canada": 7,
+      "world": 3
     },
     "items_out": {
-      "canada": 5,
+      "canada": 7,
       "world_fires": 21
     },
-    "deduped": 2,
+    "deduped": 3,
     "rerouted": 0,
     "notes": [
-      "Deduplicated 2 Fraser Canyon articles (2026-07-08 and 2026-07-05) into single entry with combined description",
-      "Merged BBC video article into Almería Wildfire entry",
-      "Preserved all images through output",
-      "All existing_fires retained as Active status",
-      "No rerouting needed between buckets"
+      "Deduplicated 3 Spain wildfire articles: merged BBC reports on Almería wildfire into single entry, retained most recent image (British couple rescue)",
+      "Preserved all Active existing_fires entries; no fires contained >60 days ago to drop",
+      "All Canada articles retained as distinct stories covering different regions and incidents",
+      "All world fires maintained from existing_fires as status is Active"
     ]
   }
 }
