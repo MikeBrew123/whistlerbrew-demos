@@ -991,11 +991,11 @@ document.getElementById('importfile').onchange = e => {
   r.onload = () => { try{
       const d = JSON.parse(r.result);
       if(Array.isArray(d.directory) && !Array.isArray(d.crews)){
-        // contact-directory file: merge, don't touch deployment data
-        const have = new Set(S.directory.map(p => (p.name+'|'+(p.group||'')).toLowerCase()));
-        let n = 0;
-        d.directory.forEach(p => { if(p && p.name && !have.has((p.name+'|'+(p.group||'')).toLowerCase())){ S.directory.push({name:p.name, phone:p.phone||'', group:p.group||'', callsign:p.callsign||'', dept:p.dept||''}); n++; } });
-        save(); render(); alert('Directory loaded — '+n+' new contacts ('+S.directory.length+' total). Use "From directory" under Crews → Overhead.');
+        // contact-directory file: replace the reference list (updated rosters swap in
+        // cleanly); deployment data is untouched
+        S.directory = d.directory.filter(p => p && p.name)
+          .map(p => ({name:p.name, phone:p.phone||'', group:p.group||'', callsign:p.callsign||'', dept:p.dept||''}));
+        save(); render(); alert('Directory loaded — '+S.directory.length+' contacts. Use "From directory" under Crews → Overhead.');
         return;
       }
       if(!Array.isArray(d.crews)) throw 0;
