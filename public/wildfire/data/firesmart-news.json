@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-07-12T22:00:34.253Z",
+  "updated_at": "2026-07-13T04:00:33.623Z",
   "zones": {
     "coastal": [
-      {
-        "title": "Veteran mediator appointed to help settle B.C. nurses&#8217; dispute",
-        "link": "https://globalnews.ca/news/11961888/veteran-mediator-appointed-bc-nurses-dispute/",
-        "description": "Labour Minister Jennifer Whiteside said in a statement on Friday that Vince Ready and Amanda Rogers will act as special mediators to work with the parties for 10 days.",
-        "pubDate": "Fri, 10 Jul 2026 22:35:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/03f84a301c8a1f4138eda3ee7a8b56fefd4851989772439fcea7c7db25c96b79_474afe.jpg?quality=65&#038;strip=all"
-      },
       {
         "title": "Truck brings down power lines, starts small brush fire on Malahat",
         "link": "https://globalnews.ca/news/11961287/truck-down-power-lines-brush-fire-malahat/",
@@ -20,7 +12,15 @@
       }
     ],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Wildfire aircraft crash in Canada: 3 dead",
+        "link": "https://wildfiretoday.com/wildfire-aircraft-crash-in-canada-3-dead/",
+        "description": "Three people are dead after their plane crashed while working on the Fort Simpson fire in Canada&#8217;s Northwest Territories. Details are still emerging but it appears that the Bird Dog aircraft was working with a larger aerial firefighting tanker on the wildfire. The incident occurred Wednesday night, local time, about 50 kilometers west of Fort [&#8230;]",
+        "pubDate": "Fri, 26 Jun 2026 00:25:00 +0000",
+        "source": "Wildfire Today"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [
@@ -31,8 +31,25 @@
         "pubDate": "Sun, 12 Jul 2026 14:41:09 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/890458592cf22f9f3854a2f6c040dc76d97f65636c411bfeb6e47e793506cec4_1637ec.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Fraser Canyon wildfires continue to threaten residents, property",
+        "link": "https://globalnews.ca/news/11961478/fraser-canyon-wildfires-threaten-residents-property/",
+        "description": "The Ainslie Creek fire is now estimated to be more than 15,500 hectares in size, and the Brunswick Creek fire across the river is now at an estimated 2,600 hectares.",
+        "pubDate": "Fri, 10 Jul 2026 18:51:27 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/f8ba57c98581fde2da78969c39f35292fc437db682f8ebe13a6ac5f543b60ee7_fefea7.jpg?quality=65&#038;strip=all"
       }
     ],
-    "all": []
+    "all": [
+      {
+        "title": "B.C. wildfires 2026: Live map shows fires burning, locations and evacuations",
+        "link": "https://globalnews.ca/news/11963207/bc-wildfire-map-2026-live/",
+        "description": "This B.C. wildfire map shows you where fires are burning in the province, how big they are and if there are any evacuation alerts or orders with the wildfires.",
+        "pubDate": "Mon, 13 Jul 2026 02:39:26 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5b91cc4cf74da3a4e48a6e6b05506797b0fe1dd71dcd0f3f138b91043c6cf511_b4eba0.jpg?quality=65&#038;strip=all"
+      }
+    ]
   }
 }
