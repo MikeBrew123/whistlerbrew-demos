@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T10:00:34.534Z",
+  "updated_at": "2026-07-13T16:00:33.420Z",
   "zones": {
     "coastal": [
       {
@@ -12,7 +12,15 @@
       }
     ],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Wildfire aircraft crash in Canada: 3 dead",
+        "link": "https://wildfiretoday.com/wildfire-aircraft-crash-in-canada-3-dead/",
+        "description": "Three people are dead after their plane crashed while working on the Fort Simpson fire in Canada&#8217;s Northwest Territories. Details are still emerging but it appears that the Bird Dog aircraft was working with a larger aerial firefighting tanker on the wildfire. The incident occurred Wednesday night, local time, about 50 kilometers west of Fort [&#8230;]",
+        "pubDate": "Fri, 26 Jun 2026 00:25:00 +0000",
+        "source": "Wildfire Today"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [
