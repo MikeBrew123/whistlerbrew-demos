@@ -82,14 +82,6 @@
   ],
   "news": [
     {
-      "title": "Evacuation alert for East Kootenay wildfire, Brunswick Creek fire grows: officials",
-      "url": "https://globalnews.ca/news/11962789/b-c-wildfire-service-calls-for-compliance-amid-reports-of-speeding-and-drone-flights/",
-      "source": "Global News",
-      "published": "2026-07-12",
-      "description": "The BC Wildfire Service is issuing a call for compliance, as two out-of-control wildfires continue to burn in the Fraser Canyon.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/890458592cf22f9f3854a2f6c040dc76d97f65636c411bfeb6e47e793506cec4_1637ec.jpg?quality=65&#038;strip=all"
-    },
-    {
       "title": "Wildfire season is not as perilous as last year: officials",
       "url": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update/",
       "source": "Global News Wildfire",
@@ -106,23 +98,11 @@
       "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes.jpg?quality=65&#038;strip=all"
     },
     {
-      "title": "Out-of-control wildfire forces evacuation in B.C.'s Fraser Canyon",
-      "url": "https://globalnews.ca/news/11953588/wildfire-evacuation-fraser-valley-bc/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-05"
-    },
-    {
       "title": "Manitoba town residents set to return home after wildfire forced evacuation",
       "url": "https://globalnews.ca/news/11950289/manitoba-lynn-lake-return-home-after-wildfire-evacuation/",
       "source": "Global News Wildfire",
       "published": "2026-07-02"
-    },
-    {
-      "title": "Wildfire forces evacuation of remote Northwest Territories village",
-      "url": "https://globalnews.ca/news/11942614/northwest-territories-village-evacuation-wildfire/",
-      "source": "Global News Wildfire",
-      "published": "2026-06-29"
     }
   ],
-  "last_news_update": "2026-07-13T04:01:14.839Z"
+  "last_news_update": "2026-07-13T22:01:11.217Z"
 }
