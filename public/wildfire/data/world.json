@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T10:01:16.186Z",
+  "updated_at": "2026-07-13T16:01:11.618Z",
   "fires": [
     {
       "country": "Spain",
@@ -10,20 +10,12 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3502/live/a47f3390-7e4c-11f1-bee8-53ce494e1abc.png"
     },
     {
-      "country": "Thailand",
-      "name": "Bangkok Bar Fire",
-      "status": "Active",
-      "summary": "At least 27 killed, 22 critically injured in bar fire in Chatuchak district. Firefighters arrived to find patrons running through blasting flames to escape.",
-      "link": "https://www.bbc.co.uk/news/articles/c24yev53q06o?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1848/live/dc8219e0-7e85-11f1-926f-c90d1bcfbc84.jpg"
-    },
-    {
       "country": "France",
       "name": "Paris Region Wildfires",
       "status": "Active",
-      "summary": "Wildfires of exceptional scale near Paris. First time firefighting planes sent up from southern France to tackle fires in Paris region.",
+      "summary": "Wildfires of exceptional scale near Paris. First time firefighting planes sent up from southern France to tackle fires in Paris region. Wildfire may have been set deliberately according to minister.",
       "link": "https://www.bbc.co.uk/news/articles/clye4z168edo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b594/live/dae40700-7e95-11f1-bee8-53ce494e1abc.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/02cd/live/b7233b90-7ea1-11f1-926f-c90d1bcfbc84.jpg"
     },
     {
       "country": "France",
@@ -32,6 +24,14 @@
       "summary": "Wildfire in southern France forces evacuation of 10,000 people in Pyrénées-Orientales region. Tour de France organisers ban spectators from stage three.",
       "link": "https://www.bbc.co.uk/news/articles/crlwweye9glo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e4df/live/4ab81620-7932-79f1-9510-1546718f668b.jpg"
+    },
+    {
+      "country": "Thailand",
+      "name": "Bangkok Bar Fire",
+      "status": "Active",
+      "summary": "At least 28 killed, 25 critically injured in bar fire in Chatuchak district. Firefighters arrived to find patrons running through blasting flames to escape.",
+      "link": "https://www.bbc.co.uk/news/articles/c24yev53q06o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/32aa/live/d7f9b550-7eb6-11f1-8439-ebc9c5f19300.jpg"
     },
     {
       "country": "Greece",
@@ -162,21 +162,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 5,
+      "canada": 3,
       "world": 5
     },
     "items_out": {
-      "canada": 5,
+      "canada": 3,
       "world_fires": 23
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Fraser Canyon wildfire articles; kept 2026-07-12 version with image as most recent.",
-      "Merged Spanish wildfire articles into single Almería entry; updated death count to 13 with updated description.",
-      "Merged multiple world wildfire reports about Spain into one entry.",
-      "Preserved all Active fires from existing_fires; no fires contained >60 days ago to drop.",
-      "Retained all image fields from source data."
+      "Deduplicated Fraser Canyon wildfire: removed 2026-07-05 entry (older, no image) keeping 2026-07-08 with image",
+      "Updated Bangkok Bar Fire counts: changed from 27 killed, 22 injured to 28 killed, 25 injured per BBC article",
+      "Merged multiple Spain wildfire articles into single Almería entry with consolidated information",
+      "Preserved all 23 existing world fires as they remain Active"
     ]
   }
 }
