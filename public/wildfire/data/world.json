@@ -1,21 +1,29 @@
 {
-  "updated_at": "2026-07-12T22:01:17.341Z",
+  "updated_at": "2026-07-13T10:01:16.186Z",
   "fires": [
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
       "status": "Active",
-      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 12 dead and 23 missing. Four victims may be British. Hundreds of firefighters battling the deadly wildfire. Badly burned British couple rescued from ravine. Landscape completely charred with homes razed to the ground.",
-      "link": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/586b/live/21e5a140-7df6-11f1-a2c7-db8990d0c651.jpg"
+      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 13 dead including five believed to be British. Hundreds of firefighters battling the deadly wildfire. British couple rescued from ravine. Landscape completely charred with homes razed to the ground.",
+      "link": "https://www.bbc.co.uk/news/articles/cx24e09x79no?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3502/live/a47f3390-7e4c-11f1-bee8-53ce494e1abc.png"
     },
     {
       "country": "Thailand",
       "name": "Bangkok Bar Fire",
       "status": "Active",
-      "summary": "At least 27 killed in bar fire in Chatuchak district. Firefighters arrived to find patrons running through blasting flames to escape.",
+      "summary": "At least 27 killed, 22 critically injured in bar fire in Chatuchak district. Firefighters arrived to find patrons running through blasting flames to escape.",
       "link": "https://www.bbc.co.uk/news/articles/c24yev53q06o?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/51a3/live/23c24750-7e34-11f1-b976-0b9c15b0ccfc.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1848/live/dc8219e0-7e85-11f1-926f-c90d1bcfbc84.jpg"
+    },
+    {
+      "country": "France",
+      "name": "Paris Region Wildfires",
+      "status": "Active",
+      "summary": "Wildfires of exceptional scale near Paris. First time firefighting planes sent up from southern France to tackle fires in Paris region.",
+      "link": "https://www.bbc.co.uk/news/articles/clye4z168edo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b594/live/dae40700-7e95-11f1-bee8-53ce494e1abc.jpg"
     },
     {
       "country": "France",
@@ -56,22 +64,6 @@
       "summary": "Hundreds of wildfires burning across Florida and Georgia. Officials cite dry conditions, high winds and drought as key factors making the fires difficult to control.",
       "link": "https://www.bbc.com/news/videos/cwyw9wezygzo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e4c1/live/55600810-3f4b-11f1-b55d-0f258dce1735.jpg"
-    },
-    {
-      "country": "Brazil",
-      "name": "Rio Olympic Velodrome Fire",
-      "status": "Active",
-      "summary": "Fire damaged roof of Rio's Olympic velodrome. Around 80 firefighters and 20 fire trucks tackled the blaze. No injuries reported.",
-      "link": "https://www.bbc.com/news/videos/cn430515jzxo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0529/live/f7adf260-336d-11f1-9d5c-8ba507d7dbde.jpg"
-    },
-    {
-      "country": "Thailand",
-      "name": "Chiang Mai Air Pollution (Fire Season)",
-      "status": "Active",
-      "summary": "Peak fire season in Chiang Mai causing severe air pollution with city ranking among world's most polluted. Health impacts reported including nosebleeds in children.",
-      "link": "https://www.bbc.com/news/articles/c0le03ne05ro?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ae12/live/429a49e0-2d74-11f1-85a0-b9e8a127d116.jpg"
     },
     {
       "country": "United States",
@@ -146,6 +138,22 @@
       "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts."
     },
     {
+      "country": "Brazil",
+      "name": "Rio Olympic Velodrome Fire",
+      "status": "Active",
+      "summary": "Fire damaged roof of Rio's Olympic velodrome. Around 80 firefighters and 20 fire trucks tackled the blaze. No injuries reported.",
+      "link": "https://www.bbc.com/news/videos/cn430515jzxo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0529/live/f7adf260-336d-11f1-9d5c-8ba507d7dbde.jpg"
+    },
+    {
+      "country": "Thailand",
+      "name": "Chiang Mai Air Pollution (Fire Season)",
+      "status": "Active",
+      "summary": "Peak fire season in Chiang Mai causing severe air pollution with city ranking among world's most polluted. Health impacts reported including nosebleeds in children.",
+      "link": "https://www.bbc.com/news/articles/c0le03ne05ro?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ae12/live/429a49e0-2d74-11f1-85a0-b9e8a127d116.jpg"
+    },
+    {
       "country": "Europe",
       "name": "European Wildfire Preparedness",
       "status": "Active",
@@ -154,21 +162,21 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 7,
-      "world": 4
+      "canada": 5,
+      "world": 5
     },
     "items_out": {
-      "canada": 7,
-      "world_fires": 22
+      "canada": 5,
+      "world_fires": 23
     },
-    "deduped": 0,
-    "rerouted": 1,
+    "deduped": 1,
+    "rerouted": 0,
     "notes": [
-      "Bangkok bar fire (Thailand) rerouted from world_news to world_fires as structured fire event",
-      "All Canada articles retained with images preserved",
-      "Spain wildfire enriched with details from multiple BBC articles about same event",
-      "All existing_fires preserved as Active status maintained",
-      "No fires dropped (none exceeded 60-day containment threshold)"
+      "Deduplicated Fraser Canyon wildfire articles; kept 2026-07-12 version with image as most recent.",
+      "Merged Spanish wildfire articles into single Almería entry; updated death count to 13 with updated description.",
+      "Merged multiple world wildfire reports about Spain into one entry.",
+      "Preserved all Active fires from existing_fires; no fires contained >60 days ago to drop.",
+      "Retained all image fields from source data."
     ]
   }
 }
