@@ -123,6 +123,14 @@ body.offline .offline-dot{display:block;}
 .firepill{background:#33200a; border:1.5px solid var(--accent); color:var(--accent); font-weight:800;
   font-size:14px; padding:6px 12px; border-radius:20px; cursor:pointer; letter-spacing:.5px; flex-shrink:0;
   max-width:46vw; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.suggest{margin-top:2px;}
+.sgrow{background:var(--card2); border:1px solid var(--line); padding:10px 12px; cursor:pointer; font-size:14.5px; margin-top:-1px;}
+.sgrow:first-child{border-radius:10px 10px 0 0; margin-top:0;}
+.sgrow:last-child{border-radius:0 0 10px 10px;}
+.sgrow:only-child{border-radius:10px;}
+.sgrow b{color:var(--accent);}
+.sgrow small{display:block; color:var(--dim); font-size:12px; margin-top:2px;}
+.sgrow:active{background:var(--line);}
 .firechip{display:flex; align-items:center; gap:10px; width:100%; background:var(--card2); border:2px solid var(--line);
   color:var(--text); border-radius:11px; padding:12px 14px; font-size:16px; font-weight:700; cursor:pointer; margin-bottom:8px; text-align:left;}
 .firechip.cur{border-color:var(--accent); color:var(--accent);}
@@ -209,10 +217,11 @@ A.setupIncident = (firstRun) => {
     </div>
     <div class="row">
       <div><label>Fire number you're working</label>
-        <input id="i_fire" value="${esc(curFire.num)}" placeholder="e.g. K71058" autocapitalize="characters" style="text-transform:uppercase"></div>
+        <input id="i_fire" value="${esc(curFire.num)}" placeholder="e.g. K71058" autocapitalize="characters" style="text-transform:uppercase" oninput="A.fireSuggest(this,'i_firename')" autocomplete="off"></div>
       <div style="flex:1.4"><label>Fire name</label>
-        <input id="i_firename" value="${esc(curFire.name)}" placeholder="e.g. Casper Creek"></div>
+        <input id="i_firename" value="${esc(curFire.name)}" placeholder="auto-fills from BCWS map"></div>
     </div>
+    <div id="sg_i_fire" class="suggest"></div>
     <div class="row" style="margin-top:16px">
       ${firstRun ? `<button class="secondary" onclick="A.closeModal()">Later</button>` : `<button class="secondary" onclick="A.closeModal()">Cancel</button>`}
       <button class="primary" onclick="A.saveIncident()">${firstRun ? 'Start deployment' : 'Save'}</button>
@@ -244,16 +253,58 @@ A.incidentModal = () => {
     ${inc.fires.map(f => `<button class="firechip ${f.num===inc.current?'cur':''}" onclick="A.switchFire('${esc(f.num)}')">
       🔥 ${esc(f.num)}${f.name ? ' <span style="font-weight:600;font-size:14px">— ' + esc(f.name) + '</span>' : ''} ${f.num===inc.current?'<small>WORKING</small>':''}</button>`).join('')}
     <div class="row" style="margin-top:6px">
-      <input id="i_newfire" placeholder="Fire number…" autocapitalize="characters" style="text-transform:uppercase">
+      <input id="i_newfire" placeholder="Fire number…" autocapitalize="characters" style="text-transform:uppercase" oninput="A.fireSuggest(this,'i_newfirename')" autocomplete="off">
       <input id="i_newfirename" placeholder="Fire name…" style="flex:1.3">
       <button class="secondary" style="flex:0 0 78px" onclick="A.addFire()">＋ Add</button>
     </div>
+    <div id="sg_i_newfire" class="suggest"></div>
     <p class="notice">Add a fire when your crews change work locations under the same ${inc.type==='mzoc'?'MZOC':'complex'}. Check-in rounds are stamped with whichever fire is active. Use <b>End deployment</b> (⚙︎ Settings) when you're done.</p>
     <div class="row" style="margin-top:10px">
       <button class="secondary" onclick="A.closeModal();A.setupIncident(false)">Edit details</button>
       <button class="primary" onclick="A.closeModal()">Done</button>
     </div>`);
 };
+/* ---- BCWS fire registry lookup (public ArcGIS feed, same source as the BC Wildfire map) ---- */
+const BCWS_API = 'https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0/query';
+const fireCache = {};
+let fireDebounce = null, sgRows = [];
+A.fireSuggest = (input, nameFieldId) => {
+  const q = input.value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const box = document.getElementById('sg_' + input.id);
+  if(!box) return;
+  if(q.length < 2 || !navigator.onLine){ box.innerHTML = ''; return; }
+  clearTimeout(fireDebounce);
+  fireDebounce = setTimeout(async () => {
+    try{
+      let rows = fireCache[q];
+      if(!rows){
+        const url = BCWS_API + '?where=' + encodeURIComponent("FIRE_NUMBER LIKE '" + q + "%'") +
+          '&outFields=FIRE_NUMBER,GEOGRAPHIC_DESCRIPTION,FIRE_STATUS,CURRENT_SIZE&resultRecordCount=8&f=json';
+        const d = await (await fetch(url)).json();
+        rows = (d.features || []).map(f => f.attributes);
+        const rank = s => ({'Fire of Note':0, 'Out of Control':1, 'Being Held':2, 'Under Control':3}[s] ?? 4);
+        rows.sort((a,b) => rank(a.FIRE_STATUS) - rank(b.FIRE_STATUS));
+        fireCache[q] = rows;
+      }
+      const cur = input.value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+      if(cur !== q || !document.getElementById('sg_' + input.id)) return; // typed more / modal closed
+      sgRows = rows.slice(0, 6);
+      box.innerHTML = sgRows.map((r, i) =>
+        `<div class="sgrow" onclick="A.pickFire('${input.id}','${nameFieldId}',${i})">
+          <b>${esc(r.FIRE_NUMBER)}</b> ${esc(r.GEOGRAPHIC_DESCRIPTION || '')}
+          <small>${esc(r.FIRE_STATUS || '')}${r.CURRENT_SIZE >= 1 ? ' · ' + Math.round(r.CURRENT_SIZE).toLocaleString() + ' ha' : ''} · BCWS map</small>
+        </div>`).join('');
+    }catch(err){ box.innerHTML = ''; }
+  }, 300);
+};
+A.pickFire = (inputId, nameFieldId, i) => {
+  const r = sgRows[i]; if(!r) return;
+  document.getElementById(inputId).value = r.FIRE_NUMBER;
+  const nf = document.getElementById(nameFieldId);
+  if(nf) nf.value = r.GEOGRAPHIC_DESCRIPTION || '';
+  const box = document.getElementById('sg_' + inputId); if(box) box.innerHTML = '';
+};
+
 A.switchFire = f => { S.incident.current = f; save(); render(); A.incidentModal(); };
 A.addFire = () => {
   const num = document.getElementById('i_newfire').value.trim().toUpperCase();
