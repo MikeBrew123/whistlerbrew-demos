@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T22:00:34.269Z",
+  "updated_at": "2026-07-14T04:00:33.506Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -8,22 +8,30 @@
     "northwest": [],
     "southeast": [
       {
+        "title": "Recipe: Samosa kale chaat",
+        "link": "https://globalnews.ca/news/11962587/recipe-samosa-kale-chaat/",
+        "description": "This recipe will be sure to liven up your tastebuds as you blend Traditional Indian cooking flavours with a handful of friend kale.",
+        "pubDate": "Sun, 12 Jul 2026 15:00:36 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2020/11/samosa.png"
+      }
+    ],
+    "all": [
+      {
+        "title": "Metro Vancouver moving back to Stage 2 water restrictions",
+        "link": "https://globalnews.ca/news/11963773/metro-vancouver-stage-2-water-restrictions/",
+        "description": "In a post on X, Metro Vancouver said it can move back to Stage 2 now that the First Narrows Crossing has returned to service. Changes take place July 16.",
+        "pubDate": "Mon, 13 Jul 2026 17:51:24 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2021/05/MicrosoftTeams-image-63.jpg?quality=65&#038;strip=all"
+      },
+      {
         "title": "Evacuation alert for East Kootenay wildfire, Brunswick Creek fire grows: officials",
         "link": "https://globalnews.ca/news/11962789/b-c-wildfire-service-calls-for-compliance-amid-reports-of-speeding-and-drone-flights/",
         "description": "The BC Wildfire Service is issuing a call for compliance, as two out-of-control wildfires continue to burn in the Fraser Canyon.",
         "pubDate": "Sun, 12 Jul 2026 14:41:09 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/890458592cf22f9f3854a2f6c040dc76d97f65636c411bfeb6e47e793506cec4_1637ec.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "all": [
-      {
-        "title": "B.C. wildfires 2026: Live map shows fires burning, locations and evacuations",
-        "link": "https://globalnews.ca/news/11963207/bc-wildfire-map-2026-live/",
-        "description": "This B.C. wildfire map shows you where fires are burning in the province, how big they are and if there are any evacuation alerts or orders with the wildfires.",
-        "pubDate": "Mon, 13 Jul 2026 02:39:26 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5b91cc4cf74da3a4e48a6e6b05506797b0fe1dd71dcd0f3f138b91043c6cf511_b4eba0.jpg?quality=65&#038;strip=all"
       }
     ]
   }
