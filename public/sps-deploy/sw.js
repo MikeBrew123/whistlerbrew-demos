@@ -1,5 +1,5 @@
-const CACHE = 'sps-deploy-v8';
-const ASSETS = ['./', './index.html', './board.html', './manifest.json', './icon-192.png', './icon-512.png'];
+const CACHE = 'sps-deploy-v9';
+const ASSETS = ['./', './index.html', './board.html', './guide.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));

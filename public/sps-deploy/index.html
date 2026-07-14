@@ -862,7 +862,7 @@ function settingsView(){
   <h2>End of deployment</h2>
   <button class="secondary danger" onclick="A.endDeployment()">🏁 End deployment — archive, export & clear</button>
   <p class="notice">Backs everything up to the cloud, gives you a report file for the incident drive, then clears this device for the next deployment.</p>
-  <p class="notice" style="text-align:center;margin-top:20px">SPS Deploy · offline-capable · whistlerbrew.com</p>`;
+  <p class="notice" style="text-align:center;margin-top:20px">SPS Deploy · offline-capable · <a href="guide.html" style="color:var(--blue)">Quick-start guide</a></p>`;
 }
 A.setInterval = v => { const n = parseInt(v,10); if(n > 0){ S.settings.intervalMin = n; save(); } };
 A.setFirstTime = v => { if(/^\d{2}:\d{2}$/.test(v)){ S.settings.firstTime = v; save(); } };
