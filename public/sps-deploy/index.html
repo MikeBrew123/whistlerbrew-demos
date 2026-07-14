@@ -847,11 +847,12 @@ function settingsView(){
       <p class="notice">Generates a private link your STAM or other overhead can open to see your crews' check-in and paperwork status live. Needs cell service to update; your app keeps working offline regardless.</p>
     `}
   </div>
-  <h2>T-Card scanning (optional)</h2>
+  <h2>T-Card scanning</h2>
   <div class="card">
-    <label>Anthropic API key</label>
-    <input type="password" value="${esc(S.settings.apiKey||'')}" placeholder="sk-ant-…" onchange="A.setKey(this.value)">
-    <p class="notice">With a key set, scanning a T-Card photo reads crew names, callsigns and leaders automatically (needs cell service). Without one, the photo is attached and you type the details. The key is stored only on this device.</p>
+    <p class="notice" style="margin-top:0">✅ Works out of the box — scans run through the shared SPS Deploy scanner (needs cell service). Fair-use limit: 40 scans/day per device.</p>
+    <label>Personal API key (optional override)</label>
+    <input type="password" value="${esc(S.settings.apiKey||'')}" placeholder="leave blank to use shared scanner" onchange="A.setKey(this.value)">
+    <p class="notice">Only set this if you want scans billed to your own Anthropic account. Stored only on this device.</p>
   </div>
   <h2>Backup & contact directory</h2>
   <div class="row">
@@ -1067,7 +1068,7 @@ document.getElementById('tcfile').onchange = async e => {
   if(!f) return;
   const {full, thumb} = await downscale(f);
   if(scanTarget){ const c = crewById(scanTarget); if(c){ c.photo = thumb; save(); render(); } return; }
-  if(S.settings.apiKey && navigator.onLine){
+  if(navigator.onLine){
     modal(`<h3>Reading T-Card…</h3><img class="tcphoto" src="${thumb}"><p class="muted"><span class="spin"></span> Sending photo to Claude…</p>`);
     try{
       const crews = await parseTCard(full);
@@ -1082,10 +1083,8 @@ document.getElementById('tcfile').onchange = async e => {
   } else {
     window._scanThumb = thumb;
     A.addCrewModal({photo:thumb});
-    if(!S.settings.apiKey){
-      const el = document.querySelector('.modal h3');
-      if(el) el.insertAdjacentHTML('afterend', `<p class="notice" style="margin:0 0 8px">Tip: add an API key in ⚙︎ Settings and scans fill this in automatically.</p>`);
-    }
+    const el = document.querySelector('.modal h3');
+    if(el) el.insertAdjacentHTML('afterend', `<p class="notice" style="margin:0 0 8px">Offline — photo attached; scans auto-fill this when you have service.</p>`);
   }
 };
 function downscale(file){
@@ -1108,23 +1107,37 @@ function downscale(file){
 }
 async function parseTCard(dataUrl){
   const b64 = dataUrl.split(',')[1];
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method:'POST',
-    headers:{'x-api-key':S.settings.apiKey, 'anthropic-version':'2023-06-01',
-      'anthropic-dangerous-direct-browser-access':'true', 'content-type':'application/json'},
-    body: JSON.stringify({model:'claude-sonnet-5', max_tokens:2000, messages:[{role:'user', content:[
-      {type:'image', source:{type:'base64', media_type:'image/jpeg', data:b64}},
-      {type:'text', text:'This photo shows one or more wildfire resource T-Cards (BCWS/ICS style), possibly handwritten. Extract every crew/resource card visible. Reply with ONLY a JSON array, no other text: [{"name":"crew or resource name","callsign":"callsign or resource ID if shown","leader":"crew leader/boss name if shown","phone":"leader phone if shown","channel":"radio channel if shown","members":[{"name":"","role":"","phone":""}]}]. Use "" for anything not legible or not present. Do not invent data.'}
-    ]}]})
-  });
-  if(!resp.ok){
-    const t = await resp.text();
-    let msg = 'API error ' + resp.status;
-    try{ msg = JSON.parse(t).error?.message || msg; }catch(e){}
-    throw new Error(msg);
+  let text;
+  if(S.settings.apiKey){
+    // personal key set in Settings: call the API directly (advanced override)
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'x-api-key':S.settings.apiKey, 'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true', 'content-type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-5', max_tokens:2000, messages:[{role:'user', content:[
+        {type:'image', source:{type:'base64', media_type:'image/jpeg', data:b64}},
+        {type:'text', text:'This photo shows one or more wildfire resource T-Cards (BCWS/ICS style), possibly handwritten. Extract every crew/resource card visible. Reply with ONLY a JSON array, no other text: [{"name":"crew or resource name","callsign":"callsign or resource ID if shown","leader":"crew leader/boss name if shown","phone":"leader phone if shown","channel":"radio channel if shown","members":[{"name":"","role":"","phone":""}]}]. Use "" for anything not legible or not present. Do not invent data.'}
+      ]}]})
+    });
+    if(!resp.ok){
+      const t = await resp.text();
+      let msg = 'API error ' + resp.status;
+      try{ msg = JSON.parse(t).error?.message || msg; }catch(e){}
+      throw new Error(msg);
+    }
+    const data = await resp.json();
+    text = (data.content||[]).map(b => b.text||'').join('');
+  } else {
+    // default: shared scanner (server holds the key; T-Card reads only)
+    const resp = await fetch(SUPA_URL + '/functions/v1/tcard-scan', {
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body: JSON.stringify({image: b64})
+    });
+    const data = await resp.json().catch(() => ({}));
+    if(!resp.ok) throw new Error(data.error || 'Scanner unavailable (' + resp.status + ')');
+    text = data.text || '';
   }
-  const data = await resp.json();
-  const text = (data.content||[]).map(b => b.text||'').join('');
   const m = text.match(/\[[\s\S]*\]/);
   if(!m) throw new Error('Could not read any crew details from the photo');
   const arr = JSON.parse(m[0]);
