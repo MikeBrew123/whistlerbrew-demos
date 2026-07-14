@@ -1,38 +1,30 @@
 {
-  "updated_at": "2026-07-14T16:00:34.582Z",
+  "updated_at": "2026-07-14T22:00:34.156Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
+    "coastal": [
+      {
+        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
+        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
+        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
+        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
+        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
+        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
+        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Recipe: Samosa kale chaat",
-        "link": "https://globalnews.ca/news/11962587/recipe-samosa-kale-chaat/",
-        "description": "This recipe will be sure to liven up your tastebuds as you blend Traditional Indian cooking flavours with a handful of friend kale.",
-        "pubDate": "Sun, 12 Jul 2026 15:00:36 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2020/11/samosa.png"
-      }
-    ],
-    "all": [
-      {
-        "title": "Metro Vancouver moving back to Stage 2 water restrictions",
-        "link": "https://globalnews.ca/news/11963773/metro-vancouver-stage-2-water-restrictions/",
-        "description": "In a post on X, Metro Vancouver said it can move back to Stage 2 now that the First Narrows Crossing has returned to service. Changes take place July 16.",
-        "pubDate": "Mon, 13 Jul 2026 17:51:24 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2021/05/MicrosoftTeams-image-63.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Evacuation alert for East Kootenay wildfire, Brunswick Creek fire grows: officials",
-        "link": "https://globalnews.ca/news/11962789/b-c-wildfire-service-calls-for-compliance-amid-reports-of-speeding-and-drone-flights/",
-        "description": "The BC Wildfire Service is issuing a call for compliance, as two out-of-control wildfires continue to burn in the Fraser Canyon.",
-        "pubDate": "Sun, 12 Jul 2026 14:41:09 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/890458592cf22f9f3854a2f6c040dc76d97f65636c411bfeb6e47e793506cec4_1637ec.jpg?quality=65&#038;strip=all"
-      }
-    ]
+    "southeast": [],
+    "all": []
   }
 }
