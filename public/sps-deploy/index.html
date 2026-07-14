@@ -912,9 +912,22 @@ function boardSnapshot(){
     intervalMin: S.settings.intervalMin, firstTime: S.settings.firstTime,
     crews: activeCrews().map(c => {
       const lastCk = lastRound && lastRound.checks[c.id];
+      // per-day 214/DTR ledger (last 14 days) so overhead can see exactly
+      // what's missing from which day — misfiled vs never collected
+      const days = [];
+      const start = dayKey(c.createdAt || today);
+      const [sy, sm, sd] = start.split('-').map(Number);
+      const dt = new Date(sy, sm - 1, sd);
+      let guard = 0;
+      while(dayKey(dt) <= today && guard < 30){
+        const rec = (S.paperwork[dayKey(dt)] || {})[c.id] || {};
+        days.push({d: dayKey(dt), p214: rec.p214 || null, dtr: rec.dtr || null});
+        dt.setDate(dt.getDate() + 1); guard++;
+      }
+      if(days.length > 14) days.splice(0, days.length - 14);
       return {name:c.name, callsign:c.callsign||'', leader:c.leader||'',
         missing: paperMissing(c).n,
-        p214: !!pwT[c.id]?.p214, dtr: !!pwT[c.id]?.dtr,
+        p214: !!pwT[c.id]?.p214, dtr: !!pwT[c.id]?.dtr, days,
         lastCheck: lastCk ? lastCk.time : null, lastMissed: !!(lastCk && lastCk.missed)};
     })
   };

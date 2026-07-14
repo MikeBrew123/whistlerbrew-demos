@@ -33,6 +33,15 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);m
 .pill.a{background:#332708;color:var(--amber);}
 .pill.dim{background:var(--card2);color:var(--dim);}
 .empty{text-align:center;color:var(--dim);padding:40px 20px;line-height:1.6;}
+.ledger{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:6px 12px;margin:2px 0 10px;}
+.lday{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;}
+.lday:last-child{border-bottom:none;}
+.ld{flex:1;color:var(--text);font-weight:600;}
+.ld i{color:var(--dim);font-weight:400;font-style:normal;font-size:12px;}
+.lg{font-weight:700;font-size:13px;min-width:104px;font-variant-numeric:tabular-nums;}
+.lg.got{color:var(--green);}
+.lg.miss{color:var(--red);}
+.lg.dim{color:var(--dim);font-weight:500;}
 .muted{color:var(--dim);font-size:13px;}
 footer{text-align:center;color:var(--dim);font-size:12.5px;padding:20px;}
 </style>
@@ -60,6 +69,7 @@ async function load(){
       body: JSON.stringify({p_id: boardId})});
     const body = await r.json();
     if(!r.ok || !body || !body.data){ document.getElementById('view').innerHTML = '<div class="empty">Board not found — sharing may have been stopped.</div>'; return; }
+    lastBoard = {data: body.data, updatedAt: body.updated_at};
     renderBoard(body.data, body.updated_at);
   }catch(e){
     document.getElementById('sub').textContent = 'Offline — showing last loaded data';
@@ -88,9 +98,10 @@ function renderBoard(d, updatedAt){
   const crews = d.crews || [];
   html += `<h2>Crews (${crews.length}) — paperwork & last check-in</h2><div class="card">`;
   if(!crews.length) html += `<div class="empty">No active crews on this board.</div>`;
-  crews.forEach(c => {
+  crews.forEach((c, i) => {
     const col = c.missing === 0 ? 'var(--green)' : c.missing === 1 ? 'var(--amber)' : 'var(--red)';
-    html += `<div class="rowline">
+    const open = expanded.has(i);
+    html += `<div class="rowline" style="cursor:pointer" onclick="toggleCrew(${i})">
       <div class="cs">${esc(c.callsign || '—')}</div>
       <div class="nm"><b style="color:${col}">${esc(c.name)}</b>
         <small>${esc(c.leader ? 'CL: ' + c.leader : '')}${c.lastCheck ? ' · last check-in ' + fmtT(c.lastCheck) + (c.lastMissed ? ' (no contact)' : '') : ''}</small></div>
@@ -98,12 +109,36 @@ function renderBoard(d, updatedAt){
         ${c.missing ? `<span class="pill ${c.missing === 1 ? 'a' : 'r'}">${c.missing} outstanding</span>` : `<span class="pill g">✓ paperwork</span>`}
         <span class="pill ${c.p214 ? 'g' : 'dim'}">214${c.p214 ? ' ✓' : ''}</span>
         <span class="pill ${c.dtr ? 'g' : 'dim'}">DTR${c.dtr ? ' ✓' : ''}</span>
+        <span class="pill dim">${open ? '▾' : '▸'}</span>
       </div>
     </div>`;
+    if(open) html += dayLedger(c);
   });
-  html += `</div><p class="muted">Name colour = previous days' paperwork (green up to date · yellow 1 outstanding · red 2+). The 214/DTR pills are for today.</p>`;
+  html += `</div><p class="muted">Tap a crew for the day-by-day ledger — what was collected when, and exactly which days are missing. Name colour = previous days' paperwork (green up to date · yellow 1 outstanding · red 2+). The 214/DTR pills are for today.</p>`;
   document.getElementById('view').innerHTML = html;
 }
+function dayLedger(c){
+  const days = [...(c.days || [])].reverse(); // newest first
+  if(!days.length) return `<div class="ledger"><span class="muted">No day-by-day data yet — the TFL's app needs its next update to start sending it.</span></div>`;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const item = (label, ts, isToday) => ts
+    ? `<span class="lg got">${label} ✓ ${fmtT(ts)}</span>`
+    : isToday ? `<span class="lg dim">${label} — due today</span>`
+    : `<span class="lg miss">${label} MISSING</span>`;
+  return `<div class="ledger">` + days.map(day => {
+    const [y, m, dd] = day.d.split('-').map(Number);
+    const dt = new Date(y, m - 1, dd);
+    const isToday = dt.getTime() === today.getTime();
+    const lbl = dt.toLocaleDateString([], {weekday:'short', month:'short', day:'numeric'});
+    return `<div class="lday"><span class="ld">${lbl}${isToday ? ' <i>(today)</i>' : ''}</span>${item('214', day.p214, isToday)}${item('DTR', day.dtr, isToday)}</div>`;
+  }).join('') + `</div>`;
+}
+const expanded = new Set();
+function toggleCrew(i){
+  if(expanded.has(i)) expanded.delete(i); else expanded.add(i);
+  if(lastBoard) renderBoard(lastBoard.data, lastBoard.updatedAt);
+}
+let lastBoard = null;
 load();
 setInterval(load, 60000);
 </script>
