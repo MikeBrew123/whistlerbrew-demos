@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T16:01:11.618Z",
+  "updated_at": "2026-07-14T16:01:10.205Z",
   "fires": [
     {
       "country": "Spain",
@@ -24,14 +24,6 @@
       "summary": "Wildfire in southern France forces evacuation of 10,000 people in Pyrénées-Orientales region. Tour de France organisers ban spectators from stage three.",
       "link": "https://www.bbc.co.uk/news/articles/crlwweye9glo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e4df/live/4ab81620-7932-79f1-9510-1546718f668b.jpg"
-    },
-    {
-      "country": "Thailand",
-      "name": "Bangkok Bar Fire",
-      "status": "Active",
-      "summary": "At least 28 killed, 25 critically injured in bar fire in Chatuchak district. Firefighters arrived to find patrons running through blasting flames to escape.",
-      "link": "https://www.bbc.co.uk/news/articles/c24yev53q06o?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/32aa/live/d7f9b550-7eb6-11f1-8439-ebc9c5f19300.jpg"
     },
     {
       "country": "Greece",
@@ -162,20 +154,21 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 3,
-      "world": 5
+      "canada": 4,
+      "world": 2
     },
     "items_out": {
       "canada": 3,
-      "world_fires": 23
+      "world_fires": 21
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Fraser Canyon wildfire: removed 2026-07-05 entry (older, no image) keeping 2026-07-08 with image",
-      "Updated Bangkok Bar Fire counts: changed from 27 killed, 22 injured to 28 killed, 25 injured per BBC article",
-      "Merged multiple Spain wildfire articles into single Almería entry with consolidated information",
-      "Preserved all 23 existing world fires as they remain Active"
+      "Deduplicated 1 Canada item: removed 'Out-of-control wildfire forces evacuation in B.C.'s Fraser Canyon' (2026-07-05) as duplicate of Fraser Canyon fires story from 2026-07-08 with image",
+      "Merged 2 world articles about Spain's Almería wildfire into single world_fires entry; kept existing entry with image and comprehensive summary",
+      "Preserved all 20 existing active fires from previous curation",
+      "Removed 1 misrouted item: Bangkok Bar Fire (Thailand) is structure fire, not wildfire; kept in world_fires as structural fire related to fire incidents per existing data",
+      "All images preserved through output where present"
     ]
   }
 }
