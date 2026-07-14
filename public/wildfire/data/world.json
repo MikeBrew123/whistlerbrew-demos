@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-07-14T16:01:10.205Z",
+  "updated_at": "2026-07-14T22:01:11.402Z",
   "fires": [
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
       "status": "Active",
       "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 13 dead including five believed to be British. Hundreds of firefighters battling the deadly wildfire. British couple rescued from ravine. Landscape completely charred with homes razed to the ground.",
-      "link": "https://www.bbc.co.uk/news/articles/cx24e09x79no?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3502/live/a47f3390-7e4c-11f1-bee8-53ce494e1abc.png"
+      "link": "https://www.bbc.co.uk/news/articles/cp9ld3p324jo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/814f/live/dbfc97c0-7ee9-11f1-926f-c90d1bcfbc84.jpg"
     },
     {
       "country": "France",
@@ -154,21 +154,21 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 4,
+      "canada": 5,
       "world": 2
     },
     "items_out": {
-      "canada": 3,
+      "canada": 4,
       "world_fires": 21
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated 1 Canada item: removed 'Out-of-control wildfire forces evacuation in B.C.'s Fraser Canyon' (2026-07-05) as duplicate of Fraser Canyon fires story from 2026-07-08 with image",
-      "Merged 2 world articles about Spain's Almería wildfire into single world_fires entry; kept existing entry with image and comprehensive summary",
-      "Preserved all 20 existing active fires from previous curation",
-      "Removed 1 misrouted item: Bangkok Bar Fire (Thailand) is structure fire, not wildfire; kept in world_fires as structural fire related to fire incidents per existing data",
-      "All images preserved through output where present"
+      "Deduplicated 1 Canada item: Fraser Canyon fire articles merged (2026-07-08 used, earlier 2026-07-05 removed)",
+      "Spain articles merged into existing Almería fire with updated image from BBC 2026-07-13",
+      "Retained all 20 existing world fires (all status Active, none >60 days old)",
+      "Toronto firefighter article rerouted to Canada news (not a wildfire but fire service related)",
+      "Manitoba evacuation return article retained (recent resolution article adds value)"
     ]
   }
 }
