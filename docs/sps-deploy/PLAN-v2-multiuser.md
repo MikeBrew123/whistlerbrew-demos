@@ -84,9 +84,16 @@ nocontact_attempts event_id, time
 
 **RLS in one sentence:** membership in `incident_members` gates reads on everything in that incident; writes are allowed only on rows you own (`owner_user_id = auth.uid()`); `stam` role reads the whole incident. SQL views (`incident_checkin_latest`, `incident_paperwork_status`) power the STAM dashboard.
 
-**Joining a fire — typeahead first (Mike's design):** when you type a fire number during setup, the app live-searches open incidents (`incident_fires`, prefix match, RPC rate-limited). Type "V123" and **"V123456 — Casper Creek · Grouse Complex · 3 TFLs"** appears; tap it and you're joining the existing incident rather than creating a look-alike duplicate. Only if nothing matches do you create a new incident. This makes the *right* thing the *easy* thing.
+**Joining a fire — typeahead backed by two sources (Mike's design):** when you type a fire number during setup, the dropdown merges:
+
+1. **The official BCWS fire registry** — the same public ArcGIS feed the wildfire tracker uses (`BCWS_ActiveFires_PublicView`, CORS-open, no key). Verified 2026-07-14: prefix query on `FIRE_NUMBER` returns number, fire name (`GEOGRAPHIC_DESCRIPTION`), status, size, fire centre, lat/lon. So typing "V107" surfaces **"V10742 — Brunswick Creek · Fire of Note · 3,026 ha"** with the name auto-filled from the source of truth — no typos, no invented names. Filtered to non-Out fires by default.
+2. **Existing SPS Deploy incidents** (`incident_fires` prefix match, RPC) — rows already in our system show as **"JOIN — Grouse Complex · 3 TFLs"** so you land in the same incident as everyone else instead of creating a look-alike duplicate.
+
+Picking a BCWS row creates a new incident pre-filled with official number + name (and coordinates for later map use); picking a JOIN row joins it. Manual entry stays as the offline fallback — typeahead needs service, the app never does.
 
 Join mechanics: incidents default to `join_policy = open` — anyone with an account who knows the fire number joins instantly (fire numbers are common knowledge on a deployment; accounts are the real gate). The creator can flip to `code` mode, which additionally requires the 6-character join code / QR — for incidents that want a tighter list. Typeahead deliberately reveals only incident name/number and TFL count, never crew data, so discovery leaks nothing sensitive.
+
+*Bonus available today (small, no accounts needed): v1's "Fire number" fields could auto-fill the fire name from this feed right now — worth doing whenever, independent of v2.*
 
 ---
 
