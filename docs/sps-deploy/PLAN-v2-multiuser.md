@@ -2,6 +2,12 @@
 
 **Status: PLAN ONLY — nothing here is built yet.** Written 2026-07-14 after the v1 feature-complete build (2026-07-12).
 
+**Settled with Mike 2026-07-14:**
+- **Contact details stay device-only.** Phone numbers (crew members and the SPS/SRG directory) never sync to the cloud — only operational data does (crew names, callsigns, check-in and paperwork times). Avoids the whole personal-data question.
+- **Supabase free tier** to start — no appetite to spend until there's proven want/need.
+- **Fire-number typeahead** (Mike's idea, adopted): typing a fire number during setup finds existing incidents live — type "V123" and "V123456 — Casper Creek" appears — so two TFLs on the same fire land in the same incident instead of creating confusable duplicates.
+- URL: no decision yet (keep `whistlerbrew.com/sps-deploy/` until decided).
+
 ## Where we are (v1)
 
 Single-file offline-first PWA at whistlerbrew.com/sps-deploy/. All data lives in localStorage on each phone. Supabase (borrowed corner of the CarnivoreWeekly project) holds two anonymous capability-URL tables: `sps_boards` (live read-only share) and `sps_archives` (end-of-deployment backup). No accounts. T-Card scanning calls the Anthropic API directly from the browser with a user-supplied key.
@@ -59,12 +65,15 @@ Evaluated: PowerSync / ElectricSQL / RxDB replication (heavy, some paid, all bri
 ```
 profiles          id (= auth.users.id), name, callsign, phone, home_position
 incidents         id, type (single|complex|mzoc), name, number, join_code,
-                  status (open|closed), created_by, created_at, closed_at
+                  join_policy (open|code), status (open|closed),
+                  created_by, created_at, closed_at
 incident_fires    id, incident_id, num, name
 incident_members  incident_id, user_id, role (tfl|stam|viewer), joined_at
 crews             id, incident_id, owner_user_id, name, callsign, leader,
                   channel, notes, archived, created_at, released_at
-crew_members      id, crew_id, name, role, phone, notes
+crew_members      id, crew_id, name, role, notes          -- NO phone column:
+                  -- phone numbers live only in device storage (local overlay
+                  -- keyed by member id); they never reach the cloud
 checkin_rounds    id, incident_id, owner_user_id, started_at, closed_at, fire_num
 checkins          round_id, crew_id, time, missed, note
 paperwork         id, incident_id, crew_id, day, kind (214|dtr),
@@ -75,7 +84,9 @@ nocontact_attempts event_id, time
 
 **RLS in one sentence:** membership in `incident_members` gates reads on everything in that incident; writes are allowed only on rows you own (`owner_user_id = auth.uid()`); `stam` role reads the whole incident. SQL views (`incident_checkin_latest`, `incident_paperwork_status`) power the STAM dashboard.
 
-**Joining a fire:** the incident creator (usually the STAM or first TFL) shares a 6-character join code or QR; entering it adds you as a `tfl` member. No admin bottleneck.
+**Joining a fire — typeahead first (Mike's design):** when you type a fire number during setup, the app live-searches open incidents (`incident_fires`, prefix match, RPC rate-limited). Type "V123" and **"V123456 — Casper Creek · Grouse Complex · 3 TFLs"** appears; tap it and you're joining the existing incident rather than creating a look-alike duplicate. Only if nothing matches do you create a new incident. This makes the *right* thing the *easy* thing.
+
+Join mechanics: incidents default to `join_policy = open` — anyone with an account who knows the fire number joins instantly (fire numbers are common knowledge on a deployment; accounts are the real gate). The creator can flip to `code` mode, which additionally requires the 6-character join code / QR — for incidents that want a tighter list. Typeahead deliberately reveals only incident name/number and TFL count, never crew data, so discovery leaks nothing sensitive.
 
 ---
 
@@ -144,13 +155,14 @@ All API calls move server-side (edge functions) so no user ever handles a key.
 
 - **Sync bugs eating field data** → outbox is append-only and never deletes local state until the server acks; local export (v1 behaviour) stays as the escape hatch.
 - **RLS mistakes leaking another incident's data** → RLS tested with automated policy tests before Phase 2 ships; deny-by-default like the v1 tables.
-- **Personal data in the cloud** (crew names + phones) → Canadian region, RLS, no anon access, and the on-device contact directory stays on-device. Disclaimer stays: personal tool, not an official BCWS system.
+- **Personal data in the cloud** → largely designed out: phone numbers (crew members + SPS/SRG directory) never sync — device-only overlay. Cloud holds names, callsigns and operational timestamps, in a Canadian region behind RLS with no anon access. Trade-off accepted: a STAM can't tap-to-call a crew member from the incident view (they call the TFL, which matches radio discipline anyway). Disclaimer stays: personal tool, not an official BCWS system.
 - **iOS storage eviction** → largely *solved* by v2 (cloud is the backup); IndexedDB further reduces risk for guests.
 - **Clock skew on field phones** → server timestamps assigned at flush; device times kept only as display hints.
 
 ## Open questions for Mike
 
-1. **URL:** keep `whistlerbrew.com/sps-deploy/` or move to `sps.whistlerbrew.com`?
-2. **Data comfort:** OK with crew member names + phone numbers syncing to the (Canadian-region, locked-down) database — or should contact details stay device-only with only operational data synced?
-3. **Incident creation:** anyone with an account can create an incident and share the join code (recommended), or restricted?
-4. **Budget:** start on Supabase free tier and upgrade only if needed (recommended), or go straight to Pro for the season?
+1. **URL:** keep `whistlerbrew.com/sps-deploy/` or move to `sps.whistlerbrew.com`? (No rush — decide by Phase 0.)
+
+~~2. Data comfort~~ — **settled:** contact details device-only.
+~~3. Incident creation~~ — **settled by the typeahead design:** anyone creates; typeahead + open join prevents duplicates.
+~~4. Budget~~ — **settled:** free tier.
