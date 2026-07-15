@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T04:01:09.638Z",
+  "updated_at": "2026-07-15T10:01:08.944Z",
   "fires": [
     {
       "country": "Spain",
@@ -164,10 +164,10 @@
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated 1 Canada article: 'Out-of-control wildfire forces evacuation in B.C.'s Fraser Canyon' (2026-07-05) merged into 'Some structures lost at resort due to Fraser Canyon fires' (2026-07-08, more recent with image)",
-      "Updated Spain fire summary with BBC articles (3 deduplicated world articles consolidated): increased death toll to 13 total with 7 British nationals confirmed",
-      "Preserved all Active fires from existing_fires; no fires contained >60 days ago to drop",
-      "All world articles were about Spain Almería fire - consolidated into single fire entry with updated summary reflecting latest reporting"
+      "Deduped: Removed 1 duplicate Fraser Canyon article published 2026-07-05 (subsumed by more recent 2026-07-08 update)",
+      "All world articles merged into existing Spain Almería fire entry with updated image from most recent BBC article",
+      "All existing_fires preserved as Active status",
+      "Canada: Removed 1 completed evacuation story; kept 3 active/recent wildfire news items"
     ]
   }
 }
