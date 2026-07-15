@@ -1,30 +1,28 @@
 {
-  "updated_at": "2026-07-14T22:00:34.156Z",
+  "updated_at": "2026-07-15T04:00:33.147Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
-        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
-        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
-        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "kamloops": [
-      {
-        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
-        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
-        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
-        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Canada wildfire smoke blankets US skies across the Midwest and Northeast, triggering health alerts",
+        "link": "https://wildfiretoday.com/canada-wildfire-smoke-blankets-us-skies-across-the-midwest-and-northeast-triggering-health-alerts/",
+        "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
+        "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
+        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
+        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
+        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
+      }
+    ]
   }
 }
