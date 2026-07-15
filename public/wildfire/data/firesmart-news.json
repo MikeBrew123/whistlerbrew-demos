@@ -1,12 +1,30 @@
 {
-  "updated_at": "2026-07-15T04:00:33.147Z",
+  "updated_at": "2026-07-15T10:00:33.345Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
+        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
+        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
+        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
+        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
+        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
+        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "all": [
       {
         "title": "Canada wildfire smoke blankets US skies across the Midwest and Northeast, triggering health alerts",
@@ -16,12 +34,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Southern B.C. to face highest wildfire potential over the next 48 hours",
-        "link": "https://globalnews.ca/news/11965278/bc-current-wildfire-drought-conditions-july-14/",
-        "description": "The Ainslie Creek and Brunswick Creek wildfires along Highway 1 have collectively grown to nearly 20,000 hectares and are still considered out of control.",
-        "pubDate": "Tue, 14 Jul 2026 17:52:44 +0000",
+        "title": "B.C. pilot killed in crash while battling Colorado wildfire",
+        "link": "https://globalnews.ca/news/11965515/pilot-bc-killed-battling-colorado-wildfire/",
+        "description": "'Today, we mourn the loss of Nicholas Dale, who gave his life while supporting response efforts on the Gold Mountain Fire,' Colorado Congressman Jeff Hurd posted on X.",
+        "pubDate": "Tue, 14 Jul 2026 19:55:36 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/70e4f73c7269efd3003a0eca050f610debe556094fc90f39e07d106d4992c9f0_0f2ed0.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/colorado-firefighter.jpg?quality=65&#038;strip=all"
       }
     ]
   }
