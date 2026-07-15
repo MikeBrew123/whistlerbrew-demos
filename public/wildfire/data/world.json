@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-14T22:01:11.402Z",
+  "updated_at": "2026-07-15T04:01:09.638Z",
   "fires": [
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
       "status": "Active",
-      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 13 dead including five believed to be British. Hundreds of firefighters battling the deadly wildfire. British couple rescued from ravine. Landscape completely charred with homes razed to the ground.",
+      "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 13 dead including seven British nationals. Hundreds of firefighters battling the deadly wildfire. British couple rescued from ravine. Landscape completely charred with homes razed to the ground.",
       "link": "https://www.bbc.co.uk/news/articles/cp9ld3p324jo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/814f/live/dbfc97c0-7ee9-11f1-926f-c90d1bcfbc84.jpg"
     },
@@ -154,21 +154,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 5,
-      "world": 2
+      "canada": 4,
+      "world": 3
     },
     "items_out": {
-      "canada": 4,
+      "canada": 3,
       "world_fires": 21
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated 1 Canada item: Fraser Canyon fire articles merged (2026-07-08 used, earlier 2026-07-05 removed)",
-      "Spain articles merged into existing Almería fire with updated image from BBC 2026-07-13",
-      "Retained all 20 existing world fires (all status Active, none >60 days old)",
-      "Toronto firefighter article rerouted to Canada news (not a wildfire but fire service related)",
-      "Manitoba evacuation return article retained (recent resolution article adds value)"
+      "Deduplicated 1 Canada article: 'Out-of-control wildfire forces evacuation in B.C.'s Fraser Canyon' (2026-07-05) merged into 'Some structures lost at resort due to Fraser Canyon fires' (2026-07-08, more recent with image)",
+      "Updated Spain fire summary with BBC articles (3 deduplicated world articles consolidated): increased death toll to 13 total with 7 British nationals confirmed",
+      "Preserved all Active fires from existing_fires; no fires contained >60 days ago to drop",
+      "All world articles were about Spain Almería fire - consolidated into single fire entry with updated summary reflecting latest reporting"
     ]
   }
 }
