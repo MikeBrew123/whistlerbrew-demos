@@ -51,6 +51,40 @@ export default function Home() {
         </button>
       </main>
 
+      <section className="mt-16 max-w-xl w-full text-left">
+        <h2 className="text-[#808080] text-xs font-semibold uppercase tracking-wider mb-4 text-center">
+          Also from Brew
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <a
+            href="https://ketodial.com"
+            target="_blank"
+            rel="noopener"
+            className="block p-5 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#00a8ff] transition-colors"
+          >
+            <p className="text-white font-semibold mb-1">KetoDial</p>
+            <p className="text-[#808080] text-xs mb-2">Cofounder</p>
+            <p className="text-[#b0b0b0] text-sm leading-relaxed">
+              Dial in your keto macros with a fast, no-nonsense calculator and
+              tracking tools built for people who want results, not fluff.
+            </p>
+          </a>
+          <a
+            href="https://carnivoreweekly.com"
+            target="_blank"
+            rel="noopener"
+            className="block p-5 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#00a8ff] transition-colors"
+          >
+            <p className="text-white font-semibold mb-1">Carnivore Weekly</p>
+            <p className="text-[#808080] text-xs mb-2">Cofounder</p>
+            <p className="text-[#b0b0b0] text-sm leading-relaxed">
+              Evidence-based news, research, and practical guides on the
+              carnivore diet, delivered weekly with no influencer hype.
+            </p>
+          </a>
+        </div>
+      </section>
+
       <footer className="mt-auto pt-12 text-[#b0b0b0] text-sm">
         <p>WhistlerBrew.com &copy; 2026</p>
       </footer>
