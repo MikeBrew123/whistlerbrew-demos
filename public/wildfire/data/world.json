@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T10:01:08.944Z",
+  "updated_at": "2026-07-15T22:01:14.359Z",
   "fires": [
     {
       "country": "Spain",
@@ -154,20 +154,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 4,
-      "world": 3
+      "canada": 7,
+      "world": 2
     },
     "items_out": {
-      "canada": 3,
+      "canada": 7,
       "world_fires": 21
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduped: Removed 1 duplicate Fraser Canyon article published 2026-07-05 (subsumed by more recent 2026-07-08 update)",
-      "All world articles merged into existing Spain Almería fire entry with updated image from most recent BBC article",
-      "All existing_fires preserved as Active status",
-      "Canada: Removed 1 completed evacuation story; kept 3 active/recent wildfire news items"
+      "Deduplicated 1 duplicate: 'Open fire and campfire bans in B.C.' appeared twice with identical URL, kept Global News version with image",
+      "Merged 2 Spain wildfire articles into single Almería Wildfire entry",
+      "All 21 existing_fires retained as Active status",
+      "All Canadian articles preserved with images where present"
     ]
   }
 }
