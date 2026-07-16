@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-16T10:00:33.025Z",
+  "updated_at": "2026-07-16T16:00:33.689Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
-    "prince-george": [
+    "kamloops": [
       {
-        "title": "Canfor closing Prince George pulp mill, hundreds of jobs lost",
-        "link": "https://globalnews.ca/news/11967094/canfor-closing-prince-george-pulp-mill-hundreds-jobs-lost/",
-        "description": "In a statement, Canfor said the pulp and paper industry continues to face significant challenges, as more production capacity worldwide has put downward pressure on prices.",
-        "pubDate": "Wed, 15 Jul 2026 20:10:37 +0000",
+        "title": "B.C. officials brace for increased wildfire activity from dry lightning",
+        "link": "https://globalnews.ca/news/11968129/bc-dry-lightning-wildfires/",
+        "description": "Officials in British Columbia have their eyes on the skies as dry lightning strikes are listed as the probable cause of several new wildfires across the southern Interior.",
+        "pubDate": "Thu, 16 Jul 2026 11:46:32 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/05/691b077854a46457d485129c1e325689add6a634923dbde8b318946cfa2a055a.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/BC-wildfire.jpg?quality=65&#038;strip=all"
       }
     ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
