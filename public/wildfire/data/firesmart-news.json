@@ -1,9 +1,18 @@
 {
-  "updated_at": "2026-07-15T22:00:33.013Z",
+  "updated_at": "2026-07-16T04:00:33.572Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Canfor closing Prince George pulp mill, hundreds of jobs lost",
+        "link": "https://globalnews.ca/news/11967094/canfor-closing-prince-george-pulp-mill-hundreds-jobs-lost/",
+        "description": "In a statement, Canfor said the pulp and paper industry continues to face significant challenges, as more production capacity worldwide has put downward pressure on prices.",
+        "pubDate": "Wed, 15 Jul 2026 20:10:37 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/05/691b077854a46457d485129c1e325689add6a634923dbde8b318946cfa2a055a.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
@@ -14,22 +23,6 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Open fire and campfire bans coming into effect in B.C. amid dry lightning threat",
-        "link": "https://globalnews.ca/news/11967059/wildfires-bc-3/",
-        "description": "Several open fire bans, including campfire prohibitions, are coming into effect over the next two days in parts of British Columbia as crews prepare for the threat of new blazes.",
-        "pubDate": "Wed, 15 Jul 2026 18:07:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/94c694f321ac8830cf2db873dc9363e7f9752063a19fd2da4023d70be209bca7.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "1 woman&#8217;s death, another&#8217;s serious injury prompts e-scooter warning from Vancouver police",
-        "link": "https://globalnews.ca/news/11966044/death-serious-injury-e-scooter-warning-vancouver-police/",
-        "description": "This warning from the Vancouver Police Department comes after a woman died and another woman was seriously injured in separate incidents over the weekend.",
-        "pubDate": "Tue, 14 Jul 2026 23:22:19 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2023/09/escooters.jpg?quality=65&#038;strip=all"
       }
     ]
   }
