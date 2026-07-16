@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T22:01:14.359Z",
+  "updated_at": "2026-07-16T22:01:16.458Z",
   "fires": [
     {
       "country": "Spain",
@@ -153,21 +153,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 7,
-      "world": 2
-    },
-    "items_out": {
-      "canada": 7,
-      "world_fires": 21
-    },
-    "deduped": 1,
-    "rerouted": 0,
-    "notes": [
-      "Deduplicated 1 duplicate: 'Open fire and campfire bans in B.C.' appeared twice with identical URL, kept Global News version with image",
-      "Merged 2 Spain wildfire articles into single Almería Wildfire entry",
-      "All 21 existing_fires retained as Active status",
-      "All Canadian articles preserved with images where present"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"'Sovereignty comes with responsibility:' U.S. lawmakers to Canada on wildfires\",\n      \"url\": \"https://globalnews.ca/news/11968608/wildfires-united-s"
   }
 }
