@@ -1,17 +1,33 @@
 {
-  "updated_at": "2026-07-16T16:00:33.689Z",
+  "updated_at": "2026-07-16T22:00:34.028Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [
+    "coastal": [
       {
-        "title": "B.C. officials brace for increased wildfire activity from dry lightning",
-        "link": "https://globalnews.ca/news/11968129/bc-dry-lightning-wildfires/",
-        "description": "Officials in British Columbia have their eyes on the skies as dry lightning strikes are listed as the probable cause of several new wildfires across the southern Interior.",
-        "pubDate": "Thu, 16 Jul 2026 11:46:32 +0000",
+        "title": "Vancouver Whitecaps game in Chicago rescheduled due to wildfire smoke",
+        "link": "https://globalnews.ca/news/11969042/vancouver-whitecaps-game-chicago-rescheduled-wildfire-smoke/",
+        "description": "'The decision was made with the health and safety of fans, players, staff and all event personnel as the top priority,' a statement from Chicago Fire read.",
+        "pubDate": "Thu, 16 Jul 2026 20:55:37 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/BC-wildfire.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/3c4daf0ff0b5222c695c9e9114706c32d8d179ca12dc93bf027cf554716eb58c.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "7 structures damaged in past 24 hours due to massive wildfire near Boston Bar",
+        "link": "https://globalnews.ca/news/11968564/wildfires-new-evacuation-order-boston-bar-area/",
+        "description": "The Brunswick Creek and Ainslie Creek wildfires are both thousands of hectares in size and have previously triggered other evacuation orders in the area.",
+        "pubDate": "Thu, 16 Jul 2026 17:17:10 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/e290c3f2f724bd8a753407c5156fe9f43dbd93f8c2683ad1e5ce55442b7e0c2b.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Village of Pemberton on evacuation alert due to out-of-control wildfire",
+        "link": "https://globalnews.ca/news/11968537/village-pemberton-evacuation-alert-out-control-wildfire/",
+        "description": "The Signal Hill fire was reported late on Wednesday afternoon, about five kilometres south of Highway 99, and is currently estimated to be 10 hectares in size.",
+        "pubDate": "Thu, 16 Jul 2026 17:17:07 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/pemberton-fire.png"
       }
     ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -23,6 +39,22 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Where cyclosporiasis cases stand in Canada as U.S. parasite outbreak rages",
+        "link": "https://globalnews.ca/news/11968202/canada-cyclosporiasis-cases-us-outbreak/",
+        "description": "Cyclosporiasis is an illness of the intestines caused by a parasite called cyclospora, which is only spread through eating food or drinking water that contains the parasite.",
+        "pubDate": "Thu, 16 Jul 2026 17:07:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5ca0c3225747b95ffefe31b9abfa8f575faefef8f564302d84f7dadb0fd70f70_ea8d0b.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C. looking to seize millions in properties of alleged criminals",
+        "link": "https://globalnews.ca/news/11967708/bc-seize-millions-properties-alleged-criminals/",
+        "description": "B.C.'s director of civil forfeiture is going after five properties connected to an international crackdown on crime groups linked to India.",
+        "pubDate": "Thu, 16 Jul 2026 00:30:56 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/SET-GFX-SURREY-PROPERTIES-FORFEITURE.jpg?quality=65&#038;strip=all"
       }
     ]
   }
