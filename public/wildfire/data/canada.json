@@ -82,28 +82,50 @@
   ],
   "news": [
     {
-      "title": "CN Rail crew evacuated as video shows Ontario wildfire surrounding train",
-      "url": "https://globalnews.ca/news/11966535/northern-ontario-wildfires-cn-rail/",
-      "source": "Global News",
-      "published": "2026-07-15",
-      "description": "The train was stopped in Armstrong, Ont., which is north of Thunder Bay. A CN Rail spokesperson told Global News all employees in the area were evacuated overnight Monday.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Screenshot-2026-07-15-084607.png"
+      "title": "What to know about the Canadian and US wildfires and their impact",
+      "url": "https://www.bbc.co.uk/news/articles/c5ywdl9ne3yo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC",
+      "published": "2026-07-16",
+      "description": "Wildfires in Ontario have blanketed US and Canadian cities with dangerous smoke.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4c04/live/5b406ea0-811d-11f1-96bf-6155b9f8d82a.jpg"
     },
     {
-      "title": "Toronto's air quality ranked world's worst as wildfire smoke settles in",
-      "url": "https://globalnews.ca/news/11966507/toronto-air-quality-july-15/",
-      "source": "Global News",
+      "title": "Orange haze from Canada wildfires seen in Ontario and northern US",
+      "url": "https://www.bbc.co.uk/news/videos/c62q3kw126xo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC",
+      "published": "2026-07-16",
+      "description": "There are currently 838 wildfires actively burning across the country, according to the Canadian Interagency Forest Fire Centre.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/798e/live/712f9f80-80ad-11f1-926f-c90d1bcfbc84.jpg"
+    },
+    {
+      "title": "Dramatic video shows wildfire surround freight train in Canada",
+      "url": "https://www.bbc.co.uk/news/videos/cwy0yyzdqxvo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC",
       "published": "2026-07-15",
-      "description": "Toronto's skies turned orange Wednesday due to smoke from forest fires in northwestern Ontario that plummeted the city's air quality to the worst in the world.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Toronto-wildfire-smoke-3.jpg?quality=65&#038;strip=all"
+      "description": "CN Rail told the BBC that operations were temporarily suspended in the affected area in the province of Ontario.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c545/live/e92a8db0-805d-11f1-b976-0b9c15b0ccfc.jpg"
+    },
+    {
+      "title": "Open fire and campfire bans coming into effect in B.C. amid dry lightning threat",
+      "url": "https://globalnews.ca/news/11967059/wildfires-bc-3/",
+      "source": "Global News Wildfire",
+      "published": "2026-07-15",
+      "description": "Several open fire bans, including campfire prohibitions, are coming into effect over the next two days in parts of British Columbia as crews prepare for the threat of new blazes.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/94c694f321ac8830cf2db873dc9363e7f9752063a19fd2da4023d70be209bca7.jpg?quality=65&strip=all"
+    },
+    {
+      "title": "Toronto's skies turn orange as wildfire smoke settles in",
+      "url": "https://globalnews.ca/news/11966507/toronto-air-quality-july-15/",
+      "source": "Global News Wildfire",
+      "published": "2026-07-15",
+      "description": "Toronto's skies turned orange Wednesday due to smoke from forest fires in northwestern Ontario that plummeted the city's air quality to among the worst in the world.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Toronto-wildfire-smoke-3.jpg?quality=65&strip=all"
     },
     {
       "title": "Wildfire season is not as perilous as last year: officials",
       "url": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update/",
       "source": "Global News Wildfire",
-      "published": "2026-07-09",
-      "description": "Officials previously warned on May 28 that \"significant wildfire activity\" was expected in B.C. this month in the government's wildfire season preparedness and outlook for 2026.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/wildfire-e1783597558602.jpg?quality=65&#038;strip=all"
+      "published": "2026-07-09"
     },
     {
       "title": "Some structures lost at resort due to Fraser Canyon fires",
@@ -116,13 +138,7 @@
       "url": "https://globalnews.ca/news/11953588/wildfire-evacuation-fraser-valley-bc/",
       "source": "Global News Wildfire",
       "published": "2026-07-05"
-    },
-    {
-      "title": "Manitoba town residents set to return home after wildfire forced evacuation",
-      "url": "https://globalnews.ca/news/11950289/manitoba-lynn-lake-return-home-after-wildfire-evacuation/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-02"
     }
   ],
-  "last_news_update": "2026-07-16T16:01:19.167Z"
+  "last_news_update": "2026-07-17T10:01:16.182Z"
 }
