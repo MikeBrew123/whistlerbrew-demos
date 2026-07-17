@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T04:01:14.081Z",
+  "updated_at": "2026-07-17T16:01:18.180Z",
   "fires": [
     {
       "country": "Spain",
@@ -153,21 +153,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 7,
-      "world": 1
-    },
-    "items_out": {
-      "canada": 7,
-      "world_fires": 22
-    },
-    "deduped": 2,
-    "rerouted": 0,
-    "notes": [
-      "Deduplicated BBC Ontario wildfire coverage - kept 2026-07-16 'What to know' article with image as primary, removed 2026-07-16 video duplicate",
-      "Merged new France volunteer firefighter article into existing Pyrénées-Orientales Wildfire entry",
-      "Preserved all 20 existing world fires as Active status",
-      "All images preserved in output where present"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"As Ontario wildfires rage, Canadian Forces on 'standby' to help: minister\",\n      \"url\": \"https://globalnews.ca/news/11969785/canadian-armed-forces-s"
   }
 }
