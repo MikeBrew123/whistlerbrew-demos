@@ -82,32 +82,24 @@
   ],
   "news": [
     {
-      "title": "Hoekstra says Trump serious about tariff threat over wildfire smoke",
-      "url": "https://globalnews.ca/news/11970645/hoekstra-trump-tariffs-wildfire-smoke/",
+      "title": "N.S. crews continue battling out-of-control wildfire northeast of Halifax",
+      "url": "https://globalnews.ca/news/11971121/mooseland-wildfire-halifax/",
       "source": "Global News",
       "published": "2026-07-18",
-      "description": "The U.S. ambassador says frustration is growing south of the border over Canadian wildfire smoke.",
-      "image": "https://globalnews.ca/wp-content/uploads/2025/03/CP174297980.jpg?quality=65&#038;strip=all"
+      "description": "Two fixed-wing water bombers from Newfoundland and Labrador are responding alongside two of Nova Scotia's helicopters and four of the province's fixed-wing water bombers.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/402f773fd5b2e2b8db10f2ae0bb5b281c85c43148dcc6dbac06406615bbe54e3.jpg?quality=65&#038;strip=all"
     },
     {
-      "title": "Trump says he'll be 'holding Canada responsible' for wildfire smoke",
-      "url": "https://globalnews.ca/news/11970405/donald-trump-canada-wildfires/",
-      "source": "Global News",
-      "published": "2026-07-17",
-      "description": "U.S. President Donald Trump says he plans to hold Canada accountable for wildfire smoke blowing across the border, vowing the cost will be added to the American tariffs.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/trump-wildfires-e1784318400621.jpg?quality=65&#038;strip=all"
-    },
-    {
-      "title": "How Canada helped in past U.S. wildfires as Ford says some are 'chirping'",
-      "url": "https://globalnews.ca/news/11969816/canada-us-wildfire-support/",
-      "source": "Global News",
-      "published": "2026-07-17",
-      "description": "As wildfires continue to burn across Canada, American politicians have been vocal about their displeasure surrounding smoke that has made its way to American skies.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/ontario-wildfires-e1784307373510.jpg?quality=65&#038;strip=all"
+      "title": "Trump threatens new Canada tariffs over fires sending 'filthy' air into US cities",
+      "url": "https://www.bbc.co.uk/news/articles/cwyq93j34lgo?at_medium=RSS&amp;at_campaign=rss",
+      "source": "BBC",
+      "published": "2026-07-18",
+      "description": "Canadian leader Mark Carney says both the US and Canada have an equal responsibility to fight climate change, which experts say are worsening wildfire conditions.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0b00/live/0ecf40f0-81ea-11f1-b7bc-5dd9ae7a9918.jpg"
     },
     {
       "title": "Orange haze from Canada wildfires seen in Ontario and northern US",
-      "url": "https://www.bbc.co.uk/news/videos/c62q3kw126xo?at_medium=RSS&at_campaign=rss",
+      "url": "https://www.bbc.co.uk/news/videos/c62q3kw126xo?at_medium=RSS&amp;at_campaign=rss",
       "source": "BBC",
       "published": "2026-07-16",
       "description": "There are currently 838 wildfires actively burning across the country, according to the Canadian Interagency Forest Fire Centre.",
@@ -148,5 +140,5 @@
       "published": "2026-07-05"
     }
   ],
-  "last_news_update": "2026-07-18T10:01:16.187Z"
+  "last_news_update": "2026-07-18T16:01:16.538Z"
 }
