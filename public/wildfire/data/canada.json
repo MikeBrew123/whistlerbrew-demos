@@ -82,12 +82,28 @@
   ],
   "news": [
     {
-      "title": "What to know about the Canadian and US wildfires and their impact",
-      "url": "https://www.bbc.co.uk/news/articles/c5ywdl9ne3yo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC",
-      "published": "2026-07-16",
-      "description": "Wildfires in Ontario have blanketed US and Canadian cities with dangerous smoke.",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4c04/live/5b406ea0-811d-11f1-96bf-6155b9f8d82a.jpg"
+      "title": "Hoekstra says Trump serious about tariff threat over wildfire smoke",
+      "url": "https://globalnews.ca/news/11970645/hoekstra-trump-tariffs-wildfire-smoke/",
+      "source": "Global News",
+      "published": "2026-07-18",
+      "description": "The U.S. ambassador says frustration is growing south of the border over Canadian wildfire smoke.",
+      "image": "https://globalnews.ca/wp-content/uploads/2025/03/CP174297980.jpg?quality=65&#038;strip=all"
+    },
+    {
+      "title": "Trump says he'll be 'holding Canada responsible' for wildfire smoke",
+      "url": "https://globalnews.ca/news/11970405/donald-trump-canada-wildfires/",
+      "source": "Global News",
+      "published": "2026-07-17",
+      "description": "U.S. President Donald Trump says he plans to hold Canada accountable for wildfire smoke blowing across the border, vowing the cost will be added to the American tariffs.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/trump-wildfires-e1784318400621.jpg?quality=65&#038;strip=all"
+    },
+    {
+      "title": "How Canada helped in past U.S. wildfires as Ford says some are 'chirping'",
+      "url": "https://globalnews.ca/news/11969816/canada-us-wildfire-support/",
+      "source": "Global News",
+      "published": "2026-07-17",
+      "description": "As wildfires continue to burn across Canada, American politicians have been vocal about their displeasure surrounding smoke that has made its way to American skies.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/ontario-wildfires-e1784307373510.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Orange haze from Canada wildfires seen in Ontario and northern US",
@@ -98,20 +114,12 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/798e/live/712f9f80-80ad-11f1-926f-c90d1bcfbc84.jpg"
     },
     {
-      "title": "Dramatic video shows wildfire surround freight train in Canada",
-      "url": "https://www.bbc.co.uk/news/videos/cwy0yyzdqxvo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC",
-      "published": "2026-07-15",
-      "description": "CN Rail told the BBC that operations were temporarily suspended in the affected area in the province of Ontario.",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c545/live/e92a8db0-805d-11f1-b976-0b9c15b0ccfc.jpg"
-    },
-    {
       "title": "Open fire and campfire bans coming into effect in B.C. amid dry lightning threat",
       "url": "https://globalnews.ca/news/11967059/wildfires-bc-3/",
       "source": "Global News Wildfire",
       "published": "2026-07-15",
       "description": "Several open fire bans, including campfire prohibitions, are coming into effect over the next two days in parts of British Columbia as crews prepare for the threat of new blazes.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/94c694f321ac8830cf2db873dc9363e7f9752063a19fd2da4023d70be209bca7.jpg?quality=65&strip=all"
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/94c694f321ac8830cf2db873dc9363e7f9752063a19fd2da4023d70be209bca7.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Toronto's skies turn orange as wildfire smoke settles in",
@@ -119,7 +127,7 @@
       "source": "Global News Wildfire",
       "published": "2026-07-15",
       "description": "Toronto's skies turned orange Wednesday due to smoke from forest fires in northwestern Ontario that plummeted the city's air quality to among the worst in the world.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Toronto-wildfire-smoke-3.jpg?quality=65&strip=all"
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Toronto-wildfire-smoke-3.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Wildfire season is not as perilous as last year: officials",
@@ -140,5 +148,5 @@
       "published": "2026-07-05"
     }
   ],
-  "last_news_update": "2026-07-18T04:01:17.088Z"
+  "last_news_update": "2026-07-18T10:01:16.187Z"
 }
