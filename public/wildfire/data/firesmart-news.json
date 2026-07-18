@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-18T16:00:34.535Z",
+  "updated_at": "2026-07-18T22:00:33.433Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -30,6 +30,14 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "B.C. wildfire tally surges past 100 as lightning transforms fire season in a flash",
+        "link": "https://globalnews.ca/news/11971259/bc-wildfires-lightning-3/",
+        "description": "The wildfire season in British Columbia has been transformed in a flash, with lightning strikes sending the tally of blazes burning in the province past 100.",
+        "pubDate": "Sat, 18 Jul 2026 20:06:03 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/62f4a6ebd72c31a9a1747a9f65b8f22ea754d026e28a7428d337c667eff5a7b1.jpg?quality=65&#038;strip=all"
       }
     ]
   }
