@@ -1,32 +1,24 @@
 {
-  "updated_at": "2026-07-17T22:00:33.049Z",
+  "updated_at": "2026-07-18T04:00:33.869Z",
   "zones": {
-    "coastal": [
+    "coastal": [],
+    "kamloops": [
       {
-        "title": "&#8216;Pretty scary&#8217;: Pemberton residents ready to leave as wildfire fight continues",
-        "link": "https://globalnews.ca/news/11970282/pemberton-residents-ready-wildfire-fight-continues/",
-        "description": "The Signal Hill wildfire, near Pemberton, is now an estimated 97 hectares in size and burning close to the community of about 3,600 people.",
-        "pubDate": "Fri, 17 Jul 2026 19:03:44 +0000",
+        "title": "Evacuation order issued for area near Big Bar Lake due to aggressive wildfire",
+        "link": "https://globalnews.ca/news/11970821/evacuation-order-big-bar-lake-aggressive-wildfire/",
+        "description": "The Thompson Nicola Regional District says the Fiftynine Creek wildfire near Big Bar Lake is rapidly escalating and the current evacuation alert is being upgraded to an order.",
+        "pubDate": "Sat, 18 Jul 2026 00:28:59 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/PEMBERTON-MOVING-HORSES-1.png"
-      },
-      {
-        "title": "Time-lapse video shows growth of wildfire near Pemberton",
-        "link": "https://globalnews.ca/news/11969267/time-lapse-video-growth-wildfire-pemberton/",
-        "description": "The fire has placed the Village of Pemberton on evacuation alert and is 38 hectares in size as of Thursday afternoon. An evacuation order is also in place for One Mile Lake Park.",
-        "pubDate": "Thu, 16 Jul 2026 23:17:14 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/pemberton-fire-time-lapse.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/big-bar-lake-fire.png"
       }
     ],
-    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
       {
-        "title": "Canada wildfire totals explode to historic highs, EPA warns to extinguish fires &#8216;as fast as possible&#8217;",
+        "title": "Canada wildfire totals explode to historic highs, US officials warn to extinguish fires &#8216;as fast as possible&#8217;",
         "link": "https://wildfiretoday.com/canada-wildfire-totals-explode-to-historic-highs-epa-warns-to-extinguish-fires-as-fast-as-possible/",
         "description": "What began as a far-below-average wildfire season for Canada has since exploded past historical norms, causing national crews to mobilize and United States officials to issue warnings. Area burned in Canada was less than half of the 10-year average on July 7, but just 10 days and over 300 wildfires later, area burned now sits [&#8230;]",
         "pubDate": "Fri, 17 Jul 2026 19:55:48 +0000",
@@ -38,14 +30,6 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "More than 50 wildfires burning in B.C. as multiple evacuation orders, alerts hold",
-        "link": "https://globalnews.ca/news/11969719/crews-work-through-night-on-b-c-wildfire-as-evacuation-orders-hold/",
-        "description": "Emily Fardad with the BC Wildfire Service has said crews have made progress on the Signal Hill blaze and that winds are not blowing flames toward the town of 3,400 residents.",
-        "pubDate": "Fri, 17 Jul 2026 11:58:25 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/3a90b4fa17d18dd089a4c8737ec3415c6fdde412a7b80f6b7603fda04ba3bd9e.jpg?quality=65&#038;strip=all"
       }
     ]
   }
