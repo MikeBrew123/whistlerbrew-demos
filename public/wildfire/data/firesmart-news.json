@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T16:00:33.435Z",
+  "updated_at": "2026-07-19T22:00:33.051Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -17,6 +17,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Canada wildfire smoke will cover more US states soon, forecasts show",
+        "link": "https://wildfiretoday.com/canada-wildfire-smoke-will-cover-more-us-states-soon-forecasts-show/",
+        "description": "Communities within the United States&#8217; Great Lakes region will experience their highest air pollution levels throughout Sunday due to wildfire smoke from Canada, but National Weather Service forecasts show significant relief isn&#8217;t coming anytime soon. Smoke has lowered air quality across the Midwest and Northeast to unhealthy and even hazardous levels over the past week as numerous [&#8",
+        "pubDate": "Sun, 19 Jul 2026 20:40:45 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Canada wildfire totals explode to historic highs, US officials warn to extinguish fires &#8216;as fast as possible&#8217;",
         "link": "https://wildfiretoday.com/canada-wildfire-totals-explode-to-historic-highs-epa-warns-to-extinguish-fires-as-fast-as-possible/",
