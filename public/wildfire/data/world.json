@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T16:01:20.884Z",
+  "updated_at": "2026-07-19T22:01:15.726Z",
   "fires": [
     {
       "country": "Spain",
@@ -153,7 +153,21 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Wildfire northeast of Halifax being held, N.S. officials say\",\n      \"url\": \"https://globalnews.ca/news/11971652/mooseland-wildfire-halifax-being-hel"
+    "items_in": {
+      "canada": 7,
+      "world": 21
+    },
+    "items_out": {
+      "canada": 7,
+      "world_fires": 21
+    },
+    "deduped": 1,
+    "rerouted": 0,
+    "notes": [
+      "Deduplicated Mooseland Road fire (Global News duplicate removed)",
+      "All existing_fires preserved as Active status",
+      "7 Canadian news articles processed",
+      "21 world fire entries merged and maintained from existing_fires"
+    ]
   }
 }
