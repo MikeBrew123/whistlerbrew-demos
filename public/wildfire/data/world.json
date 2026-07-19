@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T16:01:18.180Z",
+  "updated_at": "2026-07-19T04:01:19.666Z",
   "fires": [
     {
       "country": "Spain",
@@ -154,6 +154,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"As Ontario wildfires rage, Canadian Forces on 'standby' to help: minister\",\n      \"url\": \"https://globalnews.ca/news/11969785/canadian-armed-forces-s"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Doug Ford visits Thunder Bay as northern Ontario fires force evacuations\",\n      \"url\": \"https://globalnews.ca/news/11971117/doug-ford-thunder-bay-wi"
   }
 }
