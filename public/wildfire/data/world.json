@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T04:01:19.666Z",
+  "updated_at": "2026-07-19T16:01:20.884Z",
   "fires": [
     {
       "country": "Spain",
@@ -154,6 +154,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Doug Ford visits Thunder Bay as northern Ontario fires force evacuations\",\n      \"url\": \"https://globalnews.ca/news/11971117/doug-ford-thunder-bay-wi"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Wildfire northeast of Halifax being held, N.S. officials say\",\n      \"url\": \"https://globalnews.ca/news/11971652/mooseland-wildfire-halifax-being-hel"
   }
 }
