@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-07-20T16:00:33.602Z",
+  "updated_at": "2026-07-20T22:00:33.576Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Evacuation order issued for area near Big Bar Lake due to aggressive wildfire",
-        "link": "https://globalnews.ca/news/11970821/evacuation-order-big-bar-lake-aggressive-wildfire/",
-        "description": "The Thompson Nicola Regional District says the Fiftynine Creek wildfire near Big Bar Lake is rapidly escalating and the current evacuation alert is being upgraded to an order.",
-        "pubDate": "Sat, 18 Jul 2026 00:28:59 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/big-bar-lake-fire.png"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "More than 8,000 on evacuation alert as wildfire threatens Kimberley, B.C.",
+        "link": "https://globalnews.ca/news/11972631/evacuation-alert-wildfire-threatens-kimberley-bc/",
+        "description": "The city of about 8,000 people in the East Kootenay region is located east of the Matthew Creek wildfire, which was sparked on Saturday by lightning.",
+        "pubDate": "Mon, 20 Jul 2026 17:49:40 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-1.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "all": [
       {
         "title": "Canada wildfire smoke will cover more US states soon, forecasts show",
