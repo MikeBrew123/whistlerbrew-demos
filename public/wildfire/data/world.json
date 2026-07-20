@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T22:01:15.726Z",
+  "updated_at": "2026-07-20T16:01:16.911Z",
   "fires": [
     {
       "country": "Spain",
@@ -37,7 +37,7 @@
       "country": "United States",
       "name": "Colorado-Utah Border Wildfires",
       "status": "Active",
-      "summary": "Three firefighters died battling huge wildfires on Colorado-Utah border. Multiple blazes raging across Utah and Colorado with both governors declaring states of emergency.",
+      "summary": "Three firefighters died battling huge wildfires on Colorado-Utah border. Multiple blazes raging across Utah and Colorado with both governors declaring states of emergency. Utah firefighter and four family members killed in flash flooding related to wildfire operations.",
       "link": "https://www.bbc.co.uk/news/articles/cp8l7mpmdggo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9dd4/live/542bb510-7304-11f1-8b3a-1977d6dee6ef.jpg"
     },
@@ -155,19 +155,19 @@
   "last_report": {
     "items_in": {
       "canada": 7,
-      "world": 21
+      "world": 1
     },
     "items_out": {
-      "canada": 7,
+      "canada_news": 7,
       "world_fires": 21
     },
-    "deduped": 1,
-    "rerouted": 0,
+    "deduped": 0,
+    "rerouted": 1,
     "notes": [
-      "Deduplicated Mooseland Road fire (Global News duplicate removed)",
+      "BBC Utah flash flooding article rerouted from world to Colorado-Utah Border Wildfires entry (related incident)",
       "All existing_fires preserved as Active status",
-      "7 Canadian news articles processed",
-      "21 world fire entries merged and maintained from existing_fires"
+      "No fires dropped (none contained >60 days)",
+      "All images preserved in output"
     ]
   }
 }
