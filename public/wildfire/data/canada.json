@@ -82,20 +82,12 @@
   ],
   "news": [
     {
-      "title": "Is Canada doing enough to prevent forest fires from getting out of control?",
-      "url": "https://globalnews.ca/news/11970134/canada-us-wildfire-prevention/",
+      "title": "Ontario grounds 2 waterbombers for repairs as wildfires rage through north",
+      "url": "https://globalnews.ca/news/11974118/ontario-waterbombers-repair/",
       "source": "Global News",
-      "published": "2026-07-20",
-      "description": "Canada's ability to prevent and fight wildfires was questioned as smoke from Canadian wildfires drifted into the United States.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/wildfires-BC-Canada-US.jpg-e1784314972656.jpg?quality=65&#038;strip=all"
-    },
-    {
-      "title": "How do wildfires create lightning, pyro tornadoes and thunderstorms?",
-      "url": "https://globalnews.ca/news/11972422/how-do-wildfires-create-lightning-pyro-tornadoes-and-thunderstorms/",
-      "source": "Global News",
-      "published": "2026-07-20",
-      "description": "The Canadian Interagency Forest Fire Centre states that there are 919 active wildfires in Canada, with 3,891 total year-to-date wildfires.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/5b91cc4cf74da3a4e48a6e6b05506797b0fe1dd71dcd0f3f138b91043c6cf511_c81cb5.jpg?quality=65&#038;strip=all"
+      "published": "2026-07-21",
+      "description": "The Ministry of Natural Resources indicated two of its waterbombers were grounded for repairs but said there were no issues with staffing its fleet.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/CP27995428-e1784663092819.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Wildfire northeast of Halifax being held, N.S. officials say",
@@ -134,5 +126,5 @@
       "published": "2026-07-08"
     }
   ],
-  "last_news_update": "2026-07-20T22:01:16.670Z"
+  "last_news_update": "2026-07-21T22:01:18.295Z"
 }
