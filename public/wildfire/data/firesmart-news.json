@@ -1,18 +1,9 @@
 {
-  "updated_at": "2026-07-21T16:00:33.466Z",
+  "updated_at": "2026-07-21T22:00:33.713Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Construction to start on Enbridge Sunrise pipeline expansion near Prince George",
-        "link": "https://globalnews.ca/news/11973553/construction-enbridge-sunrise-pipeline-expansion-prince-george/",
-        "description": "The pipeline expansion project should provide a much-needed boost to the regional economy, and with work underway, completion is expected by the end of 2028.",
-        "pubDate": "Tue, 21 Jul 2026 00:22:39 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/WEB-pipelien-PIC.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [
@@ -46,6 +37,14 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Hundreds of British Columbians watching wildfires closely as they burn close to communities",
+        "link": "https://globalnews.ca/news/11974305/bc-live-update-wildfires-july-21/",
+        "description": "More than 600 properties are on evacuation order in B.C., while 5,700 properties are under evacuation alert as 87 wildfires burn in the province.",
+        "pubDate": "Tue, 21 Jul 2026 17:35:24 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/079bf60fef4e3dbdd2081adedb29ba961bb843862ae4fceb9f92e25e10ab717e.jpg?quality=65&#038;strip=all"
       }
     ]
   }
