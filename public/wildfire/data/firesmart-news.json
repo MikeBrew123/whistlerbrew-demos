@@ -1,19 +1,28 @@
 {
-  "updated_at": "2026-07-20T22:00:33.576Z",
+  "updated_at": "2026-07-21T04:00:33.406Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Construction to start on Enbridge Sunrise pipeline expansion near Prince George",
+        "link": "https://globalnews.ca/news/11973553/construction-enbridge-sunrise-pipeline-expansion-prince-george/",
+        "description": "The pipeline expansion project should provide a much-needed boost to the regional economy, and with work underway, completion is expected by the end of 2028.",
+        "pubDate": "Tue, 21 Jul 2026 00:22:39 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/WEB-pipelien-PIC.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [
       {
-        "title": "More than 8,000 on evacuation alert as wildfire threatens Kimberley, B.C.",
-        "link": "https://globalnews.ca/news/11972631/evacuation-alert-wildfire-threatens-kimberley-bc/",
-        "description": "The city of about 8,000 people in the East Kootenay region is located east of the Matthew Creek wildfire, which was sparked on Saturday by lightning.",
-        "pubDate": "Mon, 20 Jul 2026 17:49:40 +0000",
+        "title": "2026 FIFA World Cup saw largest deployment of Vancouver police officers ever",
+        "link": "https://globalnews.ca/news/11972792/2026-fifa-world-cup-largest-deployment-vancouver-police-officers-ever/",
+        "description": "When it came to FIFA-specific events, police said officers dealt with three Criminal Code arrests at Fan Fest, 36 on Granville and one at another watch party.",
+        "pubDate": "Mon, 20 Jul 2026 18:59:42 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-1.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/VGH-horses.jpg?quality=65&#038;strip=all"
       }
     ],
     "all": [
@@ -39,12 +48,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "B.C. wildfire tally surges past 100 as lightning transforms fire season in a flash",
-        "link": "https://globalnews.ca/news/11971259/bc-wildfires-lightning-3/",
-        "description": "The wildfire season in British Columbia has been transformed in a flash, with lightning strikes sending the tally of blazes burning in the province past 100.",
-        "pubDate": "Sat, 18 Jul 2026 20:06:03 +0000",
+        "title": "Remains of dinosaur skull found in B.C. campground belonged to T. rex &#8216;great-uncle&#8217;",
+        "link": "https://globalnews.ca/news/11972290/remains-of-dinosaur-skull-found-in-b-c-campground-belonged-to-t-rex-great-uncle/",
+        "description": "The remains of a dinosaur skull found in British Columbia campground belonged to a tyrannosaur that was lighter and faster than its more famous relative, the T. rex.",
+        "pubDate": "Mon, 20 Jul 2026 12:01:18 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/62f4a6ebd72c31a9a1747a9f65b8f22ea754d026e28a7428d337c667eff5a7b1.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/14aa20037b5be8e9b9bcfbd81fd694c03b3ad01c59c00e2fc84157f03d4b63f8.jpg?quality=65&#038;strip=all"
       }
     ]
   }
