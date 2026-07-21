@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-20T16:01:16.911Z",
+  "updated_at": "2026-07-21T04:01:12.716Z",
   "fires": [
     {
       "country": "Spain",
@@ -154,20 +154,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 7,
+      "canada": 5,
       "world": 1
     },
     "items_out": {
-      "canada_news": 7,
+      "canada": 5,
       "world_fires": 21
     },
     "deduped": 0,
-    "rerouted": 1,
+    "rerouted": 0,
     "notes": [
-      "BBC Utah flash flooding article rerouted from world to Colorado-Utah Border Wildfires entry (related incident)",
+      "BBC article about Utah firefighter flash flooding (2026-07-20) merged with existing Colorado-Utah Border Wildfires entry as related incident",
       "All existing_fires preserved as Active status",
-      "No fires dropped (none contained >60 days)",
-      "All images preserved in output"
+      "No fires removed — none contained >60 days ago",
+      "All images preserved from source data"
     ]
   }
 }
