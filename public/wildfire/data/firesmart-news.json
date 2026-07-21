@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T10:00:34.171Z",
+  "updated_at": "2026-07-21T16:00:33.466Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -17,12 +17,12 @@
     "northwest": [],
     "southeast": [
       {
-        "title": "2026 FIFA World Cup saw largest deployment of Vancouver police officers ever",
-        "link": "https://globalnews.ca/news/11972792/2026-fifa-world-cup-largest-deployment-vancouver-police-officers-ever/",
-        "description": "When it came to FIFA-specific events, police said officers dealt with three Criminal Code arrests at Fan Fest, 36 on Granville and one at another watch party.",
-        "pubDate": "Mon, 20 Jul 2026 18:59:42 +0000",
+        "title": "Fire crews work on containment lines between out-of-control blaze and Kimberley, B.C.",
+        "link": "https://globalnews.ca/news/11973923/kimberley-bc-wildfires/",
+        "description": "The BC Wildfire Service says it will be using heavy equipment to build the lines and block the fire that's about 10 kilometres west of Kimberley.",
+        "pubDate": "Tue, 21 Jul 2026 12:26:16 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/VGH-horses.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8.jpg?quality=65&#038;strip=all"
       }
     ],
     "all": [
@@ -46,14 +46,6 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Remains of dinosaur skull found in B.C. campground belonged to T. rex &#8216;great-uncle&#8217;",
-        "link": "https://globalnews.ca/news/11972290/remains-of-dinosaur-skull-found-in-b-c-campground-belonged-to-t-rex-great-uncle/",
-        "description": "The remains of a dinosaur skull found in British Columbia campground belonged to a tyrannosaur that was lighter and faster than its more famous relative, the T. rex.",
-        "pubDate": "Mon, 20 Jul 2026 12:01:18 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/14aa20037b5be8e9b9bcfbd81fd694c03b3ad01c59c00e2fc84157f03d4b63f8.jpg?quality=65&#038;strip=all"
       }
     ]
   }
