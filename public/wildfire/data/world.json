@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T16:01:17.127Z",
+  "updated_at": "2026-07-22T10:01:17.065Z",
   "fires": [
     {
       "country": "Spain",
@@ -159,17 +159,16 @@
     },
     "items_out": {
       "canada": 7,
-      "world_fires": 22
+      "world_fires": 21
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All 7 Canadian articles retained with images preserved",
-      "All 22 existing world fires retained (all status Active, none contained >60 days)",
+      "All Canadian articles retained with images preserved",
+      "All existing world fires remain Active status - no contained fires >60 days old identified",
+      "No world articles in input to process",
       "No duplicate stories detected across sources",
-      "No world articles provided for input processing",
-      "Brazil Rio velodrome fire reclassified as structural fire (not wildfire) but retained per existing data",
-      "European preparedness entry retained as Active status"
+      "All fire entries maintain original structure and image fields"
     ]
   }
 }
