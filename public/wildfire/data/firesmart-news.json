@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T04:00:33.595Z",
+  "updated_at": "2026-07-22T10:00:33.377Z",
   "zones": {
     "coastal": [
       {
@@ -45,6 +45,14 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "B.C. premier says &#8216;not a chance in hell&#8217; that U.S. alcohol will be back on shelves",
+        "link": "https://globalnews.ca/news/11974768/bc-premier-not-chance-in-hell-us-alcohol-back-shelves/",
+        "description": "He made the comment in Prince Edward Island as Canada's premiers met and discussed U.S. President Donald Trump's new wave of tariffs on Canadian goods.",
+        "pubDate": "Tue, 21 Jul 2026 21:08:40 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/02/bc-liquor-buy-canadian.png"
       }
     ]
   }
