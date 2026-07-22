@@ -82,22 +82,6 @@
   ],
   "news": [
     {
-      "title": "The number of wildfires in Alberta has dropped but air quality remains poor",
-      "url": "https://globalnews.ca/news/11974991/number-wildfires-alberta-drops-air-quality-remains-poor/",
-      "source": "Global News",
-      "published": "2026-07-22",
-      "description": "Alberta Wildfire says the 2026 fire season has been an improvement on previous years so far. But it hasn't stopped poor air quality in the province.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/06/0022d3455514f58d683663a21b5f1528c4147087334c602695ae97be493a6136.jpg?quality=65&#038;strip=all"
-    },
-    {
-      "title": "First Nations chiefs call for inquiry into Ontario wildfire response",
-      "url": "https://globalnews.ca/news/11975181/first-nations-chiefs-ontario-wildfire-response-ford/",
-      "source": "Global News",
-      "published": "2026-07-22",
-      "description": "The chiefs say some residents were forced to organize their own evacuations and received little warning or assistance as wildfires approached their communities.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/d3ecf208f706f04a237cad0f2421c4cdac0f275fe300a42f0e4f8d80b32d6b35.jpg?quality=65&#038;strip=all"
-    },
-    {
       "title": "Wildfire northeast of Halifax being held, N.S. officials say",
       "url": "https://globalnews.ca/news/11971652/mooseland-wildfire-halifax-being-held/",
       "source": "Global News Wildfire",
@@ -109,30 +93,20 @@
       "title": "Open fire and campfire bans coming into effect in B.C. amid dry lightning threat",
       "url": "https://globalnews.ca/news/11967059/wildfires-bc-3/",
       "source": "Global News Wildfire",
-      "published": "2026-07-15",
-      "description": "Several open fire bans, including campfire prohibitions, are coming into effect over the next two days in parts of British Columbia as crews prepare for the threat of new blazes.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/94c694f321ac8830cf2db873dc9363e7f9752063a19fd2da4023d70be209bca7.jpg?quality=65&#038;strip=all"
+      "published": "2026-07-15"
     },
     {
       "title": "Toronto's skies turn orange as wildfire smoke settles in",
       "url": "https://globalnews.ca/news/11966507/toronto-air-quality-july-15/",
       "source": "Global News Wildfire",
-      "published": "2026-07-15",
-      "description": "Toronto's skies turned orange Wednesday due to smoke from forest fires in northwestern Ontario that plummeted the city's air quality to among the worst in the world.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Toronto-wildfire-smoke-3.jpg?quality=65&#038;strip=all"
+      "published": "2026-07-15"
     },
     {
       "title": "Wildfire season is not as perilous as last year: officials",
       "url": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update/",
       "source": "Global News Wildfire",
       "published": "2026-07-09"
-    },
-    {
-      "title": "Some structures lost at resort due to Fraser Canyon fires",
-      "url": "https://globalnews.ca/news/11957934/wildfires-bc-2/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-08"
     }
   ],
-  "last_news_update": "2026-07-22T16:01:18.417Z"
+  "last_news_update": "2026-07-22T22:01:09.283Z"
 }
