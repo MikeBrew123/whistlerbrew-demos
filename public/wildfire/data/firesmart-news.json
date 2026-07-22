@@ -1,21 +1,29 @@
 {
-  "updated_at": "2026-07-21T22:00:33.713Z",
+  "updated_at": "2026-07-22T04:00:33.595Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "New wildfire near Boston Bar prompts evacuation of entire area",
+        "link": "https://globalnews.ca/news/11975278/boston-bar-evacuation-order-wildfire-highway-1-closed/",
+        "description": "The Fraser Valley Regional District has issued an evacuation order for the area after a new fire sparked on Tuesday afternoon.",
+        "pubDate": "Wed, 22 Jul 2026 02:27:21 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/hells-gate-wildfire.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "For 1st time in Canada, drones are being used in B.C. wildfire response",
+        "link": "https://globalnews.ca/news/11975075/1st-time-canada-drones-used-bc-wildfire-response/",
+        "description": "In a social media update, the service said they used the technology on the Brunswick Creek Complex, which is two huge wildfires burning near Boston Bar.",
+        "pubDate": "Wed, 22 Jul 2026 00:06:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/22668a401cf254be7072ee55b41d4768792c93f3caaa6a67e1242195cbb4c3e7.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Fire crews work on containment lines between out-of-control blaze and Kimberley, B.C.",
-        "link": "https://globalnews.ca/news/11973923/kimberley-bc-wildfires/",
-        "description": "The BC Wildfire Service says it will be using heavy equipment to build the lines and block the fire that's about 10 kilometres west of Kimberley.",
-        "pubDate": "Tue, 21 Jul 2026 12:26:16 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "Canada wildfire smoke will cover more US states soon, forecasts show",
@@ -37,14 +45,6 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Hundreds of British Columbians watching wildfires closely as they burn close to communities",
-        "link": "https://globalnews.ca/news/11974305/bc-live-update-wildfires-july-21/",
-        "description": "More than 600 properties are on evacuation order in B.C., while 5,700 properties are under evacuation alert as 87 wildfires burn in the province.",
-        "pubDate": "Tue, 21 Jul 2026 17:35:24 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/079bf60fef4e3dbdd2081adedb29ba961bb843862ae4fceb9f92e25e10ab717e.jpg?quality=65&#038;strip=all"
       }
     ]
   }
