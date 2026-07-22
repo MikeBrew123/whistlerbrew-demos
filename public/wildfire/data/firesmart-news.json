@@ -1,12 +1,8 @@
 {
-  "updated_at": "2026-07-22T16:00:34.264Z",
+  "updated_at": "2026-07-22T22:00:33.647Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [],
-    "northwest": [],
-    "southeast": [
+    "kamloops": [
       {
         "title": "BC Wildfire Service braces for heat peak, warns of potential new starts",
         "link": "https://globalnews.ca/news/11975521/bc-wildfire-service-braces-for-heat-peak-warns-of-potential-new-starts/",
@@ -14,6 +10,17 @@
         "pubDate": "Wed, 22 Jul 2026 12:24:10 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "prince-george": [],
+    "cariboo": [
+      {
+        "title": "B.C. wildfires force closure of 2 major highways linking Lower Mainland, Interior",
+        "link": "https://globalnews.ca/news/11975875/bc-wildfires-closure-major-highways-lower-mainland-interior/",
+        "description": "A new wildfire sparked on Tuesday night, south of Boston Bar, forcing the closure of Highway 1 and prompting a plea from officials for those in the area to leave immediately.",
+        "pubDate": "Wed, 22 Jul 2026 17:13:10 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/IMG_7798-rotated.jpeg?quality=65&#038;strip=all"
       },
       {
         "title": "B.C.&#8217;s Brunswick Creek wildfire triggers more evacuations",
@@ -30,16 +37,10 @@
         "pubDate": "Wed, 22 Jul 2026 02:27:21 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/hells-gate-wildfire.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "How hot is too hot to work? Report calls for heat protections for B.C. workers",
-        "link": "https://globalnews.ca/news/11975139/report-heat-protections-bc-workers/",
-        "description": "Researchers with BC Policy Solutions say B.C.'s heat exposure regulations have not kept pace with increasingly frequent extreme heat.",
-        "pubDate": "Wed, 22 Jul 2026 02:25:09 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Screenshot-2026-07-21-180740.png"
       }
     ],
+    "northwest": [],
+    "southeast": [],
     "all": [
       {
         "title": "Canada wildfire smoke will cover more US states soon, forecasts show",
@@ -61,14 +62,6 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "WATCH: Global News Hour at 6 BC: July 21",
-        "link": "https://globalnews.ca/news/1149299/watch-news-hour/",
-        "description": "Watch the online edition of Global News Hour at 6 BC.",
-        "pubDate": "Tue, 21 Jul 2026 22:00:41 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/10/GLOBALNEWS_BC-show-thumbnail-NEW.jpg?quality=65&#038;strip=all"
       }
     ]
   }
