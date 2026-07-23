@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T16:00:33.848Z",
+  "updated_at": "2026-07-23T22:00:34.109Z",
   "zones": {
     "coastal": [
       {
@@ -20,6 +20,14 @@
       }
     ],
     "kamloops": [
+      {
+        "title": "Aggressive wildfire near Clinton forces expanded evacuation order, alert",
+        "link": "https://globalnews.ca/news/11986468/bc-wildfire-update-latest-july-23/",
+        "description": "There are now approximately 193 properties on evacuation order and 104 properties on evacuation alert due to the Fiftynine Creek wildfire in the Thompson Nicola Regional District.",
+        "pubDate": "Thu, 23 Jul 2026 20:14:09 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Village of Clinton under evacuation alert due to Fiftynine Creek wildfire",
         "link": "https://globalnews.ca/news/11976938/village-clinton-evacuation-alert-fiftynine-creek-wildfire/",
