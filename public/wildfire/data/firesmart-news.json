@@ -1,7 +1,24 @@
 {
-  "updated_at": "2026-07-23T10:00:33.298Z",
+  "updated_at": "2026-07-23T16:00:33.848Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Pyrocumulus clouds from wildfire in Fraser Canyon loom high over B.C.",
+        "link": "https://globalnews.ca/news/11978141/pyrocumulus-clouds-fraser-canyon/",
+        "description": "BC Wildfire Service said the Anderson Creek fire was discovered by aircraft responding to one of the other nearby fires on Tuesday and it quickly flared up, fanned by strong winds.",
+        "pubDate": "Thu, 23 Jul 2026 12:18:22 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/077cc50c524e144abf3943c63387b1970e85d1d1221522d820f42b5c4486691b.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "More B.C. communities under threat of encroaching wildfires",
+        "link": "https://globalnews.ca/news/11978041/more-b-c-communities-under-threat-of-encroaching-wildfires/",
+        "description": "The latest evacuation order was issued by the Squamish-Lillooet Regional District, triggered by the risk of a wildfire in the South Chilcotin Mountains area in Electoral Area A.",
+        "pubDate": "Thu, 23 Jul 2026 12:15:08 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8_724158.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [
       {
         "title": "Village of Clinton under evacuation alert due to Fiftynine Creek wildfire",
@@ -13,7 +30,16 @@
       }
     ],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "More B.C. communities under threat of encroaching wildfires",
+        "link": "https://globalnews.ca/news/11978041/more-b-c-communities-under-threat-of-encroaching-wildfires/",
+        "description": "The latest evacuation order was issued by the Squamish-Lillooet Regional District, triggered by the risk of a wildfire in the South Chilcotin Mountains area in Electoral Area A.",
+        "pubDate": "Thu, 23 Jul 2026 12:15:08 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8_724158.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "northwest": [],
     "southeast": [],
     "all": [
