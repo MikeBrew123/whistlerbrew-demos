@@ -82,6 +82,14 @@
   ],
   "news": [
     {
+      "title": "Ottawa halved federal emergency centre staff before wildfire season: union",
+      "url": "https://globalnews.ca/news/11986164/carney-ottawa-emergency-response-workers-cut-union/",
+      "source": "Global News",
+      "published": "2026-07-23",
+      "description": "The Public Service Alliance of Canada said in a statement Thursday that about 60 employees at the Government Operations Centre in Ottawa received layoff notices in January.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Carney-emergency-response-centre-Ottawa-e1784826015651.jpg?quality=65&#038;strip=all"
+    },
+    {
       "title": "Wildfire northeast of Halifax being held, N.S. officials say",
       "url": "https://globalnews.ca/news/11971652/mooseland-wildfire-halifax-being-held/",
       "source": "Global News Wildfire",
@@ -100,13 +108,7 @@
       "url": "https://globalnews.ca/news/11966507/toronto-air-quality-july-15/",
       "source": "Global News Wildfire",
       "published": "2026-07-15"
-    },
-    {
-      "title": "Wildfire season is not as perilous as last year: officials",
-      "url": "https://globalnews.ca/news/11959396/federal-officials-give-wildfire-update/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-09"
     }
   ],
-  "last_news_update": "2026-07-23T10:01:13.428Z"
+  "last_news_update": "2026-07-23T22:01:12.609Z"
 }
