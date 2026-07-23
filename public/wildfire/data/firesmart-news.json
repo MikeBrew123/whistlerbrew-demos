@@ -1,44 +1,19 @@
 {
-  "updated_at": "2026-07-22T22:00:33.647Z",
+  "updated_at": "2026-07-23T04:00:33.908Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "BC Wildfire Service braces for heat peak, warns of potential new starts",
-        "link": "https://globalnews.ca/news/11975521/bc-wildfire-service-braces-for-heat-peak-warns-of-potential-new-starts/",
-        "description": "An incident commander for a complex of fires burning near Kimberley, B.C., says more resources are on the way to help firefighters battle the fires as heat peaks this week.",
-        "pubDate": "Wed, 22 Jul 2026 12:24:10 +0000",
+        "title": "Village of Clinton under evacuation alert due to Fiftynine Creek wildfire",
+        "link": "https://globalnews.ca/news/11976938/village-clinton-evacuation-alert-fiftynine-creek-wildfire/",
+        "description": "The Thompson Nicola Regional District has expanded an evacuation order and an evacuation alert for the Bonaparte Plateau area in Electoral Area E due to the same wildfire.",
+        "pubDate": "Thu, 23 Jul 2026 02:28:07 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-2.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "B.C. wildfires force closure of 2 major highways linking Lower Mainland, Interior",
-        "link": "https://globalnews.ca/news/11975875/bc-wildfires-closure-major-highways-lower-mainland-interior/",
-        "description": "A new wildfire sparked on Tuesday night, south of Boston Bar, forcing the closure of Highway 1 and prompting a plea from officials for those in the area to leave immediately.",
-        "pubDate": "Wed, 22 Jul 2026 17:13:10 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/IMG_7798-rotated.jpeg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C.&#8217;s Brunswick Creek wildfire triggers more evacuations",
-        "link": "https://globalnews.ca/news/11975518/b-c-s-brunswick-creek-wildfire-triggers-more-evacuations/",
-        "description": "The latest call for locals to get out comes in the Hells Gate area, just downstream of the community of Boston Bar, where the Fraser River's flow tightens.",
-        "pubDate": "Wed, 22 Jul 2026 12:17:34 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/wildfires-BC-Canada-US.jpg-e1784314972656.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "New wildfire near Boston Bar prompts evacuation of entire area",
-        "link": "https://globalnews.ca/news/11975278/boston-bar-evacuation-order-wildfire-highway-1-closed/",
-        "description": "The Fraser Valley Regional District has issued an evacuation order for the area after a new fire sparked on Tuesday afternoon.",
-        "pubDate": "Wed, 22 Jul 2026 02:27:21 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/hells-gate-wildfire.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
