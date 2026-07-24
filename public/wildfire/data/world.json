@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T04:01:14.940Z",
+  "updated_at": "2026-07-24T10:01:14.611Z",
   "fires": [
     {
       "country": "Spain",
@@ -27,9 +27,9 @@
     },
     {
       "country": "France",
-      "name": "Gironde Region Wildfire (South-West France)",
+      "name": "Gironde Region & Cap Ferret Wildfire (South-West France)",
       "status": "Active",
-      "summary": "Wildfires spread in south-west France with 20,000 evacuated. Most evacuees were tourists from campsites around Arcachon Bay in Gironde region.",
+      "summary": "Wildfires spread in south-west France with 20,000 evacuated. Most evacuees were tourists from campsites around Arcachon Bay in Gironde region. Fire raged on Cap Ferret peninsula for several days with entire peninsula evacuated, hundreds fleeing by boat.",
       "link": "https://www.bbc.co.uk/news/articles/cy4kmr82n44o?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7df8/live/48d08300-867b-11f1-8c77-df97511a6b05.jpg"
     },
@@ -169,13 +169,13 @@
       "canada": 5,
       "world_fires": 23
     },
-    "deduped": 0,
+    "deduped": 1,
     "rerouted": 1,
     "notes": [
-      "Rerouted BBC France wildfire article from world to world_fires as Gironde Region Wildfire entry (merged with existing active fire)",
-      "All existing active fires preserved",
-      "No fires contained >60 days ago found",
-      "All images preserved in output"
+      "Deduplicated: BBC France Cap Ferret evacuation story merged with existing Gironde Region Wildfire entry (same incident, latest image used)",
+      "Rerouted: BBC Cap Ferret article from world_fires bucket consolidated into Gironde Region fire entry",
+      "All existing_fires preserved as Active status maintained",
+      "No fires dropped (none contained >60 days ago)"
     ]
   }
 }
