@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-07-23T22:00:34.109Z",
+  "updated_at": "2026-07-24T04:00:33.925Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Homes, structures destroyed as B.C. wildfires burn out of control",
+        "link": "https://globalnews.ca/news/11986586/homes-structures-destroyed-bc-wildfires-burn-out-of-control/",
+        "description": "In the Fraser Canyon, where three massive fires, called the Brunswick Creek Complex, are burning, the past few days have been heartbreaking for a farm owner in North Bend.",
+        "pubDate": "Fri, 24 Jul 2026 01:05:28 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes_e80e3c.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Pyrocumulus clouds from wildfire in Fraser Canyon loom high over B.C.",
         "link": "https://globalnews.ca/news/11978141/pyrocumulus-clouds-fraser-canyon/",
@@ -9,14 +17,6 @@
         "pubDate": "Thu, 23 Jul 2026 12:18:22 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/077cc50c524e144abf3943c63387b1970e85d1d1221522d820f42b5c4486691b.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "More B.C. communities under threat of encroaching wildfires",
-        "link": "https://globalnews.ca/news/11978041/more-b-c-communities-under-threat-of-encroaching-wildfires/",
-        "description": "The latest evacuation order was issued by the Squamish-Lillooet Regional District, triggered by the risk of a wildfire in the South Chilcotin Mountains area in Electoral Area A.",
-        "pubDate": "Thu, 23 Jul 2026 12:15:08 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8_724158.jpg?quality=65&#038;strip=all"
       }
     ],
     "kamloops": [
@@ -27,27 +27,10 @@
         "pubDate": "Thu, 23 Jul 2026 20:14:09 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Village of Clinton under evacuation alert due to Fiftynine Creek wildfire",
-        "link": "https://globalnews.ca/news/11976938/village-clinton-evacuation-alert-fiftynine-creek-wildfire/",
-        "description": "The Thompson Nicola Regional District has expanded an evacuation order and an evacuation alert for the Bonaparte Plateau area in Electoral Area E due to the same wildfire.",
-        "pubDate": "Thu, 23 Jul 2026 02:28:07 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-2.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "More B.C. communities under threat of encroaching wildfires",
-        "link": "https://globalnews.ca/news/11978041/more-b-c-communities-under-threat-of-encroaching-wildfires/",
-        "description": "The latest evacuation order was issued by the Squamish-Lillooet Regional District, triggered by the risk of a wildfire in the South Chilcotin Mountains area in Electoral Area A.",
-        "pubDate": "Thu, 23 Jul 2026 12:15:08 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/4145aabc10a66b619dbfabda254427a4dc2433c4ed34f48ad2dffb2674a580a8_724158.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
