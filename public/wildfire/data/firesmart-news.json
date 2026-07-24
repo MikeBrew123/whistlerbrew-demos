@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T10:00:33.516Z",
+  "updated_at": "2026-07-24T16:00:33.325Z",
   "zones": {
     "coastal": [
       {
@@ -9,17 +9,17 @@
         "pubDate": "Fri, 24 Jul 2026 01:05:28 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes_e80e3c.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Pyrocumulus clouds from wildfire in Fraser Canyon loom high over B.C.",
-        "link": "https://globalnews.ca/news/11978141/pyrocumulus-clouds-fraser-canyon/",
-        "description": "BC Wildfire Service said the Anderson Creek fire was discovered by aircraft responding to one of the other nearby fires on Tuesday and it quickly flared up, fanned by strong winds.",
-        "pubDate": "Thu, 23 Jul 2026 12:18:22 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/077cc50c524e144abf3943c63387b1970e85d1d1221522d820f42b5c4486691b.jpg?quality=65&#038;strip=all"
       }
     ],
     "kamloops": [
+      {
+        "title": "Wildfires in B.C. prompt evacuations as hot, dry conditions persist",
+        "link": "https://globalnews.ca/news/11987434/wildfires-in-b-c-prompt-evacuations-as-hot-dry-conditions-persist/",
+        "description": "BC Wildfire Service says the Fiftynine Creek wildfire, which is burning out of control northwest of Clinton, B.C., has grown to more than 102 square kilometres.",
+        "pubDate": "Fri, 24 Jul 2026 12:24:51 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/3433fa01532e2f2346cf3b1d91ea9b4e3fc772ef220a7aefa4ac6c37a64f1961.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Aggressive wildfire near Clinton forces expanded evacuation order, alert",
         "link": "https://globalnews.ca/news/11986468/bc-wildfire-update-latest-july-23/",
