@@ -82,12 +82,20 @@
   ],
   "news": [
     {
-      "title": "Ottawa halved federal emergency centre staff before wildfire season: union",
-      "url": "https://globalnews.ca/news/11986164/carney-ottawa-emergency-response-workers-cut-union/",
+      "title": "Wildfires in B.C. prompt evacuations as hot, dry conditions persist",
+      "url": "https://globalnews.ca/news/11987434/wildfires-in-b-c-prompt-evacuations-as-hot-dry-conditions-persist/",
       "source": "Global News",
-      "published": "2026-07-23",
-      "description": "The Public Service Alliance of Canada said in a statement Thursday that about 60 employees at the Government Operations Centre in Ottawa received layoff notices in January.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/Carney-emergency-response-centre-Ottawa-e1784826015651.jpg?quality=65&#038;strip=all"
+      "published": "2026-07-24",
+      "description": "BC Wildfire Service says the Fiftynine Creek wildfire, which is burning out of control northwest of Clinton, B.C., has grown to more than 102 square kilometres.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/3433fa01532e2f2346cf3b1d91ea9b4e3fc772ef220a7aefa4ac6c37a64f1961.jpg?quality=65&#038;strip=all"
+    },
+    {
+      "title": "No new wildfires in Ontario in 24 hours: Ministry of Natural Resources",
+      "url": "https://globalnews.ca/news/11987421/ontario-wildfire-update-july-24/",
+      "source": "Global News",
+      "published": "2026-07-24",
+      "description": "There are 177 active wildfires still burning in Ontario, but the Ministry of Natural Resources has reported no new blaze in the last 24 hours.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/898a741037b0b65a7bec43ffba51d736d6e7849ef7c7a64fd61f06c5105dbf05.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Wildfire northeast of Halifax being held, N.S. officials say",
@@ -110,5 +118,5 @@
       "published": "2026-07-15"
     }
   ],
-  "last_news_update": "2026-07-23T22:01:12.609Z"
+  "last_news_update": "2026-07-24T16:01:16.507Z"
 }
