@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T16:00:33.325Z",
+  "updated_at": "2026-07-24T22:00:34.045Z",
   "zones": {
     "coastal": [
       {
@@ -13,20 +13,28 @@
     ],
     "kamloops": [
       {
+        "title": "Entire Village of Clinton on evacuation order due to nearby wildfire",
+        "link": "https://globalnews.ca/news/11988146/entire-village-clinton-evacuation-order-wildfire/",
+        "description": "The Thompson Nicola Regional District upgraded the evacuation alert, issued on Wednesday, to an evacuation order on Friday afternoon.",
+        "pubDate": "Fri, 24 Jul 2026 19:39:28 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79_1ad75a.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Evacuation order expanded in the areas of Clinton, Kelly Lake due to wildfire",
+        "link": "https://globalnews.ca/news/11988059/evacuation-order-expanded-clinton-kelly-lake/",
+        "description": "The order is expanded due to the immediate danger to life and safety caused by the Pear Lake wildfire, which is an estimated 1,384 hectares in size.",
+        "pubDate": "Fri, 24 Jul 2026 19:25:57 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-3-rotated.jpg?quality=65&#038;strip=all"
+      },
+      {
         "title": "Wildfires in B.C. prompt evacuations as hot, dry conditions persist",
         "link": "https://globalnews.ca/news/11987434/wildfires-in-b-c-prompt-evacuations-as-hot-dry-conditions-persist/",
         "description": "BC Wildfire Service says the Fiftynine Creek wildfire, which is burning out of control northwest of Clinton, B.C., has grown to more than 102 square kilometres.",
         "pubDate": "Fri, 24 Jul 2026 12:24:51 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/3433fa01532e2f2346cf3b1d91ea9b4e3fc772ef220a7aefa4ac6c37a64f1961.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Aggressive wildfire near Clinton forces expanded evacuation order, alert",
-        "link": "https://globalnews.ca/news/11986468/bc-wildfire-update-latest-july-23/",
-        "description": "There are now approximately 193 properties on evacuation order and 104 properties on evacuation alert due to the Fiftynine Creek wildfire in the Thompson Nicola Regional District.",
-        "pubDate": "Thu, 23 Jul 2026 20:14:09 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -54,6 +62,14 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Photos show wildfires raging across parts of British Columbia",
+        "link": "https://globalnews.ca/news/11988340/bc-wildfire-photos/",
+        "description": "Hundreds are out of their homes and thousands are on evacuation alert across the province, as wildfire crews battle the flames from the ground and the air.",
+        "pubDate": "Fri, 24 Jul 2026 21:58:28 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/BOSTON-BAR-WILDFIRE-Courtesy-Larissa-Janzen-7.jpg?quality=65&#038;strip=all"
       }
     ]
   }
