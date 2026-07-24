@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T16:01:16.751Z",
+  "updated_at": "2026-07-24T04:01:14.940Z",
   "fires": [
     {
       "country": "Spain",
@@ -169,14 +169,12 @@
       "canada": 5,
       "world_fires": 23
     },
-    "deduped": 1,
+    "deduped": 0,
     "rerouted": 1,
     "notes": [
-      "Deduplicated: No duplicate Canada stories found",
-      "Merged France article from world input with existing France fires (grouped Gironde into new entry separate from Paris and Pyrénées-Orientales)",
-      "Rerouted: World input article on France Gironde evacuation merged into world_fires as distinct entry rather than separate news item",
+      "Rerouted BBC France wildfire article from world to world_fires as Gironde Region Wildfire entry (merged with existing active fire)",
       "All existing active fires preserved",
-      "No fires removed (none contained >60 days)",
+      "No fires contained >60 days ago found",
       "All images preserved in output"
     ]
   }
