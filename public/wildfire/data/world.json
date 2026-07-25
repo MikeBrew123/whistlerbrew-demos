@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T04:01:16.968Z",
+  "updated_at": "2026-07-25T16:01:13.907Z",
   "fires": [
     {
       "country": "Spain",
@@ -171,21 +171,19 @@
   "last_report": {
     "items_in": {
       "canada": 4,
-      "world": 2
+      "world": 1
     },
     "items_out": {
-      "canada": 4,
-      "world_fires": 24
+      "canada": 3,
+      "world_fires": 25
     },
     "deduped": 1,
     "rerouted": 1,
     "notes": [
-      "Deduplicated: BBC articles on Spain/France wildfires (2026-07-24 and 2026-07-25) merged into single France Gironde entry and Spain regional entry",
-      "Rerouted: Spain Madrid fire from world news consolidated into existing Spain regional wildfire entry",
-      "Preserved all images from source data",
-      "All existing active fires retained; no fires older than 60 days removed",
-      "France Gironde fire enhanced with evacuation data from BBC articles (220,000+ evacuated)",
-      "Spain entry updated with emergency declaration and Madrid fire severity context"
+      "Deduplicated: 'More than 250,000 people flee their homes in France and Spain' article removed (duplicate coverage of Gironde/Cap Ferret fires already in world_fires); BBC video used for world_fires Spain/France coverage",
+      "Rerouted: Global News article about France/Spain evacuations was news coverage of existing world fires, consolidated into world_fires",
+      "Preserved all Active fires from existing_fires; no fires qualified for removal (>60 days contained)",
+      "Maintained all image URLs where present"
     ]
   }
 }
