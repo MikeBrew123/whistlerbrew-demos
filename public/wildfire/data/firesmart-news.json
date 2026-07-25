@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T16:00:33.597Z",
+  "updated_at": "2026-07-25T22:00:33.354Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -37,6 +37,14 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "After experiencing 2016 wildfire, Fort McMurray survivor addresses evacuation trauma",
+        "link": "https://globalnews.ca/news/11993053/fort-mcmurray-wildfire-survivor-on-evacuation-trauma/",
+        "description": "As wildfires force evacuations across B.C., Fort McMurray survivor Terese Greenwood reflects on losing her home in 2016 and the lessons she learned about recovery.",
+        "pubDate": "Sat, 25 Jul 2026 18:57:14 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/e290c3f2f724bd8a753407c5156fe9f43dbd93f8c2683ad1e5ce55442b7e0c2b.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "B.C. wildfires causing flickering lights, outages for some BC Hydro customers",
