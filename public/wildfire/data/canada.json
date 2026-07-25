@@ -82,12 +82,20 @@
   ],
   "news": [
     {
+      "title": "'I'm not leaving': Some B.C. residents vow to defend homes from wildfires",
+      "url": "https://globalnews.ca/news/11987540/b-c-residents-wildfires/",
+      "source": "Global News",
+      "published": "2026-07-24",
+      "description": "As wildfires intensify across Canada, a transportation expert says governments need a national firefighting strategy focused on prevention instead of evacuation.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/PEAR-CREEK-FIRE-2-rotated.jpg?quality=65&strip=all"
+    },
+    {
       "title": "Wildfire northeast of Halifax being held, N.S. officials say",
       "url": "https://globalnews.ca/news/11971652/mooseland-wildfire-halifax-being-held/",
       "source": "Global News Wildfire",
       "published": "2026-07-19",
       "description": "The Nova Scotia Department of Natural Resources said in a post on X the Mooseland Road fire was being held after seeing minimal growth on Saturday.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/078f7195bfe648bd4319bd0261658ce4ec1ece08c7a713b93506a4fe0aeb661c_dc5c8a.jpg?quality=65&#038;strip=all"
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/078f7195bfe648bd4319bd0261658ce4ec1ece08c7a713b93506a4fe0aeb661c_dc5c8a.jpg?quality=65&strip=all"
     },
     {
       "title": "Open fire and campfire bans coming into effect in B.C. amid dry lightning threat",
@@ -102,5 +110,5 @@
       "published": "2026-07-15"
     }
   ],
-  "last_news_update": "2026-07-24T22:01:13.482Z"
+  "last_news_update": "2026-07-25T10:01:15.265Z"
 }
