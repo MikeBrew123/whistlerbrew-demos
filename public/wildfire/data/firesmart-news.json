@@ -1,40 +1,15 @@
 {
-  "updated_at": "2026-07-24T22:00:34.045Z",
+  "updated_at": "2026-07-25T04:00:33.407Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Homes, structures destroyed as B.C. wildfires burn out of control",
-        "link": "https://globalnews.ca/news/11986586/homes-structures-destroyed-bc-wildfires-burn-out-of-control/",
-        "description": "In the Fraser Canyon, where three massive fires, called the Brunswick Creek Complex, are burning, the past few days have been heartbreaking for a farm owner in North Bend.",
-        "pubDate": "Fri, 24 Jul 2026 01:05:28 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes_e80e3c.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
-        "title": "Entire Village of Clinton on evacuation order due to nearby wildfire",
-        "link": "https://globalnews.ca/news/11988146/entire-village-clinton-evacuation-order-wildfire/",
-        "description": "The Thompson Nicola Regional District upgraded the evacuation alert, issued on Wednesday, to an evacuation order on Friday afternoon.",
-        "pubDate": "Fri, 24 Jul 2026 19:39:28 +0000",
+        "title": "2026 BC Summer Games open in Kelowna under smoke warning",
+        "link": "https://globalnews.ca/news/11988720/bc-summer-games-open-smoke-warning/",
+        "description": "Despite an air quality warning, organizers decided the Games could continue safely on Friday morning, after consulting with Environment Canada and closely monitoring conditions",
+        "pubDate": "Sat, 25 Jul 2026 02:24:38 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79_1ad75a.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Evacuation order expanded in the areas of Clinton, Kelly Lake due to wildfire",
-        "link": "https://globalnews.ca/news/11988059/evacuation-order-expanded-clinton-kelly-lake/",
-        "description": "The order is expanded due to the immediate danger to life and safety caused by the Pear Lake wildfire, which is an estimated 1,384 hectares in size.",
-        "pubDate": "Fri, 24 Jul 2026 19:25:57 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-3-rotated.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Wildfires in B.C. prompt evacuations as hot, dry conditions persist",
-        "link": "https://globalnews.ca/news/11987434/wildfires-in-b-c-prompt-evacuations-as-hot-dry-conditions-persist/",
-        "description": "BC Wildfire Service says the Fiftynine Creek wildfire, which is burning out of control northwest of Clinton, B.C., has grown to more than 102 square kilometres.",
-        "pubDate": "Fri, 24 Jul 2026 12:24:51 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/3433fa01532e2f2346cf3b1d91ea9b4e3fc772ef220a7aefa4ac6c37a64f1961.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Screenshot-2026-07-24-175200.png"
       }
     ],
     "prince-george": [],
@@ -62,6 +37,22 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "B.C. wildfires causing flickering lights, outages for some BC Hydro customers",
+        "link": "https://globalnews.ca/news/11988666/bc-wildfires-flickering-lights-outages-bc-hydro/",
+        "description": "'Part of the backbone of the grid is near where there's a lot of fire activity in the Southern Interior,' Bob Gammer, BC Hydro community relations coordinator, told CKPG News.",
+        "pubDate": "Sat, 25 Jul 2026 00:22:52 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Pear-creek-fire-3.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "&#8216;I&#8217;m not leaving&#8217;: Some B.C. residents vow to defend homes from wildfires",
+        "link": "https://globalnews.ca/news/11987540/b-c-residents-wildfires/",
+        "description": "As wildfires intensify across Canada, a transportation expert says governments need a national firefighting strategy focused on prevention instead of evacuation.",
+        "pubDate": "Fri, 24 Jul 2026 22:36:04 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/PEAR-CREEK-FIRE-2-rotated.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Photos show wildfires raging across parts of British Columbia",
