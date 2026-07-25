@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T10:01:14.611Z",
+  "updated_at": "2026-07-25T04:01:16.968Z",
   "fires": [
     {
       "country": "Spain",
@@ -27,11 +27,19 @@
     },
     {
       "country": "France",
-      "name": "Gironde Region & Cap Ferret Wildfire (South-West France)",
+      "name": "Gironde Region & Cap Ferret Wildfire (South-West France) / Bordeaux Region Fires",
       "status": "Active",
-      "summary": "Wildfires spread in south-west France with 20,000 evacuated. Most evacuees were tourists from campsites around Arcachon Bay in Gironde region. Fire raged on Cap Ferret peninsula for several days with entire peninsula evacuated, hundreds fleeing by boat.",
+      "summary": "Major wildfires in south-west France with over 220,000 evacuated in France and Spain. Wildfires spread in Gironde region and Cap Ferret peninsula with 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux.",
       "link": "https://www.bbc.co.uk/news/articles/cy4kmr82n44o?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7df8/live/48d08300-867b-11f1-8c77-df97511a6b05.jpg"
+    },
+    {
+      "country": "Spain",
+      "name": "Spain Regional Wildfires",
+      "status": "Active",
+      "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with over 220,000 evacuated in France and Spain combined.",
+      "link": "https://www.bbc.co.uk/news/articles/czjlenp0xk8o?at_medium=RSS&campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/638c/live/3592d2f0-87ae-11f1-9e55-1d545cca1941.jpg"
     },
     {
       "country": "Greece",
@@ -162,20 +170,22 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 5,
-      "world": 1
+      "canada": 4,
+      "world": 2
     },
     "items_out": {
-      "canada": 5,
-      "world_fires": 23
+      "canada": 4,
+      "world_fires": 24
     },
     "deduped": 1,
     "rerouted": 1,
     "notes": [
-      "Deduplicated: BBC France Cap Ferret evacuation story merged with existing Gironde Region Wildfire entry (same incident, latest image used)",
-      "Rerouted: BBC Cap Ferret article from world_fires bucket consolidated into Gironde Region fire entry",
-      "All existing_fires preserved as Active status maintained",
-      "No fires dropped (none contained >60 days ago)"
+      "Deduplicated: BBC articles on Spain/France wildfires (2026-07-24 and 2026-07-25) merged into single France Gironde entry and Spain regional entry",
+      "Rerouted: Spain Madrid fire from world news consolidated into existing Spain regional wildfire entry",
+      "Preserved all images from source data",
+      "All existing active fires retained; no fires older than 60 days removed",
+      "France Gironde fire enhanced with evacuation data from BBC articles (220,000+ evacuated)",
+      "Spain entry updated with emergency declaration and Madrid fire severity context"
     ]
   }
 }
