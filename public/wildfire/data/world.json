@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T16:01:13.907Z",
+  "updated_at": "2026-07-26T04:01:18.809Z",
   "fires": [
     {
       "country": "Spain",
@@ -169,21 +169,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 4,
-      "world": 1
-    },
-    "items_out": {
-      "canada": 3,
-      "world_fires": 25
-    },
-    "deduped": 1,
-    "rerouted": 1,
-    "notes": [
-      "Deduplicated: 'More than 250,000 people flee their homes in France and Spain' article removed (duplicate coverage of Gironde/Cap Ferret fires already in world_fires); BBC video used for world_fires Spain/France coverage",
-      "Rerouted: Global News article about France/Spain evacuations was news coverage of existing world fires, consolidated into world_fires",
-      "Preserved all Active fires from existing_fires; no fires qualified for removal (>60 days contained)",
-      "Maintained all image URLs where present"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"'It was difficult': Residents of Clinton, B.C. recount evacuating wildfires\",\n      \"url\": \"https://globalnews.ca/news/11989094/residents-wildfires-c"
   }
 }
