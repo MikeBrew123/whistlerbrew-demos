@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T22:00:33.354Z",
+  "updated_at": "2026-07-26T04:00:33.319Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -13,7 +13,24 @@
       }
     ],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "&#8216;It was difficult&#8217;: Residents of Clinton, B.C. recount evacuating wildfires",
+        "link": "https://globalnews.ca/news/11989094/residents-wildfires-clinton/",
+        "description": "Wildfires burning across British Columbia have forced residents from communities including Clinton and Boston Bar, with many unsure if they'll have homes to return to.",
+        "pubDate": "Sun, 26 Jul 2026 00:25:09 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79_eda9fb.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C. community&#8217;s water system damaged by alleged vandalism during wildfire response",
+        "link": "https://globalnews.ca/news/11993648/bc-water-system-vandalized/",
+        "description": "Police are investigating after the water system serving the evacuated B.C. community of Boston Bar was allegedly vandalized, potentially delaying residents' return home.",
+        "pubDate": "Sat, 25 Jul 2026 22:24:17 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/077cc50c524e144abf3943c63387b1970e85d1d1221522d820f42b5c4486691b.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "northwest": [],
     "southeast": [],
     "all": [
@@ -39,36 +56,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "After experiencing 2016 wildfire, Fort McMurray survivor addresses evacuation trauma",
-        "link": "https://globalnews.ca/news/11993053/fort-mcmurray-wildfire-survivor-on-evacuation-trauma/",
-        "description": "As wildfires force evacuations across B.C., Fort McMurray survivor Terese Greenwood reflects on losing her home in 2016 and the lessons she learned about recovery.",
-        "pubDate": "Sat, 25 Jul 2026 18:57:14 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/e290c3f2f724bd8a753407c5156fe9f43dbd93f8c2683ad1e5ce55442b7e0c2b.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. wildfires causing flickering lights, outages for some BC Hydro customers",
-        "link": "https://globalnews.ca/news/11988666/bc-wildfires-flickering-lights-outages-bc-hydro/",
-        "description": "'Part of the backbone of the grid is near where there's a lot of fire activity in the Southern Interior,' Bob Gammer, BC Hydro community relations coordinator, told CKPG News.",
-        "pubDate": "Sat, 25 Jul 2026 00:22:52 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Pear-creek-fire-3.jpg?quality=65&#038;strip=all"
-      },
-      {
         "title": "&#8216;I&#8217;m not leaving&#8217;: Some B.C. residents vow to defend homes from wildfires",
         "link": "https://globalnews.ca/news/11987540/b-c-residents-wildfires/",
         "description": "As wildfires intensify across Canada, a transportation expert says governments need a national firefighting strategy focused on prevention instead of evacuation.",
         "pubDate": "Fri, 24 Jul 2026 22:36:04 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/PEAR-CREEK-FIRE-2-rotated.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Photos show wildfires raging across parts of British Columbia",
-        "link": "https://globalnews.ca/news/11988340/bc-wildfire-photos/",
-        "description": "Hundreds are out of their homes and thousands are on evacuation alert across the province, as wildfire crews battle the flames from the ground and the air.",
-        "pubDate": "Fri, 24 Jul 2026 21:58:28 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/BOSTON-BAR-WILDFIRE-Courtesy-Larissa-Janzen-7.jpg?quality=65&#038;strip=all"
       }
     ]
   }
