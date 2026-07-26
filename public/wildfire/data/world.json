@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T10:01:19.192Z",
+  "updated_at": "2026-07-26T22:01:16.145Z",
   "fires": [
     {
       "country": "Spain",
@@ -29,16 +29,16 @@
       "country": "France",
       "name": "Gironde Region & Cap Ferret Wildfire (South-West France) / Bordeaux Region Fires",
       "status": "Active",
-      "summary": "Major wildfires in south-west France with over 220,000 evacuated in France and Spain. Wildfires spread in Gironde region and Cap Ferret peninsula with 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux.",
-      "link": "https://www.bbc.co.uk/news/articles/cy4kmr82n44o?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7df8/live/48d08300-867b-11f1-8c77-df97511a6b05.jpg"
+      "summary": "Major wildfires in south-west France with over 330,000 evacuated in France and Spain. Wildfires spread in Gironde region and Cap Ferret peninsula with 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux.",
+      "link": "https://www.bbc.co.uk/news/articles/clyj8k4nn5jo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7731/live/42f6c270-8921-11f1-ba41-9bff51dd5d72.jpg"
     },
     {
       "country": "Spain",
       "name": "Spain Regional Wildfires",
       "status": "Active",
-      "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with over 220,000 evacuated in France and Spain combined.",
-      "link": "https://www.bbc.co.uk/news/articles/czjlenp0xk8o?at_medium=RSS&campaign=rss",
+      "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with over 330,000 evacuated in France and Spain combined.",
+      "link": "https://www.bbc.co.uk/news/articles/czjlenp0xk8o?at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/638c/live/3592d2f0-87ae-11f1-9e55-1d545cca1941.jpg"
     },
     {
@@ -169,7 +169,22 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"'It was difficult': Residents of Clinton, B.C. recount evacuating wildfires\",\n      \"url\": \"https://globalnews.ca/news/11989094/residents-wildfires-c"
+    "items_in": {
+      "canada": 5,
+      "world": 1
+    },
+    "items_out": {
+      "canada": 5,
+      "world_fires": 24
+    },
+    "deduped": 1,
+    "rerouted": 0,
+    "notes": [
+      "Deduplicated BBC Bordeaux article with existing Gironde/Cap Ferret entry; kept newer published date (2026-07-26) and image from BBC source",
+      "Updated Gironde/Cap Ferret fire summary with new evacuation figure (330,000 vs 220,000)",
+      "All existing_fires preserved as Active status",
+      "No fires contained >60 days ago to drop",
+      "No misrouted items between buckets"
+    ]
   }
 }
