@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T22:00:33.022Z",
+  "updated_at": "2026-07-27T04:00:33.942Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -14,6 +14,14 @@
     ],
     "prince-george": [],
     "cariboo": [
+      {
+        "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
+        "link": "https://globalnews.ca/news/11994559/clinton-bc-wildfires-merge/",
+        "description": "An update from BC Wildfire Service said the Pear Lake and Fiftynine Creek blazes combined and remained very active on Sunday, moving north and northeast of the Chasm area.",
+        "pubDate": "Sun, 26 Jul 2026 22:19:25 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/50671f0e49255e60cf558d54fbc42aab9193029e245938ced154ffe5b67758e5_31702c.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "&#8216;It was difficult&#8217;: Residents of Clinton, B.C. recount evacuating wildfires",
         "link": "https://globalnews.ca/news/11989094/residents-wildfires-clinton/",
