@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T22:01:16.145Z",
+  "updated_at": "2026-07-27T04:01:14.629Z",
   "fires": [
     {
       "country": "Spain",
@@ -170,21 +170,19 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 5,
+      "canada": 4,
       "world": 1
     },
     "items_out": {
-      "canada": 5,
-      "world_fires": 24
+      "canada": 4,
+      "world_fires": 23
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated BBC Bordeaux article with existing Gironde/Cap Ferret entry; kept newer published date (2026-07-26) and image from BBC source",
-      "Updated Gironde/Cap Ferret fire summary with new evacuation figure (330,000 vs 220,000)",
-      "All existing_fires preserved as Active status",
-      "No fires contained >60 days ago to drop",
-      "No misrouted items between buckets"
+      "Deduplicated Global News duplicate entry for Clinton B.C. wildfire (same URL, title, description, image)",
+      "All existing fires retained as Active status",
+      "BBC world article about Bordeaux evacuation merged with existing Gironde/Bordeaux fire entry"
     ]
   }
 }
