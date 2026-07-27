@@ -1,42 +1,25 @@
 {
-  "updated_at": "2026-07-27T16:00:33.607Z",
+  "updated_at": "2026-07-27T22:00:33.681Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "2026 BC Summer Games open in Kelowna under smoke warning",
-        "link": "https://globalnews.ca/news/11988720/bc-summer-games-open-smoke-warning/",
-        "description": "Despite an air quality warning, organizers decided the Games could continue safely on Friday morning, after consulting with Environment Canada and closely monitoring conditions",
-        "pubDate": "Sat, 25 Jul 2026 02:24:38 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Screenshot-2026-07-24-175200.png"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [
       {
-        "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
-        "link": "https://globalnews.ca/news/11994559/clinton-bc-wildfires-merge/",
-        "description": "An update from BC Wildfire Service said the Pear Lake and Fiftynine Creek blazes combined and remained very active on Sunday, moving north and northeast of the Chasm area.",
-        "pubDate": "Sun, 26 Jul 2026 22:19:25 +0000",
+        "title": "Another B.C. community evacuated as massive wildfires merge",
+        "link": "https://globalnews.ca/news/11995381/bc-community-evacuated-70-mile-house-massive-wildfires-merge/",
+        "description": "The Pear Lake wildfire merged with the Fiftynine Creek wildfire over the weekend and is now measured at more than 63,000 hectares.",
+        "pubDate": "Mon, 27 Jul 2026 18:30:56 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/50671f0e49255e60cf558d54fbc42aab9193029e245938ced154ffe5b67758e5_31702c.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/2026-07-27-MN-70-MILE-EVAC-WEB.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "&#8216;It was difficult&#8217;: Residents of Clinton, B.C. recount evacuating wildfires",
-        "link": "https://globalnews.ca/news/11989094/residents-wildfires-clinton/",
-        "description": "Wildfires burning across British Columbia have forced residents from communities including Clinton and Boston Bar, with many unsure if they'll have homes to return to.",
-        "pubDate": "Sun, 26 Jul 2026 00:25:09 +0000",
+        "title": "B.C. man charged, accused of driving motorhome onto Abbotsford airport runway",
+        "link": "https://globalnews.ca/news/11994508/abbotsford-airport-motorhome-enters-runway/",
+        "description": "Abbotsford International Airport operations were impacted Saturday when a man drove an RV onto the runway. Air traffic control took immediate measures to safely reroute aircraft.",
+        "pubDate": "Sun, 26 Jul 2026 22:38:13 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79_eda9fb.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. community&#8217;s water system damaged by alleged vandalism during wildfire response",
-        "link": "https://globalnews.ca/news/11993648/bc-water-system-vandalized/",
-        "description": "Police are investigating after the water system serving the evacuated B.C. community of Boston Bar was allegedly vandalized, potentially delaying residents' return home.",
-        "pubDate": "Sat, 25 Jul 2026 22:24:17 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/077cc50c524e144abf3943c63387b1970e85d1d1221522d820f42b5c4486691b.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Motorhome-2.jpg?quality=65&#038;strip=all"
       }
     ],
     "northwest": [],
@@ -62,6 +45,14 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Recipe: White Spot&#8217;s buttermilk waffles and blueberry compote",
+        "link": "https://globalnews.ca/news/11993869/recipe-white-spots-buttermilk-waffles-blueberry-compote/",
+        "description": "White Spot is known for its delicious waffles and blueberry compote and now you can make it at home by following this delicious recipe!",
+        "pubDate": "Sun, 26 Jul 2026 15:00:45 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2018/10/whitespot_logo_cmyk.png"
       }
     ]
   }
