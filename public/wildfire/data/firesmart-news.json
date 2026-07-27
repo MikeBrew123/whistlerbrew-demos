@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27T04:00:33.942Z",
+  "updated_at": "2026-07-27T10:00:34.028Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -10,6 +10,14 @@
         "pubDate": "Sat, 25 Jul 2026 02:24:38 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/Screenshot-2026-07-24-175200.png"
+      },
+      {
+        "title": "B.C. wildfires causing flickering lights, outages for some BC Hydro customers",
+        "link": "https://globalnews.ca/news/11988666/bc-wildfires-flickering-lights-outages-bc-hydro/",
+        "description": "'Part of the backbone of the grid is near where there's a lot of fire activity in the Southern Interior,' Bob Gammer, BC Hydro community relations coordinator, told CKPG News.",
+        "pubDate": "Sat, 25 Jul 2026 00:22:52 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Pear-creek-fire-3.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -62,14 +70,6 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "B.C. wildfires causing flickering lights, outages for some BC Hydro customers",
-        "link": "https://globalnews.ca/news/11988666/bc-wildfires-flickering-lights-outages-bc-hydro/",
-        "description": "'Part of the backbone of the grid is near where there's a lot of fire activity in the Southern Interior,' Bob Gammer, BC Hydro community relations coordinator, told CKPG News.",
-        "pubDate": "Sat, 25 Jul 2026 00:22:52 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Pear-creek-fire-3.jpg?quality=65&#038;strip=all"
       }
     ]
   }
