@@ -82,20 +82,12 @@
   ],
   "news": [
     {
-      "title": "'It was difficult': Residents of Clinton, B.C. recount evacuating wildfires",
-      "url": "https://globalnews.ca/news/11989094/residents-wildfires-clinton/",
-      "source": "Global News",
+      "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
+      "url": "https://globalnews.ca/news/11994559/clinton-bc-wildfires-merge/",
+      "source": "Global News Wildfire",
       "published": "2026-07-26",
-      "description": "Wildfires burning across British Columbia have forced residents from communities including Clinton and Boston Bar, with many unsure if they'll have homes to return to.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/5c4164e3fdf8d9962b49cc36bb005b40d34e618b264c2e6c54ef6b5c26b8ad79_eda9fb.jpg?quality=65&strip=all"
-    },
-    {
-      "title": "B.C. community's water system damaged by alleged vandalism during wildfire response",
-      "url": "https://globalnews.ca/news/11993648/bc-water-system-vandalized/",
-      "source": "Global News",
-      "published": "2026-07-25",
-      "description": "Police are investigating after the water system serving the evacuated B.C. community of Boston Bar was allegedly vandalized, potentially delaying residents' return home.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/077cc50c524e144abf3943c63387b1970e85d1d1221522d820f42b5c4486691b.jpg?quality=65&strip=all"
+      "description": "An update from BC Wildfire Service said the Pear Lake and Fiftynine Creek blazes combined and remained very active on Sunday, moving north and northeast of the Chasm area.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/50671f0e49255e60cf558d54fbc42aab9193029e245938ced154ffe5b67758e5_31702c.jpg?quality=65&#038;strip=all"
     },
     {
       "title": "Wildfire northeast of Halifax being held, N.S. officials say",
@@ -116,5 +108,5 @@
       "published": "2026-07-15"
     }
   ],
-  "last_news_update": "2026-07-26T16:01:15.787Z"
+  "last_news_update": "2026-07-27T22:01:16.649Z"
 }
