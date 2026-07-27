@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27T10:01:14.866Z",
+  "updated_at": "2026-07-27T16:01:18.493Z",
   "fires": [
     {
       "country": "Spain",
@@ -27,15 +27,15 @@
     },
     {
       "country": "France",
-      "name": "Gironde Region & Cap Ferret Wildfire (South-West France)",
+      "name": "Gironde Region & Cap Ferret Wildfire (South-West France) - Bordeaux Blaze",
       "status": "Active",
-      "summary": "Major wildfires in south-west France with over 330,000 evacuated in France and Spain. Wildfires spread in Gironde region and Cap Ferret peninsula with 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux.",
-      "link": "https://www.bbc.co.uk/news/articles/clyj8k4nn5jo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7731/live/42f6c270-8921-11f1-ba41-9bff51dd5d72.jpg"
+      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux.",
+      "link": "https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6786/live/a29902f0-89c7-11f1-a501-d9a9d2e9b6c1.jpg"
     },
     {
       "country": "Spain",
-      "name": "Spain Regional Wildfires",
+      "name": "Spain Regional Wildfires - Madrid Region",
       "status": "Active",
       "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with over 330,000 evacuated in France and Spain combined.",
       "link": "https://www.bbc.co.uk/news/articles/czjlenp0xk8o?at_campaign=rss",
@@ -171,19 +171,20 @@
   "last_report": {
     "items_in": {
       "canada": 4,
-      "world": 0
+      "world": 2
     },
     "items_out": {
       "canada": 4,
-      "world_fires": 25
+      "world_fires": 24
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Clinton B.C. wildfire story appearing twice from Global News sources - kept single entry with image",
-      "All 23 existing world fires preserved as Active status",
-      "No fires removed based on containment timeline (all Active fires retained)",
-      "4 Canadian news articles processed: 1 major fire update, 1 active fire status, 2 preventative measures/air quality alerts"
+      "Deduplicated: Removed duplicate Global News/Global News Wildfire Clinton B.C. entry (same URL, kept one with image)",
+      "Merged BBC articles on European wildfires: Bordeaux fire (420 sq km in 4 days) consolidated into Gironde/Cap Ferret entry",
+      "Preserved all Active fires from existing_fires list",
+      "Added images to all entries where available",
+      "Fire-generated thunderstorms BBC article moved to report as it is informational/educational rather than specific fire incident"
     ]
   }
 }
