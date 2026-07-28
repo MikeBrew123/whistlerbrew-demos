@@ -1,25 +1,17 @@
 {
-  "updated_at": "2026-07-28T04:00:33.514Z",
+  "updated_at": "2026-07-28T10:00:33.640Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [
       {
-        "title": "Another B.C. community evacuated as massive wildfires merge",
-        "link": "https://globalnews.ca/news/11995381/bc-community-evacuated-70-mile-house-massive-wildfires-merge/",
-        "description": "The Pear Lake wildfire merged with the Fiftynine Creek wildfire over the weekend and is now measured at more than 63,000 hectares.",
-        "pubDate": "Mon, 27 Jul 2026 18:30:56 +0000",
+        "title": "Police watchdog called in after shooting death, chase started in Abbotsford",
+        "link": "https://globalnews.ca/news/11995525/abbotsford-shooting-langley-deceased-watchdog/",
+        "description": "Police said that at approximately 11:30 p.m., patrol officers went to the Petro-Pass Truck Stop as part of an active property crime investigation involving a prolific offender.",
+        "pubDate": "Mon, 27 Jul 2026 20:06:38 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/2026-07-27-MN-70-MILE-EVAC-WEB.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
-        "link": "https://globalnews.ca/news/11994559/clinton-bc-wildfires-merge/",
-        "description": "An update from BC Wildfire Service said the Pear Lake and Fiftynine Creek blazes combined and remained very active on Sunday, moving north and northeast of the Chasm area.",
-        "pubDate": "Sun, 26 Jul 2026 22:19:25 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/50671f0e49255e60cf558d54fbc42aab9193029e245938ced154ffe5b67758e5_31702c.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/aldergrove-shooting.png"
       }
     ],
     "northwest": [],
@@ -45,6 +37,14 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "B.C. man charged, accused of driving motorhome onto Abbotsford airport runway",
+        "link": "https://globalnews.ca/news/11994508/abbotsford-airport-motorhome-enters-runway/",
+        "description": "Abbotsford International Airport operations were impacted Saturday when a man drove an RV onto the runway. Air traffic control took immediate measures to safely reroute aircraft.",
+        "pubDate": "Sun, 26 Jul 2026 22:38:13 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Motorhome-2.jpg?quality=65&#038;strip=all"
       }
     ]
   }
