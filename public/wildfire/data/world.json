@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27T16:01:18.493Z",
+  "updated_at": "2026-07-28T04:01:15.938Z",
   "fires": [
     {
       "country": "Spain",
@@ -29,7 +29,7 @@
       "country": "France",
       "name": "Gironde Region & Cap Ferret Wildfire (South-West France) - Bordeaux Blaze",
       "status": "Active",
-      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux.",
+      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux. Wildfire now nine miles from city with mayor warning of catastrophic situation.",
       "link": "https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6786/live/a29902f0-89c7-11f1-a501-d9a9d2e9b6c1.jpg"
     },
@@ -171,20 +171,20 @@
   "last_report": {
     "items_in": {
       "canada": 4,
-      "world": 2
+      "world": 5
     },
     "items_out": {
       "canada": 4,
       "world_fires": 24
     },
-    "deduped": 1,
+    "deduped": 3,
     "rerouted": 0,
     "notes": [
-      "Deduplicated: Removed duplicate Global News/Global News Wildfire Clinton B.C. entry (same URL, kept one with image)",
-      "Merged BBC articles on European wildfires: Bordeaux fire (420 sq km in 4 days) consolidated into Gironde/Cap Ferret entry",
-      "Preserved all Active fires from existing_fires list",
-      "Added images to all entries where available",
-      "Fire-generated thunderstorms BBC article moved to report as it is informational/educational rather than specific fire incident"
+      "Deduplicated 3 BBC world articles about European wildfires (Bordeaux fire) - merged witness accounts and multiple coverage into Bordeaux fire summary with most recent image",
+      "Merged world articles about Bordeaux/Gironde region fires into single entry with comprehensive summary",
+      "Preserved all existing_fires entries as they are all Active status",
+      "All world fire entries retained and organized by country",
+      "5 world articles consolidated into enhanced world_fires entries through deduplication and merging"
     ]
   }
 }
