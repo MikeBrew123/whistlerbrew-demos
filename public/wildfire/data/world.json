@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T10:01:15.569Z",
+  "updated_at": "2026-07-28T22:01:17.601Z",
   "fires": [
     {
       "country": "Spain",
@@ -29,17 +29,17 @@
       "country": "France",
       "name": "Gironde Region & Cap Ferret Wildfire (South-West France) - Bordeaux Blaze",
       "status": "Active",
-      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters battle blaze heading towards Bordeaux. Wildfire now nine miles from city with mayor warning of catastrophic situation.",
-      "link": "https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6786/live/a29902f0-89c7-11f1-a501-d9a9d2e9b6c1.jpg"
+      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters braced for 40C heatwave on Wednesday which could complicate containment.",
+      "link": "https://www.bbc.co.uk/news/articles/c5yd8gly1ydo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/554a/live/122cc280-8aab-11f1-b8ee-9b3c26ad07bb.jpg"
     },
     {
       "country": "Spain",
       "name": "Spain Regional Wildfires - Madrid Region",
       "status": "Active",
-      "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with over 330,000 evacuated in France and Spain combined.",
-      "link": "https://www.bbc.co.uk/news/articles/czjlenp0xk8o?at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/638c/live/3592d2f0-87ae-11f1-9e55-1d545cca1941.jpg"
+      "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with three fires causing particular concern. New heatwave expected from Wednesday.",
+      "link": "https://www.bbc.co.uk/news/articles/c235m71mrreo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c94d/live/6b019120-8a69-11f1-a086-7507d7c35703.jpg"
     },
     {
       "country": "Greece",
@@ -170,20 +170,21 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 4,
-      "world": 2
+      "canada": 6,
+      "world": 3
     },
     "items_out": {
-      "canada": 4,
-      "world_fires": 25
+      "canada_news": 5,
+      "world_fires": 24
     },
-    "deduped": true,
-    "rerouted": false,
+    "deduped": 1,
+    "rerouted": 0,
     "notes": [
-      "Merged two BBC articles about European wildfires (Devastating European wildfires in maps, Wildfire witnesses describe wall of flames) into existing Gironde/Bordeaux entry with image preservation",
-      "All existing world fires remain Active and preserved",
-      "Canada news items retained as-is with latest Clinton BC merge incident dated 2026-07-26",
-      "No fires contained >60 days ago detected in existing_fires list"
+      "Deduplicated Global News and Global News Wildfire duplicate entry for Northern Manitoba evacuation order",
+      "Merged three BBC articles about European wildfires into existing fire entries",
+      "Updated Gironde/Bordeaux fire entry with latest BBC article about 40C heatwave threat",
+      "Updated Madrid region fire entry with latest BBC article about new heatwave expected",
+      "All existing_fires preserved as Active status — no fires contained >60 days ago to drop"
     ]
   }
 }
