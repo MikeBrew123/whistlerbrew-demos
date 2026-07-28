@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T04:01:15.938Z",
+  "updated_at": "2026-07-28T10:01:15.569Z",
   "fires": [
     {
       "country": "Spain",
@@ -171,20 +171,19 @@
   "last_report": {
     "items_in": {
       "canada": 4,
-      "world": 5
+      "world": 2
     },
     "items_out": {
       "canada": 4,
-      "world_fires": 24
+      "world_fires": 25
     },
-    "deduped": 3,
-    "rerouted": 0,
+    "deduped": true,
+    "rerouted": false,
     "notes": [
-      "Deduplicated 3 BBC world articles about European wildfires (Bordeaux fire) - merged witness accounts and multiple coverage into Bordeaux fire summary with most recent image",
-      "Merged world articles about Bordeaux/Gironde region fires into single entry with comprehensive summary",
-      "Preserved all existing_fires entries as they are all Active status",
-      "All world fire entries retained and organized by country",
-      "5 world articles consolidated into enhanced world_fires entries through deduplication and merging"
+      "Merged two BBC articles about European wildfires (Devastating European wildfires in maps, Wildfire witnesses describe wall of flames) into existing Gironde/Bordeaux entry with image preservation",
+      "All existing world fires remain Active and preserved",
+      "Canada news items retained as-is with latest Clinton BC merge incident dated 2026-07-26",
+      "No fires contained >60 days ago detected in existing_fires list"
     ]
   }
 }
