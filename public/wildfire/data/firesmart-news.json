@@ -1,7 +1,16 @@
 {
-  "updated_at": "2026-07-28T22:00:33.435Z",
+  "updated_at": "2026-07-29T04:00:33.410Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Vancouver police warn of distraction thefts with 35 already reported this year",
+        "link": "https://globalnews.ca/news/11997084/vancouver-police-warn-distraction-thefts-victim/",
+        "description": "Sgt. Tim Russell, with the Vancouver Police Department said the impact on victims is long-lasting with the loss of family heirlooms and their sense of safety lost.",
+        "pubDate": "Tue, 28 Jul 2026 20:09:52 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/janice-phillip-yang.png"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
@@ -28,22 +37,6 @@
         "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
         "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Vancouver police warn of distraction thefts with 35 already reported this year",
-        "link": "https://globalnews.ca/news/11997084/vancouver-police-warn-distraction-thefts-victim/",
-        "description": "Sgt. Tim Russell, with the Vancouver Police Department said the impact on victims is long-lasting with the loss of family heirlooms and their sense of safety lost.",
-        "pubDate": "Tue, 28 Jul 2026 20:09:52 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/janice-phillip-yang.png"
-      },
-      {
-        "title": "Police watchdog called in after shooting death, chase started in Abbotsford",
-        "link": "https://globalnews.ca/news/11995525/abbotsford-shooting-langley-deceased-watchdog/",
-        "description": "Police said that at approximately 11:30 p.m., patrol officers went to the Petro-Pass Truck Stop as part of an active property crime investigation involving a prolific offender.",
-        "pubDate": "Mon, 27 Jul 2026 20:06:38 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/aldergrove-shooting.png"
       }
     ]
   }
