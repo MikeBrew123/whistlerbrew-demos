@@ -1,16 +1,7 @@
 {
-  "updated_at": "2026-07-29T04:00:33.410Z",
+  "updated_at": "2026-07-29T10:00:33.897Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Vancouver police warn of distraction thefts with 35 already reported this year",
-        "link": "https://globalnews.ca/news/11997084/vancouver-police-warn-distraction-thefts-victim/",
-        "description": "Sgt. Tim Russell, with the Vancouver Police Department said the impact on victims is long-lasting with the loss of family heirlooms and their sense of safety lost.",
-        "pubDate": "Tue, 28 Jul 2026 20:09:52 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/janice-phillip-yang.png"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
