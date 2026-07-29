@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T22:01:17.601Z",
+  "updated_at": "2026-07-29T04:01:17.363Z",
   "fires": [
     {
       "country": "Spain",
@@ -170,21 +170,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 6,
+      "canada": 5,
       "world": 3
     },
     "items_out": {
-      "canada_news": 5,
+      "canada": 5,
       "world_fires": 24
     },
-    "deduped": 1,
+    "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Deduplicated Global News and Global News Wildfire duplicate entry for Northern Manitoba evacuation order",
-      "Merged three BBC articles about European wildfires into existing fire entries",
-      "Updated Gironde/Bordeaux fire entry with latest BBC article about 40C heatwave threat",
-      "Updated Madrid region fire entry with latest BBC article about new heatwave expected",
-      "All existing_fires preserved as Active status — no fires contained >60 days ago to drop"
+      "All existing_fires preserved as Active status — no fires dropped.",
+      "World articles processed: BBC France/Spain coverage consolidated with existing Gironde and Madrid region fire entries.",
+      "Images preserved throughout for all entries.",
+      "Canada news retained as-is with strong recent coverage."
     ]
   }
 }
