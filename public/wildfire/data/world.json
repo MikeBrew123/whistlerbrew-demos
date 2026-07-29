@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T10:01:16.900Z",
+  "updated_at": "2026-07-29T16:01:19.123Z",
   "fires": [
     {
       "country": "Spain",
@@ -169,20 +169,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 5,
-      "world": 2
-    },
-    "items_out": {
-      "canada": 5,
-      "world_fires": 24
-    },
-    "deduped": 0,
-    "rerouted": 0,
-    "notes": [
-      "BBC article on European wildfires (2026-07-27) merged into existing Gironde/Bordeaux fire entry",
-      "All existing fires retained with Active status",
-      "No fires removed based on >60 day containment criteria"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Northern Manitoba community's wildfire evacuation order lifted\",\n      \"url\": \"https://globalnews.ca/news/11996919/northern-manitoba-wildfire-evacuat"
   }
 }
