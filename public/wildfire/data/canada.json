@@ -82,31 +82,27 @@
   ],
   "news": [
     {
+      "title": "Northern Manitoba community's wildfire evacuation order lifted",
+      "url": "https://globalnews.ca/news/11996919/northern-manitoba-wildfire-evacuation-order-lifted/",
+      "source": "Global News Wildfire",
+      "published": "2026-07-28",
+      "description": "The Manitoba Emergency Management Organization says the fire situation has improved, and residents of O-Pipon-Na-Piwin Cree Nation can return.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/385204da88c489a7a1e217918d27da653a6f2239788b2f17624338f09d50fbbe.jpg?quality=65&strip=all"
+    },
+    {
       "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
       "url": "https://globalnews.ca/news/11994559/clinton-bc-wildfires-merge/",
       "source": "Global News Wildfire",
       "published": "2026-07-26",
       "description": "An update from BC Wildfire Service said the Pear Lake and Fiftynine Creek blazes combined and remained very active on Sunday, moving north and northeast of the Chasm area.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/50671f0e49255e60cf558d54fbc42aab9193029e245938ced154ffe5b67758e5_31702c.jpg?quality=65&#038;strip=all"
+      "image": "https://globalnews.ca/wp-content/uploads/2026/07/50671f0e49255e60cf558d54fbc42aab9193029e245938ced154ffe5b67758e5_31702c.jpg?quality=65&strip=all"
     },
     {
       "title": "Wildfire northeast of Halifax being held, N.S. officials say",
       "url": "https://globalnews.ca/news/11971652/mooseland-wildfire-halifax-being-held/",
       "source": "Global News Wildfire",
       "published": "2026-07-19"
-    },
-    {
-      "title": "Open fire and campfire bans coming into effect in B.C. amid dry lightning threat",
-      "url": "https://globalnews.ca/news/11967059/wildfires-bc-3/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-15"
-    },
-    {
-      "title": "Toronto's skies turn orange as wildfire smoke settles in",
-      "url": "https://globalnews.ca/news/11966507/toronto-air-quality-july-15/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-15"
     }
   ],
-  "last_news_update": "2026-07-28T16:01:16.324Z"
+  "last_news_update": "2026-07-29T22:01:18.802Z"
 }
