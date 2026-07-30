@@ -1,17 +1,35 @@
 {
-  "updated_at": "2026-07-30T16:00:33.428Z",
+  "updated_at": "2026-07-30T22:00:33.697Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
+    "coastal": [
+      {
+        "title": "B.C. man defied wildfire evacuation order, then called for help when fire grew",
+        "link": "https://globalnews.ca/news/12003751/bc-man-defied-wildfire-evacuation-order-called-help-fire-grew/",
+        "description": "Crews responded and were able to get the man to safety, but officials are warning of the dangers of not obeying evacuation orders.",
+        "pubDate": "Thu, 30 Jul 2026 21:36:27 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076_661ef0.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Wildfire near Logan Lake prompts evacuation alerts, partial closure of highway",
+        "link": "https://globalnews.ca/news/12003425/wildfire-logan-lake-evacuation-alerts-closure-highway/",
+        "description": "The wildfire near Logan Lake broke out on Wednesday and the BC Wildfire Service says it is about 88 hectares in size and burning out of control.",
+        "pubDate": "Thu, 30 Jul 2026 19:48:50 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Logan-Lake-fire.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [
       {
-        "title": "Burned chimney all that remains of woman&#8217;s home after wildfire near Clinton, B.C.",
-        "link": "https://globalnews.ca/news/12002642/burned-chimney-all-that-remains-of-womans-home-after-wildfire-near-clinton-b-c/",
-        "description": "A resident from British Columbia's Cariboo region says there’s nothing left around her property other than her burnt-out chimney stack and her neighbour’s propane tank.",
-        "pubDate": "Thu, 30 Jul 2026 11:43:56 +0000",
+        "title": "Former NHLer Tood Warriner to coach Windsor women",
+        "link": "https://globalnews.ca/news/12003276/former-nhler-tood-warriner-to-coach-windsor-women/",
+        "description": "Former NHL player Todd Warriner has been named interim head coach of the University of Windsor's women's hockey team.",
+        "pubDate": "Thu, 30 Jul 2026 18:13:46 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/c0f1824548753b211ca0be4769218409d651031f761272838b45e74029544956.jpg?quality=65&#038;strip=all"
       }
     ],
     "northwest": [],
@@ -32,19 +50,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Canada wildfire smoke blankets US skies across the Midwest and Northeast, triggering health alerts",
-        "link": "https://wildfiretoday.com/canada-wildfire-smoke-blankets-us-skies-across-the-midwest-and-northeast-triggering-health-alerts/",
-        "description": "Air quality levels are forecast to drop to unhealthy levels across the U.S. Midwest and Northeast on Tuesday as smoke from Canadian wildfires intensifies. AirNow&#8217;s Fire and Smoke Map showed the regions blanketed in yellow due to the drifting smoke. Winds from the northwest are pushing smoke into the region, with National Weather Service forecasters [&#8230;]",
-        "pubDate": "Tue, 14 Jul 2026 23:19:07 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "B.C. wildfires expected to grow as hot, windy conditions return",
-        "link": "https://globalnews.ca/news/12001505/bc-wildfires-grow-hot-windy-conditions-return/",
-        "description": "The Pear Lake wildfire, estimated at 66,000 hectares, received some reprieve from the cooler, wetter weather. However, the weather is warming up again.",
-        "pubDate": "Wed, 29 Jul 2026 18:42:37 +0000",
+        "title": "Metal thieves target BC Hydro charging stations and it&#8217;s not the first time",
+        "link": "https://globalnews.ca/news/12002079/metal-thieves-target-bc-hydro-charging-stations/",
+        "description": "'They were alerted by sensors in the area that went off, alerting them of the cables being cut,' Const. Sam Zacharias with the Port Moody Police Department said.",
+        "pubDate": "Wed, 29 Jul 2026 22:57:08 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/WEB-MN-BC-WILDFIRES-JULY-29-@-740-WEB.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bc-hydro-theft.png"
       }
     ]
   }
