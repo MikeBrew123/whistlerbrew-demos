@@ -1,17 +1,8 @@
 {
-  "updated_at": "2026-07-29T22:00:37.385Z",
+  "updated_at": "2026-07-30T04:00:33.666Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Okanagan researchers wade into streams to help shape the future of the region&#8217;s water",
-        "link": "https://globalnews.ca/news/11997731/okanagan-researchers-future-region-water/",
-        "description": "The work is part of an effort by the Collaborative Leadership Table, a partnership of First Nations and  governments developing a vision for managing water across the Okanagan.",
-        "pubDate": "Wed, 29 Jul 2026 01:16:32 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Screenshot-2026-07-28-173300.png"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -39,20 +30,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "B.C. wildfires expected to grow as hot, windy conditions return",
-        "link": "https://globalnews.ca/news/12001505/bc-wildfires-grow-hot-windy-conditions-return/",
-        "description": "The Pear Lake wildfire, estimated at 66,000 hectares, received some reprieve from the cooler, wetter weather. However, the weather is warming up again.",
-        "pubDate": "Wed, 29 Jul 2026 18:42:37 +0000",
+        "title": "B.C. forestry company moving head offices to the U.S. amid struggles, tariffs",
+        "link": "https://globalnews.ca/news/12001775/bc-forestry-company-moving-head-offices-us-struggles-tariffs/",
+        "description": "Jock Finlayson, the chief economist for the ICBA, told Global News that Interfor is one of the foundational businesses in B.C.'s forest industry.",
+        "pubDate": "Wed, 29 Jul 2026 21:47:07 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/WEB-MN-BC-WILDFIRES-JULY-29-@-740-WEB.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "&#8216;Sounded like two 747 jets&#8217;: B.C. business owner flees fast-moving wildfire",
-        "link": "https://globalnews.ca/news/11997387/bc-business-owner-flees-wildfire/",
-        "description": "The owner of Steve's Towing and Auto Repair has been living there for 12 years and survived the massive Elephant Hill wildfire, which burned more than 1,900 square kilometres.",
-        "pubDate": "Tue, 28 Jul 2026 22:31:09 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/e6ea7c6b-4617-414e-882a-539057d97f82.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2021/11/20211104171132-618451edcb160e95bf6ee1bdjpeg.jpg?quality=65&#038;strip=all"
       }
     ]
   }
