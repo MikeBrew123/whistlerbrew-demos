@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T16:01:19.123Z",
+  "updated_at": "2026-07-30T22:01:18.752Z",
   "fires": [
     {
       "country": "Spain",
@@ -170,6 +170,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Northern Manitoba community's wildfire evacuation order lifted\",\n      \"url\": \"https://globalnews.ca/news/11996919/northern-manitoba-wildfire-evacuat"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Global burning at record low, despite North American and European wildfires\",\n      \"url\": \"https://globalnews.ca/news/12003464/global-burning-record"
   }
 }
