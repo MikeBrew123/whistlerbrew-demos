@@ -1,7 +1,8 @@
 {
-  "updated_at": "2026-07-30T22:00:33.697Z",
+  "updated_at": "2026-07-31T04:00:33.705Z",
   "zones": {
-    "coastal": [
+    "coastal": [],
+    "kamloops": [
       {
         "title": "B.C. man defied wildfire evacuation order, then called for help when fire grew",
         "link": "https://globalnews.ca/news/12003751/bc-man-defied-wildfire-evacuation-order-called-help-fire-grew/",
@@ -11,7 +12,8 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076_661ef0.jpg?quality=65&#038;strip=all"
       }
     ],
-    "kamloops": [
+    "prince-george": [],
+    "cariboo": [
       {
         "title": "Wildfire near Logan Lake prompts evacuation alerts, partial closure of highway",
         "link": "https://globalnews.ca/news/12003425/wildfire-logan-lake-evacuation-alerts-closure-highway/",
@@ -19,17 +21,6 @@
         "pubDate": "Thu, 30 Jul 2026 19:48:50 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/Logan-Lake-fire.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Former NHLer Tood Warriner to coach Windsor women",
-        "link": "https://globalnews.ca/news/12003276/former-nhler-tood-warriner-to-coach-windsor-women/",
-        "description": "Former NHL player Todd Warriner has been named interim head coach of the University of Windsor's women's hockey team.",
-        "pubDate": "Thu, 30 Jul 2026 18:13:46 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/c0f1824548753b211ca0be4769218409d651031f761272838b45e74029544956.jpg?quality=65&#038;strip=all"
       }
     ],
     "northwest": [],
@@ -50,12 +41,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Metal thieves target BC Hydro charging stations and it&#8217;s not the first time",
-        "link": "https://globalnews.ca/news/12002079/metal-thieves-target-bc-hydro-charging-stations/",
-        "description": "'They were alerted by sensors in the area that went off, alerting them of the cables being cut,' Const. Sam Zacharias with the Port Moody Police Department said.",
-        "pubDate": "Wed, 29 Jul 2026 22:57:08 +0000",
+        "title": "Former HandyDART user says he&#8217;s not making much progress finding a solution",
+        "link": "https://globalnews.ca/news/12002206/former-handydart-user-no-progress-find-solution/",
+        "description": "In an updated statement on Wednesday afternoon, a spokesperson from TransLink said, 'Cretain’s mobility device exceeds the operating specifications of the vehicles.'",
+        "pubDate": "Wed, 29 Jul 2026 23:52:10 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bc-hydro-theft.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/web-nh-show-jul-26.png"
       }
     ]
   }
