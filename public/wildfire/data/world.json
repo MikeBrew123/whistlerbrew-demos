@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T22:01:18.752Z",
+  "updated_at": "2026-07-31T04:01:17.602Z",
   "fires": [
     {
       "country": "Spain",
@@ -29,7 +29,7 @@
       "country": "France",
       "name": "Gironde Region & Cap Ferret Wildfire (South-West France) - Bordeaux Blaze",
       "status": "Active",
-      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters braced for 40C heatwave on Wednesday which could complicate containment.",
+      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters braced for 40C heatwave. BBC reports locals fighting flare-ups in 40C heat in the Gironde region, with some refusing to heed evacuations.",
       "link": "https://www.bbc.co.uk/news/articles/c5yd8gly1ydo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/554a/live/122cc280-8aab-11f1-b8ee-9b3c26ad07bb.jpg"
     },
@@ -48,6 +48,14 @@
       "summary": "Deadly wildfire near Thessaloniki with more than 100 firefighters battling the blaze. At least two lives claimed.",
       "link": "https://www.bbc.co.uk/news/articles/c0qy3nkex0qo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/95bf/live/b32601a0-74ae-11f1-9c5b-41132a229f02.jpg"
+    },
+    {
+      "country": "Greece",
+      "name": "Crete Wildfire (Rethymno Region)",
+      "status": "Active",
+      "summary": "Thousands evacuated in Crete as wildfires threaten tourist resorts. Strong winds have fanned the flames in the Rethymno region as wildfires continue to ravage the Greek island.",
+      "link": "https://www.bbc.co.uk/news/articles/c9w01781981o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/eae4/live/ffd46200-8be0-11f1-b2ab-0dd01740f9f6.jpg"
     },
     {
       "country": "United States",
@@ -169,7 +177,21 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Global burning at record low, despite North American and European wildfires\",\n      \"url\": \"https://globalnews.ca/news/12003464/global-burning-record"
+    "items_in": {
+      "canada": 3,
+      "world": 2
+    },
+    "items_out": {
+      "canada": 3,
+      "world_fires": 25
+    },
+    "deduped": 1,
+    "rerouted": 1,
+    "notes": [
+      "Merged BBC France article about Gironde locals fighting flare-ups into existing Gironde/Bordeaux fire entry",
+      "Added Greece Crete Wildfire as separate entry from Thessaloniki fire",
+      "Preserved all Active fires from existing_fires list",
+      "All world articles contained location info sufficient for world_fires bucket"
+    ]
   }
 }
