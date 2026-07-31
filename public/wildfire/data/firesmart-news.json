@@ -1,28 +1,19 @@
 {
-  "updated_at": "2026-07-31T10:00:33.215Z",
+  "updated_at": "2026-07-31T16:00:34.170Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "Wildfire near Logan Lake prompts evacuation alerts, partial closure of highway",
-        "link": "https://globalnews.ca/news/12003425/wildfire-logan-lake-evacuation-alerts-closure-highway/",
-        "description": "The wildfire near Logan Lake broke out on Wednesday and the BC Wildfire Service says it is about 88 hectares in size and burning out of control.",
-        "pubDate": "Thu, 30 Jul 2026 19:48:50 +0000",
+        "title": "Vancouver police release video of violent robbery of 75-year-old man",
+        "link": "https://globalnews.ca/news/12003542/vancouver-video-violent-robbery-senior/",
+        "description": "The victim was attacked on Tuesday morning while going for a walk near East Hastings Street and Jackson Avenue in the Downtown Eastside.",
+        "pubDate": "Thu, 30 Jul 2026 20:29:04 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Logan-Lake-fire.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/vancouver-senior-attack.png"
       }
     ],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Burned chimney all that remains of woman&#8217;s home after wildfire near Clinton, B.C.",
-        "link": "https://globalnews.ca/news/12002642/burned-chimney-all-that-remains-of-womans-home-after-wildfire-near-clinton-b-c/",
-        "description": "A resident from British Columbia's Cariboo region says there’s nothing left around her property other than her burnt-out chimney stack and her neighbour’s propane tank.",
-        "pubDate": "Thu, 30 Jul 2026 11:43:56 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
@@ -41,12 +32,28 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "B.C. man defied wildfire evacuation order, then called for help when fire grew",
-        "link": "https://globalnews.ca/news/12003751/bc-man-defied-wildfire-evacuation-order-called-help-fire-grew/",
-        "description": "Crews responded and were able to get the man to safety, but officials are warning of the dangers of not obeying evacuation orders.",
-        "pubDate": "Thu, 30 Jul 2026 21:36:27 +0000",
+        "title": "B.C. firefighters face critical days as dry fuels and winds increase fire risks",
+        "link": "https://globalnews.ca/news/12004513/b-c-firefighters-face-critical-days-as-dry-fuels-and-winds-increase-fire-risks/",
+        "description": "A cold front with gusty winds could bring extreme fire behaviour in areas where British Columbia communities are threatened by wildfires.",
+        "pubDate": "Fri, 31 Jul 2026 11:51:31 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076_661ef0.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/88a68f440ff841fe0b14d1b24717ae40ffc7bbb540b38761e9eff75d1596523f_931824.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Sawmill closures &#8216;gut-wrenching&#8217; amid lumber industry headwinds: Canfor CEO",
+        "link": "https://globalnews.ca/news/12003417/fox-creek-sawmill-closure/",
+        "description": "The Fox Creek, Alta. sawmill is closing because there's not enough fibre in the region to sustain it long-term, coupled with U.S. tariffs and weak markets, the company said.",
+        "pubDate": "Thu, 30 Jul 2026 20:40:26 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Fox-Creek-forest.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Former NHLer Tood Warriner to coach Windsor women",
+        "link": "https://globalnews.ca/news/12003276/former-nhler-tood-warriner-to-coach-windsor-women/",
+        "description": "Former NHL player Todd Warriner has been named interim head coach of the University of Windsor's women's hockey team.",
+        "pubDate": "Thu, 30 Jul 2026 18:13:46 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/c0f1824548753b211ca0be4769218409d651031f761272838b45e74029544956.jpg?quality=65&#038;strip=all"
       }
     ]
   }
