@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T16:01:21.465Z",
+  "updated_at": "2026-08-01T10:01:21.434Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,6 +178,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. firefighters face critical days as dry fuels and winds increase fire risks\",\n      \"url\": \"https://globalnews.ca/news/12004513/b-c-firefighters-"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Beavers and a Tim's card: a very Canadian solution to a firefighting challenge\",\n      \"url\": \"https://globalnews.ca/news/12004961/mahone-bay-beavers"
   }
 }
