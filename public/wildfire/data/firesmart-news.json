@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-08-01T16:00:34.410Z",
+  "updated_at": "2026-08-01T22:00:32.991Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [
+    "kamloops": [
       {
-        "title": "Loon Lake area evacuation order extends to nearly 1,500 properties due to Pear Lake fire",
-        "link": "https://globalnews.ca/news/12005200/evacuation-order-expanded-loon-lake-pear-lake-wildfire/",
-        "description": "The new properties under evacuation order include Loon Lake and properties on Highway 97 from Loon Lake Road to past Scottie Creek Road.",
-        "pubDate": "Fri, 31 Jul 2026 19:12:44 +0000",
+        "title": "Missing B.C. hiker found dead in Alberta national park",
+        "link": "https://globalnews.ca/news/12005199/missing-bc-hiker-found-dead-alberta-national-park/",
+        "description": "Parks Canada said they received a report on July 23 that Bob Toothill, who was travelling the Great Divide Trail between Waterton Lakes National Park and Coleman, AB, was missing.",
+        "pubDate": "Fri, 31 Jul 2026 20:24:16 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-4.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Bob-Toothhill-2.jpg?quality=65&#038;strip=all"
       }
     ],
+    "prince-george": [],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
@@ -30,6 +30,22 @@
         "description": "What began as a far-below-average wildfire season for Canada has since exploded past historical norms, causing national crews to mobilize and United States officials to issue warnings. Area burned in Canada was less than half of the 10-year average on July 7, but just 10 days and over 300 wildfires later, area burned now sits [&#8230;]",
         "pubDate": "Fri, 17 Jul 2026 19:55:48 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Cold front could escalate B.C. wildfires ahead of August long weekend",
+        "link": "https://globalnews.ca/news/12006275/long-weekend-bc-wildfires/",
+        "description": "Strong winds and dry thunderstorms are expected to worsen wildfire conditions across southern B.C this long weekend, as more than 1,800 properties remain under evacuation orders.",
+        "pubDate": "Sat, 01 Aug 2026 17:27:35 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Loon Lake area evacuation order extends to nearly 1,500 properties due to Pear Lake fire",
+        "link": "https://globalnews.ca/news/12005200/evacuation-order-expanded-loon-lake-pear-lake-wildfire/",
+        "description": "The new properties under evacuation order include Loon Lake and properties on Highway 97 from Loon Lake Road to past Scottie Creek Road.",
+        "pubDate": "Fri, 31 Jul 2026 19:12:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/bytes-4.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "B.C. firefighters face critical days as dry fuels and winds increase fire risks",
