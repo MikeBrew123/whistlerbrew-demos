@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02T10:01:19.260Z",
+  "updated_at": "2026-08-02T16:01:18.077Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,6 +178,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Cold front could escalate B.C. wildfires ahead of August long weekend\",\n      \"url\": \"https://globalnews.ca/news/12006275/long-weekend-bc-wildfires/\""
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. wildfires continue to flare up, with almost 30 added in past 24 hours\",\n      \"url\": \"https://globalnews.ca/news/12006840/bc-wildfires-new-blaze"
   }
 }
