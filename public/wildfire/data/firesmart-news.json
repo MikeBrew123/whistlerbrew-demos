@@ -1,8 +1,19 @@
 {
-  "updated_at": "2026-08-02T16:00:33.444Z",
+  "updated_at": "2026-08-02T22:00:33.531Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Cold front could escalate B.C. wildfires ahead of August long weekend",
+        "link": "https://globalnews.ca/news/12006275/long-weekend-bc-wildfires/",
+        "description": "Strong winds and dry thunderstorms are expected to worsen wildfire conditions across southern B.C this long weekend, as more than 1,800 properties remain under evacuation orders.",
+        "pubDate": "Sat, 01 Aug 2026 17:27:35 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "prince-george": [],
+    "cariboo": [
       {
         "title": "Missing B.C. hiker found dead in Alberta national park",
         "link": "https://globalnews.ca/news/12005199/missing-bc-hiker-found-dead-alberta-national-park/",
@@ -12,8 +23,6 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/07/Bob-Toothhill-2.jpg?quality=65&#038;strip=all"
       }
     ],
-    "prince-george": [],
-    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
@@ -32,20 +41,20 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "B.C. wildfires continue to flare up, with almost 30 added in past 24 hours",
+        "title": "Recipe: Summer soba noodle salad",
+        "link": "https://globalnews.ca/news/12006623/recipe-summer-soba-noodle-salad/",
+        "description": "If the heat is getting to you and you need a simple, but tasty, summer recipe, this summer noodle soba salad is sure to hit the right spot.",
+        "pubDate": "Sun, 02 Aug 2026 15:00:04 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/harvest-community-foods.png"
+      },
+      {
+        "title": "B.C. wildfires destroy lakeside homes, with 30 new added in past 24 hours",
         "link": "https://globalnews.ca/news/12006840/bc-wildfires-new-blazes-evacuations-aug-2/",
         "description": "Even if a wildfire is not threatening your community, the BC Wildfire Service is recommending that British Columbians be prepared if you need to leave quickly.",
         "pubDate": "Sun, 02 Aug 2026 14:49:28 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/b8f17671936d063e14898363fc48f48471ff5dac87e1b15d7930092ab9160e7c.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Cold front could escalate B.C. wildfires ahead of August long weekend",
-        "link": "https://globalnews.ca/news/12006275/long-weekend-bc-wildfires/",
-        "description": "Strong winds and dry thunderstorms are expected to worsen wildfire conditions across southern B.C this long weekend, as more than 1,800 properties remain under evacuation orders.",
-        "pubDate": "Sat, 01 Aug 2026 17:27:35 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Grinder, one of two beloved grizzly bears on Grouse Mountain, dies",
