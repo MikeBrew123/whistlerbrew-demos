@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02T16:01:18.077Z",
+  "updated_at": "2026-08-03T04:01:20.367Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,6 +178,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. wildfires continue to flare up, with almost 30 added in past 24 hours\",\n      \"url\": \"https://globalnews.ca/news/12006840/bc-wildfires-new-blaze"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. wildfires grow, put more than 5K under evacuation orders in past 24 hours\",\n      \"url\": \"https://globalnews.ca/news/12007078/bc-wildfires-thous"
   }
 }
