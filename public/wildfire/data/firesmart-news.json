@@ -1,52 +1,20 @@
 {
-  "updated_at": "2026-08-02T22:00:33.531Z",
+  "updated_at": "2026-08-03T04:00:33.726Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Cold front could escalate B.C. wildfires ahead of August long weekend",
-        "link": "https://globalnews.ca/news/12006275/long-weekend-bc-wildfires/",
-        "description": "Strong winds and dry thunderstorms are expected to worsen wildfire conditions across southern B.C this long weekend, as more than 1,800 properties remain under evacuation orders.",
-        "pubDate": "Sat, 01 Aug 2026 17:27:35 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Missing B.C. hiker found dead in Alberta national park",
-        "link": "https://globalnews.ca/news/12005199/missing-bc-hiker-found-dead-alberta-national-park/",
-        "description": "Parks Canada said they received a report on July 23 that Bob Toothill, who was travelling the Great Divide Trail between Waterton Lakes National Park and Coleman, AB, was missing.",
-        "pubDate": "Fri, 31 Jul 2026 20:24:16 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/Bob-Toothhill-2.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
       {
-        "title": "Canada wildfire smoke will cover more US states soon, forecasts show",
-        "link": "https://wildfiretoday.com/canada-wildfire-smoke-will-cover-more-us-states-soon-forecasts-show/",
-        "description": "Communities within the United States&#8217; Great Lakes region will experience their highest air pollution levels throughout Sunday due to wildfire smoke from Canada, but National Weather Service forecasts show significant relief isn&#8217;t coming anytime soon. Smoke has lowered air quality across the Midwest and Northeast to unhealthy and even hazardous levels over the past week as numerous [&#8",
-        "pubDate": "Sun, 19 Jul 2026 20:40:45 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Canada wildfire totals explode to historic highs, US officials warn to extinguish fires &#8216;as fast as possible&#8217;",
-        "link": "https://wildfiretoday.com/canada-wildfire-totals-explode-to-historic-highs-epa-warns-to-extinguish-fires-as-fast-as-possible/",
-        "description": "What began as a far-below-average wildfire season for Canada has since exploded past historical norms, causing national crews to mobilize and United States officials to issue warnings. Area burned in Canada was less than half of the 10-year average on July 7, but just 10 days and over 300 wildfires later, area burned now sits [&#8230;]",
-        "pubDate": "Fri, 17 Jul 2026 19:55:48 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Recipe: Summer soba noodle salad",
-        "link": "https://globalnews.ca/news/12006623/recipe-summer-soba-noodle-salad/",
-        "description": "If the heat is getting to you and you need a simple, but tasty, summer recipe, this summer noodle soba salad is sure to hit the right spot.",
-        "pubDate": "Sun, 02 Aug 2026 15:00:04 +0000",
+        "title": "B.C. wildfires grow, put more than 5K under evacuation orders in past 24 hours",
+        "link": "https://globalnews.ca/news/12007078/bc-wildfires-thousands-evacuation-orders/",
+        "description": "There are now approximately 130 wildfires burning in British Columbia, with BC Wildfire Service reporting almost half of those are considered out-of-control.",
+        "pubDate": "Sun, 02 Aug 2026 22:21:05 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/harvest-community-foods.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bc-wildfire-damage.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "B.C. wildfires destroy lakeside homes, with 30 new added in past 24 hours",
@@ -57,12 +25,12 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/b8f17671936d063e14898363fc48f48471ff5dac87e1b15d7930092ab9160e7c.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Grinder, one of two beloved grizzly bears on Grouse Mountain, dies",
-        "link": "https://globalnews.ca/news/12004863/grouse-mountain-bear/",
-        "description": "Grinder, a massive grizzly bear who was adopted as a cub after being orphaned, and fascinated locals and tourists alike on Grouse Mountain, has died.",
-        "pubDate": "Fri, 31 Jul 2026 18:13:56 +0000",
+        "title": "Cold front could escalate B.C. wildfires ahead of August long weekend",
+        "link": "https://globalnews.ca/news/12006275/long-weekend-bc-wildfires/",
+        "description": "Strong winds and dry thunderstorms are expected to worsen wildfire conditions across southern B.C this long weekend, as more than 1,800 properties remain under evacuation orders.",
+        "pubDate": "Sat, 01 Aug 2026 17:27:35 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/f1dc8a0d6a6415711cd45032ed3e5545ff8b9cbe8c7e422afb741b40baf3911a.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
       }
     ]
   }
