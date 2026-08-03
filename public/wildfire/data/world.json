@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-03T10:01:20.189Z",
+  "updated_at": "2026-08-03T22:01:20.292Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,6 +178,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. wildfires grow, put more than 5K under evacuation orders in past 24 hours\",\n      \"url\": \"https://globalnews.ca/news/12007078/bc-wildfires-thous"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Okanagan wildfires force more evacuation orders as First Nation assesses losses\",\n      \"url\": \"https://globalnews.ca/news/12007719/okanagan-wildfire"
   }
 }
