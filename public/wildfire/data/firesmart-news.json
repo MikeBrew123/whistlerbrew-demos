@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-08-03T16:00:33.741Z",
+  "updated_at": "2026-08-03T22:00:33.309Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Okanagan wildfires force more evacuation orders as First Nation assesses losses",
+        "link": "https://globalnews.ca/news/12007719/okanagan-wildfires-force-more-evacuation-orders-as-first-nation-assesses-losses/",
+        "description": "Further up the lake, the Regional District of North Okanagan expanded evacuation orders and alerts on Sunday for dozens of properties because of the Bradley Creek wildfire.",
+        "pubDate": "Mon, 03 Aug 2026 20:39:57 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/okanagan-fire-closeup.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -25,12 +34,12 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/b8f17671936d063e14898363fc48f48471ff5dac87e1b15d7930092ab9160e7c.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Cold front could escalate B.C. wildfires ahead of August long weekend",
-        "link": "https://globalnews.ca/news/12006275/long-weekend-bc-wildfires/",
-        "description": "Strong winds and dry thunderstorms are expected to worsen wildfire conditions across southern B.C this long weekend, as more than 1,800 properties remain under evacuation orders.",
-        "pubDate": "Sat, 01 Aug 2026 17:27:35 +0000",
+        "title": "Nanaimo bar owner says she is fed up with city&#8217;s crime after daughter&#8217;s car targeted",
+        "link": "https://globalnews.ca/news/12005667/nanaimo-bar-owner-fed-up-crime-daughters-car-targeted/",
+        "description": "Last month, Sonia Komen's bar hosted B.C.'s public safety minister for the first of a string of government announcements about a $12 million program targeting chronic offenders.",
+        "pubDate": "Fri, 31 Jul 2026 23:13:14 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/00a4e71aa41d8267b3e6c96f252b009fc25a8e1f4e71cc541bb8bf2242f3b076.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/1_4e93b4.jpg?quality=65&#038;strip=all"
       }
     ]
   }
