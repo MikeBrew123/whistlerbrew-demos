@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T04:01:20.926Z",
+  "updated_at": "2026-08-04T22:01:16.346Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,6 +178,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Okanagan wildfires force more evacuation orders as First Nation assesses losses\",\n      \"url\": \"https://globalnews.ca/news/12007719/okanagan-wildfire"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Super El Niño growing 'faster than we've ever recorded' as wildfires burn\",\n      \"url\": \"https://globalnews.ca/news/12004737/el-nino-2026-second-hal"
   }
 }
