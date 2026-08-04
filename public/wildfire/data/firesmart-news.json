@@ -1,8 +1,32 @@
 {
-  "updated_at": "2026-08-04T16:00:34.666Z",
+  "updated_at": "2026-08-04T22:00:37.656Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Thousands remain under evacuation order due to wildfire on west side of Okanagan Lake",
+        "link": "https://globalnews.ca/news/12008858/thousands-evacuation-order-wildfire-west-side-okanagan-lake-quilpituk-creek/",
+        "description": "The B.C. Wildfire Service said the Quilpituk Creek wildfire experienced significant growth on Monday, but it is growing up the slope and away from community areas.",
+        "pubDate": "Tue, 04 Aug 2026 20:56:06 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/f7fdc017a0eb5876a74212973debdc0c8db8e241deca2feb5afd7647cec6934e_05f474.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C. man watches his home of 31 years burn in the Bradley Creek wildfire",
+        "link": "https://globalnews.ca/news/12008770/bc-man-watches-home-30-years-burn-bradley-creek-wildfire/",
+        "description": "\"We were holding our own, but homes around me began to start on fire and it changed the whole game,\" Jeff Moore, whose cabin was on Okanagan Lake, told Global News.",
+        "pubDate": "Tue, 04 Aug 2026 20:06:57 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6P-BC-WILDFIRE-EVACUEES_OM01YZJ0.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "230 homes may have been lost to Bradley Creek wildfire near Vernon: chief",
+        "link": "https://globalnews.ca/news/12008512/homes-lost-bradley-creek-wildfire-vernon/",
+        "description": "'For our community, it's measured in homes, family histories and places people have spent all of their lives,' Chief Dan Wilson of the Okanagan Indian Band said.",
+        "pubDate": "Tue, 04 Aug 2026 18:00:55 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-okanagan-PIC.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Hamburgers, water and support waiting for B.C. fire evacuees",
         "link": "https://globalnews.ca/news/12008113/hamburgers-water-and-support-waiting-for-b-c-fire-evacuees/",
@@ -10,53 +34,12 @@
         "pubDate": "Tue, 04 Aug 2026 11:36:08 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/bb7c728b10ec3c9dafb6f349164e05cdf65a7cdc4ef4f5d74f634b2491f8542e.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Okanagan wildfires force more evacuation orders as First Nation assesses losses",
-        "link": "https://globalnews.ca/news/12007719/okanagan-wildfires-force-more-evacuation-orders-as-first-nation-assesses-losses/",
-        "description": "Further up the lake, the Regional District of North Okanagan expanded evacuation orders and alerts on Sunday for dozens of properties because of the Bradley Creek wildfire.",
-        "pubDate": "Mon, 03 Aug 2026 20:39:57 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/okanagan-fire-closeup.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "B.C. wildfires grow, put more than 5K under evacuation orders in past 24 hours",
-        "link": "https://globalnews.ca/news/12007078/bc-wildfires-thousands-evacuation-orders/",
-        "description": "There are now approximately 130 wildfires burning in British Columbia, with BC Wildfire Service reporting almost half of those are considered out-of-control.",
-        "pubDate": "Sun, 02 Aug 2026 22:21:05 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bc-wildfire-damage.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Recipe: Summer soba noodle salad",
-        "link": "https://globalnews.ca/news/12006623/recipe-summer-soba-noodle-salad/",
-        "description": "If the heat is getting to you and you need a simple, but tasty, summer recipe, this summer noodle soba salad is sure to hit the right spot.",
-        "pubDate": "Sun, 02 Aug 2026 15:00:04 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/harvest-community-foods.png"
-      },
-      {
-        "title": "B.C. wildfires destroy lakeside homes, with 30 new added in past 24 hours",
-        "link": "https://globalnews.ca/news/12006840/bc-wildfires-new-blazes-evacuations-aug-2/",
-        "description": "Even if a wildfire is not threatening your community, the BC Wildfire Service is recommending that British Columbians be prepared if you need to leave quickly.",
-        "pubDate": "Sun, 02 Aug 2026 14:49:28 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/b8f17671936d063e14898363fc48f48471ff5dac87e1b15d7930092ab9160e7c.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Possible WestJet strike has Kelowna travellers worried about their plans",
-        "link": "https://globalnews.ca/news/12005410/possible-westjet-strike-kelowna-travellers-plans/",
-        "description": "WestJet has also begun preparing for a possible disruption by grounding some aircraft to avoid stranding additional passengers and planes.",
-        "pubDate": "Sat, 01 Aug 2026 00:34:22 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/westjet-strike-ylw.jpg?quality=65&#038;strip=all"
-      }
-    ]
+    "all": []
   }
 }
