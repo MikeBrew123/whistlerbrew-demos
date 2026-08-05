@@ -82,19 +82,17 @@
   ],
   "news": [
     {
+      "title": "Northern Manitoba community's wildfire evacuation order lifted",
+      "url": "https://globalnews.ca/news/11996919/northern-manitoba-wildfire-evacuation-order-lifted/",
+      "source": "Global News Wildfire",
+      "published": "2026-07-28"
+    },
+    {
       "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
       "url": "https://globalnews.ca/news/11994559/clinton-bc-wildfires-merge/",
       "source": "Global News Wildfire",
       "published": "2026-07-26"
-    },
-    {
-      "title": "Northern Manitoba community's wildfire evacuation order lifted",
-      "url": "https://globalnews.ca/news/11996919/northern-manitoba-wildfire-evacuation-order-lifted/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-28",
-      "description": "The Manitoba Emergency Management Organization says the fire situation has improved, and residents of O-Pipon-Na-Piwin Cree Nation can return.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/07/385204da88c489a7a1e217918d27da653a6f2239788b2f17624338f09d50fbbe.jpg?quality=65&#038;strip=all"
     }
   ],
-  "last_news_update": "2026-08-05T04:01:17.050Z"
+  "last_news_update": "2026-08-05T22:01:13.441Z"
 }
