@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-05T04:00:33.560Z",
+  "updated_at": "2026-08-05T10:00:33.083Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -42,6 +42,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "B.C. fire officials say conditions are &#8216;explosive&#8217; with unprecedented fuel dryness",
         "link": "https://globalnews.ca/news/12008988/bc-fire-officials-conditions-explosive-unprecedented-fuel-dryness/",
