@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-05T10:00:33.083Z",
+  "updated_at": "2026-08-05T16:00:33.257Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Dry lightning, hot weather expected to increase wildfire conditions in BC Interior",
+        "link": "https://globalnews.ca/news/12009762/bc-interior-wildfire-conditions/",
+        "description": "As the damage from the devastating wildfire along Okanagan Lake in British Columbia is being assessed, officials are warning of the potential of more fires.",
+        "pubDate": "Wed, 05 Aug 2026 12:18:42 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/994765abb8eb6e86e277d984d6cc2e5e7422efd613fc05f4546bbd333196cd7a.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Photos show Bradley Creek wildfire destruction as resident describes losing everything",
         "link": "https://globalnews.ca/news/12009083/bradley-creek-wildfire-destruction-photos-homes-burned/",
