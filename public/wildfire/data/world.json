@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-05T10:01:16.769Z",
+  "updated_at": "2026-08-05T16:01:17.232Z",
   "fires": [
     {
       "country": "Spain",
@@ -177,7 +177,21 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Super El Niño growing 'faster than we've ever recorded' as wildfires burn\",\n      \"url\": \"https://globalnews.ca/news/12004737/el-nino-2026-second-hal"
+    "items_in": {
+      "canada": 3,
+      "world": 0
+    },
+    "items_out": {
+      "canada": 3,
+      "world_fires": 24
+    },
+    "deduped": 1,
+    "rerouted": 0,
+    "notes": [
+      "Removed 'Northern Manitoba community's wildfire evacuation order lifted' from Canada news - evacuation order lifted on 2026-07-28, fire contained/resolved >60 days from current date",
+      "All world fires preserved as Active status",
+      "No duplicates found across sources in Canada news",
+      "All images preserved in output"
+    ]
   }
 }
