@@ -1,7 +1,24 @@
 {
-  "updated_at": "2026-08-05T16:00:33.257Z",
+  "updated_at": "2026-08-05T22:00:33.567Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Several evacuation orders in Boston Bar area downgraded to alerts",
+        "link": "https://globalnews.ca/news/12010638/evacuation-orders-boston-bar-downgraded-evacuation-alerts/",
+        "description": "The Brunswick Creek wildfire is still considered out of control; however, BC Wildfire advises the risk has sufficiently subsided and residents may return home if they choose to.",
+        "pubDate": "Wed, 05 Aug 2026 21:03:00 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/07/88a68f440ff841fe0b14d1b24717ae40ffc7bbb540b38761e9eff75d1596523f_931824.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Metro Vancouver, Fraser Valley under air quality advisory due to wildfire smoke",
+        "link": "https://globalnews.ca/news/12010544/metro-vancouver-fraser-valley-air-quality-advisory-wildfire-smoke/",
+        "description": "Some parts of Metro Vancouver have air quality ranked at a Level Nine, with the Eastern Fraser Valley ranked at a Level 10 plus, which means very high risk.",
+        "pubDate": "Wed, 05 Aug 2026 20:31:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/set-gfx-metro-vancouver-smoke-aug5.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [
       {
         "title": "Dry lightning, hot weather expected to increase wildfire conditions in BC Interior",
@@ -18,22 +35,6 @@
         "pubDate": "Tue, 04 Aug 2026 23:25:58 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Band-Land-8.png"
-      },
-      {
-        "title": "Thousands remain under evacuation order due to wildfire on west side of Okanagan Lake",
-        "link": "https://globalnews.ca/news/12008858/thousands-evacuation-order-wildfire-west-side-okanagan-lake-quilpituk-creek/",
-        "description": "The B.C. Wildfire Service said the Quilpituk Creek wildfire experienced significant growth on Monday, but it is growing up the slope and away from community areas.",
-        "pubDate": "Tue, 04 Aug 2026 20:56:06 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/f7fdc017a0eb5876a74212973debdc0c8db8e241deca2feb5afd7647cec6934e_05f474.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. man watches his home of 31 years burn in the Bradley Creek wildfire",
-        "link": "https://globalnews.ca/news/12008770/bc-man-watches-home-30-years-burn-bradley-creek-wildfire/",
-        "description": "\"We were holding our own, but homes around me began to start on fire and it changed the whole game,\" Jeff Moore, whose cabin was on Okanagan Lake, told Global News.",
-        "pubDate": "Tue, 04 Aug 2026 20:06:57 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6P-BC-WILDFIRE-EVACUEES_OM01YZJ0.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
