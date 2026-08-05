@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-04T22:00:37.656Z",
+  "updated_at": "2026-08-05T04:00:33.560Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Photos show Bradley Creek wildfire destruction as resident describes losing everything",
+        "link": "https://globalnews.ca/news/12009083/bradley-creek-wildfire-destruction-photos-homes-burned/",
+        "description": "Amber Cardenas has lived on the Okanagan Indian Band reserve for about 12 years and she and her family were forced to flee the fast-moving Bradley Creek wildfire on Saturday.",
+        "pubDate": "Tue, 04 Aug 2026 23:25:58 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Band-Land-8.png"
+      },
       {
         "title": "Thousands remain under evacuation order due to wildfire on west side of Okanagan Lake",
         "link": "https://globalnews.ca/news/12008858/thousands-evacuation-order-wildfire-west-side-okanagan-lake-quilpituk-creek/",
@@ -18,28 +26,30 @@
         "pubDate": "Tue, 04 Aug 2026 20:06:57 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/6P-BC-WILDFIRE-EVACUEES_OM01YZJ0.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "230 homes may have been lost to Bradley Creek wildfire near Vernon: chief",
-        "link": "https://globalnews.ca/news/12008512/homes-lost-bradley-creek-wildfire-vernon/",
-        "description": "'For our community, it's measured in homes, family histories and places people have spent all of their lives,' Chief Dan Wilson of the Okanagan Indian Band said.",
-        "pubDate": "Tue, 04 Aug 2026 18:00:55 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-okanagan-PIC.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Hamburgers, water and support waiting for B.C. fire evacuees",
-        "link": "https://globalnews.ca/news/12008113/hamburgers-water-and-support-waiting-for-b-c-fire-evacuees/",
-        "description": "With thousands forced from their homes due to fires around Okanagan Lake, the Salvation Army in Vernon has become a place for people to gather as they figure out what's next.",
-        "pubDate": "Tue, 04 Aug 2026 11:36:08 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bb7c728b10ec3c9dafb6f349164e05cdf65a7cdc4ef4f5d74f634b2491f8542e.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "Massive Pear Lake wildfire devastates Clinton ranch as owner fights flames",
+        "link": "https://globalnews.ca/news/12009255/massive-pear-lake-wildfire-devastates-clinton-ranch-owner-fights-flames/",
+        "description": "Barb Edmonson stayed behind to fight the fire when it threatened the Firefly Ranch in Clinton. She said the ranch is her life and she couldn't just leave.",
+        "pubDate": "Wed, 05 Aug 2026 00:11:42 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/pear-lake-fire-gofundme.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "B.C. fire officials say conditions are &#8216;explosive&#8217; with unprecedented fuel dryness",
+        "link": "https://globalnews.ca/news/12008988/bc-fire-officials-conditions-explosive-unprecedented-fuel-dryness/",
+        "description": "\"Throughout British Columbia, we have over 1,000 personnel directly engaged in the fight in our wildfire response efforts,\" Minister of Forests Ravi Parmar said.",
+        "pubDate": "Tue, 04 Aug 2026 22:19:31 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bb7c728b10ec3c9dafb6f349164e05cdf65a7cdc4ef4f5d74f634b2491f8542e.jpg?quality=65&#038;strip=all"
+      }
+    ]
   }
 }
