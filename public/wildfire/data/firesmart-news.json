@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-05T22:00:33.567Z",
+  "updated_at": "2026-08-06T04:00:33.841Z",
   "zones": {
     "coastal": [
       {
-        "title": "Several evacuation orders in Boston Bar area downgraded to alerts",
-        "link": "https://globalnews.ca/news/12010638/evacuation-orders-boston-bar-downgraded-evacuation-alerts/",
-        "description": "The Brunswick Creek wildfire is still considered out of control; however, BC Wildfire advises the risk has sufficiently subsided and residents may return home if they choose to.",
-        "pubDate": "Wed, 05 Aug 2026 21:03:00 +0000",
+        "title": "Wildfire breaks out in Belcarra Park near Port Moody, Anmore",
+        "link": "https://globalnews.ca/news/12010934/wildfire-breaks-out-belcarra-park-port-moody-anmore/",
+        "description": "The Coastal Fire Centre says the fire is burning in Belcarra Park and is an estimated 0.8 hectares in size as of Wednesday afternoon.",
+        "pubDate": "Wed, 05 Aug 2026 23:35:19 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/07/88a68f440ff841fe0b14d1b24717ae40ffc7bbb540b38761e9eff75d1596523f_931824.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/belcarra-fire.png"
       },
       {
         "title": "Metro Vancouver, Fraser Valley under air quality advisory due to wildfire smoke",
@@ -21,31 +21,39 @@
     ],
     "kamloops": [
       {
-        "title": "Dry lightning, hot weather expected to increase wildfire conditions in BC Interior",
-        "link": "https://globalnews.ca/news/12009762/bc-interior-wildfire-conditions/",
-        "description": "As the damage from the devastating wildfire along Okanagan Lake in British Columbia is being assessed, officials are warning of the potential of more fires.",
-        "pubDate": "Wed, 05 Aug 2026 12:18:42 +0000",
+        "title": "B.C. resident lost home to Bradley Creek wildfire: &#8216;It was all just so fast&#8217;",
+        "link": "https://globalnews.ca/news/12010895/bc-resident-lost-home-bradley-creek-wildfire/",
+        "description": "On Saturday, the Bradley Creek wildfire, burning west of Vernon, grew rapidly when wind gusts reached more than 70 kilometres an hour.",
+        "pubDate": "Thu, 06 Aug 2026 01:59:44 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/994765abb8eb6e86e277d984d6cc2e5e7422efd613fc05f4546bbd333196cd7a.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/fec5278f14b25f71d005720599bdbcd3fba2b0d11971974309c008bd1dbb7c13.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Photos show Bradley Creek wildfire destruction as resident describes losing everything",
-        "link": "https://globalnews.ca/news/12009083/bradley-creek-wildfire-destruction-photos-homes-burned/",
-        "description": "Amber Cardenas has lived on the Okanagan Indian Band reserve for about 12 years and she and her family were forced to flee the fast-moving Bradley Creek wildfire on Saturday.",
-        "pubDate": "Tue, 04 Aug 2026 23:25:58 +0000",
+        "title": "Chief says community was left &#8216;a war zone&#8217; after Bradley Creek wildfire",
+        "link": "https://globalnews.ca/news/12010757/chief-says-community-a-war-zone-bradley-creek-wildfire/",
+        "description": "\"There are some structures that, I'll be turning 67 in November and those structures were there all my life and to see them suddenly gone, it's just devastating,\" Dan Wilson said.",
+        "pubDate": "Wed, 05 Aug 2026 22:29:53 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Band-Land-8.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/994765abb8eb6e86e277d984d6cc2e5e7422efd613fc05f4546bbd333196cd7a_07d960.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Evac alert expected to be upgraded to order for Quilpituk Creek wildfire",
+        "link": "https://globalnews.ca/news/12010733/no-change-in-evacuation-orders-alerts-for-fire-on-west-side-of-okanagan-lake/",
+        "description": "Central Okanagan Emergency Management said the evacuation orders for the 2,223 properties and evacuation alerts for 425 properties in the wildfire area will remain in place.",
+        "pubDate": "Wed, 05 Aug 2026 22:29:35 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/9f8fb4432353f02e643dce59569c6ede56a9befad9e83ddc7b99ae94f8fbdb71.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
     "cariboo": [
       {
-        "title": "Massive Pear Lake wildfire devastates Clinton ranch as owner fights flames",
-        "link": "https://globalnews.ca/news/12009255/massive-pear-lake-wildfire-devastates-clinton-ranch-owner-fights-flames/",
-        "description": "Barb Edmonson stayed behind to fight the fire when it threatened the Firefly Ranch in Clinton. She said the ranch is her life and she couldn't just leave.",
-        "pubDate": "Wed, 05 Aug 2026 00:11:42 +0000",
+        "title": "Several evacuation orders in Boston Bar area downgraded to alerts",
+        "link": "https://globalnews.ca/news/12010638/evacuation-orders-boston-bar-downgraded-evacuation-alerts/",
+        "description": "The Brunswick Creek wildfire is still considered out of control; however, BC Wildfire advises the risk has sufficiently subsided and residents may return home if they choose to.",
+        "pubDate": "Wed, 05 Aug 2026 21:03:00 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/pear-lake-fire-gofundme.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/BOSTON-BAR-FIRE-DEPT-2.jpg?quality=65&#038;strip=all"
       }
     ],
     "northwest": [],
@@ -59,12 +67,11 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "B.C. fire officials say conditions are &#8216;explosive&#8217; with unprecedented fuel dryness",
-        "link": "https://globalnews.ca/news/12008988/bc-fire-officials-conditions-explosive-unprecedented-fuel-dryness/",
-        "description": "\"Throughout British Columbia, we have over 1,000 personnel directly engaged in the fight in our wildfire response efforts,\" Minister of Forests Ravi Parmar said.",
-        "pubDate": "Tue, 04 Aug 2026 22:19:31 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bb7c728b10ec3c9dafb6f349164e05cdf65a7cdc4ef4f5d74f634b2491f8542e.jpg?quality=65&#038;strip=all"
+        "title": "Four great key speakers for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
+        "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
+        "source": "Wildfire Today"
       }
     ]
   }
