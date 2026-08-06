@@ -1,7 +1,23 @@
 {
-  "updated_at": "2026-08-06T10:00:33.274Z",
+  "updated_at": "2026-08-06T16:00:33.394Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Belcarra Park wildfire latest: 35 homes in Anmore on evacuation alert",
+        "link": "https://globalnews.ca/news/12011467/belcarra-park-wildfire-latest-anmore-port-moody/",
+        "description": "Two properties on Fern Drive in Anmore were evacuated on Wednesday afternoon as a precaution, according to Metro Vancouver. There are 35 properties on evacuation alert.",
+        "pubDate": "Thu, 06 Aug 2026 15:23:43 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-5.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Metro Vancouver wildfire prompts evacuation alerts as Fraser Canyon residents go home",
+        "link": "https://globalnews.ca/news/12011316/metro-vancouver-wildfire-prompts-evacuation-alerts-as-fraser-canyon-residents-go-home/",
+        "description": "A few dozen properties near Metro Vancouver are under evacuation alert due to a nearby wildfire, while evacuees in British Columbia's Fraser Canyon may start returning home.",
+        "pubDate": "Thu, 06 Aug 2026 12:16:46 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/94c694f321ac8830cf2db873dc9363e7f9752063a19fd2da4023d70be209bca7.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Wildfire breaks out in Belcarra Park near Port Moody, Anmore",
         "link": "https://globalnews.ca/news/12010934/wildfire-breaks-out-belcarra-park-port-moody-anmore/",
@@ -11,12 +27,12 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/belcarra-fire.png"
       },
       {
-        "title": "Metro Vancouver, Fraser Valley under air quality advisory due to wildfire smoke",
-        "link": "https://globalnews.ca/news/12010544/metro-vancouver-fraser-valley-air-quality-advisory-wildfire-smoke/",
-        "description": "Some parts of Metro Vancouver have air quality ranked at a Level Nine, with the Eastern Fraser Valley ranked at a Level 10 plus, which means very high risk.",
-        "pubDate": "Wed, 05 Aug 2026 20:31:12 +0000",
+        "title": "Chief says community was left &#8216;a war zone&#8217; after Bradley Creek wildfire",
+        "link": "https://globalnews.ca/news/12010757/chief-says-community-a-war-zone-bradley-creek-wildfire/",
+        "description": "\"There are some structures that, I'll be turning 67 in November and those structures were there all my life and to see them suddenly gone, it's just devastating,\" Dan Wilson said.",
+        "pubDate": "Wed, 05 Aug 2026 22:29:53 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/set-gfx-metro-vancouver-smoke-aug5.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/994765abb8eb6e86e277d984d6cc2e5e7422efd613fc05f4546bbd333196cd7a_07d960.jpg?quality=65&#038;strip=all"
       }
     ],
     "kamloops": [
@@ -29,14 +45,6 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/fec5278f14b25f71d005720599bdbcd3fba2b0d11971974309c008bd1dbb7c13.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Chief says community was left &#8216;a war zone&#8217; after Bradley Creek wildfire",
-        "link": "https://globalnews.ca/news/12010757/chief-says-community-a-war-zone-bradley-creek-wildfire/",
-        "description": "\"There are some structures that, I'll be turning 67 in November and those structures were there all my life and to see them suddenly gone, it's just devastating,\" Dan Wilson said.",
-        "pubDate": "Wed, 05 Aug 2026 22:29:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/994765abb8eb6e86e277d984d6cc2e5e7422efd613fc05f4546bbd333196cd7a_07d960.jpg?quality=65&#038;strip=all"
-      },
-      {
         "title": "Evac alert expected to be upgraded to order for Quilpituk Creek wildfire",
         "link": "https://globalnews.ca/news/12010733/no-change-in-evacuation-orders-alerts-for-fire-on-west-side-of-okanagan-lake/",
         "description": "Central Okanagan Emergency Management said the evacuation orders for the 2,223 properties and evacuation alerts for 425 properties in the wildfire area will remain in place.",
@@ -46,16 +54,7 @@
       }
     ],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Several evacuation orders in Boston Bar area downgraded to alerts",
-        "link": "https://globalnews.ca/news/12010638/evacuation-orders-boston-bar-downgraded-evacuation-alerts/",
-        "description": "The Brunswick Creek wildfire is still considered out of control; however, BC Wildfire advises the risk has sufficiently subsided and residents may return home if they choose to.",
-        "pubDate": "Wed, 05 Aug 2026 21:03:00 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/BOSTON-BAR-FIRE-DEPT-2.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
