@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-06T16:00:33.394Z",
+  "updated_at": "2026-08-06T22:00:33.092Z",
   "zones": {
     "coastal": [
       {
-        "title": "Belcarra Park wildfire latest: 35 homes in Anmore on evacuation alert",
+        "title": "Belcarra Park wildfire latest: Evacuation alert and order lifted",
         "link": "https://globalnews.ca/news/12011467/belcarra-park-wildfire-latest-anmore-port-moody/",
-        "description": "Two properties on Fern Drive in Anmore were evacuated on Wednesday afternoon as a precaution, according to Metro Vancouver. There are 35 properties on evacuation alert.",
+        "description": "Two properties on Fern Drive in Anmore were evacuated on Wednesday afternoon as a precaution, according to Metro Vancouver. There were also 35 properties on evacuation alert.",
         "pubDate": "Thu, 06 Aug 2026 15:23:43 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-5.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Anmore-fire-Aug-5.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Metro Vancouver wildfire prompts evacuation alerts as Fraser Canyon residents go home",
@@ -25,6 +25,24 @@
         "pubDate": "Wed, 05 Aug 2026 23:35:19 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/belcarra-fire.png"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Evacuation order expanded, new alert issued for the Quilpituk Creek wildfire",
+        "link": "https://globalnews.ca/news/12011673/evacuation-order-expanded-new-alert-quilpituk-creek-wildfire-kelowna/",
+        "description": "This area was previously under an evacuation alert and Central Okanagan Emergency Management warned on Wednesday night that the alert may become an order.",
+        "pubDate": "Thu, 06 Aug 2026 17:24:16 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bb7c728b10ec3c9dafb6f349164e05cdf65a7cdc4ef4f5d74f634b2491f8542e.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C. resident lost home to Bradley Creek wildfire: &#8216;It was all just so fast&#8217;",
+        "link": "https://globalnews.ca/news/12010895/bc-resident-lost-home-bradley-creek-wildfire/",
+        "description": "On Saturday, the Bradley Creek wildfire, burning west of Vernon, grew rapidly when wind gusts reached more than 70 kilometres an hour.",
+        "pubDate": "Thu, 06 Aug 2026 01:59:44 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/fec5278f14b25f71d005720599bdbcd3fba2b0d11971974309c008bd1dbb7c13.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Chief says community was left &#8216;a war zone&#8217; after Bradley Creek wildfire",
@@ -33,16 +51,6 @@
         "pubDate": "Wed, 05 Aug 2026 22:29:53 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/994765abb8eb6e86e277d984d6cc2e5e7422efd613fc05f4546bbd333196cd7a_07d960.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "kamloops": [
-      {
-        "title": "B.C. resident lost home to Bradley Creek wildfire: &#8216;It was all just so fast&#8217;",
-        "link": "https://globalnews.ca/news/12010895/bc-resident-lost-home-bradley-creek-wildfire/",
-        "description": "On Saturday, the Bradley Creek wildfire, burning west of Vernon, grew rapidly when wind gusts reached more than 70 kilometres an hour.",
-        "pubDate": "Thu, 06 Aug 2026 01:59:44 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/fec5278f14b25f71d005720599bdbcd3fba2b0d11971974309c008bd1dbb7c13.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Evac alert expected to be upgraded to order for Quilpituk Creek wildfire",
