@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-05T16:01:17.232Z",
+  "updated_at": "2026-08-06T10:01:13.381Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,20 +178,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 3,
+      "canada": 2,
       "world": 0
     },
     "items_out": {
-      "canada": 3,
-      "world_fires": 24
+      "canada": 2,
+      "world_fires": 27
     },
-    "deduped": 1,
+    "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Removed 'Northern Manitoba community's wildfire evacuation order lifted' from Canada news - evacuation order lifted on 2026-07-28, fire contained/resolved >60 days from current date",
-      "All world fires preserved as Active status",
-      "No duplicates found across sources in Canada news",
-      "All images preserved in output"
+      "All existing_fires retained as Active status",
+      "No duplicates found across canada_news",
+      "No world articles provided for deduplication",
+      "All images preserved from existing_fires"
     ]
   }
 }
