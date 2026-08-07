@@ -82,10 +82,12 @@
   ],
   "news": [
     {
-      "title": "Northern Manitoba community's wildfire evacuation order lifted",
-      "url": "https://globalnews.ca/news/11996919/northern-manitoba-wildfire-evacuation-order-lifted/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-28"
+      "title": "As wildfire flames closed in, a 90-year-old Okanagan man with dementia was left behind",
+      "url": "https://globalnews.ca/news/12012485/wildfires-90-year-old-okanagan-man-dementia/",
+      "source": "Global News",
+      "published": "2026-08-07",
+      "description": "The Desert Cove resident, who lives with dementia, hadn't evacuated as the fire rapidly approached. His daughter, Shiloh, who lives in Vancouver, soon realized",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/08/Belleville.png"
     },
     {
       "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
@@ -94,5 +96,5 @@
       "published": "2026-07-26"
     }
   ],
-  "last_news_update": "2026-08-06T22:01:13.223Z"
+  "last_news_update": "2026-08-07T10:01:14.400Z"
 }
