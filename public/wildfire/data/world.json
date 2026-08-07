@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-06T16:01:17.946Z",
+  "updated_at": "2026-08-07T04:01:15.178Z",
   "fires": [
     {
       "country": "Spain",
@@ -182,18 +182,15 @@
       "world": 0
     },
     "items_out": {
-      "canada": 3,
+      "canada": 2,
       "world_fires": 24
     },
     "deduped": 0,
-    "rerouted": 0,
+    "rerouted": 1,
     "notes": [
-      "Removed Northern Manitoba community evacuation (2026-07-28) as status change only, fire already resolved",
-      "All Canada articles preserved with images",
-      "All existing active world fires preserved",
-      "Brazil Rio Olympic Velodrome entry preserved as explicitly documented structural fire (not wildfire-related, but retained per existing data)",
-      "No deduplication needed across canada_news",
-      "No world_fires articles provided for processing"
+      "Removed Northern Manitoba evacuation (lifted >60 days ago from 2026-07-28)",
+      "All 24 world fires retained as Active status",
+      "Canada news verified for recency; 2 items published within last 13 days"
     ]
   }
 }
