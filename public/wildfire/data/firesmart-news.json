@@ -1,64 +1,31 @@
 {
-  "updated_at": "2026-08-06T22:00:33.092Z",
+  "updated_at": "2026-08-07T04:00:33.086Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Belcarra Park wildfire latest: Evacuation alert and order lifted",
-        "link": "https://globalnews.ca/news/12011467/belcarra-park-wildfire-latest-anmore-port-moody/",
-        "description": "Two properties on Fern Drive in Anmore were evacuated on Wednesday afternoon as a precaution, according to Metro Vancouver. There were also 35 properties on evacuation alert.",
-        "pubDate": "Thu, 06 Aug 2026 15:23:43 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Anmore-fire-Aug-5.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Metro Vancouver wildfire prompts evacuation alerts as Fraser Canyon residents go home",
-        "link": "https://globalnews.ca/news/12011316/metro-vancouver-wildfire-prompts-evacuation-alerts-as-fraser-canyon-residents-go-home/",
-        "description": "A few dozen properties near Metro Vancouver are under evacuation alert due to a nearby wildfire, while evacuees in British Columbia's Fraser Canyon may start returning home.",
-        "pubDate": "Thu, 06 Aug 2026 12:16:46 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/94c694f321ac8830cf2db873dc9363e7f9752063a19fd2da4023d70be209bca7.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Wildfire breaks out in Belcarra Park near Port Moody, Anmore",
-        "link": "https://globalnews.ca/news/12010934/wildfire-breaks-out-belcarra-park-port-moody-anmore/",
-        "description": "The Coastal Fire Centre says the fire is burning in Belcarra Park and is an estimated 0.8 hectares in size as of Wednesday afternoon.",
-        "pubDate": "Wed, 05 Aug 2026 23:35:19 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/belcarra-fire.png"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
-        "title": "Evacuation order expanded, new alert issued for the Quilpituk Creek wildfire",
-        "link": "https://globalnews.ca/news/12011673/evacuation-order-expanded-new-alert-quilpituk-creek-wildfire-kelowna/",
-        "description": "This area was previously under an evacuation alert and Central Okanagan Emergency Management warned on Wednesday night that the alert may become an order.",
-        "pubDate": "Thu, 06 Aug 2026 17:24:16 +0000",
+        "title": "Okanagan resident says flames were surrounding their house as they fled",
+        "link": "https://globalnews.ca/news/12012424/okanagan-resident-flames-surrounding-house-bradley-creek-wildfire/",
+        "description": "They had just minutes to escape their property on the Benchland above Okanagan Lake when the Bradley Lake wildfire tore through the property.",
+        "pubDate": "Fri, 07 Aug 2026 01:55:45 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bb7c728b10ec3c9dafb6f349164e05cdf65a7cdc4ef4f5d74f634b2491f8542e.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bradley-creek-Kellie-Mast.png"
       },
       {
-        "title": "B.C. resident lost home to Bradley Creek wildfire: &#8216;It was all just so fast&#8217;",
-        "link": "https://globalnews.ca/news/12010895/bc-resident-lost-home-bradley-creek-wildfire/",
-        "description": "On Saturday, the Bradley Creek wildfire, burning west of Vernon, grew rapidly when wind gusts reached more than 70 kilometres an hour.",
-        "pubDate": "Thu, 06 Aug 2026 01:59:44 +0000",
+        "title": "As wildfire flames closed in, a 90-year-old Okanagan man with dementia was left behind",
+        "link": "https://globalnews.ca/news/12012485/wildfires-90-year-old-okanagan-man-dementia/",
+        "description": "The Desert Cove resident, who lives with dementia, hadn't evacuated as the fire rapidly approached. His daughter, Shiloh, who lives in Vancouver, soon realized",
+        "pubDate": "Fri, 07 Aug 2026 01:42:04 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/fec5278f14b25f71d005720599bdbcd3fba2b0d11971974309c008bd1dbb7c13.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Belleville.png"
       },
       {
-        "title": "Chief says community was left &#8216;a war zone&#8217; after Bradley Creek wildfire",
-        "link": "https://globalnews.ca/news/12010757/chief-says-community-a-war-zone-bradley-creek-wildfire/",
-        "description": "\"There are some structures that, I'll be turning 67 in November and those structures were there all my life and to see them suddenly gone, it's just devastating,\" Dan Wilson said.",
-        "pubDate": "Wed, 05 Aug 2026 22:29:53 +0000",
+        "title": "WATCH: Global Okanagan News at 5:30 p.m. &#8211; August 6",
+        "link": "https://globalnews.ca/news/9913127/watch-global-okanagan-news-at-530/",
+        "description": "Watch the online news edition of Global Okanagan at 5:30 p.m.",
+        "pubDate": "Thu, 06 Aug 2026 22:00:38 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/994765abb8eb6e86e277d984d6cc2e5e7422efd613fc05f4546bbd333196cd7a_07d960.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Evac alert expected to be upgraded to order for Quilpituk Creek wildfire",
-        "link": "https://globalnews.ca/news/12010733/no-change-in-evacuation-orders-alerts-for-fire-on-west-side-of-okanagan-lake/",
-        "description": "Central Okanagan Emergency Management said the evacuation orders for the 2,223 properties and evacuation alerts for 425 properties in the wildfire area will remain in place.",
-        "pubDate": "Wed, 05 Aug 2026 22:29:35 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/9f8fb4432353f02e643dce59569c6ede56a9befad9e83ddc7b99ae94f8fbdb71.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2025/10/GLOBALNEWS_OKANAGAN-show-thumbnail-NEW.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -72,6 +39,22 @@
         "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
         "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Possible illegal fishing operations, including shark finning, found during DFO patrols",
+        "link": "https://globalnews.ca/news/12012337/possible-illegal-fishing-operations-shark-finning-patrols-northern-pacific-ocean/",
+        "description": "The operation included officers with the DFO, the Canadian Coast Guard and a handful of international partners and they told Global News they found numerous fishing violations.",
+        "pubDate": "Thu, 06 Aug 2026 23:08:03 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/illegal-fishing.png"
+      },
+      {
+        "title": "Evacuation order expanded, new alert issued for the Quilpituk Creek wildfire",
+        "link": "https://globalnews.ca/news/12011673/evacuation-order-expanded-new-alert-quilpituk-creek-wildfire-kelowna/",
+        "description": "This area was previously under an evacuation alert and Central Okanagan Emergency Management warned on Wednesday night that the alert may become an order.",
+        "pubDate": "Thu, 06 Aug 2026 17:24:16 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bb7c728b10ec3c9dafb6f349164e05cdf65a7cdc4ef4f5d74f634b2491f8542e.jpg?quality=65&#038;strip=all"
       }
     ]
   }
