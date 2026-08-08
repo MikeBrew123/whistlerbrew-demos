@@ -82,17 +82,29 @@
   ],
   "news": [
     {
-      "title": "Northern Manitoba community's wildfire evacuation order lifted",
-      "url": "https://globalnews.ca/news/11996919/northern-manitoba-wildfire-evacuation-order-lifted/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-28"
+      "title": "B.C. premier declares wildfire state of emergency",
+      "url": "https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/",
+      "source": "Global News",
+      "published": "2026-08-08",
+      "description": "B.C. Premier David Eby and emergency officials are set to provide an update Saturday as wildfires continue to force evacuations across the province.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/08/92a3175e816c6cfdb98b18545d2b24751e53787a4e82b6e729a9643546693d79.jpg?quality=65&#038;strip=all"
     },
     {
-      "title": "Wildfires near Clinton, B.C. merge, stretching nearly 670 square kilometres",
-      "url": "https://globalnews.ca/news/11994559/clinton-bc-wildfires-merge/",
-      "source": "Global News Wildfire",
-      "published": "2026-07-26"
+      "title": "Why some B.C. farmers stay to fight, despite wildfire evacuation orders",
+      "url": "https://globalnews.ca/news/12014179/wildfires-bc-agriculture/",
+      "source": "Global News",
+      "published": "2026-08-08",
+      "description": "Some B.C. farmers are defying wildfire evacuation orders to protect homes, orchards and livestock, saying generations of work are too much to abandon.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/08/25a135074f1dd5dfde8585fa617c4d302cc964986d97f65613862a6397720f23.jpg?quality=65&#038;strip=all"
+    },
+    {
+      "title": "Fast-moving Canada wildfire doubles in size forcing thousands to flee homes",
+      "url": "https://www.bbc.co.uk/news/articles/cx25dkwk3e3o?at_medium=RSS&amp;at_campaign=rss",
+      "source": "BBC",
+      "published": "2026-08-08",
+      "description": "The Bald Range wildfire in British Columbia, still considered \"out of control\", has spread to more than 36 sq miles (95 sq km).",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e672/live/4d3d52c0-934f-11f1-a7ab-8b30adf0800a.jpg"
     }
   ],
-  "last_news_update": "2026-08-08T10:01:14.189Z"
+  "last_news_update": "2026-08-08T22:01:18.512Z"
 }
