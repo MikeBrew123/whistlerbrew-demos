@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-08T16:00:33.144Z",
+  "updated_at": "2026-08-08T22:00:33.550Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Photos of Bald Range fire near Summerland show aggressive wildfire growth",
+        "link": "https://globalnews.ca/news/12014405/photos-bald-range-fire-summerland-aggressive-wildfire-growth/",
+        "description": "The Bald Range wildfire near Summerland sparked at 5:30 p.m. on Friday and exploded in size to 9,500 hectares by Saturday morning.",
+        "pubDate": "Sat, 08 Aug 2026 21:56:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c993912ed6903d736053b174778a32ff1170a1d7e15efb9e86bfccdf6380eecc.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Residents who remained in Okanagan wildfire evacuation zone need to leave, officials say",
         "link": "https://globalnews.ca/news/12013706/residents-remained-okanagan-wildfire-evacuation-zone-leave/",
@@ -10,14 +18,6 @@
         "pubDate": "Fri, 07 Aug 2026 23:38:06 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-5P-KEL-QUILPITUK-CREEK.png"
-      },
-      {
-        "title": "Ottawa sells 10 retired military planes to convert for aerial firefighting",
-        "link": "https://globalnews.ca/news/12013127/canada-hercules-firefighting-aircraft-convert-sell/",
-        "description": "The announcement comes amid growing calls for Canada to update and expand its fleet of firefighting aircraft as it contends with another devastating wildfire season.",
-        "pubDate": "Fri, 07 Aug 2026 18:19:27 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/cc-130H-Hercules-plane-e1786125755352.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -42,8 +42,16 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "B.C. premier declares wildfire state of emergency",
+        "link": "https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/",
+        "description": "B.C. Premier David Eby and emergency officials are set to provide an update Saturday as wildfires continue to force evacuations across the province.",
+        "pubDate": "Sat, 08 Aug 2026 18:30:55 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/92a3175e816c6cfdb98b18545d2b24751e53787a4e82b6e729a9643546693d79.jpg?quality=65&#038;strip=all"
+      },
+      {
         "title": "Over 20,000 flee as B.C evacuation orders in full swing due to aggressive wildfire",
-        "link": "https://globalnews.ca/news/12014029/bald-range-wildfire-summerland-evacuation-order/",
+        "link": "https://globalnews.ca/news/12014029/bc-wildfire-evacuation-order/",
         "description": "The BC Wildfire Service says it's displaying aggressive rank 5 behaviour, with an organized flame front with a fast rate of spread and moderate to long-range spotting.",
         "pubDate": "Sat, 08 Aug 2026 04:33:00 +0000",
         "source": "Global BC News",
@@ -56,14 +64,6 @@
         "pubDate": "Fri, 07 Aug 2026 19:04:45 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Anmore-fire-Aug-5.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Okanagan resident says flames were surrounding their house as they fled",
-        "link": "https://globalnews.ca/news/12012424/okanagan-resident-flames-surrounding-house-bradley-creek-wildfire/",
-        "description": "They had just minutes to escape their property on the Benchland above Okanagan Lake when the Bradley Lake wildfire tore through the property.",
-        "pubDate": "Fri, 07 Aug 2026 01:55:45 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bradley-creek-Kellie-Mast.png"
       }
     ]
   }
