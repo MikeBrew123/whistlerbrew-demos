@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-08-07T22:00:33.225Z",
+  "updated_at": "2026-08-08T04:00:33.248Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Residents who remained in Okanagan wildfire evacuation zone need to leave, officials say",
+        "link": "https://globalnews.ca/news/12013706/residents-remained-okanagan-wildfire-evacuation-zone-leave/",
+        "description": "The organization (COEM) said it has become aware that some residents remained behind and said that an evacuation order is not a suggestion; it is a life-safety measure.",
+        "pubDate": "Fri, 07 Aug 2026 23:38:06 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-5P-KEL-QUILPITUK-CREEK.png"
+      },
+      {
+        "title": "Bradley Creek wildfire fight threatened by wind with hot, dry conditions",
+        "link": "https://globalnews.ca/news/12013672/wind-hot-dry-conditions-threaten-bradley-creek-wildfire-fight-vernon/",
+        "description": "The Bradley Creek wildfire has not grown significantly over the past few days, but crews are still working to prevent flare-ups and keep the area safe.",
+        "pubDate": "Fri, 07 Aug 2026 22:39:40 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/fedca03e5c9ec627476d7aae3848d6f8ba40c09edcc83e9567245178b971d50c.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Arson investigations launched for some B.C. fires as wildfires continue to burn",
         "link": "https://globalnews.ca/news/12013212/arson-investigations-launched-bc-fires-wildfires-burn/",
@@ -12,20 +28,20 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Anmore-fire-Aug-5.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Ottawa sells 10 retired military planes to convert for aerial firefighting",
-        "link": "https://globalnews.ca/news/12013127/canada-hercules-firefighting-aircraft-convert-sell/",
-        "description": "The announcement comes amid growing calls for Canada to update and expand its fleet of firefighting aircraft as it contends with another devastating wildfire season.",
-        "pubDate": "Fri, 07 Aug 2026 18:19:27 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/cc-130H-Hercules-plane-e1786125755352.jpg?quality=65&#038;strip=all"
-      },
-      {
         "title": "Okanagan resident says flames were surrounding their house as they fled",
         "link": "https://globalnews.ca/news/12012424/okanagan-resident-flames-surrounding-house-bradley-creek-wildfire/",
         "description": "They had just minutes to escape their property on the Benchland above Okanagan Lake when the Bradley Lake wildfire tore through the property.",
         "pubDate": "Fri, 07 Aug 2026 01:55:45 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/bradley-creek-Kellie-Mast.png"
+      },
+      {
+        "title": "As wildfire flames closed in, a 90-year-old Okanagan man with dementia was left behind",
+        "link": "https://globalnews.ca/news/12012485/wildfires-90-year-old-okanagan-man-dementia/",
+        "description": "The Desert Cove resident, who lives with dementia, hadn't evacuated as the fire rapidly approached. His daughter, Shiloh, who lives in Vancouver, soon realized",
+        "pubDate": "Fri, 07 Aug 2026 01:42:04 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Belleville.png"
       }
     ],
     "prince-george": [],
@@ -50,12 +66,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "As wildfire flames closed in, a 90-year-old Okanagan man with dementia was left behind",
-        "link": "https://globalnews.ca/news/12012485/wildfires-90-year-old-okanagan-man-dementia/",
-        "description": "The Desert Cove resident, who lives with dementia, hadn't evacuated as the fire rapidly approached. His daughter, Shiloh, who lives in Vancouver, soon realized",
-        "pubDate": "Fri, 07 Aug 2026 01:42:04 +0000",
+        "title": "Ottawa sells 10 retired military planes to convert for aerial firefighting",
+        "link": "https://globalnews.ca/news/12013127/canada-hercules-firefighting-aircraft-convert-sell/",
+        "description": "The announcement comes amid growing calls for Canada to update and expand its fleet of firefighting aircraft as it contends with another devastating wildfire season.",
+        "pubDate": "Fri, 07 Aug 2026 18:19:27 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Belleville.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/cc-130H-Hercules-plane-e1786125755352.jpg?quality=65&#038;strip=all"
       }
     ]
   }
