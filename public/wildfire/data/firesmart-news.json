@@ -1,16 +1,8 @@
 {
-  "updated_at": "2026-08-08T10:00:33.460Z",
+  "updated_at": "2026-08-08T16:00:33.144Z",
   "zones": {
     "coastal": [],
     "kamloops": [
-      {
-        "title": "Summerland under evacuation order due to fast-moving, aggressive wildfire",
-        "link": "https://globalnews.ca/news/12014029/bald-range-wildfire-summerland-evacuation-order/",
-        "description": "The BC Wildfire Service says it's displaying aggressive rank 5 behaviour, with an organized flame front with a fast rate of spread and moderate to long-range spotting.",
-        "pubDate": "Sat, 08 Aug 2026 04:33:00 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/ee313d91-1f28-4f27-857d-7b7b5451e502.jpeg?quality=65&#038;strip=all"
-      },
       {
         "title": "Residents who remained in Okanagan wildfire evacuation zone need to leave, officials say",
         "link": "https://globalnews.ca/news/12013706/residents-remained-okanagan-wildfire-evacuation-zone-leave/",
@@ -20,12 +12,42 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-5P-KEL-QUILPITUK-CREEK.png"
       },
       {
+        "title": "Ottawa sells 10 retired military planes to convert for aerial firefighting",
+        "link": "https://globalnews.ca/news/12013127/canada-hercules-firefighting-aircraft-convert-sell/",
+        "description": "The announcement comes amid growing calls for Canada to update and expand its fleet of firefighting aircraft as it contends with another devastating wildfire season.",
+        "pubDate": "Fri, 07 Aug 2026 18:19:27 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/cc-130H-Hercules-plane-e1786125755352.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "prince-george": [],
+    "cariboo": [
+      {
         "title": "Bradley Creek wildfire fight threatened by wind with hot, dry conditions",
         "link": "https://globalnews.ca/news/12013672/wind-hot-dry-conditions-threaten-bradley-creek-wildfire-fight-vernon/",
         "description": "The Bradley Creek wildfire has not grown significantly over the past few days, but crews are still working to prevent flare-ups and keep the area safe.",
         "pubDate": "Fri, 07 Aug 2026 22:39:40 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/fedca03e5c9ec627476d7aae3848d6f8ba40c09edcc83e9567245178b971d50c.jpg?quality=65&#038;strip=all"
+      }
+    ],
+    "northwest": [],
+    "southeast": [],
+    "all": [
+      {
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Over 20,000 flee as B.C evacuation orders in full swing due to aggressive wildfire",
+        "link": "https://globalnews.ca/news/12014029/bald-range-wildfire-summerland-evacuation-order/",
+        "description": "The BC Wildfire Service says it's displaying aggressive rank 5 behaviour, with an organized flame front with a fast rate of spread and moderate to long-range spotting.",
+        "pubDate": "Sat, 08 Aug 2026 04:33:00 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/ee313d91-1f28-4f27-857d-7b7b5451e502.jpeg?quality=65&#038;strip=all"
       },
       {
         "title": "Arson investigations launched for some B.C. fires as wildfires continue to burn",
@@ -42,36 +64,6 @@
         "pubDate": "Fri, 07 Aug 2026 01:55:45 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/bradley-creek-Kellie-Mast.png"
-      }
-    ],
-    "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Small B.C. community surrounded by wildfires facing more ER closures",
-        "link": "https://globalnews.ca/news/12013458/small-bc-community-surrounded-wildfires-more-er-closures/",
-        "description": "The emergency room department at 100 Mile District General Hospital is closed from 7 a.m. to 8 p.m. on Friday and is expected to be closed for the same stretch on Sunday.",
-        "pubDate": "Fri, 07 Aug 2026 21:12:42 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/100-Mile-ER-closure.png"
-      }
-    ],
-    "northwest": [],
-    "southeast": [],
-    "all": [
-      {
-        "title": "Fire and Climate &#8211; a special and timely collection",
-        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
-        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Ottawa sells 10 retired military planes to convert for aerial firefighting",
-        "link": "https://globalnews.ca/news/12013127/canada-hercules-firefighting-aircraft-convert-sell/",
-        "description": "The announcement comes amid growing calls for Canada to update and expand its fleet of firefighting aircraft as it contends with another devastating wildfire season.",
-        "pubDate": "Fri, 07 Aug 2026 18:19:27 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/cc-130H-Hercules-plane-e1786125755352.jpg?quality=65&#038;strip=all"
       }
     ]
   }
