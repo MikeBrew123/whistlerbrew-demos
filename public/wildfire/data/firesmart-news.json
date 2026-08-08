@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-08T04:00:33.248Z",
+  "updated_at": "2026-08-08T10:00:33.460Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Summerland under evacuation order due to fast-moving, aggressive wildfire",
+        "link": "https://globalnews.ca/news/12014029/bald-range-wildfire-summerland-evacuation-order/",
+        "description": "The BC Wildfire Service says it's displaying aggressive rank 5 behaviour, with an organized flame front with a fast rate of spread and moderate to long-range spotting.",
+        "pubDate": "Sat, 08 Aug 2026 04:33:00 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/ee313d91-1f28-4f27-857d-7b7b5451e502.jpeg?quality=65&#038;strip=all"
+      },
       {
         "title": "Residents who remained in Okanagan wildfire evacuation zone need to leave, officials say",
         "link": "https://globalnews.ca/news/12013706/residents-remained-okanagan-wildfire-evacuation-zone-leave/",
@@ -34,14 +42,6 @@
         "pubDate": "Fri, 07 Aug 2026 01:55:45 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/bradley-creek-Kellie-Mast.png"
-      },
-      {
-        "title": "As wildfire flames closed in, a 90-year-old Okanagan man with dementia was left behind",
-        "link": "https://globalnews.ca/news/12012485/wildfires-90-year-old-okanagan-man-dementia/",
-        "description": "The Desert Cove resident, who lives with dementia, hadn't evacuated as the fire rapidly approached. His daughter, Shiloh, who lives in Vancouver, soon realized",
-        "pubDate": "Fri, 07 Aug 2026 01:42:04 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Belleville.png"
       }
     ],
     "prince-george": [],
