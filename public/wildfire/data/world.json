@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-08T16:01:17.689Z",
+  "updated_at": "2026-08-09T04:01:18.521Z",
   "fires": [
     {
       "country": "Spain",
@@ -177,22 +177,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 3,
-      "world": 0
-    },
-    "items_out": {
-      "canada": 2,
-      "world_fires": 26
-    },
-    "deduped": 0,
-    "rerouted": 0,
-    "notes": [
-      "Removed Northern Manitoba evacuation order lifted (2026-07-28) as it is dated and no longer active fire news.",
-      "All existing fires preserved—all marked Active status.",
-      "No fires contained >60 days ago to remove.",
-      "No misrouted items detected between buckets.",
-      "All image fields preserved from input."
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. premier declares wildfire state of emergency\",\n      \"url\": \"https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/\",\n      \"source\""
   }
 }
