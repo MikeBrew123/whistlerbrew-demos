@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-09T04:01:18.521Z",
+  "updated_at": "2026-08-09T22:01:18.731Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,6 +178,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. premier declares wildfire state of emergency\",\n      \"url\": \"https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/\",\n      \"source\""
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Feds approve assistance to help B.C. fire evacuees with shelter\",\n      \"url\": \"https://globalnews.ca/news/12014788/federal-assistance-b-c-wildfire-e"
   }
 }
