@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-08-09T23:15:47.332Z",
-  "next_update": "2026-08-09T23:30:47.332Z",
+  "updated_at": "2026-08-09T23:30:48.346Z",
+  "next_update": "2026-08-09T23:45:48.346Z",
   "season_year": 2026,
   "bc_totals": {
     "active": 98,
     "fires_of_note": 5,
     "season_total": 0,
-    "hectares_burned": 384491,
+    "hectares_burned": 384521,
     "crews_deployed": 0,
     "preparedness_level": 1
   },
