@@ -1,8 +1,56 @@
 {
-  "updated_at": "2026-08-08T22:00:33.550Z",
+  "updated_at": "2026-08-09T04:00:33.519Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
+        "link": "https://globalnews.ca/news/12014575/video-faulder-residents-rescuing-dogs-vehicle-surrounded-flames-bald-range/",
+        "description": "A video has surfaced online that captures the dramatic moments when Faulder residents were trying to rescue their dogs from a vehicle that was surrounded by flames.",
+        "pubDate": "Sun, 09 Aug 2026 02:38:46 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/faulder-dog-rescue.png"
+      },
+      {
+        "title": "&#8216;Explosive&#8217; Summerland wildfire creating conditions &#8216;never seen before&#8217;",
+        "link": "https://globalnews.ca/news/12014564/explosive-summerland-wildfire-conditions-never-seen-before/",
+        "description": "The BC Wildfire Service says it is one of the most challenging fires this province has ever faced, involving helicopter rescues of dozens of people trapped behind the fire line.",
+        "pubDate": "Sun, 09 Aug 2026 02:27:45 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/IMG_3114.jpeg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "As massive B.C. wildfire raged, groups worked to rescue livestock, animals",
+        "link": "https://globalnews.ca/news/12014512/massive-bc-wildfire-raged-rescue-livestock-animals/",
+        "description": "When the Bald Range wildfire sparked near Summerland on Friday afternoon, thousands of residents prepared to leave their homes. But many have livestock and animals to care for.",
+        "pubDate": "Sun, 09 Aug 2026 01:07:33 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/pic-8.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "RCMP report a possible fatality from massive Summerland fire",
+        "link": "https://globalnews.ca/news/12014490/rcmp-report-possible-fatality-massive-summerland-fire/",
+        "description": "RCMP said officers continue to provide emergency response and assistance following the Bald Range fire that grew quickly and forced thousands to flee their homes.",
+        "pubDate": "Sat, 08 Aug 2026 23:56:27 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/3fca5483291ae7f8d7e55b365d6fc481de5773bd06304e575b644a98032b798d_5452df.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Summerland wildfire forces large numbers of seniors in residential care to relocate",
+        "link": "https://globalnews.ca/news/12014460/summerland-wildfire-large-numbers-seniors-residential-care-relocate/",
+        "description": "David Hickey, a driver with the High Acuity Response Team, helped receive dozens of seniors at Kaigo Senior Living Facility in Kelowna.",
+        "pubDate": "Sat, 08 Aug 2026 23:37:17 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/penticton-evac-centre.png"
+      },
+      {
+        "title": "Video shows rapid night growth of Bald Range fire near Summerland",
+        "link": "https://globalnews.ca/news/12014421/video-rapid-night-growth-bald-range-fire-summerland/",
+        "description": "The Bald Range fire, which sparked around 5:30 p.m., grew so fast that homes were destroyed and the fast-moving flames trapped people.",
+        "pubDate": "Sat, 08 Aug 2026 22:15:23 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Bald-Range-fire.png"
+      },
       {
         "title": "Photos of Bald Range fire near Summerland show aggressive wildfire growth",
         "link": "https://globalnews.ca/news/12014405/photos-bald-range-fire-summerland-aggressive-wildfire-growth/",
@@ -10,37 +58,13 @@
         "pubDate": "Sat, 08 Aug 2026 21:56:12 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/c993912ed6903d736053b174778a32ff1170a1d7e15efb9e86bfccdf6380eecc.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Residents who remained in Okanagan wildfire evacuation zone need to leave, officials say",
-        "link": "https://globalnews.ca/news/12013706/residents-remained-okanagan-wildfire-evacuation-zone-leave/",
-        "description": "The organization (COEM) said it has become aware that some residents remained behind and said that an evacuation order is not a suggestion; it is a life-safety measure.",
-        "pubDate": "Fri, 07 Aug 2026 23:38:06 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-5P-KEL-QUILPITUK-CREEK.png"
       }
     ],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Bradley Creek wildfire fight threatened by wind with hot, dry conditions",
-        "link": "https://globalnews.ca/news/12013672/wind-hot-dry-conditions-threaten-bradley-creek-wildfire-fight-vernon/",
-        "description": "The Bradley Creek wildfire has not grown significantly over the past few days, but crews are still working to prevent flare-ups and keep the area safe.",
-        "pubDate": "Fri, 07 Aug 2026 22:39:40 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/fedca03e5c9ec627476d7aae3848d6f8ba40c09edcc83e9567245178b971d50c.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
-      {
-        "title": "Fire and Climate &#8211; a special and timely collection",
-        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
-        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
-        "source": "Wildfire Today"
-      },
       {
         "title": "B.C. premier declares wildfire state of emergency",
         "link": "https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/",
@@ -56,14 +80,6 @@
         "pubDate": "Sat, 08 Aug 2026 04:33:00 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/ee313d91-1f28-4f27-857d-7b7b5451e502.jpeg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Arson investigations launched for some B.C. fires as wildfires continue to burn",
-        "link": "https://globalnews.ca/news/12013212/arson-investigations-launched-bc-fires-wildfires-burn/",
-        "description": "The Columbia Shuswap Regional District said RCMP are investigating three fires in a ditch on Squilax Anglemont Road that were reported around 5:30 p.m. on Wednesday.",
-        "pubDate": "Fri, 07 Aug 2026 19:04:45 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Anmore-fire-Aug-5.jpg?quality=65&#038;strip=all"
       }
     ]
   }
