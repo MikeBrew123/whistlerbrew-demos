@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-08-09T16:00:33.429Z",
+  "updated_at": "2026-08-09T22:00:33.909Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Feds approve assistance to help B.C. fire evacuees with shelter",
+        "link": "https://globalnews.ca/news/12014788/federal-assistance-b-c-wildfire-evacuees-shelter/",
+        "description": "Some wildfire evacuees in Penticton, B.C. reported having long wait times to register for assistance, with those who were interviewed saying they waited more than 14 or 15 hours.",
+        "pubDate": "Sun, 09 Aug 2026 20:18:45 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_7027ec.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
+        "link": "https://globalnews.ca/news/12014575/video-faulder-residents-rescuing-dogs-vehicle-surrounded-flames-bald-range/",
+        "description": "A video has surfaced online that captures the dramatic moments when Faulder residents were trying to rescue their dogs from a vehicle that was surrounded by flames.",
+        "pubDate": "Sun, 09 Aug 2026 02:38:46 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/faulder-dog-rescue.png"
+      },
       {
         "title": "&#8216;Explosive&#8217; Summerland wildfire creating conditions &#8216;never seen before&#8217;",
         "link": "https://globalnews.ca/news/12014564/explosive-summerland-wildfire-conditions-never-seen-before/",
@@ -42,37 +58,26 @@
         "pubDate": "Sat, 08 Aug 2026 22:15:23 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Bald-Range-fire.png"
-      },
-      {
-        "title": "Photos of Bald Range fire near Summerland show aggressive wildfire growth",
-        "link": "https://globalnews.ca/news/12014405/photos-bald-range-fire-summerland-aggressive-wildfire-growth/",
-        "description": "The Bald Range wildfire near Summerland sparked at 5:30 p.m. on Friday and exploded in size to 9,500 hectares by Saturday morning.",
-        "pubDate": "Sat, 08 Aug 2026 21:56:12 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c993912ed6903d736053b174778a32ff1170a1d7e15efb9e86bfccdf6380eecc.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
-        "link": "https://globalnews.ca/news/12014575/video-faulder-residents-rescuing-dogs-vehicle-surrounded-flames-bald-range/",
-        "description": "A video has surfaced online that captures the dramatic moments when Faulder residents were trying to rescue their dogs from a vehicle that was surrounded by flames.",
-        "pubDate": "Sun, 09 Aug 2026 02:38:46 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/faulder-dog-rescue.png"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
-        "title": "B.C. premier declares wildfire state of emergency",
-        "link": "https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/",
-        "description": "B.C. Premier David Eby and emergency officials are set to provide an update Saturday as wildfires continue to force evacuations across the province.",
-        "pubDate": "Sat, 08 Aug 2026 18:30:55 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/92a3175e816c6cfdb98b18545d2b24751e53787a4e82b6e729a9643546693d79.jpg?quality=65&#038;strip=all"
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Four great key speakers for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
+        "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
+        "source": "Wildfire Today"
       }
     ]
   }
