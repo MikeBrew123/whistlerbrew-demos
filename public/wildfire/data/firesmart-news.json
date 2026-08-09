@@ -1,16 +1,8 @@
 {
-  "updated_at": "2026-08-09T10:00:33.162Z",
+  "updated_at": "2026-08-09T16:00:33.429Z",
   "zones": {
     "coastal": [],
     "kamloops": [
-      {
-        "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
-        "link": "https://globalnews.ca/news/12014575/video-faulder-residents-rescuing-dogs-vehicle-surrounded-flames-bald-range/",
-        "description": "A video has surfaced online that captures the dramatic moments when Faulder residents were trying to rescue their dogs from a vehicle that was surrounded by flames.",
-        "pubDate": "Sun, 09 Aug 2026 02:38:46 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/faulder-dog-rescue.png"
-      },
       {
         "title": "&#8216;Explosive&#8217; Summerland wildfire creating conditions &#8216;never seen before&#8217;",
         "link": "https://globalnews.ca/news/12014564/explosive-summerland-wildfire-conditions-never-seen-before/",
@@ -63,7 +55,16 @@
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
+        "link": "https://globalnews.ca/news/12014575/video-faulder-residents-rescuing-dogs-vehicle-surrounded-flames-bald-range/",
+        "description": "A video has surfaced online that captures the dramatic moments when Faulder residents were trying to rescue their dogs from a vehicle that was surrounded by flames.",
+        "pubDate": "Sun, 09 Aug 2026 02:38:46 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/faulder-dog-rescue.png"
+      }
+    ],
     "all": [
       {
         "title": "B.C. premier declares wildfire state of emergency",
@@ -72,14 +73,6 @@
         "pubDate": "Sat, 08 Aug 2026 18:30:55 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/92a3175e816c6cfdb98b18545d2b24751e53787a4e82b6e729a9643546693d79.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Over 20,000 flee as B.C evacuation orders in full swing due to aggressive wildfire",
-        "link": "https://globalnews.ca/news/12014029/bc-wildfire-evacuation-order/",
-        "description": "The BC Wildfire Service says it's displaying aggressive rank 5 behaviour, with an organized flame front with a fast rate of spread and moderate to long-range spotting.",
-        "pubDate": "Sat, 08 Aug 2026 04:33:00 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/ee313d91-1f28-4f27-857d-7b7b5451e502.jpeg?quality=65&#038;strip=all"
       }
     ]
   }
