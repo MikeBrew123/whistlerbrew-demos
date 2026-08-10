@@ -1,15 +1,55 @@
 {
-  "updated_at": "2026-08-10T16:00:33.337Z",
+  "updated_at": "2026-08-10T22:00:34.782Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Cause of Summerland wildfire under investigation as RCMP examine reports of suspicious activity",
+        "link": "https://globalnews.ca/news/12015974/cause-summerland-bald-range-wildfire-under-investigation-rcmp-suspicious-activity/",
+        "description": "The Penticton RCMP, along with neighbouring RCMP detachments, are actively patrolling areas currently within the evacuation order, checking in on properties and businesses.",
+        "pubDate": "Mon, 10 Aug 2026 21:27:03 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Photo-8.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Seniors forced to flee B.C. wildfire found safe due to Apple AirTag, help from strangers",
+        "link": "https://globalnews.ca/news/12015880/seniors-forced-flee-bc-wildfire-safe-apple-airtag-help-strangers/",
+        "description": "Helen Gonzalez said she and her sister didn't know what to do until she remembered that their dog, Christy, had an Apple AirTag on her collar.",
+        "pubDate": "Mon, 10 Aug 2026 20:42:14 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Summerland-Seniors-2.jpeg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Why did the &#8216;absolutely shocking&#8217; B.C. wildfire intensify so fast?",
+        "link": "https://globalnews.ca/news/12015434/bc-wildfire-bald-ridge-spread-speed/",
+        "description": "Starting about 15 km northwest of Summerland last Friday, the Bald Ridge wildfire quickly grew to 50 square kilometres in just three hours after it was first detected.",
+        "pubDate": "Mon, 10 Aug 2026 20:33:33 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bald-ridge-fire-e1786394665931.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Summerland farmers can return to wildfire evacuation zone to care for their animals",
+        "link": "https://globalnews.ca/news/12015632/summerland-farmers-return-wildfire-evacuation-zone-care-animals-left-behind/",
+        "description": "Minister of Agriculture Lana Popham said the Regional District of Okanagan-Similkameen has established a pass system specifically for farmers and ranchers to relocate livestock.",
+        "pubDate": "Mon, 10 Aug 2026 18:45:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/CP176728468.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Latest on the Bald Range wildfire shows some fire growth expected on Monday",
+        "link": "https://globalnews.ca/news/12015538/latest-bald-range-wildfire-fire-growth-expected-monday/",
+        "description": "The BC Wildfire Service said the Bald Range fire grew approximately one to 1.5 kilometres on the northwestern and southern portions on Sunday night.",
+        "pubDate": "Mon, 10 Aug 2026 17:42:59 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c993912ed6903d736053b174778a32ff1170a1d7e15efb9e86bfccdf6380eecc_c64065.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Why information officer kept camera rolling even as he fled B.C. wildfire with family",
         "link": "https://globalnews.ca/news/12015240/why-information-officer-kept-camera-rolling-even-as-he-fled-b-c-wildfire-with-family/",
         "description": "When Erick Thompson decided he had to flee with his family as a wildfire roared towards Summerland, B.C., around 1:40 a.m. on Saturday, he also knew he had to keep filming.",
         "pubDate": "Mon, 10 Aug 2026 12:46:13 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_75c988.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/ee313d91-1f28-4f27-857d-7b7b5451e502.jpeg?quality=65&#038;strip=all"
       },
       {
         "title": "Evacuees slowly learn of losses from B.C. wildfire that forced thousands to flee",
@@ -17,7 +57,7 @@
         "description": "Kyla Gaudiuso says she found out her home in Faulder, B.C., had been destroyed when she received a photo of the ridge where it once stood, completely engulfed in flames.",
         "pubDate": "Mon, 10 Aug 2026 12:40:25 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_b20227.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Bald-Range-fire.png"
       },
       {
         "title": "80-year-old woman dies while fleeing aggressive Bald Range fire near Summerland",
@@ -26,38 +66,6 @@
         "pubDate": "Mon, 10 Aug 2026 01:18:19 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Feds approve assistance to help B.C. fire evacuees with shelter",
-        "link": "https://globalnews.ca/news/12014788/federal-assistance-b-c-wildfire-evacuees-shelter/",
-        "description": "Some wildfire evacuees in Penticton, B.C. reported having long wait times to register for assistance, with those who were interviewed saying they waited more than 14 or 15 hours.",
-        "pubDate": "Sun, 09 Aug 2026 20:18:45 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_7027ec.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
-        "link": "https://globalnews.ca/news/12014575/video-faulder-residents-rescuing-dogs-vehicle-surrounded-flames-bald-range/",
-        "description": "A video has surfaced online that captures the dramatic moments when Faulder residents were trying to rescue their dogs from a vehicle that was surrounded by flames.",
-        "pubDate": "Sun, 09 Aug 2026 02:38:46 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/faulder-dog-rescue.png"
-      },
-      {
-        "title": "&#8216;Explosive&#8217; Summerland wildfire creating conditions &#8216;never seen before&#8217;",
-        "link": "https://globalnews.ca/news/12014564/explosive-summerland-wildfire-conditions-never-seen-before/",
-        "description": "The BC Wildfire Service says it is one of the most challenging fires this province has ever faced, involving helicopter rescues of dozens of people trapped behind the fire line.",
-        "pubDate": "Sun, 09 Aug 2026 02:27:45 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/IMG_3114.jpeg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "As massive B.C. wildfire raged, groups worked to rescue livestock, animals",
-        "link": "https://globalnews.ca/news/12014512/massive-bc-wildfire-raged-rescue-livestock-animals/",
-        "description": "When the Bald Range wildfire sparked near Summerland on Friday afternoon, thousands of residents prepared to leave their homes. But many have livestock and animals to care for.",
-        "pubDate": "Sun, 09 Aug 2026 01:07:33 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/pic-8.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -66,18 +74,19 @@
     "southeast": [],
     "all": [
       {
-        "title": "Fire and Climate &#8211; a special and timely collection",
-        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
-        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
-        "source": "Wildfire Today"
-      },
-      {
         "title": "Four great key speakers for WFCC26 Canada",
         "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
         "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
         "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Off-road vehicles banned on Crown land in many parts of B.C. as wildfires burn",
+        "link": "https://globalnews.ca/news/12015805/off-road-vehicles-banned-crown-land-bc-wildfires-burn/",
+        "description": "This prohibition does not apply to emergency response, agriculture or commercial/industrial users who operate off-road vehicles for farming or business purposes.",
+        "pubDate": "Mon, 10 Aug 2026 19:58:21 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2016/07/img_5547.png"
       }
     ]
   }
