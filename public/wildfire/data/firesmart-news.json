@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-08-10T10:00:33.919Z",
+  "updated_at": "2026-08-10T16:00:33.337Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Why information officer kept camera rolling even as he fled B.C. wildfire with family",
+        "link": "https://globalnews.ca/news/12015240/why-information-officer-kept-camera-rolling-even-as-he-fled-b-c-wildfire-with-family/",
+        "description": "When Erick Thompson decided he had to flee with his family as a wildfire roared towards Summerland, B.C., around 1:40 a.m. on Saturday, he also knew he had to keep filming.",
+        "pubDate": "Mon, 10 Aug 2026 12:46:13 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_75c988.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Evacuees slowly learn of losses from B.C. wildfire that forced thousands to flee",
+        "link": "https://globalnews.ca/news/12015234/bc-wildfire-evacuees/",
+        "description": "Kyla Gaudiuso says she found out her home in Faulder, B.C., had been destroyed when she received a photo of the ridge where it once stood, completely engulfed in flames.",
+        "pubDate": "Mon, 10 Aug 2026 12:40:25 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_b20227.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "80-year-old woman dies while fleeing aggressive Bald Range fire near Summerland",
         "link": "https://globalnews.ca/news/12015047/80-year-old-woman-dies-fleeing-aggressive-bald-range-fire-summerland/",
@@ -18,14 +34,6 @@
         "pubDate": "Sun, 09 Aug 2026 20:18:45 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_7027ec.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. murder case acquittal due to tainted evidence leaves shock, confusion",
-        "link": "https://globalnews.ca/news/12014732/vanessa-terry-murder-acquittal-reaction/",
-        "description": "Terry was found dead in her home on a First Nation reserve near Agassiz, B.C., in 2024, in a case of alleged intimate partner violence.",
-        "pubDate": "Sun, 09 Aug 2026 14:28:59 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/vanessa-terry.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
@@ -50,14 +58,6 @@
         "pubDate": "Sun, 09 Aug 2026 01:07:33 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/pic-8.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "RCMP report a possible fatality from massive Summerland fire",
-        "link": "https://globalnews.ca/news/12014490/rcmp-report-possible-fatality-massive-summerland-fire/",
-        "description": "RCMP said officers continue to provide emergency response and assistance following the Bald Range fire that grew quickly and forced thousands to flee their homes.",
-        "pubDate": "Sat, 08 Aug 2026 23:56:27 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/3fca5483291ae7f8d7e55b365d6fc481de5773bd06304e575b644a98032b798d_5452df.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -66,12 +66,18 @@
     "southeast": [],
     "all": [
       {
-        "title": "Summerland wildfire forces large numbers of seniors in residential care to relocate",
-        "link": "https://globalnews.ca/news/12014460/summerland-wildfire-large-numbers-seniors-residential-care-relocate/",
-        "description": "David Hickey, a driver with the High Acuity Response Team, helped receive dozens of seniors at Kaigo Senior Living Facility in Kelowna.",
-        "pubDate": "Sat, 08 Aug 2026 23:37:17 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/penticton-evac-centre.png"
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Four great key speakers for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
+        "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
+        "source": "Wildfire Today"
       }
     ]
   }
