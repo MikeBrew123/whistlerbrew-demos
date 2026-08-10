@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-09T22:01:18.731Z",
+  "updated_at": "2026-08-10T16:01:18.736Z",
   "fires": [
     {
       "country": "Spain",
@@ -178,6 +178,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Feds approve assistance to help B.C. fire evacuees with shelter\",\n      \"url\": \"https://globalnews.ca/news/12014788/federal-assistance-b-c-wildfire-e"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Why information officer kept camera rolling even as he fled B.C. wildfire with family\",\n      \"url\": \"https://globalnews.ca/news/12015240/why-informa"
   }
 }
