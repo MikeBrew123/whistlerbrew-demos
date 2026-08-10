@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-10T04:00:33.894Z",
+  "updated_at": "2026-08-10T10:00:33.919Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -18,6 +18,14 @@
         "pubDate": "Sun, 09 Aug 2026 20:18:45 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/7ad099e1dc8a5cb46cc75136a27b5ed8b7c790359a161ff706c2cc290c56f7a5_7027ec.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C. murder case acquittal due to tainted evidence leaves shock, confusion",
+        "link": "https://globalnews.ca/news/12014732/vanessa-terry-murder-acquittal-reaction/",
+        "description": "Terry was found dead in her home on a First Nation reserve near Agassiz, B.C., in 2024, in a case of alleged intimate partner violence.",
+        "pubDate": "Sun, 09 Aug 2026 14:28:59 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/vanessa-terry.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Video captures Faulder residents rescuing their dogs from vehicle surrounded by flames",
@@ -57,13 +65,6 @@
     "northwest": [],
     "southeast": [],
     "all": [
-      {
-        "title": "Fire and Climate &#8211; a special and timely collection",
-        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
-        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
-        "source": "Wildfire Today"
-      },
       {
         "title": "Summerland wildfire forces large numbers of seniors in residential care to relocate",
         "link": "https://globalnews.ca/news/12014460/summerland-wildfire-large-numbers-seniors-residential-care-relocate/",
