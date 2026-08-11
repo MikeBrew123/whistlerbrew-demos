@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-11T10:00:33.573Z",
+  "updated_at": "2026-08-11T16:00:33.789Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Mexican reinforcements arriving for wildfire fight in Summerland, B.C.",
+        "link": "https://globalnews.ca/news/12016627/summerland-bc-wildfire-help/",
+        "description": "Reinforcements are arriving in the battle against a deadly wildfire on the shores of Okanagan Lake in the southern B.C. Interior that has forced 20,000 people to evacuate.",
+        "pubDate": "Tue, 11 Aug 2026 12:04:32 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Animal sanctuary among evacuees of Summerland wildfire",
         "link": "https://globalnews.ca/news/12016266/animal-sanctuary-evacuees-summerland-wildfire/",
@@ -50,14 +58,6 @@
         "pubDate": "Mon, 10 Aug 2026 20:33:33 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/bald-ridge-fire-e1786394665931.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Summerland farmers return to wildfire evacuation zone to care for their animals",
-        "link": "https://globalnews.ca/news/12015632/summerland-farmers-return-wildfire-evacuation-zone-care-animals-left-behind/",
-        "description": "Minister of Agriculture Lana Popham said the Regional District of Okanagan-Similkameen established a pass system specifically for farmers and ranchers to relocate livestock.",
-        "pubDate": "Mon, 10 Aug 2026 18:45:12 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/CP176728468.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -65,6 +65,20 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Four great key speakers for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
+        "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Off-road vehicles banned on Crown land in many parts of B.C. as wildfires burn",
         "link": "https://globalnews.ca/news/12015805/off-road-vehicles-banned-crown-land-bc-wildfires-burn/",
