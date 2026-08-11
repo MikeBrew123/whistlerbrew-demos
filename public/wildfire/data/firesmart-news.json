@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-11T16:00:33.789Z",
+  "updated_at": "2026-08-11T22:00:33.381Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Bald Range wildfire near Summerland grows to more than 17,800 hectares",
+        "link": "https://globalnews.ca/news/12017032/bc-wildfire-drought-update-august-11/",
+        "description": "On Tuesday, officials are expecting a high potential for lightning-caused wildfire starts, particularly in the central Interior and the Okanagan.",
+        "pubDate": "Tue, 11 Aug 2026 17:59:23 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/e02b2763f3350c815fc1c7f92b0a63dca04211d97452d6aa9f59ee4166806b72.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Mexican reinforcements arriving for wildfire fight in Summerland, B.C.",
         "link": "https://globalnews.ca/news/12016627/summerland-bc-wildfire-help/",
@@ -10,6 +18,14 @@
         "pubDate": "Tue, 11 Aug 2026 12:04:32 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Conservation officers continue search for bear after Maple Ridge girl attacked",
+        "link": "https://globalnews.ca/news/12016207/search-continues-bear-attacked-maple-ridge-girl/",
+        "description": "Three-year-old Anaiyah Lekei is now recovering after surgery. The bear clawed and bit her several times on the head, neck and back.",
+        "pubDate": "Tue, 11 Aug 2026 02:05:53 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/1000014870.jpeg?quality=65&#038;strip=all"
       },
       {
         "title": "Animal sanctuary among evacuees of Summerland wildfire",
@@ -26,38 +42,6 @@
         "pubDate": "Mon, 10 Aug 2026 23:15:55 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/CP176732118.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Videos capture aftermath of Summerland fire in Faulder, residents say it was &#8216;eerie&#8217;",
-        "link": "https://globalnews.ca/news/12015934/videos-aftermath-summerland-fire-faulder-errie/",
-        "description": "The blaze broke out on Friday afternoon near Summerland and grew quickly to 5,000 hectares in only a few hours. It is now mapped at more than 15,500 hectares.",
-        "pubDate": "Mon, 10 Aug 2026 22:54:42 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-FAULDER-WILDFIRE-AFTERMATH-VIDEOS.png"
-      },
-      {
-        "title": "Cause of Summerland wildfire under investigation as RCMP examine reports of suspicious activity",
-        "link": "https://globalnews.ca/news/12015974/cause-summerland-bald-range-wildfire-under-investigation-rcmp-suspicious-activity/",
-        "description": "The Penticton RCMP, along with neighbouring RCMP detachments, are actively patrolling areas currently within the evacuation order, checking in on properties and businesses.",
-        "pubDate": "Mon, 10 Aug 2026 21:27:03 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Photo-8.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Seniors forced to flee B.C. wildfire found safe due to Apple AirTag, help from strangers",
-        "link": "https://globalnews.ca/news/12015880/seniors-forced-flee-bc-wildfire-safe-apple-airtag-help-strangers/",
-        "description": "Helen Gonzalez said she and her sister didn't know what to do until she remembered that their dog, Christy, had an Apple AirTag on her collar.",
-        "pubDate": "Mon, 10 Aug 2026 20:42:14 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Summerland-Seniors-2.jpeg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Why did the &#8216;absolutely shocking&#8217; B.C. wildfire intensify so fast?",
-        "link": "https://globalnews.ca/news/12015434/bc-wildfire-bald-ridge-spread-speed/",
-        "description": "Starting about 15 km northwest of Summerland last Friday, the Bald Ridge wildfire quickly grew to 50 square kilometres in just three hours after it was first detected.",
-        "pubDate": "Mon, 10 Aug 2026 20:33:33 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bald-ridge-fire-e1786394665931.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -80,12 +64,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Off-road vehicles banned on Crown land in many parts of B.C. as wildfires burn",
-        "link": "https://globalnews.ca/news/12015805/off-road-vehicles-banned-crown-land-bc-wildfires-burn/",
-        "description": "This prohibition does not apply to emergency response, agriculture or commercial/industrial users who operate off-road vehicles for farming or business purposes.",
-        "pubDate": "Mon, 10 Aug 2026 19:58:21 +0000",
+        "title": "WATCH: Global Okanagan News at 5:30 p.m. &#8211; August 10",
+        "link": "https://globalnews.ca/news/9913127/watch-global-okanagan-news-at-530/",
+        "description": "Watch the online news edition of Global Okanagan at 5:30 p.m.",
+        "pubDate": "Mon, 10 Aug 2026 22:00:38 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2016/07/img_5547.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2025/10/GLOBALNEWS_OKANAGAN-show-thumbnail-NEW.jpg?quality=65&#038;strip=all"
       }
     ]
   }
