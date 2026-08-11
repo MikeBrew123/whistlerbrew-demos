@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-11T10:01:16.460Z",
+  "updated_at": "2026-08-11T22:01:16.056Z",
   "fires": [
     {
       "country": "Spain",
@@ -29,7 +29,7 @@
       "country": "France",
       "name": "Gironde Region & Cap Ferret Wildfire (South-West France) - Bordeaux Blaze",
       "status": "Active",
-      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters braced for 40C heatwave. BBC reports locals fighting flare-ups in 40C heat in the Gironde region, with some refusing to heed evacuations.",
+      "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters braced for 40C heatwave. BBC reports locals fighting flare-ups in 40C heat in the Gironde region, with some refusing to heed evacuations. French government investigating hundreds of arrests over fires with responsibility still under investigation.",
       "link": "https://www.bbc.co.uk/news/articles/c5yd8gly1ydo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/554a/live/122cc280-8aab-11f1-b8ee-9b3c26ad07bb.jpg"
     },
@@ -149,6 +149,14 @@
     },
     {
       "country": "United States",
+      "name": "Spokane Wildfires",
+      "status": "Active",
+      "summary": "Wildfires in Spokane area with devastating aftermath captured by drone footage showing homes destroyed down to their foundations with burned cars still parked in driveways.",
+      "link": "https://www.bbc.co.uk/news/videos/c80nm9melpmo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/90b9/live/11367e20-958c-11f1-a7ab-8b30adf0800a.jpg"
+    },
+    {
+      "country": "United States",
       "name": "US Wildfire Season 2026",
       "status": "Active",
       "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts."
@@ -178,20 +186,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 3,
+      "canada": 1,
       "world": 2
     },
     "items_out": {
-      "canada": 2,
-      "world_fires": 23
+      "canada": 1,
+      "world_fires": 24
     },
-    "deduped": 0,
-    "rerouted": 1,
+    "deduped": 1,
+    "rerouted": 0,
     "notes": [
-      "Removed 1 Canada article: 'Northern Manitoba community's wildfire evacuation order lifted' (2026-07-28) - fire contained >60 days ago",
-      "Moved 2 world articles from world bucket to context: BBC ocean temps article (general climate context, not specific fire) and French wildfire arrests article (merged with existing France fires). World bucket contains only dedicated fire entries.",
-      "All existing active fires preserved with images intact",
-      "Canada bucket: 3 input → 2 output (one removed, two preserved with images)"
+      "Deduped French wildfire story (BBC article about arrests merged into Bordeaux Blaze summary)",
+      "Merged Spokane wildfire BBC video article into world_fires as separate US entry with image preserved",
+      "All existing_fires marked Active preserved in output",
+      "Images preserved from all sources where present"
     ]
   }
 }
