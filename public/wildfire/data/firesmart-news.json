@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-12T10:00:33.103Z",
+  "updated_at": "2026-08-12T16:00:33.912Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Smoke in B.C. Interior causing poor air quality but helping fire fight",
+        "link": "https://globalnews.ca/news/12018225/smoke-in-b-c-interior-causing-poor-air-quality-but-helping-fire-fight/",
+        "description": "Many of the blazes burning across the province have been smoked out for a number of days and have resulted in poor air quality, but have helped in the fire fight.",
+        "pubDate": "Wed, 12 Aug 2026 12:15:21 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046_cd71b9.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Faulder family loses both homes in devastating Summerland wildfire",
         "link": "https://globalnews.ca/news/12017717/faulder-family-loses-both-homes-devastating-summerland-wildfire/",
@@ -10,38 +18,6 @@
         "pubDate": "Wed, 12 Aug 2026 00:04:28 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-faulder.png"
-      },
-      {
-        "title": "Surge in overnight calls to Kids Help Phone &#8216;a canary in the coal mine&#8217;: CEO",
-        "link": "https://globalnews.ca/news/12017310/overnight-calls-surge-kids-help-phone/",
-        "description": "Requests via text in the evening and overnight hours are 183 per cent higher than those received during the day, Kids Help Phone said.",
-        "pubDate": "Tue, 11 Aug 2026 22:25:01 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/kids-help-phone-overnight-increase.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Before and after photos show home, music venue lost to B.C. wildfire",
-        "link": "https://globalnews.ca/news/12017396/before-after-photos-home-music-venue-lost-bc-wildfire-bald-range/",
-        "description": "'As we drove away, we could see in our rear view mirror the fire cresting the mountain. It was that close and that fast. There was no time to do anything more,' Craig Milton said.",
-        "pubDate": "Tue, 11 Aug 2026 22:18:43 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-wildfire-new.png"
-      },
-      {
-        "title": "Man accused of setting VPD officer on fire pleads guilty",
-        "link": "https://globalnews.ca/news/12017397/man-accused-setting-vpd-officer-on-fire-pleads-guilty/",
-        "description": "Jordan Mutual, 41, was scheduled to stand trial in Vancouver provincial court Monday on two separate counts of assaulting a peace officer.",
-        "pubDate": "Tue, 11 Aug 2026 20:35:27 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/04/WEB-FIREDTES.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Bald Range wildfire near Summerland grows to more than 17,800 hectares",
-        "link": "https://globalnews.ca/news/12017032/bc-wildfire-drought-update-august-11/",
-        "description": "On Tuesday, officials are expecting a high potential for lightning-caused wildfire starts, particularly in the central Interior and the Okanagan.",
-        "pubDate": "Tue, 11 Aug 2026 17:59:23 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/e02b2763f3350c815fc1c7f92b0a63dca04211d97452d6aa9f59ee4166806b72.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -50,26 +26,11 @@
     "southeast": [],
     "all": [
       {
-        "title": "Fire and Climate &#8211; a special and timely collection",
-        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
-        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
-        "source": "Wildfire Today"
-      },
-      {
         "title": "Four great key speakers for WFCC26 Canada",
         "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
         "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
         "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Mexican reinforcements arriving for wildfire fight in Summerland, B.C.",
-        "link": "https://globalnews.ca/news/12016627/summerland-bc-wildfire-help/",
-        "description": "Reinforcements are arriving in the battle against a deadly wildfire on the shores of Okanagan Lake in the southern B.C. Interior that has forced 20,000 people to evacuate.",
-        "pubDate": "Tue, 11 Aug 2026 12:04:32 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
       }
     ]
   }
