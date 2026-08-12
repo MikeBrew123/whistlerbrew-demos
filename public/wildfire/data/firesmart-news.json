@@ -1,8 +1,66 @@
 {
-  "updated_at": "2026-08-12T16:00:33.912Z",
+  "updated_at": "2026-08-12T22:00:33.844Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "B.C. Premier David Eby visits Interior ravaged by wildfires",
+        "link": "https://globalnews.ca/news/12019108/bc-premier-david-eby-visits-interior-wildfires/",
+        "description": "Kelly Greene, Minister of Emergency Management and Climate Readiness and Amelia Boultbee, MLA for Penticton-Summerland, will also be in attendance.",
+        "pubDate": "Wed, 12 Aug 2026 21:12:17 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/06/24aa1fd2e92a7a00525a3918903d058238d99e20e7eba5766e394c47b7377fad.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Bald Range wildfire grows again as crews warn of possible winds, thunderstorm",
+        "link": "https://globalnews.ca/news/12018652/bald-range-wildfire-grows-again-warn-possible-winds-thunderstorm/",
+        "description": "The Regional District of Okanagan-Similkameen Emergency Operations Centre (EOS) said on Wednesday that there are no changes to evacuation orders and alerts at this time.",
+        "pubDate": "Wed, 12 Aug 2026 20:31:28 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046_23e212.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Faulder family loses both homes in devastating Summerland wildfire",
+        "link": "https://globalnews.ca/news/12017717/faulder-family-loses-both-homes-devastating-summerland-wildfire/",
+        "description": "Shawna and Lucas Wagner were forced to leave behind what they had envisioned for their future as the newlyweds had only purchased the home in December.",
+        "pubDate": "Wed, 12 Aug 2026 00:04:28 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-faulder.png"
+      },
+      {
+        "title": "What you need to know about B.C. wildfires on Aug. 12",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-bc-wildfires-aug-12-9.7304156?cmp=rss",
+        "description": "The wildfire threatening homes around Summerland, B.C., grew by about 6.5 square kilometres overnight.",
+        "pubDate": "Wed, 12 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Summerland wildfire evacuees turn to social media for damage details amid lack of official info",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/alternative-sources-information-wildfire-evacuations-bc-9.7304851?cmp=rss",
+        "description": "Some wildfire evacuees from Summerland, B.C., say they are seeking out alternative sources of information about the fate of their community to fill an official void, even as authorities warn against the risk of misinformation.",
+        "pubDate": "Wed, 12 Aug 2026 15:04:15 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [],
+    "cariboo": [],
+    "northwest": [],
+    "southeast": [],
+    "all": [
+      {
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Four great key speakers for WFCC26 Canada",
+        "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
+        "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Smoke in B.C. Interior causing poor air quality but helping fire fight",
         "link": "https://globalnews.ca/news/12018225/smoke-in-b-c-interior-causing-poor-air-quality-but-helping-fire-fight/",
@@ -12,25 +70,25 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046_cd71b9.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Faulder family loses both homes in devastating Summerland wildfire",
-        "link": "https://globalnews.ca/news/12017717/faulder-family-loses-both-homes-devastating-summerland-wildfire/",
-        "description": "Shawna and Lucas Wagner were forced to leave behind what they had envisioned for their future as the newlyweds had only purchased the home in December.",
-        "pubDate": "Wed, 12 Aug 2026 00:04:28 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-faulder.png"
-      }
-    ],
-    "prince-george": [],
-    "cariboo": [],
-    "northwest": [],
-    "southeast": [],
-    "all": [
+        "title": "'Exceptionally' dry conditions challenge crews fighting 4 major wildfires in B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/livestory/bc-wildfires-live-updates-aug-12-9.7304961?cmp=rss",
+        "description": "",
+        "pubDate": "Thu, 23 Jul 2026 19:04:27 EDT",
+        "source": "CBC BC"
+      },
       {
-        "title": "Four great key speakers for WFCC26 Canada",
-        "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
-        "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
-        "source": "Wildfire Today"
+        "title": "'Explosive' wildfire behaviour keeps thousands of British Columbians out of their homes",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/livestory/bc-wildfires-live-updates-aug-11-9.7303376?cmp=rss",
+        "description": "",
+        "pubDate": "Tue, 11 Aug 2026 13:43:34 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Why NASA flew a repurposed Cold War spy plane over B.C.'s wildfires",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/nasa-aircraft-b-c-wildfires-9.7303288?cmp=rss",
+        "description": "A high-altitude research aircraft from NASA flew over British Columbia's wildfires over the weekend in a bid to better understand weather events generated by large blazes.",
+        "pubDate": "Tue, 11 Aug 2026 15:02:16 EDT",
+        "source": "CBC BC"
       }
     ]
   }
