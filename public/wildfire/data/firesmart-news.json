@@ -1,8 +1,40 @@
 {
-  "updated_at": "2026-08-11T22:00:33.381Z",
+  "updated_at": "2026-08-12T04:00:33.405Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Faulder family loses both homes in devastating Summerland wildfire",
+        "link": "https://globalnews.ca/news/12017717/faulder-family-loses-both-homes-devastating-summerland-wildfire/",
+        "description": "Shawna and Lucas Wagner were forced to leave behind what they had envisioned for their future as the newlyweds had only purchased the home in December.",
+        "pubDate": "Wed, 12 Aug 2026 00:04:28 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-faulder.png"
+      },
+      {
+        "title": "Surge in overnight calls to Kids Help Phone &#8216;a canary in the coal mine&#8217;: CEO",
+        "link": "https://globalnews.ca/news/12017310/overnight-calls-surge-kids-help-phone/",
+        "description": "Requests via text in the evening and overnight hours are 183 per cent higher than those received during the day, Kids Help Phone said.",
+        "pubDate": "Tue, 11 Aug 2026 22:25:01 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/kids-help-phone-overnight-increase.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Before and after photos show home, music venue lost to B.C. wildfire",
+        "link": "https://globalnews.ca/news/12017396/before-after-photos-home-music-venue-lost-bc-wildfire-bald-range/",
+        "description": "'As we drove away, we could see in our rear view mirror the fire cresting the mountain. It was that close and that fast. There was no time to do anything more,' Craig Milton said.",
+        "pubDate": "Tue, 11 Aug 2026 22:18:43 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-wildfire-new.png"
+      },
+      {
+        "title": "Man accused of setting VPD officer on fire pleads guilty",
+        "link": "https://globalnews.ca/news/12017397/man-accused-setting-vpd-officer-on-fire-pleads-guilty/",
+        "description": "Jordan Mutual, 41, was scheduled to stand trial in Vancouver provincial court Monday on two separate counts of assaulting a peace officer.",
+        "pubDate": "Tue, 11 Aug 2026 20:35:27 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/04/WEB-FIREDTES.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Bald Range wildfire near Summerland grows to more than 17,800 hectares",
         "link": "https://globalnews.ca/news/12017032/bc-wildfire-drought-update-august-11/",
@@ -10,38 +42,6 @@
         "pubDate": "Tue, 11 Aug 2026 17:59:23 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/e02b2763f3350c815fc1c7f92b0a63dca04211d97452d6aa9f59ee4166806b72.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Mexican reinforcements arriving for wildfire fight in Summerland, B.C.",
-        "link": "https://globalnews.ca/news/12016627/summerland-bc-wildfire-help/",
-        "description": "Reinforcements are arriving in the battle against a deadly wildfire on the shores of Okanagan Lake in the southern B.C. Interior that has forced 20,000 people to evacuate.",
-        "pubDate": "Tue, 11 Aug 2026 12:04:32 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Conservation officers continue search for bear after Maple Ridge girl attacked",
-        "link": "https://globalnews.ca/news/12016207/search-continues-bear-attacked-maple-ridge-girl/",
-        "description": "Three-year-old Anaiyah Lekei is now recovering after surgery. The bear clawed and bit her several times on the head, neck and back.",
-        "pubDate": "Tue, 11 Aug 2026 02:05:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/1000014870.jpeg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Animal sanctuary among evacuees of Summerland wildfire",
-        "link": "https://globalnews.ca/news/12016266/animal-sanctuary-evacuees-summerland-wildfire/",
-        "description": "Faith Affleck runs Stars Piggly Wigglys Sanctuary in Summerland and is currently staying in Okanagan Falls with two of her rescues.",
-        "pubDate": "Tue, 11 Aug 2026 00:50:23 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/web_piggly_08.10.2026.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Summerland wildfire: Planning for re-entry already underway, but now is not the time",
-        "link": "https://globalnews.ca/news/12016165/bc-wildfire-rcmp-summerland-live-update-latest/",
-        "description": "This briefing comes as thousands of people remain out of their homes due to the Bald Range wildfire, which sparked on Friday afternoon.",
-        "pubDate": "Mon, 10 Aug 2026 23:15:55 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/CP176732118.jpg?quality=65&#038;strip=all"
       }
     ],
     "prince-george": [],
@@ -64,12 +64,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "WATCH: Global Okanagan News at 5:30 p.m. &#8211; August 10",
-        "link": "https://globalnews.ca/news/9913127/watch-global-okanagan-news-at-530/",
-        "description": "Watch the online news edition of Global Okanagan at 5:30 p.m.",
-        "pubDate": "Mon, 10 Aug 2026 22:00:38 +0000",
+        "title": "Mexican reinforcements arriving for wildfire fight in Summerland, B.C.",
+        "link": "https://globalnews.ca/news/12016627/summerland-bc-wildfire-help/",
+        "description": "Reinforcements are arriving in the battle against a deadly wildfire on the shores of Okanagan Lake in the southern B.C. Interior that has forced 20,000 people to evacuate.",
+        "pubDate": "Tue, 11 Aug 2026 12:04:32 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/10/GLOBALNEWS_OKANAGAN-show-thumbnail-NEW.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
       }
     ]
   }
