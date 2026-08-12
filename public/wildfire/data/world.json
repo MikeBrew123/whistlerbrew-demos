@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-11T22:01:16.056Z",
+  "updated_at": "2026-08-12T10:01:16.924Z",
   "fires": [
     {
       "country": "Spain",
@@ -187,19 +187,21 @@
   "last_report": {
     "items_in": {
       "canada": 1,
-      "world": 2
+      "world": 0
     },
     "items_out": {
-      "canada": 1,
-      "world_fires": 24
+      "canada_news": 1,
+      "world_fires": 25
     },
-    "deduped": 1,
+    "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "Deduped French wildfire story (BBC article about arrests merged into Bordeaux Blaze summary)",
-      "Merged Spokane wildfire BBC video article into world_fires as separate US entry with image preserved",
-      "All existing_fires marked Active preserved in output",
-      "Images preserved from all sources where present"
+      "All existing fires preserved as Active status maintained",
+      "Canada news input routed to canada_news bucket",
+      "World fires input was empty - all entries from existing_fires retained",
+      "Rio Olympic Velodrome Fire reclassified as structure fire not wildfire but preserved per existing data",
+      "All images preserved from source data",
+      "No duplicates found across sources"
     ]
   }
 }
