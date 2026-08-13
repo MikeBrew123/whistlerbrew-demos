@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-08-13T16:00:34.623Z",
+  "updated_at": "2026-08-13T22:00:35.699Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Penticton search and rescue members helped others evacuate as their homes burned",
+        "link": "https://globalnews.ca/news/12020750/penticton-search-rescue-members-helped-evacuate-homes-burned/",
+        "description": "Other search and rescue teams also responded to calls for help, including Princeton, Central Okanagan, Oliver, Osoyoos, Rossland and Grand Forks.",
+        "pubDate": "Thu, 13 Aug 2026 21:59:28 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/penticton-search-rescue.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Highway 97 between Penticton and Kelowna reopens with limited hours",
+        "link": "https://globalnews.ca/news/12020391/highway-97-penticton-kelowna-reopens-limited-hours/",
+        "description": "The Regional District of Okanagan-Similkameen said the highway will be open from 7 a.m. to 7 p.m. each day and speed limits have been reduced to 70 km/h.",
+        "pubDate": "Thu, 13 Aug 2026 18:50:46 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Status of &#8216;iconic&#8217; mountain goats living near evacuated B.C. community is uncertain",
         "link": "https://globalnews.ca/news/12019843/status-of-iconic-mountain-goats-living-near-evacuated-b-c-community-is-uncertain/",
@@ -36,10 +52,38 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/EBY-raw.jpg?quality=65&#038;strip=all"
       },
       {
+        "title": "What you need to know about B.C. wildfires on Aug. 13",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-13-9.7305510?cmp=rss",
+        "description": "Highway 97, which has been closed due to the wildfire between Peachland and the Pyramid Picnic Area in Kickininee Provincial Park, has reopened with limited hours, according to  DriveBC on Thursday .",
+        "pubDate": "Thu, 13 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Search for B.C.'s best roadside attraction: Northern semifinals",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-roadside-attraction-northern-semifinal-9.7304630?cmp=rss",
+        "description": "After more than 300 submissions from across the province, just four roadside attractions from B.C.'s north remain — but which will make the final?",
+        "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "Members of Okanagan Indian Band mourn loss of forests and irreplaceable artifacts in wildfire",
         "link": "https://www.cbc.ca/news/canada/british-columbia/members-of-okanagan-indian-band-mourn-loss-of-forests-and-irreplaceable-artifacts-in-wildfire-9.7305507?cmp=rss",
         "description": "More than just homes have been destroyed by the Bradley Creek Wildfire. The Okanagan Indian Band Indigenous community has also lost irreplaceable artifacts and forests where their great-grandparents picked berries.",
         "pubDate": "Thu, 13 Aug 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Okanagan wildfires hurting tourism in B.C. towns hundreds of kilometres away",
+        "link": "https://www.cbc.ca/news/canada/calgary/columbia-valley-wildfire-smoke-9.7305996?cmp=rss",
+        "description": "Wildfires burning hundreds of kilometres away are affecting tourism in B.C.’s Columbia Valley, with some visitors cancelling or reconsidering trips. Local tourism officials say the region remains open and largely unaffected by the fires themselves.",
+        "pubDate": "Thu, 13 Aug 2026 14:45:17 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Tending the animals trapped by B.C. wildfires: 'You can see their whole spirit change'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-evacuation-animals-9.7304898?cmp=rss",
+        "description": "On Tuesday, Agriculture Minister Lana Popham said up to 50,000 agricultural animals were under threat from wildfires.",
+        "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
       },
       {
@@ -55,13 +99,6 @@
         "description": "B.C. Premier David Eby has  promised to review  the province's emergency response in the wake of the Bald Range wildfire near Summerland, and says he hasn't ruled out calling for military assistance.",
         "pubDate": "Wed, 12 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Summerland wildfire evacuees turn to social media for damage details amid lack of official info",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/alternative-sources-information-wildfire-evacuations-bc-9.7304851?cmp=rss",
-        "description": "Some wildfire evacuees from Summerland, B.C., say they are seeking out alternative sources of information about the fate of their community to fill an official void, even as authorities warn against the risk of misinformation.",
-        "pubDate": "Wed, 12 Aug 2026 15:04:15 EDT",
-        "source": "CBC BC"
       }
     ],
     "prince-george": [
@@ -73,10 +110,10 @@
         "source": "CBC BC"
       },
       {
-        "title": "Why this American doctor is leaving Utah to serve a remote community in B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/doctors-are-leaving-american-to-work-in-b-c-9.7303952?cmp=rss",
-        "description": "One American doctor said changes in B.C.'s health care have allowed him to move to Canada.",
-        "pubDate": "Wed, 12 Aug 2026 09:00:00 EDT",
+        "title": "Dawson Creek water pipeline could cost up to $272M to build, new estimates show",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/dawson-creek-water-pipeline-cost-nearly-triples-9.7303326?cmp=rss",
+        "description": "Dawson Creek city staff say a water pipeline for the northeast B.C. community could now cost up to $272 million to build, nearly triple the previous estimate.",
+        "pubDate": "Wed, 12 Aug 2026 17:45:28 EDT",
         "source": "CBC BC"
       }
     ],
@@ -97,13 +134,6 @@
         "description": "Fernie’s new fire hall is now under construction after years of debate over its Prentice Park location.",
         "pubDate": "Thu, 13 Aug 2026 07:00:00 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Cranbrook wants a hospice house, but where it should go is up for debate",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/cranbrook-hospice-house-9.7302725?cmp=rss",
-        "description": "Cranbrook residents will be surveyed this fall on five possible locations for a proposed 10-bed hospice house, including the Mount Baker RV Campground.",
-        "pubDate": "Wed, 12 Aug 2026 07:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
     "all": [
@@ -120,28 +150,6 @@
         "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
         "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Calgary Flames coming home to QR Calgary 770 AM radio",
-        "link": "https://globalnews.ca/news/12017583/calgary-flames-qr-770-radio/",
-        "description": "The Calgary Flames have a new radio broadcaster, following the signing of a five-year partnership for all home and away games to be aired on QR Calgary 770 AM.",
-        "pubDate": "Wed, 12 Aug 2026 14:05:18 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/lanny-cup.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "What you need to know about B.C. wildfires on Aug. 13",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-13-9.7305510?cmp=rss",
-        "description": "B.C.'s premier has promised to review the province's emergency response in the wake of the Bald Range wildfire, which remains out of control near Summerland and is among more than 100 fires burning throughout B.C.",
-        "pubDate": "Thu, 13 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Tending the animals trapped by B.C. wildfires: 'You can see their whole spirit change'",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-evacuation-animals-9.7304898?cmp=rss",
-        "description": "On Tuesday, Agriculture Minister Lana Popham said up to 50,000 agricultural animals were under threat from wildfires.",
-        "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
-        "source": "CBC BC"
       }
     ]
   }
