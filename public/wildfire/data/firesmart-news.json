@@ -1,23 +1,24 @@
 {
-  "updated_at": "2026-08-13T10:00:34.368Z",
+  "updated_at": "2026-08-13T16:00:34.623Z",
   "zones": {
-    "coastal": [
+    "coastal": [],
+    "kamloops": [
       {
-        "title": "RCMP pair with helicopter service to target dangerous drivers in Nanaimo",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/rcmp-helicopter-dangerous-drivers-9.7303399?cmp=rss",
-        "description": "RCMP in Nanaimo partnered with a police helicopter service to target dangerous drivers in the city, following multiple complaints from residents about drag racing and other risky behaviour in some parts of the city in recent months.",
-        "pubDate": "Tue, 11 Aug 2026 18:12:08 EDT",
-        "source": "CBC BC"
+        "title": "Status of &#8216;iconic&#8217; mountain goats living near evacuated B.C. community is uncertain",
+        "link": "https://globalnews.ca/news/12019843/status-of-iconic-mountain-goats-living-near-evacuated-b-c-community-is-uncertain/",
+        "description": "It is not clear yet what has happened to a small group of \"iconic\"  mountain goats, as a large wildfire burns out of control near the evacuated community of Summerland, B.C.",
+        "pubDate": "Thu, 13 Aug 2026 12:50:51 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/9bcff5aa98ce9b409036c999d61bce49fc690e4e17a2166ee1b07c5c6a5a1ed6.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Researchers say whale entanglements on B.C.'s coast continue to be a concern",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/whale-entanglements-rise-bc-coast-9.7303754?cmp=rss",
-        "description": "Paul Cottrell, marine mammal co-ordinator with Fisheries and Oceans Canada, said his team has been responding to an average of one to two entanglements a week for the last two months — on track with similar numbers from last year — in addition to several necropsies.",
-        "pubDate": "Tue, 11 Aug 2026 21:03:26 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
+        "title": "Chief calls for co-operation to prevent fires as world changes at a &#8216;rapid pace&#8217;",
+        "link": "https://globalnews.ca/news/12019839/chief-calls-for-co-operation-to-prevent-fires-as-world-changes-at-a-rapid-pace/",
+        "description": "Chief Greg Gabriel, whose members are among the evacuees, says that could mean looking at logging practices and addressing drought conditions.",
+        "pubDate": "Thu, 13 Aug 2026 12:47:47 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/80278b9e6527a2770fe3894aca408a52f53ce5302282a5f16adde206edd92beb_06c3e5.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Summerland wildfire livestock &#8216;hero&#8217; stopped after breaking the rules",
         "link": "https://globalnews.ca/news/12019166/summerland-wildfire-livestock-hero-stopped-breaking-rules/",
@@ -35,26 +36,24 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/EBY-raw.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Bald Range wildfire grows again as crews warn of possible winds, thunderstorm",
-        "link": "https://globalnews.ca/news/12018652/bald-range-wildfire-grows-again-warn-possible-winds-thunderstorm/",
-        "description": "The Regional District of Okanagan-Similkameen Emergency Operations Centre (EOS) said on Wednesday that there are no changes to evacuation orders and alerts at this time.",
-        "pubDate": "Wed, 12 Aug 2026 20:31:28 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046_23e212.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Faulder family loses both homes in devastating Summerland wildfire",
-        "link": "https://globalnews.ca/news/12017717/faulder-family-loses-both-homes-devastating-summerland-wildfire/",
-        "description": "Shawna and Lucas Wagner were forced to leave behind what they had envisioned for their future as the newlyweds had only purchased the home in December.",
-        "pubDate": "Wed, 12 Aug 2026 00:04:28 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-faulder.png"
+        "title": "Members of Okanagan Indian Band mourn loss of forests and irreplaceable artifacts in wildfire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/members-of-okanagan-indian-band-mourn-loss-of-forests-and-irreplaceable-artifacts-in-wildfire-9.7305507?cmp=rss",
+        "description": "More than just homes have been destroyed by the Bradley Creek Wildfire. The Okanagan Indian Band Indigenous community has also lost irreplaceable artifacts and forests where their great-grandparents picked berries.",
+        "pubDate": "Thu, 13 Aug 2026 09:00:00 EDT",
+        "source": "CBC BC"
       },
       {
         "title": "B.C. premier promises review of emergency response to wildfire near Summerland, B.C.",
         "link": "https://www.cbc.ca/news/canada/british-columbia/livestory/bc-wildfires-live-updates-aug-12-9.7304961?cmp=rss",
         "description": "",
         "pubDate": "Wed, 12 Aug 2026 16:30:49 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "What you need to know about B.C. wildfires on Aug. 12",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-bc-wildfires-aug-12-9.7304156?cmp=rss",
+        "description": "B.C. Premier David Eby has  promised to review  the province's emergency response in the wake of the Bald Range wildfire near Summerland, and says he hasn't ruled out calling for military assistance.",
+        "pubDate": "Wed, 12 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       },
       {
@@ -67,16 +66,38 @@
     ],
     "prince-george": [
       {
-        "title": "Dawson Creek homeless shelter seeks to ease community conflict, improve services",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/dawson-creek-homeless-shelter-seeking-to-address-issues-9.7302510?cmp=rss",
-        "description": "The Aboriginal Housing Management Association is the new operating partner of the Nawican Friendship Centre and emergency homeless shelter in Dawson Creek.",
-        "pubDate": "Tue, 11 Aug 2026 22:57:59 EDT",
+        "title": "Fort St. James ER hours cut until at least October amid doctor shortage",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-james-er-doctor-shortage-9.7305417?cmp=rss",
+        "description": "Northern Health is reducing emergency department hours at Nats’oojeh Hospital in Fort St. James because of a shortage of physicians, with the changes expected to continue until at least October.",
+        "pubDate": "Thu, 13 Aug 2026 11:12:21 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Why this American doctor is leaving Utah to serve a remote community in B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/doctors-are-leaving-american-to-work-in-b-c-9.7303952?cmp=rss",
+        "description": "One American doctor said changes in B.C.'s health care have allowed him to move to Canada.",
+        "pubDate": "Wed, 12 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "B.C. Conservative Party worried Quesnel pulp mill curtailment could be permanent",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/quesnel-pulp-mill-on-curtailment-9.7305224?cmp=rss",
+        "description": "The B.C. Conservative party says they're worried job losses could be permanent with a temporary curtailment of operations announced at the Quesnel River Pulp mill, owned by Millar Western Forest Products Ltd. \nIn a press release, the party said 90 workers will be affected by the curtailment, with operations expected to halt by September and resume in November.",
+        "pubDate": "Thu, 13 Aug 2026 11:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "northwest": [],
     "southeast": [
+      {
+        "title": "Fernie starts construction on purpose-built fire hall",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fernie-new-fire-hall-9.7305498?cmp=rss",
+        "description": "Fernie’s new fire hall is now under construction after years of debate over its Prentice Park location.",
+        "pubDate": "Thu, 13 Aug 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Cranbrook wants a hospice house, but where it should go is up for debate",
         "link": "https://www.cbc.ca/news/canada/british-columbia/cranbrook-hospice-house-9.7302725?cmp=rss",
@@ -101,25 +122,25 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Smoke in B.C. Interior causing poor air quality but helping fire fight",
-        "link": "https://globalnews.ca/news/12018225/smoke-in-b-c-interior-causing-poor-air-quality-but-helping-fire-fight/",
-        "description": "Many of the blazes burning across the province have been smoked out for a number of days and have resulted in poor air quality, but have helped in the fire fight.",
-        "pubDate": "Wed, 12 Aug 2026 12:15:21 +0000",
+        "title": "Calgary Flames coming home to QR Calgary 770 AM radio",
+        "link": "https://globalnews.ca/news/12017583/calgary-flames-qr-770-radio/",
+        "description": "The Calgary Flames have a new radio broadcaster, following the signing of a five-year partnership for all home and away games to be aired on QR Calgary 770 AM.",
+        "pubDate": "Wed, 12 Aug 2026 14:05:18 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046_cd71b9.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/lanny-cup.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "What you need to know about B.C. wildfires on Aug. 12",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-bc-wildfires-aug-12-9.7304156?cmp=rss",
-        "description": "B.C. Premier David Eby has  promised to review  the province's emergency response in the wake of the Bald Range wildfire near Summerland, and says he hasn't ruled out calling for military assistance.",
-        "pubDate": "Wed, 12 Aug 2026 08:00:00 EDT",
+        "title": "What you need to know about B.C. wildfires on Aug. 13",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-13-9.7305510?cmp=rss",
+        "description": "B.C.'s premier has promised to review the province's emergency response in the wake of the Bald Range wildfire, which remains out of control near Summerland and is among more than 100 fires burning throughout B.C.",
+        "pubDate": "Thu, 13 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "'Explosive' wildfire behaviour keeps thousands of British Columbians out of their homes",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/livestory/bc-wildfires-live-updates-aug-11-9.7303376?cmp=rss",
-        "description": "",
-        "pubDate": "Tue, 11 Aug 2026 13:43:34 EDT",
+        "title": "Tending the animals trapped by B.C. wildfires: 'You can see their whole spirit change'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-evacuation-animals-9.7304898?cmp=rss",
+        "description": "On Tuesday, Agriculture Minister Lana Popham said up to 50,000 agricultural animals were under threat from wildfires.",
+        "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ]
