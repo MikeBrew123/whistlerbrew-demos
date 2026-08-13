@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T04:01:16.336Z",
+  "updated_at": "2026-08-13T22:01:24.964Z",
   "fires": [
     {
       "country": "Spain",
@@ -190,17 +190,16 @@
       "world": 0
     },
     "items_out": {
-      "canada_news": 1,
-      "world_fires": 25
+      "canada": 1,
+      "world_fires": 26
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "All existing_fires retained as Active status",
-      "No duplicates detected between canada and world inputs",
-      "Rio Olympic Velodrome Fire classified as structure fire but retained in world_fires per existing dataset",
-      "Brazil velodrome fire is infrastructure fire not wildfire, but included per existing entry",
-      "European Wildfire Preparedness entry retained as status alert despite being non-fire-specific"
+      "All existing_fires entries preserved as Active status",
+      "No duplicates found across Canada and World entries",
+      "Rio Olympic Velodrome Fire reclassified from structure fire to wildfire context entry for monitoring",
+      "Images preserved for all entries with image field present"
     ]
   }
 }
