@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T04:00:33.727Z",
+  "updated_at": "2026-08-13T10:00:34.368Z",
   "zones": {
     "coastal": [
       {
@@ -7,6 +7,13 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/rcmp-helicopter-dangerous-drivers-9.7303399?cmp=rss",
         "description": "RCMP in Nanaimo partnered with a police helicopter service to target dangerous drivers in the city, following multiple complaints from residents about drag racing and other risky behaviour in some parts of the city in recent months.",
         "pubDate": "Tue, 11 Aug 2026 18:12:08 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Researchers say whale entanglements on B.C.'s coast continue to be a concern",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/whale-entanglements-rise-bc-coast-9.7303754?cmp=rss",
+        "description": "Paul Cottrell, marine mammal co-ordinator with Fisheries and Oceans Canada, said his team has been responding to an average of one to two entanglements a week for the last two months — on track with similar numbers from last year — in addition to several necropsies.",
+        "pubDate": "Tue, 11 Aug 2026 21:03:26 EDT",
         "source": "CBC BC"
       }
     ],
@@ -44,18 +51,10 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-faulder.png"
       },
       {
-        "title": "Surge in overnight calls to Kids Help Phone &#8216;a canary in the coal mine&#8217;: CEO",
-        "link": "https://globalnews.ca/news/12017310/overnight-calls-surge-kids-help-phone/",
-        "description": "Requests via text in the evening and overnight hours are 183 per cent higher than those received during the day, Kids Help Phone said.",
-        "pubDate": "Tue, 11 Aug 2026 22:25:01 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/kids-help-phone-overnight-increase.jpg?quality=65&#038;strip=all"
-      },
-      {
         "title": "B.C. premier promises review of emergency response to wildfire near Summerland, B.C.",
         "link": "https://www.cbc.ca/news/canada/british-columbia/livestory/bc-wildfires-live-updates-aug-12-9.7304961?cmp=rss",
         "description": "",
-        "pubDate": "Thu, 23 Jul 2026 19:04:27 EDT",
+        "pubDate": "Wed, 12 Aug 2026 16:30:49 EDT",
         "source": "CBC BC"
       },
       {
@@ -108,14 +107,6 @@
         "pubDate": "Wed, 12 Aug 2026 12:15:21 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046_cd71b9.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Before and after photos show home, music venue lost to B.C. wildfire",
-        "link": "https://globalnews.ca/news/12017396/before-after-photos-home-music-venue-lost-bc-wildfire-bald-range/",
-        "description": "'As we drove away, we could see in our rear view mirror the fire cresting the mountain. It was that close and that fast. There was no time to do anything more,' Craig Milton said.",
-        "pubDate": "Tue, 11 Aug 2026 22:18:43 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/side-by-side-wildfire-new.png"
       },
       {
         "title": "What you need to know about B.C. wildfires on Aug. 12",
