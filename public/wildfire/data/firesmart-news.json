@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-14T04:00:34.059Z",
+  "updated_at": "2026-08-14T10:00:37.315Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -28,6 +28,14 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/penticton-search-rescue.jpg?quality=65&#038;strip=all"
       },
       {
+        "title": "Highway 97 between Penticton and Kelowna reopens with limited hours",
+        "link": "https://globalnews.ca/news/12020391/highway-97-penticton-kelowna-reopens-limited-hours/",
+        "description": "The Regional District of Okanagan-Similkameen said the highway will be open from 7 a.m. to 7 p.m. each day and speed limits have been reduced to 70 km/h.",
+        "pubDate": "Thu, 13 Aug 2026 18:50:46 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046.jpg?quality=65&#038;strip=all"
+      },
+      {
         "title": "Status of &#8216;iconic&#8217; mountain goats living near evacuated B.C. community is uncertain",
         "link": "https://globalnews.ca/news/12019843/status-of-iconic-mountain-goats-living-near-evacuated-b-c-community-is-uncertain/",
         "description": "It is not clear yet what has happened to a small group of \"iconic\"  mountain goats, as a large wildfire burns out of control near the evacuated community of Summerland, B.C.",
@@ -50,13 +58,6 @@
         "source": "CBC BC"
       },
       {
-        "title": "All-party committee, including 3 NDP MLAs, calls for government to scrap PST expansion",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/all-party-committee-calls-for-government-to-scrap-pst-expansion-9.7305442?cmp=rss",
-        "description": "May small businesses are not happy about the NDP government's plan to expand the provincial sales tax to a range of professional services in October. An all-party finance committee, which includes NDP MLAs, recommends that the government scrap the expansion. The B.C. Conservatives say it shows NDP backbenchers are at odds with the Finance Minister.",
-        "pubDate": "Thu, 13 Aug 2026 17:29:55 EDT",
-        "source": "CBC BC"
-      },
-      {
         "title": "Members of Okanagan Indian Band mourn loss of forests and irreplaceable artifacts in wildfire",
         "link": "https://www.cbc.ca/news/canada/british-columbia/members-of-okanagan-indian-band-mourn-loss-of-forests-and-irreplaceable-artifacts-in-wildfire-9.7305507?cmp=rss",
         "description": "More than just homes have been destroyed by the Bradley Creek Wildfire. The Okanagan Indian Band Indigenous community has also lost irreplaceable artifacts and forests where their great-grandparents picked berries.",
@@ -71,7 +72,11 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [
+    "prince-george": [],
+    "cariboo": [],
+    "northwest": [],
+    "southeast": [],
+    "all": [
       {
         "title": "Tending the animals trapped by B.C. wildfires: 'You can see their whole spirit change'",
         "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-evacuation-animals-9.7304898?cmp=rss",
@@ -79,18 +84,6 @@
         "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
-    ],
-    "cariboo": [
-      {
-        "title": "Fort St. James ER hours cut until at least October amid doctor shortage",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-james-er-doctor-shortage-9.7305417?cmp=rss",
-        "description": "Northern Health is reducing emergency department hours at Nats’oojeh Hospital in Fort St. James because of a shortage of physicians, with the changes expected to continue until at least October.",
-        "pubDate": "Thu, 13 Aug 2026 11:12:21 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "northwest": [],
-    "southeast": [],
-    "all": []
+    ]
   }
 }
