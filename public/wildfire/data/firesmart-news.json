@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-14T10:00:37.315Z",
+  "updated_at": "2026-08-14T16:00:33.650Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Highway through Summerland, B.C., reopened with limited hours, stopping restrictions",
+        "link": "https://globalnews.ca/news/12021429/summerland-b-c-highway/",
+        "description": "Every exit was blocked off with pylons, including entrances to local businesses, with some staffed by security guards to prevent people from pulling off the road.",
+        "pubDate": "Fri, 14 Aug 2026 12:23:52 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/d6903ea3cf8adca3525458925b1c250c9fd803e7ff5416df2b1776d0de3bfb96.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Meadow Valley resident stayed to save his home from wildfire: &#8216;This is my life&#8217;",
         "link": "https://globalnews.ca/news/12020987/meadow-valley-resident-wildfire-stayed-behind/",
@@ -20,55 +28,32 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/abbotsford-police-child.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Penticton search and rescue members helped others evacuate as their homes burned",
-        "link": "https://globalnews.ca/news/12020750/penticton-search-rescue-members-helped-evacuate-homes-burned/",
-        "description": "Other search and rescue teams also responded to calls for help, including Princeton, Central Okanagan, Oliver, Osoyoos, Rossland and Grand Forks.",
-        "pubDate": "Thu, 13 Aug 2026 21:59:28 +0000",
+        "title": "Man acquitted in murder of Winnipeg teen given 10 years for violent Vancouver sex assault",
+        "link": "https://globalnews.ca/news/12020349/man-acquitted-murder-winnipeg-teen-sentenced-violent-vancouver-sex-assault/",
+        "description": "Mark Edward Grant, who turns 63 on Friday, was originally charged with unlawful confinement, sexual assault with a weapon, assault with a weapon, and uttering threats.",
+        "pubDate": "Thu, 13 Aug 2026 18:54:13 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/penticton-search-rescue.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6P-MARK-GRANT-SEX-ASSAU_OM01ZFMY.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Highway 97 between Penticton and Kelowna reopens with limited hours",
-        "link": "https://globalnews.ca/news/12020391/highway-97-penticton-kelowna-reopens-limited-hours/",
-        "description": "The Regional District of Okanagan-Similkameen said the highway will be open from 7 a.m. to 7 p.m. each day and speed limits have been reduced to 70 km/h.",
-        "pubDate": "Thu, 13 Aug 2026 18:50:46 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Status of &#8216;iconic&#8217; mountain goats living near evacuated B.C. community is uncertain",
-        "link": "https://globalnews.ca/news/12019843/status-of-iconic-mountain-goats-living-near-evacuated-b-c-community-is-uncertain/",
-        "description": "It is not clear yet what has happened to a small group of \"iconic\"  mountain goats, as a large wildfire burns out of control near the evacuated community of Summerland, B.C.",
-        "pubDate": "Thu, 13 Aug 2026 12:50:51 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/9bcff5aa98ce9b409036c999d61bce49fc690e4e17a2166ee1b07c5c6a5a1ed6.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "What you need to know about B.C. wildfires on Aug. 13",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-13-9.7305510?cmp=rss",
-        "description": "Highway 97, which has been closed due to the wildfire between Peachland and the Pyramid Picnic Area in Kickininee Provincial Park, has reopened with limited hours, according to  DriveBC on Thursday .",
-        "pubDate": "Thu, 13 Aug 2026 08:00:00 EDT",
+        "title": "Wildfire smoke drives tourism to some B.C. communities",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-smoke-bc-tourism-9.7306800?cmp=rss",
+        "description": "As wildfire smoke blankets the province, people are travelling to find places with better air quality. It's led to a recent uptick in tourism for some communities.",
+        "pubDate": "Fri, 14 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Wildfire near Summerland threatens mountain goats living on nearby cliffs",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fate-mountain-goats-summerland-bc-9.7305781?cmp=rss",
-        "description": "The B.C. government says a small herd of mountain goats are \"thought to have escaped\" the large wildfire that burns out of control near the evacuated community of Summerland.",
-        "pubDate": "Thu, 13 Aug 2026 18:04:35 EDT",
+        "title": "What you need to know about B.C. wildfires on Aug. 14",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-14-9.7306907?cmp=rss",
+        "description": "The Regional District of Central Okanagan is pleading for patience from residents forced to flee their homes due to the Bald Range wildfire, saying it remains a dynamic and challenging fire.",
+        "pubDate": "Fri, 14 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Members of Okanagan Indian Band mourn loss of forests and irreplaceable artifacts in wildfire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/members-of-okanagan-indian-band-mourn-loss-of-forests-and-irreplaceable-artifacts-in-wildfire-9.7305507?cmp=rss",
-        "description": "More than just homes have been destroyed by the Bradley Creek Wildfire. The Okanagan Indian Band Indigenous community has also lost irreplaceable artifacts and forests where their great-grandparents picked berries.",
-        "pubDate": "Thu, 13 Aug 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Okanagan wildfires hurting tourism in B.C. towns hundreds of kilometres away",
-        "link": "https://www.cbc.ca/news/canada/calgary/columbia-valley-wildfire-smoke-9.7305996?cmp=rss",
-        "description": "Wildfires burning hundreds of kilometres away are affecting tourism in B.C.’s Columbia Valley, with some visitors cancelling or reconsidering trips. Local tourism officials say the region remains open and largely unaffected by the fires themselves.",
-        "pubDate": "Thu, 13 Aug 2026 14:45:17 EDT",
+        "title": "Lower Similkameen Indian Band wants B.C. to pause new mining claims in Ashnola watershed",
+        "link": "https://www.cbc.ca/news/indigenous/lsib-bc-wants-province-pause-mining-ashnola-9.7297172?cmp=rss",
+        "description": "Lower Similkameen Indian Band (LSIB) says the province has stunted conservation efforts in the Ashnola watershed by not pausing mining claims in an area of southern B.C., despite the First Nation declaring it an Indigenous Protected Area in 2022.",
+        "pubDate": "Thu, 13 Aug 2026 17:04:44 EDT",
         "source": "CBC BC"
       }
     ],
@@ -78,10 +63,24 @@
     "southeast": [],
     "all": [
       {
-        "title": "Tending the animals trapped by B.C. wildfires: 'You can see their whole spirit change'",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-evacuation-animals-9.7304898?cmp=rss",
-        "description": "On Tuesday, Agriculture Minister Lana Popham said up to 50,000 agricultural animals were under threat from wildfires.",
-        "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
+        "title": "'Severe thunderstorm' rains down on parts of Metro Vancouver",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/august-thunderstorm-metro-vancouver-bc-9.7307275?cmp=rss",
+        "description": "Environment Canada issued a yellow warning for a \"severe thunderstorm\" for parts of Metro Vancouver. It said other areas that could be affected include Seymour Heights, Deep Cove and Mount Seymour Park.",
+        "pubDate": "Fri, 14 Aug 2026 11:13:28 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "560 wildfires in B.C. have been classified as arson or suspicious since 2016: BCWS",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-arsons-9.7306741?cmp=rss",
+        "description": "The B.C. Wildfire Service says 3.8 per cent of wildfires are considered 'incendiary' fires, which means fires that were started either intentionally or by negligence. The cause of several major B.C. wildfires, including the Bald Range fire, are under investigation.",
+        "pubDate": "Fri, 14 Aug 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Wildfire near Summerland threatens mountain goats living on nearby cliffs",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fate-mountain-goats-summerland-bc-9.7305781?cmp=rss",
+        "description": "The B.C. government says a small herd of mountain goats are \"thought to have escaped\" the large wildfire that burns out of control near the evacuated community of Summerland.",
+        "pubDate": "Thu, 13 Aug 2026 18:04:35 EDT",
         "source": "CBC BC"
       }
     ]
