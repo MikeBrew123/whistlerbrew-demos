@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-08-13T22:00:35.699Z",
+  "updated_at": "2026-08-14T04:00:34.059Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Meadow Valley resident stayed to save his home from wildfire: &#8216;This is my life&#8217;",
+        "link": "https://globalnews.ca/news/12020987/meadow-valley-resident-wildfire-stayed-behind/",
+        "description": "The Bald Range wildfire broke out near Summerland last Friday evening. Meadow Valley resident Tyler Wall said he knew he wasn't going to leave his home and business.",
+        "pubDate": "Thu, 13 Aug 2026 23:50:48 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/222553f2-f82d-4c16-8938-1e9f880e1566.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Child dies after being hit by car at Abbotsford townhouse complex",
+        "link": "https://globalnews.ca/news/12020945/child-dies-hit-by-car-abbotsford-townhouse-complex/",
+        "description": "Anyone who witnessed the collision or who may have dash camera footage of the incident is asked to contact the Abbotsford Police Department at 604-859-5225.",
+        "pubDate": "Thu, 13 Aug 2026 23:20:39 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/abbotsford-police-child.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Penticton search and rescue members helped others evacuate as their homes burned",
         "link": "https://globalnews.ca/news/12020750/penticton-search-rescue-members-helped-evacuate-homes-burned/",
@@ -10,14 +26,6 @@
         "pubDate": "Thu, 13 Aug 2026 21:59:28 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/penticton-search-rescue.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Highway 97 between Penticton and Kelowna reopens with limited hours",
-        "link": "https://globalnews.ca/news/12020391/highway-97-penticton-kelowna-reopens-limited-hours/",
-        "description": "The Regional District of Okanagan-Similkameen said the highway will be open from 7 a.m. to 7 p.m. each day and speed limits have been reduced to 70 km/h.",
-        "pubDate": "Thu, 13 Aug 2026 18:50:46 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Status of &#8216;iconic&#8217; mountain goats living near evacuated B.C. community is uncertain",
@@ -28,30 +36,6 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/9bcff5aa98ce9b409036c999d61bce49fc690e4e17a2166ee1b07c5c6a5a1ed6.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Chief calls for co-operation to prevent fires as world changes at a &#8216;rapid pace&#8217;",
-        "link": "https://globalnews.ca/news/12019839/chief-calls-for-co-operation-to-prevent-fires-as-world-changes-at-a-rapid-pace/",
-        "description": "Chief Greg Gabriel, whose members are among the evacuees, says that could mean looking at logging practices and addressing drought conditions.",
-        "pubDate": "Thu, 13 Aug 2026 12:47:47 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/80278b9e6527a2770fe3894aca408a52f53ce5302282a5f16adde206edd92beb_06c3e5.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Summerland wildfire livestock &#8216;hero&#8217; stopped after breaking the rules",
-        "link": "https://globalnews.ca/news/12019166/summerland-wildfire-livestock-hero-stopped-breaking-rules/",
-        "description": "Animal rescuer Kazimir Nowlin has been working since Friday to get animals and livestock to safety and away from the danger of the massive Bald Range fire.",
-        "pubDate": "Thu, 13 Aug 2026 02:09:53 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/pic-13.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. Premier David Eby says visit to Interior ravaged by wildfires was &#8216;moving&#8217;",
-        "link": "https://globalnews.ca/news/12019108/bc-premier-david-eby-visits-interior-wildfires/",
-        "description": "Kelly Greene, Minister of Emergency Management and Climate Readiness and Amelia Boultbee, MLA for Penticton-Summerland, will also be in attendance.",
-        "pubDate": "Wed, 12 Aug 2026 21:12:17 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/EBY-raw.jpg?quality=65&#038;strip=all"
-      },
-      {
         "title": "What you need to know about B.C. wildfires on Aug. 13",
         "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-13-9.7305510?cmp=rss",
         "description": "Highway 97, which has been closed due to the wildfire between Peachland and the Pyramid Picnic Area in Kickininee Provincial Park, has reopened with limited hours, according to  DriveBC on Thursday .",
@@ -59,10 +43,17 @@
         "source": "CBC BC"
       },
       {
-        "title": "Search for B.C.'s best roadside attraction: Northern semifinals",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-roadside-attraction-northern-semifinal-9.7304630?cmp=rss",
-        "description": "After more than 300 submissions from across the province, just four roadside attractions from B.C.'s north remain — but which will make the final?",
-        "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
+        "title": "Wildfire near Summerland threatens mountain goats living on nearby cliffs",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fate-mountain-goats-summerland-bc-9.7305781?cmp=rss",
+        "description": "The B.C. government says a small herd of mountain goats are \"thought to have escaped\" the large wildfire that burns out of control near the evacuated community of Summerland.",
+        "pubDate": "Thu, 13 Aug 2026 18:04:35 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "All-party committee, including 3 NDP MLAs, calls for government to scrap PST expansion",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/all-party-committee-calls-for-government-to-scrap-pst-expansion-9.7305442?cmp=rss",
+        "description": "May small businesses are not happy about the NDP government's plan to expand the provincial sales tax to a range of professional services in October. An all-party finance committee, which includes NDP MLAs, recommends that the government scrap the expansion. The B.C. Conservatives say it shows NDP backbenchers are at odds with the Finance Minister.",
+        "pubDate": "Thu, 13 Aug 2026 17:29:55 EDT",
         "source": "CBC BC"
       },
       {
@@ -78,79 +69,28 @@
         "description": "Wildfires burning hundreds of kilometres away are affecting tourism in B.C.’s Columbia Valley, with some visitors cancelling or reconsidering trips. Local tourism officials say the region remains open and largely unaffected by the fires themselves.",
         "pubDate": "Thu, 13 Aug 2026 14:45:17 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "prince-george": [
       {
         "title": "Tending the animals trapped by B.C. wildfires: 'You can see their whole spirit change'",
         "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-evacuation-animals-9.7304898?cmp=rss",
         "description": "On Tuesday, Agriculture Minister Lana Popham said up to 50,000 agricultural animals were under threat from wildfires.",
         "pubDate": "Thu, 13 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "B.C. premier promises review of emergency response to wildfire near Summerland, B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/livestory/bc-wildfires-live-updates-aug-12-9.7304961?cmp=rss",
-        "description": "",
-        "pubDate": "Wed, 12 Aug 2026 16:30:49 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "What you need to know about B.C. wildfires on Aug. 12",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-bc-wildfires-aug-12-9.7304156?cmp=rss",
-        "description": "B.C. Premier David Eby has  promised to review  the province's emergency response in the wake of the Bald Range wildfire near Summerland, and says he hasn't ruled out calling for military assistance.",
-        "pubDate": "Wed, 12 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
-    "prince-george": [
+    "cariboo": [
       {
         "title": "Fort St. James ER hours cut until at least October amid doctor shortage",
         "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-james-er-doctor-shortage-9.7305417?cmp=rss",
         "description": "Northern Health is reducing emergency department hours at Nats’oojeh Hospital in Fort St. James because of a shortage of physicians, with the changes expected to continue until at least October.",
         "pubDate": "Thu, 13 Aug 2026 11:12:21 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Dawson Creek water pipeline could cost up to $272M to build, new estimates show",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/dawson-creek-water-pipeline-cost-nearly-triples-9.7303326?cmp=rss",
-        "description": "Dawson Creek city staff say a water pipeline for the northeast B.C. community could now cost up to $272 million to build, nearly triple the previous estimate.",
-        "pubDate": "Wed, 12 Aug 2026 17:45:28 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "cariboo": [
-      {
-        "title": "B.C. Conservative Party worried Quesnel pulp mill curtailment could be permanent",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/quesnel-pulp-mill-on-curtailment-9.7305224?cmp=rss",
-        "description": "The B.C. Conservative party says they're worried job losses could be permanent with a temporary curtailment of operations announced at the Quesnel River Pulp mill, owned by Millar Western Forest Products Ltd. \nIn a press release, the party said 90 workers will be affected by the curtailment, with operations expected to halt by September and resume in November.",
-        "pubDate": "Thu, 13 Aug 2026 11:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Fernie starts construction on purpose-built fire hall",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fernie-new-fire-hall-9.7305498?cmp=rss",
-        "description": "Fernie’s new fire hall is now under construction after years of debate over its Prentice Park location.",
-        "pubDate": "Thu, 13 Aug 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "all": [
-      {
-        "title": "Fire and Climate &#8211; a special and timely collection",
-        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
-        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Four great key speakers for WFCC26 Canada",
-        "link": "https://wildfiretoday.com/four-great-key-speakers-for-wfcc26-canada/",
-        "description": "Here are the four keynote speakers for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026 who will share their knowledge and experience on different wildfire communities around the world. Register now for the Wildland Fire Canada Conference and Canadian Smoke Forum 2026. #WFCC26 is in Saskatoon, Saskatchewan, Canada from 19-23 October 2026. Edward [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 02:19:50 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "southeast": [],
+    "all": []
   }
 }
