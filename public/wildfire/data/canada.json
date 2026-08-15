@@ -82,13 +82,19 @@
   ],
   "news": [
     {
+      "title": "Okanagan communities rally around Bald Range wildfire evacuees",
+      "url": "https://globalnews.ca/news/12022456/okanagan-communities-rally-bald-range-wildfire-evacuees/",
+      "source": "Global News",
+      "published": "2026-08-15",
+      "description": "For many evacuees, the immediate challenge was finding somewhere to sleep, something to eat and the basic necessities they had suddenly left behind.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/08/Resized_20260809_150035.jpeg?quality=65&#038;strip=all"
+    },
+    {
       "title": "B.C. premier declares wildfire state of emergency",
       "url": "https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/",
       "source": "Global News Wildfire",
-      "published": "2026-08-08",
-      "description": "B.C. Premier David Eby and emergency officials are set to provide an update Saturday as wildfires continue to force evacuations across the province.",
-      "image": "https://globalnews.ca/wp-content/uploads/2026/08/92a3175e816c6cfdb98b18545d2b24751e53787a4e82b6e729a9643546693d79.jpg?quality=65&#038;strip=all"
+      "published": "2026-08-08"
     }
   ],
-  "last_news_update": "2026-08-15T16:01:20.045Z"
+  "last_news_update": "2026-08-15T22:01:17.636Z"
 }
