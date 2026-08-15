@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-08-15T04:00:34.931Z",
+  "updated_at": "2026-08-15T10:00:33.904Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "Okanagan communities rally around Bald Range wildfire evacuees",
+        "link": "https://globalnews.ca/news/12022456/okanagan-communities-rally-bald-range-wildfire-evacuees/",
+        "description": "For many evacuees, the immediate challenge was finding somewhere to sleep, something to eat and the basic necessities they had suddenly left behind.",
+        "pubDate": "Sat, 15 Aug 2026 04:29:05 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Resized_20260809_150035.jpeg?quality=65&#038;strip=all"
+      },
       {
         "title": "All evacuation orders downgraded for Quilpituk Creek wildfire, residents return home",
         "link": "https://globalnews.ca/news/12022261/all-evacuation-orders-downgraded-quilpituk-creek-wildfire-return-home/",
@@ -10,14 +18,6 @@
         "pubDate": "Fri, 14 Aug 2026 22:16:38 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-6.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Conservative candidate says he&#8217;s heard Poilievre criticism from voters",
-        "link": "https://globalnews.ca/news/12022122/conservatives-poilievre-criticisms-byelection-voters/",
-        "description": "The comments came during an all-candidates panel for the Aug. 31 byelection in North Vancouver—Capilano, where the Conservatives are hoping to flip a seat from the Liberals.",
-        "pubDate": "Fri, 14 Aug 2026 21:42:08 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Poilievre-e1786743124764.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Peachland residents to return home Friday, 1 week after Bald Range fire started",
@@ -28,12 +28,12 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Highway through Summerland, B.C., reopened with limited hours, stopping restrictions",
-        "link": "https://globalnews.ca/news/12021429/summerland-b-c-highway/",
-        "description": "Every exit was blocked off with pylons, including entrances to local businesses, with some staffed by security guards to prevent people from pulling off the road.",
-        "pubDate": "Fri, 14 Aug 2026 12:23:52 +0000",
+        "title": "Bald Range wildfire: New orders issued as some residents allowed home",
+        "link": "https://globalnews.ca/news/12021951/bald-range-wildfire-august-14-evacuation-orders-alerts/",
+        "description": "Erin Catherall said structural protection and firefighters continue to work on the southern flank, which is the area around Mt. Conkle, with Penticton to the south.",
+        "pubDate": "Fri, 14 Aug 2026 20:03:35 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/d6903ea3cf8adca3525458925b1c250c9fd803e7ff5416df2b1776d0de3bfb96.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/25cf3360e685b8b6d2623fdebd5525ca4b2958b978653b3bfe7c5b9ff4cdcd17.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Residents describe returning home as fire evacuation orders lift in Okanagan",
@@ -41,34 +41,12 @@
         "description": "On Friday, evacuation orders were lifted for 2,400 residences around the Quilpituk Creek fire zone, as well as in Peachland and Trout Creek where the Bald Range fire continues to burn.",
         "pubDate": "Fri, 14 Aug 2026 22:21:31 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Thousands of residents in B.C.'s Interior can return home as some evacuation orders downgraded to alerts",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-14-9.7306907?cmp=rss",
-        "description": "B.C. residents in some wildfire areas will be able to return to their homes Friday, as some evacuation orders are downgraded to alerts.",
-        "pubDate": "Fri, 14 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
-    "prince-george": [
-      {
-        "title": "Prince George RCMP officers host active threat training at local high school",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-rcmp-high-school-training-9.7306716?cmp=rss",
-        "description": "Prince George RCMP officers took part in a live Emergency Response Team training exercise at Duchess Park Secondary School, where they used actors to simulate real-life emergency scenarios as part of ongoing training efforts.",
-        "pubDate": "Fri, 14 Aug 2026 11:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [
-      {
-        "title": "After months of debate, East Kootenay will stop changing clocks and stay on mountain daylight time year-round",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/east-kootenay-stops-changing-clocks-9.7308201?cmp=rss",
-        "description": "The Regional District of East Kootenay voted 12-3 to stop changing clocks twice a year and stay on Mountain Daylight Time, keeping the region aligned with Alberta year-round.",
-        "pubDate": "Fri, 14 Aug 2026 21:34:59 EDT",
-        "source": "CBC BC"
-      },
       {
         "title": "Young grizzly bear with limp killed in Nelson, B.C., sparks rally",
         "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-grizzly-yearling-killed-9.7306936?cmp=rss",
@@ -79,17 +57,38 @@
     ],
     "all": [
       {
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Canadair water-bomber builder feels heat of demand as wildfires rage around the world",
+        "link": "https://www.cbc.ca/news/canada/calgary/bakx-de-havilland-canadair-calgary-super-scooper-alberta-wildfire-dhc-515-9.7307819?cmp=rss",
+        "description": "As Canada, the United States and Europe grapple with another brutal wildfire season, pressure is building on the manufacturer of the Canadair \"Super Scooper\" water bombers to increase production, and on the federal government to bulk order the planes.",
+        "pubDate": "Sat, 15 Aug 2026 04:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Thousands of residents in B.C.'s Interior can return home as some evacuation orders downgraded to alerts",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-14-9.7306907?cmp=rss",
+        "description": "B.C. residents in some wildfire areas will be able to return to their homes Friday, as some evacuation orders are downgraded to alerts.",
+        "pubDate": "Fri, 14 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Hockey Night in Canada: Punjabi Edition not returning after 18 years",
+        "link": "https://www.cbc.ca/news/canada/hockey-night-in-canada-punjabi-hnic-9.7307537?cmp=rss",
+        "description": "Hockey Night in Canada: Punjabi Edition has been cancelled after 18 years on the air, the show announced Friday.",
+        "pubDate": "Fri, 14 Aug 2026 12:54:01 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "560 wildfires in B.C. have been classified as arson or suspicious since 2016: BCWS",
         "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-arsons-9.7306741?cmp=rss",
         "description": "The B.C. Wildfire Service says 3.8 per cent of wildfires are considered 'incendiary' fires, which means fires that were started either intentionally or by negligence. The cause of several major B.C. wildfires, including the Bald Range fire, are under investigation.",
         "pubDate": "Fri, 14 Aug 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Wildfire smoke drives tourism to some B.C. communities",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-smoke-bc-tourism-9.7306800?cmp=rss",
-        "description": "As wildfire smoke blankets the province, people are travelling to find places with better air quality. It's led to a recent uptick in tourism for some communities.",
-        "pubDate": "Fri, 14 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ]
