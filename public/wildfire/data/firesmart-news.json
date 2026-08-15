@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-08-14T22:00:34.577Z",
+  "updated_at": "2026-08-15T04:00:34.931Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "All evacuation orders downgraded for Quilpituk Creek wildfire, residents return home",
+        "link": "https://globalnews.ca/news/12022261/all-evacuation-orders-downgraded-quilpituk-creek-wildfire-return-home/",
+        "description": "All residents who were forced out of their homes due to the Quilpituk Creek wildfire, burning north of West Kelowna, were allowed to go home on Friday.",
+        "pubDate": "Fri, 14 Aug 2026 22:16:38 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-6.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Conservative candidate says he&#8217;s heard Poilievre criticism from voters",
+        "link": "https://globalnews.ca/news/12022122/conservatives-poilievre-criticisms-byelection-voters/",
+        "description": "The comments came during an all-candidates panel for the Aug. 31 byelection in North Vancouver—Capilano, where the Conservatives are hoping to flip a seat from the Liberals.",
+        "pubDate": "Fri, 14 Aug 2026 21:42:08 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Poilievre-e1786743124764.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Peachland residents to return home Friday, 1 week after Bald Range fire started",
         "link": "https://globalnews.ca/news/12022166/peachland-residents-return-home-friday-bald-range-fire/",
@@ -10,14 +26,6 @@
         "pubDate": "Fri, 14 Aug 2026 21:14:56 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Bald Range wildfire: New orders issued as some residents allowed home",
-        "link": "https://globalnews.ca/news/12021951/bald-range-wildfire-august-14-evacuation-orders-alerts/",
-        "description": "Erin Catherall said structural protection and firefighters continue to work on the southern flank, which is the area around Mt. Conkle, with Penticton to the south.",
-        "pubDate": "Fri, 14 Aug 2026 20:03:35 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/25cf3360e685b8b6d2623fdebd5525ca4b2958b978653b3bfe7c5b9ff4cdcd17.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Highway through Summerland, B.C., reopened with limited hours, stopping restrictions",
@@ -28,31 +36,60 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/d6903ea3cf8adca3525458925b1c250c9fd803e7ff5416df2b1776d0de3bfb96.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Meadow Valley resident stayed to save his home from wildfire: &#8216;This is my life&#8217;",
-        "link": "https://globalnews.ca/news/12020987/meadow-valley-resident-wildfire-stayed-behind/",
-        "description": "The Bald Range wildfire broke out near Summerland last Friday evening. Meadow Valley resident Tyler Wall said he knew he wasn't going to leave his home and business.",
-        "pubDate": "Thu, 13 Aug 2026 23:50:48 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/222553f2-f82d-4c16-8938-1e9f880e1566.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "prince-george": [],
-    "cariboo": [],
-    "northwest": [],
-    "southeast": [],
-    "all": [
+        "title": "Residents describe returning home as fire evacuation orders lift in Okanagan",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/evacuees-return-okanagan-9.7307904?cmp=rss",
+        "description": "On Friday, evacuation orders were lifted for 2,400 residences around the Quilpituk Creek fire zone, as well as in Peachland and Trout Creek where the Bald Range fire continues to burn.",
+        "pubDate": "Fri, 14 Aug 2026 22:21:31 EDT",
+        "source": "CBC BC"
+      },
       {
-        "title": "More than 2,400 residents in B.C.'s Interior can return home as some evacuation orders downgraded to alerts",
+        "title": "Thousands of residents in B.C.'s Interior can return home as some evacuation orders downgraded to alerts",
         "link": "https://www.cbc.ca/news/canada/british-columbia/need-to-know-british-columbia-wildfires-aug-14-9.7306907?cmp=rss",
         "description": "B.C. residents in some wildfire areas will be able to return to their homes Friday, as some evacuation orders are downgraded to alerts.",
         "pubDate": "Fri, 14 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "Prince George RCMP officers host active threat training at local high school",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-rcmp-high-school-training-9.7306716?cmp=rss",
+        "description": "Prince George RCMP officers took part in a live Emergency Response Team training exercise at Duchess Park Secondary School, where they used actors to simulate real-life emergency scenarios as part of ongoing training efforts.",
+        "pubDate": "Fri, 14 Aug 2026 11:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "cariboo": [],
+    "northwest": [],
+    "southeast": [
+      {
+        "title": "After months of debate, East Kootenay will stop changing clocks and stay on mountain daylight time year-round",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/east-kootenay-stops-changing-clocks-9.7308201?cmp=rss",
+        "description": "The Regional District of East Kootenay voted 12-3 to stop changing clocks twice a year and stay on Mountain Daylight Time, keeping the region aligned with Alberta year-round.",
+        "pubDate": "Fri, 14 Aug 2026 21:34:59 EDT",
+        "source": "CBC BC"
       },
+      {
+        "title": "Young grizzly bear with limp killed in Nelson, B.C., sparks rally",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-grizzly-yearling-killed-9.7306936?cmp=rss",
+        "description": "In an update on Friday, B.C. Conservation Officer Service said the young bear's mother has now also been killed to ensure public safety after the wild animal exhibited food-conditioned behaviour and loss of fear to people.",
+        "pubDate": "Fri, 14 Aug 2026 00:35:57 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "all": [
       {
         "title": "560 wildfires in B.C. have been classified as arson or suspicious since 2016: BCWS",
         "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-arsons-9.7306741?cmp=rss",
         "description": "The B.C. Wildfire Service says 3.8 per cent of wildfires are considered 'incendiary' fires, which means fires that were started either intentionally or by negligence. The cause of several major B.C. wildfires, including the Bald Range fire, are under investigation.",
         "pubDate": "Fri, 14 Aug 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Wildfire smoke drives tourism to some B.C. communities",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-smoke-bc-tourism-9.7306800?cmp=rss",
+        "description": "As wildfire smoke blankets the province, people are travelling to find places with better air quality. It's led to a recent uptick in tourism for some communities.",
+        "pubDate": "Fri, 14 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ]
