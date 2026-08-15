@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-15T10:00:33.904Z",
+  "updated_at": "2026-08-15T16:00:34.538Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -10,6 +10,14 @@
         "pubDate": "Sat, 15 Aug 2026 04:29:05 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Resized_20260809_150035.jpeg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "2 men charged in connection with fatal shooting of man in Langley taxi",
+        "link": "https://globalnews.ca/news/12022338/men-charged-fatal-shooting-man-langley-taxi/",
+        "description": "On Aug. 14, 2026, IGHT investigators arrested 35-year-old Jared Douglas Polischuk and 29-year-old Luis Manuel Baez in relation to the homicide.",
+        "pubDate": "Fri, 14 Aug 2026 23:03:50 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/08/maple-ridge-ihit.png"
       },
       {
         "title": "All evacuation orders downgraded for Quilpituk Creek wildfire, residents return home",
@@ -57,11 +65,18 @@
     ],
     "all": [
       {
-        "title": "Fire and Climate &#8211; a special and timely collection",
-        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
-        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
-        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
-        "source": "Wildfire Today"
+        "title": "Homes across B.C. have been decimated by wildfires. Here's what to know about your insurance",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-insurance-what-to-know-9.7305044?cmp=rss",
+        "description": "Hundreds of structures have been lost to wildfires so far this year.  Experts say even those who are fully insured will face a long, complex process as they begin to rebuild.",
+        "pubDate": "Sat, 15 Aug 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "What you need to know about B.C. wildfires on Aug. 15",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-to-know-british-columbia-wildfires-august-15-9.7308408?cmp=rss",
+        "description": "Thousands of residents forced to flee their homes due to wildfires across B.C. are returning Saturday, and a major highway is set to reopen as some conditions improve.",
+        "pubDate": "Sat, 15 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
       },
       {
         "title": "Canadair water-bomber builder feels heat of demand as wildfires rage around the world",
@@ -78,17 +93,17 @@
         "source": "CBC BC"
       },
       {
-        "title": "Hockey Night in Canada: Punjabi Edition not returning after 18 years",
-        "link": "https://www.cbc.ca/news/canada/hockey-night-in-canada-punjabi-hnic-9.7307537?cmp=rss",
-        "description": "Hockey Night in Canada: Punjabi Edition has been cancelled after 18 years on the air, the show announced Friday.",
-        "pubDate": "Fri, 14 Aug 2026 12:54:01 EDT",
-        "source": "CBC BC"
-      },
-      {
         "title": "560 wildfires in B.C. have been classified as arson or suspicious since 2016: BCWS",
         "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-arsons-9.7306741?cmp=rss",
         "description": "The B.C. Wildfire Service says 3.8 per cent of wildfires are considered 'incendiary' fires, which means fires that were started either intentionally or by negligence. The cause of several major B.C. wildfires, including the Bald Range fire, are under investigation.",
         "pubDate": "Fri, 14 Aug 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Wildfire smoke drives tourism to some B.C. communities",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-smoke-bc-tourism-9.7306800?cmp=rss",
+        "description": "As wildfire smoke blankets the province, people are travelling to find places with better air quality. It's led to a recent uptick in tourism for some communities.",
+        "pubDate": "Fri, 14 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ]
