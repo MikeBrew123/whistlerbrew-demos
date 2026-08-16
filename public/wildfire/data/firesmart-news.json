@@ -1,28 +1,42 @@
 {
-  "updated_at": "2026-08-16T16:00:34.756Z",
+  "updated_at": "2026-08-16T22:00:33.979Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "2 men charged in connection with fatal shooting of man in Langley taxi",
-        "link": "https://globalnews.ca/news/12022338/men-charged-fatal-shooting-man-langley-taxi/",
-        "description": "On Aug. 14, 2026, IGHT investigators arrested 35-year-old Jared Douglas Polischuk and 29-year-old Luis Manuel Baez in relation to the homicide.",
-        "pubDate": "Fri, 14 Aug 2026 23:03:50 +0000",
+        "title": "Okanagan communities rally around Bald Range wildfire evacuees",
+        "link": "https://globalnews.ca/news/12022456/okanagan-communities-rally-bald-range-wildfire-evacuees/",
+        "description": "For many evacuees, the immediate challenge was finding somewhere to sleep, something to eat and the basic necessities they had suddenly left behind.",
+        "pubDate": "Sat, 15 Aug 2026 04:29:05 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/08/maple-ridge-ihit.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Resized_20260809_150035.jpeg?quality=65&#038;strip=all"
       },
       {
-        "title": "What you need to know about B.C. wildfires on Aug. 16",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-16-9.7308877?cmp=rss",
-        "description": "The B.C. Wildfire Service (BCWS) says it's keeping an eye on an unstable weather pattern that could produce more wildfires in the southern half of the province on Sunday, even as evacuation orders are slowly lifted near some of the province's most concerning fires.",
-        "pubDate": "Sun, 16 Aug 2026 08:00:00 EDT",
+        "title": "B.C. farmer who fled wildfire teams up with chef on sauces to support other producers",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/sauce-okanagan-produce-bc-wildfire-evacuees-9.7308796?cmp=rss",
+        "description": "A B.C. chef and a local farmer who lost his home to the raging Bald Range wildfire have teamed up on a project to support other producers hit hard by fires this summer.",
+        "pubDate": "Sun, 16 Aug 2026 17:57:21 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Homes across B.C. have been decimated by wildfires. Here's what to know about your insurance",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-insurance-what-to-know-9.7305044?cmp=rss",
-        "description": "Hundreds of structures have been lost to wildfires so far this year.  Experts say even those who are fully insured will face a long, complex process as they begin to rebuild.",
-        "pubDate": "Sat, 15 Aug 2026 09:00:00 EDT",
+        "title": "What you need to know about B.C. wildfires on Aug. 15",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-to-know-british-columbia-wildfires-august-15-9.7308408?cmp=rss",
+        "description": "Thousands of residents forced to flee their homes due to wildfires across B.C. are returning Saturday, and a major highway is set to reopen as some conditions improve.",
+        "pubDate": "Sat, 15 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "How art is helping Summerland evacuees of B.C.'s Bald Range wildfire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/art-therapy-bald-range-wildfire-9.7308380?cmp=rss",
+        "description": "At a comfort centre for evacuees of the Bald Range Wildfire, art is an escape. Pens, paper and paint are placed on placed on tables, along with stickers and buttons for Summerland evacuees. It is part of an art therapy initiative by the Penticton & District Community Arts council.",
+        "pubDate": "Sat, 15 Aug 2026 15:02:09 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Residents describe returning home as fire evacuation orders lift in Okanagan",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/evacuees-return-okanagan-9.7307904?cmp=rss",
+        "description": "On Friday, evacuation orders were lifted for 2,400 residences around the Quilpituk Creek fire zone, as well as in Peachland and Trout Creek where the Bald Range fire continues to burn.",
+        "pubDate": "Fri, 14 Aug 2026 22:21:31 EDT",
         "source": "CBC BC"
       }
     ],
@@ -32,36 +46,47 @@
     "southeast": [],
     "all": [
       {
-        "title": "More B.C. evacuees returning home Saturday, but told to prepare for changes",
-        "link": "https://globalnews.ca/news/12022871/bc-wildfires-clinton-residents-return-home/",
-        "description": "Residents are advised to take precautions when they return home, including sanitizing their fridges as they clear out spoiled food, and to assess trees and property for damages.",
-        "pubDate": "Sat, 15 Aug 2026 16:04:40 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/aac222cb4d3ee09d74b0d2f224599477b42b1fc5477b7c285f0def5876a25216.jpg?quality=65&#038;strip=all"
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
       },
       {
-        "title": "Vancouver Island park closed following black bear attack",
-        "link": "https://globalnews.ca/news/12022369/vancouver-island-park-closed-black-bear-attack/",
-        "description": "B.C. Conservation Officers said that shortly before 10 a.m. Friday morning, a woman was hiking with her dogs off-leash in Stoney Hill Regional Park, east of Duncan.",
-        "pubDate": "Fri, 14 Aug 2026 23:34:36 +0000",
+        "title": "B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists",
+        "link": "https://globalnews.ca/news/12023424/b-c-offering-free-n95-masks-for-b-c-interior-as-wildfire-smoke-persists/",
+        "description": "The wildfire service says temperatures are expected to slightly rise across central and southern regions while northwest areas will see a slight dip in temperatures.",
+        "pubDate": "Sun, 16 Aug 2026 18:04:11 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260814_140022.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/25cf3360e685b8b6d2623fdebd5525ca4b2958b978653b3bfe7c5b9ff4cdcd17_75b972.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "All evacuation orders downgraded for Quilpituk Creek wildfire, residents return home",
-        "link": "https://globalnews.ca/news/12022261/all-evacuation-orders-downgraded-quilpituk-creek-wildfire-return-home/",
-        "description": "All residents who were forced out of their homes due to the Quilpituk Creek wildfire, burning north of West Kelowna, were allowed to go home on Friday.",
-        "pubDate": "Fri, 14 Aug 2026 22:16:38 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-6.jpg?quality=65&#038;strip=all"
+        "title": "What you need to know about B.C. wildfires on Aug. 16",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-16-9.7308877?cmp=rss",
+        "description": "The B.C. Wildfire Service (BCWS) says it's keeping an eye on an unstable weather pattern that could produce more wildfires in the southern half of the province on Sunday, even as evacuation orders are slowly lifted near some of the province's most concerning fires.",
+        "pubDate": "Sun, 16 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
       },
       {
-        "title": "Conservative candidate says he&#8217;s heard Poilievre criticism from voters",
-        "link": "https://globalnews.ca/news/12022122/conservatives-poilievre-criticisms-byelection-voters/",
-        "description": "The comments came during an all-candidates panel for the Aug. 31 byelection in North Vancouver—Capilano, where the Conservatives are hoping to flip a seat from the Liberals.",
-        "pubDate": "Fri, 14 Aug 2026 21:42:08 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Poilievre-e1786743124764.jpg?quality=65&#038;strip=all"
+        "title": "As wildfires destroy homes, should B.C. make FireSmart principles mandatory?",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfires-bc-firesmart-mandatory-9.7307677?cmp=rss",
+        "description": "Experts say practical measures to keep your home from catching fire are proven to work — and point to the communities have built back smarter.",
+        "pubDate": "Sun, 16 Aug 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Fort St. John mayor calls for gang task force support after surge in targeted shootings",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-john-bc-shootings-mayor-gang-task-force-9.7308693?cmp=rss",
+        "description": "Fort St. John Mayor Lilia Hansen wants B.C.'s gang task force to intervene after three shootings in less than a month near local schools.",
+        "pubDate": "Sat, 15 Aug 2026 14:20:55 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Homes across B.C. have been decimated by wildfires. Here's what to know about your insurance",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-insurance-what-to-know-9.7305044?cmp=rss",
+        "description": "Hundreds of structures have been lost to wildfires so far this year.  Experts say even those who are fully insured will face a long, complex process as they begin to rebuild.",
+        "pubDate": "Sat, 15 Aug 2026 09:00:00 EDT",
+        "source": "CBC BC"
       },
       {
         "title": "Canadair water-bomber builder feels heat of demand as wildfires rage around the world",
