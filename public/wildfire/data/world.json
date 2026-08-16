@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-08-14T04:01:25.139Z",
+  "updated_at": "2026-08-16T04:01:17.150Z",
   "fires": [
+    {
+      "country": "Belgium",
+      "name": "Belgian Nature Reserve Wildfire",
+      "status": "Active",
+      "summary": "Wildfire tearing through major Belgian nature reserve, described as the country's worst in recent years.",
+      "link": "https://www.bbc.co.uk/news/articles/cp8eex1nmpvo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7f13/live/01221bd0-98d3-11f1-9687-fb984065014d.jpg"
+    },
     {
       "country": "Spain",
       "name": "Almería Wildfire (Los Gallardos)",
@@ -8,6 +16,14 @@
       "summary": "Wildfire in southern Spain near Los Gallardos, Almería leaves at least 13 dead including seven British nationals. Hundreds of firefighters battling the deadly wildfire. British couple rescued from ravine. Landscape completely charred with homes razed to the ground.",
       "link": "https://www.bbc.co.uk/news/articles/cp9ld3p324jo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/814f/live/dbfc97c0-7ee9-11f1-926f-c90d1bcfbc84.jpg"
+    },
+    {
+      "country": "Spain",
+      "name": "Spain Regional Wildfires - Madrid Region",
+      "status": "Active",
+      "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with three fires causing particular concern. New heatwave expected from Wednesday.",
+      "link": "https://www.bbc.co.uk/news/articles/c235m71mrreo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c94d/live/6b019120-8a69-11f1-a086-7507d7c35703.jpg"
     },
     {
       "country": "France",
@@ -32,14 +48,6 @@
       "summary": "Major wildfires in south-west France including a blaze near Bordeaux that tore through more than 162 sq miles (420 sq km) in less than four days. Over 330,000 evacuated in France and Spain. 20,000 tourists evacuated from campsites around Arcachon Bay. Firefighters braced for 40C heatwave. BBC reports locals fighting flare-ups in 40C heat in the Gironde region, with some refusing to heed evacuations. French government investigating hundreds of arrests over fires with responsibility still under investigation.",
       "link": "https://www.bbc.co.uk/news/articles/c5yd8gly1ydo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/554a/live/122cc280-8aab-11f1-b8ee-9b3c26ad07bb.jpg"
-    },
-    {
-      "country": "Spain",
-      "name": "Spain Regional Wildfires - Madrid Region",
-      "status": "Active",
-      "summary": "Spain's government declares national emergency as wildfires rage across multiple regions. Madrid faces the 'worst fire in the history of the region' with three fires causing particular concern. New heatwave expected from Wednesday.",
-      "link": "https://www.bbc.co.uk/news/articles/c235m71mrreo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c94d/live/6b019120-8a69-11f1-a086-7507d7c35703.jpg"
     },
     {
       "country": "Greece",
@@ -186,21 +194,20 @@
   ],
   "last_report": {
     "items_in": {
-      "canada": 1,
-      "world": 0
+      "canada": 2,
+      "world": 1
     },
     "items_out": {
-      "canada": 1,
-      "world_fires": 25
+      "canada": 2,
+      "world_fires": 27
     },
     "deduped": 0,
-    "rerouted": 0,
+    "rerouted": 1,
     "notes": [
-      "B.C. wildfire state of emergency added to Canada news",
-      "All 25 existing world fires preserved as Active status maintained",
-      "No duplicates detected between new and existing data",
-      "Rio Olympic Velodrome Fire classified as infrastructure fire with wildfire context, maintained in world_fires per existing data",
-      "Brazilian structural fire retained due to fire-related context in existing dataset"
+      "Merged Belgium BBC article into world_fires as 'Belgian Nature Reserve Wildfire'",
+      "All existing_fires preserved with Active status maintained",
+      "No fires removed - all active or status unclear; none confirmed contained >60 days",
+      "Images preserved across all entries where present"
     ]
   }
 }
