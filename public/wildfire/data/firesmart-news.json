@@ -1,59 +1,35 @@
 {
-  "updated_at": "2026-08-16T10:00:33.634Z",
+  "updated_at": "2026-08-16T16:00:34.756Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "Okanagan communities rally around Bald Range wildfire evacuees",
-        "link": "https://globalnews.ca/news/12022456/okanagan-communities-rally-bald-range-wildfire-evacuees/",
-        "description": "For many evacuees, the immediate challenge was finding somewhere to sleep, something to eat and the basic necessities they had suddenly left behind.",
-        "pubDate": "Sat, 15 Aug 2026 04:29:05 +0000",
+        "title": "2 men charged in connection with fatal shooting of man in Langley taxi",
+        "link": "https://globalnews.ca/news/12022338/men-charged-fatal-shooting-man-langley-taxi/",
+        "description": "On Aug. 14, 2026, IGHT investigators arrested 35-year-old Jared Douglas Polischuk and 29-year-old Luis Manuel Baez in relation to the homicide.",
+        "pubDate": "Fri, 14 Aug 2026 23:03:50 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Resized_20260809_150035.jpeg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2025/08/maple-ridge-ihit.png"
       },
       {
-        "title": "All evacuation orders downgraded for Quilpituk Creek wildfire, residents return home",
-        "link": "https://globalnews.ca/news/12022261/all-evacuation-orders-downgraded-quilpituk-creek-wildfire-return-home/",
-        "description": "All residents who were forced out of their homes due to the Quilpituk Creek wildfire, burning north of West Kelowna, were allowed to go home on Friday.",
-        "pubDate": "Fri, 14 Aug 2026 22:16:38 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-6.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Peachland residents to return home Friday, 1 week after Bald Range fire started",
-        "link": "https://globalnews.ca/news/12022166/peachland-residents-return-home-friday-bald-range-fire/",
-        "description": "As of 6 p.m. on Aug. 14, evacuation orders for all properties in Peachland and Electoral Area West will be downgraded to evacuation alerts, officials say.",
-        "pubDate": "Fri, 14 Aug 2026 21:14:56 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/f5659aa495d154d9d9de70d9fba82d7ca109bde806b698d37a6fac4db5443433.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "How art is helping Summerland evacuees of B.C.'s Bald Range wildfire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/art-therapy-bald-range-wildfire-9.7308380?cmp=rss",
-        "description": "At a comfort centre for evacuees of the Bald Range Wildfire, art is an escape. Pens, paper and paint are placed on placed on tables, along with stickers and buttons for Summerland evacuees. It is part of an art therapy initiative by the Penticton & District Community Arts council.",
-        "pubDate": "Sat, 15 Aug 2026 15:02:09 EDT",
+        "title": "What you need to know about B.C. wildfires on Aug. 16",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-16-9.7308877?cmp=rss",
+        "description": "The B.C. Wildfire Service (BCWS) says it's keeping an eye on an unstable weather pattern that could produce more wildfires in the southern half of the province on Sunday, even as evacuation orders are slowly lifted near some of the province's most concerning fires.",
+        "pubDate": "Sun, 16 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Residents describe returning home as fire evacuation orders lift in Okanagan",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/evacuees-return-okanagan-9.7307904?cmp=rss",
-        "description": "On Friday, evacuation orders were lifted for 2,400 residences around the Quilpituk Creek fire zone, as well as in Peachland and Trout Creek where the Bald Range fire continues to burn.",
-        "pubDate": "Fri, 14 Aug 2026 22:21:31 EDT",
+        "title": "Homes across B.C. have been decimated by wildfires. Here's what to know about your insurance",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-insurance-what-to-know-9.7305044?cmp=rss",
+        "description": "Hundreds of structures have been lost to wildfires so far this year.  Experts say even those who are fully insured will face a long, complex process as they begin to rebuild.",
+        "pubDate": "Sat, 15 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Young grizzly bear with limp killed in Nelson, B.C., sparks rally",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-grizzly-yearling-killed-9.7306936?cmp=rss",
-        "description": "In an update on Friday, B.C. Conservation Officer Service said the young bear's mother has now also been killed to ensure public safety after the wild animal exhibited food-conditioned behaviour and loss of fear to people.",
-        "pubDate": "Fri, 14 Aug 2026 00:35:57 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "More B.C. evacuees returning home Saturday, but told to prepare for changes",
@@ -64,18 +40,28 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/aac222cb4d3ee09d74b0d2f224599477b42b1fc5477b7c285f0def5876a25216.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Homes across B.C. have been decimated by wildfires. Here's what to know about your insurance",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-insurance-what-to-know-9.7305044?cmp=rss",
-        "description": "Hundreds of structures have been lost to wildfires so far this year.  Experts say even those who are fully insured will face a long, complex process as they begin to rebuild.",
-        "pubDate": "Sat, 15 Aug 2026 09:00:00 EDT",
-        "source": "CBC BC"
+        "title": "Vancouver Island park closed following black bear attack",
+        "link": "https://globalnews.ca/news/12022369/vancouver-island-park-closed-black-bear-attack/",
+        "description": "B.C. Conservation Officers said that shortly before 10 a.m. Friday morning, a woman was hiking with her dogs off-leash in Stoney Hill Regional Park, east of Duncan.",
+        "pubDate": "Fri, 14 Aug 2026 23:34:36 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260814_140022.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "What you need to know about B.C. wildfires on Aug. 15",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-to-know-british-columbia-wildfires-august-15-9.7308408?cmp=rss",
-        "description": "Thousands of residents forced to flee their homes due to wildfires across B.C. are returning Saturday, and a major highway is set to reopen as some conditions improve.",
-        "pubDate": "Sat, 15 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
+        "title": "All evacuation orders downgraded for Quilpituk Creek wildfire, residents return home",
+        "link": "https://globalnews.ca/news/12022261/all-evacuation-orders-downgraded-quilpituk-creek-wildfire-return-home/",
+        "description": "All residents who were forced out of their homes due to the Quilpituk Creek wildfire, burning north of West Kelowna, were allowed to go home on Friday.",
+        "pubDate": "Fri, 14 Aug 2026 22:16:38 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-6.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Conservative candidate says he&#8217;s heard Poilievre criticism from voters",
+        "link": "https://globalnews.ca/news/12022122/conservatives-poilievre-criticisms-byelection-voters/",
+        "description": "The comments came during an all-candidates panel for the Aug. 31 byelection in North Vancouver—Capilano, where the Conservatives are hoping to flip a seat from the Liberals.",
+        "pubDate": "Fri, 14 Aug 2026 21:42:08 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Poilievre-e1786743124764.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Canadair water-bomber builder feels heat of demand as wildfires rage around the world",
