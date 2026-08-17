@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T04:00:34.218Z",
+  "updated_at": "2026-08-17T10:00:33.731Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -26,17 +26,32 @@
         "source": "CBC BC"
       },
       {
-        "title": "Residents describe returning home as fire evacuation orders lift in Okanagan",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/evacuees-return-okanagan-9.7307904?cmp=rss",
-        "description": "On Friday, evacuation orders were lifted for 2,400 residences around the Quilpituk Creek fire zone, as well as in Peachland and Trout Creek where the Bald Range fire continues to burn.",
-        "pubDate": "Fri, 14 Aug 2026 22:21:31 EDT",
+        "title": "Canadair water-bomber builder feels heat of demand as wildfires rage around the world",
+        "link": "https://www.cbc.ca/news/canada/calgary/bakx-de-havilland-canadair-calgary-super-scooper-alberta-wildfire-dhc-515-9.7307819?cmp=rss",
+        "description": "As Canada, the United States and Europe grapple with another brutal wildfire season, pressure is building on the manufacturer of the Canadair \"Super Scooper\" water bombers to increase production, and on the federal government to bulk order the planes.",
+        "pubDate": "Sat, 15 Aug 2026 04:00:00 EDT",
         "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Hatchery tours in Vanderhoof, B.C., offer rare chance to see this critically endangered fish",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/white-sturgeon-hatchery-tours-vanderhoof-bc-9.7308354?cmp=rss",
+        "description": "Getting a glimpse of an endangered prehistoric fish is easier than you might think.",
+        "pubDate": "Sun, 16 Aug 2026 12:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [
+      {
+        "title": "Metro Vancouver regional parks could be impacted over weekend due to workers' strike",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/metro-vancouver-regional-parks-strike-9.7308283?cmp=rss",
+        "description": "The union representing outside workers at the Metro Vancouver Regional District says that it's pulling workers off the job this weekend, impacting services in 24 regional parks.",
+        "pubDate": "Fri, 14 Aug 2026 23:47:26 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "After months of debate, East Kootenay will stop changing clocks and stay on mountain daylight time year-round",
         "link": "https://www.cbc.ca/news/canada/british-columbia/east-kootenay-stops-changing-clocks-9.7308201?cmp=rss",
@@ -46,6 +61,13 @@
       }
     ],
     "all": [
+      {
+        "title": "Fire and Climate &#8211; a special and timely collection",
+        "link": "https://wildfiretoday.com/fire-and-climate-a-special-and-timely-collection/",
+        "description": "The 2026 wildfire season shows us that with increased wildland fire risk, more intense fire behaviour, longer seasons, and fire evolving across many landscapes, a changing climate poses significant challenges to today’s fire regimes and management strategies. The International Journal of Wildland Fire has published a Special Collection to showcase papers from and inspired by [&#8230;]",
+        "pubDate": "Wed, 05 Aug 2026 08:00:52 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists",
         "link": "https://globalnews.ca/news/12023424/b-c-offering-free-n95-masks-for-b-c-interior-as-wildfire-smoke-persists/",
@@ -87,13 +109,6 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-to-know-british-columbia-wildfires-august-15-9.7308408?cmp=rss",
         "description": "Thousands of residents forced to flee their homes due to wildfires across B.C. are returning Saturday, and a major highway is set to reopen as some conditions improve.",
         "pubDate": "Sat, 15 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Canadair water-bomber builder feels heat of demand as wildfires rage around the world",
-        "link": "https://www.cbc.ca/news/canada/calgary/bakx-de-havilland-canadair-calgary-super-scooper-alberta-wildfire-dhc-515-9.7307819?cmp=rss",
-        "description": "As Canada, the United States and Europe grapple with another brutal wildfire season, pressure is building on the manufacturer of the Canadair \"Super Scooper\" water bombers to increase production, and on the federal government to bulk order the planes.",
-        "pubDate": "Sat, 15 Aug 2026 04:00:00 EDT",
         "source": "CBC BC"
       }
     ]
