@@ -1,21 +1,36 @@
 {
-  "updated_at": "2026-08-17T16:00:35.868Z",
+  "updated_at": "2026-08-17T22:00:33.630Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "Okanagan communities rally around Bald Range wildfire evacuees",
-        "link": "https://globalnews.ca/news/12022456/okanagan-communities-rally-bald-range-wildfire-evacuees/",
-        "description": "For many evacuees, the immediate challenge was finding somewhere to sleep, something to eat and the basic necessities they had suddenly left behind.",
-        "pubDate": "Sat, 15 Aug 2026 04:29:05 +0000",
+        "title": "Summerland farmer was 12 hours away from harvesting crop when wildfire sparked",
+        "link": "https://globalnews.ca/news/12024246/summerland-farmer-12-hours-away-harvesting-crop-bald-range-wildfire/",
+        "description": "Crops in the Okanagan have been hit consecutively, first by a heat dome in 2021, then a cold snap in 2024 that led to the closure of B.C. Tree Fruits Cooperative.",
+        "pubDate": "Mon, 17 Aug 2026 19:06:57 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Resized_20260809_150035.jpeg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-fruit-PIC-2.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "As wildfires destroy homes, should B.C. make FireSmart principles mandatory?",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfires-bc-firesmart-mandatory-9.7307677?cmp=rss",
-        "description": "Experts say practical measures to keep your home from catching fire are proven to work — and point to the communities have built back smarter.",
-        "pubDate": "Sun, 16 Aug 2026 07:00:00 EDT",
+        "title": "More evacuees return home to Summerland as firefighting efforts move to northwest",
+        "link": "https://globalnews.ca/news/12024280/more-evacuees-return-home-summerland-firefighting-efforts-northwest/",
+        "description": "More wildfire evacuees returned home to Summerland on Monday morning, more than a week after the Bald Range fire forced them to flee.",
+        "pubDate": "Mon, 17 Aug 2026 18:46:19 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-7.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "What you need to know about B.C. wildfires on Aug. 17",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-17-9.7309310?cmp=rss",
+        "description": "The mayor of Summerland, B.C., says that damage assessments have been completed as more of his community's residents return, after being forced to flee due to the out-of-control Bald Range wildfire.",
+        "pubDate": "Mon, 17 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "B.C. farmer who fled wildfire teams up with chef on sauces to support other producers",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/sauce-okanagan-produce-bc-wildfire-evacuees-9.7308796?cmp=rss",
+        "description": "A B.C. chef and a local farmer who lost his home to the raging Bald Range wildfire have teamed up on a project to support other producers hit hard by fires this summer.",
+        "pubDate": "Sun, 16 Aug 2026 17:57:21 EDT",
         "source": "CBC BC"
       },
       {
@@ -35,24 +50,16 @@
         "source": "CBC BC"
       },
       {
-        "title": "B.C. farmer who fled wildfire teams up with chef on sauces to support other producers",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/sauce-okanagan-produce-bc-wildfire-evacuees-9.7308796?cmp=rss",
-        "description": "A B.C. chef and a local farmer who lost his home to the raging Bald Range wildfire have teamed up on a project to support other producers hit hard by fires this summer.",
-        "pubDate": "Sun, 16 Aug 2026 17:57:21 EDT",
+        "title": "Hatchery tours in Vanderhoof, B.C., offer rare chance to see this critically endangered fish",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/white-sturgeon-hatchery-tours-vanderhoof-bc-9.7308354?cmp=rss",
+        "description": "Getting a glimpse of an endangered prehistoric fish is easier than you might think.",
+        "pubDate": "Sun, 16 Aug 2026 12:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Should powerboats be allowed on Wasa Lake in the East Kootenay? New report raises questions",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wasa-lake-assessment-9.7308430?cmp=rss",
-        "description": "A new assessment says Wasa Lake is at high risk from powerboating, as local groups ask for science-based rules to protect water quality.",
-        "pubDate": "Sat, 15 Aug 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists",
@@ -63,13 +70,6 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/25cf3360e685b8b6d2623fdebd5525ca4b2958b978653b3bfe7c5b9ff4cdcd17_75b972.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "What you need to know about B.C. wildfires on Aug. 17",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-17-9.7309310?cmp=rss",
-        "description": "The mayor of Summerland, B.C., says that damage assessments have been completed as more of his community's residents return, after being forced to flee due to the out-of-control Bald Range wildfire.",
-        "pubDate": "Mon, 17 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
         "title": "Meteorologists are forecasting a 'super' El Niño. What does that mean for B.C.?",
         "link": "https://www.cbc.ca/news/canada/british-columbia/super-el-nino-british-columbia-9.7304763?cmp=rss",
         "description": "The El Niño weather pattern can affect temperature and precipitation across North America, but what does it mean for British Columbia? And will it affect the wildfire situation?",
@@ -77,17 +77,17 @@
         "source": "CBC BC"
       },
       {
-        "title": "What you need to know about B.C. wildfires on Aug. 16",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-16-9.7308877?cmp=rss",
-        "description": "The B.C. Wildfire Service (BCWS) says it's keeping an eye on an unstable weather pattern that could produce more wildfires in the southern half of the province on Sunday, even as evacuation orders are slowly lifted near some of the province's most concerning fires.",
-        "pubDate": "Sun, 16 Aug 2026 08:00:00 EDT",
+        "title": "Where do Canada-U.S. trade negotiations stand? Here's a sector-by-sector breakdown",
+        "link": "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218?cmp=rss",
+        "description": "Canada is continuing to negotiate a trade deal with the U.S. that will allow it to both avoid U.S. President Donald Trump's crippling tariff threat — set to come into effect on Wednesday — and get some additional relief on existing tariffs in key sectors.",
+        "pubDate": "Mon, 17 Aug 2026 04:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Fort St. John mayor calls for gang task force support after surge in targeted shootings",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-john-bc-shootings-mayor-gang-task-force-9.7308693?cmp=rss",
-        "description": "Fort St. John Mayor Lilia Hansen wants B.C.'s gang task force to intervene after three shootings in less than a month near local schools.",
-        "pubDate": "Sat, 15 Aug 2026 14:20:55 EDT",
+        "title": "As wildfires destroy homes, should B.C. make FireSmart principles mandatory?",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfires-bc-firesmart-mandatory-9.7307677?cmp=rss",
+        "description": "Experts say practical measures to keep your home from catching fire are proven to work — and point to the communities have built back smarter.",
+        "pubDate": "Sun, 16 Aug 2026 07:00:00 EDT",
         "source": "CBC BC"
       },
       {
