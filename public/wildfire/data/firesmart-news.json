@@ -1,20 +1,12 @@
 {
-  "updated_at": "2026-08-18T10:00:33.632Z",
+  "updated_at": "2026-08-18T16:00:34.688Z",
   "zones": {
     "coastal": [
       {
-        "title": "Burnaby RCMP steps up e-scooter enforcement to curb accidents, injuries",
-        "link": "https://globalnews.ca/news/12024582/burnaby-rcmp-e-scooter-enforcement-curb-accidents-injuries/",
-        "description": "This follows an incident on May 2, when an 11-year-old boy and a nine-year-old girl were riding e-scooters and collided with a vehicle on Hastings Street near Delta Avenue.",
-        "pubDate": "Mon, 17 Aug 2026 21:49:01 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2022/08/E-scooter.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "‘An existential threat’: B.C. businesses voice fears about looming U.S. tariffs",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/an-existential-threat-b-c-businesses-voice-fears-about-looming-u-s-tariffs-9.7209562?cmp=rss",
-        "description": "As the U.S. 50-per-cent tariff deadline looms, some B.C. businesses are going into a tailspin of worry about the potential impacts it could have on their bottom line.",
-        "pubDate": "Tue, 18 Aug 2026 01:28:15 EDT",
+        "title": "Firefighters dealing with abandoned, 'intentionally-set' fires on Sunshine Coast",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fires-being-intentionally-set-on-sunshine-coast-9.7310404?cmp=rss",
+        "description": "\"We are monitoring the situation very, very closely in regards to enacting a campfire prohibition,\" said fire Chief Dwight Davison.",
+        "pubDate": "Mon, 17 Aug 2026 21:00:53 EDT",
         "source": "CBC BC"
       }
     ],
@@ -28,67 +20,17 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-17-180230.png"
       },
       {
-        "title": "Historic Cumberland building goes up in flames",
-        "link": "https://globalnews.ca/news/12024476/historic-cumberland-building-fire/",
-        "description": "Chief Michael Williamson said they were alerted to the fire when people heard the alarms ringing and called in Courtenay firefighters to help.",
-        "pubDate": "Mon, 17 Aug 2026 21:48:58 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/cumberland-fire-clark-goble.png"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Search for B.C.'s best roadside attraction: Vancouver Island finals",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-roadside-attraction-vancouver-island-final-9.7307981?cmp=rss",
-        "description": "After dominating their respective semifinal matchups, two Highway 4 stops compete for roadside attraction dominance on Vancouver Island.",
-        "pubDate": "Mon, 17 Aug 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "cariboo": [],
-    "northwest": [],
-    "southeast": [],
-    "all": [
-      {
-        "title": "Demand for Canadian citizenship certificates soaring, fuelled by Americans",
-        "link": "https://www.cbc.ca/news/politics/canadian-citizenship-certificates-americans-9.7307536?cmp=rss",
-        "description": "Applications from people around the world seeking Canadian citizenship certificates have been rising rapidly, fuelled by thousands from the United States, CBC News has learned. So many people have applied following a change in the law that Immigration, Refugees and Citizenship Canada says those who apply today could have to wait more than two years for a decision.",
-        "pubDate": "Mon, 17 Aug 2026 04:00:00 EDT",
+        "title": "Evacuation order lifted for majority of Summerland, more than 1 week after wildfire forced residents to flee",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/evacuation-orders-lifted-most-of-summerland-9.7310781?cmp=rss",
+        "description": "\"This is the big day,\" said Summerland Mayor Doug Holmes, with thousands of residents allowed to make their way home Tuesday to assess what damage the Bald Range fire has caused their community.",
+        "pubDate": "Tue, 18 Aug 2026 11:18:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Simon Fraser University Pipe Band wins World Pipe Band Championships in Scotland",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/sfu-pipe-band-wins-world-pipe-band-championships-9.7309182?cmp=rss",
-        "description": "For the first time in 17 years, the Simon Fraser University Pipe Band has won the global title at the World Pipe Band Championships held in Glasgow, Scotland.",
-        "pubDate": "Sun, 16 Aug 2026 18:24:51 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Where do Canada-U.S. trade negotiations stand? Here's a sector-by-sector breakdown",
-        "link": "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218?cmp=rss",
-        "description": "Canada is continuing to negotiate a trade deal with the U.S. that will allow it to both avoid U.S. President Donald Trump's crippling tariff threat — set to come into effect on Wednesday — and get some additional relief on existing tariffs in key sectors.",
-        "pubDate": "Mon, 17 Aug 2026 04:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "What you need to know about B.C. wildfires on Aug. 16",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-16-9.7308877?cmp=rss",
-        "description": "The B.C. Wildfire Service (BCWS) says it's keeping an eye on an unstable weather pattern that could produce more wildfires in the southern half of the province on Sunday, even as evacuation orders are slowly lifted near some of the province's most concerning fires.",
-        "pubDate": "Sun, 16 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Immigrant services organization MOSAIC celebrates 50 years in Metro Vancouver",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/mosaic-50th-anniversary-walkathon-9.7309257?cmp=rss",
-        "description": "Metro Vancouver organization MOSAIC celebrated 50 years of helping immigrants and newcomers settle in Canada with a walkathon at Burnaby's Swangard Stadium on Sunday. First formed as the Multilingual Orientation Service Association for Immigrant Communities in 1976, the organization's walkathon saw hundreds of newcomers celebrate settlement milestones.",
-        "pubDate": "Sun, 16 Aug 2026 19:13:18 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Hatchery tours in Vanderhoof, B.C., offer rare chance to see this critically endangered fish",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/white-sturgeon-hatchery-tours-vanderhoof-bc-9.7308354?cmp=rss",
-        "description": "Getting a glimpse of an endangered prehistoric fish is easier than you might think.",
-        "pubDate": "Sun, 16 Aug 2026 12:00:00 EDT",
+        "title": "What you need to know about B.C. wildfires on Aug. 18",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-18-9.7310477?cmp=rss",
+        "description": "Thousands of Summerland residents were given the go-ahead to return home on Tuesday as the district lifted the majority of evacuation orders related to the Bald Range fire.",
+        "pubDate": "Tue, 18 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       },
       {
@@ -97,26 +39,34 @@
         "description": "A B.C. chef and a local farmer who lost his home to the raging Bald Range wildfire have teamed up on a project to support other producers hit hard by fires this summer.",
         "pubDate": "Sun, 16 Aug 2026 17:57:21 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "prince-george": [
       {
-        "title": "As wildfires destroy homes, should B.C. make FireSmart principles mandatory?",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfires-bc-firesmart-mandatory-9.7307677?cmp=rss",
-        "description": "Experts say practical measures to keep your home from catching fire are proven to work — and point to the communities have built back smarter.",
-        "pubDate": "Sun, 16 Aug 2026 07:00:00 EDT",
+        "title": "How studying driver behaviour could make wildfire evacuations in northern B.C. safer",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/driver-behaviour-wildfire-evacuations-9.7308367?cmp=rss",
+        "description": "A UNBC PhD candidate is studying how drivers respond during simulated wildfire evacuations on Highway 97 north of Prince George. The research will help build a traffic model that could help emergency planners understand congestion, travel times and road closures before an evacuation happens.",
+        "pubDate": "Mon, 17 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
+      }
+    ],
+    "cariboo": [],
+    "northwest": [],
+    "southeast": [],
+    "all": [
+      {
+        "title": "B.C.&#8217;s provincial health officer to hold news conference amid wildfire smoke warnings",
+        "link": "https://globalnews.ca/news/12025175/bc-wildfire-smoke-warnings-news-conference/",
+        "description": "B.C. provincial health officer Dr. Bonnie Henry is set to hold a news conference Tuesday as much of the southern half of the province remains blanketed in wildfire smoke.",
+        "pubDate": "Tue, 18 Aug 2026 12:20:11 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/a09a2fd2e4634361e255cafbb774e598ca22667c2a3b32d8f9ec1fb7c9bdd0d6.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Fort St. John mayor calls for gang task force support after surge in targeted shootings",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-john-bc-shootings-mayor-gang-task-force-9.7308693?cmp=rss",
-        "description": "Fort St. John Mayor Lilia Hansen wants B.C.'s gang task force to intervene after three shootings in less than a month near local schools.",
-        "pubDate": "Sat, 15 Aug 2026 14:20:55 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Homes across B.C. have been decimated by wildfires. Here's what to know about your insurance",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-insurance-what-to-know-9.7305044?cmp=rss",
-        "description": "Hundreds of structures have been lost to wildfires so far this year.  Experts say even those who are fully insured will face a long, complex process as they begin to rebuild.",
-        "pubDate": "Sat, 15 Aug 2026 09:00:00 EDT",
+        "title": "Simon Fraser University Pipe Band wins World Pipe Band Championships in Scotland",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/sfu-pipe-band-wins-world-pipe-band-championships-9.7309182?cmp=rss",
+        "description": "For the first time in 17 years, the Simon Fraser University Pipe Band has won the global title at the World Pipe Band Championships held in Glasgow, Scotland.",
+        "pubDate": "Sun, 16 Aug 2026 18:24:51 EDT",
         "source": "CBC BC"
       }
     ]
