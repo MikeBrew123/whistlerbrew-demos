@@ -1,44 +1,23 @@
 {
-  "updated_at": "2026-08-17T22:00:33.630Z",
+  "updated_at": "2026-08-18T04:00:34.200Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [
-      {
-        "title": "Summerland farmer was 12 hours away from harvesting crop when wildfire sparked",
-        "link": "https://globalnews.ca/news/12024246/summerland-farmer-12-hours-away-harvesting-crop-bald-range-wildfire/",
-        "description": "Crops in the Okanagan have been hit consecutively, first by a heat dome in 2021, then a cold snap in 2024 that led to the closure of B.C. Tree Fruits Cooperative.",
-        "pubDate": "Mon, 17 Aug 2026 19:06:57 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/WEB-fruit-PIC-2.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "More evacuees return home to Summerland as firefighting efforts move to northwest",
-        "link": "https://globalnews.ca/news/12024280/more-evacuees-return-home-summerland-firefighting-efforts-northwest/",
-        "description": "More wildfire evacuees returned home to Summerland on Monday morning, more than a week after the Bald Range fire forced them to flee.",
-        "pubDate": "Mon, 17 Aug 2026 18:46:19 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-7.jpg?quality=65&#038;strip=all"
-      },
+    "coastal": [
       {
         "title": "What you need to know about B.C. wildfires on Aug. 17",
         "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-17-9.7309310?cmp=rss",
         "description": "The mayor of Summerland, B.C., says that damage assessments have been completed as more of his community's residents return, after being forced to flee due to the out-of-control Bald Range wildfire.",
         "pubDate": "Mon, 17 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "kamloops": [
       {
-        "title": "B.C. farmer who fled wildfire teams up with chef on sauces to support other producers",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/sauce-okanagan-produce-bc-wildfire-evacuees-9.7308796?cmp=rss",
-        "description": "A B.C. chef and a local farmer who lost his home to the raging Bald Range wildfire have teamed up on a project to support other producers hit hard by fires this summer.",
-        "pubDate": "Sun, 16 Aug 2026 17:57:21 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "How art is helping Summerland evacuees of B.C.'s Bald Range wildfire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/art-therapy-bald-range-wildfire-9.7308380?cmp=rss",
-        "description": "At a comfort centre for evacuees of the Bald Range Wildfire, art is an escape. Pens, paper and paint are placed on placed on tables, along with stickers and buttons for Summerland evacuees. It is part of an art therapy initiative by the Penticton & District Community Arts council.",
-        "pubDate": "Sat, 15 Aug 2026 15:02:09 EDT",
-        "source": "CBC BC"
+        "title": "Summerland residents begin returning home as roughly 1,200 properties cleared for re-entry",
+        "link": "https://globalnews.ca/news/12024799/summerland-residents-begin-returning-home/",
+        "description": "After more than a week, some Summerland residents are finally walking back through their front doors.",
+        "pubDate": "Tue, 18 Aug 2026 01:47:50 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-17-180230.png"
       }
     ],
     "prince-george": [
@@ -48,7 +27,9 @@
         "description": "A UNBC PhD candidate is studying how drivers respond during simulated wildfire evacuations on Highway 97 north of Prince George. The research will help build a traffic model that could help emergency planners understand congestion, travel times and road closures before an evacuation happens.",
         "pubDate": "Mon, 17 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "cariboo": [
       {
         "title": "Hatchery tours in Vanderhoof, B.C., offer rare chance to see this critically endangered fish",
         "link": "https://www.cbc.ca/news/canada/british-columbia/white-sturgeon-hatchery-tours-vanderhoof-bc-9.7308354?cmp=rss",
@@ -57,17 +38,16 @@
         "source": "CBC BC"
       }
     ],
-    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
       {
-        "title": "B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists",
-        "link": "https://globalnews.ca/news/12023424/b-c-offering-free-n95-masks-for-b-c-interior-as-wildfire-smoke-persists/",
-        "description": "The wildfire service says temperatures are expected to slightly rise across central and southern regions while northwest areas will see a slight dip in temperatures.",
-        "pubDate": "Sun, 16 Aug 2026 18:04:11 +0000",
+        "title": "Historic Cumberland building goes up in flames",
+        "link": "https://globalnews.ca/news/12024476/historic-cumberland-building-fire/",
+        "description": "Chief Michael Williamson said they were alerted to the fire when people heard the alarms ringing and called in Courtenay firefighters to help.",
+        "pubDate": "Mon, 17 Aug 2026 21:48:58 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/25cf3360e685b8b6d2623fdebd5525ca4b2958b978653b3bfe7c5b9ff4cdcd17_75b972.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/cumberland-fire-clark-goble.png"
       },
       {
         "title": "Meteorologists are forecasting a 'super' El Niño. What does that mean for B.C.?",
@@ -81,6 +61,13 @@
         "link": "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218?cmp=rss",
         "description": "Canada is continuing to negotiate a trade deal with the U.S. that will allow it to both avoid U.S. President Donald Trump's crippling tariff threat — set to come into effect on Wednesday — and get some additional relief on existing tariffs in key sectors.",
         "pubDate": "Mon, 17 Aug 2026 04:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "B.C. farmer who fled wildfire teams up with chef on sauces to support other producers",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/sauce-okanagan-produce-bc-wildfire-evacuees-9.7308796?cmp=rss",
+        "description": "A B.C. chef and a local farmer who lost his home to the raging Bald Range wildfire have teamed up on a project to support other producers hit hard by fires this summer.",
+        "pubDate": "Sun, 16 Aug 2026 17:57:21 EDT",
         "source": "CBC BC"
       },
       {
