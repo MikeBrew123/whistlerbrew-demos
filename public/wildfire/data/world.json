@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T10:01:20.337Z",
+  "updated_at": "2026-08-18T22:01:30.436Z",
   "fires": [
     {
       "country": "Belgium",
@@ -194,6 +194,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists\",\n      \"url\": \"https://globalnews.ca/news/12023424/b-c-offering-free-n95-m"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"'Generations of knowledge' to be shared as SPSA enters MOU with First Nations councils\",\n      \"url\": \"https://globalnews.ca/news/12025825/spsa-mou-s"
   }
 }
