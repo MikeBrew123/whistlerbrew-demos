@@ -1,40 +1,16 @@
 {
-  "updated_at": "2026-08-18T22:00:34.302Z",
+  "updated_at": "2026-08-19T04:00:33.806Z",
   "zones": {
     "coastal": [
       {
-        "title": "Firefighters dealing with abandoned, 'intentionally-set' fires on Sunshine Coast",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fires-being-intentionally-set-on-sunshine-coast-9.7310404?cmp=rss",
-        "description": "\"We are monitoring the situation very, very closely in regards to enacting a campfire prohibition,\" said fire Chief Dwight Davison.",
-        "pubDate": "Mon, 17 Aug 2026 21:00:53 EDT",
+        "title": "‘An existential threat’: B.C. businesses voice fears about looming U.S. tariffs",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/an-existential-threat-b-c-businesses-voice-fears-about-looming-u-s-tariffs-9.7209562?cmp=rss",
+        "description": "As the U.S. 50-per-cent tariff deadline looms, some B.C. businesses are going into a tailspin of worry about the potential impacts it could have on their bottom line.",
+        "pubDate": "Tue, 18 Aug 2026 01:28:15 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
-      {
-        "title": "About 150 structures damaged, destroyed by Bald Range wildfire, as most of Summerland returns",
-        "link": "https://globalnews.ca/news/12025507/structures-damaged-destroyed-bald-range-wildfire-summerland-home/",
-        "description": "The Bald Range wildfire is still listed as out of control and has now grown to 21,391 hectares since it was discovered 11 days ago.",
-        "pubDate": "Tue, 18 Aug 2026 17:05:37 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260815_Faulder_FireTruck.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Take a bough: Climbing takes relationship with B.C.&#8217;s trees to the next level",
-        "link": "https://globalnews.ca/news/12025181/take-a-bough-climbing-takes-relationship-with-b-c-s-trees-to-the-next-level/",
-        "description": "Tom Zadorsky is part of a movement that aims to awaken a climbers' inner child and give a new perspective on British Columbia's forests.",
-        "pubDate": "Tue, 18 Aug 2026 12:26:23 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/ea6b27554fa38ac12dfcbf116c537bf40494051ad416c6141313da95772a9863.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Summerland residents begin returning home as roughly 1,200 properties cleared for re-entry",
-        "link": "https://globalnews.ca/news/12024799/summerland-residents-begin-returning-home/",
-        "description": "After more than a week, some Summerland residents are finally walking back through their front doors.",
-        "pubDate": "Tue, 18 Aug 2026 01:47:50 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-17-180230.png"
-      },
       {
         "title": "What you need to know about B.C. wildfires on Aug. 18",
         "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-18-9.7310477?cmp=rss",
@@ -43,19 +19,19 @@
         "source": "CBC BC"
       },
       {
-        "title": "Evacuation order lifted for majority of Summerland, with about 150 structures believed damaged",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/evacuation-orders-lifted-most-of-summerland-9.7310781?cmp=rss",
-        "description": "Thousands of Summerland residents are allowed to make their way home Tuesday, more than a week after the Bald Range wildfire forced them to flee.",
-        "pubDate": "Tue, 18 Aug 2026 11:18:00 EDT",
+        "title": "Search for B.C.'s best roadside attraction: Southwest B.C. finals",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-roadside-attraction-southwest-bc-finals-9.7308072?cmp=rss",
+        "description": "Two natural wonders compete to represent the southwest in the Search for B.C.’s Best Roadside Attraction semifinals.",
+        "pubDate": "Tue, 18 Aug 2026 07:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [
       {
-        "title": "Carney says last-minute U.S. tariff negotiations are 'delicate' and 'intense' as deadline looms",
-        "link": "https://www.cbc.ca/news/politics/carney-negotiations-delicate-intense-9.7309934?cmp=rss",
-        "description": "Prime Minister Mark Carney said last-minute negotiations with the U.S. to avoid a fresh batch of tariffs due to take effect this week are \"delicate\" and \"intense,\" and he plans to speak to his American counterpart in the next 48 hours to broker a mutually agreeable deal.",
-        "pubDate": "Mon, 17 Aug 2026 14:03:32 EDT",
+        "title": "How studying driver behaviour could make wildfire evacuations in northern B.C. safer",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/driver-behaviour-wildfire-evacuations-9.7308367?cmp=rss",
+        "description": "A UNBC PhD candidate is studying how drivers respond during simulated wildfire evacuations on Highway 97 north of Prince George. The research will help build a traffic model that could help emergency planners understand congestion, travel times and road closures before an evacuation happens.",
+        "pubDate": "Mon, 17 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -64,12 +40,11 @@
     "southeast": [],
     "all": [
       {
-        "title": "B.C. wildfire latest: Thousands of people still out of their homes, but there is some good news",
-        "link": "https://globalnews.ca/news/12025175/bc-wildfire-smoke-warnings-news-conference/",
-        "description": "B.C. provincial health officer Dr. Bonnie Henry is set to hold a news conference Tuesday as much of the southern half of the province remains blanketed in wildfire smoke.",
-        "pubDate": "Tue, 18 Aug 2026 12:20:11 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c0f6dd943f9de29128f26ff58722c1ef0ff403096a4bb0c4bf4c4d60d2afd046_23e212.jpg?quality=65&#038;strip=all"
+        "title": "Meteorologists are forecasting a 'super' El Niño. What does that mean for B.C.?",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/super-el-nino-british-columbia-9.7304763?cmp=rss",
+        "description": "The El Niño weather pattern can affect temperature and precipitation across North America, but what does it mean for British Columbia? And will it affect the wildfire situation?",
+        "pubDate": "Sun, 16 Aug 2026 11:00:00 EDT",
+        "source": "CBC BC"
       }
     ]
   }
