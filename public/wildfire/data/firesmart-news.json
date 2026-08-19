@@ -1,13 +1,23 @@
 {
-  "updated_at": "2026-08-19T10:00:33.483Z",
+  "updated_at": "2026-08-19T16:00:34.533Z",
   "zones": {
     "coastal": [
       {
-        "title": "Trump pauses 50 per cent tariffs on Canadian goods for 3 days",
-        "link": "https://www.cbc.ca/news/politics/new-trump-tariffs-deadline-9.7311125?cmp=rss",
-        "description": "U.S. President Donald Trump has announced he will pause the implementation of 50 per cent tariffs on a range of Canadian goods for three days, posting the decision less than two hours before the crushing levies were set to take effect.",
-        "pubDate": "Tue, 18 Aug 2026 13:13:34 EDT",
+        "title": "Jail guard appeared to sleep as Indigenous man died in cell: B.C. police watchdog",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/smithers-rcmp-custody-death-9.7310390?cmp=rss",
+        "description": "An IIO investigation found failures in how prisoners were monitored and cared for before an Indigenous man died by suicide in a Smithers RCMP cell.",
+        "pubDate": "Mon, 17 Aug 2026 20:13:05 EDT",
         "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "About 150 structures damaged, destroyed by Bald Range wildfire, as most of Summerland returns",
+        "link": "https://globalnews.ca/news/12025507/structures-damaged-destroyed-bald-range-wildfire-summerland-home/",
+        "description": "The Bald Range wildfire is still listed as out of control and has now grown to 21,391 hectares since it was discovered 11 days ago.",
+        "pubDate": "Tue, 18 Aug 2026 17:05:37 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260815_Faulder_FireTruck.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "What you need to know about B.C. wildfires on Aug. 18",
@@ -17,12 +27,14 @@
         "source": "CBC BC"
       },
       {
-        "title": "Search for B.C.'s best roadside attraction: Southwest B.C. finals",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-roadside-attraction-southwest-bc-finals-9.7308072?cmp=rss",
-        "description": "Two natural wonders compete to represent the southwest in the Search for B.C.’s Best Roadside Attraction semifinals.",
-        "pubDate": "Tue, 18 Aug 2026 07:00:00 EDT",
+        "title": "Evacuation order lifted for majority of Summerland, with about 150 structures believed damaged",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/evacuation-orders-lifted-most-of-summerland-9.7310781?cmp=rss",
+        "description": "Thousands of Summerland residents are allowed to make their way home Tuesday, more than a week after the Bald Range wildfire forced them to flee.",
+        "pubDate": "Tue, 18 Aug 2026 11:18:00 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "prince-george": [
       {
         "title": "Coroner's inquest to begin for Tla-o-qui-aht Nation man fatally shot by RCMP",
         "link": "https://www.cbc.ca/news/canada/british-columbia/julian-jones-inquest-9.7310258?cmp=rss",
@@ -31,62 +43,9 @@
         "source": "CBC BC"
       }
     ],
-    "kamloops": [],
-    "prince-george": [
-      {
-        "title": "‘An existential threat’: B.C. businesses voice fears about looming U.S. tariffs",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/an-existential-threat-b-c-businesses-voice-fears-about-looming-u-s-tariffs-9.7209562?cmp=rss",
-        "description": "As the U.S. 50-per-cent tariff deadline looms, some B.C. businesses are going into a tailspin of worry about the potential impacts it could have on their bottom line.",
-        "pubDate": "Tue, 18 Aug 2026 01:28:15 EDT",
-        "source": "CBC BC"
-      }
-    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Jail guard appeared to sleep as Indigenous man died in cell: B.C. police watchdog",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/smithers-rcmp-custody-death-9.7310390?cmp=rss",
-        "description": "An IIO investigation found failures in how prisoners were monitored and cared for before an Indigenous man died by suicide in a Smithers RCMP cell.",
-        "pubDate": "Mon, 17 Aug 2026 20:13:05 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Tumbler Ridge school teardown begins as B.C. prepares to rebuild following mass shooting",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/tumbler-ridge-secondary-school-demolition-begins-9.7307721?cmp=rss",
-        "description": "Demolition crews began work tearing down Tumbler Ridge Secondary School on Monday, about six months after a mass shooting. The province announced plans to replace the school 'as quickly as possible' in May, although a new location has yet to be announced.",
-        "pubDate": "Mon, 17 Aug 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Carney says last-minute U.S. tariff negotiations are 'delicate' and 'intense' as deadline looms",
-        "link": "https://www.cbc.ca/news/politics/carney-negotiations-delicate-intense-9.7309934?cmp=rss",
-        "description": "Prime Minister Mark Carney said last-minute negotiations with the U.S. to avoid a fresh batch of tariffs due to take effect this week are \"delicate\" and \"intense,\" and he plans to speak to his American counterpart in the next 48 hours to broker a mutually agreeable deal.",
-        "pubDate": "Mon, 17 Aug 2026 14:03:32 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "How studying driver behaviour could make wildfire evacuations in northern B.C. safer",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/driver-behaviour-wildfire-evacuations-9.7308367?cmp=rss",
-        "description": "A UNBC PhD candidate is studying how drivers respond during simulated wildfire evacuations on Highway 97 north of Prince George. The research will help build a traffic model that could help emergency planners understand congestion, travel times and road closures before an evacuation happens.",
-        "pubDate": "Mon, 17 Aug 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Demand for Canadian citizenship certificates soaring, fuelled by Americans",
-        "link": "https://www.cbc.ca/news/politics/canadian-citizenship-certificates-americans-9.7307536?cmp=rss",
-        "description": "Applications from people around the world seeking Canadian citizenship certificates have been rising rapidly, fuelled by thousands from the United States, CBC News has learned. So many people have applied following a change in the law that Immigration, Refugees and Citizenship Canada says those who apply today could have to wait more than two years for a decision.",
-        "pubDate": "Mon, 17 Aug 2026 04:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "'I felt like a sitting duck': B.C. mother recounts harrowing escape from scaffolding collapse in Regina",
-        "link": "https://www.cbc.ca/news/canada/saskatchewan/mother-recounts-escape-scaffolding-collapse-9.7309195?cmp=rss",
-        "description": "Claire Johnstone was loading her young son into her car when, all of a sudden, a scaffold came crashing down next to her car on Aug. 11. \"It took me a second to realize that it was actually hitting the car,\" said Johnstone.",
-        "pubDate": "Mon, 17 Aug 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ]
+    "all": []
   }
 }
