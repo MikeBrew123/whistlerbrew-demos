@@ -1,24 +1,16 @@
 {
-  "updated_at": "2026-08-19T16:00:34.533Z",
+  "updated_at": "2026-08-19T22:00:34.020Z",
   "zones": {
     "coastal": [
       {
-        "title": "Jail guard appeared to sleep as Indigenous man died in cell: B.C. police watchdog",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/smithers-rcmp-custody-death-9.7310390?cmp=rss",
-        "description": "An IIO investigation found failures in how prisoners were monitored and cared for before an Indigenous man died by suicide in a Smithers RCMP cell.",
-        "pubDate": "Mon, 17 Aug 2026 20:13:05 EDT",
+        "title": "Firefighters dealing with abandoned, 'intentionally-set' fires on Sunshine Coast",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fires-being-intentionally-set-on-sunshine-coast-9.7310404?cmp=rss",
+        "description": "\"We are monitoring the situation very, very closely in regards to enacting a campfire prohibition,\" said fire Chief Dwight Davison.",
+        "pubDate": "Mon, 17 Aug 2026 21:00:53 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
-      {
-        "title": "About 150 structures damaged, destroyed by Bald Range wildfire, as most of Summerland returns",
-        "link": "https://globalnews.ca/news/12025507/structures-damaged-destroyed-bald-range-wildfire-summerland-home/",
-        "description": "The Bald Range wildfire is still listed as out of control and has now grown to 21,391 hectares since it was discovered 11 days ago.",
-        "pubDate": "Tue, 18 Aug 2026 17:05:37 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260815_Faulder_FireTruck.jpg?quality=65&#038;strip=all"
-      },
       {
         "title": "What you need to know about B.C. wildfires on Aug. 18",
         "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-18-9.7310477?cmp=rss",
@@ -36,10 +28,10 @@
     ],
     "prince-george": [
       {
-        "title": "Coroner's inquest to begin for Tla-o-qui-aht Nation man fatally shot by RCMP",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/julian-jones-inquest-9.7310258?cmp=rss",
-        "description": "A coroner's inquest will begin today into the fatal shooting of a 28-year-old Tla-o-qui-aht First Nation man by Tofino RCMP in 2021, during what police described as a wellness check.",
-        "pubDate": "Tue, 18 Aug 2026 10:00:00 EDT",
+        "title": "Who's running for mayor in Prince George? 2 councillors seek to challenge incumbent",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-mayor-race-2026-yu-sampson-frizzell-9.7310247?cmp=rss",
+        "description": "Prince George Mayor Simon Yu says he plans to run for his job again this fall, where he will be challenged for the position by popular city councillors Kyle Sampson and Garth Frizzell.",
+        "pubDate": "Tue, 18 Aug 2026 11:00:00 EDT",
         "source": "CBC BC"
       }
     ],
