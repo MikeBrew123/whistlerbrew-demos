@@ -1,15 +1,31 @@
 {
-  "updated_at": "2026-08-20T16:00:34.794Z",
+  "updated_at": "2026-08-20T22:00:34.775Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Vets warn pet owners after rabies detected in 2 bats in B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/rabies-positive-bat-in-whistler-campbell-river-9.7314305?cmp=rss",
+        "description": "A Whistler veterinarian says the positive cases come alongside a surge in overall bat encounters in the Sea-to-Sky region this year, with her clinic handling six bat-pet run-ins on Tuesday alone.",
+        "pubDate": "Thu, 20 Aug 2026 17:09:42 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "kamloops": [
       {
-        "title": "Summerland residents return to neighbourhoods forever changed by the Bald Range wildfire",
-        "link": "https://globalnews.ca/news/12027807/summerland-residents-return-neighbourhoods-forever-changed-bald-range-wildfire/",
-        "description": "For many Summerland residents returning home after the Bald Range wildfire, the relief of getting back to their community is being met with a difficult new reality",
-        "pubDate": "Thu, 20 Aug 2026 00:38:01 +0000",
+        "title": "Activity picks up on the Bald Range wildfire near Summerland, Peachland",
+        "link": "https://globalnews.ca/news/12028874/activity-picks-up-bald-range-wildfire-summerland-peachland/",
+        "description": "Strong winds and low humidity kept crews busy along the southwestern flank of the fire, which has now grown to more than 22,000 hectares.",
+        "pubDate": "Thu, 20 Aug 2026 20:20:51 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-19-171752.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/c6ba9d57888f9ac0fd9fca7082ee8ccc1b27481863b1bc4b80725aeb76271269_9e11fe.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Could &#8216;Lucky&#8217; found in Netherlands be a Vancouver man missing since 1994?",
+        "link": "https://globalnews.ca/news/12028714/could-lucky-netherlands-be-vancouver-man-missing-1994/",
+        "description": "The man, who has been nicknamed 'Lucky,' collapsed on a street in Amsterdam on May 10, 2023. It was determined after he received medical care that he was left with aphasia.",
+        "pubDate": "Thu, 20 Aug 2026 18:39:06 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/john-russell-kenny-new.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Japanese exchange students return to Salmon Arm after pandemic cancellation",
@@ -21,15 +37,8 @@
       {
         "title": "Temporary protection order reissued for B.C.'s Salmon River watershed as fish spawn",
         "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-river-watershed-protection-order-9.7313421?cmp=rss",
-        "description": "The Ministry of Water, Land and Resource Stewardship says in a statement that the order aims to ensure enough water remains in the river amid ongoing drought conditions and low streamflow, which threaten fish survival.",
+        "description": "The province says the order aims to ensure enough water remains in the Salmon River watershed, near Salmon Arm, amid ongoing drought conditions and low streamflow, which threaten fish survival.",
         "pubDate": "Wed, 19 Aug 2026 20:26:58 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Sicamous man admits to killing 66-year-old neighbour in attack caught on camera",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/sicamous-killing-scott-keith-mcdonald-9.7313424?cmp=rss",
-        "description": "A chilling story of a killing in the small Shuswap community of Sicamous, B.C., was heard this week in a Kamloops courtroom.",
-        "pubDate": "Wed, 19 Aug 2026 20:31:35 EDT",
         "source": "CBC BC"
       }
     ],
@@ -40,25 +49,10 @@
         "description": "A new mural at a Prince George housing project reflects Carrier Sekani culture and the local landscape. Created with Indigenous youth, the work is meant to make the new multi-age building feel welcoming, culturally grounded and like home.",
         "pubDate": "Thu, 20 Aug 2026 11:00:00 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "B.C. gang unit plans deployment to Fort St. John after 3 targeted shootings leave 4 injured",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-gang-unit-fort-st-john-shootings-9.7312720?cmp=rss",
-        "description": "City officials in Fort St. John, B.C., have called for more police resources after four people were hurt in three targeted shootings near local schools since July 22.",
-        "pubDate": "Wed, 19 Aug 2026 16:05:46 EDT",
-        "source": "CBC BC"
       }
     ],
     "cariboo": [],
-    "northwest": [
-      {
-        "title": "3 major outages renew concerns about northwest B.C.'s communications network",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/northwest-bc-telecom-outage-solutions-9.7311830?cmp=rss",
-        "description": "Three large-scale telecommunications outages since May have exposed vulnerabilities in northwest B.C.'s communications network. Politicians are calling for tougher penalties for copper theft and greater network redundancy, warning repeated disruptions could put businesses, health-care services and emergency response at risk.",
-        "pubDate": "Wed, 19 Aug 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "northwest": [],
     "southeast": [],
     "all": []
   }
