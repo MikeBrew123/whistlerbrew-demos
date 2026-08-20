@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-19T22:00:34.020Z",
+  "updated_at": "2026-08-20T04:00:34.655Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Firefighters dealing with abandoned, 'intentionally-set' fires on Sunshine Coast",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fires-being-intentionally-set-on-sunshine-coast-9.7310404?cmp=rss",
-        "description": "\"We are monitoring the situation very, very closely in regards to enacting a campfire prohibition,\" said fire Chief Dwight Davison.",
-        "pubDate": "Mon, 17 Aug 2026 21:00:53 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
+      {
+        "title": "Summerland residents return to neighbourhoods forever changed by the Bald Range wildfire",
+        "link": "https://globalnews.ca/news/12027807/summerland-residents-return-neighbourhoods-forever-changed-bald-range-wildfire/",
+        "description": "For many Summerland residents returning home after the Bald Range wildfire, the relief of getting back to their community is being met with a difficult new reality",
+        "pubDate": "Thu, 20 Aug 2026 00:38:01 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-19-171752.png"
+      },
       {
         "title": "What you need to know about B.C. wildfires on Aug. 18",
         "link": "https://www.cbc.ca/news/canada/british-columbia/what-you-need-know-british-columbia-wildfires-august-18-9.7310477?cmp=rss",
@@ -28,15 +28,23 @@
     ],
     "prince-george": [
       {
-        "title": "Who's running for mayor in Prince George? 2 councillors seek to challenge incumbent",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-mayor-race-2026-yu-sampson-frizzell-9.7310247?cmp=rss",
-        "description": "Prince George Mayor Simon Yu says he plans to run for his job again this fall, where he will be challenged for the position by popular city councillors Kyle Sampson and Garth Frizzell.",
-        "pubDate": "Tue, 18 Aug 2026 11:00:00 EDT",
+        "title": "B.C. gang unit plans deployment to Fort St. John after 3 targeted shootings leave 4 injured",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-gang-unit-fort-st-john-shootings-9.7312720?cmp=rss",
+        "description": "City officials in Fort St. John, B.C., have called for more police resources after four people were hurt in three targeted shootings near local schools since July 22.",
+        "pubDate": "Wed, 19 Aug 2026 16:05:46 EDT",
         "source": "CBC BC"
       }
     ],
     "cariboo": [],
-    "northwest": [],
+    "northwest": [
+      {
+        "title": "3 major outages renew concerns about northwest B.C.'s communications network",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/northwest-bc-telecom-outage-solutions-9.7311830?cmp=rss",
+        "description": "Three large-scale telecommunications outages since May have exposed vulnerabilities in northwest B.C.'s communications network. Politicians are calling for tougher penalties for copper theft and greater network redundancy, warning repeated disruptions could put businesses, health-care services and emergency response at risk.",
+        "pubDate": "Wed, 19 Aug 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "southeast": [],
     "all": []
   }
