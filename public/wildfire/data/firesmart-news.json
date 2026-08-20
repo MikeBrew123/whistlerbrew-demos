@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-20T04:00:34.655Z",
+  "updated_at": "2026-08-20T10:00:33.659Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -26,25 +26,9 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [
-      {
-        "title": "B.C. gang unit plans deployment to Fort St. John after 3 targeted shootings leave 4 injured",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-gang-unit-fort-st-john-shootings-9.7312720?cmp=rss",
-        "description": "City officials in Fort St. John, B.C., have called for more police resources after four people were hurt in three targeted shootings near local schools since July 22.",
-        "pubDate": "Wed, 19 Aug 2026 16:05:46 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
-    "northwest": [
-      {
-        "title": "3 major outages renew concerns about northwest B.C.'s communications network",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/northwest-bc-telecom-outage-solutions-9.7311830?cmp=rss",
-        "description": "Three large-scale telecommunications outages since May have exposed vulnerabilities in northwest B.C.'s communications network. Politicians are calling for tougher penalties for copper theft and greater network redundancy, warning repeated disruptions could put businesses, health-care services and emergency response at risk.",
-        "pubDate": "Wed, 19 Aug 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "northwest": [],
     "southeast": [],
     "all": []
   }
