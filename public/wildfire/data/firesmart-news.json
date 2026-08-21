@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-08-21T04:00:33.632Z",
+  "updated_at": "2026-08-21T10:00:34.795Z",
   "zones": {
     "coastal": [
       {
-        "title": "Is a mystery man who collapsed in Amsterdam a Canadian who's been missing for 33 years?",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/mystery-man-netherlands-missing-vancouver-man-9.7314158?cmp=rss",
-        "description": "Police are investigating if a mystery man who collapsed on the street in Amsterdam three years ago is actually a Canadian who went missing from Vancouver more than three decades ago.",
-        "pubDate": "Thu, 20 Aug 2026 14:40:49 EDT",
+        "title": "Vets warn pet owners after rabies detected in 2 bats in B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/rabies-positive-bat-in-whistler-campbell-river-9.7314305?cmp=rss",
+        "description": "A Whistler veterinarian says the positive cases come alongside a surge in overall bat encounters in the Sea-to-Sky region this year, with her clinic handling six bat-pet run-ins on Tuesday alone.",
+        "pubDate": "Thu, 20 Aug 2026 17:09:42 EDT",
         "source": "CBC BC"
       }
     ],
@@ -35,15 +35,7 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [
-      {
-        "title": "'This is our place': Indigenous mural at centre of new Prince George housing project",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-mural-9.7313441?cmp=rss",
-        "description": "A new mural at a Prince George housing project reflects Carrier Sekani culture and the local landscape. Created with Indigenous youth, the work is meant to make the new multi-age building feel welcoming, culturally grounded and like home.",
-        "pubDate": "Thu, 20 Aug 2026 11:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
