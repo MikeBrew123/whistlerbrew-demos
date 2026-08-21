@@ -1,16 +1,24 @@
 {
-  "updated_at": "2026-08-20T22:00:34.775Z",
+  "updated_at": "2026-08-21T04:00:33.632Z",
   "zones": {
     "coastal": [
       {
-        "title": "Vets warn pet owners after rabies detected in 2 bats in B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/rabies-positive-bat-in-whistler-campbell-river-9.7314305?cmp=rss",
-        "description": "A Whistler veterinarian says the positive cases come alongside a surge in overall bat encounters in the Sea-to-Sky region this year, with her clinic handling six bat-pet run-ins on Tuesday alone.",
-        "pubDate": "Thu, 20 Aug 2026 17:09:42 EDT",
+        "title": "Is a mystery man who collapsed in Amsterdam a Canadian who's been missing for 33 years?",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/mystery-man-netherlands-missing-vancouver-man-9.7314158?cmp=rss",
+        "description": "Police are investigating if a mystery man who collapsed on the street in Amsterdam three years ago is actually a Canadian who went missing from Vancouver more than three decades ago.",
+        "pubDate": "Thu, 20 Aug 2026 14:40:49 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
+      {
+        "title": "Summerland businesses face another blow as water advisory keeps doors closed",
+        "link": "https://globalnews.ca/news/12029508/summerland-businesses-boil-water-advisory/",
+        "description": "Summerland is trying to get back on its feet after the Bald Range wildfire, but for some local businesses, the disruption is far from over.",
+        "pubDate": "Fri, 21 Aug 2026 02:08:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-20-171739.png"
+      },
       {
         "title": "Activity picks up on the Bald Range wildfire near Summerland, Peachland",
         "link": "https://globalnews.ca/news/12028874/activity-picks-up-bald-range-wildfire-summerland-peachland/",
@@ -20,25 +28,10 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/c6ba9d57888f9ac0fd9fca7082ee8ccc1b27481863b1bc4b80725aeb76271269_9e11fe.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Could &#8216;Lucky&#8217; found in Netherlands be a Vancouver man missing since 1994?",
-        "link": "https://globalnews.ca/news/12028714/could-lucky-netherlands-be-vancouver-man-missing-1994/",
-        "description": "The man, who has been nicknamed 'Lucky,' collapsed on a street in Amsterdam on May 10, 2023. It was determined after he received medical care that he was left with aphasia.",
-        "pubDate": "Thu, 20 Aug 2026 18:39:06 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/john-russell-kenny-new.jpg?quality=65&#038;strip=all"
-      },
-      {
         "title": "Japanese exchange students return to Salmon Arm after pandemic cancellation",
         "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-arm-japanese-student-exchange-9.7312909?cmp=rss",
         "description": "After a six-year hiatus, the exchange program between the sister cities of Inashiki, Japan, and Salmon Arm is back in action.",
         "pubDate": "Thu, 20 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Temporary protection order reissued for B.C.'s Salmon River watershed as fish spawn",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-river-watershed-protection-order-9.7313421?cmp=rss",
-        "description": "The province says the order aims to ensure enough water remains in the Salmon River watershed, near Salmon Arm, amid ongoing drought conditions and low streamflow, which threaten fish survival.",
-        "pubDate": "Wed, 19 Aug 2026 20:26:58 EDT",
         "source": "CBC BC"
       }
     ],
