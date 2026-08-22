@@ -82,11 +82,13 @@
   ],
   "news": [
     {
-      "title": "B.C. premier declares wildfire state of emergency",
-      "url": "https://globalnews.ca/news/12014199/bc-wildfire-evacuation-update/",
+      "title": "B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists",
+      "url": "https://globalnews.ca/news/12023424/b-c-offering-free-n95-masks-for-b-c-interior-as-wildfire-smoke-persists/",
       "source": "Global News Wildfire",
-      "published": "2026-08-08"
+      "published": "2026-08-16",
+      "description": "The wildfire service says temperatures are expected to slightly rise across central and southern regions while northwest areas will see a slight dip in temperatures.",
+      "image": "https://globalnews.ca/wp-content/uploads/2026/08/25cf3360e685b8b6d2623fdebd5525ca4b2958b978653b3bfe7c5b9ff4cdcd17_75b972.jpg?quality=65&#038;strip=all"
     }
   ],
-  "last_news_update": "2026-08-22T16:01:18.071Z"
+  "last_news_update": "2026-08-22T22:01:27.411Z"
 }
