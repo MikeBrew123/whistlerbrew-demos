@@ -1,7 +1,14 @@
 {
-  "updated_at": "2026-08-22T10:00:33.630Z",
+  "updated_at": "2026-08-22T16:00:34.684Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Forestry giant behind idled B.C. mill received millions in government funding",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/domtar-mill-closures-b-c-provincial-funding-9.7316384?cmp=rss",
+        "description": "A day after Canada's largest forestry company announced plans to shutter a pulp and paper mill on British Columbia's Sunshine Coast, the community is still reeling.",
+        "pubDate": "Fri, 21 Aug 2026 21:00:28 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
         "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
@@ -12,6 +19,14 @@
     ],
     "kamloops": [
       {
+        "title": "Wildfires expose accessibility failures: advocates",
+        "link": "https://globalnews.ca/news/12031331/wildfires-expose-accessibility-failures-advocates/",
+        "description": "Janice Lyons was upstairs in her Summerland, B.C., home when there was a flash at her doorbell, which lights up in her Deaf household in place of a chime.",
+        "pubDate": "Sat, 22 Aug 2026 12:30:47 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/418d1cb4d2273a2e4a2a816651d8e06d162b1c07a41ba922616edf145431d433_f66fee.jpg?quality=65&#038;strip=all"
+      },
+      {
         "title": "Preschool fire safety lessons put to the test during Summerland evacuation",
         "link": "https://globalnews.ca/news/12031006/preschool-fire-safety-lessons-summerland-evacuation/",
         "description": "As Learning Cove Preschool prepares to welcome children back, staff say fire safety lessons taught in the classroom helped prepare students",
@@ -20,20 +35,20 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-21-154149.png"
       },
       {
+        "title": "Squamish Search and Rescue called out to look for missing woman",
+        "link": "https://globalnews.ca/news/12030495/squamish-search-and-rescue-look-missing-woman/",
+        "description": "Daine Hammann, 69, was last seen at approximately 11:15 a.m. on Aug. 20, when she headed out for a walk near Squamish Valley Road, north of the airport.",
+        "pubDate": "Fri, 21 Aug 2026 19:53:02 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Diane-Hammann.jpg?quality=65&#038;strip=all"
+      },
+      {
         "title": "More Summerland residents allowed home as Bald Range fire grows to 24,000 hectares",
         "link": "https://globalnews.ca/news/12030391/summerland-residents-allowed-home-bald-range-fire-grows/",
         "description": "The Regional District of Okanagan-Similkameen has downgraded an evacuation order to an alert for nearly the entire community except the Garnet Valley area.",
         "pubDate": "Fri, 21 Aug 2026 18:45:10 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-8.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "OPP renew call for help after remains of B.C. woman found in Ontario",
-        "link": "https://globalnews.ca/news/12029941/tammy-eileen-penner/",
-        "description": "Ontario Provincial Police are renewing calls for help in solving a 21-year-old case involving the remains of a British Columbia woman found in the province.",
-        "pubDate": "Fri, 21 Aug 2026 14:01:29 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/OPP-memorial-3.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Following fire, Summerland orchards race to save fruit from spoilage",
