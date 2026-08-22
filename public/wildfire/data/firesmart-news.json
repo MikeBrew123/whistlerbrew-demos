@@ -1,23 +1,7 @@
 {
-  "updated_at": "2026-08-22T16:00:34.684Z",
+  "updated_at": "2026-08-22T22:00:34.193Z",
   "zones": {
     "coastal": [
-      {
-        "title": "Forestry giant behind idled B.C. mill received millions in government funding",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/domtar-mill-closures-b-c-provincial-funding-9.7316384?cmp=rss",
-        "description": "A day after Canada's largest forestry company announced plans to shutter a pulp and paper mill on British Columbia's Sunshine Coast, the community is still reeling.",
-        "pubDate": "Fri, 21 Aug 2026 21:00:28 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
-        "description": "A herd of 13 goats spent Friday clambering to munch on a thicket of blackberry bushes and brambles near the Starlight Stadium in Langford – part of a pilot program to prune the city's flammable underbrush and raise awareness of fire safety tools.",
-        "pubDate": "Fri, 21 Aug 2026 20:23:20 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
       {
         "title": "Wildfires expose accessibility failures: advocates",
         "link": "https://globalnews.ca/news/12031331/wildfires-expose-accessibility-failures-advocates/",
@@ -35,26 +19,40 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-21-154149.png"
       },
       {
-        "title": "Squamish Search and Rescue called out to look for missing woman",
-        "link": "https://globalnews.ca/news/12030495/squamish-search-and-rescue-look-missing-woman/",
-        "description": "Daine Hammann, 69, was last seen at approximately 11:15 a.m. on Aug. 20, when she headed out for a walk near Squamish Valley Road, north of the airport.",
-        "pubDate": "Fri, 21 Aug 2026 19:53:02 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Diane-Hammann.jpg?quality=65&#038;strip=all"
+        "title": "Summerland wildfire evacuee says overhaul of emergency support services needed",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-wildfire-evacuee-emergency-support-overhaul-9.7316483?cmp=rss",
+        "description": "Dawne Young, a retired 911 dispatcher, said her evacuation experience was unsettling. Her neighbour's home was lost in the Bald Range wildfire. She said her family did not all receive the emergency alert, and she was met with lengthy delays trying to register as an evacuee.",
+        "pubDate": "Sat, 22 Aug 2026 10:00:00 EDT",
+        "source": "CBC BC"
       },
       {
-        "title": "More Summerland residents allowed home as Bald Range fire grows to 24,000 hectares",
-        "link": "https://globalnews.ca/news/12030391/summerland-residents-allowed-home-bald-range-fire-grows/",
-        "description": "The Regional District of Okanagan-Similkameen has downgraded an evacuation order to an alert for nearly the entire community except the Garnet Valley area.",
-        "pubDate": "Fri, 21 Aug 2026 18:45:10 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-8.jpg?quality=65&#038;strip=all"
+        "title": "Forestry giant behind idled B.C. mill received millions in government funding",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/domtar-mill-closures-b-c-provincial-funding-9.7316384?cmp=rss",
+        "description": "A day after Canada's largest forestry company announced plans to shutter a pulp and paper mill on British Columbia's Sunshine Coast, the community is still reeling.",
+        "pubDate": "Fri, 21 Aug 2026 21:00:28 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
+        "description": "A herd of 13 goats spent Friday clambering to munch on a thicket of blackberry bushes and brambles near the Starlight Stadium in Langford – part of a pilot program to prune the city's flammable underbrush and raise awareness of fire safety tools.",
+        "pubDate": "Fri, 21 Aug 2026 20:23:20 EDT",
+        "source": "CBC BC"
       },
       {
         "title": "Following fire, Summerland orchards race to save fruit from spoilage",
         "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-orchards-spoiled-harvests-9.7315116?cmp=rss",
         "description": "While Deep Brar’s property is physically undamaged by the flames, his business, Brarstar Orchards, has still incurred a significant cost — much of his fruit was left to rot on the trees during the evacuation.",
         "pubDate": "Fri, 21 Aug 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Fresh evacuations ordered south of Pear Lake wildfire in B.C. Interior",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/pear-lake-wildfire-new-evacuations-9.7317003?cmp=rss",
+        "description": "Officials have expanded evacuation orders related to British Columbia's largest wildfire.",
+        "pubDate": "Sat, 22 Aug 2026 15:37:36 EDT",
         "source": "CBC BC"
       }
     ],
