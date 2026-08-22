@@ -1,16 +1,24 @@
 {
-  "updated_at": "2026-08-21T22:00:33.680Z",
+  "updated_at": "2026-08-22T04:00:33.820Z",
   "zones": {
     "coastal": [
       {
-        "title": "Rubber meets the road for Lime e-bike share launch in Victoria",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lime-bike-victoria-9.7314520?cmp=rss",
-        "description": "Green arches have sprung up alongside streets in Victoria in recent weeks, as the city prepared to roll out a new e-bike share program. Starting Friday, the new bikes will hit the road – a fleet of green and white electric machines ready for riders.",
-        "pubDate": "Thu, 20 Aug 2026 18:17:57 EDT",
+        "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
+        "description": "A herd of 13 goats spent Friday clambering to munch on a thicket of blackberry bushes and brambles near the Starlight Stadium in Langford – part of a pilot program to prune the city's flammable underbrush and raise awareness of fire safety tools.",
+        "pubDate": "Fri, 21 Aug 2026 20:23:20 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
+      {
+        "title": "Preschool fire safety lessons put to the test during Summerland evacuation",
+        "link": "https://globalnews.ca/news/12031006/preschool-fire-safety-lessons-summerland-evacuation/",
+        "description": "As Learning Cove Preschool prepares to welcome children back, staff say fire safety lessons taught in the classroom helped prepare students",
+        "pubDate": "Sat, 22 Aug 2026 01:24:56 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-21-154149.png"
+      },
       {
         "title": "More Summerland residents allowed home as Bald Range fire grows to 24,000 hectares",
         "link": "https://globalnews.ca/news/12030391/summerland-residents-allowed-home-bald-range-fire-grows/",
@@ -26,17 +34,16 @@
         "pubDate": "Fri, 21 Aug 2026 14:01:29 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/OPP-memorial-3.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "prince-george": [
+      },
       {
-        "title": "'This is our place': Indigenous mural at centre of new Prince George housing project",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-mural-9.7313441?cmp=rss",
-        "description": "A new mural at a Prince George housing project reflects Carrier Sekani culture and the local landscape. Created with Indigenous youth, the work is meant to make the new multi-age building feel welcoming, culturally grounded and like home.",
-        "pubDate": "Thu, 20 Aug 2026 11:00:00 EDT",
+        "title": "Following fire, Summerland orchards race to save fruit from spoilage",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-orchards-spoiled-harvests-9.7315116?cmp=rss",
+        "description": "While Deep Brar’s property is physically undamaged by the flames, his business, Brarstar Orchards, has still incurred a significant cost — much of his fruit was left to rot on the trees during the evacuation.",
+        "pubDate": "Fri, 21 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
