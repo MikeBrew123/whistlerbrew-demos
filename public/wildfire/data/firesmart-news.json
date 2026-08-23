@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-08-23T16:00:34.866Z",
+  "updated_at": "2026-08-23T22:00:34.248Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Rare thunderstorm with lightning strikes wows southern B.C., causing havoc at Vancouver airport",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/southern-bc-thunderstorm-airport-9.7317454?cmp=rss",
+        "description": "A preliminary count from Environment Canada reported more than 1,800 incidences of lightning over the Lower Mainland on Saturday night and Sunday morning, while the B.C. Wildfire Service said it recorded more than 7,000 strikes provincewide.",
+        "pubDate": "Sun, 23 Aug 2026 12:17:45 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Forestry giant behind idled B.C. mill received millions in government funding",
         "link": "https://www.cbc.ca/news/canada/british-columbia/domtar-mill-closures-b-c-provincial-funding-9.7316384?cmp=rss",
         "description": "A day after Canada's largest forestry company announced plans to shutter a pulp and paper mill on British Columbia's Sunshine Coast, the community is still reeling.",
         "pubDate": "Fri, 21 Aug 2026 21:00:28 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
-        "description": "A herd of 13 goats spent Friday clambering to munch on a thicket of blackberry bushes and brambles near the Starlight Stadium in Langford – part of a pilot program to prune the city's flammable underbrush and raise awareness of fire safety tools.",
-        "pubDate": "Fri, 21 Aug 2026 20:23:20 EDT",
         "source": "CBC BC"
       }
     ],
@@ -63,7 +63,15 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Tourism providers on north Vancouver Island say ferry cancellations disrupting peak travel season",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-ferries-port-hardy-bella-coola-cancelled-9.7314725?cmp=rss",
+        "description": "Tourism providers on north Vancouver Island say B.C. Ferries cancellations between Port Hardy and Bella Coola are a huge disruption for travellers who have planned trips months in advance — despite an alternative service being provided.",
+        "pubDate": "Fri, 21 Aug 2026 19:01:15 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [
       {
         "title": "Pear Lake wildfire sparks new evacuations, severe thunderstorm alerts issued around B.C.",
@@ -76,6 +84,14 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "B.C. storm causes new wildfires, airport delays after more than 7K lightning strikes",
+        "link": "https://globalnews.ca/news/12032182/bc-thunderstorm-lightning-wildfires/",
+        "description": "After a fierce storm caused havoc in B.C. overnight Saturday, officials warn the hot, dry and windy conditions in the forecast could increase the potential for wildfire activity.",
+        "pubDate": "Sun, 23 Aug 2026 21:30:41 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/vancouver-lightning.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "'Super' El Niño didn't cause this year's fires and heat waves, but it's about to take us on a 'wild ride'",
         "link": "https://www.cbc.ca/news/climate/el-nino-2026-extreme-weather-9.7313170?cmp=rss",
