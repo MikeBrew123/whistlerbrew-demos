@@ -1,7 +1,16 @@
 {
-  "updated_at": "2026-08-22T22:00:34.193Z",
+  "updated_at": "2026-08-23T04:00:34.003Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
+        "description": "A herd of 13 goats spent Friday clambering to munch on a thicket of blackberry bushes and brambles near the Starlight Stadium in Langford – part of a pilot program to prune the city's flammable underbrush and raise awareness of fire safety tools.",
+        "pubDate": "Fri, 21 Aug 2026 20:23:20 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
       {
         "title": "Wildfires expose accessibility failures: advocates",
         "link": "https://globalnews.ca/news/12031331/wildfires-expose-accessibility-failures-advocates/",
@@ -19,6 +28,20 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-21-154149.png"
       },
       {
+        "title": "Summerland family feels 'violated' after burglary during wildfire evacuation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-evacuation-robbery-summerland-9.7317262?cmp=rss",
+        "description": "Mira Boucher says her home was ransacked by looters while her community of Summerland was empty and vulnerable — with every single house vacant under an evacuation order.",
+        "pubDate": "Sat, 22 Aug 2026 22:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Pear Lake wildfire sparks new evacuations, crews battle new fire near Kamloops",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/pear-lake-wildfire-new-evacuations-9.7317003?cmp=rss",
+        "description": "Officials have expanded evacuation orders related to British Columbia's largest wildfire.",
+        "pubDate": "Sat, 22 Aug 2026 15:37:36 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "Summerland wildfire evacuee says overhaul of emergency support services needed",
         "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-wildfire-evacuee-emergency-support-overhaul-9.7316483?cmp=rss",
         "description": "Dawne Young, a retired 911 dispatcher, said her evacuation experience was unsettling. Her neighbour's home was lost in the Bald Range wildfire. She said her family did not all receive the emergency alert, and she was met with lengthy delays trying to register as an evacuee.",
@@ -26,17 +49,10 @@
         "source": "CBC BC"
       },
       {
-        "title": "Forestry giant behind idled B.C. mill received millions in government funding",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/domtar-mill-closures-b-c-provincial-funding-9.7316384?cmp=rss",
-        "description": "A day after Canada's largest forestry company announced plans to shutter a pulp and paper mill on British Columbia's Sunshine Coast, the community is still reeling.",
-        "pubDate": "Fri, 21 Aug 2026 21:00:28 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
-        "description": "A herd of 13 goats spent Friday clambering to munch on a thicket of blackberry bushes and brambles near the Starlight Stadium in Langford – part of a pilot program to prune the city's flammable underbrush and raise awareness of fire safety tools.",
-        "pubDate": "Fri, 21 Aug 2026 20:23:20 EDT",
+        "title": "Crops sacrificed, losses mount for B.C.  farmers grappling with historic drought",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-southern-interior-drought-9.7314914?cmp=rss",
+        "description": "Severe drought in the southern Interior is causing some irrigation systems to virtually run dry.",
+        "pubDate": "Sat, 22 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       },
       {
@@ -44,15 +60,6 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-orchards-spoiled-harvests-9.7315116?cmp=rss",
         "description": "While Deep Brar’s property is physically undamaged by the flames, his business, Brarstar Orchards, has still incurred a significant cost — much of his fruit was left to rot on the trees during the evacuation.",
         "pubDate": "Fri, 21 Aug 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
-      {
-        "title": "Fresh evacuations ordered south of Pear Lake wildfire in B.C. Interior",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/pear-lake-wildfire-new-evacuations-9.7317003?cmp=rss",
-        "description": "Officials have expanded evacuation orders related to British Columbia's largest wildfire.",
-        "pubDate": "Sat, 22 Aug 2026 15:37:36 EDT",
         "source": "CBC BC"
       }
     ],
