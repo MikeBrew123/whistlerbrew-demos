@@ -1,12 +1,26 @@
 {
-  "updated_at": "2026-08-23T04:00:34.003Z",
+  "updated_at": "2026-08-23T10:00:34.533Z",
   "zones": {
     "coastal": [
       {
-        "title": "Langford tries new tool for mitigating wildfires: a herd of goats",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/langford-goat-wildfires-9.7316220?cmp=rss",
-        "description": "A herd of 13 goats spent Friday clambering to munch on a thicket of blackberry bushes and brambles near the Starlight Stadium in Langford – part of a pilot program to prune the city's flammable underbrush and raise awareness of fire safety tools.",
-        "pubDate": "Fri, 21 Aug 2026 20:23:20 EDT",
+        "title": "Pear Lake wildfire sparks new evacuations, severe thunderstorm alerts issued around B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/pear-lake-wildfire-new-evacuations-9.7317003?cmp=rss",
+        "description": "Officials have expanded evacuation orders related to British Columbia's largest wildfire.",
+        "pubDate": "Sat, 22 Aug 2026 15:37:36 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Forestry giant behind idled B.C. mill received millions in government funding",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/domtar-mill-closures-b-c-provincial-funding-9.7316384?cmp=rss",
+        "description": "A day after Canada's largest forestry company announced plans to shutter a pulp and paper mill on British Columbia's Sunshine Coast, the community is still reeling.",
+        "pubDate": "Fri, 21 Aug 2026 21:00:28 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "'Nothing short of a disaster': Swim club stunned by news of another Vancouver pool closure",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/swim-club-vancouver-britannia-pool-closure-9.7316100?cmp=rss",
+        "description": "After losing access to the Vancouver Aquatic Centre, the Canadian Dolphins swim club is having to scramble once again to accommodate its 240 members after learning that the city is closing Britannia Swimming Pool for 10 months.",
+        "pubDate": "Fri, 21 Aug 2026 19:31:27 EDT",
         "source": "CBC BC"
       }
     ],
@@ -18,6 +32,14 @@
         "pubDate": "Sat, 22 Aug 2026 12:30:47 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/418d1cb4d2273a2e4a2a816651d8e06d162b1c07a41ba922616edf145431d433_f66fee.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C.&#8217;s Sikh community on edge after Edmonton attack, but urge people not to panic",
+        "link": "https://globalnews.ca/news/12031001/bc-sikh-community-edge-edmonton-attack-urge-people-not-to-panic/",
+        "description": "Two patrons intervened and were stabbed during the confrontation; luckily, the victims suffered only non-life-threatening injuries.",
+        "pubDate": "Sat, 22 Aug 2026 02:10:22 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Temple-2.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "Preschool fire safety lessons put to the test during Summerland evacuation",
@@ -32,13 +54,6 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-evacuation-robbery-summerland-9.7317262?cmp=rss",
         "description": "Mira Boucher says her home was ransacked by looters while her community of Summerland was empty and vulnerable — with every single house vacant under an evacuation order.",
         "pubDate": "Sat, 22 Aug 2026 22:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Pear Lake wildfire sparks new evacuations, crews battle new fire near Kamloops",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/pear-lake-wildfire-new-evacuations-9.7317003?cmp=rss",
-        "description": "Officials have expanded evacuation orders related to British Columbia's largest wildfire.",
-        "pubDate": "Sat, 22 Aug 2026 15:37:36 EDT",
         "source": "CBC BC"
       },
       {
@@ -67,6 +82,14 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "'Super' El Niño didn't cause this year's fires and heat waves, but it's about to take us on a 'wild ride'",
+        "link": "https://www.cbc.ca/news/climate/el-nino-2026-extreme-weather-9.7313170?cmp=rss",
+        "description": "Whether you call it a \"super\" El Niño or a \"Godzilla\" El Niño, the naturally occurring Pacific Ocean warming phenomenon that disrupts global weather patterns is back and packing a punch, at a time when many parts of the planet are already overheated.",
+        "pubDate": "Sun, 23 Aug 2026 04:00:17 EDT",
+        "source": "CBC BC"
+      }
+    ]
   }
 }
