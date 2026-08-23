@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-23T03:45:47.361Z",
-  "next_update": "2026-08-23T04:00:47.361Z",
+  "updated_at": "2026-08-23T04:00:16.026Z",
+  "next_update": "2026-08-23T10:00:16.026Z",
   "season_year": 2026,
   "bc_totals": {
     "active": 124,
@@ -21,7 +21,14 @@
       "fires_of_note": 1,
       "zone_summary": "",
       "fires_of_note_list": [],
-      "zone_news": [],
+      "zone_news": [
+        {
+          "title": "Pear Lake wildfire sparks new evacuations, crews battle new fire near Kamloops",
+          "url": "https://www.cbc.ca/news/canada/british-columbia/pear-lake-wildfire-new-evacuations-9.7317003?cmp=rss",
+          "source": "CBC",
+          "published": "2026-08-22T19:37:36.000Z"
+        }
+      ],
       "zone_road_closures": [],
       "zone_evac_notices": []
     },
