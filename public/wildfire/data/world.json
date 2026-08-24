@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-23T04:01:28.676Z",
+  "updated_at": "2026-08-24T10:01:17.618Z",
   "fires": [
     {
       "country": "Belgium",
@@ -193,23 +193,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 1,
-      "world": 0
-    },
-    "items_out": {
-      "canada": 1,
-      "world_fires": 25
-    },
-    "deduped": 0,
-    "rerouted": 0,
-    "notes": [
-      "All existing fires retained as Active status",
-      "Canada news article about B.C. wildfire smoke and N95 masks retained",
-      "No new world fire articles provided for deduplication",
-      "All images preserved from source data",
-      "Rio Olympic Velodrome fire retained despite structural fire (wildfire-related coverage context)",
-      "Chiang Mai entry retained as fire season pollution impact story"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. storm causes new wildfires, airport delays after more than 7K lightning strikes\",\n      \"url\": \"https://globalnews.ca/news/12032182/bc-thunderst"
   }
 }
