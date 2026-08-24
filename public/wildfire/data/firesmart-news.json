@@ -1,12 +1,26 @@
 {
-  "updated_at": "2026-08-24T10:00:42.990Z",
+  "updated_at": "2026-08-24T16:00:35.369Z",
   "zones": {
     "coastal": [
       {
-        "title": "Forestry giant behind idled B.C. mill received millions in government funding",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/domtar-mill-closures-b-c-provincial-funding-9.7316384?cmp=rss",
-        "description": "A day after Canada's largest forestry company announced plans to shutter a pulp and paper mill on British Columbia's Sunshine Coast, the community is still reeling.",
-        "pubDate": "Fri, 21 Aug 2026 21:00:28 EDT",
+        "title": "Evacuation alert issued for wildfire burning near Lions Bay, B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/lions-bay-wildfire-evacuation-alert-9.7317679?cmp=rss",
+        "description": "A wildfire has prompted an evacuation alert for about 30 properties in a community just north of Vancouver.",
+        "pubDate": "Mon, 24 Aug 2026 09:19:14 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Rare thunderstorm with lightning strikes wows southern B.C., causing havoc at Vancouver airport",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/southern-bc-thunderstorm-airport-9.7317454?cmp=rss",
+        "description": "A preliminary count from Environment Canada reported more than 1,800 incidences of lightning over the Lower Mainland on Saturday night and Sunday morning, while the B.C. Wildfire Service said it recorded more than 7,000 strikes provincewide.",
+        "pubDate": "Sun, 23 Aug 2026 12:17:45 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "B.C. Conservative MLA for Abbotsford-Mission to step down, paving way for new leader to seek election",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/reann-gasper-step-down-mla-9.7317261?cmp=rss",
+        "description": "The B.C. Conservative MLA for Abbotsford-Mission has announced she will be stepping down, and Conservative Leader Kerry-Lynne Findlay plans to seek the vacant seat.",
+        "pubDate": "Sat, 22 Aug 2026 20:14:09 EDT",
         "source": "CBC BC"
       }
     ],
@@ -28,6 +42,13 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-21-154149.png"
       },
       {
+        "title": "Summerland residents gather for first Sunday market since wildfire evacuation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-first-market-evacuation-9.7318107?cmp=rss",
+        "description": "For the first time since the Bald Range wildfire forced the evacuation of around 20,000 Summerland, B.C., properties earlier this month, residents gathered for the weekly community market.",
+        "pubDate": "Mon, 24 Aug 2026 10:33:19 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "Summerland family feels 'violated' after burglary during wildfire evacuation",
         "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-evacuation-robbery-summerland-9.7317262?cmp=rss",
         "description": "Mira Boucher says her home was ransacked by looters while her community of Summerland was empty and vulnerable — with every single house vacant under an evacuation order.",
@@ -40,27 +61,20 @@
         "description": "Dawne Young, a retired 911 dispatcher, said her evacuation experience was unsettling. Her neighbour's home was lost in the Bald Range wildfire. She said her family did not all receive the emergency alert, and she was met with lengthy delays trying to register as an evacuee.",
         "pubDate": "Sat, 22 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "prince-george": [
       {
-        "title": "Crops sacrificed, losses mount for B.C.  farmers grappling with historic drought",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-southern-interior-drought-9.7314914?cmp=rss",
-        "description": "Severe drought in the southern Interior is causing some irrigation systems to virtually run dry.",
-        "pubDate": "Sat, 22 Aug 2026 08:00:00 EDT",
+        "title": "Food-conditioned bear killed in Fort Nelson, as resident launches community safety petition",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/food-conditioned-bears-killed-fort-nelson-9.7314756?cmp=rss",
+        "description": "The B.C. Conservation Officer Service says a black bear in Fort Nelson, B.C., was killed on Aug. 19 after several reports of the bear going door-to-door knocking over garbage bins.",
+        "pubDate": "Mon, 24 Aug 2026 07:00:00 EDT",
         "source": "CBC BC"
       }
     ],
-    "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Pear Lake wildfire sparks new evacuations, severe thunderstorm alerts issued around B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/pear-lake-wildfire-new-evacuations-9.7317003?cmp=rss",
-        "description": "Officials have expanded evacuation orders related to British Columbia's largest wildfire.",
-        "pubDate": "Sat, 22 Aug 2026 15:37:36 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
@@ -70,19 +84,19 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "Global wildland fire conference announced for Melbourne 2028",
+        "link": "https://wildfiretoday.com/global-wildland-fire-conference-announced-for-melbourne-2028/",
+        "description": "The largest international wildland fire conference is heading back to Australia in 2028. The 9th International Wildland Fire Conference will be held in Melbourne, Australia, from 4-7 April 2028 under the theme of “Fire Knowledge, shared across the world”. The once in every four years event was announced this week at the opening of the [&#8230;]",
+        "pubDate": "Wed, 19 Aug 2026 23:36:16 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "B.C. storm causes new wildfires, airport delays after more than 7K lightning strikes",
         "link": "https://globalnews.ca/news/12032182/bc-thunderstorm-lightning-wildfires/",
         "description": "After a fierce storm caused havoc in B.C. overnight Saturday, officials warn the hot, dry and windy conditions in the forecast could increase the potential for wildfire activity.",
         "pubDate": "Sun, 23 Aug 2026 21:30:41 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/vancouver-lightning.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Rare thunderstorm with lightning strikes wows southern B.C., causing havoc at Vancouver airport",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/southern-bc-thunderstorm-airport-9.7317454?cmp=rss",
-        "description": "A preliminary count from Environment Canada reported more than 1,800 incidences of lightning over the Lower Mainland on Saturday night and Sunday morning, while the B.C. Wildfire Service said it recorded more than 7,000 strikes provincewide.",
-        "pubDate": "Sun, 23 Aug 2026 12:17:45 EDT",
-        "source": "CBC BC"
       },
       {
         "title": "'Super' El Niño didn't cause this year's fires and heat waves, but it's about to take us on a 'wild ride'",
