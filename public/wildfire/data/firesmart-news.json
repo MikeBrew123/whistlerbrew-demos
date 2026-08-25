@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25T10:00:35.259Z",
+  "updated_at": "2026-08-25T16:00:33.509Z",
   "zones": {
     "coastal": [
       {
@@ -18,26 +18,19 @@
         "source": "CBC BC"
       },
       {
-        "title": "Evacuation alert rescinded for wildfire burning near Lions Bay, B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lions-bay-wildfire-evacuation-alert-9.7317679?cmp=rss",
-        "description": "A wildfire-related evacuation alert for about 30 properties in a community just north of Vancouver has been rescinded after it was issued on Monday.",
-        "pubDate": "Mon, 24 Aug 2026 09:19:14 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Renowned queer lawyer, activist barbara findlay dead at 77",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/barbara-findlay-lawyer-lgbtqia-advocate-mourned-9.7317710?cmp=rss",
-        "description": "Lesbian lawyer and activist barbara findlay died this weekend at the age of 77. B.C.'s 2SLGBTQ+ community is mourning her loss.",
-        "pubDate": "Sun, 23 Aug 2026 22:50:37 EDT",
+        "title": "Carney says he'll resume negotiating when Trump team has the 'right attitude'",
+        "link": "https://www.cbc.ca/news/politics/carney-responds-to-trumps-latest-tariffs-9.7318702?cmp=rss",
+        "description": "Prime Minister Mark Carney says he's prepared to send his negotiators back to the table with the Trump administration when the U.S. demonstrates it wants a true economic partnership and stops treating Canada as a \"subsidiary.\"",
+        "pubDate": "Mon, 24 Aug 2026 16:06:17 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
       {
-        "title": "Summerland residents gather for first Sunday market since wildfire evacuation",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-first-market-evacuation-9.7318107?cmp=rss",
-        "description": "For the first time since the Bald Range wildfire forced the evacuation of around 20,000 Summerland, B.C., properties earlier this month, residents gathered for the weekly community market.",
-        "pubDate": "Mon, 24 Aug 2026 10:33:19 EDT",
+        "title": "After decades-long ban, Central Saanich farmers welcome return of potato",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/central-saanich-potato-farming-returns-decades-ban-9.7316745?cmp=rss",
+        "description": "Potato farming was banned in Central Saanich decades ago in response to a devastating pest. However, the Canadian Food Inspection Agency lifted the complete ban in December. Farmers in the area are now harvesting their first potato crop since the 1980s.",
+        "pubDate": "Mon, 24 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       }
     ],
