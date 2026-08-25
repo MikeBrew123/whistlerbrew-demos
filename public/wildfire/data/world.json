@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24T10:01:17.618Z",
+  "updated_at": "2026-08-25T04:01:17.551Z",
   "fires": [
     {
       "country": "Belgium",
@@ -194,6 +194,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. storm causes new wildfires, airport delays after more than 7K lightning strikes\",\n      \"url\": \"https://globalnews.ca/news/12032182/bc-thunderst"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists\",\n      \"url\": \"https://globalnews.ca/news/12023424/b-c-offering-free-n95-m"
   }
 }
