@@ -1,39 +1,16 @@
 {
-  "updated_at": "2026-08-25T16:00:33.509Z",
+  "updated_at": "2026-08-25T22:00:33.975Z",
   "zones": {
     "coastal": [
       {
-        "title": "Lions Bay evacuation alert rescinded, Lone Tree Creek wildfire now being held",
-        "link": "https://globalnews.ca/news/12033087/lions-bay-evacuation-alert-rescinded-wildfire-being-held/",
-        "description": "The Lone Tree Creek wildfire was spotted on Sunday afternoon, burning above Lions Bay in an area that was hard for firefighters to reach.",
-        "pubDate": "Mon, 24 Aug 2026 19:05:40 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/lions-bay-fire.png"
-      },
-      {
-        "title": "Wildfires surge as B.C. records 11,000 lightning strikes, but rain helps in battle",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfires-surge-as-b-c-records-11-000-lightning-strikes-but-rain-helps-in-battle-9.7318898?cmp=rss",
-        "description": "Lightning sparked new wildfires over the weekend and is the suspected cause of a wildfire that ignited in the Village of Lions Bay, located between Vancouver and Whistler.",
-        "pubDate": "Mon, 24 Aug 2026 17:45:34 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Carney says he'll resume negotiating when Trump team has the 'right attitude'",
-        "link": "https://www.cbc.ca/news/politics/carney-responds-to-trumps-latest-tariffs-9.7318702?cmp=rss",
-        "description": "Prime Minister Mark Carney says he's prepared to send his negotiators back to the table with the Trump administration when the U.S. demonstrates it wants a true economic partnership and stops treating Canada as a \"subsidiary.\"",
-        "pubDate": "Mon, 24 Aug 2026 16:06:17 EDT",
+        "title": "Victim of Prince George plane crash identified as devoted coach, volunteer and mother of 2",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/alex-garneau-killed-plane-prince-george-9.7318940?cmp=rss",
+        "description": "Alex Garneau was an athlete, coach and volunteer involved in many sports throughout Prince George, B.C.. The mother of two was killed when a plane made an emergency landing on a busy road, hitting her vehicle and three others. The investigation is ongoing.",
+        "pubDate": "Mon, 24 Aug 2026 19:16:04 EDT",
         "source": "CBC BC"
       }
     ],
-    "kamloops": [
-      {
-        "title": "After decades-long ban, Central Saanich farmers welcome return of potato",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/central-saanich-potato-farming-returns-decades-ban-9.7316745?cmp=rss",
-        "description": "Potato farming was banned in Central Saanich decades ago in response to a devastating pest. However, the Canadian Food Inspection Agency lifted the complete ban in December. Farmers in the area are now harvesting their first potato crop since the 1980s.",
-        "pubDate": "Mon, 24 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -45,6 +22,13 @@
         "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
         "pubDate": "Mon, 24 Aug 2026 07:48:45 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
+        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
+        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
+        "source": "CBC BC"
       }
     ]
   }
