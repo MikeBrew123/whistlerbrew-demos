@@ -1,17 +1,41 @@
 {
-  "updated_at": "2026-08-25T22:00:33.975Z",
+  "updated_at": "2026-08-26T04:00:34.034Z",
   "zones": {
     "coastal": [
       {
-        "title": "Victim of Prince George plane crash identified as devoted coach, volunteer and mother of 2",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/alex-garneau-killed-plane-prince-george-9.7318940?cmp=rss",
-        "description": "Alex Garneau was an athlete, coach and volunteer involved in many sports throughout Prince George, B.C.. The mother of two was killed when a plane made an emergency landing on a busy road, hitting her vehicle and three others. The investigation is ongoing.",
-        "pubDate": "Mon, 24 Aug 2026 19:16:04 EDT",
+        "title": "B.C. cat found on dock after Bradley Creek wildfire, burned and alone",
+        "link": "https://globalnews.ca/news/12035163/bc-cat-found-dock-bradley-creek-wildfire/",
+        "description": "The Bradley Creek wildfire had ripped through the area, and Erickson had been helping his neighbours survey the damage from a boat when he saw her.",
+        "pubDate": "Wed, 26 Aug 2026 01:25:18 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/unnamed_242d1e.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Work begins to rebuild Port Coquitlam school destroyed by suspicious fire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/hazel-trembath-rebuild-begins-9.7319503?cmp=rss",
+        "description": "Nearly three years after Port Coquitlam's Hazel Trembath Elementary School was destroyed in a suspicious fire, work is beginning on its replacement.",
+        "pubDate": "Tue, 25 Aug 2026 11:17:14 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Support pours in for mother of 2 killed in Prince George plane crash",
+        "link": "https://globalnews.ca/news/12034866/support-mother-wife-killed-prince-george-plane-crash/",
+        "description": "Alex Garneau was in a vehicle that was hit by a twin-engine aircraft that was forced to make an emergency landing on Foothills Boulevard on Thursday.",
+        "pubDate": "Tue, 25 Aug 2026 20:57:43 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/alex-garneau.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "New hatcheries will see up to 1 million more salmon raised and released into Fraser and Skeena Rivers annually",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-hatcheries-prince-george-williams-lake-gitanyow-9.7320530?cmp=rss",
+        "description": "\"Salmon are not simply a resource,\" Lheidli T'enneh Chief Dolleen Logan said at the announcement held in Prince George Tuesday. \"Salmon are relatives. They are a part of our culture, our identity, our laws, our responsibilities.\"",
+        "pubDate": "Tue, 25 Aug 2026 22:52:30 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
