@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T04:00:34.034Z",
+  "updated_at": "2026-08-26T10:00:33.645Z",
   "zones": {
     "coastal": [
       {
@@ -9,16 +9,17 @@
         "pubDate": "Wed, 26 Aug 2026 01:25:18 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/unnamed_242d1e.jpg?quality=65&#038;strip=all"
-      },
+      }
+    ],
+    "kamloops": [
       {
-        "title": "Work begins to rebuild Port Coquitlam school destroyed by suspicious fire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/hazel-trembath-rebuild-begins-9.7319503?cmp=rss",
-        "description": "Nearly three years after Port Coquitlam's Hazel Trembath Elementary School was destroyed in a suspicious fire, work is beginning on its replacement.",
-        "pubDate": "Tue, 25 Aug 2026 11:17:14 EDT",
+        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
+        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
+        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
         "source": "CBC BC"
       }
     ],
-    "kamloops": [],
     "prince-george": [
       {
         "title": "Support pours in for mother of 2 killed in Prince George plane crash",
@@ -41,6 +42,13 @@
     "southeast": [],
     "all": [
       {
+        "title": "Wildland firefighters warned not to take supplements for smoke or PFAS exposure",
+        "link": "https://wildfiretoday.com/wildland-firefighters-warned-not-to-take-supplements-for-smoke-or-pfas-exposure/",
+        "description": "A drug marketed to wildland firefighters exposed to smoke or PFAS shows no evidence of being effective, leading the International Association of Firefighters and the Food and Drug Administration to warn against its use. The drug, called glutathione, is marketed to fire fighters to remove toxins, but the IAFF says there are no scientific studies [&#8230;]",
+        "pubDate": "Wed, 26 Aug 2026 04:56:59 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
         "link": "https://wildfiretoday.com/studying-combined-fuel-treatments-gives-us-a-better-picture-of-effectiveness/",
         "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
@@ -48,11 +56,18 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
-        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
-        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
-        "source": "CBC BC"
+        "title": "Global wildland fire conference announced for Melbourne 2028",
+        "link": "https://wildfiretoday.com/global-wildland-fire-conference-announced-for-melbourne-2028/",
+        "description": "The largest international wildland fire conference is heading back to Australia in 2028. The 9th International Wildland Fire Conference will be held in Melbourne, Australia, from 4-7 April 2028 under the theme of “Fire Knowledge, shared across the world”. The once in every four years event was announced this week at the opening of the [&#8230;]",
+        "pubDate": "Wed, 19 Aug 2026 23:36:16 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Roadless Rule ‘entirely’ removed under new USDA proposal",
+        "link": "https://wildfiretoday.com/roadless-rule-entirely-thrown-out-under-new-trump-administration-proposal/",
+        "description": "The United States Department of Agriculture on Tuesday formally began the process of rescinding the&#160;Roadless Area Conservation Rule, opening&#160;the nation&#8217;s protected forests to new development, road construction, and intensive logging. Agriculture Secretary Brooke Rollins attributed the move to wildfire risk reduction, saying the rule has acted as a barrier to it. Public comment on t",
+        "pubDate": "Tue, 18 Aug 2026 18:22:24 +0000",
+        "source": "Wildfire Today"
       }
     ]
   }
