@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T10:00:33.645Z",
+  "updated_at": "2026-08-26T16:00:33.893Z",
   "zones": {
     "coastal": [
       {
@@ -9,6 +9,13 @@
         "pubDate": "Wed, 26 Aug 2026 01:25:18 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/unnamed_242d1e.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Work begins to rebuild Port Coquitlam school destroyed by suspicious fire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/hazel-trembath-rebuild-begins-9.7319503?cmp=rss",
+        "description": "Nearly three years after Port Coquitlam's Hazel Trembath Elementary School was destroyed in a suspicious fire, work is beginning on its replacement.",
+        "pubDate": "Tue, 25 Aug 2026 11:17:14 EDT",
+        "source": "CBC BC"
       }
     ],
     "kamloops": [
@@ -34,6 +41,20 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-hatcheries-prince-george-williams-lake-gitanyow-9.7320530?cmp=rss",
         "description": "\"Salmon are not simply a resource,\" Lheidli T'enneh Chief Dolleen Logan said at the announcement held in Prince George Tuesday. \"Salmon are relatives. They are a part of our culture, our identity, our laws, our responsibilities.\"",
         "pubDate": "Tue, 25 Aug 2026 22:52:30 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Rosalyn Bird is latest MLA to leave Kerry-Lynne Findlay's B.C. Conservatives",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/another-b-c-conservative-mla-leaves-amid-frustrations-with-kerry-lynne-findlays-leadership-9.7320107?cmp=rss",
+        "description": "Rosalyn Bird, the MLA for Prince George-Valemount, is the latest MLA to leave the B.C. Conservative caucus. It comes on the heels of the departures of Ian Paton and Peter Milobar, who say they plan to set up a new political party.",
+        "pubDate": "Tue, 25 Aug 2026 16:06:37 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Dolly Parton's 'Jolene' may be named after British Columbia nurse",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/dolly-parton-s-jolene-may-be-named-after-british-columbia-nurse-1.3734082?cmp=rss",
+        "description": "A Prince George woman believes she may be the inspiration for the name in Dolly Parton's song Jolene. Juline Whelan met the singer in 1972 and matches the description of the little girl Parton says inspired the name behind the famous tune.",
+        "pubDate": "Tue, 25 Aug 2026 16:10:31 EDT",
         "source": "CBC BC"
       }
     ],
