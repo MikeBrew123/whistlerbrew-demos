@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T16:00:33.893Z",
+  "updated_at": "2026-08-26T22:00:34.451Z",
   "zones": {
     "coastal": [
       {
@@ -9,33 +9,18 @@
         "pubDate": "Wed, 26 Aug 2026 01:25:18 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/unnamed_242d1e.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Work begins to rebuild Port Coquitlam school destroyed by suspicious fire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/hazel-trembath-rebuild-begins-9.7319503?cmp=rss",
-        "description": "Nearly three years after Port Coquitlam's Hazel Trembath Elementary School was destroyed in a suspicious fire, work is beginning on its replacement.",
-        "pubDate": "Tue, 25 Aug 2026 11:17:14 EDT",
-        "source": "CBC BC"
       }
     ],
     "kamloops": [
       {
-        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
-        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
-        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
+        "title": "Loblaw backtracks on dropping country-of-origin produce labels after customer backlash",
+        "link": "https://www.cbc.ca/news/investigates/loblaw-produce-origin-9.7320028?cmp=rss",
+        "description": "Loblaw has reversed course on its decision earlier this month to drop country-of-origin labeling on produce signs in its stores in most provinces, following customer backlash.",
+        "pubDate": "Tue, 25 Aug 2026 15:37:26 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [
-      {
-        "title": "Support pours in for mother of 2 killed in Prince George plane crash",
-        "link": "https://globalnews.ca/news/12034866/support-mother-wife-killed-prince-george-plane-crash/",
-        "description": "Alex Garneau was in a vehicle that was hit by a twin-engine aircraft that was forced to make an emergency landing on Foothills Boulevard on Thursday.",
-        "pubDate": "Tue, 25 Aug 2026 20:57:43 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/alex-garneau.jpg?quality=65&#038;strip=all"
-      },
       {
         "title": "New hatcheries will see up to 1 million more salmon raised and released into Fraser and Skeena Rivers annually",
         "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-hatcheries-prince-george-williams-lake-gitanyow-9.7320530?cmp=rss",
@@ -48,13 +33,6 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/another-b-c-conservative-mla-leaves-amid-frustrations-with-kerry-lynne-findlays-leadership-9.7320107?cmp=rss",
         "description": "Rosalyn Bird, the MLA for Prince George-Valemount, is the latest MLA to leave the B.C. Conservative caucus. It comes on the heels of the departures of Ian Paton and Peter Milobar, who say they plan to set up a new political party.",
         "pubDate": "Tue, 25 Aug 2026 16:06:37 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Dolly Parton's 'Jolene' may be named after British Columbia nurse",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/dolly-parton-s-jolene-may-be-named-after-british-columbia-nurse-1.3734082?cmp=rss",
-        "description": "A Prince George woman believes she may be the inspiration for the name in Dolly Parton's song Jolene. Juline Whelan met the singer in 1972 and matches the description of the little girl Parton says inspired the name behind the famous tune.",
-        "pubDate": "Tue, 25 Aug 2026 16:10:31 EDT",
         "source": "CBC BC"
       }
     ],
