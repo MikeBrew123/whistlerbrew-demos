@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-08-27T10:00:33.890Z",
+  "updated_at": "2026-08-27T16:00:33.919Z",
   "zones": {
     "coastal": [
       {
-        "title": "After nearly 2-month-long closure, Highway 1 through Fraser Canyon partially reopens",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-fraser-canyon-reopens-9.7322262?cmp=rss",
-        "description": "Following an almost two-month-long closure due to wildfires, Highway 1 has reopened to limited travel through the Fraser Canyon area, according to the B.C. Ministry of Transportation.",
-        "pubDate": "Wed, 26 Aug 2026 23:40:41 EDT",
+        "title": "Pre-sale purchasers in troubled Lower Mainland condo tower win battle to declare contracts invalid",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/eclipse-thind-presale-contract-court-9.7321471?cmp=rss",
+        "description": "A B.C. judge has sided with dozens of pre-sale purchasers who claim the developer of a troubled Lower Mainland condo tower breached provincial consumer protection laws by failing to update them on the headwinds facing the development in the months before the project wound up in creditor protection proceedings.",
+        "pubDate": "Wed, 26 Aug 2026 16:59:46 EDT",
         "source": "CBC BC"
       }
     ],
@@ -17,20 +17,6 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-hatcheries-prince-george-williams-lake-gitanyow-9.7320530?cmp=rss",
         "description": "\"Salmon are not simply a resource,\" Lheidli T'enneh Chief Dolleen Logan said at the announcement held in Prince George Tuesday. \"Salmon are relatives. They are a part of our culture, our identity, our laws, our responsibilities.\"",
         "pubDate": "Tue, 25 Aug 2026 22:52:30 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Rosalyn Bird leaves Kerry-Lynne Findlay's B.C. Conservatives",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/another-b-c-conservative-mla-leaves-amid-frustrations-with-kerry-lynne-findlays-leadership-9.7320107?cmp=rss",
-        "description": "Rosalyn Bird, the MLA for Prince George-Valemount, is the latest MLA to leave the B.C. Conservative caucus. It comes on the heels of the departures of Ian Paton and Peter Milobar, who say they plan to set up a new political party.",
-        "pubDate": "Tue, 25 Aug 2026 16:06:37 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Dolly Parton's 'Jolene' may be named after British Columbia nurse",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/dolly-parton-s-jolene-may-be-named-after-british-columbia-nurse-1.3734082?cmp=rss",
-        "description": "A Prince George woman believes she may be the inspiration for the name in Dolly Parton's song Jolene. Juline Whelan met the singer in 1972 and matches the description of the little girl Parton says inspired the name behind the famous tune.",
-        "pubDate": "Tue, 25 Aug 2026 16:10:31 EDT",
         "source": "CBC BC"
       }
     ],
@@ -55,13 +41,6 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Wildland firefighters warned not to take supplements for smoke or PFAS exposure",
-        "link": "https://wildfiretoday.com/wildland-firefighters-warned-not-to-take-supplements-for-smoke-or-pfas-exposure/",
-        "description": "A drug marketed to wildland firefighters exposed to smoke or PFAS shows no evidence of being effective, leading the International Association of Firefighters and the Food and Drug Administration to warn against its use. The drug, called glutathione, is marketed to fire fighters to remove toxins, but the IAFF says there are no scientific studies [&#8230;]",
-        "pubDate": "Wed, 26 Aug 2026 04:56:59 +0000",
-        "source": "Wildfire Today"
-      },
-      {
         "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
         "link": "https://wildfiretoday.com/studying-combined-fuel-treatments-gives-us-a-better-picture-of-effectiveness/",
         "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
@@ -75,21 +54,6 @@
         "pubDate": "Wed, 26 Aug 2026 22:28:51 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260815_Faulder_FireTruck.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "4th BC Conservative member quits party in past three days",
-        "link": "https://globalnews.ca/news/12035831/4th-mla-quits-bc-conservative-party-independent-teresa-wat/",
-        "description": "This comes after Rosalyn Bird announced she was leaving the party on Tuesday, joining MLAs Ian Paton and Peter Milobar as recent defectors.",
-        "pubDate": "Wed, 26 Aug 2026 15:41:17 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-26-144013.png"
-      },
-      {
-        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
-        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
-        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
-        "source": "CBC BC"
       }
     ]
   }
