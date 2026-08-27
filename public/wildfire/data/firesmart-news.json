@@ -1,25 +1,33 @@
 {
-  "updated_at": "2026-08-27T16:00:33.919Z",
+  "updated_at": "2026-08-27T22:00:34.692Z",
   "zones": {
     "coastal": [
       {
-        "title": "Pre-sale purchasers in troubled Lower Mainland condo tower win battle to declare contracts invalid",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/eclipse-thind-presale-contract-court-9.7321471?cmp=rss",
-        "description": "A B.C. judge has sided with dozens of pre-sale purchasers who claim the developer of a troubled Lower Mainland condo tower breached provincial consumer protection laws by failing to update them on the headwinds facing the development in the months before the project wound up in creditor protection proceedings.",
-        "pubDate": "Wed, 26 Aug 2026 16:59:46 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "kamloops": [],
-    "prince-george": [
+        "title": "Highway 1 through Fraser Canyon open after wildfire closed it for 7 weeks",
+        "link": "https://globalnews.ca/news/12037914/highway-1-fraser-canyon-open-wildfire-closed-7-weeks/",
+        "description": "There is single-lane alternating traffic through a two-kilometre section extending from one kilometre south of the Alexandra Tunnel to one kilometre north of the Alexandra Tunnel.",
+        "pubDate": "Thu, 27 Aug 2026 18:31:48 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/4400bd0aa53eae9ca85ad2c19b551c37a5ee00d916df3369b475caca5d5cb501.jpg?quality=65&#038;strip=all"
+      },
       {
-        "title": "New hatcheries will see up to 1 million more salmon raised and released into Fraser and Skeena Rivers annually",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-hatcheries-prince-george-williams-lake-gitanyow-9.7320530?cmp=rss",
-        "description": "\"Salmon are not simply a resource,\" Lheidli T'enneh Chief Dolleen Logan said at the announcement held in Prince George Tuesday. \"Salmon are relatives. They are a part of our culture, our identity, our laws, our responsibilities.\"",
-        "pubDate": "Tue, 25 Aug 2026 22:52:30 EDT",
+        "title": "B.C. climber stung by wasps 100 times, rescued by helicopter",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wasps-sting-climber-bc-helicopter-rescue-9.7321301?cmp=rss",
+        "description": "A climber in British Columbia was rescued by helicopter after being stung more than 100 times by wasps in backcountry north of Vancouver.",
+        "pubDate": "Wed, 26 Aug 2026 13:06:44 EDT",
         "source": "CBC BC"
       }
     ],
+    "kamloops": [
+      {
+        "title": "Tree-mapping tool piloted in Kelowna is expanding across B.C. to cool down cities",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/tree-mapping-tool-piloted-in-kelowna-is-expanding-across-bc-to-cool-down-cities-9.7320373?cmp=rss",
+        "description": "A  University of British Columbia-led pilot project in Kelowna is expanding to Vancouver. It looks to change how local governments approach urban shade and planting trees.",
+        "pubDate": "Thu, 27 Aug 2026 12:06:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [
@@ -38,6 +46,13 @@
         "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
         "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
         "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Wildland firefighters warned not to take supplements for smoke or PFAS exposure",
+        "link": "https://wildfiretoday.com/wildland-firefighters-warned-not-to-take-supplements-for-smoke-or-pfas-exposure/",
+        "description": "A drug marketed to wildland firefighters exposed to smoke or PFAS shows no evidence of being effective, leading the International Association of Firefighters and the Food and Drug Administration to warn against its use. The drug, called glutathione, is marketed to fire fighters to remove toxins, but the IAFF says there are no scientific studies [&#8230;]",
+        "pubDate": "Wed, 26 Aug 2026 04:56:59 +0000",
         "source": "Wildfire Today"
       },
       {
