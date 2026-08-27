@@ -1,22 +1,13 @@
 {
-  "updated_at": "2026-08-26T22:00:34.451Z",
+  "updated_at": "2026-08-27T04:00:33.769Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "B.C. cat found on dock after Bradley Creek wildfire, burned and alone",
-        "link": "https://globalnews.ca/news/12035163/bc-cat-found-dock-bradley-creek-wildfire/",
-        "description": "The Bradley Creek wildfire had ripped through the area, and Erickson had been helping his neighbours survey the damage from a boat when he saw her.",
-        "pubDate": "Wed, 26 Aug 2026 01:25:18 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/unnamed_242d1e.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
-        "title": "Loblaw backtracks on dropping country-of-origin produce labels after customer backlash",
-        "link": "https://www.cbc.ca/news/investigates/loblaw-produce-origin-9.7320028?cmp=rss",
-        "description": "Loblaw has reversed course on its decision earlier this month to drop country-of-origin labeling on produce signs in its stores in most provinces, following customer backlash.",
-        "pubDate": "Tue, 25 Aug 2026 15:37:26 EDT",
+        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
+        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
+        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
         "source": "CBC BC"
       }
     ],
@@ -27,19 +18,36 @@
         "description": "\"Salmon are not simply a resource,\" Lheidli T'enneh Chief Dolleen Logan said at the announcement held in Prince George Tuesday. \"Salmon are relatives. They are a part of our culture, our identity, our laws, our responsibilities.\"",
         "pubDate": "Tue, 25 Aug 2026 22:52:30 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "cariboo": [
       {
-        "title": "Rosalyn Bird is latest MLA to leave Kerry-Lynne Findlay's B.C. Conservatives",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/another-b-c-conservative-mla-leaves-amid-frustrations-with-kerry-lynne-findlays-leadership-9.7320107?cmp=rss",
-        "description": "Rosalyn Bird, the MLA for Prince George-Valemount, is the latest MLA to leave the B.C. Conservative caucus. It comes on the heels of the departures of Ian Paton and Peter Milobar, who say they plan to set up a new political party.",
-        "pubDate": "Tue, 25 Aug 2026 16:06:37 EDT",
+        "title": "After nearly 2-month-long closure, Highway 1 through Fraser Canyon partially reopens",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-fraser-canyon-reopens-9.7322262?cmp=rss",
+        "description": "Following an almost two-month-long closure due to wildfires, Highway 1 has reopened to limited travel through the Fraser Canyon area, according to the B.C. Ministry of Transportation.",
+        "pubDate": "Wed, 26 Aug 2026 23:40:41 EDT",
         "source": "CBC BC"
       }
     ],
-    "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Wildfire north of Castlegar now mapped at 116 hectares",
+        "link": "https://globalnews.ca/news/12036999/wildfire-north-castlegar-grows-ezra-creek/",
+        "description": "The B.C. Wildfire Service said helicopters were engaged to hold the fire through until rappel crews responded on Wednesday morning.",
+        "pubDate": "Thu, 27 Aug 2026 01:12:52 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-9.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "all": [
+      {
+        "title": "The where, when and how of fuel treatment decisions",
+        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
+        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
+        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Wildland firefighters warned not to take supplements for smoke or PFAS exposure",
         "link": "https://wildfiretoday.com/wildland-firefighters-warned-not-to-take-supplements-for-smoke-or-pfas-exposure/",
@@ -55,18 +63,12 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Global wildland fire conference announced for Melbourne 2028",
-        "link": "https://wildfiretoday.com/global-wildland-fire-conference-announced-for-melbourne-2028/",
-        "description": "The largest international wildland fire conference is heading back to Australia in 2028. The 9th International Wildland Fire Conference will be held in Melbourne, Australia, from 4-7 April 2028 under the theme of “Fire Knowledge, shared across the world”. The once in every four years event was announced this week at the opening of the [&#8230;]",
-        "pubDate": "Wed, 19 Aug 2026 23:36:16 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Roadless Rule ‘entirely’ removed under new USDA proposal",
-        "link": "https://wildfiretoday.com/roadless-rule-entirely-thrown-out-under-new-trump-administration-proposal/",
-        "description": "The United States Department of Agriculture on Tuesday formally began the process of rescinding the&#160;Roadless Area Conservation Rule, opening&#160;the nation&#8217;s protected forests to new development, road construction, and intensive logging. Agriculture Secretary Brooke Rollins attributed the move to wildfire risk reduction, saying the rule has acted as a barrier to it. Public comment on t",
-        "pubDate": "Tue, 18 Aug 2026 18:22:24 +0000",
-        "source": "Wildfire Today"
+        "title": "Questions raised about B.C.&#8217;s approach to prescribed burns ahead of wildfire season",
+        "link": "https://globalnews.ca/news/12036432/questions-raised-bc-approach-prescribed-burns-wildfire-season/",
+        "description": "The prescribed burn was part of an 87-hectare risk reduction strategy, but the BC Wildfire Service has not yet confirmed whether the burn went ahead as planned.",
+        "pubDate": "Wed, 26 Aug 2026 22:28:51 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260815_Faulder_FireTruck.jpg?quality=65&#038;strip=all"
       }
     ]
   }
