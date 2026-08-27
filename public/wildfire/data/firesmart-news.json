@@ -1,26 +1,7 @@
 {
-  "updated_at": "2026-08-27T04:00:33.769Z",
+  "updated_at": "2026-08-27T10:00:33.890Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [
-      {
-        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
-        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
-        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "New hatcheries will see up to 1 million more salmon raised and released into Fraser and Skeena Rivers annually",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-hatcheries-prince-george-williams-lake-gitanyow-9.7320530?cmp=rss",
-        "description": "\"Salmon are not simply a resource,\" Lheidli T'enneh Chief Dolleen Logan said at the announcement held in Prince George Tuesday. \"Salmon are relatives. They are a part of our culture, our identity, our laws, our responsibilities.\"",
-        "pubDate": "Tue, 25 Aug 2026 22:52:30 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "cariboo": [
+    "coastal": [
       {
         "title": "After nearly 2-month-long closure, Highway 1 through Fraser Canyon partially reopens",
         "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-fraser-canyon-reopens-9.7322262?cmp=rss",
@@ -29,6 +10,31 @@
         "source": "CBC BC"
       }
     ],
+    "kamloops": [],
+    "prince-george": [
+      {
+        "title": "New hatcheries will see up to 1 million more salmon raised and released into Fraser and Skeena Rivers annually",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-hatcheries-prince-george-williams-lake-gitanyow-9.7320530?cmp=rss",
+        "description": "\"Salmon are not simply a resource,\" Lheidli T'enneh Chief Dolleen Logan said at the announcement held in Prince George Tuesday. \"Salmon are relatives. They are a part of our culture, our identity, our laws, our responsibilities.\"",
+        "pubDate": "Tue, 25 Aug 2026 22:52:30 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Rosalyn Bird leaves Kerry-Lynne Findlay's B.C. Conservatives",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/another-b-c-conservative-mla-leaves-amid-frustrations-with-kerry-lynne-findlays-leadership-9.7320107?cmp=rss",
+        "description": "Rosalyn Bird, the MLA for Prince George-Valemount, is the latest MLA to leave the B.C. Conservative caucus. It comes on the heels of the departures of Ian Paton and Peter Milobar, who say they plan to set up a new political party.",
+        "pubDate": "Tue, 25 Aug 2026 16:06:37 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Dolly Parton's 'Jolene' may be named after British Columbia nurse",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/dolly-parton-s-jolene-may-be-named-after-british-columbia-nurse-1.3734082?cmp=rss",
+        "description": "A Prince George woman believes she may be the inspiration for the name in Dolly Parton's song Jolene. Juline Whelan met the singer in 1972 and matches the description of the little girl Parton says inspired the name behind the famous tune.",
+        "pubDate": "Tue, 25 Aug 2026 16:10:31 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [
       {
@@ -69,6 +75,21 @@
         "pubDate": "Wed, 26 Aug 2026 22:28:51 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260815_Faulder_FireTruck.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "4th BC Conservative member quits party in past three days",
+        "link": "https://globalnews.ca/news/12035831/4th-mla-quits-bc-conservative-party-independent-teresa-wat/",
+        "description": "This comes after Rosalyn Bird announced she was leaving the party on Tuesday, joining MLAs Ian Paton and Peter Milobar as recent defectors.",
+        "pubDate": "Wed, 26 Aug 2026 15:41:17 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-26-144013.png"
+      },
+      {
+        "title": "After devastating Summerland fire, B.C. faces call to 'cut red tape' for prescribed burns",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-wildfire-prescribed-burn-bureaucracy-9.7319906?cmp=rss",
+        "description": "As British Columbia grapples with wildfires of growing size and intensity, the province is facing calls to cut red tape to make conducting prescribed burns easier.",
+        "pubDate": "Tue, 25 Aug 2026 15:58:49 EDT",
+        "source": "CBC BC"
       }
     ]
   }
