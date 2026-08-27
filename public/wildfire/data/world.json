@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T16:01:18.843Z",
+  "updated_at": "2026-08-27T16:01:18.403Z",
   "fires": [
     {
       "country": "Belgium",
@@ -193,7 +193,21 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"B.C. offering free N95 masks for B.C. Interior as wildfire smoke persists\",\n      \"url\": \"https://globalnews.ca/news/12023424/b-c-offering-free-n95-m"
+    "items_in": {
+      "canada": 1,
+      "world": 0
+    },
+    "items_out": {
+      "canada_news": 1,
+      "world_fires": 25
+    },
+    "deduped": 0,
+    "rerouted": 1,
+    "notes": [
+      "Toronto vehicle fire (arson) rerouted out of canada_news - not wildfire related, property crime incident",
+      "All 25 world_fires from existing_fires preserved - all marked Active status",
+      "No duplicates detected across input sources",
+      "B.C. wildfire smoke/mask advisory retained in canada_news - wildfire-related public health response"
+    ]
   }
 }
