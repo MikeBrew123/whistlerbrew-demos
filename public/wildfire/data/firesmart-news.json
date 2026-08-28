@@ -1,7 +1,19 @@
 {
-  "updated_at": "2026-08-27T22:00:34.692Z",
+  "updated_at": "2026-08-28T04:00:34.585Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Transportation Safety Board investigating after fatal small plane crash in Mission",
+        "link": "https://globalnews.ca/news/12038024/fatal-small-plane-crash-mission-transportation-safety-board/",
+        "description": "A 22-year-old man was also found deceased. RCMP said they believe he was the sole occupant of the plane that was conducting a training flight.",
+        "pubDate": "Thu, 27 Aug 2026 19:29:08 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/mission-plane-crash.png"
+      }
+    ],
+    "kamloops": [],
+    "prince-george": [],
+    "cariboo": [
       {
         "title": "Highway 1 through Fraser Canyon open after wildfire closed it for 7 weeks",
         "link": "https://globalnews.ca/news/12037914/highway-1-fraser-canyon-open-wildfire-closed-7-weeks/",
@@ -11,33 +23,29 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/4400bd0aa53eae9ca85ad2c19b551c37a5ee00d916df3369b475caca5d5cb501.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "B.C. climber stung by wasps 100 times, rescued by helicopter",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wasps-sting-climber-bc-helicopter-rescue-9.7321301?cmp=rss",
-        "description": "A climber in British Columbia was rescued by helicopter after being stung more than 100 times by wasps in backcountry north of Vancouver.",
-        "pubDate": "Wed, 26 Aug 2026 13:06:44 EDT",
+        "title": "3rd grizzly in family of 4 killed in B.C.'s West Kootenay",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-third-grizzly-yearling-killed-9.7323563?cmp=rss",
+        "description": "A third grizzly in a family of four well-known bears in the West Kootenay has been killed.",
+        "pubDate": "Thu, 27 Aug 2026 21:36:56 EDT",
         "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
+      },
       {
-        "title": "Tree-mapping tool piloted in Kelowna is expanding across B.C. to cool down cities",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/tree-mapping-tool-piloted-in-kelowna-is-expanding-across-bc-to-cool-down-cities-9.7320373?cmp=rss",
-        "description": "A  University of British Columbia-led pilot project in Kelowna is expanding to Vancouver. It looks to change how local governments approach urban shade and planting trees.",
-        "pubDate": "Thu, 27 Aug 2026 12:06:00 EDT",
+        "title": "After nearly 2-month-long closure, Highway 1 through Fraser Canyon partially reopens",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-fraser-canyon-reopens-9.7322262?cmp=rss",
+        "description": "Following an almost two-month-long closure due to wildfires, Highway 1 has reopened to limited travel through the Fraser Canyon area, according to the B.C. Ministry of Transportation.",
+        "pubDate": "Wed, 26 Aug 2026 23:40:41 EDT",
         "source": "CBC BC"
       }
     ],
-    "prince-george": [],
-    "cariboo": [],
     "northwest": [],
     "southeast": [
       {
-        "title": "Wildfire north of Castlegar now mapped at 116 hectares",
-        "link": "https://globalnews.ca/news/12036999/wildfire-north-castlegar-grows-ezra-creek/",
-        "description": "The B.C. Wildfire Service said helicopters were engaged to hold the fire through until rappel crews responded on Wednesday morning.",
-        "pubDate": "Thu, 27 Aug 2026 01:12:52 +0000",
+        "title": "Surrey Six killer loses court battle to have conviction overturned",
+        "link": "https://globalnews.ca/news/12038597/surrey-six-killer-loses-court-battle/",
+        "description": "In 2014, Red Scorpion Cody Haevischer was convicted of six counts of first-degree murder in the October 2007 killings at Surrey's Balmoral Tower.",
+        "pubDate": "Fri, 28 Aug 2026 03:43:34 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/bytes-9.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2015/06/sketch5a.jpg?quality=65&#038;strip=all"
       }
     ],
     "all": [
@@ -63,12 +71,27 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Questions raised about B.C.&#8217;s approach to prescribed burns ahead of wildfire season",
-        "link": "https://globalnews.ca/news/12036432/questions-raised-bc-approach-prescribed-burns-wildfire-season/",
-        "description": "The prescribed burn was part of an 87-hectare risk reduction strategy, but the BC Wildfire Service has not yet confirmed whether the burn went ahead as planned.",
-        "pubDate": "Wed, 26 Aug 2026 22:28:51 +0000",
+        "title": "A painful homecoming: Faulder residents return to see what the Bald range fire left behind",
+        "link": "https://globalnews.ca/news/12038712/a-painful-homecoming-faulder-residents-return-to-see-what-the-bald-range-fire-left-behind/",
+        "description": "Residents of Faulder were finally allowed to return to their properties, getting their first chance to walk through the areas hit by the Bald Range wildfire",
+        "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/20260815_Faulder_FireTruck.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
+      },
+      {
+        "title": "Another MLA leaves BC Conservative Party as Bruce Banman announces exit",
+        "link": "https://globalnews.ca/news/12038522/mla-leaves-bc-conservative-party-bruce-banman-exit/",
+        "description": "'The goal in politics is to make the tent bigger. To listen to the majority. It’s not about left or right. It’s about doing what’s right,' Bruce Banman said in a statement.",
+        "pubDate": "Thu, 27 Aug 2026 23:43:02 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/02/a3ac75c065c2e2ce45c3e428fb8622c6894b990f6430f5b83fb1b0124f878297.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Judge rejects application by 'Surrey Six' killer to stay convictions",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/surrey-six-application-rejected-9.7323084?cmp=rss",
+        "description": "A B.C. Supreme Court judge has rejected an application by one of the \"Surrey Six\" killers to stay the convictions against him.",
+        "pubDate": "Thu, 27 Aug 2026 16:10:56 EDT",
+        "source": "CBC BC"
       }
     ]
   }
