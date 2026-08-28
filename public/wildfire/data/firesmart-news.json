@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T10:00:34.708Z",
+  "updated_at": "2026-08-28T16:00:35.219Z",
   "zones": {
     "coastal": [
       {
@@ -9,18 +9,6 @@
         "pubDate": "Thu, 27 Aug 2026 19:29:08 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/mission-plane-crash.png"
-      }
-    ],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Highway 1 through Fraser Canyon open after wildfire closed it for 7 weeks",
-        "link": "https://globalnews.ca/news/12037914/highway-1-fraser-canyon-open-wildfire-closed-7-weeks/",
-        "description": "There is single-lane alternating traffic through a two-kilometre section extending from one kilometre south of the Alexandra Tunnel to one kilometre north of the Alexandra Tunnel.",
-        "pubDate": "Thu, 27 Aug 2026 18:31:48 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/4400bd0aa53eae9ca85ad2c19b551c37a5ee00d916df3369b475caca5d5cb501.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "B.C. ends wildfire-related state of emergency, offroad vehicle ban to be lifted",
@@ -28,24 +16,20 @@
         "description": "B.C.'s forests minister says a province-wide state of emergency has ended, but wildfire risk remains.",
         "pubDate": "Thu, 27 Aug 2026 18:54:49 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "After nearly 2-month-long closure, Highway 1 through Fraser Canyon partially reopens",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-fraser-canyon-reopens-9.7322262?cmp=rss",
-        "description": "Following an almost two-month-long closure due to wildfires, Highway 1 has reopened to limited travel through the Fraser Canyon area, according to the B.C. Ministry of Transportation.",
-        "pubDate": "Wed, 26 Aug 2026 23:40:41 EDT",
-        "source": "CBC BC"
       }
     ],
+    "kamloops": [],
+    "prince-george": [],
+    "cariboo": [],
     "northwest": [],
     "southeast": [
       {
-        "title": "Surrey Six killer loses court battle to have conviction overturned",
-        "link": "https://globalnews.ca/news/12038597/surrey-six-killer-loses-court-battle/",
-        "description": "In 2014, Red Scorpion Cody Haevischer was convicted of six counts of first-degree murder in the October 2007 killings at Surrey's Balmoral Tower.",
-        "pubDate": "Fri, 28 Aug 2026 03:43:34 +0000",
+        "title": "A painful homecoming: Faulder residents return to see what the Bald range fire left behind",
+        "link": "https://globalnews.ca/news/12038712/a-painful-homecoming-faulder-residents-return-to-see-what-the-bald-range-fire-left-behind/",
+        "description": "Residents of Faulder were finally allowed to return to their properties, getting their first chance to walk through the areas hit by the Bald Range wildfire",
+        "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2015/06/sketch5a.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
       },
       {
         "title": "3rd grizzly in family of 4 killed in B.C.'s West Kootenay",
@@ -78,14 +62,6 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "A painful homecoming: Faulder residents return to see what the Bald range fire left behind",
-        "link": "https://globalnews.ca/news/12038712/a-painful-homecoming-faulder-residents-return-to-see-what-the-bald-range-fire-left-behind/",
-        "description": "Residents of Faulder were finally allowed to return to their properties, getting their first chance to walk through the areas hit by the Bald Range wildfire",
-        "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
-      },
-      {
         "title": "Another MLA leaves BC Conservative Party as Bruce Banman announces exit",
         "link": "https://globalnews.ca/news/12038522/mla-leaves-bc-conservative-party-bruce-banman-exit/",
         "description": "'The goal in politics is to make the tent bigger. To listen to the majority. It’s not about left or right. It’s about doing what’s right,' Bruce Banman said in a statement.",
@@ -94,10 +70,25 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/02/a3ac75c065c2e2ce45c3e428fb8622c6894b990f6430f5b83fb1b0124f878297.jpg?quality=65&#038;strip=all"
       },
       {
+        "title": "Highway 1 through Fraser Canyon open after wildfire closed it for 7 weeks",
+        "link": "https://globalnews.ca/news/12037914/highway-1-fraser-canyon-open-wildfire-closed-7-weeks/",
+        "description": "There is single-lane alternating traffic through a two-kilometre section extending from one kilometre south of the Alexandra Tunnel to one kilometre north of the Alexandra Tunnel.",
+        "pubDate": "Thu, 27 Aug 2026 18:31:48 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/4400bd0aa53eae9ca85ad2c19b551c37a5ee00d916df3369b475caca5d5cb501.jpg?quality=65&#038;strip=all"
+      },
+      {
         "title": "Judge rejects application by 'Surrey Six' killer to stay convictions",
         "link": "https://www.cbc.ca/news/canada/british-columbia/surrey-six-application-rejected-9.7323084?cmp=rss",
         "description": "A B.C. Supreme Court judge has rejected an application by one of the \"Surrey Six\" killers to stay the convictions against him.",
         "pubDate": "Thu, 27 Aug 2026 16:10:56 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Langley outdoor preschool loses licence, shuts down because of unused indoor space",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/langley-outdoor-preschool-loses-licence-shuts-down-because-of-unused-indoor-space-9.7322099?cmp=rss",
+        "description": "Langley Forest School was first licensed by Fraser Health in 2016 and ran programs exclusively outdoors.",
+        "pubDate": "Thu, 27 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       }
     ]
