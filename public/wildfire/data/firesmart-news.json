@@ -1,24 +1,38 @@
 {
-  "updated_at": "2026-08-28T16:00:35.219Z",
+  "updated_at": "2026-08-28T22:00:33.755Z",
   "zones": {
     "coastal": [
       {
-        "title": "Transportation Safety Board investigating after fatal small plane crash in Mission",
-        "link": "https://globalnews.ca/news/12038024/fatal-small-plane-crash-mission-transportation-safety-board/",
-        "description": "A 22-year-old man was also found deceased. RCMP said they believe he was the sole occupant of the plane that was conducting a training flight.",
-        "pubDate": "Thu, 27 Aug 2026 19:29:08 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/mission-plane-crash.png"
-      },
-      {
-        "title": "B.C. ends wildfire-related state of emergency, offroad vehicle ban to be lifted",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-lifting-state-of-emergency-off-road-vehicle-ban-9.7323451?cmp=rss",
-        "description": "B.C.'s forests minister says a province-wide state of emergency has ended, but wildfire risk remains.",
-        "pubDate": "Thu, 27 Aug 2026 18:54:49 EDT",
+        "title": "Businesses relieved by reopening of Highway 1 through B.C.'s Fraser Canyon",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fraser-canyon-highway-reopens-businesses-9.7323698?cmp=rss",
+        "description": "Part of the Trans-Canada Highway was shut down on July 7 as the Brunswick wildfire complex raged near Boston Bar. The fires are still burning, but, on Wednesday, the province  deemed it safe enough  for a partial reopening.",
+        "pubDate": "Thu, 27 Aug 2026 22:17:32 EDT",
         "source": "CBC BC"
       }
     ],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Summerland wildfire that forced thousands out of homes now being held",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
+        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
+        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "B.C. Conservative MLA makes move to repeal DRIPA",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/harman-bhangu-initiative-petition-dripa-bc-9.7323111?cmp=rss",
+        "description": "A B.C. Conservative MLA is trying to repeal the province's Declaration on the Rights of Indigenous Peoples Act (DRIPA).",
+        "pubDate": "Thu, 27 Aug 2026 17:46:42 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Tree-mapping tool piloted in Kelowna is expanding across B.C. to cool down cities",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/tree-mapping-tool-piloted-in-kelowna-is-expanding-across-bc-to-cool-down-cities-9.7320373?cmp=rss",
+        "description": "A  University of British Columbia-led pilot project in Kelowna is expanding to Vancouver. It looks to change how local governments approach urban shade and planting trees.",
+        "pubDate": "Thu, 27 Aug 2026 12:06:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
@@ -30,13 +44,6 @@
         "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
-      },
-      {
-        "title": "3rd grizzly in family of 4 killed in B.C.'s West Kootenay",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-third-grizzly-yearling-killed-9.7323563?cmp=rss",
-        "description": "A third grizzly in a family of four well-known bears in the West Kootenay has been killed.",
-        "pubDate": "Thu, 27 Aug 2026 21:36:56 EDT",
-        "source": "CBC BC"
       }
     ],
     "all": [
@@ -70,25 +77,17 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/02/a3ac75c065c2e2ce45c3e428fb8622c6894b990f6430f5b83fb1b0124f878297.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Highway 1 through Fraser Canyon open after wildfire closed it for 7 weeks",
-        "link": "https://globalnews.ca/news/12037914/highway-1-fraser-canyon-open-wildfire-closed-7-weeks/",
-        "description": "There is single-lane alternating traffic through a two-kilometre section extending from one kilometre south of the Alexandra Tunnel to one kilometre north of the Alexandra Tunnel.",
-        "pubDate": "Thu, 27 Aug 2026 18:31:48 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/4400bd0aa53eae9ca85ad2c19b551c37a5ee00d916df3369b475caca5d5cb501.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Judge rejects application by 'Surrey Six' killer to stay convictions",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/surrey-six-application-rejected-9.7323084?cmp=rss",
-        "description": "A B.C. Supreme Court judge has rejected an application by one of the \"Surrey Six\" killers to stay the convictions against him.",
-        "pubDate": "Thu, 27 Aug 2026 16:10:56 EDT",
+        "title": "B.C. to pilot forestry model to assist industry, improve wildfire mitigation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-forestry-model-wildfire-mitigation-9.7323776?cmp=rss",
+        "description": "A proposed new provincial forest model aims to assist B.C.’s struggling forestry industry and aid in wildfire mitigation, but environmentalists worry it may lead to conservation problems.",
+        "pubDate": "Fri, 28 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Langley outdoor preschool loses licence, shuts down because of unused indoor space",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/langley-outdoor-preschool-loses-licence-shuts-down-because-of-unused-indoor-space-9.7322099?cmp=rss",
-        "description": "Langley Forest School was first licensed by Fraser Health in 2016 and ran programs exclusively outdoors.",
-        "pubDate": "Thu, 27 Aug 2026 08:00:00 EDT",
+        "title": "B.C. ends wildfire-related state of emergency, offroad vehicle ban to be lifted",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-lifting-state-of-emergency-off-road-vehicle-ban-9.7323451?cmp=rss",
+        "description": "B.C.'s forests minister says a province-wide state of emergency has ended, but wildfire risk remains.",
+        "pubDate": "Thu, 27 Aug 2026 18:54:49 EDT",
         "source": "CBC BC"
       }
     ]
