@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-27T16:01:18.403Z",
+  "updated_at": "2026-08-28T04:01:25.167Z",
   "fires": [
     {
       "country": "Belgium",
@@ -198,16 +198,17 @@
       "world": 0
     },
     "items_out": {
-      "canada_news": 1,
+      "canada": 1,
       "world_fires": 25
     },
     "deduped": 0,
-    "rerouted": 1,
+    "rerouted": 0,
     "notes": [
-      "Toronto vehicle fire (arson) rerouted out of canada_news - not wildfire related, property crime incident",
-      "All 25 world_fires from existing_fires preserved - all marked Active status",
-      "No duplicates detected across input sources",
-      "B.C. wildfire smoke/mask advisory retained in canada_news - wildfire-related public health response"
+      "All 25 existing_fires retained as Active status",
+      "No world articles provided in input, only canada_news",
+      "No duplicates detected across sources",
+      "All images preserved from existing_fires",
+      "No fires dropped (none contained >60 days ago)"
     ]
   }
 }
