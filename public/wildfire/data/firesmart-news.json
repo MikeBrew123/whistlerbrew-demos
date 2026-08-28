@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T04:00:34.585Z",
+  "updated_at": "2026-08-28T10:00:34.708Z",
   "zones": {
     "coastal": [
       {
@@ -23,10 +23,10 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/4400bd0aa53eae9ca85ad2c19b551c37a5ee00d916df3369b475caca5d5cb501.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "3rd grizzly in family of 4 killed in B.C.'s West Kootenay",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-third-grizzly-yearling-killed-9.7323563?cmp=rss",
-        "description": "A third grizzly in a family of four well-known bears in the West Kootenay has been killed.",
-        "pubDate": "Thu, 27 Aug 2026 21:36:56 EDT",
+        "title": "B.C. ends wildfire-related state of emergency, offroad vehicle ban to be lifted",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-lifting-state-of-emergency-off-road-vehicle-ban-9.7323451?cmp=rss",
+        "description": "B.C.'s forests minister says a province-wide state of emergency has ended, but wildfire risk remains.",
+        "pubDate": "Thu, 27 Aug 2026 18:54:49 EDT",
         "source": "CBC BC"
       },
       {
@@ -46,6 +46,13 @@
         "pubDate": "Fri, 28 Aug 2026 03:43:34 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2015/06/sketch5a.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "3rd grizzly in family of 4 killed in B.C.'s West Kootenay",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-third-grizzly-yearling-killed-9.7323563?cmp=rss",
+        "description": "A third grizzly in a family of four well-known bears in the West Kootenay has been killed.",
+        "pubDate": "Thu, 27 Aug 2026 21:36:56 EDT",
+        "source": "CBC BC"
       }
     ],
     "all": [
