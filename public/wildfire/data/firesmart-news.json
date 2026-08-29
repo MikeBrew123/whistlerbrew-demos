@@ -1,7 +1,23 @@
 {
-  "updated_at": "2026-08-29T16:00:34.690Z",
+  "updated_at": "2026-08-29T22:00:34.844Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "B.C.&#8217;s historic Little Red House destroyed by fire",
+        "link": "https://globalnews.ca/news/12040390/bc-little-red-house-fire/",
+        "description": "The Langley Heritage Society said in an online post Friday that it was \"sad and unfortunate\" the home, also known as the McIver House, was never preserved.",
+        "pubDate": "Sat, 29 Aug 2026 14:24:31 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6413210d377194a6ebdcac2c1ba6ba2fed3bc5795af2ccfa1c6344c55d8e8c91.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Fire destroys Langley's beloved 'Little Red House'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/little-red-house-langley-fire-9.7325439?cmp=rss",
+        "description": "A historic home popularly known as the Little Red House has been destroyed by fire after standing in the Township of Langley for almost 140 years.",
+        "pubDate": "Sat, 29 Aug 2026 14:44:22 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "kamloops": [
       {
         "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
@@ -20,6 +36,13 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
       },
       {
+        "title": "Severe drought conditions prompt new order limiting water use for irrigation in B.C. Interior",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bessette-creek-water-restrictions-9.7325312?cmp=rss",
+        "description": "A new water-restriction order has been placed on the Bessette Creek area in the southern Interior of British Columbia, after the province deemed chinook salmon at risk from drought conditions.",
+        "pubDate": "Fri, 28 Aug 2026 23:25:19 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "Federal government to match Red Cross donations for Summerland wildfire recovery",
         "link": "https://www.cbc.ca/news/canada/british-columbia/feds-to-match-red-cross-donations-for-summerland-recovery-9.7324984?cmp=rss",
         "description": "The federal government says it will match donations made to the Red Cross for wildfire recovery efforts in Summerland.",
@@ -27,15 +50,23 @@
         "source": "CBC BC"
       },
       {
-        "title": "Summerland wildfire that forced thousands out of homes now being held",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
-        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
+        "title": "Some Indigenous businesses are trying to avoid U.S. markets amid trade war",
+        "link": "https://www.cbc.ca/news/indigenous/some-indigenous-businesses-are-trying-to-avoid-u-s-markets-amid-trade-war-9.7324885?cmp=rss",
+        "description": "Some Indigenous businesses in Canada are avoiding selling products to the U.S. in order to avoid uncertainty and hassle.",
+        "pubDate": "Fri, 28 Aug 2026 18:29:00 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "Subway restaurant owner in Quesnel fined for trying to suppress worker injury claim: WorkSafeBC",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/quesnel-subway-restaurant-owner-9.7321716?cmp=rss",
+        "description": "The owner of a Subway restaurant in Quesnel, B.C., was fined $2,500 after WorkSafeBC found they tried to get a worker to retract their injury claim after being burned on the job.",
+        "pubDate": "Fri, 28 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "northwest": [],
     "southeast": [],
     "all": [
@@ -61,18 +92,10 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "B.C. ends provincial state of emergency declared due to wildfires",
-        "link": "https://globalnews.ca/news/12038505/bc-ends-provincial-state-emergency-wildfires/",
-        "description": "This cancellation does not affect current evacuation orders, evacuation alerts or local emergencies put in place by local governments or First Nations.",
-        "pubDate": "Thu, 27 Aug 2026 23:31:26 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/77ed5d8fbbd5e4b04c0a434bcc9b928e44239e7000728ba1f2a7b32c1f32d8bc.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "B.C. to pilot forestry model to assist industry, improve wildfire mitigation",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-forestry-model-wildfire-mitigation-9.7323776?cmp=rss",
-        "description": "A proposed new provincial forest model aims to assist B.C.’s struggling forestry industry and aid in wildfire mitigation, but environmentalists worry it may lead to conservation problems.",
-        "pubDate": "Fri, 28 Aug 2026 10:00:00 EDT",
+        "title": "Summerland wildfire that forced thousands out of homes now being held",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
+        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
+        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
         "source": "CBC BC"
       }
     ]
