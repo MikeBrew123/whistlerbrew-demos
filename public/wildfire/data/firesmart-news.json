@@ -1,24 +1,8 @@
 {
-  "updated_at": "2026-08-29T10:00:34.372Z",
+  "updated_at": "2026-08-29T16:00:34.690Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "B.C. ends wildfire-related state of emergency, offroad vehicle ban to be lifted",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-lifting-state-of-emergency-off-road-vehicle-ban-9.7323451?cmp=rss",
-        "description": "B.C.'s forests minister says a province-wide state of emergency has ended, but wildfire risk remains.",
-        "pubDate": "Thu, 27 Aug 2026 18:54:49 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
-      {
-        "title": "Gregor Robertson challenged on the Broadway Construction project",
-        "link": "https://globalnews.ca/news/12039357/gregor-robertson-challenged-broadway-construction-project/",
-        "description": "Fable Diner and SportChek are just two of the most recent businesses to shutter along Broadway near Main Street as construction continues.",
-        "pubDate": "Sat, 29 Aug 2026 00:59:15 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2023/03/Broadway-Subway-Project-drone.png"
-      },
       {
         "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
         "link": "https://globalnews.ca/news/12040032/summerland-twisted-whiskers-closing-wildfire-business-struggles/",
@@ -28,25 +12,25 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-28-171827.png"
       },
       {
-        "title": "Surrey Six killer loses court battle to have conviction overturned",
-        "link": "https://globalnews.ca/news/12038597/surrey-six-killer-loses-court-battle/",
-        "description": "In 2014, Red Scorpion Cody Haevischer was convicted of six counts of first-degree murder in the October 2007 killings at Surrey's Balmoral Tower.",
-        "pubDate": "Fri, 28 Aug 2026 03:43:34 +0000",
+        "title": "A painful homecoming: Faulder residents return to see what the Bald range fire left behind",
+        "link": "https://globalnews.ca/news/12038712/a-painful-homecoming-faulder-residents-return-to-see-what-the-bald-range-fire-left-behind/",
+        "description": "Residents of Faulder were finally allowed to return to their properties, getting their first chance to walk through the areas hit by the Bald Range wildfire",
+        "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2015/06/sketch5a.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Severe drought conditions prompt new order limiting water use for irrigation in B.C. Interior",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bessette-creek-water-restrictions-9.7325312?cmp=rss",
-        "description": "A new water-restriction order has been placed on the Bessette Creek area in the southern Interior of British Columbia, after the province deemed chinook salmon at risk from drought conditions.",
-        "pubDate": "Fri, 28 Aug 2026 23:25:19 EDT",
-        "source": "CBC BC"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
       },
       {
         "title": "Federal government to match Red Cross donations for Summerland wildfire recovery",
         "link": "https://www.cbc.ca/news/canada/british-columbia/feds-to-match-red-cross-donations-for-summerland-recovery-9.7324984?cmp=rss",
         "description": "The federal government says it will match donations made to the Red Cross for wildfire recovery efforts in Summerland.",
         "pubDate": "Fri, 28 Aug 2026 18:57:30 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Summerland wildfire that forced thousands out of homes now being held",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
+        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
+        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
         "source": "CBC BC"
       }
     ],
@@ -77,32 +61,18 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Another MLA leaves BC Conservative Party as Bruce Banman announces exit",
-        "link": "https://globalnews.ca/news/12038522/mla-leaves-bc-conservative-party-bruce-banman-exit/",
-        "description": "'The goal in politics is to make the tent bigger. To listen to the majority. It’s not about left or right. It’s about doing what’s right,' Bruce Banman said in a statement.",
-        "pubDate": "Thu, 27 Aug 2026 23:43:02 +0000",
+        "title": "B.C. ends provincial state of emergency declared due to wildfires",
+        "link": "https://globalnews.ca/news/12038505/bc-ends-provincial-state-emergency-wildfires/",
+        "description": "This cancellation does not affect current evacuation orders, evacuation alerts or local emergencies put in place by local governments or First Nations.",
+        "pubDate": "Thu, 27 Aug 2026 23:31:26 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/02/a3ac75c065c2e2ce45c3e428fb8622c6894b990f6430f5b83fb1b0124f878297.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/77ed5d8fbbd5e4b04c0a434bcc9b928e44239e7000728ba1f2a7b32c1f32d8bc.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Summerland wildfire that forced thousands out of homes now being held",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
-        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Judge rejects application by 'Surrey Six' killer to stay convictions",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/surrey-six-application-rejected-9.7323084?cmp=rss",
-        "description": "A B.C. Supreme Court judge has rejected an application by one of the \"Surrey Six\" killers to stay the convictions against him.",
-        "pubDate": "Thu, 27 Aug 2026 16:10:56 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Jury offers 4 recommendations after inquest into fatal police shooting near Tofino",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/julian-jones-coroners-inquest-recommendations-9.7323495?cmp=rss",
-        "description": "Julian Jones, 28, died on Feb. 27, 2021 after he was shot when officers responded to reports of a woman being assaulted and confined in a home in the remote island community of Opitsaht.",
-        "pubDate": "Thu, 27 Aug 2026 19:53:20 EDT",
+        "title": "B.C. to pilot forestry model to assist industry, improve wildfire mitigation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-forestry-model-wildfire-mitigation-9.7323776?cmp=rss",
+        "description": "A proposed new provincial forest model aims to assist B.C.’s struggling forestry industry and aid in wildfire mitigation, but environmentalists worry it may lead to conservation problems.",
+        "pubDate": "Fri, 28 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ]
