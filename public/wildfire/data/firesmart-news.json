@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-08-29T04:00:34.550Z",
+  "updated_at": "2026-08-29T10:00:34.372Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "B.C. ends wildfire-related state of emergency, offroad vehicle ban to be lifted",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-lifting-state-of-emergency-off-road-vehicle-ban-9.7323451?cmp=rss",
+        "description": "B.C.'s forests minister says a province-wide state of emergency has ended, but wildfire risk remains.",
+        "pubDate": "Thu, 27 Aug 2026 18:54:49 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "kamloops": [
       {
         "title": "Gregor Robertson challenged on the Broadway Construction project",
@@ -28,32 +36,24 @@
         "image": "https://globalnews.ca/wp-content/uploads/2015/06/sketch5a.jpg?quality=65&#038;strip=all"
       },
       {
+        "title": "Severe drought conditions prompt new order limiting water use for irrigation in B.C. Interior",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bessette-creek-water-restrictions-9.7325312?cmp=rss",
+        "description": "A new water-restriction order has been placed on the Bessette Creek area in the southern Interior of British Columbia, after the province deemed chinook salmon at risk from drought conditions.",
+        "pubDate": "Fri, 28 Aug 2026 23:25:19 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "Federal government to match Red Cross donations for Summerland wildfire recovery",
         "link": "https://www.cbc.ca/news/canada/british-columbia/feds-to-match-red-cross-donations-for-summerland-recovery-9.7324984?cmp=rss",
         "description": "The federal government says it will match donations made to the Red Cross for wildfire recovery efforts in Summerland.",
         "pubDate": "Fri, 28 Aug 2026 18:57:30 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Summerland wildfire that forced thousands out of homes now being held",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
-        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "3rd grizzly in family of 4 killed in B.C.'s West Kootenay",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-third-grizzly-yearling-killed-9.7323563?cmp=rss",
-        "description": "A third grizzly in a family of four well-known bears in the West Kootenay has been killed.",
-        "pubDate": "Thu, 27 Aug 2026 21:36:56 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "The where, when and how of fuel treatment decisions",
@@ -85,17 +85,24 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/02/a3ac75c065c2e2ce45c3e428fb8622c6894b990f6430f5b83fb1b0124f878297.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "B.C. to pilot forestry model to assist industry, improve wildfire mitigation",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-forestry-model-wildfire-mitigation-9.7323776?cmp=rss",
-        "description": "A proposed new provincial forest model aims to assist B.C.’s struggling forestry industry and aid in wildfire mitigation, but environmentalists worry it may lead to conservation problems.",
-        "pubDate": "Fri, 28 Aug 2026 10:00:00 EDT",
+        "title": "Summerland wildfire that forced thousands out of homes now being held",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
+        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
+        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "B.C. ends wildfire-related state of emergency, offroad vehicle ban to be lifted",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-lifting-state-of-emergency-off-road-vehicle-ban-9.7323451?cmp=rss",
-        "description": "B.C.'s forests minister says a province-wide state of emergency has ended, but wildfire risk remains.",
-        "pubDate": "Thu, 27 Aug 2026 18:54:49 EDT",
+        "title": "Judge rejects application by 'Surrey Six' killer to stay convictions",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/surrey-six-application-rejected-9.7323084?cmp=rss",
+        "description": "A B.C. Supreme Court judge has rejected an application by one of the \"Surrey Six\" killers to stay the convictions against him.",
+        "pubDate": "Thu, 27 Aug 2026 16:10:56 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Jury offers 4 recommendations after inquest into fatal police shooting near Tofino",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/julian-jones-coroners-inquest-recommendations-9.7323495?cmp=rss",
+        "description": "Julian Jones, 28, died on Feb. 27, 2021 after he was shot when officers responded to reports of a woman being assaulted and confined in a home in the remote island community of Opitsaht.",
+        "pubDate": "Thu, 27 Aug 2026 19:53:20 EDT",
         "source": "CBC BC"
       }
     ]
