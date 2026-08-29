@@ -1,35 +1,44 @@
 {
-  "updated_at": "2026-08-28T22:00:33.755Z",
+  "updated_at": "2026-08-29T04:00:34.550Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Businesses relieved by reopening of Highway 1 through B.C.'s Fraser Canyon",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fraser-canyon-highway-reopens-businesses-9.7323698?cmp=rss",
-        "description": "Part of the Trans-Canada Highway was shut down on July 7 as the Brunswick wildfire complex raged near Boston Bar. The fires are still burning, but, on Wednesday, the province  deemed it safe enough  for a partial reopening.",
-        "pubDate": "Thu, 27 Aug 2026 22:17:32 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
+      {
+        "title": "Gregor Robertson challenged on the Broadway Construction project",
+        "link": "https://globalnews.ca/news/12039357/gregor-robertson-challenged-broadway-construction-project/",
+        "description": "Fable Diner and SportChek are just two of the most recent businesses to shutter along Broadway near Main Street as construction continues.",
+        "pubDate": "Sat, 29 Aug 2026 00:59:15 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2023/03/Broadway-Subway-Project-drone.png"
+      },
+      {
+        "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
+        "link": "https://globalnews.ca/news/12040032/summerland-twisted-whiskers-closing-wildfire-business-struggles/",
+        "description": "A Summerland thrift store will permanently close its doors in December, after two difficult years in business and a summer tourism season disrupted by the Bald Range wildfire",
+        "pubDate": "Sat, 29 Aug 2026 00:56:30 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-28-171827.png"
+      },
+      {
+        "title": "Surrey Six killer loses court battle to have conviction overturned",
+        "link": "https://globalnews.ca/news/12038597/surrey-six-killer-loses-court-battle/",
+        "description": "In 2014, Red Scorpion Cody Haevischer was convicted of six counts of first-degree murder in the October 2007 killings at Surrey's Balmoral Tower.",
+        "pubDate": "Fri, 28 Aug 2026 03:43:34 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2015/06/sketch5a.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Federal government to match Red Cross donations for Summerland wildfire recovery",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/feds-to-match-red-cross-donations-for-summerland-recovery-9.7324984?cmp=rss",
+        "description": "The federal government says it will match donations made to the Red Cross for wildfire recovery efforts in Summerland.",
+        "pubDate": "Fri, 28 Aug 2026 18:57:30 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Summerland wildfire that forced thousands out of homes now being held",
         "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
         "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
         "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "B.C. Conservative MLA makes move to repeal DRIPA",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/harman-bhangu-initiative-petition-dripa-bc-9.7323111?cmp=rss",
-        "description": "A B.C. Conservative MLA is trying to repeal the province's Declaration on the Rights of Indigenous Peoples Act (DRIPA).",
-        "pubDate": "Thu, 27 Aug 2026 17:46:42 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Tree-mapping tool piloted in Kelowna is expanding across B.C. to cool down cities",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/tree-mapping-tool-piloted-in-kelowna-is-expanding-across-bc-to-cool-down-cities-9.7320373?cmp=rss",
-        "description": "A  University of British Columbia-led pilot project in Kelowna is expanding to Vancouver. It looks to change how local governments approach urban shade and planting trees.",
-        "pubDate": "Thu, 27 Aug 2026 12:06:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -38,12 +47,11 @@
     "northwest": [],
     "southeast": [
       {
-        "title": "A painful homecoming: Faulder residents return to see what the Bald range fire left behind",
-        "link": "https://globalnews.ca/news/12038712/a-painful-homecoming-faulder-residents-return-to-see-what-the-bald-range-fire-left-behind/",
-        "description": "Residents of Faulder were finally allowed to return to their properties, getting their first chance to walk through the areas hit by the Bald Range wildfire",
-        "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
+        "title": "3rd grizzly in family of 4 killed in B.C.'s West Kootenay",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/nelson-third-grizzly-yearling-killed-9.7323563?cmp=rss",
+        "description": "A third grizzly in a family of four well-known bears in the West Kootenay has been killed.",
+        "pubDate": "Thu, 27 Aug 2026 21:36:56 EDT",
+        "source": "CBC BC"
       }
     ],
     "all": [
