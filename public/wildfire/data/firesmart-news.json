@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-30T04:00:33.685Z",
+  "updated_at": "2026-08-30T10:00:33.935Z",
   "zones": {
     "coastal": [
       {
@@ -16,6 +16,13 @@
         "description": "A historic home popularly known as the Little Red House has been destroyed by fire after standing in the Township of Langley for almost 140 years.",
         "pubDate": "Sat, 29 Aug 2026 14:44:22 EDT",
         "source": "CBC BC"
+      },
+      {
+        "title": "Sunshine Coast service resumes after mechanical issues with 2 B.C. ferries",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-ferries-queen-of-surrey-cancellations-9.7325440?cmp=rss",
+        "description": "B.C. Ferries cancelled several sailings on the Sunshine Coast route on Saturday amid mechanical issues with two vessels.",
+        "pubDate": "Sat, 29 Aug 2026 10:52:36 EDT",
+        "source": "CBC BC"
       }
     ],
     "kamloops": [
@@ -28,12 +35,12 @@
         "image": "https://globalnews.ca/wp-content/uploads/2023/03/Broadway-Subway-Project-drone.png"
       },
       {
-        "title": "A painful homecoming: Faulder residents return to see what the Bald range fire left behind",
-        "link": "https://globalnews.ca/news/12038712/a-painful-homecoming-faulder-residents-return-to-see-what-the-bald-range-fire-left-behind/",
-        "description": "Residents of Faulder were finally allowed to return to their properties, getting their first chance to walk through the areas hit by the Bald Range wildfire",
-        "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
+        "title": "Surrey Six killer loses court battle to have conviction overturned",
+        "link": "https://globalnews.ca/news/12038597/surrey-six-killer-loses-court-battle/",
+        "description": "In 2014, Red Scorpion Cody Haevischer was convicted of six counts of first-degree murder in the October 2007 killings at Surrey's Balmoral Tower.",
+        "pubDate": "Fri, 28 Aug 2026 03:43:34 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2015/06/sketch5a.jpg?quality=65&#038;strip=all"
       },
       {
         "title": "B.C. regional district lifts last of its evacuation orders for Ainslie Creek wildfire",
@@ -50,27 +57,20 @@
         "source": "CBC BC"
       },
       {
-        "title": "Federal government to match Red Cross donations for Summerland wildfire recovery",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/feds-to-match-red-cross-donations-for-summerland-recovery-9.7324984?cmp=rss",
-        "description": "The federal government says it will match donations made to the Red Cross for wildfire recovery efforts in Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 18:57:30 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Some Indigenous businesses are trying to avoid U.S. markets amid trade war",
-        "link": "https://www.cbc.ca/news/indigenous/some-indigenous-businesses-are-trying-to-avoid-u-s-markets-amid-trade-war-9.7324885?cmp=rss",
-        "description": "Some Indigenous businesses in Canada are avoiding selling products to the U.S. in order to avoid uncertainty and hassle.",
-        "pubDate": "Fri, 28 Aug 2026 18:29:00 EDT",
+        "title": "Summerland wildfire that forced thousands out of homes now being held",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
+        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
+        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [
       {
-        "title": "Summerland wildfire that forced thousands out of homes now being held",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
-        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
+        "title": "Subway restaurant owner in Quesnel fined for trying to suppress worker injury claim: WorkSafeBC",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/quesnel-subway-restaurant-owner-9.7321716?cmp=rss",
+        "description": "The owner of a Subway restaurant in Quesnel, B.C., was fined $2,500 after WorkSafeBC found they tried to get a worker to retract their injury claim after being burned on the job.",
+        "pubDate": "Fri, 28 Aug 2026 08:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -99,17 +99,10 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Subway restaurant owner in Quesnel fined for trying to suppress worker injury claim: WorkSafeBC",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/quesnel-subway-restaurant-owner-9.7321716?cmp=rss",
-        "description": "The owner of a Subway restaurant in Quesnel, B.C., was fined $2,500 after WorkSafeBC found they tried to get a worker to retract their injury claim after being burned on the job.",
-        "pubDate": "Fri, 28 Aug 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Junior hockey players in Western Canada, Ontario can seek compensation for alleged abuse, court says",
-        "link": "https://www.cbc.ca/news/canada/sudbury/chl-players-compensation-abuse-9.7324283?cmp=rss",
-        "description": "The Ontario Superior Court of Justice has approved an opt-in process for current and former players in the Ontario Hockey League and Western Hockey League who allege they were victims of abuse or hazing.",
-        "pubDate": "Fri, 28 Aug 2026 13:35:35 EDT",
+        "title": "B.C. to pilot forestry model to assist industry, improve wildfire mitigation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-forestry-model-wildfire-mitigation-9.7323776?cmp=rss",
+        "description": "A proposed new provincial forest model aims to assist B.C.’s struggling forestry industry and aid in wildfire mitigation, but environmentalists worry it may lead to conservation problems.",
+        "pubDate": "Fri, 28 Aug 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ]
