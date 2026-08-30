@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-29T22:00:34.844Z",
+  "updated_at": "2026-08-30T04:00:33.685Z",
   "zones": {
     "coastal": [
       {
@@ -20,12 +20,12 @@
     ],
     "kamloops": [
       {
-        "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
-        "link": "https://globalnews.ca/news/12040032/summerland-twisted-whiskers-closing-wildfire-business-struggles/",
-        "description": "A Summerland thrift store will permanently close its doors in December, after two difficult years in business and a summer tourism season disrupted by the Bald Range wildfire",
-        "pubDate": "Sat, 29 Aug 2026 00:56:30 +0000",
+        "title": "Gregor Robertson challenged on the Broadway Construction project",
+        "link": "https://globalnews.ca/news/12039357/gregor-robertson-challenged-broadway-construction-project/",
+        "description": "Fable Diner and SportChek are just two of the most recent businesses to shutter along Broadway near Main Street as construction continues.",
+        "pubDate": "Sat, 29 Aug 2026 00:59:15 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-28-171827.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2023/03/Broadway-Subway-Project-drone.png"
       },
       {
         "title": "A painful homecoming: Faulder residents return to see what the Bald range fire left behind",
@@ -34,6 +34,13 @@
         "pubDate": "Fri, 28 Aug 2026 03:24:02 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-27-193053.png"
+      },
+      {
+        "title": "B.C. regional district lifts last of its evacuation orders for Ainslie Creek wildfire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/ainslie-creek-wildfire-no-more-orders-9.7325685?cmp=rss",
+        "description": "The Thompson-Nicola Regional District in southern British Columbia has lifted the last of its evacuation orders related to the out-of-control Ainslie Creek wildfire. The regional district says an order has been downgraded to an evacuation alert for 58 addressed properties in the Coldwater and Patchett Road areas.",
+        "pubDate": "Sat, 29 Aug 2026 19:47:01 EDT",
+        "source": "CBC BC"
       },
       {
         "title": "Severe drought conditions prompt new order limiting water use for irrigation in B.C. Interior",
@@ -60,10 +67,10 @@
     "prince-george": [],
     "cariboo": [
       {
-        "title": "Subway restaurant owner in Quesnel fined for trying to suppress worker injury claim: WorkSafeBC",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/quesnel-subway-restaurant-owner-9.7321716?cmp=rss",
-        "description": "The owner of a Subway restaurant in Quesnel, B.C., was fined $2,500 after WorkSafeBC found they tried to get a worker to retract their injury claim after being burned on the job.",
-        "pubDate": "Fri, 28 Aug 2026 08:00:00 EDT",
+        "title": "Summerland wildfire that forced thousands out of homes now being held",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
+        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
+        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
         "source": "CBC BC"
       }
     ],
@@ -92,10 +99,17 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Summerland wildfire that forced thousands out of homes now being held",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
-        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
+        "title": "Subway restaurant owner in Quesnel fined for trying to suppress worker injury claim: WorkSafeBC",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/quesnel-subway-restaurant-owner-9.7321716?cmp=rss",
+        "description": "The owner of a Subway restaurant in Quesnel, B.C., was fined $2,500 after WorkSafeBC found they tried to get a worker to retract their injury claim after being burned on the job.",
+        "pubDate": "Fri, 28 Aug 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Junior hockey players in Western Canada, Ontario can seek compensation for alleged abuse, court says",
+        "link": "https://www.cbc.ca/news/canada/sudbury/chl-players-compensation-abuse-9.7324283?cmp=rss",
+        "description": "The Ontario Superior Court of Justice has approved an opt-in process for current and former players in the Ontario Hockey League and Western Hockey League who allege they were victims of abuse or hazing.",
+        "pubDate": "Fri, 28 Aug 2026 13:35:35 EDT",
         "source": "CBC BC"
       }
     ]
