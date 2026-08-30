@@ -1,7 +1,30 @@
 {
-  "updated_at": "2026-08-30T16:00:34.211Z",
+  "updated_at": "2026-08-30T22:00:33.655Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "B.C.&#8217;s historic Little Red House destroyed by fire",
+        "link": "https://globalnews.ca/news/12040390/bc-little-red-house-fire/",
+        "description": "The Langley Heritage Society said in an online post Friday that it was \"sad and unfortunate\" the home, also known as the McIver House, was never preserved.",
+        "pubDate": "Sat, 29 Aug 2026 14:24:31 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6413210d377194a6ebdcac2c1ba6ba2fed3bc5795af2ccfa1c6344c55d8e8c91.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Fire destroys Langley's beloved 'Little Red House'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/little-red-house-langley-fire-9.7325439?cmp=rss",
+        "description": "A historic home popularly known as the Little Red House has been destroyed by fire after standing in the Township of Langley for almost 140 years.",
+        "pubDate": "Sat, 29 Aug 2026 14:44:22 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Sunshine Coast service resumes after mechanical issues with 2 B.C. ferries",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-ferries-queen-of-surrey-cancellations-9.7325440?cmp=rss",
+        "description": "B.C. Ferries cancelled several sailings on the Sunshine Coast route on Saturday amid mechanical issues with two vessels.",
+        "pubDate": "Sat, 29 Aug 2026 10:52:36 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "kamloops": [
       {
         "title": "Gregor Robertson challenged on the Broadway Construction project",
@@ -17,26 +40,20 @@
         "description": "The Thompson-Nicola Regional District in southern British Columbia has lifted the last of its evacuation orders related to the out-of-control Ainslie Creek wildfire. The regional district says an order has been downgraded to an evacuation alert for 58 addressed properties in the Coldwater and Patchett Road areas.",
         "pubDate": "Sat, 29 Aug 2026 19:47:01 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Federal government to match Red Cross donations for Summerland wildfire recovery",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/feds-to-match-red-cross-donations-for-summerland-recovery-9.7324984?cmp=rss",
-        "description": "The federal government says it will match donations made to the Red Cross for wildfire recovery efforts in Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 18:57:30 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Summerland wildfire that forced thousands out of homes now being held",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/summerland-bc-wildfire-being-held-9.7324182?cmp=rss",
-        "description": "The B.C. Wildfire Service says the blaze is expected to remain within its current perimeter of about 252 square kilometres west of Summerland.",
-        "pubDate": "Fri, 28 Aug 2026 12:02:40 EDT",
-        "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "RCMP investigating trio of suspicious wildfires in Grand Forks, B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/grand-forks-suspicious-wildfires-9.7326000?cmp=rss",
+        "description": "Firefighters in Grand Forks, B.C., were called to three wildfires this weekend they say are suspicious.",
+        "pubDate": "Sun, 30 Aug 2026 15:08:35 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "all": [
       {
         "title": "The where, when and how of fuel treatment decisions",
