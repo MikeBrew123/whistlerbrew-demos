@@ -1,15 +1,24 @@
 {
-  "updated_at": "2026-08-31T10:00:35.738Z",
+  "updated_at": "2026-08-31T16:00:34.412Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "B.C.&#8217;s historic Little Red House destroyed by fire",
+        "link": "https://globalnews.ca/news/12040390/bc-little-red-house-fire/",
+        "description": "The Langley Heritage Society said in an online post Friday that it was \"sad and unfortunate\" the home, also known as the McIver House, was never preserved.",
+        "pubDate": "Sat, 29 Aug 2026 14:24:31 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6413210d377194a6ebdcac2c1ba6ba2fed3bc5795af2ccfa1c6344c55d8e8c91.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [
       {
-        "title": "Gregor Robertson challenged on the Broadway Construction project",
-        "link": "https://globalnews.ca/news/12039357/gregor-robertson-challenged-broadway-construction-project/",
-        "description": "Fable Diner and SportChek are just two of the most recent businesses to shutter along Broadway near Main Street as construction continues.",
-        "pubDate": "Sat, 29 Aug 2026 00:59:15 +0000",
+        "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
+        "link": "https://globalnews.ca/news/12040032/summerland-twisted-whiskers-closing-wildfire-business-struggles/",
+        "description": "A Summerland thrift store will permanently close its doors in December, after two difficult years in business and a summer tourism season disrupted by the Bald Range wildfire",
+        "pubDate": "Sat, 29 Aug 2026 00:56:30 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2023/03/Broadway-Subway-Project-drone.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-28-171827.png"
       },
       {
         "title": "B.C. regional district lifts last of its evacuation orders for Ainslie Creek wildfire",
@@ -19,10 +28,25 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Cole Hosack vanished from Dawson Creek, B.C., in 2023. Does this man know what happened to him?",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/cole-hosack-disappearance-dawson-creek-9.7322992?cmp=rss",
+        "description": "New evidence, including a potential confession, has been uncovered in an investigation by the CBC's the fifth estate into the suspicious disappearance of a man in northern British Columbia.",
+        "pubDate": "Mon, 31 Aug 2026 04:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [
+      {
+        "title": "Change needed after 'multiple failures' led to grizzly deaths, Wildsafe B.C. co-ordinator says",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-grizzly-deaths-changes-needed-9.7325923?cmp=rss",
+        "description": "The outgoing community co-ordinator of Wildsafe B.C. Nelson is calling for change, after she says \"multiple failures ... on many levels\" led to the killing of a grizzly sow and two of her three yearlings this month.",
+        "pubDate": "Sun, 30 Aug 2026 14:55:35 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "RCMP investigating trio of suspicious wildfires in Grand Forks, B.C.",
         "link": "https://www.cbc.ca/news/canada/british-columbia/grand-forks-suspicious-wildfires-9.7326000?cmp=rss",
