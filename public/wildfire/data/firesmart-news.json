@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-30T22:00:33.655Z",
+  "updated_at": "2026-08-31T04:00:37.723Z",
   "zones": {
     "coastal": [
       {
@@ -16,23 +16,16 @@
         "description": "A historic home popularly known as the Little Red House has been destroyed by fire after standing in the Township of Langley for almost 140 years.",
         "pubDate": "Sat, 29 Aug 2026 14:44:22 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Sunshine Coast service resumes after mechanical issues with 2 B.C. ferries",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-ferries-queen-of-surrey-cancellations-9.7325440?cmp=rss",
-        "description": "B.C. Ferries cancelled several sailings on the Sunshine Coast route on Saturday amid mechanical issues with two vessels.",
-        "pubDate": "Sat, 29 Aug 2026 10:52:36 EDT",
-        "source": "CBC BC"
       }
     ],
     "kamloops": [
       {
-        "title": "Gregor Robertson challenged on the Broadway Construction project",
-        "link": "https://globalnews.ca/news/12039357/gregor-robertson-challenged-broadway-construction-project/",
-        "description": "Fable Diner and SportChek are just two of the most recent businesses to shutter along Broadway near Main Street as construction continues.",
-        "pubDate": "Sat, 29 Aug 2026 00:59:15 +0000",
+        "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
+        "link": "https://globalnews.ca/news/12040032/summerland-twisted-whiskers-closing-wildfire-business-struggles/",
+        "description": "A Summerland thrift store will permanently close its doors in December, after two difficult years in business and a summer tourism season disrupted by the Bald Range wildfire",
+        "pubDate": "Sat, 29 Aug 2026 00:56:30 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2023/03/Broadway-Subway-Project-drone.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-28-171827.png"
       },
       {
         "title": "B.C. regional district lifts last of its evacuation orders for Ainslie Creek wildfire",
