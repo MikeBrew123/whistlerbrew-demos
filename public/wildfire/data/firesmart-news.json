@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-31T16:00:34.412Z",
+  "updated_at": "2026-08-31T22:00:34.344Z",
   "zones": {
     "coastal": [
       {
@@ -11,23 +11,7 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/08/6413210d377194a6ebdcac2c1ba6ba2fed3bc5795af2ccfa1c6344c55d8e8c91.jpg?quality=65&#038;strip=all"
       }
     ],
-    "kamloops": [
-      {
-        "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
-        "link": "https://globalnews.ca/news/12040032/summerland-twisted-whiskers-closing-wildfire-business-struggles/",
-        "description": "A Summerland thrift store will permanently close its doors in December, after two difficult years in business and a summer tourism season disrupted by the Bald Range wildfire",
-        "pubDate": "Sat, 29 Aug 2026 00:56:30 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-28-171827.png"
-      },
-      {
-        "title": "B.C. regional district lifts last of its evacuation orders for Ainslie Creek wildfire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/ainslie-creek-wildfire-no-more-orders-9.7325685?cmp=rss",
-        "description": "The Thompson-Nicola Regional District in southern British Columbia has lifted the last of its evacuation orders related to the out-of-control Ainslie Creek wildfire. The regional district says an order has been downgraded to an evacuation alert for 58 addressed properties in the Coldwater and Patchett Road areas.",
-        "pubDate": "Sat, 29 Aug 2026 19:47:01 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [
       {
         "title": "Cole Hosack vanished from Dawson Creek, B.C., in 2023. Does this man know what happened to him?",
@@ -40,13 +24,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [
-      {
-        "title": "Change needed after 'multiple failures' led to grizzly deaths, Wildsafe B.C. co-ordinator says",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-grizzly-deaths-changes-needed-9.7325923?cmp=rss",
-        "description": "The outgoing community co-ordinator of Wildsafe B.C. Nelson is calling for change, after she says \"multiple failures ... on many levels\" led to the killing of a grizzly sow and two of her three yearlings this month.",
-        "pubDate": "Sun, 30 Aug 2026 14:55:35 EDT",
-        "source": "CBC BC"
-      },
       {
         "title": "RCMP investigating trio of suspicious wildfires in Grand Forks, B.C.",
         "link": "https://www.cbc.ca/news/canada/british-columbia/grand-forks-suspicious-wildfires-9.7326000?cmp=rss",
