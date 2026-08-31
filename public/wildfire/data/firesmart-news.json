@@ -1,31 +1,15 @@
 {
-  "updated_at": "2026-08-31T04:00:37.723Z",
+  "updated_at": "2026-08-31T10:00:35.738Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "B.C.&#8217;s historic Little Red House destroyed by fire",
-        "link": "https://globalnews.ca/news/12040390/bc-little-red-house-fire/",
-        "description": "The Langley Heritage Society said in an online post Friday that it was \"sad and unfortunate\" the home, also known as the McIver House, was never preserved.",
-        "pubDate": "Sat, 29 Aug 2026 14:24:31 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6413210d377194a6ebdcac2c1ba6ba2fed3bc5795af2ccfa1c6344c55d8e8c91.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Fire destroys Langley's beloved 'Little Red House'",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/little-red-house-langley-fire-9.7325439?cmp=rss",
-        "description": "A historic home popularly known as the Little Red House has been destroyed by fire after standing in the Township of Langley for almost 140 years.",
-        "pubDate": "Sat, 29 Aug 2026 14:44:22 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
-        "title": "Summerland’s Twisted Whiskers closing as owner says wildfire added to business struggles",
-        "link": "https://globalnews.ca/news/12040032/summerland-twisted-whiskers-closing-wildfire-business-struggles/",
-        "description": "A Summerland thrift store will permanently close its doors in December, after two difficult years in business and a summer tourism season disrupted by the Bald Range wildfire",
-        "pubDate": "Sat, 29 Aug 2026 00:56:30 +0000",
+        "title": "Gregor Robertson challenged on the Broadway Construction project",
+        "link": "https://globalnews.ca/news/12039357/gregor-robertson-challenged-broadway-construction-project/",
+        "description": "Fable Diner and SportChek are just two of the most recent businesses to shutter along Broadway near Main Street as construction continues.",
+        "pubDate": "Sat, 29 Aug 2026 00:59:15 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/Screenshot-2026-08-28-171827.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2023/03/Broadway-Subway-Project-drone.png"
       },
       {
         "title": "B.C. regional district lifts last of its evacuation orders for Ainslie Creek wildfire",
