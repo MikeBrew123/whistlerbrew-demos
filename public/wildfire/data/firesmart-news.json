@@ -1,12 +1,19 @@
 {
-  "updated_at": "2026-09-01T10:00:34.779Z",
+  "updated_at": "2026-09-01T16:00:36.472Z",
   "zones": {
     "coastal": [
       {
-        "title": "Investigation underway after fire at Vancouver's Plaza of Nations",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-plaza-nations-fire-9.7327562?cmp=rss",
-        "description": "The cause of a fire on the exterior of Vancouver's Plaza of Nations building on Monday evening is under investigation.",
-        "pubDate": "Mon, 31 Aug 2026 23:47:42 EDT",
+        "title": "Liberal Braeden Caley wins byelection in North Vancouver-Capilano",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/liberal-win-north-vancouver-capilano-9.7327580?cmp=rss",
+        "description": "The contest was one of three federal byelections  on Monday, with others in Ontario and Quebec also won by the Liberals.",
+        "pubDate": "Tue, 01 Sep 2026 00:15:24 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "New Wolverine video game features Squamish Nation's language, B.C. locations",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/squamish-nation-language-in-marvel-s-wolverine-game-9.7324506?cmp=rss",
+        "description": "A sign featuring the Squamish Nation's language and several B.C. locations are on display in a new Wolverine video game that’s expected to draw millions of players globally.",
+        "pubDate": "Mon, 31 Aug 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -24,10 +31,10 @@
     "northwest": [],
     "southeast": [
       {
-        "title": "RCMP investigating trio of suspicious wildfires in Grand Forks, B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/grand-forks-suspicious-wildfires-9.7326000?cmp=rss",
-        "description": "Firefighters in Grand Forks, B.C., were called to three wildfires this weekend they say are suspicious.",
-        "pubDate": "Sun, 30 Aug 2026 15:08:35 EDT",
+        "title": "Change needed after 'multiple failures' led to grizzly deaths, Wildsafe B.C. co-ordinator says",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-grizzly-deaths-changes-needed-9.7325923?cmp=rss",
+        "description": "The outgoing community co-ordinator of Wildsafe B.C. Nelson is calling for change, after she says \"multiple failures ... on many levels\" led to the killing of a grizzly sow and two of her three yearlings this month.",
+        "pubDate": "Sun, 30 Aug 2026 14:55:35 EDT",
         "source": "CBC BC"
       }
     ],
