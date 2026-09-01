@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-30T22:01:15.295Z",
+  "updated_at": "2026-09-01T10:01:26.185Z",
   "fires": [
     {
       "country": "Belgium",
@@ -170,6 +170,14 @@
       "summary": "Searing US heatwave raising concerns for wildfire season and water supply. Wildfires ripping through unusual parts of US. Federal officials monitoring recovery efforts."
     },
     {
+      "country": "Indonesia",
+      "name": "Borneo Wildfires",
+      "status": "Active",
+      "summary": "Wildfires in Indonesia have destroyed part of the natural habitat of hundreds of orangutans, risking the survival of the species.",
+      "link": "https://www.bbc.co.uk/news/videos/c74emdn49kdo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e8b6/live/7c268450-a5c7-11f1-aed2-8d6da8d75094.jpg"
+    },
+    {
       "country": "Brazil",
       "name": "Rio Olympic Velodrome Fire",
       "status": "Active",
@@ -195,21 +203,19 @@
   "last_report": {
     "items_in": {
       "canada": 0,
-      "world": 0
+      "world": 1
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 29
+      "world_fires": 25
     },
     "deduped": 0,
-    "rerouted": 0,
+    "rerouted": 1,
     "notes": [
-      "No new Canada news articles provided",
-      "No new world articles provided",
-      "All 29 existing fires preserved - all marked Active",
-      "No fires contained >60 days ago to remove",
-      "No deduplication required - no duplicate articles across sources",
-      "All images preserved in output"
+      "Rerouted: Borneo wildfires (Indonesia) from world articles to world_fires",
+      "Preserved all existing_fires with Active status",
+      "Added image field to Borneo fire entry",
+      "All fires remain Active; no fires dropped based on containment age"
     ]
   }
 }
