@@ -1,40 +1,32 @@
 {
-  "updated_at": "2026-09-01T16:00:36.472Z",
+  "updated_at": "2026-09-01T22:00:34.132Z",
   "zones": {
     "coastal": [
       {
-        "title": "Liberal Braeden Caley wins byelection in North Vancouver-Capilano",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/liberal-win-north-vancouver-capilano-9.7327580?cmp=rss",
-        "description": "The contest was one of three federal byelections  on Monday, with others in Ontario and Quebec also won by the Liberals.",
-        "pubDate": "Tue, 01 Sep 2026 00:15:24 EDT",
+        "title": "Crews scour mountains for missing hiker who took Sea-to-Sky gondola",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/missing-hiker-sea-to-sky-gondola-9.7328478?cmp=rss",
+        "description": "Search-and-rescue crews are scouring the mountains near Squamish, B.C., for a man who was reported overdue from a hike over the weekend.",
+        "pubDate": "Tue, 01 Sep 2026 17:34:03 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "New Wolverine video game features Squamish Nation's language, B.C. locations",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/squamish-nation-language-in-marvel-s-wolverine-game-9.7324506?cmp=rss",
-        "description": "A sign featuring the Squamish Nation's language and several B.C. locations are on display in a new Wolverine video game that’s expected to draw millions of players globally.",
-        "pubDate": "Mon, 31 Aug 2026 09:00:00 EDT",
+        "title": "Arson suspected in fire at Vancouver's Plaza of Nations",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-plaza-nations-fire-9.7327562?cmp=rss",
+        "description": "Vancouver police believe a fire at Vancouver's Plaza of Nations on Monday was the result of arson.",
+        "pubDate": "Mon, 31 Aug 2026 23:47:42 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Cole Hosack vanished from Dawson Creek, B.C., in 2023. Does this man know what happened to him?",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/cole-hosack-disappearance-dawson-creek-9.7322992?cmp=rss",
-        "description": "New evidence, including a potential confession, has been uncovered in an investigation by the CBC's the fifth estate into the suspicious disappearance of a man in northern British Columbia.",
-        "pubDate": "Mon, 31 Aug 2026 04:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [
       {
-        "title": "Change needed after 'multiple failures' led to grizzly deaths, Wildsafe B.C. co-ordinator says",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-grizzly-deaths-changes-needed-9.7325923?cmp=rss",
-        "description": "The outgoing community co-ordinator of Wildsafe B.C. Nelson is calling for change, after she says \"multiple failures ... on many levels\" led to the killing of a grizzly sow and two of her three yearlings this month.",
-        "pubDate": "Sun, 30 Aug 2026 14:55:35 EDT",
+        "title": "‘Our hands are tied’: Golden rescue can no longer take in fawns under new chronic wasting disease rules",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/new-chronic-wasting-disease-rules-9.7327570?cmp=rss",
+        "description": "A wildlife rescue in Golden, B.C., says new provincial permit conditions mean it can no longer accept, transport or rehabilitate white tailed and mule deer fawns in the Kootenay region.",
+        "pubDate": "Tue, 01 Sep 2026 11:06:18 EDT",
         "source": "CBC BC"
       }
     ],
