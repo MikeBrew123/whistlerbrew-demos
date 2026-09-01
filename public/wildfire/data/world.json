@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01T10:01:26.185Z",
+  "updated_at": "2026-09-01T16:01:26.872Z",
   "fires": [
     {
       "country": "Belgium",
@@ -207,15 +207,15 @@
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 25
+      "world_fires": 1
     },
-    "deduped": 0,
-    "rerouted": 1,
+    "deduped": 1,
+    "rerouted": 0,
     "notes": [
-      "Rerouted: Borneo wildfires (Indonesia) from world articles to world_fires",
-      "Preserved all existing_fires with Active status",
-      "Added image field to Borneo fire entry",
-      "All fires remain Active; no fires dropped based on containment age"
+      "Merged incoming Borneo article with existing Indonesia fire entry (same fire, same source, duplicate content)",
+      "All 27 existing_fires preserved as Active status",
+      "No Canada news items provided",
+      "No fires contained >60 days ago to remove"
     ]
   }
 }
