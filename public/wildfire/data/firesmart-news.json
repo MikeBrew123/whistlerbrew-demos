@@ -1,26 +1,9 @@
 {
-  "updated_at": "2026-08-31T22:00:34.344Z",
+  "updated_at": "2026-09-01T04:00:34.823Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "B.C.&#8217;s historic Little Red House destroyed by fire",
-        "link": "https://globalnews.ca/news/12040390/bc-little-red-house-fire/",
-        "description": "The Langley Heritage Society said in an online post Friday that it was \"sad and unfortunate\" the home, also known as the McIver House, was never preserved.",
-        "pubDate": "Sat, 29 Aug 2026 14:24:31 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/6413210d377194a6ebdcac2c1ba6ba2fed3bc5795af2ccfa1c6344c55d8e8c91.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Cole Hosack vanished from Dawson Creek, B.C., in 2023. Does this man know what happened to him?",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/cole-hosack-disappearance-dawson-creek-9.7322992?cmp=rss",
-        "description": "New evidence, including a potential confession, has been uncovered in an investigation by the CBC's the fifth estate into the suspicious disappearance of a man in northern British Columbia.",
-        "pubDate": "Mon, 31 Aug 2026 04:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [
@@ -33,6 +16,20 @@
       }
     ],
     "all": [
+      {
+        "title": "Risky science: why connecting research to application matters",
+        "link": "https://wildfiretoday.com/risky-science-why-connecting-research-to-application-matters/",
+        "description": "There is not much benefit in producing science that just sits on a shelf. Effective science must extend beyond publication and address real-world needs argues Lynn Johnston, a Forest Fire Research Specialist with Natural Resources Canada and the Canadian Forest Service, in an editorial for the International Journal of Wildland Fire. While reading journal articles [&#8230;]",
+        "pubDate": "Tue, 01 Sep 2026 00:35:03 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Details of fatal firefighter helicopter crash during Colorado&#8217;s Gold Mountain Fire revealed",
+        "link": "https://wildfiretoday.com/details-of-fatal-firefighter-helicopter-crash-during-colorados-gold-mountain-fire-revealed/",
+        "description": "The first investigation report into a helicopter crash that left a pilot dead during Colorado&#8217;s Gold Mountain Fire on July 12 was released by the National Transportation Safety Board on Wednesday. The pilot, 56-year-old Nicholas Dale of Sooke, British Columbia, was the only person on board the Kaman K-1200 when it crashed while conducting water-bucket [&#8230;]",
+        "pubDate": "Thu, 27 Aug 2026 21:56:24 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "The where, when and how of fuel treatment decisions",
         "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
@@ -48,10 +45,31 @@
         "source": "Wildfire Today"
       },
       {
+        "title": "Over 90,000 evacuate as uncontained Hawk Fire burns outside Reno, Nevada",
+        "link": "https://wildfiretoday.com/over-90000-evacuate-as-uncontained-hawk-fire-burns-outside-reno-nevada/",
+        "description": "The Hawk Fire burning northwest of Reno, Nevada, triggered the evacuations of over 90,000 people on Sunday, according to fire crews working the incident. The wildfire, which ignited on Saturday morning and has since been determined to be human-caused, has burned over 15,000 acres as of Sunday evening. Nevada Gov. Joe Lombardo declared a State [&#8230;]",
+        "pubDate": "Mon, 24 Aug 2026 15:07:50 +0000",
+        "source": "Wildfire Today"
+      },
+      {
         "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
         "link": "https://wildfiretoday.com/studying-combined-fuel-treatments-gives-us-a-better-picture-of-effectiveness/",
         "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
         "pubDate": "Mon, 24 Aug 2026 07:48:45 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Spring fire potential across Australia awaits the full impact of El Nino",
+        "link": "https://wildfiretoday.com/spring-fire-potential-across-australia-awaits-the-full-impact-of-el-nino/",
+        "description": "Australia is facing a watch and wait scenario for its summer bushfire season as the latest Bushfire Seasonal Outlook predicts a mild but warm spring before the main El Nino impacts are expected to appear later in the year. El Nino is now firmly established and the Bureau of Meteorology is watching it continue to [&#8230;]",
+        "pubDate": "Wed, 19 Aug 2026 06:20:09 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Largest wildfire in Belgium&#8217;s history triggers explosions, burns over half of nation&#8217;s oldest nature preserve",
+        "link": "https://wildfiretoday.com/largest-wildfire-in-belgiums-history-triggers-explosions-burns-over-half-of-nations-oldest-nature-preserve/",
+        "description": "A wildfire has burned over half of a historic nature preserve in Belgium near the country&#8217;s border with Germany, triggering explosions and evacuations in multiple nearby villages. The wildfire, which started on Aug. 13 and was 0% contained as of Tuesday afternoon, has burned over 3,000 hectares (7,413 acres) of the around 5,000-hectare High Fens [&#8230;]",
+        "pubDate": "Tue, 18 Aug 2026 21:06:43 +0000",
         "source": "Wildfire Today"
       }
     ]
