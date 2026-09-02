@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02T10:00:35.625Z",
+  "updated_at": "2026-09-02T16:00:34.761Z",
   "zones": {
     "coastal": [
       {
@@ -7,13 +7,6 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/missing-hiker-sea-to-sky-gondola-9.7328478?cmp=rss",
         "description": "Search-and-rescue crews are scouring the mountains near Squamish, B.C., for a man who was reported overdue from a hike over the weekend.",
         "pubDate": "Tue, 01 Sep 2026 17:34:03 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Arson suspected in fire at Vancouver's Plaza of Nations",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-plaza-nations-fire-9.7327562?cmp=rss",
-        "description": "Vancouver police believe a fire at Vancouver's Plaza of Nations on Monday was the result of arson.",
-        "pubDate": "Mon, 31 Aug 2026 23:47:42 EDT",
         "source": "CBC BC"
       }
     ],
@@ -30,6 +23,21 @@
         "source": "CBC BC"
       }
     ],
-    "all": []
+    "all": [
+      {
+        "title": "The where, when and how of fuel treatment decisions",
+        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
+        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
+        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
+        "link": "https://wildfiretoday.com/studying-combined-fuel-treatments-gives-us-a-better-picture-of-effectiveness/",
+        "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
+        "pubDate": "Mon, 24 Aug 2026 07:48:45 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
