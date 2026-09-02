@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02T16:00:34.761Z",
+  "updated_at": "2026-09-02T22:00:35.067Z",
   "zones": {
     "coastal": [
       {
@@ -23,21 +23,6 @@
         "source": "CBC BC"
       }
     ],
-    "all": [
-      {
-        "title": "The where, when and how of fuel treatment decisions",
-        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
-        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
-        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
-        "link": "https://wildfiretoday.com/studying-combined-fuel-treatments-gives-us-a-better-picture-of-effectiveness/",
-        "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
-        "pubDate": "Mon, 24 Aug 2026 07:48:45 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
