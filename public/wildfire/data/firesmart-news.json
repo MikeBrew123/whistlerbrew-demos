@@ -1,9 +1,33 @@
 {
-  "updated_at": "2026-09-03T16:00:35.900Z",
+  "updated_at": "2026-09-03T22:00:35.359Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
+    "coastal": [
+      {
+        "title": "Hiker missing from B.C. gondola made call to 911 saying he's 'stuck on the mountain'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/missing-squamish-man-called-911-9.7331131?cmp=rss",
+        "description": "Search and rescue crews say a hiker who's been missing from the Squamish area since Sunday managed to briefly get through to 911 on Tuesday, but that searchers still haven't been able to find him.",
+        "pubDate": "Thu, 03 Sep 2026 13:18:58 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Ahead of municipal election, Kelowna mayor asks feds to shut down supervised consumption site",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/kelowna-mayor-tom-dyas-supervised-consumption-site-9.7330408?cmp=rss",
+        "description": "The mayor of Kelowna, B.C., has written to the federal health minister asking for authorities to deny the renewal of a supervised consumption site operating in the city's downtown core. Mayor Tom Dyas's letter comes a little under two months before the municipal election in the city, in which he is running for re-election.",
+        "pubDate": "Wed, 02 Sep 2026 22:00:39 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "Missing person found dead in Fraser River was killed, Prince George RCMP believe",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/homicide-fraser-river-prince-george-9.7329997?cmp=rss",
+        "description": "Julian Wich, 29, was reported missing on Jan. 2 and found dead six months later.",
+        "pubDate": "Wed, 02 Sep 2026 17:33:13 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
