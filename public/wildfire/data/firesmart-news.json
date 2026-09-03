@@ -1,28 +1,51 @@
 {
-  "updated_at": "2026-09-02T22:00:35.067Z",
+  "updated_at": "2026-09-03T04:00:35.585Z",
   "zones": {
     "coastal": [
       {
-        "title": "Crews scour mountains for missing hiker who took Sea-to-Sky gondola",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/missing-hiker-sea-to-sky-gondola-9.7328478?cmp=rss",
-        "description": "Search-and-rescue crews are scouring the mountains near Squamish, B.C., for a man who was reported overdue from a hike over the weekend.",
-        "pubDate": "Tue, 01 Sep 2026 17:34:03 EDT",
+        "title": "New trial ordered for Vancouver man convicted of 2nd-degree murder",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/new-trial-vancouver-west-end-2nd-degre-murder-9.7328741?cmp=rss",
+        "description": "A Vancouver man who was convicted of second-degree murder after a fatal stabbing of a fellow resident of a psychiatric facility will face a new trial.",
+        "pubDate": "Tue, 01 Sep 2026 20:47:54 EDT",
         "source": "CBC BC"
       }
     ],
-    "kamloops": [],
-    "prince-george": [],
+    "kamloops": [
+      {
+        "title": "Ahead of municipal election, Kelowna mayor asks feds to shut down supervised consumption site",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/kelowna-mayor-tom-dyas-supervised-consumption-site-9.7330408?cmp=rss",
+        "description": "The mayor of Kelowna, B.C., has written to the federal health minister asking for authorities to deny the renewal of a supervised consumption site operating in the city's downtown core. Mayor Tom Dyas's letter comes a little under two months before the municipal election in the city, in which he is running for re-election.",
+        "pubDate": "Wed, 02 Sep 2026 22:00:39 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Uber drivers in B.C.'s Interior join Vancouver Island in unionization agreement",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/uber-drivers-in-b-c-s-interior-join-vancouver-island-in-unionization-agreement-9.7330269?cmp=rss",
+        "description": "The United Food and Commercial Workers union says Uber drivers in the Okanagan-Kootenay-Cariboo areas are joining UFCW 1518, and will be covered by an agreement first negotiated by drivers in Victoria.",
+        "pubDate": "Wed, 02 Sep 2026 20:08:01 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "Missing person found dead in Fraser River was killed, Prince George RCMP believe",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/homicide-fraser-river-prince-george-9.7329997?cmp=rss",
+        "description": "29-year-old Julian Wich was reported missing Jan. 2 and found dead six months later",
+        "pubDate": "Wed, 02 Sep 2026 17:33:13 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
+    "southeast": [],
+    "all": [
       {
-        "title": "‘Our hands are tied’: Golden rescue can no longer take in fawns under new chronic wasting disease rules",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/new-chronic-wasting-disease-rules-9.7327570?cmp=rss",
-        "description": "A wildlife rescue in Golden, B.C., says new provincial permit conditions mean it can no longer accept, transport or rehabilitate white tailed and mule deer fawns in the Kootenay region.",
-        "pubDate": "Tue, 01 Sep 2026 11:06:18 EDT",
+        "title": "K'ómoks and We Wai Kai First Nations sign protocol agreement",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/k-omoks-we-wai-kai-protocal-agreement-9.7328207?cmp=rss",
+        "description": "The K'ómoks and We Wai Kai First Nations on mid-Vancouver Island say they have signed a historic protocol agreement as neighbouring nations.",
+        "pubDate": "Tue, 01 Sep 2026 16:21:32 EDT",
         "source": "CBC BC"
       }
-    ],
-    "all": []
+    ]
   }
 }
