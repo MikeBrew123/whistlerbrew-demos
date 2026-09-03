@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02T16:01:17.505Z",
+  "updated_at": "2026-09-03T04:01:25.378Z",
   "fires": [
     {
       "country": "Belgium",
@@ -201,7 +201,21 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Toronto police deem fire at commercial building suspicious\",\n      \"url\": \"https://globalnews.ca/news/12044873/toronto-fire-commercial-building-suspi"
+    "items_in": {
+      "canada": 0,
+      "world": 0
+    },
+    "items_out": {
+      "canada": 0,
+      "world_fires": 27
+    },
+    "deduped": 0,
+    "rerouted": 0,
+    "notes": [
+      "No new articles received",
+      "All 27 existing fires retained as Active",
+      "No fires removed - none had containment >60 days ago",
+      "All images preserved from existing_fires"
+    ]
   }
 }
