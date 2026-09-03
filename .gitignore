@@ -52,3 +52,6 @@ n8n-workflows/
 # service account credentials
 config/service-account.json
 .claude/settings.local.json
+
+# clasp working copy for the pushup Apps Script (re-clone with clasp)
+pushup/apps-script/
