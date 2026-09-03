@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T04:01:25.378Z",
+  "updated_at": "2026-09-03T10:01:16.227Z",
   "fires": [
     {
       "country": "Belgium",
@@ -212,10 +212,10 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles received",
-      "All 27 existing fires retained as Active",
-      "No fires removed - none had containment >60 days ago",
-      "All images preserved from existing_fires"
+      "No new articles provided in input",
+      "All 27 existing fires retained as Active status maintained",
+      "Preserved all image URLs from existing data",
+      "No deduplication or rerouting needed"
     ]
   }
 }
