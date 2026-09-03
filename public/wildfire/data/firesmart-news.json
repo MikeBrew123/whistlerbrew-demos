@@ -1,100 +1,12 @@
 {
-  "updated_at": "2026-09-03T10:00:34.775Z",
+  "updated_at": "2026-09-03T16:00:35.900Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "New trial ordered for Vancouver man convicted of 2nd-degree murder",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/new-trial-vancouver-west-end-2nd-degre-murder-9.7328741?cmp=rss",
-        "description": "A Vancouver man who was convicted of second-degree murder after a fatal stabbing of a fellow resident of a psychiatric facility will face a new trial.",
-        "pubDate": "Tue, 01 Sep 2026 20:47:54 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Crews scour mountains for missing hiker who took Sea-to-Sky gondola",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/missing-hiker-sea-to-sky-gondola-9.7328478?cmp=rss",
-        "description": "Search-and-rescue crews are scouring the mountains near Squamish, B.C., for a man who was reported overdue from a hike over the weekend.",
-        "pubDate": "Tue, 01 Sep 2026 17:34:03 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
-      {
-        "title": "Ahead of municipal election, Kelowna mayor asks feds to shut down supervised consumption site",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/kelowna-mayor-tom-dyas-supervised-consumption-site-9.7330408?cmp=rss",
-        "description": "The mayor of Kelowna, B.C., has written to the federal health minister asking for authorities to deny the renewal of a supervised consumption site operating in the city's downtown core. Mayor Tom Dyas's letter comes a little under two months before the municipal election in the city, in which he is running for re-election.",
-        "pubDate": "Wed, 02 Sep 2026 22:00:39 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Missing person found dead in Fraser River was killed, Prince George RCMP believe",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/homicide-fraser-river-prince-george-9.7329997?cmp=rss",
-        "description": "29-year-old Julian Wich was reported missing Jan. 2 and found dead six months later",
-        "pubDate": "Wed, 02 Sep 2026 17:33:13 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
+    "kamloops": [],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Prescribed burning gets hazard pay coverage under final rule passage",
-        "link": "https://wildfiretoday.com/prescribed-burning-gets-hazard-pay-coverage-under-final-rule-passage/",
-        "description": "The U.S. Wildland Fire Service celebrated what it called a &#8220;well-deserved win&#8221; for the nation&#8217;s firefighters after prescribed wildland fire duties were officially made eligible for hazardous duty pay. The Office of Personnel Management on Tuesday issued a final rule making the duties eligible for hazard pay for General Schedule employees and for Environmental Differential [&#8230",
-        "pubDate": "Wed, 02 Sep 2026 18:46:59 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Fish and Wildlife officer dies while evacuating family from Oklahoma&#8217;s Railroad South Fire",
-        "link": "https://wildfiretoday.com/fish-and-wildlife-officer-dies-while-evacuating-family-from-oklahomas-railroad-south-fire/",
-        "description": "A U.S. Fish and Wildlife law enforcement officer died while helping evacuate residents threatened by the Railroad South Fire in Oklahoma, the Department of the Interior announced on Sunday. The officer was identified at 38-year-old David Taylor of Scio, Oregon, according to a press release sent out by the department. Taylor was going door to [&#8230;]",
-        "pubDate": "Tue, 01 Sep 2026 05:57:52 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Risky science: why connecting research to application matters",
-        "link": "https://wildfiretoday.com/risky-science-why-connecting-research-to-application-matters/",
-        "description": "There is not much benefit in producing science that just sits on a shelf. Effective science must extend beyond publication and address real-world needs argues Lynn Johnston, a Forest Fire Research Specialist with Natural Resources Canada and the Canadian Forest Service, in an editorial for the International Journal of Wildland Fire. While reading journal articles [&#8230;]",
-        "pubDate": "Tue, 01 Sep 2026 00:35:03 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Details of fatal firefighter helicopter crash during Colorado&#8217;s Gold Mountain Fire revealed",
-        "link": "https://wildfiretoday.com/details-of-fatal-firefighter-helicopter-crash-during-colorados-gold-mountain-fire-revealed/",
-        "description": "The first investigation report into a helicopter crash that left a pilot dead during Colorado&#8217;s Gold Mountain Fire on July 12 was released by the National Transportation Safety Board on Wednesday. The pilot, 56-year-old Nicholas Dale of Sooke, British Columbia, was the only person on board the Kaman K-1200 when it crashed while conducting water-bucket [&#8230;]",
-        "pubDate": "Thu, 27 Aug 2026 21:56:24 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "The where, when and how of fuel treatment decisions",
-        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
-        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
-        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildland firefighters warned not to take supplements for smoke or PFAS exposure",
-        "link": "https://wildfiretoday.com/wildland-firefighters-warned-not-to-take-supplements-for-smoke-or-pfas-exposure/",
-        "description": "A drug marketed to wildland firefighters exposed to smoke or PFAS shows no evidence of being effective, leading the International Association of Firefighters and the Food and Drug Administration to warn against its use. The drug, called glutathione, is marketed to fire fighters to remove toxins, but the IAFF says there are no scientific studies [&#8230;]",
-        "pubDate": "Wed, 26 Aug 2026 04:56:59 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Over 90,000 evacuate as uncontained Hawk Fire burns outside Reno, Nevada",
-        "link": "https://wildfiretoday.com/over-90000-evacuate-as-uncontained-hawk-fire-burns-outside-reno-nevada/",
-        "description": "The Hawk Fire burning northwest of Reno, Nevada, triggered the evacuations of over 90,000 people on Sunday, according to fire crews working the incident. The wildfire, which ignited on Saturday morning and has since been determined to be human-caused, has burned over 15,000 acres as of Sunday evening. Nevada Gov. Joe Lombardo declared a State [&#8230;]",
-        "pubDate": "Mon, 24 Aug 2026 15:07:50 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
-        "link": "https://wildfiretoday.com/studying-combined-fuel-treatments-gives-us-a-better-picture-of-effectiveness/",
-        "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
-        "pubDate": "Mon, 24 Aug 2026 07:48:45 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
