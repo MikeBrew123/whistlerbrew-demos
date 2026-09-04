@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T04:00:35.074Z",
+  "updated_at": "2026-09-04T10:00:35.176Z",
   "zones": {
     "coastal": [
       {
@@ -7,6 +7,13 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/missing-squamish-man-called-911-9.7331131?cmp=rss",
         "description": "Search and rescue crews say a hiker who's been missing from the Squamish area since Sunday managed to briefly get through to 911 on Tuesday, but that searchers still haven't been able to find him.",
         "pubDate": "Thu, 03 Sep 2026 13:18:58 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Man receives $27K fine for feeding dangerous wildlife in West Vancouver",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fine-feeding-dangerous-wildlife-west-vancouver-9.7330444?cmp=rss",
+        "description": "A B.C. man was slapped with a $27,000 penalty after intentionally feeding and attracting dangerous wildlife in West Vancouver in the spring of 2022, according to conservation officers.",
+        "pubDate": "Wed, 02 Sep 2026 21:41:20 EDT",
         "source": "CBC BC"
       }
     ],
@@ -16,6 +23,13 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/tumbler-ridge-teacher-shooting-open-ai-9.7329841?cmp=rss",
         "description": "",
         "pubDate": "Wed, 02 Sep 2026 20:42:05 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Uber drivers in B.C.'s Interior join Vancouver Island in unionization agreement",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/uber-drivers-in-b-c-s-interior-join-vancouver-island-in-unionization-agreement-9.7330269?cmp=rss",
+        "description": "The United Food and Commercial Workers union says Uber drivers in the Okanagan-Kootenay-Cariboo areas are joining UFCW 1518, and will be covered by an agreement first negotiated by drivers in Victoria.",
+        "pubDate": "Wed, 02 Sep 2026 20:08:01 EDT",
         "source": "CBC BC"
       }
     ],
@@ -28,9 +42,25 @@
         "source": "CBC BC"
       }
     ],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "Uber drivers in B.C.'s Interior join Vancouver Island in unionization agreement",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/uber-drivers-in-b-c-s-interior-join-vancouver-island-in-unionization-agreement-9.7330269?cmp=rss",
+        "description": "The United Food and Commercial Workers union says Uber drivers in the Okanagan-Kootenay-Cariboo areas are joining UFCW 1518, and will be covered by an agreement first negotiated by drivers in Victoria.",
+        "pubDate": "Wed, 02 Sep 2026 20:08:01 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Uber drivers in B.C.'s Interior join Vancouver Island in unionization agreement",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/uber-drivers-in-b-c-s-interior-join-vancouver-island-in-unionization-agreement-9.7330269?cmp=rss",
+        "description": "The United Food and Commercial Workers union says Uber drivers in the Okanagan-Kootenay-Cariboo areas are joining UFCW 1518, and will be covered by an agreement first negotiated by drivers in Victoria.",
+        "pubDate": "Wed, 02 Sep 2026 20:08:01 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "all": []
   }
 }
