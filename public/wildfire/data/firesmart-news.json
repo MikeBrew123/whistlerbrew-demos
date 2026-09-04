@@ -1,32 +1,9 @@
 {
-  "updated_at": "2026-09-04T16:00:35.704Z",
+  "updated_at": "2026-09-04T22:00:34.262Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Hiker missing from B.C. gondola made call to 911 saying he's 'stuck on the mountain'",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/missing-squamish-man-called-911-9.7331131?cmp=rss",
-        "description": "Search and rescue crews say a hiker who's been missing from the Squamish area since Sunday managed to briefly get through to 911 on Tuesday, but that searchers still haven't been able to find him.",
-        "pubDate": "Thu, 03 Sep 2026 13:18:58 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Construction starts on North Coast Transmission Line between Prince George and northwest B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/north-coast-transmission-line-construction-begin-9.7331387?cmp=rss",
-        "description": "B.C. Hydro says the project will more than double the amount of electricity that can be sent from Prince George to Terrace and beyond, supplying more power to major infastructure projects in northwest B.C. including LNG export facilities and mines that have been identified as being in the national interest against the backdrop of the trade war with the United States.",
-        "pubDate": "Thu, 03 Sep 2026 15:47:07 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Who's running for mayor in Fort St. John? Councillor to challenge incumbent",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/two-candidates-running-for-mayor-fort-st-john-9.7330167?cmp=rss",
-        "description": "The race for mayor in Fort St. John is underway. Coun. Trevor Bolin announced Wednesday that he would challenge incumbent Mayor Lilia Hansen for the position.",
-        "pubDate": "Thu, 03 Sep 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
