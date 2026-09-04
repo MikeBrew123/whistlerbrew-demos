@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T10:00:35.176Z",
+  "updated_at": "2026-09-04T16:00:35.704Z",
   "zones": {
     "coastal": [
       {
@@ -8,59 +8,28 @@
         "description": "Search and rescue crews say a hiker who's been missing from the Squamish area since Sunday managed to briefly get through to 911 on Tuesday, but that searchers still haven't been able to find him.",
         "pubDate": "Thu, 03 Sep 2026 13:18:58 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Man receives $27K fine for feeding dangerous wildlife in West Vancouver",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fine-feeding-dangerous-wildlife-west-vancouver-9.7330444?cmp=rss",
-        "description": "A B.C. man was slapped with a $27,000 penalty after intentionally feeding and attracting dangerous wildlife in West Vancouver in the spring of 2022, according to conservation officers.",
-        "pubDate": "Wed, 02 Sep 2026 21:41:20 EDT",
-        "source": "CBC BC"
       }
     ],
-    "kamloops": [
-      {
-        "title": "'My students should be here': Tumbler Ridge teacher shares toll of deadly school shooting",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/tumbler-ridge-teacher-shooting-open-ai-9.7329841?cmp=rss",
-        "description": "",
-        "pubDate": "Wed, 02 Sep 2026 20:42:05 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Uber drivers in B.C.'s Interior join Vancouver Island in unionization agreement",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/uber-drivers-in-b-c-s-interior-join-vancouver-island-in-unionization-agreement-9.7330269?cmp=rss",
-        "description": "The United Food and Commercial Workers union says Uber drivers in the Okanagan-Kootenay-Cariboo areas are joining UFCW 1518, and will be covered by an agreement first negotiated by drivers in Victoria.",
-        "pubDate": "Wed, 02 Sep 2026 20:08:01 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [
       {
-        "title": "6,000 names etched in stone to memorialize Japanese people detained in Vancouver during WWII",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/hastings-park-japanese-memorial-9.7328807?cmp=rss",
-        "description": "A memorial for Japanese Canadians detained during the Second World War was unveiled at Vancouver's Hastings Park last week, commemorating the thousands of people who were held there while more permanent internment camps were built.",
-        "pubDate": "Thu, 03 Sep 2026 10:00:00 EDT",
+        "title": "Construction starts on North Coast Transmission Line between Prince George and northwest B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/north-coast-transmission-line-construction-begin-9.7331387?cmp=rss",
+        "description": "B.C. Hydro says the project will more than double the amount of electricity that can be sent from Prince George to Terrace and beyond, supplying more power to major infastructure projects in northwest B.C. including LNG export facilities and mines that have been identified as being in the national interest against the backdrop of the trade war with the United States.",
+        "pubDate": "Thu, 03 Sep 2026 15:47:07 EDT",
         "source": "CBC BC"
-      }
-    ],
-    "cariboo": [
+      },
       {
-        "title": "Uber drivers in B.C.'s Interior join Vancouver Island in unionization agreement",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/uber-drivers-in-b-c-s-interior-join-vancouver-island-in-unionization-agreement-9.7330269?cmp=rss",
-        "description": "The United Food and Commercial Workers union says Uber drivers in the Okanagan-Kootenay-Cariboo areas are joining UFCW 1518, and will be covered by an agreement first negotiated by drivers in Victoria.",
-        "pubDate": "Wed, 02 Sep 2026 20:08:01 EDT",
+        "title": "Who's running for mayor in Fort St. John? Councillor to challenge incumbent",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/two-candidates-running-for-mayor-fort-st-john-9.7330167?cmp=rss",
+        "description": "The race for mayor in Fort St. John is underway. Coun. Trevor Bolin announced Wednesday that he would challenge incumbent Mayor Lilia Hansen for the position.",
+        "pubDate": "Thu, 03 Sep 2026 07:00:00 EDT",
         "source": "CBC BC"
       }
     ],
+    "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Uber drivers in B.C.'s Interior join Vancouver Island in unionization agreement",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/uber-drivers-in-b-c-s-interior-join-vancouver-island-in-unionization-agreement-9.7330269?cmp=rss",
-        "description": "The United Food and Commercial Workers union says Uber drivers in the Okanagan-Kootenay-Cariboo areas are joining UFCW 1518, and will be covered by an agreement first negotiated by drivers in Victoria.",
-        "pubDate": "Wed, 02 Sep 2026 20:08:01 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": []
   }
 }
