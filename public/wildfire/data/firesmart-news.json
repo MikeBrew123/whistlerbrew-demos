@@ -1,12 +1,33 @@
 {
-  "updated_at": "2026-09-05T04:00:34.900Z",
+  "updated_at": "2026-09-05T10:00:35.028Z",
   "zones": {
     "coastal": [
+      {
+        "title": "B.C. man who went missing in mountains for several days found alive",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/stanislav-volo-found-alive-squamish-9.7333515?cmp=rss",
+        "description": "Stanislav Volo went for a hike on Sunday above the Sea-to-Sky Gondola and did not return home.",
+        "pubDate": "Fri, 04 Sep 2026 19:43:14 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Friend holds out hope for Canadian runner missing on Matterhorn",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/friend-holds-out-hope-for-canadian-runner-missing-on-matterhorn-9.7333598?cmp=rss",
+        "description": "A friend of a Canadian athlete who went missing on the Matterhorn says Squamish, B.C.'s mountain running community is hoping for her safe return.",
+        "pubDate": "Fri, 04 Sep 2026 21:30:38 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Why Vancouver Island municipalities are maintaining campfire bans through the Labour Day long weekend",
         "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-island-campfire-ban-sooke-metchosin-langford-highlands-9.7333544?cmp=rss",
         "description": "A number of municipalities in the Greater Victoria area are maintaining campfire bans through the Labour Day long weekend, even as campfire bans on areas outside municipal boundaries have lifted throughout B.C.",
         "pubDate": "Fri, 04 Sep 2026 20:16:13 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Helicopter search suspended for Squamish, B.C., mountain runner missing on Matterhorn",
+        "link": "https://www.cbc.ca/news/world/mountain-runner-missing-metterhorn-kalie-mccrystal-9.7332603?cmp=rss",
+        "description": "The helicopter search for Canadian mountain runner Kalie McCrystal, who was last seen on Tuesday above the Jean-Antoine Carrel hut of the Matterhorn, has been suspended after repeated aerial sweeps of the Italian side of the mountain.",
+        "pubDate": "Fri, 04 Sep 2026 13:11:19 EDT",
         "source": "CBC BC"
       }
     ],
@@ -21,7 +42,15 @@
     ],
     "prince-george": [],
     "cariboo": [],
-    "northwest": [],
+    "northwest": [
+      {
+        "title": "B.C. expanding supports for intimate partner violence survivors, including family court worker in northwest",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/intimate-partner-violence-support-bc-9.7331765?cmp=rss",
+        "description": "At least one of three new family court support workers will be assigned to northwestern B.C. as the province uses $3 million in funding under Ottawa's National Action Plan to End Gender-based Violence.",
+        "pubDate": "Thu, 03 Sep 2026 20:41:17 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "southeast": [
       {
         "title": "Golden, B.C., to align with Pacific time zone after final November clock change",
