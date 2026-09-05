@@ -1,12 +1,36 @@
 {
-  "updated_at": "2026-09-04T22:00:34.262Z",
+  "updated_at": "2026-09-05T04:00:34.900Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
+    "coastal": [
+      {
+        "title": "Why Vancouver Island municipalities are maintaining campfire bans through the Labour Day long weekend",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-island-campfire-ban-sooke-metchosin-langford-highlands-9.7333544?cmp=rss",
+        "description": "A number of municipalities in the Greater Victoria area are maintaining campfire bans through the Labour Day long weekend, even as campfire bans on areas outside municipal boundaries have lifted throughout B.C.",
+        "pubDate": "Fri, 04 Sep 2026 20:16:13 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Kamloops officials ask for public's help after man attacked by 2 dogs",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/dog-attack-kamloops-9.7331845?cmp=rss",
+        "description": "Eric Dean said he was walking along the riverside trail near his business, Kamloops Precision Machining in the Valleyview neighbourhood, around lunchtime on Wednesday when the attack happened.",
+        "pubDate": "Fri, 04 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Golden, B.C., to align with Pacific time zone after final November clock change",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/golden-b-c-to-align-with-pacific-time-zone-after-final-november-clock-change-9.7331951?cmp=rss",
+        "description": "Time is changing in Golden, B.C., and some residents say it is not what they wanted.",
+        "pubDate": "Thu, 03 Sep 2026 23:49:17 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "all": []
   }
 }
