@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T10:00:35.028Z",
+  "updated_at": "2026-09-05T16:00:34.406Z",
   "zones": {
     "coastal": [
       {
@@ -10,10 +10,10 @@
         "source": "CBC BC"
       },
       {
-        "title": "Friend holds out hope for Canadian runner missing on Matterhorn",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/friend-holds-out-hope-for-canadian-runner-missing-on-matterhorn-9.7333598?cmp=rss",
-        "description": "A friend of a Canadian athlete who went missing on the Matterhorn says Squamish, B.C.'s mountain running community is hoping for her safe return.",
-        "pubDate": "Fri, 04 Sep 2026 21:30:38 EDT",
+        "title": "Vancouver police officer accused of defrauding 19 victims of $3M",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/vpd-press-conference-high-profile-arrest-9.7332773?cmp=rss",
+        "description": "Vancouver police say a high-profile officer who was arrested on Thursday allegedly defrauded 19 victims of a total of about $3 million.",
+        "pubDate": "Fri, 04 Sep 2026 12:50:08 EDT",
         "source": "CBC BC"
       },
       {
@@ -24,14 +24,28 @@
         "source": "CBC BC"
       },
       {
-        "title": "Helicopter search suspended for Squamish, B.C., mountain runner missing on Matterhorn",
-        "link": "https://www.cbc.ca/news/world/mountain-runner-missing-metterhorn-kalie-mccrystal-9.7332603?cmp=rss",
-        "description": "The helicopter search for Canadian mountain runner Kalie McCrystal, who was last seen on Tuesday above the Jean-Antoine Carrel hut of the Matterhorn, has been suspended after repeated aerial sweeps of the Italian side of the mountain.",
-        "pubDate": "Fri, 04 Sep 2026 13:11:19 EDT",
+        "title": "Cathedral Grove winner of The Search for B.C.'s Best Roadside Attraction",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-roadside-attraction-winner-9.7331401?cmp=rss",
+        "description": "A controversial parking lot, adjacent logging and more than 100 years of interest make Cathedral Grove a site of competing values.",
+        "pubDate": "Fri, 04 Sep 2026 11:30:00 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
+      {
+        "title": "After an intense summer of wildfires, Lytton River Festival aims to bring life to the community",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-festival-will-go-ahead-9.7331917?cmp=rss",
+        "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
+        "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
+        "description": "Kamloops-North Thompson MLA Ward Stamer is calling for the province’s salvage rate to rise to 25 per cent and for more efficient access to wildfire-damaged timber.",
+        "pubDate": "Sat, 05 Sep 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Kamloops officials ask for public's help after man attacked by 2 dogs",
         "link": "https://www.cbc.ca/news/canada/british-columbia/dog-attack-kamloops-9.7331845?cmp=rss",
@@ -40,26 +54,32 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Northern B.C. community brings back dinosaur mascot from extinction, after a nearly 30-year 'sabbatical'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/dudley-the-dinosaur-is-back-hudsons-hope-9.7329657?cmp=rss",
+        "description": "The District of Hudson's Hope unveiled a new costume for the town's mascot, Dudley the Dinosaur, last week. Kelsey Shewfelt, the recreation co-ordinator for the district, says the public has been asking to see Dudley return for years.",
+        "pubDate": "Sat, 05 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Brink Forest Products to cut 50 jobs at its Prince George lumber plant",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/brink-cuts-prince-george-jobs-9.7333320?cmp=rss",
+        "description": "Brink Forest Products cuts roughly 50 jobs at its Prince George, B.C., plant as the company reduces operations to 20 per cent citing a lack of fibre and U.S. tariff costs, among factors.",
+        "pubDate": "Sat, 05 Sep 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Province advances Old Fort landslide study in northeast B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/old-fort-bc-landslide-risk-study-9.7333318?cmp=rss",
+        "description": "Three separate landslides in the same spot since 2018 have prompted evacuations and destroyed a home and other critical infrastructure in the Old Fort community just south of Fort St John.",
+        "pubDate": "Sat, 05 Sep 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
-    "northwest": [
-      {
-        "title": "B.C. expanding supports for intimate partner violence survivors, including family court worker in northwest",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/intimate-partner-violence-support-bc-9.7331765?cmp=rss",
-        "description": "At least one of three new family court support workers will be assigned to northwestern B.C. as the province uses $3 million in funding under Ottawa's National Action Plan to End Gender-based Violence.",
-        "pubDate": "Thu, 03 Sep 2026 20:41:17 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "southeast": [
-      {
-        "title": "Golden, B.C., to align with Pacific time zone after final November clock change",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/golden-b-c-to-align-with-pacific-time-zone-after-final-november-clock-change-9.7331951?cmp=rss",
-        "description": "Time is changing in Golden, B.C., and some residents say it is not what they wanted.",
-        "pubDate": "Thu, 03 Sep 2026 23:49:17 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "northwest": [],
+    "southeast": [],
     "all": []
   }
 }
