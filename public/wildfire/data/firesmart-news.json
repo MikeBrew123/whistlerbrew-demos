@@ -1,12 +1,26 @@
 {
-  "updated_at": "2026-09-06T04:00:34.625Z",
+  "updated_at": "2026-09-06T10:00:34.606Z",
   "zones": {
     "coastal": [
       {
-        "title": "Why Vancouver Island municipalities are maintaining campfire bans through the Labour Day long weekend",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-island-campfire-ban-sooke-metchosin-langford-highlands-9.7333544?cmp=rss",
-        "description": "A number of municipalities in the Greater Victoria area are maintaining campfire bans through the Labour Day long weekend, even as campfire bans on areas outside municipal boundaries have lifted throughout B.C.",
-        "pubDate": "Fri, 04 Sep 2026 20:16:13 EDT",
+        "title": "B.C. man who went missing in mountains for several days found alive",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/stanislav-volo-found-alive-squamish-9.7333515?cmp=rss",
+        "description": "Stanislav Volo went for a hike on Sunday above the Sea-to-Sky Gondola and did not return home.",
+        "pubDate": "Fri, 04 Sep 2026 19:43:14 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Province advances Old Fort landslide study in northeast B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/old-fort-bc-landslide-risk-study-9.7333318?cmp=rss",
+        "description": "Three separate landslides in the same spot since 2018 have prompted evacuations and destroyed a home and other critical infrastructure in the Old Fort community just south of Fort St John.",
+        "pubDate": "Sat, 05 Sep 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Friend holds out hope for Canadian runner missing on Matterhorn",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/friend-holds-out-hope-for-canadian-runner-missing-on-matterhorn-9.7333598?cmp=rss",
+        "description": "A friend of a Canadian athlete who went missing on the Matterhorn says Squamish, B.C.'s mountain running community is hoping for her safe return.",
+        "pubDate": "Fri, 04 Sep 2026 21:30:38 EDT",
         "source": "CBC BC"
       }
     ],
@@ -17,13 +31,6 @@
         "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
         "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
-        "description": "Kamloops-North Thompson MLA Ward Stamer is calling for the province’s salvage rate to rise to 25 per cent and for more efficient access to wildfire-damaged timber.",
-        "pubDate": "Sat, 05 Sep 2026 09:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
     "prince-george": [
@@ -32,6 +39,13 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/dudley-the-dinosaur-is-back-hudsons-hope-9.7329657?cmp=rss",
         "description": "The District of Hudson's Hope unveiled a new costume for the town's mascot, Dudley the Dinosaur, last week. Kelsey Shewfelt, the recreation co-ordinator for the district, says the public has been asking to see Dudley return for years.",
         "pubDate": "Sat, 05 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
+        "description": "Kamloops-North Thompson MLA Ward Stamer is calling for the province’s salvage rate to rise to 25 per cent and for more efficient access to wildfire-damaged timber.",
+        "pubDate": "Sat, 05 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       },
       {
