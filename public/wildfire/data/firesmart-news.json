@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T16:00:34.521Z",
+  "updated_at": "2026-09-06T22:00:34.478Z",
   "zones": {
     "coastal": [
       {
@@ -23,6 +23,13 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-festival-will-go-ahead-9.7331917?cmp=rss",
         "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
         "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
+        "description": "Kamloops-North Thompson MLA Ward Stamer is calling for the province’s salvage rate to rise to 25 per cent and for more efficient access to wildfire-damaged timber.",
+        "pubDate": "Sat, 05 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
