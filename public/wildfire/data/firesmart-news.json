@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T22:00:34.873Z",
+  "updated_at": "2026-09-06T04:00:34.625Z",
   "zones": {
     "coastal": [
       {
@@ -12,6 +12,13 @@
     ],
     "kamloops": [
       {
+        "title": "After an intense summer of wildfires, Lytton River Festival aims to bring life to the community",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-festival-will-go-ahead-9.7331917?cmp=rss",
+        "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
+        "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
         "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
         "description": "Kamloops-North Thompson MLA Ward Stamer is calling for the province’s salvage rate to rise to 25 per cent and for more efficient access to wildfire-damaged timber.",
@@ -20,6 +27,13 @@
       }
     ],
     "prince-george": [
+      {
+        "title": "Northern B.C. community brings back dinosaur mascot from extinction, after a nearly 30-year 'sabbatical'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/dudley-the-dinosaur-is-back-hudsons-hope-9.7329657?cmp=rss",
+        "description": "The District of Hudson's Hope unveiled a new costume for the town's mascot, Dudley the Dinosaur, last week. Kelsey Shewfelt, the recreation co-ordinator for the district, says the public has been asking to see Dudley return for years.",
+        "pubDate": "Sat, 05 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Brink Forest Products to cut 50 jobs at its Prince George lumber plant",
         "link": "https://www.cbc.ca/news/canada/british-columbia/brink-cuts-prince-george-jobs-9.7333320?cmp=rss",
@@ -31,14 +45,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "After an intense summer of wildfires, Lytton River Festival aims to bring life to the community",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-festival-will-go-ahead-9.7331917?cmp=rss",
-        "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
-        "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ]
+    "all": []
   }
 }
