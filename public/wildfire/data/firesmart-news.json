@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-09-06T22:00:34.478Z",
+  "updated_at": "2026-09-07T04:00:34.747Z",
   "zones": {
     "coastal": [
       {
-        "title": "Why Vancouver Island municipalities are maintaining campfire bans through the Labour Day long weekend",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-island-campfire-ban-sooke-metchosin-langford-highlands-9.7333544?cmp=rss",
-        "description": "A number of municipalities in the Greater Victoria area are maintaining campfire bans through the Labour Day long weekend, even as campfire bans on areas outside municipal boundaries have lifted throughout B.C.",
-        "pubDate": "Fri, 04 Sep 2026 20:16:13 EDT",
+        "title": "B.C. man who went missing in mountains for several days found alive",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/stanislav-volo-found-alive-squamish-9.7333515?cmp=rss",
+        "description": "Stanislav Volo went for a hike on Sunday above the Sea-to-Sky Gondola and did not return home.",
+        "pubDate": "Fri, 04 Sep 2026 19:43:14 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
       {
-        "title": "Defoliated, moth-infested trees create fire concerns for Kamloops residents",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fire-concerns-kamloops-junifer-douglas-fir-tussock-moth-9.7330473?cmp=rss",
-        "description": "Some residents of Kamloops, B.C.'s Juniper Ridge area are concerned that trees defoliated by a needle-eating moth larva could prove to be a fire hazard.",
-        "pubDate": "Sun, 06 Sep 2026 09:00:00 EDT",
+        "title": "Cultural programs for urban Indigenous girls can help address MMIWG crisis, advocates say",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/urban-indigenous-teen-girls-programming-9.7330353?cmp=rss",
+        "description": "Advocates say cultural programming can help young Indigenous girls to build strong relationships, leadership skills and a sense of belonging, so they feel valued and seen.",
+        "pubDate": "Sun, 06 Sep 2026 10:00:00 EDT",
         "source": "CBC BC"
       },
       {
@@ -24,7 +24,9 @@
         "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
         "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "prince-george": [
       {
         "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
         "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
@@ -33,18 +35,17 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [
-      {
-        "title": "Brink Forest Products to cut 50 jobs at its Prince George lumber plant",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/brink-cuts-prince-george-jobs-9.7333320?cmp=rss",
-        "description": "Brink Forest Products cuts roughly 50 jobs at its Prince George, B.C., plant as the company reduces operations to 20 per cent citing a lack of fibre and U.S. tariff costs, among factors.",
-        "pubDate": "Sat, 05 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "Jerry Dobrovolny out as CAO of Metro Vancouver Regional District",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/jerry-dobrovolny-metro-vancouver-9.7333635?cmp=rss",
+        "description": "Jerry Dobrovolny's tenure as the chief administrative officer of the under-fire Metro Vancouver Regional District has come to an end ahead of the upcoming municipal elections in B.C.",
+        "pubDate": "Fri, 04 Sep 2026 21:53:35 EDT",
+        "source": "CBC BC"
+      }
+    ]
   }
 }
