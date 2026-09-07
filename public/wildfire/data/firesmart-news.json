@@ -1,49 +1,78 @@
 {
-  "updated_at": "2026-09-07T10:00:35.237Z",
+  "updated_at": "2026-09-07T16:00:35.036Z",
   "zones": {
     "coastal": [
       {
-        "title": "B.C. man who went missing in mountains for several days found alive",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/stanislav-volo-found-alive-squamish-9.7333515?cmp=rss",
-        "description": "Stanislav Volo went for a hike on Sunday above the Sea-to-Sky Gondola and did not return home.",
-        "pubDate": "Fri, 04 Sep 2026 19:43:14 EDT",
+        "title": "Woman airlifted to hospital after bear attack near Whistler, B.C.",
+        "link": "https://globalnews.ca/news/12049179/bear-attack-bc/",
+        "description": "A woman was airlifted to hospital with non-life-threatening injuries after a bear attacked a group of hikers in the backcountry near Whistler, B.C.",
+        "pubDate": "Sat, 05 Sep 2026 20:52:13 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2024/11/20241123181148-20241123181128-c07111b62b3d77276bc105f17f8d562ebff12c45f8419012ea34dc0a2567f225.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Missing man found alive after 6-day search near Squamish, B.C.",
+        "link": "https://globalnews.ca/news/12048962/bc-man-found-alive-bc/",
+        "description": "A man missing near Squamish, B.C., for nearly a week has been found alive after what rescuers described as an extensive six-day search.",
+        "pubDate": "Sat, 05 Sep 2026 19:13:56 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/BC-hiker-e1788633410345.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "B.C. man lost for 5 nights in mountains near Squamish shares survival story",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/stansilav-volo-survival-story-9.7333975?cmp=rss",
+        "description": "A Squamish man who survived a grueling five nights in British Columbia's Coast Mountains is sharing more about his experience.",
+        "pubDate": "Sat, 05 Sep 2026 17:26:59 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "One of the last remaining steam tugboats in Canada is heading for restoration",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/one-of-the-last-remaining-steam-tugboats-in-canada-is-heading-for-restoration-9.7334102?cmp=rss",
+        "description": "The S.S. Naramata is believed to be one of the last remaining steam fresh-water tugboats left in all of Canada. The S.S. Sicamous Marine Heritage society said the ship played a huge role in the economic development of the Okanagan Valley.",
+        "pubDate": "Sat, 05 Sep 2026 20:48:25 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Woman injured in bear attack in Whistler backcountry",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/whistler-bear-attack-woman-injured-9.7333918?cmp=rss",
+        "description": "A woman was taken to hospital on Friday after a bear attack in the backcountry near Whistler.",
+        "pubDate": "Sat, 05 Sep 2026 15:41:40 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [
       {
-        "title": "Cultural programs for urban Indigenous girls can help address MMIWG crisis, advocates say",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/urban-indigenous-teen-girls-programming-9.7330353?cmp=rss",
-        "description": "Advocates say cultural programming can help young Indigenous girls to build strong relationships, leadership skills and a sense of belonging, so they feel valued and seen.",
-        "pubDate": "Sun, 06 Sep 2026 10:00:00 EDT",
+        "title": "Defoliated, moth-infested trees create fire concerns for Kamloops residents",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fire-concerns-kamloops-junifer-douglas-fir-tussock-moth-9.7330473?cmp=rss",
+        "description": "Some residents of Kamloops, B.C.'s Juniper Ridge area are concerned that trees defoliated by a needle-eating moth larva could prove to be a fire hazard.",
+        "pubDate": "Sun, 06 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "After an intense summer of wildfires, Lytton River Festival aims to bring life to the community",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-festival-will-go-ahead-9.7331917?cmp=rss",
-        "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
-        "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
+        "title": "Regulator suspends B.C Realtor's licence, cites 'urgent circumstances'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-realtor-suspended-9.7333871?cmp=rss",
+        "description": "British Columbia's superintendent of real estate has suspended the licence of a Metro Vancouver Realtor and her personal real estate corporation.",
+        "pubDate": "Sat, 05 Sep 2026 14:37:00 EDT",
         "source": "CBC BC"
-      }
-    ],
-    "prince-george": [
+      },
       {
-        "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
-        "description": "Kamloops-North Thompson MLA Ward Stamer is calling for the province’s salvage rate to rise to 25 per cent and for more efficient access to wildfire-damaged timber.",
-        "pubDate": "Sat, 05 Sep 2026 09:00:00 EDT",
+        "title": "Northern B.C. community brings back dinosaur mascot from extinction, after a nearly 30-year 'sabbatical'",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/dudley-the-dinosaur-is-back-hudsons-hope-9.7329657?cmp=rss",
+        "description": "The District of Hudson's Hope unveiled a new costume for the town's mascot, Dudley the Dinosaur, last week. Kelsey Shewfelt, the recreation co-ordinator for the district, says the public has been asking to see Dudley return for years.",
+        "pubDate": "Sat, 05 Sep 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
       {
-        "title": "Jerry Dobrovolny out as CAO of Metro Vancouver Regional District",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/jerry-dobrovolny-metro-vancouver-9.7333635?cmp=rss",
-        "description": "Jerry Dobrovolny's tenure as the chief administrative officer of the under-fire Metro Vancouver Regional District has come to an end ahead of the upcoming municipal elections in B.C.",
-        "pubDate": "Fri, 04 Sep 2026 21:53:35 EDT",
+        "title": "Critic calls on B.C. to salvage more wildfire-burned timber, province says that's 'unrealistic.' Here's why",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wild-fire-salvage-what-to-know-9.7330107?cmp=rss",
+        "description": "Kamloops-North Thompson MLA Ward Stamer is calling for the province’s salvage rate to rise to 25 per cent and for more efficient access to wildfire-damaged timber.",
+        "pubDate": "Sat, 05 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ]
