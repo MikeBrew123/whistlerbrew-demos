@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-08T10:00:34.763Z",
+  "updated_at": "2026-09-08T16:00:35.353Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "Cultural programs for urban Indigenous girls can help address MMIWG crisis, advocates say",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/urban-indigenous-teen-girls-programming-9.7330353?cmp=rss",
-        "description": "Advocates say cultural programming can help young Indigenous girls to build strong relationships, leadership skills and a sense of belonging, so they feel valued and seen.",
-        "pubDate": "Sun, 06 Sep 2026 10:00:00 EDT",
+        "title": "Defoliated, moth-infested trees create fire concerns for Kamloops residents",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fire-concerns-kamloops-junifer-douglas-fir-tussock-moth-9.7330473?cmp=rss",
+        "description": "Some residents of Kamloops, B.C.'s Juniper Ridge area are concerned that trees defoliated by a needle-eating moth larva could prove to be a fire hazard.",
+        "pubDate": "Sun, 06 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -17,11 +17,39 @@
     "southeast": [],
     "all": [
       {
-        "title": "Regulator suspends B.C. Realtor's licence, cites 'urgent circumstances'",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-realtor-suspended-9.7333871?cmp=rss",
-        "description": "British Columbia's superintendent of real estate has suspended the licence of a Metro Vancouver Realtor and her personal real estate corporation.",
-        "pubDate": "Sat, 05 Sep 2026 14:37:00 EDT",
-        "source": "CBC BC"
+        "title": "Prescribed burning gets hazard pay coverage under final rule passage",
+        "link": "https://wildfiretoday.com/prescribed-burning-gets-hazard-pay-coverage-under-final-rule-passage/",
+        "description": "The U.S. Wildland Fire Service celebrated what it called a &#8220;well-deserved win&#8221; for the nation&#8217;s firefighters after prescribed wildland fire duties were officially made eligible for hazardous duty pay. The Office of Personnel Management on Tuesday issued a final rule making the duties eligible for hazard pay for General Schedule employees and for Environmental Differential [&#8230",
+        "pubDate": "Wed, 02 Sep 2026 18:46:59 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Risky science: why connecting research to application matters",
+        "link": "https://wildfiretoday.com/risky-science-why-connecting-research-to-application-matters/",
+        "description": "There is not much benefit in producing science that just sits on a shelf. Effective science must extend beyond publication and address real-world needs argues Lynn Johnston, a Forest Fire Research Specialist with Natural Resources Canada and the Canadian Forest Service, in an editorial for the International Journal of Wildland Fire. While reading journal articles [&#8230;]",
+        "pubDate": "Tue, 01 Sep 2026 00:35:03 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "The where, when and how of fuel treatment decisions",
+        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
+        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
+        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Wildland firefighters warned not to take supplements for smoke or PFAS exposure",
+        "link": "https://wildfiretoday.com/wildland-firefighters-warned-not-to-take-supplements-for-smoke-or-pfas-exposure/",
+        "description": "A drug marketed to wildland firefighters exposed to smoke or PFAS shows no evidence of being effective, leading the International Association of Firefighters and the Food and Drug Administration to warn against its use. The drug, called glutathione, is marketed to fire fighters to remove toxins, but the IAFF says there are no scientific studies [&#8230;]",
+        "pubDate": "Wed, 26 Aug 2026 04:56:59 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Studying combined fuel treatments gives us a better picture of effectiveness",
+        "link": "https://wildfiretoday.com/studying-combined-fuel-treatments-gives-us-a-better-picture-of-effectiveness/",
+        "description": "While many studies have established that fuel treatments are an effective wildfire mitigation tool, the gap in our understanding has been how a range of different treatments work together over many years across large areas to produce a desired outcome. Research led by Boise State University PhD student Kendra Fallon, now a National Fire Ecologist [&#8230;]",
+        "pubDate": "Mon, 24 Aug 2026 07:48:45 +0000",
+        "source": "Wildfire Today"
       }
     ]
   }
