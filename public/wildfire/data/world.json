@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T22:01:25.435Z",
+  "updated_at": "2026-09-08T04:01:25.334Z",
   "fires": [
     {
       "country": "Belgium",
@@ -207,15 +207,15 @@
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 26
+      "world_fires": 28
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided for processing",
-      "All 26 existing world fires retained as Active status",
-      "No deduplication required—input contained only existing_fires array",
-      "No containment/aging updates provided; fires remain as-is"
+      "All 28 existing fires retained with Active status",
+      "No new Canada or World articles provided for input",
+      "No deduplication needed - input arrays empty",
+      "All fires maintained with original metadata including images where present"
     ]
   }
 }
