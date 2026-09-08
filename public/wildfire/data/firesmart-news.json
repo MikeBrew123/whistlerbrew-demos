@@ -1,7 +1,14 @@
 {
-  "updated_at": "2026-09-07T22:00:35.136Z",
+  "updated_at": "2026-09-08T04:00:34.757Z",
   "zones": {
     "coastal": [
+      {
+        "title": "One of the last remaining steam tugboats in Canada is heading for restoration",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/one-of-the-last-remaining-steam-tugboats-in-canada-is-heading-for-restoration-9.7334102?cmp=rss",
+        "description": "The S.S. Naramata is believed to be one of the last remaining steam fresh-water tugboats left in all of Canada. The S.S. Sicamous Marine Heritage society said the ship played a huge role in the economic development of the Okanagan Valley.",
+        "pubDate": "Sat, 05 Sep 2026 20:48:25 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Woman injured in bear attack in Whistler backcountry",
         "link": "https://www.cbc.ca/news/canada/british-columbia/whistler-bear-attack-woman-injured-9.7333918?cmp=rss",
@@ -23,13 +30,6 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/fire-concerns-kamloops-junifer-douglas-fir-tussock-moth-9.7330473?cmp=rss",
         "description": "Some residents of Kamloops, B.C.'s Juniper Ridge area are concerned that trees defoliated by a needle-eating moth larva could prove to be a fire hazard.",
         "pubDate": "Sun, 06 Sep 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "After an intense summer of wildfires, Lytton River Festival aims to bring life to the community",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-festival-will-go-ahead-9.7331917?cmp=rss",
-        "description": "The Village of Lytton is hosting its annual festival this year, with a special emphasis on cultural history of Chinese people and the village's legacy.",
-        "pubDate": "Sat, 05 Sep 2026 11:00:00 EDT",
         "source": "CBC BC"
       }
     ],
