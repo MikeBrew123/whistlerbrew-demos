@@ -1,28 +1,20 @@
 {
-  "updated_at": "2026-09-09T22:00:34.852Z",
+  "updated_at": "2026-09-10T04:00:34.530Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Suspicious fires in abandoned Sechelt neighbourhood put residents on edge",
-        "link": "https://globalnews.ca/news/12051554/sechelt-seawatch-suspicious-fires/",
-        "description": "The fires were reported in the Seawatch neighbourhood around 10 a.m. Saturday, but firefighters were forced to watch as the homes burned for hours, as the area is off-limits.",
-        "pubDate": "Tue, 08 Sep 2026 23:13:41 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/SET-GFX-SEAWATCH-FIRE-FOLLOW.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "2 homes in abandoned Sechelt neighbourhood destroyed by arson, fire department says",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fires-burn-down-two-seawatch-homes-9.7334956?cmp=rss",
-        "description": "Two of 14 abandoned homes in Sechelt's Seawatch subdivision, which has been fenced off since 2019 due to sinkholes, have burned down.",
-        "pubDate": "Mon, 07 Sep 2026 16:11:07 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Residents of Kamloops neighbourhood raise safety concerns about proposed rail yard",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/rayleigh-rail-yard-kamloops-9.7337991?cmp=rss",
+        "description": "The business arm of the Tk̓emlúps te Secwépemc community has asked the City of Kamloops to support a proposal for a rail staging and storage facility. But locals say they're already struggling with increasingly busy train crossings at the only points of access in and out of the community.",
+        "pubDate": "Wed, 09 Sep 2026 19:11:12 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "all": []
   }
 }
