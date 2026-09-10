@@ -1,15 +1,14 @@
 {
-  "updated_at": "2026-09-10T16:00:34.996Z",
+  "updated_at": "2026-09-10T22:00:34.534Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "Okanagan wine producers brace for U.S. ban on Canadian alcohol imports",
-        "link": "https://globalnews.ca/news/12053349/okanagan-wine-producers-brace-us-ban-canadian-alcohol-imports/",
-        "description": "B.C. wine producers are bracing for the latest blow to cross-border alcohol sales, with the United States set to ban most Canadian alcohol imports later this month.",
-        "pubDate": "Thu, 10 Sep 2026 01:28:33 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/12/Still1217_00000.png"
+        "title": "Residents of Kamloops neighbourhood raise safety concerns about proposed rail yard",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/rayleigh-rail-yard-kamloops-9.7337991?cmp=rss",
+        "description": "The business arm of the Tk̓emlúps te Secwépemc community has asked the City of Kamloops to support a proposal for a rail staging and storage facility. But locals say they're already struggling with increasingly busy train crossings at the only points of access in and out of the community.",
+        "pubDate": "Wed, 09 Sep 2026 19:11:12 EDT",
+        "source": "CBC BC"
       }
     ],
     "prince-george": [],
