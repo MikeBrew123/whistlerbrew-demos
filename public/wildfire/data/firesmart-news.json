@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-09-10T04:00:34.530Z",
+  "updated_at": "2026-09-10T10:00:34.800Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Okanagan wine producers brace for U.S. ban on Canadian alcohol imports",
+        "link": "https://globalnews.ca/news/12053349/okanagan-wine-producers-brace-us-ban-canadian-alcohol-imports/",
+        "description": "B.C. wine producers are bracing for the latest blow to cross-border alcohol sales, with the United States set to ban most Canadian alcohol imports later this month.",
+        "pubDate": "Thu, 10 Sep 2026 01:28:33 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/12/Still1217_00000.png"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
