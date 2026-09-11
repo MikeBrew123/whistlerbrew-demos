@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T16:00:34.934Z",
+  "updated_at": "2026-09-11T22:00:34.657Z",
   "zones": {
     "coastal": [
       {
@@ -18,13 +18,6 @@
         "pubDate": "Thu, 10 Sep 2026 01:28:33 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2025/12/Still1217_00000.png"
-      },
-      {
-        "title": "Police did not intervene as Canada's most prolific voyeur was 'looking for more victims,' court records show",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/police-voyeur-victims-9.7330228?cmp=rss",
-        "description": "Saanich police watched but did not intervene for over a month as Canada's most prolific voyeur strode through businesses with a phone in hand while out on bail, in breach of bail conditions.\n\nCourt records obtained by CBC News reveal that a Crown lawyer believed Yin Yeung Derek Chan was on the hunt for more victims in Fitness World and Value Village, where the voyeur had previously recorded hundre",
-        "pubDate": "Thu, 10 Sep 2026 07:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
     "prince-george": [
@@ -41,14 +34,7 @@
     "southeast": [],
     "all": [
       {
-        "title": "The where, when and how of fuel treatment decisions",
-        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
-        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
-        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Wildfires, permafrost melt in Canada causing even more climate change, new study shows",
+        "title": "Wildfires, permafrost thaw in Canada causing even more climate change, new study shows",
         "link": "https://www.cbc.ca/news/science/climate-feedbacks-emissions-permafrost-wildfires-wetlands-9.7339116?cmp=rss",
         "description": "These climate feedback loops, where climate change triggers more greenhouse gas emissions that in turn feed into even more climate change, could add 20 to 30 per cent more warming over current estimates for this century.",
         "pubDate": "Fri, 11 Sep 2026 04:00:00 EDT",
