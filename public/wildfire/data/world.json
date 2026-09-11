@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T10:01:29.914Z",
+  "updated_at": "2026-09-11T16:01:25.982Z",
   "fires": [
     {
       "country": "Belgium",
@@ -201,7 +201,24 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Sask. had wildfire report months before release: Opposition\",\n      \"url\": \"https://globalnews.ca/news/12053348/sask-had-wildfire-report-months-befor"
+    "items_in": {
+      "canada": 0,
+      "world": 0
+    },
+    "items_out": {
+      "canada": 0,
+      "world_fires": 26
+    },
+    "deduped": 0,
+    "rerouted": 0,
+    "notes": [
+      "No new Canada articles provided",
+      "No new world articles provided",
+      "All 26 existing fires retained as Active status",
+      "No fires >60 days contained to drop",
+      "No duplicate articles to consolidate",
+      "All image fields preserved in output",
+      "No misrouted items detected"
+    ]
   }
 }
