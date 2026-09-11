@@ -1,28 +1,28 @@
 {
-  "updated_at": "2026-09-10T22:00:34.534Z",
+  "updated_at": "2026-09-11T04:00:34.531Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Residents of Kamloops neighbourhood raise safety concerns about proposed rail yard",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/rayleigh-rail-yard-kamloops-9.7337991?cmp=rss",
-        "description": "The business arm of the Tk̓emlúps te Secwépemc community has asked the City of Kamloops to support a proposal for a rail staging and storage facility. But locals say they're already struggling with increasingly busy train crossings at the only points of access in and out of the community.",
-        "pubDate": "Wed, 09 Sep 2026 19:11:12 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [
       {
-        "title": "Proposed substation in Vancouver's West End faces community opposition",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/proposed-substation-in-vancouver-s-west-end-faces-community-opposition-9.7338241?cmp=rss",
-        "description": "An aging B.C. Hydro substation in Downtown Vancouver must be replaced, though some West End residents are against the proposed location of its successor.",
-        "pubDate": "Wed, 09 Sep 2026 23:24:52 EDT",
+        "title": "Wildfire is the top risk for Kootenay town Creston, new assessment finds",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-ranked-top-risk-for-creston-9.7337950?cmp=rss",
+        "description": "Creston, B.C.'s new hazard assessment puts wildfire at the top of 51 potential hazards, and highlights challenges ranging from private property to evacuation planning.",
+        "pubDate": "Wed, 09 Sep 2026 18:47:54 EDT",
         "source": "CBC BC"
       }
     ],
-    "all": []
+    "all": [
+      {
+        "title": "The where, when and how of fuel treatment decisions",
+        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
+        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
+        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
