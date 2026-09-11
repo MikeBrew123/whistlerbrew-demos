@@ -1,20 +1,59 @@
 {
-  "updated_at": "2026-09-11T10:00:34.648Z",
+  "updated_at": "2026-09-11T16:00:34.934Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [],
-    "northwest": [],
-    "southeast": [
+    "coastal": [
       {
-        "title": "Wildfire is the top risk for Kootenay town Creston, new assessment finds",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-ranked-top-risk-for-creston-9.7337950?cmp=rss",
-        "description": "Creston, B.C.'s new hazard assessment puts wildfire at the top of 51 potential hazards, and highlights challenges ranging from private property to evacuation planning.",
-        "pubDate": "Wed, 09 Sep 2026 18:47:54 EDT",
+        "title": "Community representatives call for 'dedicated attention' to Sunshine Coast ferry route",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/sunshine-coast-route-3-committee-9.7339900?cmp=rss",
+        "description": "The Town of Gibsons Ferry Advisory Committee is calling on B.C. Ferries, the B.C. Ferry Authority and the provincial government to work with the community on making the route more reliable and accessible. The committee released its 2026 Annual Community Position Paper, outlining six priority areas for the three bodies to consider as decisions are made about the route’s future.",
+        "pubDate": "Fri, 11 Sep 2026 01:45:35 EDT",
         "source": "CBC BC"
       }
     ],
-    "all": []
+    "kamloops": [
+      {
+        "title": "Okanagan wine producers brace for U.S. ban on Canadian alcohol imports",
+        "link": "https://globalnews.ca/news/12053349/okanagan-wine-producers-brace-us-ban-canadian-alcohol-imports/",
+        "description": "B.C. wine producers are bracing for the latest blow to cross-border alcohol sales, with the United States set to ban most Canadian alcohol imports later this month.",
+        "pubDate": "Thu, 10 Sep 2026 01:28:33 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2025/12/Still1217_00000.png"
+      },
+      {
+        "title": "Police did not intervene as Canada's most prolific voyeur was 'looking for more victims,' court records show",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/police-voyeur-victims-9.7330228?cmp=rss",
+        "description": "Saanich police watched but did not intervene for over a month as Canada's most prolific voyeur strode through businesses with a phone in hand while out on bail, in breach of bail conditions.\n\nCourt records obtained by CBC News reveal that a Crown lawyer believed Yin Yeung Derek Chan was on the hunt for more victims in Fitness World and Value Village, where the voyeur had previously recorded hundre",
+        "pubDate": "Thu, 10 Sep 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "Proposed Indigenous cultural centre at risk of being flooded by Site E reservoir if project goes ahead",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/cultural-centre-at-risk-of-being-flooded-site-e-9.7337573?cmp=rss",
+        "description": "A section of land on the banks of the Peace River in northeastern B.C. — sought by Duncan's First Nation for a cultural revitalization centre — could end up submerged under a B.C. Hydro reservoir if a proposed fourth dam moves forward.",
+        "pubDate": "Thu, 10 Sep 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "cariboo": [],
+    "northwest": [],
+    "southeast": [],
+    "all": [
+      {
+        "title": "The where, when and how of fuel treatment decisions",
+        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
+        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
+        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Wildfires, permafrost melt in Canada causing even more climate change, new study shows",
+        "link": "https://www.cbc.ca/news/science/climate-feedbacks-emissions-permafrost-wildfires-wetlands-9.7339116?cmp=rss",
+        "description": "These climate feedback loops, where climate change triggers more greenhouse gas emissions that in turn feed into even more climate change, could add 20 to 30 per cent more warming over current estimates for this century.",
+        "pubDate": "Fri, 11 Sep 2026 04:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ]
   }
 }
