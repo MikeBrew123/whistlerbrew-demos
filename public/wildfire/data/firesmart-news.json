@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T04:00:34.531Z",
+  "updated_at": "2026-09-11T10:00:34.648Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -15,14 +15,6 @@
         "source": "CBC BC"
       }
     ],
-    "all": [
-      {
-        "title": "The where, when and how of fuel treatment decisions",
-        "link": "https://wildfiretoday.com/the-where-when-and-how-of-fuel-treatment-decisions/",
-        "description": "With a big landscape, a limited budget and a diverse set of community objectives, how do we decide where, when and how fuel treatments are best undertaken to reduce wildfire risks? Decision makers have a set of options – conduct a prescribed burn, mechanically reduce the fuel, introduce grazing, or use a herbicide. When deciding [&#8230;]",
-        "pubDate": "Thu, 27 Aug 2026 02:18:53 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
