@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T22:00:34.657Z",
+  "updated_at": "2026-09-12T04:00:34.330Z",
   "zones": {
     "coastal": [
       {
@@ -10,25 +10,8 @@
         "source": "CBC BC"
       }
     ],
-    "kamloops": [
-      {
-        "title": "Okanagan wine producers brace for U.S. ban on Canadian alcohol imports",
-        "link": "https://globalnews.ca/news/12053349/okanagan-wine-producers-brace-us-ban-canadian-alcohol-imports/",
-        "description": "B.C. wine producers are bracing for the latest blow to cross-border alcohol sales, with the United States set to ban most Canadian alcohol imports later this month.",
-        "pubDate": "Thu, 10 Sep 2026 01:28:33 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2025/12/Still1217_00000.png"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Proposed Indigenous cultural centre at risk of being flooded by Site E reservoir if project goes ahead",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/cultural-centre-at-risk-of-being-flooded-site-e-9.7337573?cmp=rss",
-        "description": "A section of land on the banks of the Peace River in northeastern B.C. — sought by Duncan's First Nation for a cultural revitalization centre — could end up submerged under a B.C. Hydro reservoir if a proposed fourth dam moves forward.",
-        "pubDate": "Thu, 10 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
