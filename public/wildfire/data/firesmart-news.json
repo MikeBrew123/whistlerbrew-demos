@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-12T04:00:34.330Z",
+  "updated_at": "2026-09-12T10:00:34.358Z",
   "zones": {
     "coastal": [
       {
-        "title": "Community representatives call for 'dedicated attention' to Sunshine Coast ferry route",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/sunshine-coast-route-3-committee-9.7339900?cmp=rss",
-        "description": "The Town of Gibsons Ferry Advisory Committee is calling on B.C. Ferries, the B.C. Ferry Authority and the provincial government to work with the community on making the route more reliable and accessible. The committee released its 2026 Annual Community Position Paper, outlining six priority areas for the three bodies to consider as decisions are made about the route’s future.",
-        "pubDate": "Fri, 11 Sep 2026 01:45:35 EDT",
+        "title": "Wildfires, permafrost thaw in Canada causing even more climate change, new study shows",
+        "link": "https://www.cbc.ca/news/science/climate-feedbacks-emissions-permafrost-wildfires-wetlands-9.7339116?cmp=rss",
+        "description": "These climate feedback loops, where climate change triggers more greenhouse gas emissions that in turn feed into even more climate change, could add 20 to 30 per cent more warming over current estimates for this century.",
+        "pubDate": "Fri, 11 Sep 2026 04:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -17,10 +17,17 @@
     "southeast": [],
     "all": [
       {
-        "title": "Wildfires, permafrost thaw in Canada causing even more climate change, new study shows",
-        "link": "https://www.cbc.ca/news/science/climate-feedbacks-emissions-permafrost-wildfires-wetlands-9.7339116?cmp=rss",
-        "description": "These climate feedback loops, where climate change triggers more greenhouse gas emissions that in turn feed into even more climate change, could add 20 to 30 per cent more warming over current estimates for this century.",
-        "pubDate": "Fri, 11 Sep 2026 04:00:00 EDT",
+        "title": "9/11 first responders to attend B.C. border ceremony on attacks' 25th anniversary",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/first-responders-peace-arch-9.7340065?cmp=rss",
+        "description": "New York first responders on Sept. 11, 2001, are expected to be among the guests at a British Columbia memorial marking the 25th anniversary of the attacks.",
+        "pubDate": "Fri, 11 Sep 2026 09:18:35 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Air ambulance service celebrating 2 decades of service in northeast B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/stars-celebrating-two-decades-service-northern-bc-9.7339282?cmp=rss",
+        "description": "The Grande Prairie, Alta., air ambulance base that serves both northeast B.C. and northern Alberta is celebrating twenty years of operation this fall.",
+        "pubDate": "Thu, 10 Sep 2026 21:18:12 EDT",
         "source": "CBC BC"
       }
     ]
