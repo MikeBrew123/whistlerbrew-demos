@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T16:00:33.900Z",
+  "updated_at": "2026-09-12T22:00:35.461Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,14 +7,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Wildfires, permafrost thaw in Canada causing even more climate change, new study shows",
-        "link": "https://www.cbc.ca/news/science/climate-feedbacks-emissions-permafrost-wildfires-wetlands-9.7339116?cmp=rss",
-        "description": "These climate feedback loops, where climate change triggers more greenhouse gas emissions that in turn feed into even more climate change, could add 20 to 30 per cent more warming over current estimates for this century.",
-        "pubDate": "Fri, 11 Sep 2026 04:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ]
+    "all": []
   }
 }
