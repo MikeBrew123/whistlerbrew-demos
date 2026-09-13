@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-13T10:00:34.520Z",
+  "updated_at": "2026-09-13T16:00:34.549Z",
   "zones": {
     "coastal": [
       {
@@ -11,17 +11,31 @@
       }
     ],
     "kamloops": [],
-    "prince-george": [],
-    "cariboo": [],
-    "northwest": [
+    "prince-george": [
+      {
+        "title": "Okanagan mom searches for police officer after life-altering highway crash",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/woman-thanks-rcmp-officer-9.7341424?cmp=rss",
+        "description": "A 28-year-old woman from the Okanagan is feeling elated after her search for a first responder — who she credits with saving her life — has been found.",
+        "pubDate": "Sat, 12 Sep 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Northeast B.C. interested in strengthening health care with non-profit medical centre being built in Alberta",
         "link": "https://www.cbc.ca/news/canada/british-columbia/northeast-bc-northwestern-alberta-cross-border-medical-services-9.7340537?cmp=rss",
         "description": "The non-profit Maskwa Medical Centre being built in Grande Prairie, Alta., is continuing to attract interest from municipal leaders in northeast B.C.",
         "pubDate": "Fri, 11 Sep 2026 19:51:31 EDT",
         "source": "CBC BC"
+      },
+      {
+        "title": "Fort St. John shooting investigation results in 26 arrests, seizure of drugs and weapons",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-john-shooting-investigation-results-in-26-arrests-seizure-of-drugs-and-weapons-9.7340884?cmp=rss",
+        "description": "B.C.’s anti-gang agency says a two-week sweep through Fort St. John led to the arrests of more than two dozen people as well as significant seizures of guns, drugs and cash.",
+        "pubDate": "Fri, 11 Sep 2026 18:39:34 EDT",
+        "source": "CBC BC"
       }
     ],
+    "cariboo": [],
+    "northwest": [],
     "southeast": [],
     "all": []
   }
