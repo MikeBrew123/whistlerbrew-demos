@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-13T16:00:34.549Z",
+  "updated_at": "2026-09-13T22:00:34.681Z",
   "zones": {
     "coastal": [
       {
@@ -10,32 +10,34 @@
         "source": "CBC BC"
       }
     ],
-    "kamloops": [],
-    "prince-george": [
+    "kamloops": [
       {
         "title": "Okanagan mom searches for police officer after life-altering highway crash",
         "link": "https://www.cbc.ca/news/canada/british-columbia/woman-thanks-rcmp-officer-9.7341424?cmp=rss",
         "description": "A 28-year-old woman from the Okanagan is feeling elated after her search for a first responder — who she credits with saving her life — has been found.",
         "pubDate": "Sat, 12 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "prince-george": [
       {
-        "title": "Northeast B.C. interested in strengthening health care with non-profit medical centre being built in Alberta",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/northeast-bc-northwestern-alberta-cross-border-medical-services-9.7340537?cmp=rss",
-        "description": "The non-profit Maskwa Medical Centre being built in Grande Prairie, Alta., is continuing to attract interest from municipal leaders in northeast B.C.",
-        "pubDate": "Fri, 11 Sep 2026 19:51:31 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Fort St. John shooting investigation results in 26 arrests, seizure of drugs and weapons",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-john-shooting-investigation-results-in-26-arrests-seizure-of-drugs-and-weapons-9.7340884?cmp=rss",
-        "description": "B.C.’s anti-gang agency says a two-week sweep through Fort St. John led to the arrests of more than two dozen people as well as significant seizures of guns, drugs and cash.",
-        "pubDate": "Fri, 11 Sep 2026 18:39:34 EDT",
+        "title": "Prince George to celebrate life of 3-year-old hockey superfan at local arena",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/mavrik-turnbull-celebration-of-life-9.7339635?cmp=rss",
+        "description": "Mavrik Turnbull's family is hosting a public celebration of life at the CN Centre in Prince George following the hockey superfan's cancer battle, which captured the hearts of the hockey community throughout B.C.",
+        "pubDate": "Sat, 12 Sep 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "cariboo": [],
-    "northwest": [],
+    "northwest": [
+      {
+        "title": "Haida Gwaii transitions from 10 digit emergency numbers to modern 911 service",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/haida-gwaii-911-emergency-services-9.7341123?cmp=rss",
+        "description": "Haida Gwaii residents have relied on 10-digit local numbers to reach emergency services. New provincial funding will help communities transition to 911, simplifying how people call for police, fire or ambulance services.",
+        "pubDate": "Fri, 11 Sep 2026 19:17:49 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "southeast": [],
     "all": []
   }
