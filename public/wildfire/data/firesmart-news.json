@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-13T04:00:34.736Z",
+  "updated_at": "2026-09-13T10:00:34.520Z",
   "zones": {
     "coastal": [
       {
@@ -8,25 +8,10 @@
         "description": "The Sea to Sky Highway between Horseshoe Bay and Whistler is limited to single-lane traffic until 4 p.m. on Saturday.",
         "pubDate": "Sat, 12 Sep 2026 10:48:37 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Former Vancouver International Airport staff recall 9/11 on 25th anniversary",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/yvr-911-anniversary-9.7339249?cmp=rss",
-        "description": "People who were involved in YVR's response to 9/11 say it was all hands on deck as airport staff and community members scrambled to receive 34 rerouted flights and thousands of passengers.",
-        "pubDate": "Fri, 11 Sep 2026 10:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Chetwynd, B.C., apartment fire displaces nearly 50 people",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/chetwynd-hillside-manor-apartment-fire-residents-displaced-9.7341256?cmp=rss",
-        "description": "Firefighters responded to a fire the Hillside Manor apartments around 4 a.m. on Tuesday, Sept. 8, where officials say at least one unit was destroyed and several others damaged.",
-        "pubDate": "Sat, 12 Sep 2026 06:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [
       {
