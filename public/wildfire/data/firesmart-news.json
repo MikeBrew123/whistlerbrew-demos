@@ -1,28 +1,12 @@
 {
-  "updated_at": "2026-09-14T04:00:33.524Z",
+  "updated_at": "2026-09-14T10:00:34.276Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Drivers should expect major delays on Sea to Sky during GranFondo",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/granfondo-drivers-delays-9.7341740?cmp=rss",
-        "description": "The Sea to Sky Highway between Horseshoe Bay and Whistler is limited to single-lane traffic until 4 p.m. on Saturday.",
-        "pubDate": "Sat, 12 Sep 2026 10:48:37 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Why this student offers tours of climate solutions hidden throughout Vancouver",
-        "link": "https://www.cbc.ca/news/climate/what-on-earth-climate-solutions-tours-9.7338377?cmp=rss",
-        "description": "In this issue of our environmental newsletter, we go on a free public tour of some of the hidden climate solutions in downtown Vancouver; see how wildfire smoke is affecting moths; and find out why there's a push to drop off and pick up schoolchildren without cars.",
-        "pubDate": "Sun, 13 Sep 2026 12:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ]
+    "all": []
   }
 }
