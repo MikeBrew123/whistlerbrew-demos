@@ -1,9 +1,25 @@
 {
-  "updated_at": "2026-09-14T10:00:34.276Z",
+  "updated_at": "2026-09-14T16:00:34.701Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Drivers should expect major delays on Sea to Sky during GranFondo",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/granfondo-drivers-delays-9.7341740?cmp=rss",
+        "description": "The Sea to Sky Highway between Horseshoe Bay and Whistler is limited to single-lane traffic until 4 p.m. on Saturday.",
+        "pubDate": "Sat, 12 Sep 2026 10:48:37 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Prince George to celebrate life of 3-year-old hockey superfan at local arena",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/mavrik-turnbull-celebration-of-life-9.7339635?cmp=rss",
+        "description": "Mavrik Turnbull's family is hosting a public celebration of life at the CN Centre in Prince George following the hockey superfan's cancer battle, which captured the hearts of the hockey community throughout B.C.",
+        "pubDate": "Sat, 12 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
