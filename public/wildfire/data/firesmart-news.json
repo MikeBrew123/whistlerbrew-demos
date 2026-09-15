@@ -1,41 +1,18 @@
 {
-  "updated_at": "2026-09-14T22:00:34.567Z",
+  "updated_at": "2026-09-15T04:00:33.620Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Okanagan mom searches for police officer after life-altering highway crash",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/woman-thanks-rcmp-officer-9.7341424?cmp=rss",
-        "description": "A 28-year-old woman from the Okanagan is feeling elated after her search for a first responder — who she credits with saving her life — has been found.",
-        "pubDate": "Sat, 12 Sep 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Prince George to celebrate life of 3-year-old hockey superfan at local arena",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/mavrik-turnbull-celebration-of-life-9.7339635?cmp=rss",
-        "description": "Mavrik Turnbull's family is hosting a public celebration of life at the CN Centre in Prince George following the hockey superfan's cancer battle, which captured the hearts of the hockey community throughout B.C.",
-        "pubDate": "Sat, 12 Sep 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
       {
-        "title": "B.C.'s projected deficit increases to $13.8B, amid geopolitical and wildfire challenges",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-fiscal-update-september-2026-9.7343481?cmp=rss",
-        "description": "B.C. Finance Minister Josie Osborne said economic results through the province's first quarter have been mixed, due to multiple geopolitical factors and a costly wildfire season.",
-        "pubDate": "Mon, 14 Sep 2026 15:23:07 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Why this student offers tours of climate solutions hidden throughout Vancouver",
-        "link": "https://www.cbc.ca/news/climate/what-on-earth-climate-solutions-tours-9.7338377?cmp=rss",
-        "description": "In this issue of our environmental newsletter, we go on a free public tour of some of the hidden climate solutions in downtown Vancouver; see how wildfire smoke is affecting moths; and find out why there's a push to drop off and pick up schoolchildren without cars.",
-        "pubDate": "Sun, 13 Sep 2026 12:00:00 EDT",
+        "title": "Vancouver Mayor Ken Sim's defamation trial set for January 2028: court documents",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/vancouver-mayor-ken-sim-defamation-response-9.7344071?cmp=rss",
+        "description": "Vancouver Mayor Ken Sim has changed the way he's depicting a media briefing where he told reporters a councillor \"handed out illegal drugs\" on Christmas Day in 2025, with an amended legal filing in the defamation case against Sim calling it a \"non-public and closed event.\"",
+        "pubDate": "Mon, 14 Sep 2026 21:42:51 EDT",
         "source": "CBC BC"
       }
     ]
