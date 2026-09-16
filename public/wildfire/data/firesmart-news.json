@@ -1,9 +1,17 @@
 {
-  "updated_at": "2026-09-15T22:00:33.943Z",
+  "updated_at": "2026-09-16T04:00:34.648Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "9 people running for mayor in Prince George, the most of any B.C. city",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-9-people-mayor-s-race-who-is-running-9.7344024?cmp=rss",
+        "description": "With nominations closed for the upcoming municipal elections, Prince George has emerged as the B.C. city with the most candidates for mayor. There are no party candidates in the race for mayor or council, but clusters of support can be seen in the nomination papers.",
+        "pubDate": "Tue, 15 Sep 2026 16:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
