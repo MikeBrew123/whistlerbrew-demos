@@ -255,8 +255,8 @@ textarea#inp:focus{border-color:var(--accent)}
   <div class="arc-title">HIGH<br>SCORES</div>
   <div class="arc-sub arc-blink">★ SWIPE SCHOOL ★</div>
   <div class="arc-tabs">
-    <button data-board="speed" class="on">SPEED ROUND</button>
-    <button data-board="daily">TODAY</button>
+    <button data-board="daily" class="on">TODAY</button>
+    <button data-board="speed">SPEED ROUND</button>
   </div>
   <div id="arcBody"></div>
   <button class="arc-btn pink" data-go="home">◀ BACK</button>
@@ -340,11 +340,12 @@ function shuffle(a, r){ r = r || Math.random; a = a.slice(); for (let i=a.length
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
 const isPhone = matchMedia("(pointer: coarse)").matches;
 
-function show(id){
+function show(id, opts){
+  opts = opts || {};
   document.querySelectorAll(".screen").forEach(s => s.classList.toggle("on", s.id === id));
   window.scrollTo(0,0);
   if (id === "home") renderHome();
-  if (id === "scores") loadBoard(curBoard);
+  if (id === "scores" && !opts.noLoad) loadBoard(curBoard);
 }
 document.addEventListener("click", e => {
   const g = e.target.closest("[data-go]");
@@ -654,7 +655,7 @@ $("resActions").addEventListener("click", e => {
 
 /* ---------- Arcade high scores ---------- */
 const API = "/api/swipe-scores";
-let curBoard = "speed", pending = null, lastRank = null;
+let curBoard = "daily", pending = null, loadSeq = 0;
 const ORD = ["1ST","2ND","3RD","4TH","5TH","6TH","7TH","8TH","9TH","10TH"];
 
 function boardUrl(b){ return API + "?board=" + b + (b === "daily" ? "&date=" + today() : ""); }
@@ -675,10 +676,11 @@ function drawBoard(scores, meIdx){
 }
 async function loadBoard(b, meIdx){
   curBoard = b;
+  const seq = ++loadSeq;
   document.querySelectorAll(".arc-tabs button").forEach(x => x.classList.toggle("on", x.dataset.board === b));
   $("arcBody").innerHTML = '<div class="arc-empty arc-blink">LOADING…</div>';
-  try { drawBoard(await fetchBoard(b), meIdx); }
-  catch(e) { $("arcBody").innerHTML = '<div class="arc-empty">SCOREBOARD OFFLINE<br><br>TRY AGAIN LATER</div>'; }
+  try { const scores = await fetchBoard(b); if (seq === loadSeq) drawBoard(scores, meIdx); }
+  catch(e) { if (seq === loadSeq) $("arcBody").innerHTML = '<div class="arc-empty">SCOREBOARD OFFLINE<br><br>TRY AGAIN LATER</div>'; }
 }
 document.querySelector(".arc-tabs").addEventListener("click", e => {
   const b = e.target.closest("[data-board]"); if (b) loadBoard(b.dataset.board);
@@ -720,7 +722,7 @@ $("entSave").addEventListener("click", async () => {
     if (!r.ok) { $("entMsg").textContent = String(j.error || "ERROR").toUpperCase(); return; }
     S.initials = name; save();
     const board = pending.board; pending = null;
-    show("scores"); loadBoard(board, j.rank ? j.rank - 1 : -1);
+    show("scores", {noLoad:true}); loadBoard(board, j.rank ? j.rank - 1 : -1);
   } catch(e) { $("entMsg").textContent = "SCOREBOARD OFFLINE"; }
   finally { $("entSave").disabled = false; }
 });
