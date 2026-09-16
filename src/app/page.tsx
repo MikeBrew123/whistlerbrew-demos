@@ -65,6 +65,9 @@ export default function Home() {
             Learn to swipe type on your phone&apos;s own keyboard. Clear 12 levels,
             build combos, and get your name on the arcade high score table.
           </p>
+          <span className="inline-block mt-4 bg-[#ff2d95] text-white font-semibold text-sm py-2 px-5 rounded-md">
+            Play now ▶ no password needed
+          </span>
         </a>
       </section>
 
