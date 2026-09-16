@@ -101,6 +101,7 @@ textarea#inp:focus{border-color:var(--accent)}
 .res-stars span.on:nth-child(3){animation-delay:.5s}
 @keyframes star{from{transform:scale(0) rotate(-90deg)}to{transform:scale(1) rotate(0)}}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.grid2 .stat:last-child:nth-child(odd){grid-column:span 2}
 .tips{margin:12px 0;padding-left:18px;color:var(--dim)}
 .newbadge{border-color:var(--gold);background:#2a2208;margin-top:10px}
 .actions{display:grid;gap:10px;margin-top:16px}
@@ -242,6 +243,7 @@ textarea#inp:focus{border-color:var(--accent)}
   <ul>
     <li>Each correctly swiped word is worth 10 points. Swipe 5 in a row and the multiplier climbs, up to x5.</li>
     <li>Tapping letters or backspacing resets your combo.</li>
+    <li>Speed bonus: 10 points for every WPM above 15. Your time for each message starts on your first swipe, so take a second to read it first.</li>
     <li>★ finish the level &nbsp; ★★ mostly swiped and accurate &nbsp; ★★★ also hit the speed target</li>
     <li>Speed Rounds and the Daily Challenge go on the arcade High Scores table.</li>
   </ul>
@@ -420,7 +422,7 @@ function start(lv){
   $("lvName").textContent = lv.name;
   $("clock").hidden = lv.type !== "timed";
   if (lv.type === "timed") $("clock").textContent = "0:" + String(lv.seconds).padStart(2,"0");
-  $("hint").textContent = lv.type === "timed" ? "Clock starts on your first swipe." : "Swipe each word. Don't tap letters.";
+  $("hint").textContent = lv.type === "timed" ? "Clock starts on your first swipe." : "Read first. Your time starts when you swipe.";
   $("hint").classList.remove("tapwarn");
   inp.value = "";
   renderPrompt();
@@ -482,7 +484,7 @@ inp.addEventListener("input", () => {
   if (!G || G.done) return;
   const v = inp.value.replace(/\n/g, " ");
   const now = performance.now();
-  if (G.promptStart === null) G.promptStart = now;
+  if (G.promptStart === null && letters(v) > 0) G.promptStart = now;
   if (G.lv.type === "timed" && !G.timer && letters(v) > 0) startClock();
 
   const gained = letters(v) - letters(G.prev);
@@ -557,6 +559,9 @@ function finish(){
   const wpm = G.completed ? Math.round(G.chars / 5 / minutes) : 0;
   const acc = G.words ? Math.max(0, 1 - G.corrections / G.words) : 0;
   const swipe = G.eligible ? G.swiped / G.eligible : 0;
+  // Speed bonus on untimed levels: 10 pts per WPM above 15, scaled by how much was swiped.
+  const speedBonus = !timed && G.completed ? Math.round(Math.max(0, Math.min(wpm, 120) - 15) * 10 * swipe) : 0;
+  G.points += speedBonus;
 
   let stars = 0;
   if (timed) {
@@ -611,6 +616,7 @@ function finish(){
     statBox(wpm, "WPM") +
     statBox(Math.round(swipe*100) + "%", "Swiped") +
     (timed ? statBox(G.completed, lv.pool === LEVELS[7].pool ? "Words" : "Messages") : statBox(Math.round(acc*100) + "%", "Accuracy")) +
+    (timed ? "" : statBox("+" + speedBonus, "Speed bonus")) +
     statBox("x" + G.maxCombo, "Best combo") +
     statBox("+" + gainedXp, "XP");
 
