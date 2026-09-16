@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#121212">
+<title>Swipe School</title>
+<meta name="description" content="Learn swipe typing on your phone's own keyboard. Level up, build combos, and chase the high score table.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121212;--card:#1e1e1e;--card2:#262626;--line:#333;--text:#f2f2f2;--dim:#9a9a9a;
+  --accent:#00a8ff;--ok:#22c55e;--bad:#ef4444;--gold:#fbbf24;--hot:#ff6b35;
+  --arcade:'Press Start 2P',ui-monospace,monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{min-height:100dvh;overscroll-behavior:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+.screen{display:none}
+.screen.on{display:block}
+h1,h2,h3{margin:0}
+.muted{color:var(--dim)}
+.small{font-size:13px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+.btn:active{transform:scale(.97)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.row{display:flex;align-items:center;gap:10px}
+.between{justify-content:space-between}
+
+/* Home */
+.logo{display:flex;align-items:center;gap:10px;margin:4px 0 16px}
+.logo h1{font-family:var(--arcade);font-size:18px;letter-spacing:1px;line-height:1.5}
+.logo .ico{font-size:30px}
+.rank{margin-bottom:12px}
+.rank .title{font-weight:800;font-size:20px}
+.bar{height:10px;border-radius:6px;background:var(--card2);overflow:hidden;margin-top:8px}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7dd3fc);width:0;transition:width .6s}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:12px;color:var(--dim)}
+.notice{border-color:#3b3b1f;background:#1f1d12;margin-bottom:12px}
+.bigbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.daily{border-color:#5a3a12;background:linear-gradient(135deg,#2a1a08,#1e1e1e)}
+.hs-btn{background:#000;border:2px solid #ff2d95;color:#ffe600;font-family:var(--arcade);font-size:11px;padding:14px 10px;border-radius:10px;text-shadow:0 0 6px #ff2d95}
+.world{margin-top:22px}
+.world h3{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:10px}
+.levels{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.lvl{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:left;position:relative;min-height:84px}
+.lvl .num{font-size:12px;color:var(--dim)}
+.lvl .nm{font-weight:700;margin:2px 0 6px}
+.lvl .st{font-size:16px;letter-spacing:2px;color:var(--gold)}
+.lvl .st .e{color:#444}
+.lvl.locked{opacity:.45}
+.lvl.locked .nm::after{content:" 🔒"}
+.lvl .tag{position:absolute;top:10px;right:10px;font-size:11px;background:var(--hot);color:#000;padding:2px 6px;border-radius:6px;font-weight:800}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.badge{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:12px}
+.badge .b{font-size:26px;display:block}
+.badge.off{opacity:.3;filter:grayscale(1)}
+.foot{margin-top:28px;text-align:center}
+.foot a{color:var(--dim)}
+
+/* Play */
+#play .wrap{padding-top:10px}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.topbar .x{font-size:22px;width:36px;height:36px;border-radius:8px;border:1px solid var(--line)}
+.topbar .t{flex:1;min-width:0}
+.topbar .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hud{display:flex;gap:8px;align-items:center;font-weight:700}
+.pill{background:var(--card);border:1px solid var(--line);padding:4px 10px;border-radius:99px;font-size:14px;white-space:nowrap}
+.pill.combo{border-color:var(--hot);color:var(--hot)}
+.pill.clock{border-color:var(--accent);color:var(--accent)}
+.target{font-size:26px;line-height:1.35;font-weight:700;min-height:92px;display:flex;flex-wrap:wrap;align-content:center;gap:4px 10px;position:relative;transition:background .2s,border-color .2s}
+.target.long{font-size:21px}
+.target .w{color:var(--text);border-bottom:3px solid transparent;padding-bottom:1px}
+.target .w.ok{color:var(--ok)}
+.target .w.bad{color:var(--bad);border-color:var(--bad)}
+.target .w.cur{border-color:var(--accent)}
+.target.win{border-color:var(--ok);background:#12301c}
+.pop{position:absolute;right:12px;top:-6px;font-weight:900;color:var(--gold);animation:pop .7s ease-out forwards;pointer-events:none;font-size:18px}
+@keyframes pop{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-28px)}}
+textarea#inp{width:100%;margin-top:10px;background:#0c0c0c;color:var(--text);border:2px solid var(--line);border-radius:12px;padding:12px;font-size:20px;resize:none;outline:none;font-family:inherit}
+textarea#inp:focus{border-color:var(--accent)}
+.under{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px}
+.under .hint{font-size:13px;color:var(--dim)}
+.combo-banner{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);font-family:var(--arcade);font-size:20px;color:var(--hot);text-shadow:0 0 12px #ff6b35;pointer-events:none;animation:banner 1s ease-out forwards;z-index:9;white-space:nowrap}
+@keyframes banner{0%{opacity:0;transform:translate(-50%,-50%) scale(.5)}20%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-80%) scale(1)}}
+.tapwarn{color:var(--gold)}
+
+/* Results */
+.res-stars{font-size:52px;text-align:center;letter-spacing:6px;margin:10px 0}
+.res-stars span{display:inline-block;color:#3a3a3a}
+.res-stars span.on{color:var(--gold);animation:star .5s both}
+.res-stars span.on:nth-child(2){animation-delay:.25s}
+.res-stars span.on:nth-child(3){animation-delay:.5s}
+@keyframes star{from{transform:scale(0) rotate(-90deg)}to{transform:scale(1) rotate(0)}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.tips{margin:12px 0;padding-left:18px;color:var(--dim)}
+.newbadge{border-color:var(--gold);background:#2a2208;margin-top:10px}
+.actions{display:grid;gap:10px;margin-top:16px}
+
+/* Help */
+.help h2{margin:6px 0 12px}
+.help details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.help summary{font-weight:700;cursor:pointer}
+.help ol,.help ul{padding-left:20px;margin:10px 0 0}
+.help li{margin-bottom:6px}
+
+/* Arcade */
+.arcade{background:#000;min-height:100dvh;font-family:var(--arcade);color:#fff;position:relative;overflow:hidden}
+.arcade::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 2px,transparent 2px 4px);z-index:5}
+.arcade .wrap{padding-top:20px}
+.arc-title{text-align:center;font-size:22px;line-height:1.6;color:#ffe600;text-shadow:3px 3px 0 #ff2d95,0 0 18px #ff2d95;margin:14px 0 6px}
+.arc-sub{text-align:center;font-size:10px;color:#00e5ff;margin-bottom:18px;line-height:1.8}
+.arc-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
+.arc-tabs button{font-family:var(--arcade);font-size:10px;padding:10px 8px;border:2px solid #444;color:#888;background:#000}
+.arc-tabs button.on{border-color:#00e5ff;color:#00e5ff;box-shadow:0 0 10px #00e5ff}
+.arc-table{width:100%;border-collapse:collapse;font-size:11px}
+.arc-table th{font-size:9px;color:#aaa;padding:0 4px 12px;text-align:left}
+.arc-table td{padding:9px 3px;white-space:nowrap}
+.arc-table td:last-child,.arc-table th:last-child{text-align:right}
+.arc-table tr.me td{animation:blink 1s steps(2) infinite}
+.c0{color:#ff3b3b}.c1{color:#ff9f1c}.c2{color:#ffe600}.c3{color:#39ff14}.c4{color:#00e5ff}.c5{color:#4d7cff}.c6{color:#c04dff}.c7{color:#ff2d95}.c8{color:#fff}.c9{color:#aaa}
+@keyframes blink{50%{opacity:.15}}
+.arc-blink{animation:blink 1.2s steps(2) infinite}
+.arc-empty{text-align:center;color:#666;font-size:10px;line-height:2;padding:20px 0}
+.arc-btn{font-family:var(--arcade);font-size:11px;background:#000;border:2px solid #39ff14;color:#39ff14;padding:14px;width:100%;margin-top:12px}
+.arc-btn.pink{border-color:#ff2d95;color:#ff2d95}
+.arc-name{display:block;width:100%;margin:22px 0 6px;background:#000;border:0;border-bottom:4px solid #ffe600;color:#ffe600;font-family:var(--arcade);font-size:20px;text-align:center;padding:12px 4px;outline:none;text-transform:uppercase;border-radius:0}
+.arc-name::placeholder{color:#554d00}
+.arc-count{text-align:center;font-size:9px;color:#666}
+.arc-score{text-align:center;font-size:14px;color:#fff;line-height:2}
+.arc-msg{text-align:center;font-size:10px;color:#ff3b3b;min-height:20px;margin-top:8px;line-height:1.8}
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<section id="home" class="screen on"><div class="wrap">
+  <div class="logo"><span class="ico">👆</span><h1>SWIPE<br>SCHOOL</h1></div>
+
+  <div id="deskNote" class="card notice small" hidden>
+    <b>Best on a phone.</b> This trains the swipe feature of your phone's own keyboard. Open <b>whistlerbrew.com/swipe</b> on your phone. You can still play here with a keyboard, but typed words don't count as swipes.
+  </div>
+  <div id="newNote" class="card notice small" hidden>
+    <b>New here?</b> Make sure swipe typing is turned on for your keyboard first.
+    <div style="margin-top:10px"><button class="btn ghost" data-go="help">How to turn it on</button></div>
+  </div>
+
+  <div class="card rank">
+    <div class="row between"><span class="muted small">Rank</span><span class="muted small" id="xpTxt"></span></div>
+    <div class="title" id="rankTitle"></div>
+    <div class="bar"><i id="xpBar"></i></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b id="stBest">0</b><span>Best WPM</span></div>
+    <div class="stat"><b id="stStreak">0</b><span>Streak</span></div>
+    <div class="stat"><b id="stStars">0</b><span>Stars</span></div>
+  </div>
+
+  <div class="card daily">
+    <div class="row between">
+      <div><b>⚡ Daily Challenge</b><div class="small muted" id="dailyTxt">New messages every day</div></div>
+      <button class="btn" id="dailyBtn">Play</button>
+    </div>
+  </div>
+
+  <div class="bigbtns">
+    <button class="hs-btn" data-go="scores">HIGH SCORES</button>
+    <button class="btn ghost" data-go="help">How to swipe</button>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="world">
+    <h3>Badges</h3>
+    <div class="badges" id="badgeGrid"></div>
+  </div>
+
+  <div class="foot small"><a href="#" id="resetBtn">Reset my progress</a></div>
+</div></section>
+
+<!-- PLAY -->
+<section id="play" class="screen"><div class="wrap">
+  <div class="topbar">
+    <button class="x" id="quitBtn" aria-label="Quit">✕</button>
+    <div class="t"><b id="lvName"></b><span class="small muted" id="lvProg"></span></div>
+    <div class="hud">
+      <span class="pill clock" id="clock" hidden></span>
+      <span class="pill combo" id="combo" hidden></span>
+      <span class="pill" id="pts">0</span>
+    </div>
+  </div>
+  <div class="card target" id="target"></div>
+  <textarea id="inp" rows="2" autocapitalize="none" spellcheck="false" enterkeyhint="next" placeholder="Swipe it here…" aria-label="Your answer"></textarea>
+  <div class="under">
+    <span class="hint" id="hint">Swipe each word. Don't tap letters.</span>
+    <button class="btn ghost" id="skipBtn" style="padding:8px 14px">Skip</button>
+  </div>
+</div></section>
+
+<!-- RESULTS -->
+<section id="results" class="screen"><div class="wrap">
+  <h2 id="resTitle" style="text-align:center;margin-top:10px"></h2>
+  <div class="res-stars" id="resStars"></div>
+  <div class="grid2" id="resGrid"></div>
+  <ul class="tips" id="resTips"></ul>
+  <div id="resBadges"></div>
+  <div class="actions" id="resActions"></div>
+</div></section>
+
+<!-- HELP -->
+<section id="help" class="screen"><div class="wrap help">
+  <div class="topbar"><button class="x" data-go="home" aria-label="Back">←</button><b>How to swipe</b></div>
+  <h2>Turn it on</h2>
+  <details open><summary>iPhone</summary>
+    <ol><li>Settings → General → Keyboard</li><li>Turn on <b>Slide to Type</b> (it is usually on already)</li></ol>
+  </details>
+  <details><summary>Android (Gboard)</summary>
+    <ol><li>Open Gboard settings (hold the comma or globe key, or Settings → System → Keyboard)</li><li>Glide typing → turn on <b>Enable glide typing</b></li></ol>
+  </details>
+  <details><summary>Samsung Keyboard</summary>
+    <ol><li>Settings → General management → Samsung Keyboard settings</li><li>Swipe, touch, and feedback → Keyboard swipe controls → <b>Swipe to type</b></li></ol>
+  </details>
+  <h2 style="margin-top:20px">Tips</h2>
+  <ul>
+    <li>Put your finger on the first letter and slide through the rest. Lift at the last letter.</li>
+    <li>Aim for the <b>shape</b> of the word, not each key. The keyboard figures it out.</li>
+    <li>Don't worry about spaces. The keyboard adds them between swiped words.</li>
+    <li>Double letters: just wiggle or pause on the letter.</li>
+    <li>Wrong word? One backspace deletes the whole swiped word.</li>
+    <li>Go slow first. Speed comes after the shapes are in your thumb.</li>
+  </ul>
+  <h2 style="margin-top:20px">Scoring</h2>
+  <ul>
+    <li>Each correctly swiped word is worth 10 points. Swipe 5 in a row and the multiplier climbs, up to x5.</li>
+    <li>Tapping letters or backspacing resets your combo.</li>
+    <li>★ finish the level &nbsp; ★★ mostly swiped and accurate &nbsp; ★★★ also hit the speed target</li>
+    <li>Speed Rounds and the Daily Challenge go on the arcade High Scores table.</li>
+  </ul>
+  <div style="margin-top:20px"><button class="btn" data-go="home">Got it</button></div>
+</div></section>
+
+<!-- SCORES (arcade) -->
+<section id="scores" class="screen arcade"><div class="wrap">
+  <div class="arc-title">HIGH<br>SCORES</div>
+  <div class="arc-sub arc-blink">★ SWIPE SCHOOL ★</div>
+  <div class="arc-tabs">
+    <button data-board="speed" class="on">SPEED ROUND</button>
+    <button data-board="daily">TODAY</button>
+  </div>
+  <div id="arcBody"></div>
+  <button class="arc-btn pink" data-go="home">◀ BACK</button>
+</div></section>
+
+<!-- ENTER INITIALS (arcade) -->
+<section id="enter" class="screen arcade"><div class="wrap">
+  <div class="arc-title" style="font-size:16px">NEW HIGH<br>SCORE!</div>
+  <div class="arc-score" id="entScore"></div>
+  <div class="arc-sub arc-blink" style="margin-top:14px">ENTER YOUR NAME</div>
+  <input id="arcName" class="arc-name" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="done" placeholder="YOUR NAME" aria-label="Your name">
+  <div class="arc-count" id="arcCount">0/10</div>
+  <div class="arc-msg" id="entMsg"></div>
+  <button class="arc-btn" id="entSave">SAVE</button>
+  <button class="arc-btn pink" id="entSkip">NO THANKS</button>
+</div></section>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- Content ---------- */
+const W_TINY = "the and you for are but not all can was one our out day get has him how new now see two way who did its let say she too use yes got any old big off try ask own why".split(" ");
+const W_FOUR = "that with have this will your from they know want been good much some time very when come here just like make more only over take than them were back call done home work talk nice text love help soon next last".split(" ");
+const W_BIG = "people because thanks tomorrow weekend dinner awesome probably something remember tonight everyone morning another different family weather already outside minutes birthday together actually question schedule".split(" ");
+const W_DOUBLE = "all too need soon coffee happy letter pretty little better sorry cool week free book feel good really dinner running hello yellow tomorrow address".split(" ");
+const P_REPLIES = ["ok thanks","see you soon","on my way","sounds good","no worries","call me later","love you","be right back","talk soon","good morning","got it","running late","almost there","thank you","good night","miss you"];
+const P_QUESTIONS = ["what time works","are you coming tonight","where did you park","can you call me","did you eat yet","how was your day","want to grab lunch","are we still on","who is driving","what do you need","are you home yet","is that okay with you"];
+const P_PLANS = ["meet you at the lake","dinner is at six","I will pick up the kids","see you after work","let me check and get back to you","bring a jacket it is cold","we are leaving in ten minutes","heading to the store now","can you grab milk on the way","the game starts at seven"];
+const P_JOB = ["crew is on scene","heading back to camp","we need more hose","road is closed at the bridge","weather is picking up","shift ends at sunset","all good here","fuel truck is on the way","taking a quick break","radio check on channel two","copy that on my way","staging at the fire hall"];
+const P_LONG = ["just finished work and heading home now","thanks for helping out today it made a big difference","let me know when you get there so I know you made it","sorry I missed your call I was driving","the weather looks great for the weekend so let us go camping","can you remind me to book the appointment tomorrow morning","I will be there in about twenty minutes","we should get together for dinner next week"];
+const P_BOSS = ["happy birthday hope you have an amazing day with the family","running about fifteen minutes behind because of traffic on the highway","I left the keys under the mat and the dog has already been fed","we should plan a trip to the coast before the summer is over","great job today everyone get some rest and I will see you tomorrow","please pick up bread and eggs on your way home tonight"];
+
+const LEVELS = [
+  {id:1, world:"Warm Up", name:"Tiny Words", type:"words", pool:W_TINY, count:10, wpm:12},
+  {id:2, world:"Warm Up", name:"Four Letters", type:"words", pool:W_FOUR, count:10, wpm:14},
+  {id:3, world:"Warm Up", name:"Big Words", type:"words", pool:W_BIG, count:10, wpm:14},
+  {id:4, world:"Warm Up", name:"Double Trouble", type:"words", pool:W_DOUBLE, count:10, wpm:15},
+  {id:5, world:"Texting", name:"Quick Replies", type:"phrases", pool:P_REPLIES, count:8, wpm:18},
+  {id:6, world:"Texting", name:"Questions", type:"phrases", pool:P_QUESTIONS, count:8, wpm:20},
+  {id:7, world:"Texting", name:"Making Plans", type:"phrases", pool:P_PLANS, count:7, wpm:22},
+  {id:8, world:"Texting", name:"Speed Round", type:"timed", pool:W_TINY.concat(W_FOUR, W_DOUBLE), seconds:60, goals:[12,20,30], board:"speed"},
+  {id:9, world:"Real Life", name:"On the Job", type:"phrases", pool:P_JOB, count:8, wpm:22},
+  {id:10, world:"Real Life", name:"Long Texts", type:"phrases", pool:P_LONG, count:6, wpm:24},
+  {id:11, world:"Real Life", name:"Rapid Replies", type:"timed", pool:P_REPLIES.concat(P_QUESTIONS, P_JOB), seconds:60, goals:[5,9,13]},
+  {id:12, world:"Real Life", name:"Boss Level", type:"phrases", pool:P_BOSS, count:5, wpm:28},
+];
+
+const RANKS = [[0,"Thumb Fumbler"],[300,"Tapper"],[1000,"Swiper"],[2500,"Glider"],[5000,"Slider"],[9000,"Thumb Ninja"],[15000,"Swipe Master"]];
+
+const BADGES = [
+  {id:"first", ico:"👆", name:"First Swipe"},
+  {id:"combo10", ico:"🔥", name:"On a Roll"},
+  {id:"combo25", ico:"☄️", name:"Unstoppable"},
+  {id:"flawless", ico:"💎", name:"Flawless"},
+  {id:"wpm30", ico:"🐇", name:"Quick Thumbs"},
+  {id:"wpm45", ico:"🚀", name:"Blazing Thumbs"},
+  {id:"streak3", ico:"📅", name:"3-Day Streak"},
+  {id:"streak7", ico:"🗓️", name:"Week Warrior"},
+  {id:"warm", ico:"🎓", name:"Warmed Up"},
+  {id:"texter", ico:"💬", name:"Texter"},
+  {id:"grad", ico:"🏅", name:"Graduate"},
+  {id:"master", ico:"👑", name:"Swipe Master"},
+];
+
+/* ---------- Storage ---------- */
+const KEY = "swipe-school-v1";
+function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+let S = Object.assign({xp:0, levels:{}, badges:[], bestWpm:0, streak:0, lastDay:null, daily:{}, initials:""}, load());
+
+/* ---------- Helpers ---------- */
+const $ = id => document.getElementById(id);
+const norm = s => s.toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim();
+const letters = s => (s.toLowerCase().match(/[a-z0-9]/g) || []).length;
+const eligibleWords = t => norm(t).split(" ").filter(w => w.length >= 2).length;
+function today(d){ d = d || new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function yesterday(){ const d = new Date(); d.setDate(d.getDate()-1); return today(d); }
+function rng(seed){ let h = 2166136261; for (const c of seed) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return function(){ h += 0x6D2B79F5; let t = h; t = Math.imul(t ^ t>>>15, t|1); t ^= t + Math.imul(t ^ t>>>7, t|61); return ((t ^ t>>>14)>>>0)/4294967296; }; }
+function shuffle(a, r){ r = r || Math.random; a = a.slice(); for (let i=a.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+const isPhone = matchMedia("(pointer: coarse)").matches;
+
+function show(id){
+  document.querySelectorAll(".screen").forEach(s => s.classList.toggle("on", s.id === id));
+  window.scrollTo(0,0);
+  if (id === "home") renderHome();
+  if (id === "scores") loadBoard(curBoard);
+}
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]");
+  if (g) { e.preventDefault(); show(g.dataset.go); }
+});
+
+function rankFor(xp){
+  let i = 0; while (i < RANKS.length-1 && xp >= RANKS[i+1][0]) i++;
+  return {i, title:RANKS[i][1], lo:RANKS[i][0], hi: RANKS[i+1] ? RANKS[i+1][0] : null};
+}
+function unlocked(idx){ return idx === 0 || (S.levels[LEVELS[idx-1].id] || {}).stars >= 1; }
+function starStr(n){ let s=""; for (let i=0;i<3;i++) s += i<n ? "★" : '<span class="e">★</span>'; return s; }
+
+/* ---------- Home ---------- */
+function renderHome(){
+  $("deskNote").hidden = isPhone;
+  $("newNote").hidden = S.xp > 0;
+  const r = rankFor(S.xp);
+  $("rankTitle").textContent = r.title;
+  $("xpTxt").textContent = r.hi ? S.xp + " / " + r.hi + " XP" : S.xp + " XP";
+  $("xpBar").style.width = r.hi ? Math.min(100, (S.xp - r.lo) / (r.hi - r.lo) * 100) + "%" : "100%";
+  $("stBest").textContent = S.bestWpm;
+  const streakAlive = S.lastDay === today() || S.lastDay === yesterday();
+  $("stStreak").textContent = streakAlive ? S.streak : 0;
+  const stars = LEVELS.reduce((n,l) => n + ((S.levels[l.id]||{}).stars||0), 0);
+  $("stStars").textContent = stars + "/" + LEVELS.length*3;
+  const d = S.daily[today()];
+  $("dailyTxt").textContent = d ? "Today's best: " + d + " pts" : "New messages every day";
+
+  let html = "", world = "";
+  LEVELS.forEach((l, idx) => {
+    if (l.world !== world) {
+      if (world) html += "</div></div>";
+      world = l.world;
+      html += '<div class="world"><h3>' + esc(world) + '</h3><div class="levels">';
+    }
+    const rec = S.levels[l.id] || {};
+    const lock = !unlocked(idx);
+    const tag = l.type === "timed" ? '<span class="tag">⏱ 60s</span>' : l.id === 12 ? '<span class="tag">BOSS</span>' : "";
+    html += '<button class="lvl'+(lock?" locked":"")+'" data-lvl="'+idx+'">'+tag+'<div class="num">Level '+l.id+'</div><div class="nm">'+esc(l.name)+'</div><div class="st">'+starStr(rec.stars||0)+'</div></button>';
+  });
+  $("map").innerHTML = html + "</div></div>";
+
+  $("badgeGrid").innerHTML = BADGES.map(b => '<div class="badge'+(S.badges.includes(b.id)?"":" off")+'"><span class="b">'+b.ico+'</span>'+esc(b.name)+'</div>').join("");
+}
+$("map").addEventListener("click", e => {
+  const b = e.target.closest("[data-lvl]"); if (!b) return;
+  const idx = +b.dataset.lvl;
+  if (!unlocked(idx)) { b.animate([{transform:"translateX(-4px)"},{transform:"translateX(4px)"},{transform:"none"}], {duration:200}); return; }
+  start(LEVELS[idx]);
+});
+$("dailyBtn").addEventListener("click", () => {
+  const r = rng("swipe-" + today());
+  const pool = shuffle(P_REPLIES.concat(P_QUESTIONS, P_PLANS, P_JOB), r).slice(0, 6);
+  start({id:"daily", name:"Daily Challenge", type:"phrases", fixed:pool, count:6, wpm:22, board:"daily"});
+});
+$("resetBtn").addEventListener("click", e => {
+  e.preventDefault();
+  if (confirm("Reset all your stars, XP and badges on this phone?")) { S = {xp:0, levels:{}, badges:[], bestWpm:0, streak:0, lastDay:null, daily:{}, initials:S.initials}; save(); renderHome(); }
+});
+
+/* ---------- Play ---------- */
+const inp = $("inp");
+let G = null;
+
+function start(lv){
+  let prompts;
+  if (lv.fixed) prompts = lv.fixed.slice();
+  else if (lv.type === "timed") { prompts = []; while (prompts.length < 200) prompts = prompts.concat(shuffle(lv.pool)); }
+  else prompts = shuffle(lv.pool).slice(0, lv.count);
+  G = {lv, prompts, i:0, points:0, combo:0, maxCombo:0, swiped:0, eligible:0, corrections:0, words:0, chars:0,
+       activeMs:0, promptStart:null, promptSwiped:0, taps:0, skipped:0, completed:0, prev:"", deleting:false,
+       timer:null, endAt:null, done:false};
+  show("play");
+  $("lvName").textContent = lv.name;
+  $("clock").hidden = lv.type !== "timed";
+  if (lv.type === "timed") $("clock").textContent = "0:" + String(lv.seconds).padStart(2,"0");
+  $("hint").textContent = lv.type === "timed" ? "Clock starts on your first swipe." : "Swipe each word. Don't tap letters.";
+  $("hint").classList.remove("tapwarn");
+  inp.value = "";
+  renderPrompt();
+  inp.focus();
+}
+
+function target(){ return G.prompts[G.i]; }
+
+function renderPrompt(){
+  const t = target();
+  $("lvProg").textContent = G.lv.type === "timed" ? G.completed + " done" : (G.i+1) + " of " + G.prompts.length;
+  $("pts").textContent = G.points;
+  const c = $("combo"); c.hidden = G.combo < 2; c.textContent = "🔥 " + G.combo;
+  $("target").classList.toggle("long", t.length > 34);
+  paint("");
+}
+
+function paint(v){
+  const tw = t => t.split(" ");
+  const shown = tw(target());
+  const want = norm(target()).split(" ");
+  const got = norm(v).split(" ").filter(Boolean);
+  const endsSpace = /\s$/.test(v);
+  const html = shown.map((w, i) => {
+    let cls = "w";
+    if (i < got.length) {
+      const last = i === got.length-1 && !endsSpace;
+      if (got[i] === want[i]) cls += " ok";
+      else if (last && want[i] && want[i].startsWith(got[i])) cls += " cur";
+      else cls += " bad";
+    } else if (i === got.length) cls += " cur";
+    return '<span class="'+cls+'">'+esc(w)+'</span>';
+  }).join("");
+  $("target").innerHTML = html;
+}
+
+function correctSoFar(v){
+  const want = norm(target()).split(" ");
+  const got = norm(v).split(" ").filter(Boolean);
+  return got.length <= want.length && got.every((w,i) => w === want[i]);
+}
+
+function popPoints(n){
+  const p = document.createElement("span"); p.className = "pop"; p.textContent = "+" + n;
+  $("target").appendChild(p); setTimeout(() => p.remove(), 700);
+}
+function banner(text){
+  const b = document.createElement("div"); b.className = "combo-banner"; b.textContent = text;
+  document.body.appendChild(b); setTimeout(() => b.remove(), 1000);
+}
+
+inp.addEventListener("beforeinput", e => {
+  if (e.inputType === "insertFromPaste" || e.inputType === "insertFromDrop") e.preventDefault();
+  if (e.inputType === "insertLineBreak") e.preventDefault();
+});
+inp.addEventListener("keydown", e => { if (e.key === "Enter") e.preventDefault(); });
+
+inp.addEventListener("input", () => {
+  if (!G || G.done) return;
+  const v = inp.value.replace(/\n/g, " ");
+  const now = performance.now();
+  if (G.promptStart === null) G.promptStart = now;
+  if (G.lv.type === "timed" && !G.timer && letters(v) > 0) startClock();
+
+  const gained = letters(v) - letters(G.prev);
+  if (v.length < G.prev.length) {
+    if (!G.deleting) { G.corrections++; G.deleting = true; }
+    G.combo = 0;
+  } else {
+    G.deleting = false;
+    if (gained >= 2) {
+      G.promptSwiped++;
+      if (correctSoFar(v)) {
+        G.combo++; G.maxCombo = Math.max(G.maxCombo, G.combo);
+        const pts = 10 * Math.min(1 + Math.floor(G.combo / 5), 5);
+        G.points += pts; popPoints(pts);
+        if (navigator.vibrate) navigator.vibrate(8);
+        if (G.combo % 5 === 0) banner("COMBO x" + Math.min(1 + G.combo / 5, 5));
+      } else G.combo = 0;
+    } else if (gained === 1) {
+      G.taps++; G.combo = 0;
+      if (G.taps === 3 && isPhone) { $("hint").textContent = "Looks like tapping. Try sliding your finger across the letters."; $("hint").classList.add("tapwarn"); }
+    }
+  }
+  G.prev = v;
+  $("pts").textContent = G.points;
+  const c = $("combo"); c.hidden = G.combo < 2; c.textContent = "🔥 " + G.combo;
+  paint(v);
+  if (norm(v) === norm(target())) complete();
+});
+
+function nextPrompt(){
+  G.i++; G.prev = ""; G.promptStart = null; G.promptSwiped = 0; G.deleting = false;
+  inp.value = "";
+  if (G.lv.type !== "timed" && G.i >= G.prompts.length) { finish(); return; }
+  renderPrompt();
+}
+
+function complete(){
+  const t = target(), el = eligibleWords(t), sw = Math.min(G.promptSwiped, el);
+  G.eligible += el; G.swiped += sw; G.points += (el - sw) * 2;
+  G.words += norm(t).split(" ").length; G.chars += norm(t).length + 1;
+  if (G.promptStart !== null) G.activeMs += performance.now() - G.promptStart;
+  G.completed++;
+  const card = $("target"); card.classList.add("win"); setTimeout(() => card.classList.remove("win"), 220);
+  nextPrompt();
+}
+
+$("skipBtn").addEventListener("click", () => {
+  if (!G || G.done) return;
+  G.skipped++; G.combo = 0;
+  if (G.promptStart !== null && G.lv.type !== "timed") G.activeMs += performance.now() - G.promptStart;
+  nextPrompt();
+  inp.focus();
+});
+$("quitBtn").addEventListener("click", () => { stopClock(); G = null; inp.blur(); show("home"); });
+
+function startClock(){
+  G.endAt = performance.now() + G.lv.seconds * 1000;
+  G.timer = setInterval(() => {
+    const left = Math.max(0, Math.ceil((G.endAt - performance.now()) / 1000));
+    $("clock").textContent = Math.floor(left/60) + ":" + String(left % 60).padStart(2,"0");
+    if (left <= 0) finish();
+  }, 200);
+}
+function stopClock(){ if (G && G.timer) { clearInterval(G.timer); G.timer = null; } }
+
+/* ---------- Results ---------- */
+function finish(){
+  if (G.done) return;
+  stopClock(); G.done = true; inp.blur();
+  const lv = G.lv, timed = lv.type === "timed";
+  const minutes = timed ? lv.seconds / 60 : Math.max(G.activeMs, 1000) / 60000;
+  const wpm = G.completed ? Math.round(G.chars / 5 / minutes) : 0;
+  const acc = G.words ? Math.max(0, 1 - G.corrections / G.words) : 0;
+  const swipe = G.eligible ? G.swiped / G.eligible : 0;
+
+  let stars = 0;
+  if (timed) {
+    stars = lv.goals.filter(g => G.completed >= g).length;
+    if (swipe < 0.6) stars = Math.min(stars, 1);
+  } else if (G.completed > 0 && G.skipped <= Math.floor(G.prompts.length * 0.2)) {
+    stars = 1;
+    if (swipe >= 0.7 && acc >= 0.8) stars = 2;
+    if (stars === 2 && swipe >= 0.85 && acc >= 0.9 && wpm >= lv.wpm) stars = 3;
+  }
+
+  // XP and records
+  let bonus = 0;
+  if (lv.id !== "daily") {
+    const rec = S.levels[lv.id] || {stars:0, best:0, wpm:0};
+    if (stars > rec.stars) bonus = (stars - rec.stars) * 100;
+    S.levels[lv.id] = {stars:Math.max(rec.stars, stars), best:Math.max(rec.best, G.points), wpm:Math.max(rec.wpm, wpm)};
+  } else if (G.completed > 0) {
+    const d = today();
+    if (S.lastDay !== d) { S.streak = S.lastDay === yesterday() ? S.streak + 1 : 1; S.lastDay = d; bonus = 50; }
+    S.daily[d] = Math.max(S.daily[d] || 0, G.points);
+    Object.keys(S.daily).sort().slice(0, -30).forEach(k => delete S.daily[k]);
+  }
+  const gainedXp = G.points + bonus;
+  S.xp += gainedXp;
+  if (swipe >= 0.7) S.bestWpm = Math.max(S.bestWpm, wpm);
+
+  const newBadges = [];
+  const give = (id, cond) => { if (cond && !S.badges.includes(id)) { S.badges.push(id); newBadges.push(id); } };
+  const allLv = (ids, min) => ids.every(id => ((S.levels[id]||{}).stars||0) >= min);
+  give("first", G.swiped > 0);
+  give("combo10", G.maxCombo >= 10);
+  give("combo25", G.maxCombo >= 25);
+  give("flawless", !timed && G.skipped === 0 && G.corrections === 0 && swipe === 1 && G.completed > 0);
+  give("wpm30", wpm >= 30 && swipe >= 0.7);
+  give("wpm45", wpm >= 45 && swipe >= 0.7);
+  give("streak3", S.streak >= 3);
+  give("streak7", S.streak >= 7);
+  give("warm", allLv([1,2,3,4], 1));
+  give("texter", allLv([5,6,7,8], 1));
+  give("grad", allLv(LEVELS.map(l => l.id), 1));
+  give("master", allLv(LEVELS.map(l => l.id), 3));
+  save();
+
+  // Render
+  const titles = ["Keep practicing", "Level cleared", "Nice swiping!", "Perfect!"];
+  $("resTitle").textContent = lv.name + ": " + (timed && G.completed === 0 ? "Time's up" : titles[stars]);
+  $("resStars").innerHTML = [0,1,2].map(i => '<span class="'+(i<stars?"on":"")+'">★</span>').join("");
+  const statBox = (big, small) => '<div class="stat"><b>'+big+'</b><span>'+small+'</span></div>';
+  $("resGrid").innerHTML =
+    statBox(G.points, "Points") +
+    statBox(wpm, "WPM") +
+    statBox(Math.round(swipe*100) + "%", "Swiped") +
+    (timed ? statBox(G.completed, lv.pool === LEVELS[7].pool ? "Words" : "Messages") : statBox(Math.round(acc*100) + "%", "Accuracy")) +
+    statBox("x" + G.maxCombo, "Best combo") +
+    statBox("+" + gainedXp, "XP");
+
+  const tips = [];
+  if (timed) {
+    const nextGoal = lv.goals.find(g => G.completed < g);
+    if (nextGoal) tips.push("Next star at " + nextGoal + (lv.id === 8 ? " words." : " messages."));
+  } else if (stars < 3) {
+    if (G.skipped > Math.floor(G.prompts.length * 0.2)) tips.push("Too many skips to clear the level. Slow down and trace each word.");
+    if (swipe < 0.85) tips.push("Swipe more words. Even short ones like \"is\" and \"to\" count.");
+    if (acc < 0.9) tips.push("Fewer backspaces. Aim for the shape of the word and let the keyboard guess.");
+    if (wpm < lv.wpm) tips.push("3 star speed target: " + lv.wpm + " WPM.");
+  }
+  if (!isPhone) tips.push("Swipes only count on a phone keyboard.");
+  $("resTips").innerHTML = tips.map(t => "<li>" + esc(t) + "</li>").join("");
+
+  $("resBadges").innerHTML = newBadges.map(id => { const b = BADGES.find(x => x.id === id); return '<div class="card newbadge row"><span style="font-size:30px">'+b.ico+'</span><div><b>Badge unlocked</b><div class="small">'+esc(b.name)+'</div></div></div>'; }).join("");
+
+  const idx = LEVELS.indexOf(lv);
+  let acts = "";
+  if (idx >= 0 && idx < LEVELS.length-1 && unlocked(idx+1)) acts += '<button class="btn" data-act="next">Next level ▶</button>';
+  acts += '<button class="btn '+(acts ? "ghost" : "")+'" data-act="retry">Try again</button>';
+  acts += '<button class="btn ghost" data-go="home">Level map</button>';
+  $("resActions").innerHTML = acts;
+  show("results");
+
+  if (lv.board && G.points > 0) maybeHighScore(lv.board, G.points, wpm);
+}
+$("resActions").addEventListener("click", e => {
+  const a = e.target.closest("[data-act]"); if (!a) return;
+  const idx = LEVELS.indexOf(G.lv);
+  if (a.dataset.act === "next") start(LEVELS[idx+1]);
+  if (a.dataset.act === "retry") G.lv.id === "daily" ? $("dailyBtn").click() : start(G.lv);
+});
+
+/* ---------- Arcade high scores ---------- */
+const API = "/api/swipe-scores";
+let curBoard = "speed", pending = null, lastRank = null;
+const ORD = ["1ST","2ND","3RD","4TH","5TH","6TH","7TH","8TH","9TH","10TH"];
+
+function boardUrl(b){ return API + "?board=" + b + (b === "daily" ? "&date=" + today() : ""); }
+async function fetchBoard(b){
+  const r = await fetch(boardUrl(b), {cache:"no-store"});
+  if (!r.ok) throw new Error("bad");
+  return (await r.json()).scores || [];
+}
+
+function drawBoard(scores, meIdx){
+  const label = curBoard === "speed" ? "SPEED ROUND · ALL TIME" : "DAILY CHALLENGE · TODAY";
+  if (!scores.length) {
+    $("arcBody").innerHTML = '<div class="arc-sub">'+label+'</div><div class="arc-empty">NO SCORES YET<br><br><span class="arc-blink">BE THE FIRST!</span></div>';
+    return;
+  }
+  const rows = scores.map((s,i) => '<tr class="c'+i+(i===meIdx?" me":"")+'"><td>'+ORD[i]+'</td><td>'+esc(s.n)+'</td><td>'+(s.w||0)+'</td><td>'+String(s.s).padStart(5,"0")+'</td></tr>').join("");
+  $("arcBody").innerHTML = '<div class="arc-sub">'+label+'</div><table class="arc-table"><tr><th>RANK</th><th>NAME</th><th>WPM</th><th>SCORE</th></tr>'+rows+'</table>';
+}
+async function loadBoard(b, meIdx){
+  curBoard = b;
+  document.querySelectorAll(".arc-tabs button").forEach(x => x.classList.toggle("on", x.dataset.board === b));
+  $("arcBody").innerHTML = '<div class="arc-empty arc-blink">LOADING…</div>';
+  try { drawBoard(await fetchBoard(b), meIdx); }
+  catch(e) { $("arcBody").innerHTML = '<div class="arc-empty">SCOREBOARD OFFLINE<br><br>TRY AGAIN LATER</div>'; }
+}
+document.querySelector(".arc-tabs").addEventListener("click", e => {
+  const b = e.target.closest("[data-board]"); if (b) loadBoard(b.dataset.board);
+});
+
+async function maybeHighScore(board, score, wpm){
+  try {
+    const scores = await fetchBoard(board);
+    if (scores.length >= 10 && score <= scores[scores.length-1].s) return;
+    pending = {board, score, wpm};
+    openEntry();
+  } catch(e) {}
+}
+
+const nameEl = $("arcName");
+function openEntry(){
+  nameEl.value = S.initials === "AAA" ? "" : (S.initials || "");
+  $("arcCount").textContent = nameEl.value.length + "/10";
+  $("entScore").innerHTML = (pending.board === "speed" ? "SPEED ROUND" : "DAILY CHALLENGE") + "<br>" + String(pending.score).padStart(5,"0") + " PTS";
+  $("entMsg").textContent = "";
+  show("enter");
+}
+nameEl.addEventListener("input", () => {
+  const v = nameEl.value.toUpperCase().replace(/[^A-Z0-9 ]/g, "").replace(/ {2,}/g, " ").slice(0, 10);
+  if (v !== nameEl.value) nameEl.value = v;
+  $("arcCount").textContent = v.length + "/10";
+});
+nameEl.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); $("entSave").click(); } });
+$("entSave").addEventListener("click", async () => {
+  if (!pending) return;
+  const name = nameEl.value.trim();
+  if (!name) { $("entMsg").textContent = "TYPE A NAME FIRST"; nameEl.focus(); return; }
+  nameEl.blur();
+  $("entSave").disabled = true; $("entMsg").textContent = "SAVING…";
+  try {
+    const r = await fetch(API, {method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({board:pending.board, date:today(), name, score:pending.score, wpm:pending.wpm})});
+    const j = await r.json();
+    if (!r.ok) { $("entMsg").textContent = String(j.error || "ERROR").toUpperCase(); return; }
+    S.initials = name; save();
+    const board = pending.board; pending = null;
+    show("scores"); loadBoard(board, j.rank ? j.rank - 1 : -1);
+  } catch(e) { $("entMsg").textContent = "SCOREBOARD OFFLINE"; }
+  finally { $("entSave").disabled = false; }
+});
+$("entSkip").addEventListener("click", () => { pending = null; show("results"); });
+
+renderHome();
+})();
+</script>
+</body>
+</html>

@@ -53,6 +53,23 @@ export default function Home() {
 
       <section className="mt-16 max-w-xl w-full text-left">
         <h2 className="text-[#808080] text-xs font-semibold uppercase tracking-wider mb-4 text-center">
+          Free to play
+        </h2>
+        <a
+          href="/swipe/"
+          className="block p-5 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#ff2d95] transition-colors"
+        >
+          <p className="text-white font-semibold mb-1">👆 Swipe School</p>
+          <p className="text-[#808080] text-xs mb-2">Game · best on your phone</p>
+          <p className="text-[#b0b0b0] text-sm leading-relaxed">
+            Learn to swipe type on your phone&apos;s own keyboard. Clear 12 levels,
+            build combos, and get your name on the arcade high score table.
+          </p>
+        </a>
+      </section>
+
+      <section className="mt-10 max-w-xl w-full text-left">
+        <h2 className="text-[#808080] text-xs font-semibold uppercase tracking-wider mb-4 text-center">
           Also from Brew
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">

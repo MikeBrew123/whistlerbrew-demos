@@ -16,6 +16,14 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    name: "Swipe School",
+    href: "/swipe/",
+    description: "Game for learning swipe typing on your phone's own keyboard. 12 levels, combos, daily challenge, arcade high scores.",
+    status: "NEW",
+    accent: "#ff2d95",
+    external: true,
+  },
+  {
     name: "SPS Deploy",
     href: "/sps-deploy/index.html",
     description: "Offline crew tracker for deployments — T-Card scan, 2-hr check-in rounds with timestamps, contacts, ICS 214/DTR paperwork log. Installable PWA.",

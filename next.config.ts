@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { source: '/firesmart', destination: '/firesmart/index.html', permanent: false },
       { source: '/simtable', destination: '/simtable/index.html', permanent: false },
       { source: '/cat', destination: '/cat/index.html', permanent: false },
+      { source: '/swipe', destination: '/swipe/index.html', permanent: false },
       { source: '/sitrep', destination: '/resource-order-web.html', permanent: false },
     ];
   },
