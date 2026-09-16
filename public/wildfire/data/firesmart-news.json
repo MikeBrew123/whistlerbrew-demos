@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T10:00:34.286Z",
+  "updated_at": "2026-09-16T16:00:34.877Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -10,19 +10,18 @@
         "description": "With nominations closed for the upcoming municipal elections, Prince George has emerged as the B.C. city with the most candidates for mayor. There are no party candidates in the race for mayor or council, but clusters of support can be seen in the nomination papers.",
         "pubDate": "Tue, 15 Sep 2026 16:00:00 EDT",
         "source": "CBC BC"
+      },
+      {
+        "title": "Suspect airlifted to hospital in critical condition after weekend break-in at B.C. Hydro substation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/1-person-critical-condition-after-northern-bc-substation-break-in-9.7344807?cmp=rss",
+        "description": "Prince George RCMP say one suspect has been taken to hospital after a break and enter at a B.C. Hydro substation north of Crystal Lake Road on Sunday.",
+        "pubDate": "Tue, 15 Sep 2026 14:21:50 EDT",
+        "source": "CBC BC"
       }
     ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "B.C.'s projected deficit increases to $13.8B, amid geopolitical and wildfire challenges",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-fiscal-update-september-2026-9.7343481?cmp=rss",
-        "description": "B.C. Finance Minister Josie Osborne said economic results through the province's first quarter have been mixed, due to multiple geopolitical factors and a costly wildfire season.",
-        "pubDate": "Mon, 14 Sep 2026 15:23:07 EDT",
-        "source": "CBC BC"
-      }
-    ]
+    "all": []
   }
 }
