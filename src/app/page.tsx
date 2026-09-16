@@ -60,13 +60,13 @@ export default function Home() {
           className="block p-5 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#ff2d95] transition-colors"
         >
           <p className="text-white font-semibold mb-1">👆 Swipe School</p>
-          <p className="text-[#808080] text-xs mb-2">Game · best on your phone</p>
+          <p className="text-[#808080] text-xs mb-2">Free game · no password · best on your phone</p>
           <p className="text-[#b0b0b0] text-sm leading-relaxed">
             Learn to swipe type on your phone&apos;s own keyboard. Clear 12 levels,
             build combos, and get your name on the arcade high score table.
           </p>
           <span className="inline-block mt-4 bg-[#ff2d95] text-white font-semibold text-sm py-2 px-5 rounded-md">
-            Play now ▶ no password needed
+            Play now ▶
           </span>
         </a>
       </section>
