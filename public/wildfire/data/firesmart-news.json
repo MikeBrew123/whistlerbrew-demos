@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-09-16T16:00:34.877Z",
+  "updated_at": "2026-09-16T22:00:38.203Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [
       {
+        "title": "B.C. wildlife rescue says the province is blocking it from saving animals in Prince George region",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/northern-lights-wildlife-rescue-blocked-prince-george-smithers-9.7345645?cmp=rss",
+        "description": "Northern Lights Wildlife Rescue Society says its being denied approvals to rescue orphaned animals by provincial biologists assigned to manage the Omineca Region in B.C. which includes Prince George.",
+        "pubDate": "Wed, 16 Sep 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
         "title": "9 people running for mayor in Prince George, the most of any B.C. city",
         "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-9-people-mayor-s-race-who-is-running-9.7344024?cmp=rss",
         "description": "With nominations closed for the upcoming municipal elections, Prince George has emerged as the B.C. city with the most candidates for mayor. There are no party candidates in the race for mayor or council, but clusters of support can be seen in the nomination papers.",
         "pubDate": "Tue, 15 Sep 2026 16:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Suspect airlifted to hospital in critical condition after weekend break-in at B.C. Hydro substation",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/1-person-critical-condition-after-northern-bc-substation-break-in-9.7344807?cmp=rss",
-        "description": "Prince George RCMP say one suspect has been taken to hospital after a break and enter at a B.C. Hydro substation north of Crystal Lake Road on Sunday.",
-        "pubDate": "Tue, 15 Sep 2026 14:21:50 EDT",
         "source": "CBC BC"
       }
     ],
