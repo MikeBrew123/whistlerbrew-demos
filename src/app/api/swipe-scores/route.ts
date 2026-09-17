@@ -4,7 +4,8 @@ import { getRequestContext } from "@cloudflare/next-on-pages";
 export const runtime = "edge";
 
 // Swipe School arcade high scores, stored in the SWIPE_SCHOOL KV namespace.
-// Boards: "speed" (all-time Speed Round) and "daily:YYYY-MM-DD" (Daily Challenge).
+// Boards: "speed" (Speed Round), "daily:YYYY-MM-DD" (today's Daily Challenge)
+// and "alltime" (best Daily Challenge score per player, kept forever).
 
 type Entry = { n: string; s: number; w: number; t: number };
 type KV = {
@@ -41,6 +42,7 @@ function kv(): KV | null {
 
 function boardKey(board: string | null, date: string | null): string | null {
   if (board === "speed") return "board:speed";
+  if (board === "alltime") return "board:alltime";
   if (board !== "daily" || !date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
   // Allow the player's local date to differ from UTC by a day either way.
   const diff = Math.abs(Date.parse(date + "T12:00:00Z") - Date.now());
@@ -54,6 +56,15 @@ async function read(store: KV, key: string): Promise<Entry[]> {
   } catch {
     return [];
   }
+}
+
+function bestPerName(entries: Entry[]): Entry[] {
+  const best = new Map<string, Entry>();
+  for (const e of entries) {
+    const seen = best.get(e.n);
+    if (!seen || e.s > seen.s) best.set(e.n, e);
+  }
+  return [...best.values()].sort((a, b) => b.s - a.s || a.t - b.t).slice(0, MAX_ENTRIES);
 }
 
 export async function GET(request: NextRequest) {
@@ -107,6 +118,12 @@ export async function POST(request: NextRequest) {
   if (rank > 0) {
     const ttl = key.startsWith("board:daily") ? { expirationTtl: 45 * 24 * 3600 } : undefined;
     await store.put(key, JSON.stringify(scores), ttl);
+  }
+
+  // Daily scores also feed the all-time board, which keeps one row per player.
+  if (key.startsWith("board:daily")) {
+    const all = bestPerName((await read(store, "board:alltime")).concat(entry));
+    await store.put("board:alltime", JSON.stringify(all));
   }
   return NextResponse.json({ scores, rank });
 }

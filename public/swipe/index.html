@@ -120,7 +120,7 @@ textarea#inp:focus{border-color:var(--accent)}
 .arc-title{text-align:center;font-size:22px;line-height:1.6;color:#ffe600;text-shadow:3px 3px 0 #ff2d95,0 0 18px #ff2d95;margin:14px 0 6px}
 .arc-sub{text-align:center;font-size:10px;color:#00e5ff;margin-bottom:18px;line-height:1.8}
 .arc-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
-.arc-tabs button{font-family:var(--arcade);font-size:10px;padding:10px 8px;border:2px solid #444;color:#888;background:#000}
+.arc-tabs button{font-family:var(--arcade);font-size:9px;padding:10px 6px;border:2px solid #444;color:#888;background:#000}
 .arc-tabs button.on{border-color:#00e5ff;color:#00e5ff;box-shadow:0 0 10px #00e5ff}
 .arc-table{width:100%;border-collapse:collapse;font-size:11px}
 .arc-table th{font-size:9px;color:#aaa;padding:0 4px 12px;text-align:left}
@@ -247,7 +247,7 @@ textarea#inp:focus{border-color:var(--accent)}
     <li>Tapping letters or backspacing resets your combo.</li>
     <li>Speed bonus: 10 points for every WPM above 15. Your time for each message starts on your first swipe, so take a second to read it first.</li>
     <li>★ finish the level &nbsp; ★★ mostly swiped and accurate &nbsp; ★★★ also hit the speed target</li>
-    <li>Speed Rounds and the Daily Challenge go on the arcade High Scores table.</li>
+    <li>Speed Rounds and the Daily Challenge go on the arcade High Scores table. The ALL TIME board keeps each player's best Daily Challenge score.</li>
   </ul>
   <div style="margin-top:20px"><button class="btn" data-go="home">Got it</button></div>
 </div></section>
@@ -258,7 +258,8 @@ textarea#inp:focus{border-color:var(--accent)}
   <div class="arc-sub arc-blink">★ SWIPE SCHOOL ★</div>
   <div class="arc-tabs">
     <button data-board="daily" class="on">TODAY</button>
-    <button data-board="speed">SPEED ROUND</button>
+    <button data-board="alltime">ALL TIME</button>
+    <button data-board="speed">SPEED</button>
   </div>
   <div id="arcBody"></div>
   <button class="arc-btn pink" data-go="home">◀ BACK</button>
@@ -661,6 +662,7 @@ let curBoard = "daily", pending = null, loadSeq = 0;
 const ORD = ["1ST","2ND","3RD","4TH","5TH","6TH","7TH","8TH","9TH","10TH"];
 
 function boardUrl(b){ return API + "?board=" + b + (b === "daily" ? "&date=" + today() : ""); }
+const BOARD_LABEL = {daily:"DAILY CHALLENGE · TODAY", alltime:"DAILY CHALLENGE · ALL TIME", speed:"SPEED ROUND · ALL TIME"};
 async function fetchBoard(b){
   const r = await fetch(boardUrl(b), {cache:"no-store"});
   if (!r.ok) throw new Error("bad");
@@ -668,7 +670,7 @@ async function fetchBoard(b){
 }
 
 function drawBoard(scores, meIdx){
-  const label = curBoard === "speed" ? "SPEED ROUND · ALL TIME" : "DAILY CHALLENGE · TODAY";
+  const label = BOARD_LABEL[curBoard];
   if (!scores.length) {
     $("arcBody").innerHTML = '<div class="arc-sub">'+label+'</div><div class="arc-empty">NO SCORES YET<br><br><span class="arc-blink">BE THE FIRST!</span></div>';
     return;
@@ -691,7 +693,10 @@ document.querySelector(".arc-tabs").addEventListener("click", e => {
 async function maybeHighScore(board, score, wpm){
   try {
     const scores = await fetchBoard(board);
-    if (scores.length >= 10 && score <= scores[scores.length-1].s) return;
+    const all = board === "daily" ? await fetchBoard("alltime") : [];
+    const madeDaily = scores.length < 10 || score > scores[scores.length-1].s;
+    const madeAll = board === "daily" && (all.length < 10 || score > all[all.length-1].s);
+    if (!madeDaily && !madeAll) return;
     pending = {board, score, wpm};
     openEntry();
   } catch(e) {}
