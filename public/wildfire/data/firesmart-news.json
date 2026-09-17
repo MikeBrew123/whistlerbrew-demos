@@ -1,36 +1,35 @@
 {
-  "updated_at": "2026-09-17T16:00:34.504Z",
+  "updated_at": "2026-09-17T22:00:35.401Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Simon Fraser University campus receives Indigenous place names in 2 languages",
-        "link": "https://www.cbc.ca/news/indigenous/sfu-burnaby-campus-first-nations-name-9.7346602?cmp=rss",
-        "description": "Four First Nations in British Columbia have collaborated with Simon Fraser University to give the school's Burnaby campus place names in two Coast Salish languages.",
-        "pubDate": "Wed, 16 Sep 2026 17:55:23 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
-        "title": "Kamloops bridal beauty agency closes amid viral allegations of double-bookings, unpaid debts",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/kamloops-bridal-closure-cassidy-watt-unpaid-debts-allegations-9.7346787?cmp=rss",
-        "description": "The sudden closure of the Kamloops-based Cassidy Watt Artistry Collective came after dozens of social media posts from clients in early September.",
-        "pubDate": "Wed, 16 Sep 2026 20:55:18 EDT",
+        "title": "RCMP thought she died of a cardiac arrest. Now, they say her death was suspicious",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-james-death-suspicious-dayna-monk-9.7347314?cmp=rss",
+        "description": "Police are looking for information about the death of 30-year-old Danya Monk of Fort St. James, B.C. after an autopsy revealed she died under suspicious circumstances and not a cardiac arrest, as originally believed.",
+        "pubDate": "Wed, 16 Sep 2026 21:34:28 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [
       {
-        "title": "Gun control advocacy groups push for Tumbler Ridge weapon details",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/tumbler-ridge-gun-details-9.7346020?cmp=rss",
-        "description": "Five gun control advocacy groups are renewing pressure on the RCMP to disclose information about the firearms used in the mass shooting in Tumbler Ridge, B.C., saying public discussion of the details could help prevent another tragedy.",
-        "pubDate": "Wed, 16 Sep 2026 09:54:30 EDT",
+        "title": "Investigation into fatal plane crash in Prince George could take up to 450 days: TSB",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-plane-crash-investigation-tsb-beech-king-air-9.7347235?cmp=rss",
+        "description": "So far, the only information about the incident's cause released by the Transportation Safety Board is that the plane lost power to a single engine, prompting it to come down. However, aviation experts have pointed out that model of plane is supposed to be able to fly on just one of its two engines.",
+        "pubDate": "Thu, 17 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "cariboo": [],
     "northwest": [],
     "southeast": [
+      {
+        "title": "IIO investigating after youth jumps from roof of B.C. school after fleeing police",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/cranbrook-iio-rcmp-9.7348324?cmp=rss",
+        "description": "RCMP say the incident began when they were called to a Cranbrook home for a report of a youth male who had allegedly \"threatened individuals at the residence with a knife.\"",
+        "pubDate": "Thu, 17 Sep 2026 13:51:45 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "String of Highway 1 crashes near Revelstoke prompt calls for enforcement, improvements",
         "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-safety-revelstoke-9.7345700?cmp=rss",
