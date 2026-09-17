@@ -1,27 +1,52 @@
 {
-  "updated_at": "2026-09-16T22:00:38.203Z",
+  "updated_at": "2026-09-17T04:00:34.713Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
-    "prince-george": [
+    "coastal": [
       {
-        "title": "B.C. wildlife rescue says the province is blocking it from saving animals in Prince George region",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/northern-lights-wildlife-rescue-blocked-prince-george-smithers-9.7345645?cmp=rss",
-        "description": "Northern Lights Wildlife Rescue Society says its being denied approvals to rescue orphaned animals by provincial biologists assigned to manage the Omineca Region in B.C. which includes Prince George.",
-        "pubDate": "Wed, 16 Sep 2026 09:00:00 EDT",
+        "title": "Simon Fraser University campus receives Indigenous place names in 2 languages",
+        "link": "https://www.cbc.ca/news/indigenous/sfu-burnaby-campus-first-nations-name-9.7346602?cmp=rss",
+        "description": "Four First Nations in British Columbia have collaborated with Simon Fraser University to give the school's Burnaby campus place names in two Coast Salish languages.",
+        "pubDate": "Wed, 16 Sep 2026 17:55:23 EDT",
         "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Military looks to Kelowna students to fill aircraft technician jobs",
+        "link": "https://globalnews.ca/news/12062443/military-kelowna-students-fill-aircraft-technician-jobs/",
+        "description": "The fighter jets may have been the attraction, but the Royal Canadian Air Force came to Kelowna Wednesday with a much bigger goal.",
+        "pubDate": "Thu, 17 Sep 2026 02:08:16 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/Screenshot-2026-09-16-182906.png"
       },
       {
-        "title": "9 people running for mayor in Prince George, the most of any B.C. city",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-9-people-mayor-s-race-who-is-running-9.7344024?cmp=rss",
-        "description": "With nominations closed for the upcoming municipal elections, Prince George has emerged as the B.C. city with the most candidates for mayor. There are no party candidates in the race for mayor or council, but clusters of support can be seen in the nomination papers.",
-        "pubDate": "Tue, 15 Sep 2026 16:00:00 EDT",
+        "title": "Kamloops bridal beauty agency closes amid viral allegations of double-bookings, unpaid debts",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/kamloops-bridal-closure-cassidy-watt-unpaid-debts-allegations-9.7346787?cmp=rss",
+        "description": "The sudden closure of the Kamloops-based Cassidy Watt Artistry Collective came after dozens of social media posts from clients in early September.",
+        "pubDate": "Wed, 16 Sep 2026 20:55:18 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "September back-to-school period is the most dangerous time for commuting kids, ICBC warns",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/school-return-road-safety-9.7345581?cmp=rss",
+        "description": "Data collected between 2021 and 2025 shows the number of crashes involving minors is 37 per cent higher in September compared to the monthly average.",
+        "pubDate": "Wed, 16 Sep 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "String of Highway 1 crashes near Revelstoke, B.C., prompt calls for enforcement, improvements",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-safety-revelstoke-9.7345700?cmp=rss",
+        "description": "Leaders and residents from the Revelstoke region are calling for improvements to a section of the Trans Canada Highway, following a string of fatal collisions and prolonged closures.",
+        "pubDate": "Wed, 16 Sep 2026 21:32:13 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "all": []
   }
 }
