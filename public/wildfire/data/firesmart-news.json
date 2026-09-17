@@ -1,24 +1,8 @@
 {
-  "updated_at": "2026-09-17T04:00:34.713Z",
+  "updated_at": "2026-09-17T10:00:38.083Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Simon Fraser University campus receives Indigenous place names in 2 languages",
-        "link": "https://www.cbc.ca/news/indigenous/sfu-burnaby-campus-first-nations-name-9.7346602?cmp=rss",
-        "description": "Four First Nations in British Columbia have collaborated with Simon Fraser University to give the school's Burnaby campus place names in two Coast Salish languages.",
-        "pubDate": "Wed, 16 Sep 2026 17:55:23 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
-      {
-        "title": "Military looks to Kelowna students to fill aircraft technician jobs",
-        "link": "https://globalnews.ca/news/12062443/military-kelowna-students-fill-aircraft-technician-jobs/",
-        "description": "The fighter jets may have been the attraction, but the Royal Canadian Air Force came to Kelowna Wednesday with a much bigger goal.",
-        "pubDate": "Thu, 17 Sep 2026 02:08:16 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/Screenshot-2026-09-16-182906.png"
-      },
       {
         "title": "Kamloops bridal beauty agency closes amid viral allegations of double-bookings, unpaid debts",
         "link": "https://www.cbc.ca/news/canada/british-columbia/kamloops-bridal-closure-cassidy-watt-unpaid-debts-allegations-9.7346787?cmp=rss",
@@ -29,10 +13,24 @@
     ],
     "prince-george": [
       {
-        "title": "September back-to-school period is the most dangerous time for commuting kids, ICBC warns",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/school-return-road-safety-9.7345581?cmp=rss",
-        "description": "Data collected between 2021 and 2025 shows the number of crashes involving minors is 37 per cent higher in September compared to the monthly average.",
-        "pubDate": "Wed, 16 Sep 2026 10:00:00 EDT",
+        "title": "Maritime experts urge use of verified weather reports after kayaker capsizes in B.C. waters",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/rescue-kayak-capsized-howe-sound-9.7345528?cmp=rss",
+        "description": "Jonathan Levine considers himself lucky to be alive after his kayak capsized in the ocean during what he thought would be a leisurely paddle in Howe Sound.",
+        "pubDate": "Wed, 16 Sep 2026 16:02:56 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Gun control advocacy groups push for Tumbler Ridge weapon details",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/tumbler-ridge-gun-details-9.7346020?cmp=rss",
+        "description": "Five gun control advocacy groups are renewing pressure on the RCMP to disclose information about the firearms used in the mass shooting in Tumbler Ridge, B.C., saying public discussion of the details could help prevent another tragedy.",
+        "pubDate": "Wed, 16 Sep 2026 09:54:30 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Besieged by weeds, northeast B.C. lakes targeted for harvesting pilot",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/charlie-lake-swan-lake-weed-clearing-9.7343846?cmp=rss",
+        "description": "The Peace River Regional District is moving forward with plans to clear thick, foul-smelling weeds growing around public boat launches at two popular local lakes.",
+        "pubDate": "Wed, 16 Sep 2026 08:00:00 EDT",
         "source": "CBC BC"
       }
     ],
