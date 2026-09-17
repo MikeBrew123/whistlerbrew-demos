@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-09-17T10:00:38.083Z",
+  "updated_at": "2026-09-17T16:00:34.504Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Simon Fraser University campus receives Indigenous place names in 2 languages",
+        "link": "https://www.cbc.ca/news/indigenous/sfu-burnaby-campus-first-nations-name-9.7346602?cmp=rss",
+        "description": "Four First Nations in British Columbia have collaborated with Simon Fraser University to give the school's Burnaby campus place names in two Coast Salish languages.",
+        "pubDate": "Wed, 16 Sep 2026 17:55:23 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "kamloops": [
       {
         "title": "Kamloops bridal beauty agency closes amid viral allegations of double-bookings, unpaid debts",
@@ -13,24 +21,10 @@
     ],
     "prince-george": [
       {
-        "title": "Maritime experts urge use of verified weather reports after kayaker capsizes in B.C. waters",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/rescue-kayak-capsized-howe-sound-9.7345528?cmp=rss",
-        "description": "Jonathan Levine considers himself lucky to be alive after his kayak capsized in the ocean during what he thought would be a leisurely paddle in Howe Sound.",
-        "pubDate": "Wed, 16 Sep 2026 16:02:56 EDT",
-        "source": "CBC BC"
-      },
-      {
         "title": "Gun control advocacy groups push for Tumbler Ridge weapon details",
         "link": "https://www.cbc.ca/news/canada/british-columbia/tumbler-ridge-gun-details-9.7346020?cmp=rss",
         "description": "Five gun control advocacy groups are renewing pressure on the RCMP to disclose information about the firearms used in the mass shooting in Tumbler Ridge, B.C., saying public discussion of the details could help prevent another tragedy.",
         "pubDate": "Wed, 16 Sep 2026 09:54:30 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Besieged by weeds, northeast B.C. lakes targeted for harvesting pilot",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/charlie-lake-swan-lake-weed-clearing-9.7343846?cmp=rss",
-        "description": "The Peace River Regional District is moving forward with plans to clear thick, foul-smelling weeds growing around public boat launches at two popular local lakes.",
-        "pubDate": "Wed, 16 Sep 2026 08:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -38,7 +32,7 @@
     "northwest": [],
     "southeast": [
       {
-        "title": "String of Highway 1 crashes near Revelstoke, B.C., prompt calls for enforcement, improvements",
+        "title": "String of Highway 1 crashes near Revelstoke prompt calls for enforcement, improvements",
         "link": "https://www.cbc.ca/news/canada/british-columbia/highway-1-safety-revelstoke-9.7345700?cmp=rss",
         "description": "Leaders and residents from the Revelstoke region are calling for improvements to a section of the Trans Canada Highway, following a string of fatal collisions and prolonged closures.",
         "pubDate": "Wed, 16 Sep 2026 21:32:13 EDT",
