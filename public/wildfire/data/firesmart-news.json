@@ -1,21 +1,20 @@
 {
-  "updated_at": "2026-09-19T04:00:35.075Z",
+  "updated_at": "2026-09-19T10:00:33.652Z",
   "zones": {
     "coastal": [],
     "kamloops": [
-      {
-        "title": "B.C. family rescues exhausted baby bear swimming in Okanagan Lake",
-        "link": "https://globalnews.ca/news/12065220/baby-bear-rescue-okanagan-lake/",
-        "description": "Christina Zamniuk says they were boating between their Vernon lakehouse and Adventure Bay last weekend when a baby bear was spotted swimming in the middle of the lake.",
-        "pubDate": "Sat, 19 Sep 2026 03:06:42 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/baby-bear.png"
-      },
       {
         "title": "Penticton, B.C., city councillor found guilty of historic sexual offences involving a child",
         "link": "https://www.cbc.ca/news/canada/british-columbia/penticton-b-c-city-councillor-found-guilty-of-historic-sexual-offences-involving-a-child-9.7350499?cmp=rss",
         "description": "A Penticton, B.C., city councillor has been found guilty of four counts of sexual interference and one count of invitation to sexual touching. The charges stem from his time as a youth basketball coach in Sarnia, Ont.",
         "pubDate": "Fri, 18 Sep 2026 19:53:03 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Hotel Eldorado says it is ready to mediate with City of Kelowna over contentious boardwalk property",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/hotel-eldorado-kelowna-expropriation-9.7350711?cmp=rss",
+        "description": "The owners of a hotel mired in a legal controversy over access to a waterfront boardwalk say they are prepared to mediate with the City of Kelowna rather than fight in the courts.",
+        "pubDate": "Fri, 18 Sep 2026 21:09:04 EDT",
         "source": "CBC BC"
       }
     ],
@@ -32,22 +31,21 @@
     "northwest": [],
     "southeast": [
       {
-        "title": "Former BC Conservative director accused of hiring private investigator",
-        "link": "https://globalnews.ca/news/12063910/former-bc-conservative-director-accused-hiring-private-investigator/",
-        "description": "Aisha Estey, who was the president of the BC Conservative Party for about three years told Global News that she found out on Wednesday night.",
-        "pubDate": "Fri, 18 Sep 2026 02:35:28 +0000",
+        "title": "Great Dane stretchered off mountain near Revelstoke, B.C., in unusual rescue",
+        "link": "https://globalnews.ca/news/12063980/great-dane-rescue-mountain/",
+        "description": "Rescuers say the owners were exhausted from trying to get the 10-year-old dog off the mountain, and were not prepared for overnight stays in alpine terrain.",
+        "pubDate": "Fri, 18 Sep 2026 01:15:18 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/52d5b8e991ef66c43ab4689d824e837fe38604736fe69e04ad86fb0d98c01f0b.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "all": [
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/Screenshot-2026-09-17-190629.png"
+      },
       {
-        "title": "Northern B.C. officials demand province honour commitment to build helipad in Prince George",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-helipad-costs-9.7348930?cmp=rss",
-        "description": "Elected officials in northern B.C. say they want to see a helipad included in the official business plan for a new acute care tower in Prince George before construction starts in 2027.",
-        "pubDate": "Thu, 17 Sep 2026 20:58:57 EDT",
+        "title": "Multiple people treated after rabies found in skunk in Kootenay Lake region of B.C.",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/skunk-kootenays-rabies-9.7350660?cmp=rss",
+        "description": "The health authority is now warning that anyone else who may have been exposed to the disease should seek immediate emergency medical care.",
+        "pubDate": "Fri, 18 Sep 2026 20:28:41 EDT",
         "source": "CBC BC"
       }
-    ]
+    ],
+    "all": []
   }
 }
