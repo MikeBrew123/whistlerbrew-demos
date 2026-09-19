@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-09-18T22:00:34.720Z",
+  "updated_at": "2026-09-19T04:00:35.075Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "B.C. family rescues exhausted baby bear swimming in Okanagan Lake",
+        "link": "https://globalnews.ca/news/12065220/baby-bear-rescue-okanagan-lake/",
+        "description": "Christina Zamniuk says they were boating between their Vernon lakehouse and Adventure Bay last weekend when a baby bear was spotted swimming in the middle of the lake.",
+        "pubDate": "Sat, 19 Sep 2026 03:06:42 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/baby-bear.png"
+      },
+      {
+        "title": "Penticton, B.C., city councillor found guilty of historic sexual offences involving a child",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/penticton-b-c-city-councillor-found-guilty-of-historic-sexual-offences-involving-a-child-9.7350499?cmp=rss",
+        "description": "A Penticton, B.C., city councillor has been found guilty of four counts of sexual interference and one count of invitation to sexual touching. The charges stem from his time as a youth basketball coach in Sarnia, Ont.",
+        "pubDate": "Fri, 18 Sep 2026 19:53:03 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "prince-george": [
       {
         "title": "Dawson Creek residents say municipal animal control services a ballot box issue",
@@ -10,34 +26,28 @@
         "description": "In May, city council voted to end its contract with the SPCA, saying it would save taxpayers roughly $300,000. The contact expires on Dec. 1 and will not be replaced.",
         "pubDate": "Fri, 18 Sep 2026 07:00:00 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Northern B.C. officials demand province honour commitment to build helipad in Prince George",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-helipad-costs-9.7348930?cmp=rss",
-        "description": "Elected officials in northern B.C. say they want to see a helipad included in the official business plan for a new acute care tower in Prince George before construction starts in 2027.",
-        "pubDate": "Thu, 17 Sep 2026 20:58:57 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "B.C. expediting forestry reviews in Fort St. John, Fort Nelson after 'catastrophic' wildfire losses",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-john-fort-nelson-timber-supply-reviews-9.7347106?cmp=rss",
-        "description": "The B.C. government is expediting reviews of timber harvests in Fort St. John and Fort Nelson after years of “catastrophic wildfires” and new Indigenous land designations and wildlife protections.",
-        "pubDate": "Thu, 17 Sep 2026 19:39:51 EDT",
-        "source": "CBC BC"
       }
     ],
     "cariboo": [],
     "northwest": [],
     "southeast": [
       {
-        "title": "Great Dane stretchered off mountain near Revelstoke, B.C., in unusual rescue",
-        "link": "https://globalnews.ca/news/12063980/great-dane-rescue-mountain/",
-        "description": "Rescuers say the owners were exhausted from trying to get the 10-year-old dog off the mountain, and were not prepared for overnight stays in alpine terrain.",
-        "pubDate": "Fri, 18 Sep 2026 01:15:18 +0000",
+        "title": "Former BC Conservative director accused of hiring private investigator",
+        "link": "https://globalnews.ca/news/12063910/former-bc-conservative-director-accused-hiring-private-investigator/",
+        "description": "Aisha Estey, who was the president of the BC Conservative Party for about three years told Global News that she found out on Wednesday night.",
+        "pubDate": "Fri, 18 Sep 2026 02:35:28 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/Screenshot-2026-09-17-190629.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/52d5b8e991ef66c43ab4689d824e837fe38604736fe69e04ad86fb0d98c01f0b.jpg?quality=65&#038;strip=all"
       }
     ],
-    "all": []
+    "all": [
+      {
+        "title": "Northern B.C. officials demand province honour commitment to build helipad in Prince George",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-helipad-costs-9.7348930?cmp=rss",
+        "description": "Elected officials in northern B.C. say they want to see a helipad included in the official business plan for a new acute care tower in Prince George before construction starts in 2027.",
+        "pubDate": "Thu, 17 Sep 2026 20:58:57 EDT",
+        "source": "CBC BC"
+      }
+    ]
   }
 }
