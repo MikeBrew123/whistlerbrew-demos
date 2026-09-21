@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-09-21T10:00:37.143Z",
+  "updated_at": "2026-09-21T16:00:37.349Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "80-year-old cyclist dies in Chilliwack hit and run",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/senior-dies-chilliwack-9.7351319?cmp=rss",
+        "description": "An 80-year-old woman has died after she was struck by a car while on a bicycle in Chilliwack, B.C., Saturday evening.",
+        "pubDate": "Sun, 20 Sep 2026 11:48:07 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "kamloops": [
       {
         "title": "B.C. family rescues exhausted baby bear swimming in Okanagan Lake",
@@ -10,11 +18,26 @@
         "pubDate": "Sat, 19 Sep 2026 03:06:42 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/09/baby-bear.png"
+      },
+      {
+        "title": "New and old Canadian-based players highlight NHLers in different homes this season",
+        "link": "https://www.cbc.ca/sports/hockey/nhl/bobrovsky-gallagher-brady-tkachuk-nhl-players-new-homes-9.7352104?cmp=rss",
+        "description": "The NHL off-season saw significant names switch teams while a veteran head coach, Mike Babcock, is back in the spotlight.",
+        "pubDate": "Mon, 21 Sep 2026 11:32:16 EDT",
+        "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
-    "northwest": [],
+    "northwest": [
+      {
+        "title": "Acclaimed artist Takao Tanabe's 100th birthday honoured with 60-year retrospective",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/takao-tanabe-birthday-exhibition-9.7350076?cmp=rss",
+        "description": "Over his career the prolific Prince Rupert-born artist has created hundreds of artworks in a wide array of artistic styles. Curators at the Audain Art Museum say they're doing everything they can to ensure Tanabe's legacy will be remembered and celebrated.",
+        "pubDate": "Sat, 19 Sep 2026 13:30:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "southeast": [
       {
         "title": "Skunk rabies case prompts public warning in B.C. Interior",
@@ -25,28 +48,6 @@
         "image": "https://globalnews.ca/wp-content/uploads/2023/03/20230313160312-a943082720fd03eee17a6ccdcafefd6518f148ffa9e7db065cfcb264013f9f0a-1.jpg?quality=65&#038;strip=all"
       }
     ],
-    "all": [
-      {
-        "title": "How drones can better integrate with total incident response",
-        "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
-        "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
-        "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "With or without roads, US forests burn at a similar rate, researchers claim",
-        "link": "https://wildfiretoday.com/with-or-without-roads-us-forests-burn-at-a-similar-rate-researchers-claim/",
-        "description": "Over 40 years of wildfire-ignition data across 11 western U.S. states showed that national forest areas classified as &#8220;roadless&#8221; didn&#8217;t burn more than national forest land with roads, further fueling discussion around the Department of Agriculture Secretary Brooke Rollins&#8217; intent to repeal the 2001 &#8220;Roadless Rule.&#8221; Rollins has stated that the nation&#8217;s prot",
-        "pubDate": "Mon, 14 Sep 2026 23:56:07 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Prescribed burning gets hazard pay coverage under final rule passage",
-        "link": "https://wildfiretoday.com/prescribed-burning-gets-hazard-pay-coverage-under-final-rule-passage/",
-        "description": "The U.S. Wildland Fire Service celebrated what it called a &#8220;well-deserved win&#8221; for the nation&#8217;s firefighters after prescribed wildland fire duties were officially made eligible for hazardous duty pay. The Office of Personnel Management on Tuesday issued a final rule making the duties eligible for hazard pay for General Schedule employees and for Environmental Differential [&#8230",
-        "pubDate": "Wed, 02 Sep 2026 18:46:59 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
