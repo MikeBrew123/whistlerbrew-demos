@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T22:00:34.221Z",
+  "updated_at": "2026-09-21T04:00:34.638Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
@@ -7,6 +7,28 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": []
+    "all": [
+      {
+        "title": "How drones can better integrate with total incident response",
+        "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
+        "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
+        "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "With or without roads, US forests burn at a similar rate, researchers claim",
+        "link": "https://wildfiretoday.com/with-or-without-roads-us-forests-burn-at-a-similar-rate-researchers-claim/",
+        "description": "Over 40 years of wildfire-ignition data across 11 western U.S. states showed that national forest areas classified as &#8220;roadless&#8221; didn&#8217;t burn more than national forest land with roads, further fueling discussion around the Department of Agriculture Secretary Brooke Rollins&#8217; intent to repeal the 2001 &#8220;Roadless Rule.&#8221; Rollins has stated that the nation&#8217;s prot",
+        "pubDate": "Mon, 14 Sep 2026 23:56:07 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Prescribed burning gets hazard pay coverage under final rule passage",
+        "link": "https://wildfiretoday.com/prescribed-burning-gets-hazard-pay-coverage-under-final-rule-passage/",
+        "description": "The U.S. Wildland Fire Service celebrated what it called a &#8220;well-deserved win&#8221; for the nation&#8217;s firefighters after prescribed wildland fire duties were officially made eligible for hazardous duty pay. The Office of Personnel Management on Tuesday issued a final rule making the duties eligible for hazard pay for General Schedule employees and for Environmental Differential [&#8230",
+        "pubDate": "Wed, 02 Sep 2026 18:46:59 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
