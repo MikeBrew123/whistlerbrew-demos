@@ -1,53 +1,20 @@
 {
-  "updated_at": "2026-09-21T16:00:37.349Z",
+  "updated_at": "2026-09-21T22:00:36.969Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "80-year-old cyclist dies in Chilliwack hit and run",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/senior-dies-chilliwack-9.7351319?cmp=rss",
-        "description": "An 80-year-old woman has died after she was struck by a car while on a bicycle in Chilliwack, B.C., Saturday evening.",
-        "pubDate": "Sun, 20 Sep 2026 11:48:07 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
-        "title": "B.C. family rescues exhausted baby bear swimming in Okanagan Lake",
-        "link": "https://globalnews.ca/news/12065220/baby-bear-rescue-okanagan-lake/",
-        "description": "Christina Zamniuk says they were boating between their Vernon lakehouse and Adventure Bay last weekend when a baby bear was spotted swimming in the middle of the lake.",
-        "pubDate": "Sat, 19 Sep 2026 03:06:42 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/baby-bear.png"
-      },
-      {
-        "title": "New and old Canadian-based players highlight NHLers in different homes this season",
-        "link": "https://www.cbc.ca/sports/hockey/nhl/bobrovsky-gallagher-brady-tkachuk-nhl-players-new-homes-9.7352104?cmp=rss",
-        "description": "The NHL off-season saw significant names switch teams while a veteran head coach, Mike Babcock, is back in the spotlight.",
-        "pubDate": "Mon, 21 Sep 2026 11:32:16 EDT",
+        "title": "'He could barely paddle anymore': B.C. family rescues bear cub from Okanagan Lake",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bear-cub-rescue-okanagan-lake-9.7351238?cmp=rss",
+        "description": "A B.C. family was boating on Okanagan Lake last weekend when they spotted a baby bear cub struggling to keep its head above water and pulled it onto their boat.",
+        "pubDate": "Sun, 20 Sep 2026 11:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
-    "northwest": [
-      {
-        "title": "Acclaimed artist Takao Tanabe's 100th birthday honoured with 60-year retrospective",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/takao-tanabe-birthday-exhibition-9.7350076?cmp=rss",
-        "description": "Over his career the prolific Prince Rupert-born artist has created hundreds of artworks in a wide array of artistic styles. Curators at the Audain Art Museum say they're doing everything they can to ensure Tanabe's legacy will be remembered and celebrated.",
-        "pubDate": "Sat, 19 Sep 2026 13:30:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "southeast": [
-      {
-        "title": "Skunk rabies case prompts public warning in B.C. Interior",
-        "link": "https://globalnews.ca/news/12065601/skunk-rabies-kootenay-lake-bc/",
-        "description": "Health officials in B.C. are warning people in the Kooteney Lake region to avoid contact with skunks after one animal recently tested positive for rabies.",
-        "pubDate": "Sat, 19 Sep 2026 16:25:50 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2023/03/20230313160312-a943082720fd03eee17a6ccdcafefd6518f148ffa9e7db065cfcb264013f9f0a-1.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "northwest": [],
+    "southeast": [],
     "all": []
   }
 }
