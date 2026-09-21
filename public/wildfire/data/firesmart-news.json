@@ -1,12 +1,30 @@
 {
-  "updated_at": "2026-09-21T04:00:34.638Z",
+  "updated_at": "2026-09-21T10:00:37.143Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "B.C. family rescues exhausted baby bear swimming in Okanagan Lake",
+        "link": "https://globalnews.ca/news/12065220/baby-bear-rescue-okanagan-lake/",
+        "description": "Christina Zamniuk says they were boating between their Vernon lakehouse and Adventure Bay last weekend when a baby bear was spotted swimming in the middle of the lake.",
+        "pubDate": "Sat, 19 Sep 2026 03:06:42 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/baby-bear.png"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Skunk rabies case prompts public warning in B.C. Interior",
+        "link": "https://globalnews.ca/news/12065601/skunk-rabies-kootenay-lake-bc/",
+        "description": "Health officials in B.C. are warning people in the Kooteney Lake region to avoid contact with skunks after one animal recently tested positive for rabies.",
+        "pubDate": "Sat, 19 Sep 2026 16:25:50 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2023/03/20230313160312-a943082720fd03eee17a6ccdcafefd6518f148ffa9e7db065cfcb264013f9f0a-1.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "all": [
       {
         "title": "How drones can better integrate with total incident response",
