@@ -1,12 +1,28 @@
 {
-  "updated_at": "2026-09-22T10:00:34.658Z",
+  "updated_at": "2026-09-22T16:00:34.664Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "Lorne Doerkson named B.C. Conservatives interim leader following Findlay resignation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/lorne-doerkson-named-b-c-conservatives-interim-leader-9.7352318?cmp=rss",
+        "description": "The Cariboo-Chilcotin MLA takes over a party in turmoil amid speculation of a snap provincial election call.",
+        "pubDate": "Mon, 21 Sep 2026 13:35:20 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Outdoor recreation community frustrated with latest B.C. forest road closure",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/trout-lake-rady-creek-forest-service-road-closures-9.7352990?cmp=rss",
+        "description": "The Rady Forest Service Road in the Kootenays' Trout Lake area will be closed on Nov. 1. Those who use the road to access trails are upset.",
+        "pubDate": "Tue, 22 Sep 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "all": []
   }
 }
