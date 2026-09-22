@@ -1,16 +1,8 @@
 {
-  "updated_at": "2026-09-21T22:00:36.969Z",
+  "updated_at": "2026-09-22T04:00:35.875Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "'He could barely paddle anymore': B.C. family rescues bear cub from Okanagan Lake",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bear-cub-rescue-okanagan-lake-9.7351238?cmp=rss",
-        "description": "A B.C. family was boating on Okanagan Lake last weekend when they spotted a baby bear cub struggling to keep its head above water and pulled it onto their boat.",
-        "pubDate": "Sun, 20 Sep 2026 11:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
