@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T16:01:17.019Z",
+  "updated_at": "2026-09-22T04:01:17.223Z",
   "fires": [
     {
       "country": "Belgium",
@@ -201,7 +201,22 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Ontario government will communicate better on wildfires, minister pledges\",\n      \"url\": \"https://globalnews.ca/news/12058262/ontario-government-wild"
+    "items_in": {
+      "canada": 1,
+      "world": 0
+    },
+    "items_out": {
+      "canada": 1,
+      "world_fires": 27
+    },
+    "deduped": 0,
+    "rerouted": 0,
+    "notes": [
+      "All existing fires preserved as Active status",
+      "No duplicates found across input sources",
+      "No fires older than 60 days to remove",
+      "All images preserved from existing_fires",
+      "No misrouted items between buckets"
+    ]
   }
 }
