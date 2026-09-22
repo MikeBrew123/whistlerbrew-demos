@@ -1,28 +1,21 @@
 {
-  "updated_at": "2026-09-22T16:00:34.664Z",
+  "updated_at": "2026-09-22T22:00:34.289Z",
   "zones": {
-    "coastal": [],
+    "coastal": [
+      {
+        "title": "Mount Jack wildfire burning out of control on southern Vancouver Island",
+        "link": "https://globalnews.ca/news/12068592/mount-jack-wildfire-sooke-bc-vancouver-island/",
+        "description": "While the wildfire season is winding down, there are still more than 100 fires burning across the province and four of them are considered out of control.",
+        "pubDate": "Tue, 22 Sep 2026 17:03:03 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/cb95e95300615062a62f1cf754c1633fd3368dbd4561b8d2e0025cd4853eac29.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Lorne Doerkson named B.C. Conservatives interim leader following Findlay resignation",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lorne-doerkson-named-b-c-conservatives-interim-leader-9.7352318?cmp=rss",
-        "description": "The Cariboo-Chilcotin MLA takes over a party in turmoil amid speculation of a snap provincial election call.",
-        "pubDate": "Mon, 21 Sep 2026 13:35:20 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Outdoor recreation community frustrated with latest B.C. forest road closure",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/trout-lake-rady-creek-forest-service-road-closures-9.7352990?cmp=rss",
-        "description": "The Rady Forest Service Road in the Kootenays' Trout Lake area will be closed on Nov. 1. Those who use the road to access trails are upset.",
-        "pubDate": "Tue, 22 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": []
   }
 }
