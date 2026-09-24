@@ -1,7 +1,21 @@
 {
-  "updated_at": "2026-09-23T22:00:35.061Z",
+  "updated_at": "2026-09-24T04:00:34.512Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Investigators called in after multiple fires ignite in wildfire-ravaged Boston Bar",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/boston-bar-fraser-canyon-multiple-fires-9.7356030?cmp=rss",
+        "description": "A spokesperson with the Fraser Valley Regional District would not say how many fires were burning or if a suspected arsonist is at work.",
+        "pubDate": "Wed, 23 Sep 2026 20:04:05 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Wildfire north of Sooke, B.C., burning out of control",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/mount-jack-wildfire-remains-out-of-control-9.7297493?cmp=rss",
+        "description": "The Mount Jack Wildfire on Southern Vancouver Island is still classified as out of control by the B.C. Wildfire Services. It was discovered on Sept. 20 and has grown to at least 210 hectares in size. Part of The Galloping Goose Trail has been closed as precaution.",
+        "pubDate": "Wed, 23 Sep 2026 19:06:03 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Nanaimo fire chief supports proposed ban on continuous flame torches — but warns it might not be effective",
         "link": "https://www.cbc.ca/news/canada/british-columbia/nanaimo-continuous-flame-torches-ban-9.7354318?cmp=rss",
@@ -71,6 +85,13 @@
         "link": "https://wildfiretoday.com/avincis-boosts-its-european-fleet-with-five-214st-helicopters/",
         "description": "Europe’s largest aerial firefighting operator Avincis will get five of the newly modified 214ST helicopters from Australia’s McDermott Aviation. At the tail end of a demanding European wildfire season, Avincis has signed a Letter of Intention for five of the McDermott 214ST medium-lift twin-turbine helicopters, scheduled for a 2028 delivery. The 214ST offers up to [&#8230;]",
         "pubDate": "Thu, 10 Sep 2026 23:35:02 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Underground wildfires in Indonesia trigger world&#8217;s highest emissions, spike in respiratory infections",
+        "link": "https://wildfiretoday.com/underground-wildfires-in-indonesia-trigger-worlds-highest-emissions-spike-in-respiratory-infections/",
+        "description": "Severe drought across Indonesia&#8217;s peatlands caused an outbreak of wildfires encroaching on the site of the country&#8217;s new capital city on the island of Borneo, the emissions of which surged to global highs and triggered a widespread spike in respiratory infections. Over 36% of the world&#8217;s tropical peatlands are contained within Indonesia&#8217;s borders, and the [&#8230;]",
+        "pubDate": "Wed, 09 Sep 2026 23:00:39 +0000",
         "source": "Wildfire Today"
       }
     ]
