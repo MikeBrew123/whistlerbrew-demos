@@ -1,7 +1,14 @@
 {
-  "updated_at": "2026-09-24T16:00:35.061Z",
+  "updated_at": "2026-09-24T22:00:35.119Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Nanaimo, B.C., takes steps to buy public art to commemorate city's lost Chinatowns",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/nanaimo-public-art-chinatown-9.7300173?cmp=rss",
+        "description": "The creator of a public art installation that commemorates Nanaimo, B.C.'s former Chinatowns says she's pleased the city has taken steps towards purchasing the piece as part of its permanent collection.",
+        "pubDate": "Thu, 24 Sep 2026 00:12:45 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Investigators called in after multiple fires ignite in wildfire-ravaged Boston Bar",
         "link": "https://www.cbc.ca/news/canada/british-columbia/boston-bar-fraser-canyon-multiple-fires-9.7356030?cmp=rss",
@@ -19,15 +26,36 @@
     ],
     "kamloops": [
       {
-        "title": "&#8216;God cleaned the slate&#8217;: Ashes pave the road to recovery after B.C. wildfires",
-        "link": "https://globalnews.ca/news/12071400/bc-wildfire-recovery/",
-        "description": "Joel Patan says his \"life is ashes\" now, as he sifts the ruins of his home that was incinerated last month, along with most structures in the small community of Faulder.",
-        "pubDate": "Thu, 24 Sep 2026 13:30:12 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/013039a7ca3e8d5d16058ca0be3e920ec8eaabe309768ee647e9fc4e9bde7edc.jpg?quality=65&#038;strip=all"
+        "title": "Kamloops man finds rare mastodon tooth on B.C. Interior lakeshore",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/adams-lake-mastodon-tooth-kamloops-9.7356189?cmp=rss",
+        "description": "A man from Kamloops, B.C., has unearthed a prehistoric fossil, marking only the third such discovery in British Columbia.",
+        "pubDate": "Thu, 24 Sep 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Alcohol likely a factor in bridge crash that killed 2 in Kelowna, say RCMP",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/william-r-bennett-fatal-bridge-9.7356203?cmp=rss",
+        "description": "RCMP say alcohol was likely a factor after two people died in a Tuesday morning crash on the William R. Bennett Bridge connecting Kelowna and West Kelowna.",
+        "pubDate": "Wed, 23 Sep 2026 21:04:54 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Paddleboarder missing on Okanagan Lake after summer marked by drownings",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-lake-paddleboarder-9.7355737?cmp=rss",
+        "description": "RCMP say that just before 7 p.m. PT on Tuesday, they were notified of a pair of paddleboarders \"in distress\" between Fintry Provincial Park and Carr's Landing. While a woman was rescued by emergency responders in a fire rescue boat, the man she was with could not be found.",
+        "pubDate": "Wed, 23 Sep 2026 16:36:11 EDT",
+        "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Outgoing Prince George city council delays major decision on new hockey rink, performing arts centre",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-civic-core-delay-9.7356881?cmp=rss",
+        "description": "Prince George city council has delayed a major decision on next steps for a new downtown hockey rink and performing arts centre until after the municipal election.",
+        "pubDate": "Thu, 24 Sep 2026 16:34:15 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
@@ -59,6 +87,14 @@
         "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
         "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "&#8216;God cleaned the slate&#8217;: Ashes pave the road to recovery after B.C. wildfires",
+        "link": "https://globalnews.ca/news/12071400/bc-wildfire-recovery/",
+        "description": "Joel Patan says his \"life is ashes\" now, as he sifts the ruins of his home that was incinerated last month, along with most structures in the small community of Faulder.",
+        "pubDate": "Thu, 24 Sep 2026 13:30:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/013039a7ca3e8d5d16058ca0be3e920ec8eaabe309768ee647e9fc4e9bde7edc.jpg?quality=65&#038;strip=all"
       }
     ]
   }
