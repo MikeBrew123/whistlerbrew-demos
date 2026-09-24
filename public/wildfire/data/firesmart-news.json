@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T10:00:34.678Z",
+  "updated_at": "2026-09-24T16:00:35.061Z",
   "zones": {
     "coastal": [
       {
@@ -15,35 +15,22 @@
         "description": "The Mount Jack Wildfire on Southern Vancouver Island is still classified as out of control by the B.C. Wildfire Services. It was discovered on Sept. 20 and has grown to at least 210 hectares in size. Part of The Galloping Goose Trail has been closed as precaution.",
         "pubDate": "Wed, 23 Sep 2026 19:06:03 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Girlfriend of B.C.'s Hudson Williams says Heated Rivalry fans crossing 'huge boundary'",
-        "link": "https://www.cbc.ca/news/entertainment/hudson-williams-katelyn-larson-fans-9.7355526?cmp=rss",
-        "description": "Katelyn Larson, a Vancouver-based tattoo artist, made a rare statement about her relationship with Hudson Williams, calling out Heated Rivalry fans for their parasocial behaviour.",
-        "pubDate": "Wed, 23 Sep 2026 14:30:51 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "First Nations in B.C. Interior feel 'fear and scarcity' amidst drought-stricken salmon run",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/drought-stricken-salmon-bc-interior-9.7353036?cmp=rss",
-        "description": "With this year's low water levels and high temperatures, algae and contaminants in the watershed are a key concern along with fish spawning.",
-        "pubDate": "Wed, 23 Sep 2026 09:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "&#8216;God cleaned the slate&#8217;: Ashes pave the road to recovery after B.C. wildfires",
+        "link": "https://globalnews.ca/news/12071400/bc-wildfire-recovery/",
+        "description": "Joel Patan says his \"life is ashes\" now, as he sifts the ruins of his home that was incinerated last month, along with most structures in the small community of Faulder.",
+        "pubDate": "Thu, 24 Sep 2026 13:30:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/013039a7ca3e8d5d16058ca0be3e920ec8eaabe309768ee647e9fc4e9bde7edc.jpg?quality=65&#038;strip=all"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "District of Squamish rejects $142M Woodfibre LNG deal",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/142m-woodfibre-lng-tax-deal-denied-by-district-of-squamish-council-9.7354771?cmp=rss",
-        "description": "The District of Squamish has rejected a negotiated 10-year tax settlement that would have seen Woodfibre LNG contributing $142 million to the community in the Sea-to-Sky region.",
-        "pubDate": "Tue, 22 Sep 2026 23:53:38 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "Using a bot to help burn more fuel, more often",
@@ -67,11 +54,11 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Feds open up Trans Mountain equity stake to Indigenous groups on pipeline’s path",
-        "link": "https://www.cbc.ca/news/canada/edmonton/trans-mountain-pipeline-equity-indigenous-9.7354402?cmp=rss",
-        "description": "The federal government has offered Indigenous groups a collective 15 per cent ownership stake in the Trans Mountain pipeline, advancing a long-promised plan to give First Nations equity in the federally owned infrastructure connecting Alberta crude to a Vancouver-area export terminal.",
-        "pubDate": "Tue, 22 Sep 2026 18:15:12 EDT",
-        "source": "CBC BC"
+        "title": "Being a good leader starts with being a good person",
+        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
+        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
+        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
+        "source": "Wildfire Today"
       }
     ]
   }
