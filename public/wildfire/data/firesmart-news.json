@@ -1,62 +1,42 @@
 {
-  "updated_at": "2026-09-24T22:00:35.119Z",
+  "updated_at": "2026-09-25T04:00:35.419Z",
   "zones": {
     "coastal": [
+      {
+        "title": "SRO owner says City of Vancouver failed to act before Powell Street fire",
+        "link": "https://globalnews.ca/news/12072392/sro-owner-city-of-vancouver-failed-act-powell-street-fire/",
+        "description": "“I asked him why he's not tearing it down and he said, well, I was never forced to tear it down, so the insurance wouldn't pay me to tear it down,\" Bob Fontaine said.",
+        "pubDate": "Thu, 24 Sep 2026 22:26:37 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/set-GFX-POWELL-FIRE-AFTERMATH.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Nanaimo, B.C., takes steps to buy public art to commemorate city's lost Chinatowns",
         "link": "https://www.cbc.ca/news/canada/british-columbia/nanaimo-public-art-chinatown-9.7300173?cmp=rss",
         "description": "The creator of a public art installation that commemorates Nanaimo, B.C.'s former Chinatowns says she's pleased the city has taken steps towards purchasing the piece as part of its permanent collection.",
         "pubDate": "Thu, 24 Sep 2026 00:12:45 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Vancouver records 6th homicide of 2026 after man found dead in CRAB Park",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/homicide-vancouver-police-9.7356200?cmp=rss",
+        "description": "Officers were called to CRAB Park along the city's waterfront early Wednesday after someone reported a man in medical distress. He was treated by emergency responders but died at the scene.",
+        "pubDate": "Wed, 23 Sep 2026 20:56:27 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [],
+    "cariboo": [
       {
         "title": "Investigators called in after multiple fires ignite in wildfire-ravaged Boston Bar",
         "link": "https://www.cbc.ca/news/canada/british-columbia/boston-bar-fraser-canyon-multiple-fires-9.7356030?cmp=rss",
         "description": "A spokesperson with the Fraser Valley Regional District would not say how many fires were burning or if a suspected arsonist is at work.",
         "pubDate": "Wed, 23 Sep 2026 20:04:05 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Wildfire north of Sooke, B.C., burning out of control",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/mount-jack-wildfire-remains-out-of-control-9.7297493?cmp=rss",
-        "description": "The Mount Jack Wildfire on Southern Vancouver Island is still classified as out of control by the B.C. Wildfire Services. It was discovered on Sept. 20 and has grown to at least 210 hectares in size. Part of The Galloping Goose Trail has been closed as precaution.",
-        "pubDate": "Wed, 23 Sep 2026 19:06:03 EDT",
-        "source": "CBC BC"
       }
     ],
-    "kamloops": [
-      {
-        "title": "Kamloops man finds rare mastodon tooth on B.C. Interior lakeshore",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/adams-lake-mastodon-tooth-kamloops-9.7356189?cmp=rss",
-        "description": "A man from Kamloops, B.C., has unearthed a prehistoric fossil, marking only the third such discovery in British Columbia.",
-        "pubDate": "Thu, 24 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Alcohol likely a factor in bridge crash that killed 2 in Kelowna, say RCMP",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/william-r-bennett-fatal-bridge-9.7356203?cmp=rss",
-        "description": "RCMP say alcohol was likely a factor after two people died in a Tuesday morning crash on the William R. Bennett Bridge connecting Kelowna and West Kelowna.",
-        "pubDate": "Wed, 23 Sep 2026 21:04:54 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Paddleboarder missing on Okanagan Lake after summer marked by drownings",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-lake-paddleboarder-9.7355737?cmp=rss",
-        "description": "RCMP say that just before 7 p.m. PT on Tuesday, they were notified of a pair of paddleboarders \"in distress\" between Fintry Provincial Park and Carr's Landing. While a woman was rescued by emergency responders in a fire rescue boat, the man she was with could not be found.",
-        "pubDate": "Wed, 23 Sep 2026 16:36:11 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Outgoing Prince George city council delays major decision on new hockey rink, performing arts centre",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-civic-core-delay-9.7356881?cmp=rss",
-        "description": "Prince George city council has delayed a major decision on next steps for a new downtown hockey rink and performing arts centre until after the municipal election.",
-        "pubDate": "Thu, 24 Sep 2026 16:34:15 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
@@ -82,10 +62,10 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "Being a good leader starts with being a good person",
-        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
-        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
-        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
+        "title": "With or without roads, US forests burn at a similar rate, researchers claim",
+        "link": "https://wildfiretoday.com/with-or-without-roads-us-forests-burn-at-a-similar-rate-researchers-claim/",
+        "description": "Over 40 years of wildfire-ignition data across 11 western U.S. states showed that national forest areas classified as &#8220;roadless&#8221; didn&#8217;t burn more than national forest land with roads, further fueling discussion around the Department of Agriculture Secretary Brooke Rollins&#8217; intent to repeal the 2001 &#8220;Roadless Rule.&#8221; Rollins has stated that the nation&#8217;s prot",
+        "pubDate": "Mon, 14 Sep 2026 23:56:07 +0000",
         "source": "Wildfire Today"
       },
       {
