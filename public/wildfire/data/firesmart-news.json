@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T10:00:34.551Z",
+  "updated_at": "2026-09-25T16:00:34.944Z",
   "zones": {
     "coastal": [
       {
@@ -16,32 +16,41 @@
         "description": "The creator of a public art installation that commemorates Nanaimo, B.C.'s former Chinatowns says she's pleased the city has taken steps towards purchasing the piece as part of its permanent collection.",
         "pubDate": "Thu, 24 Sep 2026 00:12:45 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "2 Uber passengers killed, driver injured in Highway 1 crash in Burnaby: RCMP",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/rcmp-serious-collision-hwy-1-burnaby-bc-9.7354982?cmp=rss",
-        "description": "RCMP say the driver of a pickup truck was arrested and alcohol is believed to have been a factor after the truck collided with an Uber in Burnaby Wednesday, injuring its driver and leaving two passengers dead.",
-        "pubDate": "Wed, 23 Sep 2026 09:37:39 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Investigators called in after multiple fires ignite in wildfire-ravaged Boston Bar",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/boston-bar-fraser-canyon-multiple-fires-9.7356030?cmp=rss",
-        "description": "A spokesperson with the Fraser Valley Regional District would not say how many fires were burning or if a suspected arsonist is at work.",
-        "pubDate": "Wed, 23 Sep 2026 20:04:05 EDT",
-        "source": "CBC BC"
       }
     ],
     "kamloops": [
       {
-        "title": "Alcohol likely a factor in bridge crash that killed 2 in Kelowna, say RCMP",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/william-r-bennett-fatal-bridge-9.7356203?cmp=rss",
-        "description": "RCMP say alcohol was likely a factor after two people died in a Tuesday morning crash on the William R. Bennett Bridge connecting Kelowna and West Kelowna.",
-        "pubDate": "Wed, 23 Sep 2026 21:04:54 EDT",
+        "title": "&#8216;God cleaned the slate&#8217;: Ashes pave the road to recovery after B.C. wildfires",
+        "link": "https://globalnews.ca/news/12071400/bc-wildfire-recovery/",
+        "description": "Joel Patan says his \"life is ashes\" now, as he sifts the ruins of his home that was incinerated last month, along with most structures in the small community of Faulder.",
+        "pubDate": "Thu, 24 Sep 2026 13:30:12 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/09/013039a7ca3e8d5d16058ca0be3e920ec8eaabe309768ee647e9fc4e9bde7edc.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Kamloops man finds rare mastodon tooth on B.C. Interior lakeshore",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/adams-lake-mastodon-tooth-kamloops-9.7356189?cmp=rss",
+        "description": "A man from Kamloops, B.C., has unearthed a prehistoric fossil, marking only the third such discovery in British Columbia.",
+        "pubDate": "Thu, 24 Sep 2026 08:00:00 EDT",
         "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Northeast B.C. faces warmer future and more extreme weather threats, researchers say",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/northeast-bc-climate-projections-9.7357054?cmp=rss",
+        "description": "A new report is forecasting a warmer and wetter future for northeastern B.C., as well as more extreme weather emergencies for local communities battered by some of the province's biggest natural disasters over the past decade.",
+        "pubDate": "Fri, 25 Sep 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Outgoing Prince George city council delays major decision on new hockey rink, performing arts centre",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-civic-core-delay-9.7356881?cmp=rss",
+        "description": "Prince George city council has delayed a major decision on next steps for a new downtown hockey rink and performing arts centre until after the municipal election.",
+        "pubDate": "Thu, 24 Sep 2026 16:34:15 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
@@ -68,19 +77,18 @@
         "source": "Wildfire Today"
       },
       {
-        "title": "With or without roads, US forests burn at a similar rate, researchers claim",
-        "link": "https://wildfiretoday.com/with-or-without-roads-us-forests-burn-at-a-similar-rate-researchers-claim/",
-        "description": "Over 40 years of wildfire-ignition data across 11 western U.S. states showed that national forest areas classified as &#8220;roadless&#8221; didn&#8217;t burn more than national forest land with roads, further fueling discussion around the Department of Agriculture Secretary Brooke Rollins&#8217; intent to repeal the 2001 &#8220;Roadless Rule.&#8221; Rollins has stated that the nation&#8217;s prot",
-        "pubDate": "Mon, 14 Sep 2026 23:56:07 +0000",
+        "title": "Being a good leader starts with being a good person",
+        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
+        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
+        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
         "source": "Wildfire Today"
       },
       {
-        "title": "&#8216;God cleaned the slate&#8217;: Ashes pave the road to recovery after B.C. wildfires",
-        "link": "https://globalnews.ca/news/12071400/bc-wildfire-recovery/",
-        "description": "Joel Patan says his \"life is ashes\" now, as he sifts the ruins of his home that was incinerated last month, along with most structures in the small community of Faulder.",
-        "pubDate": "Thu, 24 Sep 2026 13:30:12 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/013039a7ca3e8d5d16058ca0be3e920ec8eaabe309768ee647e9fc4e9bde7edc.jpg?quality=65&#038;strip=all"
+        "title": "As wildfire season winds down, people in B.C. communities are rebuilding their lives",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-recovery-bc-9.7357745?cmp=rss",
+        "description": "As wildfire season winds down, British Columbia communities affected are now shifting to recovery efforts, while those who lost home sift through ashes and attempt to rebuild their lives.",
+        "pubDate": "Fri, 25 Sep 2026 08:00:00 EDT",
+        "source": "CBC BC"
       }
     ]
   }
