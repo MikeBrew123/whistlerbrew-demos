@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T04:00:35.419Z",
+  "updated_at": "2026-09-25T10:00:34.551Z",
   "zones": {
     "coastal": [
       {
@@ -16,19 +16,14 @@
         "description": "The creator of a public art installation that commemorates Nanaimo, B.C.'s former Chinatowns says she's pleased the city has taken steps towards purchasing the piece as part of its permanent collection.",
         "pubDate": "Thu, 24 Sep 2026 00:12:45 EDT",
         "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
+      },
       {
-        "title": "Vancouver records 6th homicide of 2026 after man found dead in CRAB Park",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/homicide-vancouver-police-9.7356200?cmp=rss",
-        "description": "Officers were called to CRAB Park along the city's waterfront early Wednesday after someone reported a man in medical distress. He was treated by emergency responders but died at the scene.",
-        "pubDate": "Wed, 23 Sep 2026 20:56:27 EDT",
+        "title": "2 Uber passengers killed, driver injured in Highway 1 crash in Burnaby: RCMP",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/rcmp-serious-collision-hwy-1-burnaby-bc-9.7354982?cmp=rss",
+        "description": "RCMP say the driver of a pickup truck was arrested and alcohol is believed to have been a factor after the truck collided with an Uber in Burnaby Wednesday, injuring its driver and leaving two passengers dead.",
+        "pubDate": "Wed, 23 Sep 2026 09:37:39 EDT",
         "source": "CBC BC"
-      }
-    ],
-    "prince-george": [],
-    "cariboo": [
+      },
       {
         "title": "Investigators called in after multiple fires ignite in wildfire-ravaged Boston Bar",
         "link": "https://www.cbc.ca/news/canada/british-columbia/boston-bar-fraser-canyon-multiple-fires-9.7356030?cmp=rss",
@@ -37,6 +32,17 @@
         "source": "CBC BC"
       }
     ],
+    "kamloops": [
+      {
+        "title": "Alcohol likely a factor in bridge crash that killed 2 in Kelowna, say RCMP",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/william-r-bennett-fatal-bridge-9.7356203?cmp=rss",
+        "description": "RCMP say alcohol was likely a factor after two people died in a Tuesday morning crash on the William R. Bennett Bridge connecting Kelowna and West Kelowna.",
+        "pubDate": "Wed, 23 Sep 2026 21:04:54 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
