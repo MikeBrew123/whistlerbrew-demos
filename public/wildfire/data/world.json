@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T16:01:31.220Z",
+  "updated_at": "2026-09-25T22:01:30.847Z",
   "fires": [
     {
       "country": "Belgium",
@@ -202,6 +202,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"'God cleaned the slate': Ashes pave the road to recovery after B.C. wildfires\",\n      \"url\": \"https://globalnews.ca/news/12071400/bc-wildfire-recover"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Mount Jack wildfire burning out of control on southern Vancouver Island\",\n      \"url\": \"https://globalnews.ca/news/12068592/mount-jack-wildfire-sooke"
   }
 }
