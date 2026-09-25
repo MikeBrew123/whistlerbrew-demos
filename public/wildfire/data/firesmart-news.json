@@ -1,32 +1,8 @@
 {
-  "updated_at": "2026-09-25T16:00:34.944Z",
+  "updated_at": "2026-09-25T22:00:34.375Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "SRO owner says City of Vancouver failed to act before Powell Street fire",
-        "link": "https://globalnews.ca/news/12072392/sro-owner-city-of-vancouver-failed-act-powell-street-fire/",
-        "description": "“I asked him why he's not tearing it down and he said, well, I was never forced to tear it down, so the insurance wouldn't pay me to tear it down,\" Bob Fontaine said.",
-        "pubDate": "Thu, 24 Sep 2026 22:26:37 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/set-GFX-POWELL-FIRE-AFTERMATH.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Nanaimo, B.C., takes steps to buy public art to commemorate city's lost Chinatowns",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/nanaimo-public-art-chinatown-9.7300173?cmp=rss",
-        "description": "The creator of a public art installation that commemorates Nanaimo, B.C.'s former Chinatowns says she's pleased the city has taken steps towards purchasing the piece as part of its permanent collection.",
-        "pubDate": "Thu, 24 Sep 2026 00:12:45 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
-      {
-        "title": "&#8216;God cleaned the slate&#8217;: Ashes pave the road to recovery after B.C. wildfires",
-        "link": "https://globalnews.ca/news/12071400/bc-wildfire-recovery/",
-        "description": "Joel Patan says his \"life is ashes\" now, as he sifts the ruins of his home that was incinerated last month, along with most structures in the small community of Faulder.",
-        "pubDate": "Thu, 24 Sep 2026 13:30:12 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/013039a7ca3e8d5d16058ca0be3e920ec8eaabe309768ee647e9fc4e9bde7edc.jpg?quality=65&#038;strip=all"
-      },
       {
         "title": "Kamloops man finds rare mastodon tooth on B.C. Interior lakeshore",
         "link": "https://www.cbc.ca/news/canada/british-columbia/adams-lake-mastodon-tooth-kamloops-9.7356189?cmp=rss",
@@ -74,13 +50,6 @@
         "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Being a good leader starts with being a good person",
-        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
-        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
-        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
         "source": "Wildfire Today"
       },
       {
