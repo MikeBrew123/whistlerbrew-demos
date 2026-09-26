@@ -1,16 +1,8 @@
 {
-  "updated_at": "2026-09-25T22:00:34.375Z",
+  "updated_at": "2026-09-26T04:00:39.478Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Kamloops man finds rare mastodon tooth on B.C. Interior lakeshore",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/adams-lake-mastodon-tooth-kamloops-9.7356189?cmp=rss",
-        "description": "A man from Kamloops, B.C., has unearthed a prehistoric fossil, marking only the third such discovery in British Columbia.",
-        "pubDate": "Thu, 24 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [
       {
         "title": "Northeast B.C. faces warmer future and more extreme weather threats, researchers say",
@@ -20,10 +12,10 @@
         "source": "CBC BC"
       },
       {
-        "title": "Outgoing Prince George city council delays major decision on new hockey rink, performing arts centre",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-civic-core-delay-9.7356881?cmp=rss",
-        "description": "Prince George city council has delayed a major decision on next steps for a new downtown hockey rink and performing arts centre until after the municipal election.",
-        "pubDate": "Thu, 24 Sep 2026 16:34:15 EDT",
+        "title": "Why David Eby is seemingly running for re-election against Donald Trump",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/eby-trump-election-analysis-9.7356229?cmp=rss",
+        "description": "If his first speeches are any indication, B.C. NDP Leader David Eby is running for re-election against one main opponent.",
+        "pubDate": "Thu, 24 Sep 2026 07:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -50,6 +42,20 @@
         "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Being a good leader starts with being a good person",
+        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
+        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
+        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "With or without roads, US forests burn at a similar rate, researchers claim",
+        "link": "https://wildfiretoday.com/with-or-without-roads-us-forests-burn-at-a-similar-rate-researchers-claim/",
+        "description": "Over 40 years of wildfire-ignition data across 11 western U.S. states showed that national forest areas classified as &#8220;roadless&#8221; didn&#8217;t burn more than national forest land with roads, further fueling discussion around the Department of Agriculture Secretary Brooke Rollins&#8217; intent to repeal the 2001 &#8220;Roadless Rule.&#8221; Rollins has stated that the nation&#8217;s prot",
+        "pubDate": "Mon, 14 Sep 2026 23:56:07 +0000",
         "source": "Wildfire Today"
       },
       {
