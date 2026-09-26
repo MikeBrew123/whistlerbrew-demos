@@ -1,26 +1,34 @@
 {
-  "updated_at": "2026-09-26T04:00:39.478Z",
+  "updated_at": "2026-09-26T10:00:34.572Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [
+      {
+        "title": "RCMP watchdog postpones report on B.C. resource standoff policing due to snap election",
+        "link": "https://www.cbc.ca/news/indigenous/crcc-cirg-investigation-report-delay-9.7354107?cmp=rss",
+        "description": "First Nations leaders and civil liberties advocates are concerned after the RCMP's federal review agency postponed release of a much-anticipated investigation into protest policing in British Columbia due to the snap election call.",
+        "pubDate": "Fri, 25 Sep 2026 12:00:32 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Northeast B.C. faces warmer future and more extreme weather threats, researchers say",
         "link": "https://www.cbc.ca/news/canada/british-columbia/northeast-bc-climate-projections-9.7357054?cmp=rss",
         "description": "A new report is forecasting a warmer and wetter future for northeastern B.C., as well as more extreme weather emergencies for local communities battered by some of the province's biggest natural disasters over the past decade.",
         "pubDate": "Fri, 25 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
-      },
-      {
-        "title": "Why David Eby is seemingly running for re-election against Donald Trump",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/eby-trump-election-analysis-9.7356229?cmp=rss",
-        "description": "If his first speeches are any indication, B.C. NDP Leader David Eby is running for re-election against one main opponent.",
-        "pubDate": "Thu, 24 Sep 2026 07:00:00 EDT",
-        "source": "CBC BC"
       }
     ],
     "cariboo": [],
-    "northwest": [],
+    "northwest": [
+      {
+        "title": "Break-ins cause up to $60K in damage at Nisga’a cultural site near Terrace",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/nisga-a-cultural-society-theft-vandalism-9.7359485?cmp=rss",
+        "description": "The Gitlaxdax Nisga’a Terrace Society says two break-ins at its Schremp Island property caused an estimated $50,000 to $60,000 in theft and damage. The incidents have forced the society to pause cultural programming while it secures the property and works to restore operations.",
+        "pubDate": "Fri, 25 Sep 2026 20:54:07 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "southeast": [],
     "all": [
       {
@@ -49,13 +57,6 @@
         "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
         "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
         "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "With or without roads, US forests burn at a similar rate, researchers claim",
-        "link": "https://wildfiretoday.com/with-or-without-roads-us-forests-burn-at-a-similar-rate-researchers-claim/",
-        "description": "Over 40 years of wildfire-ignition data across 11 western U.S. states showed that national forest areas classified as &#8220;roadless&#8221; didn&#8217;t burn more than national forest land with roads, further fueling discussion around the Department of Agriculture Secretary Brooke Rollins&#8217; intent to repeal the 2001 &#8220;Roadless Rule.&#8221; Rollins has stated that the nation&#8217;s prot",
-        "pubDate": "Mon, 14 Sep 2026 23:56:07 +0000",
         "source": "Wildfire Today"
       },
       {
