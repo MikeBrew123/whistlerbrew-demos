@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-09-27T10:00:34.199Z",
+  "updated_at": "2026-09-27T16:00:34.766Z",
   "zones": {
     "coastal": [
-      {
-        "title": "Kids starting a fire, taking a vehicle set off warning from Mounties in B.C.",
-        "link": "https://globalnews.ca/news/12074431/rcmp-kids-safety-warning/",
-        "description": "Police say a seven-year-old boy found a small blow torch in his home on Sept. 18, managed to connect it to a propane cylinder and started a fire inside his home.",
-        "pubDate": "Sat, 26 Sep 2026 17:23:15 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/d9a21b83f8ba8f6080de35e4502a5d641e724c1d5ebf2422e0f29a3ae96e2a7a_f6a41a.jpg?quality=65&#038;strip=all"
-      },
       {
         "title": "Squamish man uses motion-activated zombie to scare bears away from garbage",
         "link": "https://www.cbc.ca/news/canada/british-columbia/zombie-scaring-bears-from-squamish-garbage-bin-9.7358769?cmp=rss",
@@ -18,22 +10,13 @@
         "source": "CBC BC"
       }
     ],
-    "kamloops": [
-      {
-        "title": "RCMP remind drivers to stop for school buses after two Kelowna students are struck by a vehicle",
-        "link": "https://globalnews.ca/news/12073893/rcmp-drivers-stop-school-buses-kelowna-students-struck/",
-        "description": "Both students were taken to hospital with what police describe as serious injuries. Arbor View Drive was closed for hours while police investigated.",
-        "pubDate": "Sat, 26 Sep 2026 01:19:15 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/09/bus-scene.jpg?quality=65&#038;strip=all"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [
       {
-        "title": "6 decades of Treaty 8 history repatriated to Dane-zaa people in northern B.C.",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/ridington-dane-zaa-archive-treaty-8-repatriation-9.7359061?cmp=rss",
-        "description": "Anthropologists from the Ridington family began working alongside Dane-zaa elders in the 1960s to record traditional songs, oral histories, and everyday life spanning six decades.",
-        "pubDate": "Sat, 26 Sep 2026 07:00:00 EDT",
+        "title": "Record-breaking owl migration in northern B.C. leaves bird banders scrambling",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/mackenzie-saw-whet-owl-migration-9.7359261?cmp=rss",
+        "description": "A boom in mice and voles may have helped produce an unusually large wave of young saw-whet owls near Mackenzie, north of Prince George.",
+        "pubDate": "Sun, 27 Sep 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -69,20 +52,6 @@
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Being a good leader starts with being a good person",
-        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
-        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
-        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "As wildfire season winds down, people in B.C. communities are rebuilding their lives",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfire-recovery-bc-9.7357745?cmp=rss",
-        "description": "As wildfire season winds down, British Columbia communities affected are now shifting to recovery efforts, while those who lost home sift through ashes and attempt to rebuild their lives.",
-        "pubDate": "Fri, 25 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
       }
     ]
   }
