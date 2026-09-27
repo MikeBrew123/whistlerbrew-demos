@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-27T16:00:34.766Z",
+  "updated_at": "2026-09-27T22:00:34.230Z",
   "zones": {
     "coastal": [
       {
-        "title": "Squamish man uses motion-activated zombie to scare bears away from garbage",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/zombie-scaring-bears-from-squamish-garbage-bin-9.7358769?cmp=rss",
-        "description": "More than 33 bears have been killed by conservation officers in B.C. this year, including two that entered stores through automatic sliding doors in Hope and Squamish. It's led to creative solutions to keep the hungry animals away from attractants.",
-        "pubDate": "Sat, 26 Sep 2026 09:00:00 EDT",
+        "title": "Lorne Doerkson talks values as he leads B.C. Conservatives into election",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/lorne-doerkson-leader-bc-conservatives-election-season-9.7357295?cmp=rss",
+        "description": "New B.C. Conservative Leader Lorne Doerkson says the party platform hasn't changed much from what it was in 2024. He shared his opinions on a number of issues facing the province with Stephen Quinn, host of CBC's The Early Edition.",
+        "pubDate": "Sat, 26 Sep 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -21,15 +21,7 @@
       }
     ],
     "cariboo": [],
-    "northwest": [
-      {
-        "title": "Break-ins cause up to $60K in damage at Nisga’a cultural site near Terrace",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/nisga-a-cultural-society-theft-vandalism-9.7359485?cmp=rss",
-        "description": "The Gitlaxdax Nisga’a Terrace Society says two break-ins at its Schremp Island property caused an estimated $50,000 to $60,000 in theft and damage. The incidents have forced the society to pause cultural programming while it secures the property and works to restore operations.",
-        "pubDate": "Fri, 25 Sep 2026 20:54:07 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "northwest": [],
     "southeast": [],
     "all": [
       {
@@ -51,6 +43,13 @@
         "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
+        "source": "Wildfire Today"
+      },
+      {
+        "title": "Being a good leader starts with being a good person",
+        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
+        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
+        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
         "source": "Wildfire Today"
       }
     ]
