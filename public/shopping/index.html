@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shopping in Whistler | WhistlerBrew</title>
-<meta name="description" content="This week's best grocery prices across Whistler: Nesters, Independent, FreshSt, Shoppers and Creekside. Meat, dairy, pantry and loyalty points, updated automatically." />
+<meta name="description" content="This week's best grocery prices across Whistler: Nesters, Independent, FreshSt, Shoppers and Creekside. Cheapest per pound, per litre and per can, with how much you save by driving to the next store. Updated every morning." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap" rel="stylesheet" />
@@ -98,6 +98,31 @@
   .scard h3 { margin: 0 0 4px; font-size: 16px; }
   .scard .c { font-size: 13px; color: var(--mute); margin-bottom: 6px; }
   .scard p { margin: 0; font-size: 14px; }
+
+  .bubly { margin: 18px 0 0; border: 1px solid #0b4a6e; border-radius: 16px; overflow: hidden;
+    background: linear-gradient(135deg, #062335, #0b2e44 55%, #103c57); display: grid; grid-template-columns: 120px 1fr; }
+  .bubly .pic { aspect-ratio: auto; height: 100%; min-height: 120px; }
+  .bubly .in { padding: 14px 16px; }
+  .bubly .k { font: 700 12px Geist, sans-serif; letter-spacing: .08em; color: #7dd3fc; text-transform: uppercase; }
+  .bubly .p { font: 800 30px Geist, sans-serif; line-height: 1.1; margin: 2px 0; }
+  .bubly .p small { font-size: 15px; color: #bae6fd; font-weight: 600; }
+  .bubly .w { font-size: 14px; color: #e0f2fe; }
+  .bubly .o { font-size: 13px; color: #93c5fd; margin-top: 6px; }
+  @media (max-width: 420px) { .bubly { grid-template-columns: 96px 1fr; } .bubly .p { font-size: 26px; } }
+  .save { display: inline-block; background: rgba(74,222,128,.14); color: var(--good); font: 700 12px Geist, sans-serif;
+    border-radius: 6px; padding: 3px 8px; margin-top: 4px; }
+  .kind { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--mute); }
+  .kind.sale { color: #fbbf24; }
+  .hist { position: absolute; top: 10px; right: 10px; background: #fbbf24; color: #2b1d00; font: 800 11px Geist, sans-serif;
+    padding: 4px 8px; border-radius: 6px; }
+  .check { font-size: 12px; color: #fcd34d; line-height: 1.35; }
+  .south { font-size: 12px; color: #93c5fd; margin-top: 4px; }
+  @media (max-width: 520px) {
+    .price { font-size: 21px; } .item { font-size: 15px; } .body { padding: 10px 11px 12px; }
+    .foot { flex-wrap: wrap; } .ribbon, .hist { font-size: 10px; padding: 3px 6px; top: 7px; }
+    .ribbon { left: 7px; } .hist { right: 7px; top: 30px; }
+    h1 { font-size: 32px; } .lede { font-size: 15px; }
+  }
   footer { color: var(--mute); font-size: 13px; padding: 32px 0 48px; border-top: 1px solid var(--border); margin-top: 32px; }
   .loading { color: var(--mute); padding: 40px 0; }
 </style>
@@ -107,8 +132,9 @@
   <div class="wrap">
     <a class="brand" href="/"><img src="/logo.png" alt="WhistlerBrew" /> <span>whistlerbrew.com</span></a>
     <h1>Shopping in <span>Whistler</span></h1>
-    <p class="lede">This week's best grocery prices across town, pulled from Nesters, Independent, FreshSt, Shoppers and Creekside. Meat first, plus the loyalty points worth grabbing.</p>
+    <p class="lede">Where to buy it cheapest in Whistler this week, and whether it's worth the drive. Nesters, Independent, FreshSt, Shoppers and Creekside, compared per pound, per litre and per can. Checked every morning.</p>
     <div class="meta" id="meta"></div>
+    <div id="bubly"></div>
   </div>
 </header>
 
@@ -128,43 +154,92 @@
 </footer>
 
 <script>
-const EMOJI = { "Ground beef": "🥩", "Steak": "🥩", "Beef roast": "🥩", "Chicken breast": "🍗", "Chicken thighs": "🍗",
-  "Chicken drumsticks": "🍗", "Whole chicken": "🐔", "Pork tenderloin": "🥓", "Pork chops": "🍖", "Pork shoulder / butt": "🍖",
-  "Bacon": "🥓", "Sausages": "🌭", "Salmon": "🐟", "Lamb": "🍖", "Eggs": "🥚", "Butter": "🧈", "Milk": "🥛", "Cheese": "🧀",
-  "Yogurt": "🥣", "Coffee": "☕", "Bread": "🍞", "Paper towel": "🧻", "Toilet paper": "🧻" };
+const EMOJI = { "Bubly": "🫧", "Ground beef": "🥩", "Ribeye steak": "🥩", "Striploin steak": "🥩", "Sirloin steak": "🥩", "Beef roast": "🥩",
+  "Short ribs": "🍖", "Brisket": "🍖", "Chicken wings": "🍗", "Chicken thighs": "🍗", "Chicken drumsticks": "🍗", "Whole chicken": "🐔",
+  "Chicken breast": "🍗", "Pork belly": "🥓", "Pork chops": "🍖", "Pork shoulder": "🍖", "Pork tenderloin": "🍖", "Ground pork": "🍖",
+  "Bacon": "🥓", "Sausages": "🌭", "Salmon": "🐟", "Lamb": "🍖", "Coffee": "☕", "Eggs": "🥚", "Butter": "🧈", "Cheese": "🧀",
+  "Milk": "🥛", "Yogurt": "🥣", "Bread": "🍞", "Paper towel": "🧻", "Toilet paper": "🧻" };
+const emo = n => EMOJI[n] || (/creamer/i.test(n) ? "🥛" : "🛒");
 const COLOR = { Nesters: "var(--nesters)", Independent: "var(--independent)", FreshSt: "var(--freshst)",
   Shoppers: "var(--shoppers)", Creekside: "var(--creekside)" };
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const title = s => esc(String(s).toLowerCase().replace(/(^|[\s\-(/])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/®|™/g, ""));
+const title = s => esc(String(s).toLowerCase().replace(/(^|[\s\-(/])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/®|™|‡/g, ""));
+const money = v => "$" + Number(v).toFixed(2);
 let DATA = null, STORE = "All";
 try { STORE = localStorage.getItem("wb-shop-store") || "All"; } catch (e) {}
 
-const img = (src, emoji, cls) => src
-  ? `<img class="${cls || ""}" src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'emoji',textContent:'${emoji}'}))">`
-  : (cls ? `<span class="${cls} blank">${emoji}</span>` : `<span class="emoji">${emoji}</span>`);
+const img = (src, e, cls) => src
+  ? `<img class="${cls || ""}" src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'emoji',textContent:'${e}'}))">`
+  : (cls ? `<span class="${cls} blank">${e}</span>` : `<span class="emoji">${e}</span>`);
 const badge = s => `<span class="store" style="background:${COLOR[s] || "#888"}">${esc(s)}</span>`;
-const big = (d, unit) => unit === "lb" && d.per_lb
-  ? `$${d.per_lb.toFixed(2)}<small>/lb</small>` : esc(d.price.replace(/\s*\(.*?\)/, "").replace(/,? was .*/, ""));
+const shelf = d => esc(String(d.price).replace(/‡/g, "").trim());
+const kind = d => d.sale ? `<span class="kind sale">Sale${d.until ? " to " + esc(d.until) : ""}</span>` : `<span class="kind">Everyday price</span>`;
 
-function cardHTML(it, unit) {
-  const deals = it.deals.filter(d => STORE === "All" || d.store === STORE);
-  if (STORE !== "All" && !deals.length) return "";
-  const e = EMOJI[it.item] || "🛒";
-  if (!deals.length) return `<div class="card"><div class="pic empty"><span class="emoji">${e}</span></div>
-    <div class="body"><div class="item">${esc(it.item)}</div><div class="none">No sales in Whistler this week. Buy it where you're already shopping.</div></div></div>`;
-  const [d, ...rest] = deals;
-  const was = (d.price.match(/was (\$[\d.]+[^,)]*)/) || [])[1];
+function saveLine(it, list) {
+  if (list.length < 2 || list[1].per <= list[0].per) return list.length === 1 && STORE === "All" ? `<span class="until">Only store with a price this week</span>` : "";
+  const pct = Math.round((list[1].per - list[0].per) / list[1].per * 100);
+  return pct >= 1 ? `<span class="save">${pct}% cheaper than ${esc(list[1].store)}</span>` : `<span class="until">Same price at ${esc(list[1].store)}</span>`;
+}
+
+function dealCheck(it, d) {
+  const u = esc(it.unit), bits = [];
+  if (d.reg && d.reg > d.per) bits.push(`Reg ${money(d.reg)}${u} here, save ${Math.round((d.reg - d.per) / d.reg * 100)}%`);
+  const ev = it.everyday;
+  if (ev && !(d.store === "FreshSt" && !d.sale)) {
+    if (ev.per > d.per) bits.push(`FreshSt everyday ${money(ev.per)}${u}`);
+    else bits.push(`Not a real deal: FreshSt's everyday price is ${money(ev.per)}${u}`);
+  }
+  return bits.length ? `<div class="check">${bits.map(esc).join(" · ")}</div>` : "";
+}
+
+function rankedCard(it) {
+  const list = (it.stores || []).filter(d => STORE === "All" || d.store === STORE);
+  const e = emo(it.item);
+  if (!list.length) return STORE !== "All" ? "" : `<div class="card"><div class="pic empty"><span class="emoji">${e}</span></div>
+    <div class="body"><div class="item">${esc(it.item)}</div><div class="none">No comparable price in Whistler this week.</div></div></div>`;
+  const [d, ...rest] = list;
+  const all = it.stores || [];
   return `<div class="card">
-    <div class="pic${d.img ? "" : " empty"}">${img(d.img, e)}${d.best && STORE === "All" ? '<span class="ribbon">BEST IN TOWN</span>' : ""}</div>
+    <div class="pic${d.img ? "" : " empty"}">${img(d.img, e)}${STORE === "All" && all.length > 1 ? '<span class="ribbon">CHEAPEST</span>' : ""}${it.history && STORE === "All" ? `<span class="hist">${esc(it.history)}</span>` : ""}</div>
     <div class="body">
       <div class="item">${esc(it.item)}</div>
-      <div class="price">${big(d, unit)}</div>
-      <div class="pname">${title(d.name)}${was ? ` · <s>${esc(was)}</s>` : ""}${unit === "lb" && d.per_lb ? ` · ${esc(d.price.replace(/,? was .*/, ""))}` : ""}</div>
-      <div class="foot">${badge(d.store)}<span class="until">${d.until ? "until " + esc(d.until) : "this week"}</span></div>
+      <div class="price">${money(d.per)}<small>${esc(it.unit)}</small></div>
+      ${STORE === "All" ? saveLine(it, all) : ""}
+      ${dealCheck(it, d)}
+      <div class="pname">${title(d.name)} · ${shelf(d)}</div>
+      ${it.south && STORE === "All" ? `<div class="south">${esc(it.south.town)}: ${money(it.south.per)}${esc(it.unit)} at ${esc(it.south.store)}, ${it.south.pct}% less. Grab it on the next trip down.</div>` : ""}
+      <div class="foot">${badge(d.store)}${kind(d)}</div>
     </div>
-    ${rest.length ? `<details><summary>${rest.length} more deal${rest.length > 1 ? "s" : ""}</summary><div class="more">${rest.map(r => `
-      <div class="alt">${img(r.img, e, "thumb")}<div class="t"><b>${big(r, unit)}</b> ${badge(r.store)}<br><span>${title(r.name)}</span></div></div>`).join("")}</div></details>` : ""}
+    ${rest.length ? `<details><summary>${rest.length} other store${rest.length > 1 ? "s" : ""}</summary><div class="more">${rest.map(r => `
+      <div class="alt">${img(r.img, e, "thumb")}<div class="t"><b>${money(r.per)}${esc(it.unit)}</b> ${badge(r.store)}<br><span>${title(r.name)} · ${shelf(r)}${r.sale ? " · sale" : " · everyday"}${r.reg && r.reg > r.per ? ` · reg ${money(r.reg)}${esc(it.unit)}` : ""}</span></div></div>`).join("")}</div></details>` : ""}
   </div>`;
+}
+
+function saleCard(it) {
+  const deals = it.deals.filter(d => STORE === "All" || d.store === STORE);
+  const e = emo(it.item);
+  if (!deals.length) return STORE !== "All" ? "" : `<div class="card"><div class="pic empty"><span class="emoji">${e}</span></div>
+    <div class="body"><div class="item">${esc(it.item)}</div><div class="none">No sales in Whistler this week.</div></div></div>`;
+  const [d, ...rest] = deals;
+  return `<div class="card"><div class="pic${d.img ? "" : " empty"}">${img(d.img, e)}</div>
+    <div class="body"><div class="item">${esc(it.item)}</div><div class="price" style="font-size:20px">${shelf(d)}</div>
+      <div class="pname">${title(d.name)}</div><div class="foot">${badge(d.store)}${kind(d)}</div></div>
+    ${rest.length ? `<details><summary>${rest.length} more</summary><div class="more">${rest.map(r => `
+      <div class="alt">${img(r.img, e, "thumb")}<div class="t"><b>${shelf(r)}</b> ${badge(r.store)}<br><span>${title(r.name)}</span></div></div>`).join("")}</div></details>` : ""}</div>`;
+}
+
+function bublyHTML(b) {
+  const all = b.stores || [];
+  if (!all.length) return `<div class="bubly"><div class="pic empty"><span class="emoji">🫧</span></div><div class="in">
+    <div class="k">Cheapest Bubly in town</div><div class="w">No store in Whistler lists Bubly this week.</div></div></div>`;
+  const d = all[0];
+  const pack = (d.name.match(/(\d+)\s*[x×/]\s*355/i) || [])[1];
+  const more = all.length > 1 ? `Next: ${all.slice(1).map(x => `${esc(x.store)} ${money(x.per)}`).join(", ")}` : "";
+  return `<div class="bubly"><div class="pic${d.img ? "" : " empty"}">${img(d.img, "🫧")}</div><div class="in">
+    <div class="k">Cheapest Bubly in town</div>
+    <div class="p">${money(d.per)}<small>/can</small></div>
+    <div class="w"><b>${esc(d.store)}</b>, ${pack ? pack + "-pack " : ""}${shelf(d)}${d.sale ? " on sale" : ", everyday price"}</div>
+    ${all.length > 1 ? saveLine(b, all) : `<div class="o">No other Whistler store lists Bubly this week.</div>`}${more ? `<div class="o">${more}</div>` : ""}${dealCheck(b, d)}</div></div>`;
 }
 
 function render() {
@@ -175,7 +250,8 @@ function render() {
   document.getElementById("meta").innerHTML =
     `<span class="pill">Updated <b>${upd.toLocaleDateString("en-CA", { weekday: "short", month: "short", day: "numeric" })}</b></span>` +
     (days === 0 ? `<span class="pill hot">Today is Nesters Locals Day: <b>15% off everything</b></span>`
-      : `<span class="pill">Nesters Locals Day <b>${ld.toLocaleDateString("en-CA", { month: "short", day: "numeric" })}</b> · 15% off everything</span>`);
+      : `<span class="pill">Nesters Locals Day <b>${ld.toLocaleDateString("en-CA", { month: "short", day: "numeric" })}</b> · 15% off</span>`);
+  document.getElementById("bubly").innerHTML = bublyHTML(d.bubbly);
 
   const secs = d.sections.map((s, i) => ({ ...s, id: "s" + i }));
   document.getElementById("jump").innerHTML = secs.map(s => `<a class="chip" href="#${s.id}">${esc(s.title)}</a>`).join("")
@@ -186,10 +262,9 @@ function render() {
     STORE = b.dataset.s; try { localStorage.setItem("wb-shop-store", STORE); } catch (e) {} render(); });
 
   const main = secs.map(s => {
-    const cards = s.items.map(it => cardHTML(it, s.unit)).join("");
-    return `<section id="${s.id}"><h2>${esc(s.title)}</h2>
-      <p class="sub">${s.unit === "lb" ? "Ranked by price per pound, so a family pack and a single steak compare fairly." : "What's on sale this week."}${STORE !== "All" ? ` Showing ${esc(STORE)} only.` : ""}</p>
-      ${cards ? `<div class="grid">${cards}</div>` : `<p class="none">Nothing on sale at ${esc(STORE)} in this section this week.</p>`}</section>`;
+    const cards = s.items.map(it => it.unit ? rankedCard(it) : saleCard(it)).join("");
+    return `<section id="${s.id}"><h2>${esc(s.title)}</h2><p class="sub">${esc(s.note)}${STORE !== "All" ? ` Showing ${esc(STORE)} only.` : ""}</p>
+      ${cards ? `<div class="grid">${cards}</div>` : `<p class="none">Nothing at ${esc(STORE)} in this section this week.</p>`}</section>`;
   }).join("");
 
   const pts = d.points.filter(p => STORE === "All" || p.stores.includes(STORE)).map(p => `
@@ -197,16 +272,17 @@ function render() {
       ${p.offers.length ? p.offers.map(o => `<div class="offer"><span class="tag">${esc(o.title)}</span>
         <div class="d">${esc(o.detail)}<span>${[o.store, o.ends ? "ends " + o.ends : ""].filter(Boolean).map(esc).join(" · ")}</span></div></div>`).join("")
         : `<p class="none">No store-wide offers this week.</p>`}</div>`).join("");
-
   const stores = d.stores.map(s => `<div class="scard" style="border-left-color:${COLOR[s.short]}">
     <h3>${esc(s.name)}</h3><div class="c">${s.card ? "Card: " + esc(s.card) : "No loyalty card"}</div><p>${esc(s.tip)}</p></div>`).join("");
+  const since = new Date(d.tracking_since + "T12:00:00").toLocaleDateString("en-CA", { month: "short", day: "numeric" });
 
   document.getElementById("main").innerHTML = main + `
     <section id="points"><h2>Points worth grabbing</h2><p class="sub">Load offers in the app before you shop.</p>
       <div class="two">${pts || `<p class="none">${esc(STORE)} has no points program we track.</p>`}
         <div class="panel"><h3>How points work</h3><ul class="rules">${d.points_rules.map(r => `<li>${esc(r).replace(/^([^:]+:)/, "<b>$1</b>")}</li>`).join("")}</ul></div>
       </div></section>
-    <section id="stores"><h2>Store guide</h2><p class="sub">Which card to bring, and what each store is good for.</p><div class="stores">${stores}</div></section>`;
+    <section id="stores"><h2>Store guide</h2><p class="sub">Which card to bring, and what each store is good for.</p><div class="stores">${stores}</div>
+      <p class="sub" style="margin-top:14px">Price history tracked since ${esc(since)}. "Lowest in N weeks" tags appear once there are three weeks of history.</p></section>`;
 }
 
 fetch("data.json?t=" + Date.now()).then(r => r.json()).then(d => { DATA = d; render(); })
