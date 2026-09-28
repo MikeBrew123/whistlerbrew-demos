@@ -159,7 +159,7 @@ const EMOJI = { "Bubly": "🫧", "Ground beef": "🥩", "Ribeye steak": "🥩", 
   "Chicken breast": "🍗", "Pork belly": "🥓", "Pork chops": "🍖", "Pork shoulder": "🍖", "Pork tenderloin": "🍖", "Ground pork": "🍖",
   "Bacon": "🥓", "Sausages": "🌭", "Salmon": "🐟", "Lamb": "🍖", "Coffee": "☕", "Eggs": "🥚", "Butter": "🧈", "Cheese": "🧀",
   "Milk": "🥛", "Yogurt": "🥣", "Bread": "🍞", "Paper towel": "🧻", "Toilet paper": "🧻" };
-const emo = n => EMOJI[n] || (/creamer/i.test(n) ? "🥛" : "🛒");
+const emo = n => EMOJI[n] || (/cream/i.test(n) ? "🥛" : "🛒");
 const COLOR = { Nesters: "var(--nesters)", Independent: "var(--independent)", FreshSt: "var(--freshst)",
   Shoppers: "var(--shoppers)", Creekside: "var(--creekside)" };
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
