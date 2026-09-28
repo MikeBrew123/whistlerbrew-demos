@@ -63,6 +63,14 @@ const PROJECTS: Project[] = [
     external: true,
   },
   {
+    name: "Shopping in Whistler",
+    href: "/shopping/",
+    description: "This week's best grocery prices across Nesters, Independent, FreshSt, Shoppers and Creekside. Meat ranked per pound, plus loyalty points. Updated every morning from the Home Brain.",
+    status: "NEW",
+    accent: "#00a8ff",
+    external: true,
+  },
+  {
     name: "FireBox",
     href: "/projects/firebox",
     description: "Live WFD radio transcripts from the Sea to Sky corridor. Powered by Whisper AI.",
