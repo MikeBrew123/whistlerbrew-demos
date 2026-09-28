@@ -64,7 +64,7 @@ const PROJECTS: Project[] = [
   },
   {
     name: "Shopping in Whistler",
-    href: "/shopping/",
+    href: "/shopping/index.html",
     description: "This week's best grocery prices across Nesters, Independent, FreshSt, Shoppers and Creekside. Meat ranked per pound, plus loyalty points. Updated every morning from the Home Brain.",
     status: "NEW",
     accent: "#00a8ff",
