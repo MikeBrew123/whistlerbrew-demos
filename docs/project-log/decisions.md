@@ -30,3 +30,6 @@ CIFFC has no public API. World fire data has no single reliable live source. Bot
 
 ### GitHub PAT: fine-grained, single-repo scope
 PAT named `n8n-wildfire-writer`, scoped to MikeBrew123/whistlerbrew-demos, Contents: Read/Write only. Stored in secrets/api-keys.json (gitignored). n8n-workflows/ directory also gitignored (workflow JSON files embed the PAT).
+
+## 2026-09-28
+- Added /shopping (Shopping in Whistler). Static page + data.json pushed daily by the Mac mini (HomeBrain shopper/whistler-deals.py) via the GitHub contents API. Link is /shopping/index.html because /shopping/ 404s on Pages.
