@@ -123,6 +123,25 @@
     .ribbon { left: 7px; } .hist { right: 7px; top: 30px; }
     h1 { font-size: 32px; } .lede { font-size: 15px; }
   }
+
+  .board { display: grid; gap: 8px; }
+  .rank { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 10px; background: var(--surface);
+    border: 1px solid var(--border); border-left: 5px solid; border-radius: 12px; padding: 10px 12px; }
+  .rank .n { font: 800 20px Geist, sans-serif; text-align: center; }
+  .rank .who { font-weight: 700; font-size: 16px; }
+  .rank .st { color: var(--mute); font-size: 12px; line-height: 1.35; }
+  .rank .pts { font: 800 24px Geist, sans-serif; text-align: right; line-height: 1; }
+  .rank .pts small { display: block; font-size: 11px; color: var(--mute); font-weight: 600; }
+  .rank.first { background: linear-gradient(90deg, rgba(250,204,21,.12), var(--surface) 60%); }
+  .awards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); margin-top: 14px; }
+  .award { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+  .award .h { font: 800 12px Geist, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  .award.shame .h { color: #f87171; }
+  .award .big { font: 800 20px Geist, sans-serif; margin: 2px 0; }
+  .award p { margin: 0; font-size: 13px; color: var(--mute); }
+  .how { margin-top: 12px; }
+  .how summary { padding: 6px 0; }
+  .how ul { margin: 4px 0 0; padding-left: 18px; color: var(--mute); font-size: 13px; }
   footer { color: var(--mute); font-size: 13px; padding: 32px 0 48px; border-top: 1px solid var(--border); margin-top: 32px; }
   .loading { color: var(--mute); padding: 40px 0; }
 </style>
@@ -243,6 +262,37 @@ function bublyHTML(b) {
     ${all.length > 1 ? saveLine(b, all) : `<div class="o">No other Whistler store lists Bubly this week.</div>`}${more ? `<div class="o">${more}</div>` : ""}${dealCheck(b, d)}</div></div>`;
 }
 
+function boardHTML(b) {
+  if (!b) return "";
+  const medal = ["🥇", "🥈", "🥉", "4", "5"];
+  const unit = u => esc(u || "");
+  const rows = b.standings.map((v, i) => `<div class="rank${i === 0 && v.points > 0 ? " first" : ""}" style="border-left-color:${COLOR[v.store]}">
+    <div class="n">${medal[i]}</div>
+    <div><div class="who">${esc(v.store)}</div><div class="st">Cheapest on ${v.wins} item${v.wins === 1 ? "" : "s"}${v.big_wins ? `, ${v.big_wins} by 20%+` : ""} · ${v.real_sales} real sale${v.real_sales === 1 ? "" : "s"}${v.fake_sales ? ` · <span style="color:#f87171">${v.fake_sales} fake</span>` : ""}</div></div>
+    <div class="pts">${v.points}<small>pts</small></div></div>`).join("");
+  const a = b.awards || {}, cards = [];
+  if (a.worth_the_drive) cards.push(`<div class="award"><div class="h">🚗 Worth the drive</div><div class="big">${esc(a.worth_the_drive.store)}</div>
+    <p>When it's cheapest, it wins by ${a.worth_the_drive.avg_margin}% on average (${a.worth_the_drive.wins} items).</p></div>`);
+  if (a.deepest) cards.push(`<div class="award"><div class="h">💸 Deepest real discount</div><div class="big">${a.deepest.pct_off}% off at ${esc(a.deepest.store)}</div>
+    <p>${title(a.deepest.name)}: ${money(a.deepest.per)}${unit(a.deepest.unit)}, regular ${money(a.deepest.reg)}${unit(a.deepest.unit)}.</p></div>`);
+  if (a.fake_sale) cards.push(`<div class="award shame"><div class="h">🤡 Fake sale of the week</div><div class="big">${esc(a.fake_sale.store)}: ${esc(a.fake_sale.item)}</div>
+    <p>"Sale" at ${money(a.fake_sale.per)}${unit(a.fake_sale.unit)}${a.fake_sale.pct_over > 0 ? `, ${a.fake_sale.pct_over}% more than` : ", the same as"} FreshSt's everyday price of ${money(a.fake_sale.everyday)}${unit(a.fake_sale.unit)}.</p></div>`);
+  else cards.push(`<div class="award"><div class="h">🤡 Fake sale of the week</div><div class="big">None caught</div><p>Every sale this week beat FreshSt's everyday price.</p></div>`);
+  if (a.whistler_tax && a.whistler_tax.length) cards.push(`<div class="award shame"><div class="h">🏔️ Whistler tax</div><div class="big">${esc(a.whistler_tax[0].store)} +${a.whistler_tax[0].pct}%</div>
+    <p>Sale prices here vs this week's Vancouver flyer prices: ${a.whistler_tax.map(t => `${esc(t.store)} +${t.pct}%`).join(", ")}.</p></div>`);
+  const season = b.weeks_scored > 1 ? `<p class="sub" style="margin-top:12px">Season so far: ${b.season.map(v => `${esc(v.store)} ${v.points}${v.weeks_won ? ` (${v.weeks_won} week${v.weeks_won > 1 ? "s" : ""} won)` : ""}`).join(" · ")}</p>` : "";
+  const wk = new Date(b.week_of + "T12:00:00").toLocaleDateString("en-CA", { month: "short", day: "numeric" });
+  return `<section id="score"><h2>Store scoreboard</h2><p class="sub">Flyer week of ${esc(wk)}. Who's actually cheapest, and who's faking it.</p>
+    <div class="board">${rows}</div><div class="awards">${cards.join("")}</div>${season}
+    <details class="how"><summary>How scoring works</summary><ul>
+      <li><b>+3</b> for the cheapest price on an item (only items at least two stores price).</li>
+      <li><b>+2 bonus</b> when it's cheaper than the next store by 20% or more.</li>
+      <li><b>+1</b> for a real sale: lower than FreshSt's everyday price.</li>
+      <li><b>−3</b> for a fake sale: advertised as a sale but no cheaper than FreshSt's everyday price.</li>
+      <li>Nesters, Independent and Shoppers only show up when something's on sale, so FreshSt rarely wins on price but is the everyday benchmark.</li>
+    </ul></details></section>`;
+}
+
 function render() {
   const d = DATA;
   const ld = new Date(d.nesters_locals_day + "T12:00:00");
@@ -255,7 +305,7 @@ function render() {
   document.getElementById("bubly").innerHTML = bublyHTML(d.bubbly);
 
   const secs = d.sections.map((s, i) => ({ ...s, id: "s" + i }));
-  document.getElementById("jump").innerHTML = secs.map(s => `<a class="chip" href="#${s.id}">${esc(s.title)}</a>`).join("")
+  document.getElementById("jump").innerHTML = `<a class="chip" href="#score">Scoreboard</a>` + secs.map(s => `<a class="chip" href="#${s.id}">${esc(s.title)}</a>`).join("")
     + `<a class="chip" href="#points">Points</a><a class="chip" href="#stores">Store guide</a>`;
   document.getElementById("filters").innerHTML = ["All", ...d.stores.map(s => s.short)].map(s =>
     `<button class="chip${s === STORE ? " on" : ""}" data-s="${esc(s)}">${s !== "All" ? `<span class="dot" style="background:${COLOR[s]}"></span>` : ""}${esc(s === "All" ? "All stores" : s)}</button>`).join("");
@@ -277,7 +327,7 @@ function render() {
     <h3>${esc(s.name)}</h3><div class="c">${s.card ? "Card: " + esc(s.card) : "No loyalty card"}</div><p>${esc(s.tip)}</p></div>`).join("");
   const since = new Date(d.tracking_since + "T12:00:00").toLocaleDateString("en-CA", { month: "short", day: "numeric" });
 
-  document.getElementById("main").innerHTML = main + `
+  document.getElementById("main").innerHTML = boardHTML(d.scoreboard) + main + `
     <section id="points"><h2>Points worth grabbing</h2><p class="sub">Load offers in the app before you shop.</p>
       <div class="two">${pts || `<p class="none">${esc(STORE)} has no points program we track.</p>`}
         <div class="panel"><h3>How points work</h3><ul class="rules">${d.points_rules.map(r => `<li>${esc(r).replace(/^([^:]+:)/, "<b>$1</b>")}</li>`).join("")}</ul></div>

@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T12:55-07:00",
+ "updated": "2026-09-28T16:58-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -1189,5 +1189,125 @@
   "Only chase an offer that gives 20% or more back on something you'd buy anyway. A low shelf price beats points."
  ],
  "nesters_locals_day": "2026-10-29",
+ "scoreboard": {
+  "week_of": "2026-09-24",
+  "standings": [
+   {
+    "store": "Independent",
+    "points": 38,
+    "wins": 7,
+    "big_wins": 5,
+    "real_sales": 7,
+    "fake_sales": 0,
+    "avg_margin": 37
+   },
+   {
+    "store": "Nesters",
+    "points": 19,
+    "wins": 4,
+    "big_wins": 2,
+    "real_sales": 6,
+    "fake_sales": 1,
+    "avg_margin": 22
+   },
+   {
+    "store": "Creekside",
+    "points": 6,
+    "wins": 1,
+    "big_wins": 1,
+    "real_sales": 1,
+    "fake_sales": 0,
+    "avg_margin": 33
+   },
+   {
+    "store": "FreshSt",
+    "points": 3,
+    "wins": 0,
+    "big_wins": 0,
+    "real_sales": 3,
+    "fake_sales": 0,
+    "avg_margin": null
+   },
+   {
+    "store": "Shoppers",
+    "points": 1,
+    "wins": 0,
+    "big_wins": 0,
+    "real_sales": 1,
+    "fake_sales": 0,
+    "avg_margin": null
+   }
+  ],
+  "season": [
+   {
+    "store": "Independent",
+    "points": 38,
+    "weeks_won": 0
+   },
+   {
+    "store": "Nesters",
+    "points": 19,
+    "weeks_won": 0
+   },
+   {
+    "store": "Creekside",
+    "points": 6,
+    "weeks_won": 0
+   },
+   {
+    "store": "FreshSt",
+    "points": 3,
+    "weeks_won": 0
+   },
+   {
+    "store": "Shoppers",
+    "points": 1,
+    "weeks_won": 0
+   }
+  ],
+  "weeks_scored": 1,
+  "awards": {
+   "worth_the_drive": {
+    "store": "Independent",
+    "avg_margin": 37,
+    "wins": 7
+   },
+   "fake_sale": {
+    "store": "Nesters",
+    "item": "Chicken wings",
+    "name": "Split Chicken Wings",
+    "per": 7.99,
+    "everyday": 7.99,
+    "unit": "/lb",
+    "pct_over": 0
+   },
+   "deepest": {
+    "store": "Independent",
+    "item": "Butter",
+    "name": "GAY LEA BUTTER, 454 G",
+    "per": 1.1,
+    "reg": 1.96,
+    "unit": "/100g",
+    "pct_off": 44
+   },
+   "whistler_tax": [
+    {
+     "store": "Independent",
+     "pct": 22,
+     "items": 9
+    },
+    {
+     "store": "Nesters",
+     "pct": 15,
+     "items": 7
+    },
+    {
+     "store": "FreshSt",
+     "pct": 5,
+     "items": 5
+    }
+   ]
+  }
+ },
  "tracking_since": "2026-09-28"
 }
