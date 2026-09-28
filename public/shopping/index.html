@@ -203,7 +203,7 @@ function rankedCard(it) {
     <div class="pic${d.img ? "" : " empty"}">${img(d.img, e)}${STORE === "All" && all.length > 1 ? '<span class="ribbon">CHEAPEST</span>' : ""}${it.history && STORE === "All" ? `<span class="hist">${esc(it.history)}</span>` : ""}</div>
     <div class="body">
       <div class="item">${esc(it.item)}</div>
-      ${it.unit === "/L" ? `<div class="price">${shelf(d)}</div><div class="until">${money(d.per)} per litre</div>`
+      ${["/L", "/dozen"].includes(it.unit) ? `<div class="price">${shelf(d)}</div><div class="until">${money(d.per)} per ${it.unit === "/L" ? "litre" : "dozen"}</div>`
         : `<div class="price">${money(d.per)}<small>${esc(it.unit)}</small></div>`}
       ${STORE === "All" ? saveLine(it, all) : ""}
       ${dealCheck(it, d)}
@@ -212,7 +212,7 @@ function rankedCard(it) {
       <div class="foot">${badge(d.store)}${kind(d)}</div>
     </div>
     ${rest.length ? `<details><summary>${rest.length} other store${rest.length > 1 ? "s" : ""}</summary><div class="more">${rest.map(r => `
-      <div class="alt">${img(r.img, e, "thumb")}<div class="t"><b>${money(r.per)}${esc(it.unit)}</b> ${badge(r.store)}<br><span>${title(r.name)} · ${shelf(r)}${r.sale ? " · sale" : " · everyday"}${r.reg && r.reg > r.per ? ` · reg ${money(r.reg)}${esc(it.unit)}` : ""}</span></div></div>`).join("")}</div></details>` : ""}
+      <div class="alt">${img(r.img, e, "thumb")}<div class="t"><b>${["/L", "/dozen"].includes(it.unit) ? shelf(r) + " (" + money(r.per) + esc(it.unit) + ")" : money(r.per) + esc(it.unit)}</b> ${badge(r.store)}<br><span>${title(r.name)} · ${shelf(r)}${r.sale ? " · sale" : " · everyday"}${r.reg && r.reg > r.per ? ` · reg ${money(r.reg)}${esc(it.unit)}` : ""}</span></div></div>`).join("")}</div></details>` : ""}
   </div>`;
 }
 
@@ -238,8 +238,8 @@ function bublyHTML(b) {
   const more = all.length > 1 ? `Next: ${all.slice(1).map(x => `${esc(x.store)} ${money(x.per)}`).join(", ")}` : "";
   return `<div class="bubly"><div class="pic${d.img ? "" : " empty"}">${img(d.img, "🫧")}</div><div class="in">
     <div class="k">Cheapest Bubly in town</div>
-    <div class="p">${money(d.per)}<small>/can</small></div>
-    <div class="w"><b>${esc(d.store)}</b>, ${pack ? pack + "-pack " : ""}${shelf(d)}${d.sale ? " on sale" : ", everyday price"}</div>
+    <div class="p">${shelf(d)}<small>${pack ? " " + pack + "-pack" : ""}</small></div>
+    <div class="w"><b>${esc(d.store)}</b>, ${money(d.per)} per can${d.sale ? ", on sale" : ", everyday price"}</div>
     ${all.length > 1 ? saveLine(b, all) : `<div class="o">No other Whistler store lists Bubly this week.</div>`}${more ? `<div class="o">${more}</div>` : ""}${dealCheck(b, d)}</div></div>`;
 }
 
