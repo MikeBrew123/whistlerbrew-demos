@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-09-28T10:00:34.812Z",
+  "updated_at": "2026-09-28T16:00:35.217Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "Squamish man uses motion-activated zombie to scare bears away from garbage",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/zombie-scaring-bears-from-squamish-garbage-bin-9.7358769?cmp=rss",
-        "description": "More than 33 bears have been killed by conservation officers in B.C. this year, including two that entered stores through automatic sliding doors in Hope and Squamish. It's led to creative solutions to keep the hungry animals away from attractants.",
-        "pubDate": "Sat, 26 Sep 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [],
     "prince-george": [
       {
@@ -58,13 +50,6 @@
         "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "With or without roads, US forests burn at a similar rate, researchers claim",
-        "link": "https://wildfiretoday.com/with-or-without-roads-us-forests-burn-at-a-similar-rate-researchers-claim/",
-        "description": "Over 40 years of wildfire-ignition data across 11 western U.S. states showed that national forest areas classified as &#8220;roadless&#8221; didn&#8217;t burn more than national forest land with roads, further fueling discussion around the Department of Agriculture Secretary Brooke Rollins&#8217; intent to repeal the 2001 &#8220;Roadless Rule.&#8221; Rollins has stated that the nation&#8217;s prot",
-        "pubDate": "Mon, 14 Sep 2026 23:56:07 +0000",
         "source": "Wildfire Today"
       }
     ]
