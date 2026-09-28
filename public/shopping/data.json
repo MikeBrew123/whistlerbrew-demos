@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T12:50-07:00",
+ "updated": "2026-09-28T12:55-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -683,45 +683,35 @@
      "unit": "/100g",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "MAXWELL HOUSE ORIGINAL (864g) or DARK (900g) ROAST GROUND COFFEE",
-       "price": "$15.99 each",
-       "per": 1.85,
-       "sale": true,
-       "until": "Oct 2",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434334830/1789786189/extra_large.jpg"
-      },
-      {
        "store": "Independent",
-       "name": "NABOB ROAST AND GROUND COFFEE, 915/930 G",
-       "price": "$20.00",
-       "per": 2.15,
+       "name": "LAVAZZA WHOLE BEAN COFFEE, 1 KG",
+       "price": "$26.00",
+       "per": 2.6,
        "sale": true,
        "until": "Oct 1",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342174/1789776691/extra_large.jpg"
-      },
-      {
-       "store": "Nesters",
-       "name": "Starbucks Coffee",
-       "price": "$11.99 ea",
-       "per": 3.53,
-       "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434308533/1789760441/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/434342186/1789776700/extra_large.jpg"
       },
       {
        "store": "FreshSt",
-       "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - Light Roast 454g",
-       "price": "$20.99",
-       "was": null,
-       "per": 4.62,
-       "sale": false,
+       "name": "Lavazza - Qualita Oro Roasted Ground Coffee 250g",
+       "price": "$10.69",
+       "was": "$13.99",
+       "per": 4.28,
+       "sale": true,
        "until": "",
+       "reg": 5.6,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0004195301941_00.jpg?width=500"
+      },
+      {
+       "store": "Nesters",
+       "name": "Salt Spring Organic Coffee",
+       "price": "$17.99 ea",
+       "per": 4.5,
+       "sale": true,
+       "until": "Oct 1",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062784332874_00.jpg?width=500"
+       "img": "https://f.wishabi.net/page_items/434308467/1789760441/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -729,8 +719,8 @@
       "per": 4.62,
       "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - L"
      },
-     "pct_cheaper": 14,
-     "next_store": "Independent"
+     "pct_cheaper": 39,
+     "next_store": "FreshSt"
     },
     {
      "item": "Coffee cream 18%, small (473 mL)",
@@ -762,8 +752,8 @@
    ]
   },
   {
-   "title": "Dairy and eggs",
-   "note": "Per dozen, per 100 g or per litre.",
+   "title": "Eggs and dairy",
+   "note": "Eggs per dozen, cheese, butter and yogurt per 100 g.",
    "items": [
     {
      "item": "Eggs",
@@ -894,28 +884,6 @@
      }
     },
     {
-     "item": "Milk",
-     "unit": "/L",
-     "stores": [
-      {
-       "store": "FreshSt",
-       "name": "Dairyland - Milk - Skim - 0% m.f. 4l",
-       "price": "$8.79",
-       "was": null,
-       "per": 2.2,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006870001107_00.jpg?width=500"
-      }
-     ],
-     "everyday": {
-      "store": "FreshSt",
-      "per": 2.2,
-      "name": "Dairyland - Milk - Skim - 0% m.f. 4l"
-     }
-    },
-    {
      "item": "Yogurt",
      "unit": "/100g",
      "stores": [
@@ -967,75 +935,9 @@
    ]
   },
   {
-   "title": "Pantry and household",
+   "title": "Household",
    "note": "What's on sale this week.",
    "items": [
-    {
-     "item": "Bread",
-     "unit": null,
-     "deals": [
-      {
-       "store": "Independent",
-       "name": "NATURAL BAKERY SOURDOUGH OR CANADIAN RYE BREAD, 500 G",
-       "price": "$3.50",
-       "per": null,
-       "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342265/1789776701/extra_large.jpg"
-      },
-      {
-       "store": "Independent",
-       "name": "D'ITALIANO BREAD OR BUNS, 420-675 G",
-       "price": "2/ $7.50 or $4.29 ea.",
-       "per": null,
-       "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342117/1789776695/extra_large.jpg"
-      },
-      {
-       "store": "Nesters",
-       "name": "French Bread",
-       "price": "$1.99 ea",
-       "per": null,
-       "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434308416/1789760437/extra_large.jpg"
-      },
-      {
-       "store": "Nesters",
-       "name": "Dempster's Bread",
-       "price": "$3.49 ea",
-       "per": null,
-       "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434308411/1789760433/extra_large.jpg"
-      },
-      {
-       "store": "Independent",
-       "name": "CINNAMON RAISIN BREAD, 468 G OR MINI CROISSANTS, 10'S",
-       "price": "$4.00",
-       "per": null,
-       "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342390/1790052315/extra_large.jpg"
-      },
-      {
-       "store": "Independent",
-       "name": "BREADED PORK LOIN SCHNITZEL, 255 G",
-       "price": "$7.00",
-       "per": null,
-       "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342362/1789776697/extra_large.jpg"
-      }
-     ]
-    },
     {
      "item": "Paper towel",
      "unit": null,
