@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T12:43-07:00",
+ "updated": "2026-09-28T12:50-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -675,8 +675,8 @@
    ]
   },
   {
-   "title": "Coffee and creamer",
-   "note": "Coffee per 100 g, creamer per litre. Small and big creamer are ranked separately.",
+   "title": "Coffee and cream",
+   "note": "Coffee per 100 g, cream per litre. Small and big cartons are ranked separately.",
    "items": [
     {
      "item": "Coffee",
@@ -733,76 +733,31 @@
      "next_store": "Independent"
     },
     {
-     "item": "Coffee creamer, small (1 L or less)",
+     "item": "Coffee cream 18%, small (473 mL)",
      "unit": "/L",
      "stores": [
       {
        "store": "FreshSt",
-       "name": "Dairyland - Creamo Half & Half - 10% m.f. 946ml",
-       "price": "$5.49",
+       "name": "Dairyland - Coffee Cream - 18% m.f. 473ml",
+       "price": "$4.49",
        "was": null,
-       "per": 5.8,
+       "per": 9.49,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006870010361_00.jpg?width=500"
-      },
-      {
-       "store": "Shoppers",
-       "name": "INTERNATIONAL DELIGHT (425mL), BAILEYS (400mL) or SILK (473mL) COFFEE ENHANCER",
-       "price": "$3.29 each",
-       "per": 7.74,
-       "sale": true,
-       "until": "Oct 2",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434336294/1789786186/extra_large.jpg"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006870010046_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 5.8,
-      "name": "Dairyland - Creamo Half & Half - 10% m.f. 946ml"
-     },
-     "pct_cheaper": 25,
-     "next_store": "Shoppers",
-     "south": {
-      "town": "Vancouver",
-      "store": "Real Canadian Superstore",
-      "name": "INTERNATIONAL DELIGHT COFFEE ENHANCER 946 ML OR COLD FOAM 39",
-      "per": 4.22,
-      "price": "$3.99 OVER LIMIT PAY 5.99 EA",
-      "pct": 27
+      "per": 9.49,
+      "name": "Dairyland - Coffee Cream - 18% m.f. 473ml"
      }
     },
     {
-     "item": "Coffee creamer, big (over 1 L)",
+     "item": "Coffee cream 18%, big (946 mL+)",
      "unit": "/L",
-     "stores": [
-      {
-       "store": "FreshSt",
-       "name": "International Delight - Coffee Whitener - Classic French Vanilla 1.42l",
-       "price": "$9.99",
-       "was": null,
-       "per": 7.04,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0003663207475_00.jpg?width=500"
-      }
-     ],
-     "everyday": {
-      "store": "FreshSt",
-      "per": 7.04,
-      "name": "International Delight - Coffee Whitener - Classic French Van"
-     },
-     "south": {
-      "town": "Squamish",
-      "store": "Walmart",
-      "name": "International Delight coffee creamer",
-      "per": 4.55,
-      "price": "$6.46",
-      "pct": 35
-     }
+     "stores": []
     }
    ]
   },
