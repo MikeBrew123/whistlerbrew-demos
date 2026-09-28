@@ -1,29 +1,28 @@
 {
-  "updated_at": "2026-09-27T22:00:34.230Z",
+  "updated_at": "2026-09-28T04:00:34.828Z",
   "zones": {
     "coastal": [
       {
-        "title": "Lorne Doerkson talks values as he leads B.C. Conservatives into election",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lorne-doerkson-leader-bc-conservatives-election-season-9.7357295?cmp=rss",
-        "description": "New B.C. Conservative Leader Lorne Doerkson says the party platform hasn't changed much from what it was in 2024. He shared his opinions on a number of issues facing the province with Stephen Quinn, host of CBC's The Early Edition.",
-        "pubDate": "Sat, 26 Sep 2026 10:00:00 EDT",
+        "title": "Squamish man uses motion-activated zombie to scare bears away from garbage",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/zombie-scaring-bears-from-squamish-garbage-bin-9.7358769?cmp=rss",
+        "description": "More than 33 bears have been killed by conservation officers in B.C. this year, including two that entered stores through automatic sliding doors in Hope and Squamish. It's led to creative solutions to keep the hungry animals away from attractants.",
+        "pubDate": "Sat, 26 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Record-breaking owl migration in northern B.C. leaves bird banders scrambling",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/mackenzie-saw-whet-owl-migration-9.7359261?cmp=rss",
-        "description": "A boom in mice and voles may have helped produce an unusually large wave of young saw-whet owls near Mackenzie, north of Prince George.",
-        "pubDate": "Sun, 27 Sep 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Winning ideas to transform wildfire detection and response",
+        "link": "https://wildfiretoday.com/winning-ideas-to-transform-wildfire-detection-and-response/",
+        "description": "Teams from across the world have competed to build transformative technology for wildfire detection and response. The winners were given hundreds of thousands of dollars to continue their development. The teams were awarded the funds at the XPRIZE Wildfire Competition Awardee Ceremony at the New York City Fire Museum on Sept. 23. Nine of the [&#8230;]",
+        "pubDate": "Sun, 27 Sep 2026 22:52:30 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Using a bot to help burn more fuel, more often",
         "link": "https://wildfiretoday.com/using-a-bot-to-help-burn-more-fuel-more-often/",
@@ -43,13 +42,6 @@
         "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Being a good leader starts with being a good person",
-        "link": "https://wildfiretoday.com/being-a-good-leader-starts-with-being-a-good-person/",
-        "description": "By Michael DeGrosky Being a good leader starts with being a good person – in his Wildfire magazine column Mike DeGrosky rediscovers the early influences that shaped his core beliefs. A few months ago, I had the pleasure of attending a lecture by renowned political scientist and author Robert Putnam, who was speaking on making [&#8230;]",
-        "pubDate": "Tue, 15 Sep 2026 22:58:39 +0000",
         "source": "Wildfire Today"
       }
     ]
