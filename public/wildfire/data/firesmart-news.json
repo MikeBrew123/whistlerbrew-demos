@@ -1,28 +1,12 @@
 {
-  "updated_at": "2026-09-29T04:00:34.859Z",
+  "updated_at": "2026-09-29T10:00:35.257Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "Record-breaking owl migration in northern B.C. leaves bird banders scrambling",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/mackenzie-saw-whet-owl-migration-9.7359261?cmp=rss",
-        "description": "A boom in mice and voles may have helped produce an unusually large wave of young saw-whet owls near Mackenzie, north of Prince George.",
-        "pubDate": "Sun, 27 Sep 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
-      {
-        "title": "Student-led evening bus pilot launches in B.C.'s Columbia Valley after years of advocacy",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/columbia-valley-evening-bus-9.7360376?cmp=rss",
-        "description": "High school students in Invermere, B.C., spent years pushing for better evening transit. Now an eight-week private bus pilot is testing whether there is enough demand for longer-term service.",
-        "pubDate": "Sun, 27 Sep 2026 18:43:22 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "southeast": [],
     "all": [
       {
         "title": "Winning ideas to transform wildfire detection and response",
