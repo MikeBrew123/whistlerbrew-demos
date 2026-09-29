@@ -1,27 +1,28 @@
 {
-  "updated_at": "2026-09-28T22:00:34.228Z",
+  "updated_at": "2026-09-29T04:00:34.859Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [
       {
-        "title": "Crows are being given naloxone after suspected drug overdoses in Prince George",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/crows-overdose-prince-george-naloxone-9.7358727?cmp=rss",
-        "description": "The increased toxicity of the illicit drug supply has prompted public warnings in the north-central B.C. city.",
-        "pubDate": "Mon, 28 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Sikh humanitarian group providing back-to-school supplies for Indigenous students",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/khalsa-aid-humanitarian-group-back-to-school-9.7357457?cmp=rss",
-        "description": "A Sikh humanitarian relief group says it has been answering the Truth and Reconciliation Commission’s 94 calls to action by supporting Indigenous kids returning to school.",
-        "pubDate": "Sun, 27 Sep 2026 09:00:00 EDT",
+        "title": "Record-breaking owl migration in northern B.C. leaves bird banders scrambling",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/mackenzie-saw-whet-owl-migration-9.7359261?cmp=rss",
+        "description": "A boom in mice and voles may have helped produce an unusually large wave of young saw-whet owls near Mackenzie, north of Prince George.",
+        "pubDate": "Sun, 27 Sep 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
+    "southeast": [
+      {
+        "title": "Student-led evening bus pilot launches in B.C.'s Columbia Valley after years of advocacy",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/columbia-valley-evening-bus-9.7360376?cmp=rss",
+        "description": "High school students in Invermere, B.C., spent years pushing for better evening transit. Now an eight-week private bus pilot is testing whether there is enough demand for longer-term service.",
+        "pubDate": "Sun, 27 Sep 2026 18:43:22 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "all": [
       {
         "title": "Winning ideas to transform wildfire detection and response",
