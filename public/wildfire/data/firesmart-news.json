@@ -1,7 +1,21 @@
 {
-  "updated_at": "2026-09-29T16:00:34.199Z",
+  "updated_at": "2026-09-29T22:00:34.674Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Boat collision at Woodfibre LNG site near Squamish was due to safety gaps, TSB finds",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/boat-crash-2024-squamish-report-9.7363087?cmp=rss",
+        "description": "Canada's Transportation Safety Board has found a series of gaps leading to a crash between a tugboat and a workboat in 2024, sinking one of the vessels in the waters near Squamish, B.C.",
+        "pubDate": "Tue, 29 Sep 2026 16:42:31 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Jury convicts 2 men of 1st-degree murder in gang-related shooting in Whistler: IHIT",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/whistler-bc-double-homicide-convictions-9.7362767?cmp=rss",
+        "description": "Two men have been convicted of murder charges related to the 2022 double homicide of Meninder Dhaliwal and Satindera Gill in Whistler, according to the Integrated Homicide Investigation Team.",
+        "pubDate": "Tue, 29 Sep 2026 15:30:47 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Heavy rain, strong winds forecast for coastal B.C., including Metro Vancouver",
         "link": "https://www.cbc.ca/news/canada/british-columbia/storm-bc-rain-metro-vancouver-south-coast-9.7361734?cmp=rss",
@@ -24,21 +38,14 @@
         "description": "The funding will extend basic infrastructure to more than 66.77 hectares (165 acres) of empty land, and create a runway-accessible industrial park along the airport's eastern border.",
         "pubDate": "Mon, 28 Sep 2026 19:19:54 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "prince-george": [
       {
         "title": "Crows are being given naloxone after suspected drug overdoses in Prince George",
         "link": "https://www.cbc.ca/news/canada/british-columbia/crows-overdose-prince-george-naloxone-9.7358727?cmp=rss",
         "description": "The increased toxicity of the illicit drug supply has prompted public warnings in the north-central B.C. city.",
         "pubDate": "Mon, 28 Sep 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Where do B.C.'s provincial political parties stand on SOGI in schools?",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/sogi-123-bc-provincial-parties-election-9.7359291?cmp=rss",
-        "description": "As another provincial election gears up in B.C., sexual orientation and gender identity (SOGI) in schools is back in the political spotlight.",
-        "pubDate": "Mon, 28 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -73,13 +80,6 @@
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
         "source": "Wildfire Today"
-      },
-      {
-        "title": "Alcohol is Canada’s biggest drug problem. So why aren’t people getting help?",
-        "link": "https://www.cbc.ca/radio/thecurrent/alcohol-use-disorder-9.7357272?cmp=rss",
-        "description": "Research shows alcohol causes more harm overall than any other drug in Canada. Some doctors and other advocates say people struggling with alcohol aren’t getting treatment options that are backed by science.",
-        "pubDate": "Mon, 28 Sep 2026 04:00:00 EDT",
-        "source": "CBC BC"
       }
     ]
   }
