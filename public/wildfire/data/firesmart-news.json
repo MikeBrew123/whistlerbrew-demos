@@ -1,9 +1,47 @@
 {
-  "updated_at": "2026-09-29T10:00:35.257Z",
+  "updated_at": "2026-09-29T16:00:34.199Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
+    "coastal": [
+      {
+        "title": "Heavy rain, strong winds forecast for coastal B.C., including Metro Vancouver",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/storm-bc-rain-metro-vancouver-south-coast-9.7361734?cmp=rss",
+        "description": "A storm system travelling southeast is forecast to bring heavy downpours and strong winds to parts of B.C. overnight Monday and into Tuesday.",
+        "pubDate": "Mon, 28 Sep 2026 19:12:22 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "'It's a disgrace': Naramata residents demand answers after termination of fire chief",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/naramata-fire-chief-petition-firing-termination-9.7361780?cmp=rss",
+        "description": "Naramata, B.C., residents have launched a petition calling on the Regional District of Okanagan-Similkameen to change the culture and improve the dynamics with local fire services, following the abrupt firing of fire chief Dennis Smith in July.",
+        "pubDate": "Tue, 29 Sep 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Ottawa announces $22.4M to expand Kelowna International Airport",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/ottawa-kelowna-airport-expansion-9.7361667?cmp=rss",
+        "description": "The funding will extend basic infrastructure to more than 66.77 hectares (165 acres) of empty land, and create a runway-accessible industrial park along the airport's eastern border.",
+        "pubDate": "Mon, 28 Sep 2026 19:19:54 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Crows are being given naloxone after suspected drug overdoses in Prince George",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/crows-overdose-prince-george-naloxone-9.7358727?cmp=rss",
+        "description": "The increased toxicity of the illicit drug supply has prompted public warnings in the north-central B.C. city.",
+        "pubDate": "Mon, 28 Sep 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "Where do B.C.'s provincial political parties stand on SOGI in schools?",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/sogi-123-bc-provincial-parties-election-9.7359291?cmp=rss",
+        "description": "As another provincial election gears up in B.C., sexual orientation and gender identity (SOGI) in schools is back in the political spotlight.",
+        "pubDate": "Mon, 28 Sep 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
@@ -35,6 +73,13 @@
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
         "source": "Wildfire Today"
+      },
+      {
+        "title": "Alcohol is Canada’s biggest drug problem. So why aren’t people getting help?",
+        "link": "https://www.cbc.ca/radio/thecurrent/alcohol-use-disorder-9.7357272?cmp=rss",
+        "description": "Research shows alcohol causes more harm overall than any other drug in Canada. Some doctors and other advocates say people struggling with alcohol aren’t getting treatment options that are backed by science.",
+        "pubDate": "Mon, 28 Sep 2026 04:00:00 EDT",
+        "source": "CBC BC"
       }
     ]
   }
