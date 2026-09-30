@@ -1,12 +1,19 @@
 {
-  "updated_at": "2026-09-30T16:00:33.971Z",
+  "updated_at": "2026-09-30T22:00:33.884Z",
   "zones": {
     "coastal": [
       {
-        "title": "Are the raspberries in my fridge OK to eat? What to know about chemical levels on Driscoll's berries",
-        "link": "https://www.cbc.ca/news/health/driscolls-raspberries-chemicals-questions-answers-9.7361166?cmp=rss",
-        "description": "You may be having second thoughts about eating the berries in your fridge after CBC News spoke with a whistleblower who made a startling claim about the amount of chemicals on fruit that a U.S. company allegedly shipped to Canada.",
-        "pubDate": "Tue, 29 Sep 2026 18:31:10 EDT",
+        "title": "Boat collision at Woodfibre LNG site near Squamish was due to safety gaps, TSB finds",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/boat-crash-2024-squamish-report-9.7363087?cmp=rss",
+        "description": "Canada's Transportation Safety Board has found a series of gaps leading to a crash between a tugboat and a workboat in 2024, sinking one of the vessels in the waters near Squamish, B.C.",
+        "pubDate": "Tue, 29 Sep 2026 16:42:31 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Jury convicts 2 men of 1st-degree murder in gang-related shooting in Whistler: IHIT",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/whistler-bc-double-homicide-convictions-9.7362767?cmp=rss",
+        "description": "Two men have been convicted of murder charges related to the 2022 double homicide of Meninder Dhaliwal and Satindera Gill in Whistler, according to the Integrated Homicide Investigation Team.",
+        "pubDate": "Tue, 29 Sep 2026 15:30:47 EDT",
         "source": "CBC BC"
       }
     ],
@@ -16,6 +23,13 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/syilx-baskets-returned-okanagan-lost-wildfires-bc-9.7363613?cmp=rss",
         "description": "A B.C. woman who read an Okanagan Indian Band elder's story of losing treasured items in the Bradley Creek wildfire gifted him four woven baskets, believed to be of Syilx origin, from her home.",
         "pubDate": "Wed, 30 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "'It's a disgrace': Naramata residents demand answers after termination of fire chief",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/naramata-fire-chief-petition-firing-termination-9.7361780?cmp=rss",
+        "description": "Naramata, B.C., residents have launched a petition calling on the Regional District of Okanagan-Similkameen to change the culture and improve the dynamics with local fire services, following the abrupt firing of fire chief Dennis Smith in July.",
+        "pubDate": "Tue, 29 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
