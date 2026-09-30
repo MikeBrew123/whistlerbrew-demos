@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T10:00:34.601Z",
+  "updated_at": "2026-09-30T16:00:33.971Z",
   "zones": {
     "coastal": [
       {
@@ -10,7 +10,15 @@
         "source": "CBC BC"
       }
     ],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "Woven baskets gifted to Okanagan elder, replacing those lost to wildfire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/syilx-baskets-returned-okanagan-lost-wildfires-bc-9.7363613?cmp=rss",
+        "description": "A B.C. woman who read an Okanagan Indian Band elder's story of losing treasured items in the Bradley Creek wildfire gifted him four woven baskets, believed to be of Syilx origin, from her home.",
+        "pubDate": "Wed, 30 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "prince-george": [
       {
         "title": "Fundraisers hit $3M target in push for public MRI in Dawson Creek, B.C.",
@@ -23,35 +31,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Winning ideas to transform wildfire detection and response",
-        "link": "https://wildfiretoday.com/winning-ideas-to-transform-wildfire-detection-and-response/",
-        "description": "Teams from across the world have competed to build transformative technology for wildfire detection and response. The winners were given hundreds of thousands of dollars to continue their development. The teams were awarded the funds at the XPRIZE Wildfire Competition Awardee Ceremony at the New York City Fire Museum on Sept. 23. Nine of the [&#8230;]",
-        "pubDate": "Sun, 27 Sep 2026 22:52:30 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Using a bot to help burn more fuel, more often",
-        "link": "https://wildfiretoday.com/using-a-bot-to-help-burn-more-fuel-more-often/",
-        "description": "Burn Bot is large, tank-like vehicle that wants to solve the most troubling of fuel mitigation questions – how can you manage more area, across all sorts of terrain, in all sorts of weather, at all times of the year, without overtaxing or endangering local crews, and without smothering communities with smoke? Mechanical fuel mitigation [&#8230;]",
-        "pubDate": "Thu, 24 Sep 2026 06:51:33 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Canada&#8217;s largest fire detector acquires US wildfire business despite barriers",
-        "link": "https://wildfiretoday.com/canadas-largest-fire-detector-acquires-us-wildfire-business-despite-barriers/",
-        "description": "Wildfire detection company SenseNet, Canada&#8217;s largest wildfire detection operator, recently announced the acquisition of N5 Sensors&#8216; wildfire-related assets, a semiconductor producer in the United States, despite the company&#8217;s recent failure in a federal audit and the two nations being in the middle of a trade war. N5 builds environmental and chemical sensor platforms for air [&#",
-        "pubDate": "Wed, 23 Sep 2026 08:14:49 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "How drones can better integrate with total incident response",
-        "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
-        "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
-        "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
