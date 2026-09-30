@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T16:58-07:00",
+ "updated": "2026-09-30T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -20,6 +20,14 @@
    "store": "FreshSt",
    "per": 0.75,
    "name": "Bubly Sparkling Water Beverage - Blackberry 12/355ml"
+  },
+  "south": {
+   "town": "Vancouver",
+   "store": "Real Canadian Superstore",
+   "name": "BUBLY SPARKLING WATER, 12X355 ML",
+   "per": 0.5,
+   "price": "$5.99 OVER LIMIT PAY 7.99 EA",
+   "pct": 33
   }
  },
  "stores": [
@@ -74,6 +82,16 @@
        "img": "https://f.wishabi.net/page_items/434342124/1789776700/extra_large.jpg"
       },
       {
+       "store": "Nesters",
+       "name": "Extra Lean Ground Beef",
+       "price": "$8.99 lb",
+       "per": 8.99,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435614611/1790396763/extra_large.jpg"
+      },
+      {
        "store": "FreshSt",
        "name": "Family Pack Extra Lean Ground Beef",
        "price": "$21.80 avg/ea",
@@ -91,7 +109,7 @@
       "name": "Family Pack Fresh Lean Ground Beef - Ground In-Store Same Da"
      },
      "pct_cheaper": 33,
-     "next_store": "FreshSt"
+     "next_store": "Nesters"
     },
     {
      "item": "Ribeye steak",
@@ -240,28 +258,30 @@
       },
       {
        "store": "FreshSt",
-       "name": "Chicken Wings",
-       "price": "$1.76 avg/ea",
+       "name": "Chicken Wings - Split Family Pack",
+       "price": "$17.84 avg/ea",
        "was": null,
-       "per": 7.99,
+       "per": 8.99,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020041800000_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020083400000_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 7.99,
-      "name": "Chicken Wings"
+      "per": 8.99,
+      "name": "Chicken Wings - Split Family Pack"
      },
+     "pct_cheaper": 11,
+     "next_store": "FreshSt",
      "south": {
-      "town": "Squamish",
-      "store": "No Frills",
-      "name": "NO NAME\u00ae CHICKEN WINGS, 908 g",
-      "per": 6.49,
-      "price": "$13.00",
-      "pct": 19
+      "town": "Vancouver",
+      "store": "Real Canadian Superstore",
+      "name": "CHICKEN WINGS",
+      "per": 4.99,
+      "price": "$4.99 LB",
+      "pct": 38
      }
     },
     {
@@ -277,6 +297,16 @@
        "until": "Oct 1",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/434342125/1789776700/extra_large.jpg"
+      },
+      {
+       "store": "Nesters",
+       "name": "Chicken Thighs",
+       "price": "$8.99 lb",
+       "per": 8.99,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435614613/1790396765/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -295,8 +325,8 @@
       "per": 12.49,
       "name": "Fresh Local Ground Chicken Thighs"
      },
-     "pct_cheaper": 68,
-     "next_store": "FreshSt"
+     "pct_cheaper": 56,
+     "next_store": "Nesters"
     },
     {
      "item": "Chicken drumsticks",
@@ -316,10 +346,10 @@
      "south": {
       "town": "Vancouver",
       "store": "Real Canadian Superstore",
-      "name": "CHICKEN DRUMSTICKS, 3 KG",
-      "per": 3.02,
-      "price": "$20.00",
-      "pct": 24
+      "name": "CHICKEN DRUMSTICKS",
+      "per": 2.49,
+      "price": "SALE $2.49 LB",
+      "pct": 38
      }
     },
     {
@@ -335,6 +365,16 @@
        "until": "Oct 1",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/434308390/1789760433/extra_large.jpg"
+      },
+      {
+       "store": "Independent",
+       "name": "PC\u00ae WHOLE CHICKEN, UP TO 1.7 KG",
+       "price": "$15.00",
+       "per": 4.0,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435655946/1790380369/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -353,8 +393,8 @@
       "per": 6.49,
       "name": "Fresh Local Whole Grade A Frying Chicken"
      },
-     "pct_cheaper": 39,
-     "next_store": "FreshSt"
+     "pct_cheaper": 0,
+     "next_store": "Independent"
     },
     {
      "item": "Chicken breast",
@@ -388,7 +428,15 @@
       "name": "Pinty's - Gluten-Free Chicken Breast Fillets 750g"
      },
      "pct_cheaper": 18,
-     "next_store": "FreshSt"
+     "next_store": "FreshSt",
+     "south": {
+      "town": "Squamish",
+      "store": "Save-On-Foods",
+      "name": "Western Family Chicken Breast",
+      "per": 4.99,
+      "price": "Works out to $4.99 lb",
+      "pct": 29
+     }
     },
     {
      "item": "Pork belly",
@@ -425,6 +473,16 @@
      "unit": "/lb",
      "stores": [
       {
+       "store": "Independent",
+       "name": "PORK LOIN COMBINATION CHOPS",
+       "price": "$3.00 lb",
+       "per": 3.0,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": 6.0,
+       "img": "https://f.wishabi.net/page_items/435934979/1790701394/extra_large.jpg"
+      },
+      {
        "store": "Nesters",
        "name": "Pork Chops",
        "price": "$5.99 lb",
@@ -451,16 +509,8 @@
       "per": 7.49,
       "name": "Canadian Fresh Boneless Pork Sirloin Chops"
      },
-     "pct_cheaper": 20,
-     "next_store": "FreshSt",
-     "south": {
-      "town": "Squamish",
-      "store": "No Frills",
-      "name": "PORK COMBO CHOPS",
-      "per": 3.99,
-      "price": "$3.99 LB",
-      "pct": 33
-     }
+     "pct_cheaper": 50,
+     "next_store": "Nesters"
     },
     {
      "item": "Pork shoulder",
@@ -539,8 +589,20 @@
        "until": "",
        "reg": 6.5,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020009100000_00.jpg?width=500"
+      },
+      {
+       "store": "Independent",
+       "name": "LEAN GROUND PORK, 450 G",
+       "price": "$5.00",
+       "per": 5.04,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435655950/1790380371/extra_large.jpg"
       }
-     ]
+     ],
+     "pct_cheaper": 1,
+     "next_store": "Independent"
     },
     {
      "item": "Bacon",
@@ -571,6 +633,16 @@
      "unit": "/lb",
      "stores": [
       {
+       "store": "Independent",
+       "name": "FREYBE PAPRIKA OR LYONER SAUSAGE, 1 kg",
+       "price": "$15.00",
+       "per": 6.8,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435655815/1790380361/extra_large.jpg"
+      },
+      {
        "store": "FreshSt",
        "name": "Meatman's Sausages - English Breakfast 400g",
        "price": "$8.69",
@@ -587,13 +659,15 @@
       "per": 9.85,
       "name": "Meatman's Sausages - English Breakfast 400g"
      },
+     "pct_cheaper": 31,
+     "next_store": "FreshSt",
      "south": {
       "town": "Vancouver",
       "store": "Real Canadian Superstore",
       "name": "BREAKFAST BEEF AND PORK SAUSAGE",
       "per": 4.5,
       "price": "$4.50 /lb",
-      "pct": 54
+      "pct": 34
      }
     },
     {
@@ -602,13 +676,13 @@
      "stores": [
       {
        "store": "Independent",
-       "name": "FRESH COHO SALMON FILLETS",
-       "price": "$12.00 lb",
-       "per": 12.0,
+       "name": "PC\u00ae SALMON WELLINGTON, 725 G",
+       "price": "$19.00",
+       "per": 11.89,
        "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342369/1789776703/extra_large.jpg"
+       "until": "Oct 8",
+       "reg": 15.01,
+       "img": "https://f.wishabi.net/page_items/435655938/1790380365/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -636,13 +710,13 @@
      "stores": [
       {
        "store": "Independent",
-       "name": "PC\u00ae FREE FROM\u00ae LEAN GROUND LAMB, 454 G",
-       "price": "$16.50",
-       "per": 16.49,
+       "name": "NEW ZEALAND BONE-IN LAMB LEG",
+       "price": "$7.00 lb",
+       "per": 7.0,
        "sale": true,
-       "until": "Oct 1",
+       "until": "Oct 8",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342356/1789776693/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/435655944/1790380368/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -661,16 +735,8 @@
       "per": 17.99,
       "name": "Canadian Ground Lamb"
      },
-     "pct_cheaper": 8,
-     "next_store": "FreshSt",
-     "south": {
-      "town": "Squamish",
-      "store": "Walmart",
-      "name": "Australian Thomas Farms short cut lamb leg",
-      "per": 5.97,
-      "price": "$5.97 lb",
-      "pct": 64
-     }
+     "pct_cheaper": 61,
+     "next_store": "FreshSt"
     }
    ]
   },
@@ -793,13 +859,13 @@
       },
       {
        "store": "Nesters",
-       "name": "Lactantia Butter Sticks",
-       "price": "$7.99 ea",
-       "per": 1.76,
+       "name": "Western Family Salted Butter",
+       "price": "$5.49 ea",
+       "per": 1.21,
        "sale": true,
-       "until": "Oct 1",
+       "until": "Oct 8",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/434308455/1789760438/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/435614548/1790396753/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -818,7 +884,7 @@
       "per": 1.97,
       "name": "Dairyland - Creamery Butter - Salted 454g"
      },
-     "pct_cheaper": 37,
+     "pct_cheaper": 9,
      "next_store": "Nesters"
     },
     {
@@ -827,23 +893,23 @@
      "stores": [
       {
        "store": "Nesters",
-       "name": "Armstrong Cheese Slices",
+       "name": "Cracker Barrel Cheese",
        "price": "$8.99 ea",
-       "per": 1.8,
+       "per": 1.5,
        "sale": true,
-       "until": "Oct 1",
+       "until": "Oct 8",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/434308452/1789760435/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/435614549/1790396754/extra_large.jpg"
       },
       {
        "store": "Independent",
-       "name": "PC\u00ae SHREDDED CHEESE, 250-320 G OR BLACK DIAMOND\u2122 CHEESE BARS OR SHREDDED CHEESE,",
-       "price": "$6.50",
-       "per": 2.03,
+       "name": "PC\u00ae SHREDDED CHEESE 250-320 G OR BLACK DIAMOND CHEESE BARS OR SHREDDED CHEESE 30",
+       "price": "$4.99",
+       "per": 1.56,
        "sale": true,
-       "until": "Oct 1",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342146/1789776702/extra_large.jpg"
+       "until": "Oct 8",
+       "reg": 2.03,
+       "img": "https://f.wishabi.net/page_items/435934965/1790701377/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -872,7 +938,7 @@
       "per": 8.66,
       "name": "Mt Lehman Cheese Co - Duchess Goat Cheese with CHILI ONI 150"
      },
-     "pct_cheaper": 11,
+     "pct_cheaper": 4,
      "next_store": "Independent",
      "south": {
       "town": "Squamish",
@@ -880,7 +946,7 @@
       "name": "Black Diamond cheese slices",
       "per": 0.85,
       "price": "$3.47",
-      "pct": 53
+      "pct": 43
      }
     },
     {
@@ -889,13 +955,13 @@
      "stores": [
       {
        "store": "Independent",
-       "name": "I\u00d6GO CREAMY, 0% OR LACTOSE-FREE YOGURT, 16 X 100 G",
-       "price": "$7.50",
-       "per": 0.47,
+       "name": "I\u00d6GO YOGURT, 16X100 G OR OIKOS GREEK YOGURT, 650-750 G",
+       "price": "$6.50",
+       "per": 0.41,
        "sale": true,
-       "until": "Oct 1",
+       "until": "Oct 8",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/434342259/1789776696/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/435934959/1790701370/extra_large.jpg"
       },
       {
        "store": "Nesters",
@@ -929,7 +995,7 @@
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005680034596_00.jpg?width=500"
       }
      ],
-     "pct_cheaper": 16,
+     "pct_cheaper": 27,
      "next_store": "Nesters"
     }
    ]
@@ -954,6 +1020,16 @@
       },
       {
        "store": "Independent",
+       "name": "PUREX BATHROOM TISSUE, 20-60 ROLLS OR SPONGETOWELS PAPER TOWELS, 6=12 ROLLS OR S",
+       "price": "Member Price** $14.99",
+       "per": null,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435934967/1790701380/extra_large.jpg"
+      },
+      {
+       "store": "Independent",
        "name": "PC\u00ae MAX\u2122 STRENGTH AND THICKNESS PAPER TOWELS, 3=6 ROLLS",
        "price": "$7.00",
        "per": null,
@@ -961,6 +1037,16 @@
        "until": "Oct 1",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/434342148/1789776704/extra_large.jpg"
+      },
+      {
+       "store": "Nesters",
+       "name": "Bounty Paper Towels",
+       "price": "$8.99 ea",
+       "per": null,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435614766/1790396767/extra_large.jpg"
       },
       {
        "store": "Nesters",
@@ -973,14 +1059,14 @@
        "img": "https://f.wishabi.net/page_items/434308568/1789760437/extra_large.jpg"
       },
       {
-       "store": "Shoppers",
-       "name": "NO NAME DOUBLE ROLL PAPER TOWELS (6 Roll), ALCAN ALUMINUM FOIL (50') or PC HEAVY",
-       "price": "$5.49 each",
+       "store": "Independent",
+       "name": "BOUNTY PAPER TOWEL, select-a -size, 2=4 roll",
+       "price": "$8.00",
        "per": null,
        "sale": true,
-       "until": "Oct 2",
+       "until": "Oct 8",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/434336058/1789786183/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/435655807/1790380379/extra_large.jpg"
       }
      ]
     },
@@ -1000,6 +1086,16 @@
       },
       {
        "store": "Nesters",
+       "name": "Western Family Bathroom Tissue",
+       "price": "$6.99 ea",
+       "per": null,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435614765/1790396766/extra_large.jpg"
+      },
+      {
+       "store": "Nesters",
        "name": "Caboo Bamboo Bathroom Tissue",
        "price": "$8.99 ea",
        "per": null,
@@ -1007,6 +1103,16 @@
        "until": "Oct 1",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/434308567/1789760436/extra_large.jpg"
+      },
+      {
+       "store": "Independent",
+       "name": "PUREX BATHROOM TISSUE, 20-60 ROLLS OR SPONGETOWELS PAPER TOWELS, 6=12 ROLLS OR S",
+       "price": "Member Price** $14.99",
+       "per": null,
+       "sale": true,
+       "until": "Oct 8",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435934967/1790701380/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1027,28 +1133,6 @@
        "until": "Oct 2",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/434335774/1789786191/extra_large.jpg"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Purex Bathroom Tissue - 3 Ply - Ultra Triple Rolls 8pk",
-       "price": "$8.99",
-       "was": "$14.99",
-       "per": null,
-       "sale": true,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006132848598_00.jpg?width=500"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Purex Bathroom Tissue - 2 Ply - Ultra Luxe Triple Rolls 8pk",
-       "price": "$8.99",
-       "was": "$14.99",
-       "per": null,
-       "sale": true,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006132849351_00.jpg?width=500"
       }
      ]
     }
@@ -1194,21 +1278,30 @@
   "standings": [
    {
     "store": "Independent",
-    "points": 38,
-    "wins": 7,
-    "big_wins": 5,
-    "real_sales": 7,
+    "points": 53,
+    "wins": 9,
+    "big_wins": 8,
+    "real_sales": 10,
     "fake_sales": 0,
-    "avg_margin": 37
+    "avg_margin": 40
    },
    {
     "store": "Nesters",
-    "points": 19,
+    "points": 21,
     "wins": 4,
-    "big_wins": 2,
-    "real_sales": 6,
-    "fake_sales": 1,
-    "avg_margin": 22
+    "big_wins": 0,
+    "real_sales": 9,
+    "fake_sales": 0,
+    "avg_margin": 8
+   },
+   {
+    "store": "FreshSt",
+    "points": 6,
+    "wins": 1,
+    "big_wins": 0,
+    "real_sales": 3,
+    "fake_sales": 0,
+    "avg_margin": 1
    },
    {
     "store": "Creekside",
@@ -1218,15 +1311,6 @@
     "real_sales": 1,
     "fake_sales": 0,
     "avg_margin": 33
-   },
-   {
-    "store": "FreshSt",
-    "points": 3,
-    "wins": 0,
-    "big_wins": 0,
-    "real_sales": 3,
-    "fake_sales": 0,
-    "avg_margin": null
    },
    {
     "store": "Shoppers",
@@ -1241,22 +1325,22 @@
   "season": [
    {
     "store": "Independent",
-    "points": 38,
+    "points": 53,
     "weeks_won": 0
    },
    {
     "store": "Nesters",
-    "points": 19,
+    "points": 21,
+    "weeks_won": 0
+   },
+   {
+    "store": "FreshSt",
+    "points": 6,
     "weeks_won": 0
    },
    {
     "store": "Creekside",
     "points": 6,
-    "weeks_won": 0
-   },
-   {
-    "store": "FreshSt",
-    "points": 3,
     "weeks_won": 0
    },
    {
@@ -1269,42 +1353,33 @@
   "awards": {
    "worth_the_drive": {
     "store": "Independent",
-    "avg_margin": 37,
-    "wins": 7
-   },
-   "fake_sale": {
-    "store": "Nesters",
-    "item": "Chicken wings",
-    "name": "Split Chicken Wings",
-    "per": 7.99,
-    "everyday": 7.99,
-    "unit": "/lb",
-    "pct_over": 0
+    "avg_margin": 40,
+    "wins": 9
    },
    "deepest": {
     "store": "Independent",
-    "item": "Butter",
-    "name": "GAY LEA BUTTER, 454 G",
-    "per": 1.1,
-    "reg": 1.96,
-    "unit": "/100g",
-    "pct_off": 44
+    "item": "Pork chops",
+    "name": "PORK LOIN COMBINATION CHOPS",
+    "per": 3.0,
+    "reg": 6.0,
+    "unit": "/lb",
+    "pct_off": 50
    },
    "whistler_tax": [
     {
-     "store": "Independent",
-     "pct": 22,
+     "store": "Nesters",
+     "pct": 47,
      "items": 9
     },
     {
-     "store": "Nesters",
-     "pct": 15,
-     "items": 7
+     "store": "FreshSt",
+     "pct": 43,
+     "items": 5
     },
     {
-     "store": "FreshSt",
-     "pct": 5,
-     "items": 5
+     "store": "Independent",
+     "pct": 17,
+     "items": 13
     }
    ]
   }
