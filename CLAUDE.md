@@ -12,7 +12,7 @@ Next.js on **Cloudflare Pages** (`wrangler.toml`, next-on-pages). `git push orig
 ## Pushup Challenge (LIVE, real participants with logged data)
 Never wipe, clear, or destructively modify the Google Sheet. Rules: `.claude/rules/pushup-live-data.md`; context: `pushup/docs/current-status.md`, `pushup/docs/decisions.md` (read both first).
 - Source `pushup/pushup-challenge.html` → copy to `public/pushup/index.html` before every commit.
-- Apps Script source `pushup/google-apps-script.js`. The clasp project lives at `pushup/apps-script/` (gitignored; the old `/tmp/pushup-apps-script/` copy is gone). If `pushup/apps-script/.clasp.json` is missing, `clasp clone <scriptId>` there first (`clasp list` shows the id). `cp pushup/google-apps-script.js pushup/apps-script/Code.gs && cd pushup/apps-script && clasp push && clasp deploy -i AKfycbzWO2I7Ldrsau8q5Pc8P45PDvex065s1MpP6T__W76wviu-wDhFc10UX5Zb9alc2DVrRg`.
+- Apps Script source `pushup/google-apps-script.js`. The clasp project belongs at `pushup/apps-script/` (gitignored; the old `/tmp/pushup-apps-script/` copy is gone) but is **not present locally** as of 2026-09-29: `mkdir -p pushup/apps-script && cd pushup/apps-script && clasp clone <scriptId>` first (`clasp list` shows the id). `cp pushup/google-apps-script.js pushup/apps-script/Code.gs && cd pushup/apps-script && clasp push && clasp deploy -i AKfycbzWO2I7Ldrsau8q5Pc8P45PDvex065s1MpP6T__W76wviu-wDhFc10UX5Zb9alc2DVrRg`.
 - Verify after deploy in Chrome: `document.body.innerHTML.includes('<unique string from new code>')` with a fresh bust param.
 
 ## BC Wildfire Tracker (`public/wildfire/`)
