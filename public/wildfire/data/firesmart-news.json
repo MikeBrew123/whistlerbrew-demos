@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T16:00:34.883Z",
+  "updated_at": "2026-10-01T22:00:36.854Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -8,6 +8,13 @@
         "link": "https://www.cbc.ca/news/canada/british-columbia/syilx-baskets-returned-okanagan-lost-wildfires-bc-9.7363613?cmp=rss",
         "description": "A B.C. woman who read an Okanagan Indian Band elder's story of losing treasured items in the Bradley Creek wildfire gifted him four woven baskets, believed to be of Syilx origin, from her home.",
         "pubDate": "Wed, 30 Sep 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Orange Shirt Society kiosk opens in Kamloops, after years of companies selling unaffiliated merchandise",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/orange-shirt-day-kiosk-kamloops-9.7363536?cmp=rss",
+        "description": "After years of unaffiliated companies profiting off of Orange Shirt Day, the founder of the Orange Shirt Society has opened her own kiosk to sell official merchandise bearing the society's legal trademark to the term \"Every Child Matters.\"",
+        "pubDate": "Wed, 30 Sep 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
