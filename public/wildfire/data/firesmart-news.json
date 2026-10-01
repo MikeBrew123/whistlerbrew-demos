@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T04:00:34.973Z",
+  "updated_at": "2026-10-01T10:00:33.816Z",
   "zones": {
     "coastal": [
       {
@@ -12,29 +12,14 @@
     ],
     "kamloops": [
       {
-        "title": "Woven baskets gifted to Okanagan elder, replacing those lost to wildfire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/syilx-baskets-returned-okanagan-lost-wildfires-bc-9.7363613?cmp=rss",
-        "description": "A B.C. woman who read an Okanagan Indian Band elder's story of losing treasured items in the Bradley Creek wildfire gifted him four woven baskets, believed to be of Syilx origin, from her home.",
-        "pubDate": "Wed, 30 Sep 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "'It's a disgrace': Naramata residents demand answers after termination of fire chief",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/naramata-fire-chief-petition-firing-termination-9.7361780?cmp=rss",
-        "description": "Naramata, B.C., residents have launched a petition calling on the Regional District of Okanagan-Similkameen to change the culture and improve the dynamics with local fire services, following the abrupt firing of fire chief Dennis Smith in July.",
-        "pubDate": "Tue, 29 Sep 2026 09:00:00 EDT",
+        "title": "2 elders from Tsawwassen First Nation killed in crash at Truth and Reconciliation Day event",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/livestory/tsawwassen-first-nation-truth-and-reconciliation-event-critical-incident-sept-30-2026-9.7364199?cmp=rss",
+        "description": "",
+        "pubDate": "Wed, 30 Sep 2026 14:24:16 EDT",
         "source": "CBC BC"
       }
     ],
-    "prince-george": [
-      {
-        "title": "Boat collision at Woodfibre LNG site near Squamish was due to safety gaps, TSB finds",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/boat-crash-2024-squamish-report-9.7363087?cmp=rss",
-        "description": "Canada's Transportation Safety Board has found a series of gaps leading to a crash between a tugboat and a workboat in 2024, sinking one of the vessels in the waters near Squamish, B.C.",
-        "pubDate": "Tue, 29 Sep 2026 16:42:31 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
