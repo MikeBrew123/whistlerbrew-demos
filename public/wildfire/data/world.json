@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T16:01:18.706Z",
+  "updated_at": "2026-10-02T22:01:18.962Z",
   "fires": [
     {
       "country": "Belgium",
@@ -201,22 +201,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 1,
-      "world": 0
-    },
-    "items_out": {
-      "canada": 1,
-      "world_fires": 26
-    },
-    "deduped": 0,
-    "rerouted": 0,
-    "notes": [
-      "All 26 existing world fires preserved as Active status",
-      "One new Canadian wildfire added: Mount Jack (Vancouver Island)",
-      "No duplicate articles detected across sources",
-      "All images preserved in output",
-      "No fires marked for removal (none contained >60 days ago)"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Mount Jack wildfire burning out of control on southern Vancouver Island\",\n      \"url\": \"https://globalnews.ca/news/12068592/mount-jack-wildfire-sooke"
   }
 }
