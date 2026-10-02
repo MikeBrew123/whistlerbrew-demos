@@ -1,20 +1,27 @@
 {
-  "updated_at": "2026-10-02T10:00:34.966Z",
+  "updated_at": "2026-10-02T16:00:37.675Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "Woven baskets gifted to Okanagan elder, replacing those lost to wildfire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/syilx-baskets-returned-okanagan-lost-wildfires-bc-9.7363613?cmp=rss",
-        "description": "A B.C. woman who read an Okanagan Indian Band elder's story of losing treasured items in the Bradley Creek wildfire gifted him four woven baskets, believed to be of Syilx origin, from her home.",
-        "pubDate": "Wed, 30 Sep 2026 10:00:00 EDT",
+        "title": "Okanagan grape growers say crop insurance model failing amid wildfire smoke taint",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-wine-smoke-taint-wildfire-insurance-9.7366152?cmp=rss",
+        "description": "Consecutive crop losses driven by climate change are exposing gaps in B.C.’s production insurance program, growers say.",
+        "pubDate": "Fri, 02 Oct 2026 10:00:00 EDT",
         "source": "CBC BC"
       },
       {
-        "title": "Orange Shirt Society kiosk opens in Kamloops, after years of companies selling unaffiliated merchandise",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/orange-shirt-day-kiosk-kamloops-9.7363536?cmp=rss",
-        "description": "After years of unaffiliated companies profiting off of Orange Shirt Day, the founder of the Orange Shirt Society has opened her own kiosk to sell official merchandise bearing the society's legal trademark to the term \"Every Child Matters.\"",
-        "pubDate": "Wed, 30 Sep 2026 09:00:00 EDT",
+        "title": "Why are B.C. firefighters still using wildfire data from the 1990s?",
+        "link": "https://www.cbc.ca/news/canada/bc-wildfire-data-1990s-9.7361848?cmp=rss",
+        "description": "Prolonged drought in B.C.'s Southern Interior has led to explosive wildfires that current modelling software struggles to predict. It's partly because the data that informs these computer models was collected at least 30 years ago, when extreme fire behaviour, driven by events like prolonged drought — a feature of climate change — was less common.",
+        "pubDate": "Fri, 02 Oct 2026 04:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Penticton, B.C., breaks ground on new fire hall headquarters",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/new-fire-hall-groundbreaking-penticton-9.7366425?cmp=rss",
+        "description": "Members of Penticton city council, the Penticton Fire Department, and the Penticton Indian Band were on hand to mark the occasion of the groundbreaking. Construction on the $38-million project is expected to be completed in two years.",
+        "pubDate": "Fri, 02 Oct 2026 07:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -30,14 +37,6 @@
         "source": "CBC BC"
       }
     ],
-    "all": [
-      {
-        "title": "Why are B.C. firefighters still using wildfire data from the 1990s?",
-        "link": "https://www.cbc.ca/news/canada/bc-wildfire-data-1990s-9.7361848?cmp=rss",
-        "description": "Prolonged drought in B.C.'s Southern Interior has led to explosive wildfires that current modelling software struggles to predict. It's partly because the data that informs these computer models was collected at least 30 years ago, when extreme fire behaviour, driven by events like prolonged drought — a feature of climate change — was less common.",
-        "pubDate": "Fri, 02 Oct 2026 04:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ]
+    "all": []
   }
 }
