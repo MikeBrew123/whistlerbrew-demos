@@ -1,20 +1,21 @@
 {
-  "updated_at": "2026-10-02T16:00:37.675Z",
+  "updated_at": "2026-10-02T22:00:34.535Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "BC NDP promises to cap grocery profits while Conservatives unveil wildfire plan",
+        "link": "https://globalnews.ca/news/12086006/bc-ndp-promises-grocery-cap-profits-bc-conservatives-wildfire-plan/",
+        "description": "BC Conservative leader Lorne Doerkson visited a family whose Summerland home was destroyed by the Bald Range wildfire in the summer.",
+        "pubDate": "Fri, 02 Oct 2026 21:59:18 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/10/CP176963322.jpg?quality=65&#038;strip=all"
+      },
       {
         "title": "Okanagan grape growers say crop insurance model failing amid wildfire smoke taint",
         "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-wine-smoke-taint-wildfire-insurance-9.7366152?cmp=rss",
         "description": "Consecutive crop losses driven by climate change are exposing gaps in B.C.’s production insurance program, growers say.",
         "pubDate": "Fri, 02 Oct 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Why are B.C. firefighters still using wildfire data from the 1990s?",
-        "link": "https://www.cbc.ca/news/canada/bc-wildfire-data-1990s-9.7361848?cmp=rss",
-        "description": "Prolonged drought in B.C.'s Southern Interior has led to explosive wildfires that current modelling software struggles to predict. It's partly because the data that informs these computer models was collected at least 30 years ago, when extreme fire behaviour, driven by events like prolonged drought — a feature of climate change — was less common.",
-        "pubDate": "Fri, 02 Oct 2026 04:00:00 EDT",
         "source": "CBC BC"
       },
       {
@@ -28,15 +29,15 @@
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
+    "southeast": [],
+    "all": [
       {
-        "title": "Cranbrook mayoral candidates differ on experience, public safety and growth ahead of vote",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/cranbrook-mayoral-candidate-platforms-9.7348979?cmp=rss",
-        "description": "Public safety, economic growth and experience are emerging as key points of contrast between the two candidates running to become Cranbrook's next mayor.",
-        "pubDate": "Thu, 01 Oct 2026 09:00:00 EDT",
+        "title": "Why are B.C. firefighters still using wildfire data from the 1990s?",
+        "link": "https://www.cbc.ca/news/canada/bc-wildfire-data-1990s-9.7361848?cmp=rss",
+        "description": "Prolonged drought in B.C.'s Southern Interior has led to explosive wildfires that current modelling software struggles to predict. It's partly because the data that informs these computer models was collected at least 30 years ago, when extreme fire behaviour, driven by events like prolonged drought — a feature of climate change — was less common.",
+        "pubDate": "Fri, 02 Oct 2026 04:00:00 EDT",
         "source": "CBC BC"
       }
-    ],
-    "all": []
+    ]
   }
 }
