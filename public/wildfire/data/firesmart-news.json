@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T04:00:34.321Z",
+  "updated_at": "2026-10-02T10:00:34.966Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -21,7 +21,23 @@
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [],
-    "all": []
+    "southeast": [
+      {
+        "title": "Cranbrook mayoral candidates differ on experience, public safety and growth ahead of vote",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/cranbrook-mayoral-candidate-platforms-9.7348979?cmp=rss",
+        "description": "Public safety, economic growth and experience are emerging as key points of contrast between the two candidates running to become Cranbrook's next mayor.",
+        "pubDate": "Thu, 01 Oct 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "all": [
+      {
+        "title": "Why are B.C. firefighters still using wildfire data from the 1990s?",
+        "link": "https://www.cbc.ca/news/canada/bc-wildfire-data-1990s-9.7361848?cmp=rss",
+        "description": "Prolonged drought in B.C.'s Southern Interior has led to explosive wildfires that current modelling software struggles to predict. It's partly because the data that informs these computer models was collected at least 30 years ago, when extreme fire behaviour, driven by events like prolonged drought — a feature of climate change — was less common.",
+        "pubDate": "Fri, 02 Oct 2026 04:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ]
   }
 }
