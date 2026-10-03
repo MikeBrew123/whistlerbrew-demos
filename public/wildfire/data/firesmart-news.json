@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T10:00:34.824Z",
+  "updated_at": "2026-10-03T16:00:34.396Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -12,25 +12,32 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/10/CP176963322.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Kelowna's Taylor Ruck adds to Canada's medal haul at Swimming World Cup",
-        "link": "https://www.cbc.ca/sports/olympics/summer/aquatics/swimming/ruck-knox-swimming-world-cup-recap-oct2-baku-9.7367628?cmp=rss",
-        "description": "Canadians Taylor Ruck and Finlay Knox added to the country's medal haul Friday at the World Aquatics Swimming World Cup in Baku, Azerbaijan.",
-        "pubDate": "Fri, 02 Oct 2026 17:00:45 EDT",
+        "title": "Alleged kidnapping victim tells police they were taken from Lower Mainland to Kelowna",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/kelowna-kidnapping-lower-mainland-9.7367636?cmp=rss",
+        "description": "Police say they believe the victim was targeted and being held \"to exert pressure on an associate\" and say the victim is not believed to be involved in criminal activity.",
+        "pubDate": "Fri, 02 Oct 2026 17:24:49 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
-    "northwest": [],
-    "southeast": [],
-    "all": [
+    "northwest": [
       {
-        "title": "Why are B.C. firefighters still using wildfire data from the 1990s?",
-        "link": "https://www.cbc.ca/news/canada/bc-wildfire-data-1990s-9.7361848?cmp=rss",
-        "description": "Prolonged drought in B.C.'s Southern Interior has led to explosive wildfires that current modelling software struggles to predict. It's partly because the data that informs these computer models was collected at least 30 years ago, when extreme fire behaviour, driven by events like prolonged drought — a feature of climate change — was less common.",
-        "pubDate": "Fri, 02 Oct 2026 04:00:00 EDT",
+        "title": "New totem pole raised in Hagwilget, B.C., for 1st time in 85 years",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/hagwilget-totem-pole-raising-9.7366530?cmp=rss",
+        "description": "A new unity pole has been raised in Hagwilget, B.C., for the first time in 85 years. Four carvers worked on it for two years, while dozens of people helped hoist it into place on the National Day for Truth and Reconciliation.",
+        "pubDate": "Fri, 02 Oct 2026 11:50:08 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "LNG Canada to use Chinese steel on $33B expansion project in Kitimat, B.C.",
+        "link": "https://www.cbc.ca/news/politics/lng-expansion-chinese-steel-9.7366745?cmp=rss",
+        "description": "LNG Canada says because Canadian suppliers are unable to make what it needs, it once again plans to use Chinese steel in its $33-billion Phase 2 expansion project in Kitimat, B.C. The expansion of its pipeline network, however, has set a 70 per cent target for Canadian steel.",
+        "pubDate": "Fri, 02 Oct 2026 10:51:57 EDT",
         "source": "CBC BC"
       }
-    ]
+    ],
+    "southeast": [],
+    "all": []
   }
 }
