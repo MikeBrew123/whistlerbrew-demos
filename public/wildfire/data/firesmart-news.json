@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-10-02T22:00:34.535Z",
+  "updated_at": "2026-10-03T04:00:34.068Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [
+    "coastal": [
       {
         "title": "BC NDP promises to cap grocery profits while Conservatives unveil wildfire plan",
         "link": "https://globalnews.ca/news/12086006/bc-ndp-promises-grocery-cap-profits-bc-conservatives-wildfire-plan/",
@@ -10,19 +9,14 @@
         "pubDate": "Fri, 02 Oct 2026 21:59:18 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/10/CP176963322.jpg?quality=65&#038;strip=all"
-      },
+      }
+    ],
+    "kamloops": [
       {
         "title": "Okanagan grape growers say crop insurance model failing amid wildfire smoke taint",
         "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-wine-smoke-taint-wildfire-insurance-9.7366152?cmp=rss",
         "description": "Consecutive crop losses driven by climate change are exposing gaps in B.C.’s production insurance program, growers say.",
         "pubDate": "Fri, 02 Oct 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Penticton, B.C., breaks ground on new fire hall headquarters",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/new-fire-hall-groundbreaking-penticton-9.7366425?cmp=rss",
-        "description": "Members of Penticton city council, the Penticton Fire Department, and the Penticton Indian Band were on hand to mark the occasion of the groundbreaking. Construction on the $38-million project is expected to be completed in two years.",
-        "pubDate": "Fri, 02 Oct 2026 07:00:00 EDT",
         "source": "CBC BC"
       }
     ],
