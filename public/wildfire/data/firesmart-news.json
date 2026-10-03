@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T16:00:34.396Z",
+  "updated_at": "2026-10-03T22:00:33.962Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -12,32 +12,25 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/10/CP176963322.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Alleged kidnapping victim tells police they were taken from Lower Mainland to Kelowna",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/kelowna-kidnapping-lower-mainland-9.7367636?cmp=rss",
-        "description": "Police say they believe the victim was targeted and being held \"to exert pressure on an associate\" and say the victim is not believed to be involved in criminal activity.",
-        "pubDate": "Fri, 02 Oct 2026 17:24:49 EDT",
+        "title": "Okanagan grape growers say crop insurance model failing amid wildfire smoke taint",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-wine-smoke-taint-wildfire-insurance-9.7366152?cmp=rss",
+        "description": "Consecutive crop losses driven by climate change are exposing gaps in B.C.’s production insurance program, growers say.",
+        "pubDate": "Fri, 02 Oct 2026 10:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
-    "northwest": [
+    "northwest": [],
+    "southeast": [
       {
-        "title": "New totem pole raised in Hagwilget, B.C., for 1st time in 85 years",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/hagwilget-totem-pole-raising-9.7366530?cmp=rss",
-        "description": "A new unity pole has been raised in Hagwilget, B.C., for the first time in 85 years. Four carvers worked on it for two years, while dozens of people helped hoist it into place on the National Day for Truth and Reconciliation.",
-        "pubDate": "Fri, 02 Oct 2026 11:50:08 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "LNG Canada to use Chinese steel on $33B expansion project in Kitimat, B.C.",
-        "link": "https://www.cbc.ca/news/politics/lng-expansion-chinese-steel-9.7366745?cmp=rss",
-        "description": "LNG Canada says because Canadian suppliers are unable to make what it needs, it once again plans to use Chinese steel in its $33-billion Phase 2 expansion project in Kitimat, B.C. The expansion of its pipeline network, however, has set a 70 per cent target for Canadian steel.",
-        "pubDate": "Fri, 02 Oct 2026 10:51:57 EDT",
+        "title": "Human remains found inside sunken vehicle in Kootenay River",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/kootenay-river-human-remains-george-davis-missing-2004-9.7367532?cmp=rss",
+        "description": "Police say they believe the remains are those of George Davis, a man who disappeared from the Creston area in July 2004.",
+        "pubDate": "Fri, 02 Oct 2026 18:12:06 EDT",
         "source": "CBC BC"
       }
     ],
-    "southeast": [],
     "all": []
   }
 }
