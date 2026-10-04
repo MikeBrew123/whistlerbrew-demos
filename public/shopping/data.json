@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T07:05-07:00",
+ "updated": "2026-10-04T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -1034,16 +1034,6 @@
       },
       {
        "store": "Shoppers",
-       "name": "PC MAX or ROYALE TIGER PAPER TOWELS",
-       "price": "$6.99 each",
-       "per": null,
-       "sale": true,
-       "until": "Oct 5",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435195310/1790240466/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
        "name": "GLAD CLING WRAP (30m), NO NAME PAPER TOWELS (2 Roll), ALUMINUM FOIL (25') OR PLA",
        "price": "2/ $3.00 or 1.99 each",
        "per": null,
@@ -1051,6 +1041,16 @@
        "until": "Oct 9",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/435196108/1790240485/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
+       "name": "PC MAX or ROYALE TIGER PAPER TOWELS",
+       "price": "$6.99 each",
+       "per": null,
+       "sale": true,
+       "until": "Oct 5",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435195310/1790240466/extra_large.jpg"
       }
      ]
     },
