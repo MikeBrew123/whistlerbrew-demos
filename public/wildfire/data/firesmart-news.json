@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T10:00:34.220Z",
+  "updated_at": "2026-10-04T16:00:34.165Z",
   "zones": {
     "coastal": [],
     "kamloops": [
@@ -12,10 +12,17 @@
         "image": "https://globalnews.ca/wp-content/uploads/2026/10/CP176963322.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Okanagan grape growers say crop insurance model failing amid wildfire smoke taint",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-wine-smoke-taint-wildfire-insurance-9.7366152?cmp=rss",
-        "description": "Consecutive crop losses driven by climate change are exposing gaps in B.C.’s production insurance program, growers say.",
-        "pubDate": "Fri, 02 Oct 2026 10:00:00 EDT",
+        "title": "Kamloops councillor awarded 'precedent-setting' costs, damages in mayor's defamation suit",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/kamloops-councillor-mayor-defamation-costs-damages-9.7367925?cmp=rss",
+        "description": "A Kamloops city councillor says she's won a \"precedent-setting\" award for damages, closing out a bitter legal dispute with the city's mayor.",
+        "pubDate": "Fri, 02 Oct 2026 20:40:04 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Former Penticton city councillor found guilty of sexual offences against youth for 2nd time",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/former-penticton-city-councillor-found-guilty-of-sexual-offences-against-youth-for-2nd-time-9.7367865?cmp=rss",
+        "description": "An Ontario Superior Court judge has found James Miller, a former Penticton, B.C., city councillor, guilty of historic sexual offences involving youth. Miller was found guilty of sexual assault, sexual interference and invitation to sexual touching.",
+        "pubDate": "Fri, 02 Oct 2026 20:11:52 EDT",
         "source": "CBC BC"
       }
     ],
@@ -31,6 +38,14 @@
         "source": "CBC BC"
       }
     ],
-    "all": []
+    "all": [
+      {
+        "title": "Canada&#8217;s largest fire detector acquires US wildfire business despite barriers",
+        "link": "https://wildfiretoday.com/canadas-largest-fire-detector-acquires-us-wildfire-business-despite-barriers/",
+        "description": "Wildfire detection company SenseNet, Canada&#8217;s largest wildfire detection operator, recently announced the acquisition of N5 Sensors&#8216; wildfire-related assets, a semiconductor producer in the United States, despite the company&#8217;s recent failure in a federal audit and the two nations being in the middle of a trade war. N5 builds environmental and chemical sensor platforms for air [&#",
+        "pubDate": "Wed, 23 Sep 2026 08:14:49 +0000",
+        "source": "Wildfire Today"
+      }
+    ]
   }
 }
