@@ -1,36 +1,36 @@
 {
-  "updated_at": "2026-10-03T22:00:33.962Z",
+  "updated_at": "2026-10-04T04:00:34.202Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "BC NDP promises to cap grocery profits while Conservatives unveil wildfire plan",
-        "link": "https://globalnews.ca/news/12086006/bc-ndp-promises-grocery-cap-profits-bc-conservatives-wildfire-plan/",
-        "description": "BC Conservative leader Lorne Doerkson visited a family whose Summerland home was destroyed by the Bald Range wildfire in the summer.",
-        "pubDate": "Fri, 02 Oct 2026 21:59:18 +0000",
+        "title": "Vancouver e-scooter riders overwhelmingly don&#8217;t wear helmets, police find",
+        "link": "https://globalnews.ca/news/12086152/vancouver-e-scooter-riders-helmets-police/",
+        "description": "Vancouver police were busy in September, cracking down on e-scooter riders who were not following the rules. Police said that since Sept. 4, there were 1,226 tickets handed out.",
+        "pubDate": "Fri, 02 Oct 2026 23:31:46 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/10/CP176963322.jpg?quality=65&#038;strip=all"
+        "image": "https://globalnews.ca/wp-content/uploads/2023/09/escooters.jpg?quality=65&#038;strip=all"
       },
       {
-        "title": "Okanagan grape growers say crop insurance model failing amid wildfire smoke taint",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/okanagan-wine-smoke-taint-wildfire-insurance-9.7366152?cmp=rss",
-        "description": "Consecutive crop losses driven by climate change are exposing gaps in B.C.’s production insurance program, growers say.",
-        "pubDate": "Fri, 02 Oct 2026 10:00:00 EDT",
+        "title": "Tofino-area landfill bans neoprene wetsuits",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/tofino-area-landfill-bans-neoprene-wetsuits-9.7366315?cmp=rss",
+        "description": "Advocates for the ban say that wetsuits are made of neoprene, a synthetic plastic material that doesn't break down. Wetsuits will now instead be recycled and upcycled by the Surfrider Foundation Canada, who have kept 10,000 pounds' worth of wetsuits out of B.C. landfills in the last year.",
+        "pubDate": "Fri, 02 Oct 2026 08:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
-    "southeast": [
+    "southeast": [],
+    "all": [
       {
-        "title": "Human remains found inside sunken vehicle in Kootenay River",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/kootenay-river-human-remains-george-davis-missing-2004-9.7367532?cmp=rss",
-        "description": "Police say they believe the remains are those of George Davis, a man who disappeared from the Creston area in July 2004.",
-        "pubDate": "Fri, 02 Oct 2026 18:12:06 EDT",
+        "title": "New totem pole raised in Hagwilget, B.C., for 1st time in 85 years",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/hagwilget-totem-pole-raising-9.7366530?cmp=rss",
+        "description": "A new unity pole has been raised in Hagwilget, B.C., for the first time in 85 years. Four carvers worked on it for two years, while dozens of people helped hoist it into place on the National Day for Truth and Reconciliation.",
+        "pubDate": "Fri, 02 Oct 2026 11:50:08 EDT",
         "source": "CBC BC"
       }
-    ],
-    "all": []
+    ]
   }
 }
