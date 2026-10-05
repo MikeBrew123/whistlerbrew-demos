@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T10:01:27.445Z",
+  "updated_at": "2026-10-05T04:01:28.100Z",
   "fires": [
     {
       "country": "Belgium",
@@ -202,6 +202,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"BC NDP and Conservative leaders campaign in the Okanagan\",\n      \"url\": \"https://globalnews.ca/news/12086166/bc-ndp-conservative-leaders-campaign-oka"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Mount Jack wildfire burning out of control on southern Vancouver Island\",\n      \"url\": \"https://globalnews.ca/news/12068592/mount-jack-wildfire-sooke"
   }
 }
