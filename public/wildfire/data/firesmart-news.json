@@ -1,8 +1,17 @@
 {
-  "updated_at": "2026-10-05T16:00:33.824Z",
+  "updated_at": "2026-10-05T22:00:34.468Z",
   "zones": {
     "coastal": [],
     "kamloops": [
+      {
+        "title": "David Eby’s re-election bid pivots from Trump talk to domestic populist promises",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/eby-election-week-two-analysis-mcelroy-9.7369040?cmp=rss",
+        "description": "Over three days of events in 10 electoral districts across the Kootenays, Okanagan and Vancouver Island, David Eby developed an unambiguous campaign pitch, fleshed out beyond his original justifications for holding a snap election.",
+        "pubDate": "Mon, 05 Oct 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
       {
         "title": "Meet the 2 candidates running for office near Summerland after losing home, business to wildfire",
         "link": "https://www.cbc.ca/news/canada/british-columbia/bc-municipal-election-area-f-candidates-wildfire-summerland-9.7367703?cmp=rss",
@@ -11,35 +20,9 @@
         "source": "CBC BC"
       }
     ],
-    "prince-george": [
-      {
-        "title": "Who's running for mayor in Dawson Creek? Councillor and businessman both seeking position",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/whos-running-for-mayor-in-dawson-creek-9.7368967?cmp=rss",
-        "description": "The race for mayor in Dawson Creek is underway. Incumbent Coun. Kyle MacDonald and local businessman Dwaine Dilworth are both seeking to hold the position.",
-        "pubDate": "Mon, 05 Oct 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
     "cariboo": [],
-    "northwest": [
-      {
-        "title": "A swordfish was found on Haida Gwaii. Will more follow?",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/swordfish-captain-quinn-haida-gwaii-9.7368033?cmp=rss",
-        "description": "A University of British Columbia researcher says the finding is unusual but no longer unexpected due to warming waters worldwide, including in Canada.",
-        "pubDate": "Sun, 04 Oct 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "southeast": [
-      {
-        "title": "Missing for 22 years: Frank Davis found in Kootenay River",
-        "link": "https://globalnews.ca/news/12087479/missing-22-years-frank-davis-found-kootenay-river/",
-        "description": "For 22 years, the disappearance of Frank Davis remained an unanswered mystery for his family. Frank was 40 when he went missing from Creston, B.C.",
-        "pubDate": "Mon, 05 Oct 2026 03:15:51 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/10/unnamed-4.png"
-      }
-    ],
+    "northwest": [],
+    "southeast": [],
     "all": [
       {
         "title": "Advancing community wildfire adaptation",
