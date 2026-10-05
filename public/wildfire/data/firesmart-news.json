@@ -1,18 +1,25 @@
 {
-  "updated_at": "2026-10-05T10:00:34.060Z",
+  "updated_at": "2026-10-05T16:00:33.824Z",
   "zones": {
     "coastal": [],
     "kamloops": [
       {
-        "title": "BC NDP promises to cap grocery profits while Conservatives unveil wildfire plan",
-        "link": "https://globalnews.ca/news/12086006/bc-ndp-promises-grocery-cap-profits-bc-conservatives-wildfire-plan/",
-        "description": "BC Conservative leader Lorne Doerkson visited a family whose Summerland home was destroyed by the Bald Range wildfire in the summer.",
-        "pubDate": "Fri, 02 Oct 2026 21:59:18 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/10/CP176963322.jpg?quality=65&#038;strip=all"
+        "title": "Meet the 2 candidates running for office near Summerland after losing home, business to wildfire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-municipal-election-area-f-candidates-wildfire-summerland-9.7367703?cmp=rss",
+        "description": "Weeks after a catastrophic wildfire levelled roughly 110 structures in the hills bordering Summerland, B.C., two candidates are standing in the ashes of their own properties asking displaced neighbours for their votes.",
+        "pubDate": "Mon, 05 Oct 2026 09:00:00 EDT",
+        "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Who's running for mayor in Dawson Creek? Councillor and businessman both seeking position",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/whos-running-for-mayor-in-dawson-creek-9.7368967?cmp=rss",
+        "description": "The race for mayor in Dawson Creek is underway. Incumbent Coun. Kyle MacDonald and local businessman Dwaine Dilworth are both seeking to hold the position.",
+        "pubDate": "Mon, 05 Oct 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [
       {
@@ -25,11 +32,12 @@
     ],
     "southeast": [
       {
-        "title": "Ktunaxa father who lost son to overdose paddles across Canada-U.S. border for recovery",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/father-paddles-across-border-for-recovery-9.7365564?cmp=rss",
-        "description": "A Ktunaxa father near Creston is using a cross-border canoe journey to honour his son, who died of an overdose, and raise awareness about recovery from addiction.",
-        "pubDate": "Sat, 03 Oct 2026 08:00:00 EDT",
-        "source": "CBC BC"
+        "title": "Missing for 22 years: Frank Davis found in Kootenay River",
+        "link": "https://globalnews.ca/news/12087479/missing-22-years-frank-davis-found-kootenay-river/",
+        "description": "For 22 years, the disappearance of Frank Davis remained an unanswered mystery for his family. Frank was 40 when he went missing from Creston, B.C.",
+        "pubDate": "Mon, 05 Oct 2026 03:15:51 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/10/unnamed-4.png"
       }
     ],
     "all": [
