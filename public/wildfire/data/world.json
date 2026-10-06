@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T10:01:27.630Z",
+  "updated_at": "2026-10-06T10:01:18.851Z",
   "fires": [
     {
       "country": "Belgium",
@@ -201,7 +201,22 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"BC NDP and Conservative leaders campaign in the Okanagan\",\n      \"url\": \"https://globalnews.ca/news/12086166/bc-ndp-conservative-leaders-campaign-oka"
+    "items_in": {
+      "canada": 1,
+      "world": 0
+    },
+    "items_out": {
+      "canada": 1,
+      "world_fires": 27
+    },
+    "deduped": 0,
+    "rerouted": 0,
+    "notes": [
+      "Mount Jack wildfire added to Canada news",
+      "All 27 existing_fires preserved as Active status",
+      "No duplicates detected across Canada and world sources",
+      "All images preserved in output",
+      "Brazil Rio Olympic Velodrome fire retained despite being structural fire (marked Active in existing data)"
+    ]
   }
 }
