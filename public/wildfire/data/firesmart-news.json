@@ -1,22 +1,44 @@
 {
-  "updated_at": "2026-10-05T22:00:34.468Z",
+  "updated_at": "2026-10-06T04:00:34.245Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [
+    "coastal": [
       {
-        "title": "David Eby’s re-election bid pivots from Trump talk to domestic populist promises",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/eby-election-week-two-analysis-mcelroy-9.7369040?cmp=rss",
-        "description": "Over three days of events in 10 electoral districts across the Kootenays, Okanagan and Vancouver Island, David Eby developed an unambiguous campaign pitch, fleshed out beyond his original justifications for holding a snap election.",
-        "pubDate": "Mon, 05 Oct 2026 08:00:00 EDT",
+        "title": "Bestselling author Steven Galloway's wife testifies on Day 1 of defamation trial",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/steven-galloway-defamation-trial-begins-9.7370421?cmp=rss",
+        "description": "Former UBC professor and bestselling author Steven Galloway claims he was defamed by false accusations of sexual assault made by multiple people over a decade ago.",
+        "pubDate": "Mon, 05 Oct 2026 21:59:52 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "VIFF film Send the Rain explores Okinawan Canadian experience, set against the backdrop of wildfires",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/send-the-rain-viff-okinawan-canadian-9.7370197?cmp=rss",
+        "description": "As wildfire closes in on her family’s farm, a young Okinawan Canadian journeys from the big city to rural B.C., to try to get her Oba — or grandmother — to evacuate. Erika, portrayed by Erika Prevost, wants her Oba with her in the city — but Oba believes Erika needs the farm.",
+        "pubDate": "Mon, 05 Oct 2026 18:45:45 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Abbotsford encampment residents prepare to leave site with history of violence and fires",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/whatcom-park-and-ride-encampment-closing-9.7363560?cmp=rss",
+        "description": "Some residents of the Whatcom Road park and ride encampment in Abbotsford say they’re preparing to leave after the Ministry of Transportation handed out a letter with an Oct. 6 move-out deadline.",
+        "pubDate": "Mon, 05 Oct 2026 11:00:00 EDT",
         "source": "CBC BC"
       }
     ],
-    "prince-george": [
+    "kamloops": [
       {
         "title": "Meet the 2 candidates running for office near Summerland after losing home, business to wildfire",
         "link": "https://www.cbc.ca/news/canada/british-columbia/bc-municipal-election-area-f-candidates-wildfire-summerland-9.7367703?cmp=rss",
         "description": "Weeks after a catastrophic wildfire levelled roughly 110 structures in the hills bordering Summerland, B.C., two candidates are standing in the ashes of their own properties asking displaced neighbours for their votes.",
         "pubDate": "Mon, 05 Oct 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "Who's running for mayor in Dawson Creek? Councillor and businessman both seeking position",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/whos-running-for-mayor-in-dawson-creek-9.7368967?cmp=rss",
+        "description": "The race for mayor in Dawson Creek is underway. Incumbent Coun. Kyle MacDonald and local businessman Dwaine Dilworth are both seeking to hold the position.",
+        "pubDate": "Mon, 05 Oct 2026 07:00:00 EDT",
         "source": "CBC BC"
       }
     ],
