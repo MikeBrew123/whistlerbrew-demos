@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T10:00:39.558Z",
+  "updated_at": "2026-10-06T16:00:33.710Z",
   "zones": {
     "coastal": [
       {
@@ -20,6 +20,13 @@
       }
     ],
     "prince-george": [
+      {
+        "title": "Prince George, B.C., to launch review into accessibility of cremation services",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-cremation-service-review-9.7370468?cmp=rss",
+        "description": "The City of Prince George will launch a review into the accessibility of cremation services in the north-central B.C. community, after reports of families travelling to neighbouring communities to access services.",
+        "pubDate": "Tue, 06 Oct 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Who's running for mayor in Dawson Creek? Councillor and businessman both seeking position",
         "link": "https://www.cbc.ca/news/canada/british-columbia/whos-running-for-mayor-in-dawson-creek-9.7368967?cmp=rss",
