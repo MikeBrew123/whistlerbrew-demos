@@ -1,26 +1,12 @@
 {
-  "updated_at": "2026-10-06T04:00:34.245Z",
+  "updated_at": "2026-10-06T10:00:39.558Z",
   "zones": {
     "coastal": [
-      {
-        "title": "Bestselling author Steven Galloway's wife testifies on Day 1 of defamation trial",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/steven-galloway-defamation-trial-begins-9.7370421?cmp=rss",
-        "description": "Former UBC professor and bestselling author Steven Galloway claims he was defamed by false accusations of sexual assault made by multiple people over a decade ago.",
-        "pubDate": "Mon, 05 Oct 2026 21:59:52 EDT",
-        "source": "CBC BC"
-      },
       {
         "title": "VIFF film Send the Rain explores Okinawan Canadian experience, set against the backdrop of wildfires",
         "link": "https://www.cbc.ca/news/canada/british-columbia/send-the-rain-viff-okinawan-canadian-9.7370197?cmp=rss",
         "description": "As wildfire closes in on her family’s farm, a young Okinawan Canadian journeys from the big city to rural B.C., to try to get her Oba — or grandmother — to evacuate. Erika, portrayed by Erika Prevost, wants her Oba with her in the city — but Oba believes Erika needs the farm.",
         "pubDate": "Mon, 05 Oct 2026 18:45:45 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Abbotsford encampment residents prepare to leave site with history of violence and fires",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/whatcom-park-and-ride-encampment-closing-9.7363560?cmp=rss",
-        "description": "Some residents of the Whatcom Road park and ride encampment in Abbotsford say they’re preparing to leave after the Ministry of Transportation handed out a letter with an Oct. 6 move-out deadline.",
-        "pubDate": "Mon, 05 Oct 2026 11:00:00 EDT",
         "source": "CBC BC"
       }
     ],
@@ -46,6 +32,13 @@
     "northwest": [],
     "southeast": [],
     "all": [
+      {
+        "title": "Sorting and sharing in the world of new technology",
+        "link": "https://wildfiretoday.com/sorting-and-sharing-in-the-world-of-new-technology/",
+        "description": "Wildfire agencies are regularly approached by companies spruiking the next best thing in innovation for wildfire prevention, preparedness, detection, response, recovery or fuels management. The decision to adopt, or to not adopt, any particular innovation is a difficult one that straddles the competing priorities of budget limitations, risk appetite and technological wisdom. How do you [&#8230;]",
+        "pubDate": "Tue, 06 Oct 2026 05:28:40 +0000",
+        "source": "Wildfire Today"
+      },
       {
         "title": "Advancing community wildfire adaptation",
         "link": "https://wildfiretoday.com/advancing-community-wildfire-adaptation/",
@@ -79,13 +72,6 @@
         "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
         "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
         "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Track US states&#8217; new wildfire laws for utilities with this interactive map",
-        "link": "https://wildfiretoday.com/track-us-states-new-wildfire-laws-for-utilities-with-this-interactive-map/",
-        "description": "Hawaii&#8217;s Lahaina Fire killed over 100 people and destroyed thousands of buildings. California&#8217;s Eaton Fire triggered the evacuation of over 100,000 residents. Texas&#8217; Smokehouse Creek Fire burned over one million acres. These are just some of the many fires that were ignited by electrical utility infrastructure in the US. The fallout from these disasters has [&#8230;]",
-        "pubDate": "Thu, 17 Sep 2026 07:15:36 +0000",
         "source": "Wildfire Today"
       }
     ]
