@@ -1,62 +1,27 @@
 {
-  "updated_at": "2026-10-07T04:00:34.543Z",
+  "updated_at": "2026-10-07T10:00:34.445Z",
   "zones": {
-    "coastal": [
+    "coastal": [],
+    "kamloops": [],
+    "prince-george": [
+      {
+        "title": "Prince George, B.C., to launch review into accessibility of cremation services",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-cremation-service-review-9.7370468?cmp=rss",
+        "description": "The City of Prince George will launch a review into the accessibility of cremation services in the north-central B.C. community, after reports of families travelling to neighbouring communities to access services.",
+        "pubDate": "Tue, 06 Oct 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "cariboo": [],
+    "northwest": [],
+    "southeast": [],
+    "all": [
       {
         "title": "VIFF film Send the Rain explores Okinawan Canadian experience, set against the backdrop of wildfires",
         "link": "https://www.cbc.ca/news/canada/british-columbia/send-the-rain-viff-okinawan-canadian-9.7370197?cmp=rss",
         "description": "As wildfire closes in on her family’s farm, a young Okinawan Canadian journeys from the big city to rural B.C., to try to get her Oba — or grandmother — to evacuate. Erika, portrayed by Erika Prevost, wants her Oba with her in the city — but Oba believes Erika needs the farm.",
         "pubDate": "Mon, 05 Oct 2026 18:45:45 EDT",
         "source": "CBC BC"
-      }
-    ],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [],
-    "northwest": [],
-    "southeast": [],
-    "all": [
-      {
-        "title": "Sorting and sharing in the world of new technology",
-        "link": "https://wildfiretoday.com/sorting-and-sharing-in-the-world-of-new-technology/",
-        "description": "Wildfire agencies are regularly approached by companies spruiking the next best thing in innovation for wildfire prevention, preparedness, detection, response, recovery or fuels management. The decision to adopt, or to not adopt, any particular innovation is a difficult one that straddles the competing priorities of budget limitations, risk appetite and technological wisdom. How do you [&#8230;]",
-        "pubDate": "Tue, 06 Oct 2026 05:28:40 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Advancing community wildfire adaptation",
-        "link": "https://wildfiretoday.com/advancing-community-wildfire-adaptation/",
-        "description": "Community wildfire adaption activities may not work as well as hoped because they downplay the importance of local contexts and local input, argues Catrin Edgeley from Utah State University, in an editorial for the International Journal of Wildland Fire. Science, policy and practice surrounding how human communities navigate wildfire adaptation continue to evolve across changing [&#8230;]",
-        "pubDate": "Mon, 05 Oct 2026 03:09:48 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Winning ideas to transform wildfire detection and response",
-        "link": "https://wildfiretoday.com/winning-ideas-to-transform-wildfire-detection-and-response/",
-        "description": "Teams from across the world have competed to build transformative technology for wildfire detection and response. The winners were given hundreds of thousands of dollars to continue their development. The teams were awarded the funds at the XPRIZE Wildfire Competition Awardee Ceremony at the New York City Fire Museum on Sept. 23. Nine of the [&#8230;]",
-        "pubDate": "Sun, 27 Sep 2026 22:52:30 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Using a bot to help burn more fuel, more often",
-        "link": "https://wildfiretoday.com/using-a-bot-to-help-burn-more-fuel-more-often/",
-        "description": "Burn Bot is large, tank-like vehicle that wants to solve the most troubling of fuel mitigation questions – how can you manage more area, across all sorts of terrain, in all sorts of weather, at all times of the year, without overtaxing or endangering local crews, and without smothering communities with smoke? Mechanical fuel mitigation [&#8230;]",
-        "pubDate": "Thu, 24 Sep 2026 06:51:33 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Canada&#8217;s largest fire detector acquires US wildfire business despite barriers",
-        "link": "https://wildfiretoday.com/canadas-largest-fire-detector-acquires-us-wildfire-business-despite-barriers/",
-        "description": "Wildfire detection company SenseNet, Canada&#8217;s largest wildfire detection operator, recently announced the acquisition of N5 Sensors&#8216; wildfire-related assets, a semiconductor producer in the United States, despite the company&#8217;s recent failure in a federal audit and the two nations being in the middle of a trade war. N5 builds environmental and chemical sensor platforms for air [&#",
-        "pubDate": "Wed, 23 Sep 2026 08:14:49 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "How drones can better integrate with total incident response",
-        "link": "https://wildfiretoday.com/how-drones-can-better-integrate-with-total-incident-response/",
-        "description": "By Usama Mehboob Wildfire drone operations have moved beyond the question of whether an unmanned aircraft can find heat or provide an overhead view. The harder problem is fitting another aircraft and another stream of data into an incident that may already involve helicopters, air tankers, lead planes, ground crews and changing airspace restrictions. For [&#8230;]",
-        "pubDate": "Sun, 20 Sep 2026 22:25:55 +0000",
-        "source": "Wildfire Today"
       }
     ]
   }
