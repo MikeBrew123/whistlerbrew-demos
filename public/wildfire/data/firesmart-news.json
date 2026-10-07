@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-10-06T22:00:34.079Z",
+  "updated_at": "2026-10-07T04:00:34.543Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
-    "prince-george": [
+    "coastal": [
       {
-        "title": "Prince George, B.C., to launch review into accessibility of cremation services",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-cremation-service-review-9.7370468?cmp=rss",
-        "description": "The City of Prince George will launch a review into the accessibility of cremation services in the north-central B.C. community, after reports of families travelling to neighbouring communities to access services.",
-        "pubDate": "Tue, 06 Oct 2026 07:00:00 EDT",
+        "title": "VIFF film Send the Rain explores Okinawan Canadian experience, set against the backdrop of wildfires",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/send-the-rain-viff-okinawan-canadian-9.7370197?cmp=rss",
+        "description": "As wildfire closes in on her family’s farm, a young Okinawan Canadian journeys from the big city to rural B.C., to try to get her Oba — or grandmother — to evacuate. Erika, portrayed by Erika Prevost, wants her Oba with her in the city — but Oba believes Erika needs the farm.",
+        "pubDate": "Mon, 05 Oct 2026 18:45:45 EDT",
         "source": "CBC BC"
       }
     ],
+    "kamloops": [],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
