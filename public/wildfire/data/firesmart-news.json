@@ -1,26 +1,10 @@
 {
-  "updated_at": "2026-10-08T16:00:34.126Z",
+  "updated_at": "2026-10-08T22:00:34.057Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "For Salmon Arm voters, recreation facilities are a key municipal election issue",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-arm-recreation-facility-municipal-election-9.7372105?cmp=rss",
-        "description": "Parents, coaches, athletes and active members of Salmon Arm's community say they will head to the polls with the issue of recreation facilities at the top of their minds.",
-        "pubDate": "Wed, 07 Oct 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Massive gold mine casts shadow over municipal election in small Cariboo town",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wells-gold-mine-municipal-election-9.7367238?cmp=rss",
-        "description": "Two candidates are campaigning for mayor, as approval of the Cariboo Gold Project has created disruption in the Gold-Rush-era town of Wells, B.C. — known for its vibrant artistic community and the gateway for Barkerville Historic Park and the Bowron Lakes.",
-        "pubDate": "Thu, 08 Oct 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": []
