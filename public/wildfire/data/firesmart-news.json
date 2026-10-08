@@ -1,48 +1,28 @@
 {
-  "updated_at": "2026-10-08T10:00:34.092Z",
+  "updated_at": "2026-10-08T16:00:34.126Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
+    "kamloops": [
+      {
+        "title": "For Salmon Arm voters, recreation facilities are a key municipal election issue",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-arm-recreation-facility-municipal-election-9.7372105?cmp=rss",
+        "description": "Parents, coaches, athletes and active members of Salmon Arm's community say they will head to the polls with the issue of recreation facilities at the top of their minds.",
+        "pubDate": "Wed, 07 Oct 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "prince-george": [],
-    "cariboo": [],
+    "cariboo": [
+      {
+        "title": "Massive gold mine casts shadow over municipal election in small Cariboo town",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wells-gold-mine-municipal-election-9.7367238?cmp=rss",
+        "description": "Two candidates are campaigning for mayor, as approval of the Cariboo Gold Project has created disruption in the Gold-Rush-era town of Wells, B.C. — known for its vibrant artistic community and the gateway for Barkerville Historic Park and the Bowron Lakes.",
+        "pubDate": "Thu, 08 Oct 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Sorting and sharing in the world of new technology",
-        "link": "https://wildfiretoday.com/sorting-and-sharing-in-the-world-of-new-technology/",
-        "description": "Wildfire agencies are regularly approached by companies spruiking the next best thing in innovation for wildfire prevention, preparedness, detection, response, recovery or fuels management. The decision to adopt, or to not adopt, any particular innovation is a difficult one that straddles the competing priorities of budget limitations, risk appetite and technological wisdom. How do you [&#8230;]",
-        "pubDate": "Tue, 06 Oct 2026 05:28:40 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Advancing community wildfire adaptation",
-        "link": "https://wildfiretoday.com/advancing-community-wildfire-adaptation/",
-        "description": "Community wildfire adaption activities may not work as well as hoped because they downplay the importance of local contexts and local input, argues Catrin Edgeley from Utah State University, in an editorial for the International Journal of Wildland Fire. Science, policy and practice surrounding how human communities navigate wildfire adaptation continue to evolve across changing [&#8230;]",
-        "pubDate": "Mon, 05 Oct 2026 03:09:48 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Winning ideas to transform wildfire detection and response",
-        "link": "https://wildfiretoday.com/winning-ideas-to-transform-wildfire-detection-and-response/",
-        "description": "Teams from across the world have competed to build transformative technology for wildfire detection and response. The winners were given hundreds of thousands of dollars to continue their development. The teams were awarded the funds at the XPRIZE Wildfire Competition Awardee Ceremony at the New York City Fire Museum on Sept. 23. Nine of the [&#8230;]",
-        "pubDate": "Sun, 27 Sep 2026 22:52:30 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Using a bot to help burn more fuel, more often",
-        "link": "https://wildfiretoday.com/using-a-bot-to-help-burn-more-fuel-more-often/",
-        "description": "Burn Bot is large, tank-like vehicle that wants to solve the most troubling of fuel mitigation questions – how can you manage more area, across all sorts of terrain, in all sorts of weather, at all times of the year, without overtaxing or endangering local crews, and without smothering communities with smoke? Mechanical fuel mitigation [&#8230;]",
-        "pubDate": "Thu, 24 Sep 2026 06:51:33 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Canada&#8217;s largest fire detector acquires US wildfire business despite barriers",
-        "link": "https://wildfiretoday.com/canadas-largest-fire-detector-acquires-us-wildfire-business-despite-barriers/",
-        "description": "Wildfire detection company SenseNet, Canada&#8217;s largest wildfire detection operator, recently announced the acquisition of N5 Sensors&#8216; wildfire-related assets, a semiconductor producer in the United States, despite the company&#8217;s recent failure in a federal audit and the two nations being in the middle of a trade war. N5 builds environmental and chemical sensor platforms for air [&#",
-        "pubDate": "Wed, 23 Sep 2026 08:14:49 +0000",
-        "source": "Wildfire Today"
-      }
-    ]
+    "all": []
   }
 }
