@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T22:01:23.135Z",
+  "updated_at": "2026-10-08T10:01:24.287Z",
   "fires": [
     {
       "country": "Belgium",
@@ -171,11 +171,11 @@
     },
     {
       "country": "Indonesia",
-      "name": "Borneo Wildfires",
+      "name": "Indonesian Wildfires (Borneo & Regional)",
       "status": "Active",
-      "summary": "Wildfires in Indonesia have destroyed part of the natural habitat of hundreds of orangutans, risking the survival of the species.",
-      "link": "https://www.bbc.co.uk/news/videos/c74emdn49kdo?at_medium=RSS&at_campaign=rss",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e8b6/live/7c268450-a5c7-11f1-aed2-8d6da8d75094.jpg"
+      "summary": "Indonesia experiencing one of its worst wildfire seasons. Wildfires in Borneo have destroyed part of the natural habitat of hundreds of orangutans, risking the species' survival. Toxic haze causing Singapore's landmarks to disappear, impacting countries around South East Asia.",
+      "link": "https://www.bbc.co.uk/news/videos/cmp8g7gel3xlo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9997/live/310516d0-c22d-11f1-bc2e-018d645d8d21.jpg"
     },
     {
       "country": "Brazil",
@@ -203,20 +203,19 @@
   "last_report": {
     "items_in": {
       "canada": 0,
-      "world": 0
+      "world": 1
     },
     "items_out": {
       "canada": 0,
       "world_fires": 27
     },
-    "deduped": 0,
-    "rerouted": 0,
+    "deduped": 1,
+    "rerouted": 1,
     "notes": [
-      "No new Canada news articles provided",
-      "No new world fire articles provided",
-      "All 27 existing fires retained with Active status",
-      "No deduplication needed as no new sources provided",
-      "All images preserved from existing_fires"
+      "Merged Indonesia Borneo fire with Singapore haze article - both from same regional wildfire event with toxic haze impact",
+      "Moved Indonesia/Singapore article from world_news to world_fires as consolidated entry",
+      "Preserved all Active fires from existing_fires list",
+      "Retained images where present across all entries"
     ]
   }
 }
