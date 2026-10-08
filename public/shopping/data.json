@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T07:05-07:00",
+ "updated": "2026-10-08T07:06-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -96,16 +96,6 @@
      "unit": "/lb",
      "stores": [
       {
-       "store": "Nesters",
-       "name": "Extra Lean Ground Beef",
-       "price": "$8.99 lb",
-       "per": 8.99,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614611/1790396763/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
        "name": "Family Pack Fresh Lean Ground Beef - Ground In-Store Same Day As Delivery",
        "price": "$23.01 avg/ea",
@@ -121,16 +111,6 @@
       "store": "FreshSt",
       "per": 9.49,
       "name": "Family Pack Fresh Lean Ground Beef - Ground In-Store Same Da"
-     },
-     "pct_cheaper": 5,
-     "next_store": "FreshSt",
-     "south": {
-      "town": "Squamish",
-      "store": "No Frills",
-      "name": "LEAN GROUND BEEF",
-      "per": 7.49,
-      "price": "$7.49 LB",
-      "pct": 17
      }
     },
     {
@@ -320,30 +300,12 @@
       "name": "Chicken Wings - Split Family Pack"
      },
      "pct_cheaper": 9,
-     "next_store": "Shoppers",
-     "south": {
-      "town": "Vancouver",
-      "store": "Real Canadian Superstore",
-      "name": "CHICKEN WINGS",
-      "per": 4.99,
-      "price": "$4.99 LB",
-      "pct": 44
-     }
+     "next_store": "Shoppers"
     },
     {
      "item": "Chicken thighs",
      "unit": "/lb",
      "stores": [
-      {
-       "store": "Nesters",
-       "name": "Chicken Thighs",
-       "price": "$8.99 lb",
-       "per": 8.99,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614613/1790396765/extra_large.jpg"
-      },
       {
        "store": "FreshSt",
        "name": "Fresh Local Ground Chicken Thighs",
@@ -360,16 +322,6 @@
       "store": "FreshSt",
       "per": 12.49,
       "name": "Fresh Local Ground Chicken Thighs"
-     },
-     "pct_cheaper": 28,
-     "next_store": "FreshSt",
-     "south": {
-      "town": "Vancouver",
-      "store": "Real Canadian Superstore",
-      "name": "CHICKEN THIGHS",
-      "per": 7.5,
-      "price": "$7.50 LB",
-      "pct": 17
      }
     },
     {
@@ -382,24 +334,14 @@
      "unit": "/lb",
      "stores": [
       {
-       "store": "Nesters",
-       "name": "Whole Frying Chicken",
-       "price": "$3.99 lb",
-       "per": 3.99,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614605/1790396757/extra_large.jpg"
-      },
-      {
        "store": "Independent",
        "name": "PC\u00ae WHOLE CHICKEN, UP TO 1.7 KG",
        "price": "$15.00",
        "per": 4.0,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 15",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435655946/1790380369/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436392343/1790981816/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -418,8 +360,8 @@
       "per": 6.49,
       "name": "Fresh Local Whole Grade A Frying Chicken"
      },
-     "pct_cheaper": 0,
-     "next_store": "Independent"
+     "pct_cheaper": 38,
+     "next_store": "FreshSt"
     },
     {
      "item": "Chicken breast",
@@ -465,11 +407,11 @@
      "next_store": "Nesters",
      "south": {
       "town": "Squamish",
-      "store": "Save-On-Foods",
-      "name": "Western Family Chicken Breast",
-      "per": 4.99,
-      "price": "Works out to $4.99 lb",
-      "pct": 38
+      "store": "Walmart",
+      "name": "Maple Leaf Prime raised without antibiotics boneless skinles",
+      "per": 6.79,
+      "price": "$6.79 lb",
+      "pct": 15
      }
     },
     {
@@ -492,40 +434,12 @@
       "store": "FreshSt",
       "per": 8.99,
       "name": "Canadian Fresh Side Pork Belly"
-     },
-     "south": {
-      "town": "Vancouver",
-      "store": "Real Canadian Superstore",
-      "name": "PORK BELLY PORTIONS",
-      "per": 5.48,
-      "price": "$5.48 LB",
-      "pct": 39
      }
     },
     {
      "item": "Pork chops",
      "unit": "/lb",
      "stores": [
-      {
-       "store": "Independent",
-       "name": "PORK LOIN COMBINATION CHOPS",
-       "price": "$3.00 lb",
-       "per": 3.0,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": 6.0,
-       "img": "https://f.wishabi.net/page_items/435934979/1790701394/extra_large.jpg"
-      },
-      {
-       "store": "Nesters",
-       "name": "Pork Chops",
-       "price": "$6.49 lb",
-       "per": 6.49,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614612/1790396764/extra_large.jpg"
-      },
       {
        "store": "FreshSt",
        "name": "Family Pack Pork Loin Rib Chops",
@@ -542,9 +456,7 @@
       "store": "FreshSt",
       "per": 7.99,
       "name": "Family Pack Pork Loin Rib Chops"
-     },
-     "pct_cheaper": 54,
-     "next_store": "Nesters"
+     }
     },
     {
      "item": "Pork shoulder",
@@ -595,16 +507,6 @@
      "unit": "/lb",
      "stores": [
       {
-       "store": "Independent",
-       "name": "LEAN GROUND PORK, 450 G",
-       "price": "$5.00",
-       "per": 5.04,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435655950/1790380371/extra_large.jpg"
-      },
-      {
        "store": "Nesters",
        "name": "Lean Ground Pork",
        "price": "$5.49 lb",
@@ -631,35 +533,46 @@
       "per": 6.49,
       "name": "Canadian Fresh Lean Ground Pork"
      },
-     "pct_cheaper": 8,
-     "next_store": "Nesters",
+     "pct_cheaper": 15,
+     "next_store": "FreshSt",
      "south": {
       "town": "Vancouver",
       "store": "No Frills",
       "name": "GROUND CHICKEN, 454 G OR LEAN PORK, 670 G",
       "per": 4.0,
       "price": "$4.00",
-      "pct": 21
+      "pct": 27
      }
     },
     {
      "item": "Bacon",
      "unit": "/lb",
-     "stores": []
+     "stores": [
+      {
+       "store": "Shoppers",
+       "name": "NO NAME BACON (375g) or SLICED BOLOGNA (500g)",
+       "price": "$3.50 each SATURDAY, OCTOBER 10 & SUNDAY, OCTOBER 11 ONLY!",
+       "per": 4.23,
+       "sale": true,
+       "until": "Oct 12",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/436041480/1790796887/extra_large.jpg"
+      }
+     ]
     },
     {
      "item": "Sausages",
      "unit": "/lb",
      "stores": [
       {
-       "store": "Independent",
-       "name": "FREYBE PAPRIKA OR LYONER SAUSAGE, 1 kg",
-       "price": "$15.00",
-       "per": 6.8,
+       "store": "Shoppers",
+       "name": "PC CHICKEN (375g) or STREET CART PORK (500g) SAUSAGES",
+       "price": "$6.00 each",
+       "per": 7.26,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 17",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435655815/1790380361/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436042150/1790796918/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -673,14 +586,14 @@
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0089272600005_00.jpg?width=500"
       },
       {
-       "store": "Shoppers",
-       "name": "HARVEST DOUBLE SMOKED FARMER'S (500g), PC SMOKIES (1kg) SAUSAGES or FULLY-COOKED",
-       "price": "$12.99 each",
-       "per": 11.78,
+       "store": "Independent",
+       "name": "FREYBE DELI SERVICE CASE SAUSAGE",
+       "price": "$3.00 /100 g",
+       "per": 13.61,
        "sale": true,
-       "until": "Oct 9",
+       "until": "Oct 15",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435198720/1790240504/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436392373/1790981820/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -688,7 +601,7 @@
       "per": 9.85,
       "name": "Meatman's Sausages - English Breakfast 400g"
      },
-     "pct_cheaper": 31,
+     "pct_cheaper": 26,
      "next_store": "FreshSt",
      "south": {
       "town": "Vancouver",
@@ -705,13 +618,13 @@
      "stores": [
       {
        "store": "Independent",
-       "name": "PC\u00ae SALMON WELLINGTON, 725 G",
-       "price": "$19.00",
-       "per": 11.89,
+       "name": "FRESH ATLANTIC SALMON SKINLESS FILLETS",
+       "price": "$14.00 lb",
+       "per": 14.0,
        "sale": true,
-       "until": "Oct 8",
-       "reg": 15.01,
-       "img": "https://f.wishabi.net/page_items/435655938/1790380365/extra_large.jpg"
+       "until": "Oct 15",
+       "reg": 17.99,
+       "img": "https://f.wishabi.net/page_items/436392002/1790981812/extra_large.jpg"
       },
       {
        "store": "Nesters",
@@ -740,7 +653,7 @@
       "per": 28.53,
       "name": "Sockeye Salmon Fillets - Frozen"
      },
-     "pct_cheaper": 47,
+     "pct_cheaper": 38,
      "next_store": "Nesters",
      "south": {
       "town": "Squamish",
@@ -748,23 +661,13 @@
       "name": "Your Fresh Market\u2122 coho salmon side",
       "per": 7.88,
       "price": "$7.88 lb",
-      "pct": 34
+      "pct": 44
      }
     },
     {
      "item": "Lamb",
      "unit": "/lb",
      "stores": [
-      {
-       "store": "Independent",
-       "name": "NEW ZEALAND BONE-IN LAMB LEG",
-       "price": "$7.00 lb",
-       "per": 7.0,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435655944/1790380368/extra_large.jpg"
-      },
       {
        "store": "FreshSt",
        "name": "Canadian Ground Lamb",
@@ -775,6 +678,16 @@
        "until": "",
        "reg": null,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020082000000_00.jpg?width=500"
+      },
+      {
+       "store": "Independent",
+       "name": "NEW ZEALAND FRENCHED LAMB RACK",
+       "price": "$25.00 lb",
+       "per": 25.0,
+       "sale": true,
+       "until": "Oct 15",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/436392348/1790981819/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -782,8 +695,16 @@
       "per": 17.99,
       "name": "Canadian Ground Lamb"
      },
-     "pct_cheaper": 61,
-     "next_store": "FreshSt"
+     "pct_cheaper": 28,
+     "next_store": "Independent",
+     "south": {
+      "town": "Squamish",
+      "store": "Save-On-Foods",
+      "name": "Spring Lamb Leg of Lamb",
+      "per": 8.99,
+      "price": "$8.99 lb",
+      "pct": 50
+     }
     }
    ]
   },
@@ -874,13 +795,13 @@
      "stores": [
       {
        "store": "Shoppers",
-       "name": "PC FREE-RUN EGGS",
-       "price": "$5.50 each",
-       "per": 5.5,
+       "name": "GRADE \"A\" LARGE WHITE EGGS",
+       "price": "$3.79 each",
+       "per": 3.79,
        "sale": true,
-       "until": "Oct 9",
+       "until": "Oct 12",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435198401/1790240498/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436045637/1790796900/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -899,30 +820,22 @@
       "per": 5.59,
       "name": "Golden Valley - Brown Eggs - Large 12pk"
      },
-     "pct_cheaper": 2,
-     "next_store": "FreshSt",
-     "south": {
-      "town": "Squamish",
-      "store": "Walmart",
-      "name": "Large white eggs",
-      "per": 4.36,
-      "price": "$6.54",
-      "pct": 21
-     }
+     "pct_cheaper": 32,
+     "next_store": "FreshSt"
     },
     {
      "item": "Butter",
      "unit": "/100g",
      "stores": [
       {
-       "store": "Nesters",
-       "name": "Western Family Salted Butter",
-       "price": "$5.49 ea",
+       "store": "Shoppers",
+       "name": "NO NAME BUTTER",
+       "price": "$5.49 each SATURDAY OCTOBER 10 & SUNDAY, OCTOBER 11 ONLY!",
        "per": 1.21,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 12",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614548/1790396753/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436044426/1790796893/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -934,16 +847,6 @@
        "until": "",
        "reg": 1.97,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006870004505_00.jpg?width=500"
-      },
-      {
-       "store": "Independent",
-       "name": "LACTANTIA BUTTER STICKS, 454 g",
-       "price": "$7.00",
-       "per": 1.54,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435655799/1790380369/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -970,23 +873,23 @@
       },
       {
        "store": "Nesters",
-       "name": "Cracker Barrel Cheese",
+       "name": "Armstrong Cheese",
        "price": "$8.99 ea",
        "per": 1.5,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 15",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614549/1790396754/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436826471/1791437441/extra_large.jpg"
       },
       {
        "store": "Independent",
-       "name": "PC\u00ae SHREDDED CHEESE 250-320 G OR BLACK DIAMOND CHEESE BARS OR SHREDDED CHEESE 30",
+       "name": "PC\u00ae SHREDDED CHEESE, 250-320 G OR BLACK DIAMOND CHEESE BARS OR SHREDDED CHEESE, ",
        "price": "$4.99",
        "per": 1.56,
        "sale": true,
-       "until": "Oct 8",
-       "reg": 2.03,
-       "img": "https://f.wishabi.net/page_items/435934965/1790701377/extra_large.jpg"
+       "until": "Oct 15",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/436391997/1790981809/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -1013,16 +916,6 @@
      "unit": "/100g",
      "stores": [
       {
-       "store": "Independent",
-       "name": "I\u00d6GO YOGURT, 16X100 G OR OIKOS GREEK YOGURT, 650-750 G",
-       "price": "$6.50",
-       "per": 0.41,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435934959/1790701370/extra_large.jpg"
-      },
-      {
        "store": "Nesters",
        "name": "Activia Yogurt",
        "price": "$5.99 ea",
@@ -1031,6 +924,16 @@
        "until": "Oct 15",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/436389729/1790994313/extra_large.jpg"
+      },
+      {
+       "store": "Independent",
+       "name": "ACTIVIA YOGURT, 12X100 G OR I\u00d6GO YOGURT, 16X100 G",
+       "price": "$7.00",
+       "per": 0.58,
+       "sale": true,
+       "until": "Oct 15",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/436392051/1790981819/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1059,8 +962,16 @@
       "per": 1.0,
       "name": "Activia Probiotic Yogurt - Blueberry 2.9% m.f. 650g"
      },
-     "pct_cheaper": 18,
-     "next_store": "Nesters"
+     "pct_cheaper": 14,
+     "next_store": "Independent",
+     "south": {
+      "town": "Vancouver",
+      "store": "No Frills",
+      "name": "I\u00d6GO YOGURT, 16X100 G OR SIGGI'S SKYR YOGURT, 650/750 G",
+      "per": 0.41,
+      "price": "$6.50",
+      "pct": 18
+     }
     }
    ]
   },
@@ -1072,16 +983,6 @@
      "item": "Paper towel",
      "unit": null,
      "deals": [
-      {
-       "store": "Independent",
-       "name": "PUREX BATHROOM TISSUE, 20-60 ROLLS OR SPONGETOWELS PAPER TOWELS, 6=12 ROLLS OR S",
-       "price": "Member Price** $14.99",
-       "per": null,
-       "sale": true,
-       "until": "Oct 8",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/435934967/1790701380/extra_large.jpg"
-      },
       {
        "store": "Independent",
        "name": "ROYALE BATHROOM TISSUE 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS 3-6 ROLLS OR F",
@@ -1103,34 +1004,44 @@
        "img": "https://f.wishabi.net/page_items/436392057/1790981824/extra_large.jpg"
       },
       {
-       "store": "Nesters",
-       "name": "Bounty Paper Towels",
-       "price": "$8.99 ea",
+       "store": "Shoppers",
+       "name": "BOUNTY PAPER TOWELS 2 Roll - 3 Roll",
+       "price": "$6.99 each",
        "per": null,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 17",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614766/1790396767/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436040636/1790796903/extra_large.jpg"
       },
       {
-       "store": "Independent",
-       "name": "BOUNTY PAPER TOWEL, select-a -size, 2=4 roll",
-       "price": "$8.00",
+       "store": "Shoppers",
+       "name": "GLAD CLING WRAP (30m), NO NAME PAPER TOWELS (2 Roll), ALUMINUM FOIL (25') OR PLA",
+       "price": "2/ $3.00 or 1.99 each",
        "per": null,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 9",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435655807/1790380379/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/435196108/1790240485/extra_large.jpg"
       },
       {
-       "store": "Independent",
-       "name": "BOUNTY PAPER TOWEL, Select-a-size 6=12 ROLL",
-       "price": "$18.00",
+       "store": "Shoppers",
+       "name": "BOUNTY PAPER TOWELS (4 Roll), RESOLVE STAIN REMOVER (1.38kg) or PERSIL LAUNDRY D",
+       "price": "$12.99 each",
        "per": null,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 9",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435655792/1790380361/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/435197678/1790240502/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
+       "name": "BOUNTY PAPER TOWELS (1 Roll), CLOROX SPRAY (887mL - 946mL) or ZIPLOC STORAGE BAG",
+       "price": "$4.99 each",
+       "per": null,
+       "sale": true,
+       "until": "Oct 9",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/435199190/1790240512/extra_large.jpg"
       }
      ]
     },
@@ -1139,14 +1050,14 @@
      "unit": null,
      "deals": [
       {
-       "store": "Nesters",
-       "name": "Western Family Bathroom Tissue",
-       "price": "$6.99 ea",
+       "store": "Independent",
+       "name": "PUREX BATHROOM TISSUE 8=16 ROLLS OR SCOTTIES FACIAL TISSUE 6'S",
+       "price": "Member Price** $3.99",
        "per": null,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 15",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435614765/1790396766/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436392004/1790981814/extra_large.jpg"
       },
       {
        "store": "Nesters",
@@ -1160,16 +1071,6 @@
       },
       {
        "store": "Independent",
-       "name": "PUREX BATHROOM TISSUE 8=16 ROLLS OR SCOTTIES FACIAL TISSUE 6'S",
-       "price": "Member Price** $3.99",
-       "per": null,
-       "sale": true,
-       "until": "Oct 15",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/436392004/1790981814/extra_large.jpg"
-      },
-      {
-       "store": "Independent",
        "name": "ROYALE BATHROOM TISSUE 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS 3-6 ROLLS OR F",
        "price": "$10.00",
        "per": null,
@@ -1179,14 +1080,24 @@
        "img": "https://f.wishabi.net/page_items/436392113/1791301754/extra_large.jpg"
       },
       {
-       "store": "Independent",
-       "name": "PUREX BATHROOM TISSUE, 20-60 ROLLS OR SPONGETOWELS PAPER TOWELS, 6=12 ROLLS OR S",
-       "price": "Member Price** $14.99",
+       "store": "Shoppers",
+       "name": "CHARMIN BATHROOM TISSUE",
+       "price": "$6.99 each SATURDAY OCTOBER 10 & SUNDAY, OCTOBER 11 ONLY!",
        "per": null,
        "sale": true,
-       "until": "Oct 8",
+       "until": "Oct 12",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/435934967/1790701380/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436041470/1790796880/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
+       "name": "PC BATHROOM TISSUE 12 Rolls",
+       "price": "$7.99 each",
+       "per": null,
+       "sale": true,
+       "until": "Oct 17",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/436039337/1790796897/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -1212,76 +1123,76 @@
    ],
    "offers": [
     {
-     "title": "Earn up to 40x the points",
-     "detail": "Nesters Market: spend $60-$199 get 10x points, spend $200+ for more (up to 40x)",
+     "title": "Pay $3.99",
+     "detail": "Nesters Market: Russet Potatoes 10 lb, first 2",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
-     "title": "Pay $5.99",
-     "detail": "Nesters Market: Greenhouse mixed coloured peppers, 2 lb, first 1",
+     "title": "Pay $8.99",
+     "detail": "Nesters Market: Grimms Ukrainian Sausage Ring 300g, first 2",
      "store": "Nesters",
-     "ends": "Oct 7"
-    },
-    {
-     "title": "Pay $13.49",
-     "detail": "Nesters Market: Western Family Signature Italian Selection or European Italian Selection, 150 g, first 2",
-     "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
      "title": "Pay $11.99",
-     "detail": "Nesters Market: Western Family Signature Crab Dip, frozen, 350 g, first 1",
+     "detail": "Nesters Market: Western Family Crab Dip 350g, first 1",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
-     "title": "Pay $2.49",
-     "detail": "Nesters Market: Helmi's Stuffed Potatoes, 175 g, first 4",
+     "title": "Pay $9.00",
+     "detail": "Nesters Market: Western Family Sockeye Salmon Lox sliced 85g, first 1",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
-     "title": "Pay $4.49",
-     "detail": "Nesters Market: Western Family Orange Juice, 1.54 L, first 2",
+     "title": "2x points",
+     "detail": "Nesters Market: Earn one additional point on each $1 (bonus points)",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
-     "title": "Pay $3.49",
-     "detail": "Nesters Market: Casa Mendosa Tortillas, pack of 6, first 4",
+     "title": "Pay $5.99",
+     "detail": "Nesters Market: Ivory Body Bar Soap 10 x 90g, first 3",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
-     "title": "20% off",
-     "detail": "Nesters Market: Bubly sparkling water, 12x355 mL, first 1",
+     "title": "Pay $5.99",
+     "detail": "Nesters Market: Western Family Ricotta Cheese 500g, first 3",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
-     "title": "500 points",
-     "detail": "Nesters Market: buy 1 French's Mustard 325 mL",
+     "title": "Pay $11.99",
+     "detail": "Nesters Market: Pumpkin Cream Latte Cake 700g, first 4",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
+    },
+    {
+     "title": "15% off",
+     "detail": "Nesters Market: Mitchell's Soup Co soup mix 225g-400g, first 1",
+     "store": "Nesters",
+     "ends": "Oct 14"
+    },
+    {
+     "title": "600 points",
+     "detail": "Nesters Market: Buy 2 Kraft Dinner Original 200g, limit 2",
+     "store": "Nesters",
+     "ends": "Oct 14"
     },
     {
      "title": "650 points",
-     "detail": "Nesters Market: buy 1 D'Italiano bread 675 g, limit 1",
+     "detail": "Nesters Market: Buy 1 Starbucks Frappuccino 325-444mL, limit 1",
      "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     },
     {
-     "title": "35% off",
-     "detail": "Nesters Market: Western Family sirloin beef burger, 852 g, first 1",
+     "title": "40% off",
+     "detail": "Nesters Market: Campbell's Soup 12x284mL, first 1",
      "store": "Nesters",
-     "ends": "Oct 7"
-    },
-    {
-     "title": "2,000 points",
-     "detail": "Nesters Market: buy 1 Schneiders Smokies 900 g, limit 1",
-     "store": "Nesters",
-     "ends": "Oct 7"
+     "ends": "Oct 14"
     }
    ]
   },
@@ -1302,34 +1213,43 @@
  ],
  "nesters_locals_day": "2026-10-29",
  "scoreboard": {
-  "week_of": "2026-10-01",
+  "week_of": "2026-10-08",
   "standings": [
    {
     "store": "Independent",
-    "points": 49,
-    "wins": 8,
-    "big_wins": 6,
-    "real_sales": 13,
-    "fake_sales": 0,
-    "avg_margin": 39
+    "points": 22,
+    "wins": 4,
+    "big_wins": 4,
+    "real_sales": 8,
+    "fake_sales": 2,
+    "avg_margin": 42
+   },
+   {
+    "store": "Shoppers",
+    "points": 22,
+    "wins": 4,
+    "big_wins": 3,
+    "real_sales": 7,
+    "fake_sales": 1,
+    "avg_margin": 29
    },
    {
     "store": "Nesters",
-    "points": 28,
-    "wins": 5,
-    "big_wins": 1,
-    "real_sales": 11,
+    "points": 15,
+    "wins": 3,
+    "big_wins": 0,
+    "real_sales": 6,
     "fake_sales": 0,
     "avg_margin": 12
    },
    {
     "store": "FreshSt",
-    "points": 10,
-    "wins": 2,
-    "big_wins": 0,
+    "points": 15,
+    "wins": 3,
+    "big_wins": 1,
     "real_sales": 4,
     "fake_sales": 0,
-    "avg_margin": 8
+    "avg_margin": 15
    },
    {
     "store": "Creekside",
@@ -1339,59 +1259,50 @@
     "real_sales": 1,
     "fake_sales": 0,
     "avg_margin": 11
-   },
-   {
-    "store": "Shoppers",
-    "points": 3,
-    "wins": 2,
-    "big_wins": 1,
-    "real_sales": 4,
-    "fake_sales": 3,
-    "avg_margin": 19
    }
   ],
   "season": [
    {
     "store": "Independent",
-    "points": 102,
-    "weeks_won": 1
+    "points": 124,
+    "weeks_won": 2
    },
    {
     "store": "Nesters",
-    "points": 49,
+    "points": 64,
     "weeks_won": 0
    },
    {
     "store": "FreshSt",
-    "points": 16,
+    "points": 31,
+    "weeks_won": 0
+   },
+   {
+    "store": "Shoppers",
+    "points": 26,
     "weeks_won": 0
    },
    {
     "store": "Creekside",
-    "points": 10,
-    "weeks_won": 0
-   },
-   {
-    "store": "Shoppers",
-    "points": 4,
+    "points": 14,
     "weeks_won": 0
    }
   ],
-  "weeks_scored": 2,
+  "weeks_scored": 3,
   "awards": {
    "worth_the_drive": {
     "store": "Independent",
-    "avg_margin": 39,
-    "wins": 8
+    "avg_margin": 42,
+    "wins": 4
    },
    "fake_sale": {
-    "store": "Shoppers",
-    "item": "Sausages",
-    "name": "HARVEST DOUBLE SMOKED FARMER'S (500g), PC SMOKIES (1kg) SAUS",
-    "per": 11.78,
-    "everyday": 9.85,
+    "store": "Independent",
+    "item": "Lamb",
+    "name": "NEW ZEALAND FRENCHED LAMB RACK",
+    "per": 25.0,
+    "everyday": 17.99,
     "unit": "/lb",
-    "pct_over": 20
+    "pct_over": 39
    },
    "deepest": {
     "store": "Independent",
@@ -1404,14 +1315,14 @@
    },
    "whistler_tax": [
     {
-     "store": "Shoppers",
-     "pct": 1182,
-     "items": 6
+     "store": "Independent",
+     "pct": 815,
+     "items": 10
     },
     {
-     "store": "Independent",
-     "pct": 300,
-     "items": 13
+     "store": "Shoppers",
+     "pct": 536,
+     "items": 8
     },
     {
      "store": "FreshSt",
@@ -1420,8 +1331,8 @@
     },
     {
      "store": "Nesters",
-     "pct": 23,
-     "items": 11
+     "pct": 29,
+     "items": 6
     }
    ]
   }
