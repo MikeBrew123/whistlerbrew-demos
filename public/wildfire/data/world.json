@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T10:01:24.287Z",
+  "updated_at": "2026-10-08T22:01:28.395Z",
   "fires": [
     {
       "country": "Belgium",
@@ -201,21 +201,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 0,
-      "world": 1
-    },
-    "items_out": {
-      "canada": 0,
-      "world_fires": 27
-    },
-    "deduped": 1,
-    "rerouted": 1,
-    "notes": [
-      "Merged Indonesia Borneo fire with Singapore haze article - both from same regional wildfire event with toxic haze impact",
-      "Moved Indonesia/Singapore article from world_news to world_fires as consolidated entry",
-      "Preserved all Active fires from existing_fires list",
-      "Retained images where present across all entries"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Toronto Zoo sees drop in 2026 visitors due to wildfire smoke, extreme heat\",\n      \"url\": \"https://globalnews.ca/news/12093097/toronto-zoo-drop-2026-"
   }
 }
