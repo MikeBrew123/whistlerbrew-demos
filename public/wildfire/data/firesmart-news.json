@@ -1,8 +1,24 @@
 {
-  "updated_at": "2026-10-07T22:00:34.070Z",
+  "updated_at": "2026-10-08T04:00:34.322Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
+    "coastal": [
+      {
+        "title": "Squamish mayoral candidates clash over property taxes, encampments in debate",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/squamish-municipal-mayoral-debate-9.7371807?cmp=rss",
+        "description": "More than 800 people watched the debate, which comes ahead of the Oct. 17 municipal election.",
+        "pubDate": "Tue, 06 Oct 2026 19:05:29 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "For Salmon Arm voters, recreation facilities are a key municipal election issue",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/salmon-arm-recreation-facility-municipal-election-9.7372105?cmp=rss",
+        "description": "Parents, coaches, athletes and active members of Salmon Arm's community say they will head to the polls with the issue of recreation facilities at the top of their minds.",
+        "pubDate": "Wed, 07 Oct 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "prince-george": [],
     "cariboo": [],
     "northwest": [],
