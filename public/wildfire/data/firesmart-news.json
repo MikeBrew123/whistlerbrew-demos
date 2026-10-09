@@ -1,8 +1,46 @@
 {
-  "updated_at": "2026-10-09T16:00:33.684Z",
+  "updated_at": "2026-10-09T22:00:34.172Z",
   "zones": {
-    "coastal": [],
-    "kamloops": [],
+    "coastal": [
+      {
+        "title": "Sooke's infrastructure to play key role in municipal election",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/sooke-infrastructure-plays-key-role-municipal-elections-9.7370362?cmp=rss",
+        "description": "In the District of Sooke on Vancouver Island, the population has been growing steadily since the early 2000s — and local infrastructure has been struggling to keep pace due to environmental regulations, and a growing strain on limited resources.",
+        "pubDate": "Fri, 09 Oct 2026 09:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "B.C. teen rescued from 'Widowmaker' mountain trail says AI isn't to blame",
+        "link": "https://www.cbc.ca/news/canada/hiker-ai-stuck-mountain-9.7373964?cmp=rss",
+        "description": "Bryce Gowryluk, 16, was lifted from Crown Mountain by helicopter Saturday after accidentally taking what's called the \"Widowmaker\" climbing route.",
+        "pubDate": "Thu, 08 Oct 2026 20:05:22 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Okanagan growers say crop insurance isn&#8217;t keeping up with a changing climate",
+        "link": "https://globalnews.ca/news/12093745/okanagan-growers-crop-insurance-not-keeping-up-changing-climate/",
+        "description": "The weather can bring extreme heat, cold, drought, hail or wildfire smoke, and any one of those can wipe out a crop or make grapes impossible to sell.",
+        "pubDate": "Fri, 09 Oct 2026 18:42:20 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/10/Screenshot-2026-10-08-180039.png"
+      },
+      {
+        "title": "Transformative former B.C. attorney general Colin Gablemann dead at 82",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/colin-gablemann-former-attorney-general-9.7375206?cmp=rss",
+        "description": "Colin Gablemann, the transformative former British Columbia attorney general who played a key role in the creation of the province's freedom of information laws and recognizing Indigenous rights has died at the age of 82.",
+        "pubDate": "Fri, 09 Oct 2026 11:00:00 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Author tells B.C. defamation trial sexual assault claim derailed career, ability to write",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/steven-galloway-defamation-trial-can-t-write-9.7375131?cmp=rss",
+        "description": "Author and former UBC creative writing professor Steven Galloway wept as he testified that he can no longer write since unproven allegations of sexual assault derailed his career.",
+        "pubDate": "Thu, 08 Oct 2026 21:41:09 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "prince-george": [],
     "cariboo": [
       {
@@ -17,12 +55,12 @@
     "southeast": [],
     "all": [
       {
-        "title": "Homicide investigator testifies at Tori Dunn homicide trial",
-        "link": "https://globalnews.ca/news/12093506/homicide-investigator-tory-dunn-homicide-trial-surrey/",
-        "description": "Const. Ryan Gerlinski took the stand on Thursday. He has been a member of the Integrated Homicide Investigation Team for 4.5 years.",
-        "pubDate": "Thu, 08 Oct 2026 23:31:37 +0000",
+        "title": "Climate-driven wildfires in Canada could cost future generations trillions: study",
+        "link": "https://globalnews.ca/news/12093537/climate-driven-wildfires-cost-trillions/",
+        "description": "\"A motivation of this study was to put it into economic terms that the general public could grasp a little bit better,\" researcher Sian Kou-Giesbrecht said.",
+        "pubDate": "Thu, 08 Oct 2026 23:29:43 +0000",
         "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2024/06/6P-TORI-DUNN-VIGIL-JUNE_WEB.png"
+        "image": "https://globalnews.ca/wp-content/uploads/2026/08/36af082b2cee0e0b021e9350a5af96466c7026a525e16d965dc8f28209122383_03c942.jpg?quality=65&#038;strip=all"
       }
     ]
   }
