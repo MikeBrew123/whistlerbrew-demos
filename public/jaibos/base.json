@@ -6,41 +6,151 @@
  },
  "manager": "César López Andrade",
  "games": [
-  {"date": "2026-03-13", "round": "Semifinal, game 1", "opponent": "Coqueros de Tuxpan", "home": true, "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita", "result": "W 7-6", "note": "Fermín López two-run homer. Felipe González the win, Luis Iván Rodríguez the save.", "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"},
-  {"date": "2026-03-22", "round": "Semifinal, game 6", "opponent": "Coqueros de Tuxpan", "home": false, "venue": "Tuxpan", "result": "W 3-0", "note": "Samuel Zamudio three-run homer in the 9th to clinch the series 4-2.", "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"},
-  {"date": "2026-04-03", "round": "Final, game 4", "opponent": "Delfines de Puerto Vallarta", "home": false, "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta", "result": "L 0-4", "note": "Series tied 2-2.", "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"},
-  {"date": "2026-04-04", "round": "Final, game 5", "opponent": "Delfines de Puerto Vallarta", "home": true, "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita", "result": "W 4-1", "note": "Kender Villegas complete game.", "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"},
-  {"date": "2026-04-05", "round": "Final, game 6", "opponent": "Delfines de Puerto Vallarta", "home": false, "venue": "Puerto Vallarta", "result": "W 10-7", "note": "Extra innings. Champions! Series won 4-2.", "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"}
+  {
+   "date": "2026-03-13",
+   "round": "Semifinal, game 1",
+   "opponent": "Coqueros de Tuxpan",
+   "home": true,
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "result": "W 7-6",
+   "note": "Fermín López two-run homer. Felipe González the win, Luis Iván Rodríguez the save.",
+   "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"
+  },
+  {
+   "date": "2026-03-22",
+   "round": "Semifinal, game 6",
+   "opponent": "Coqueros de Tuxpan",
+   "home": false,
+   "venue": "Tuxpan",
+   "result": "W 3-0",
+   "note": "Samuel Zamudio three-run homer in the 9th to clinch the series 4-2.",
+   "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"
+  },
+  {
+   "date": "2026-04-03",
+   "round": "Final, game 4",
+   "opponent": "Delfines de Puerto Vallarta",
+   "home": false,
+   "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
+   "result": "L 0-4",
+   "note": "Series tied 2-2.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "date": "2026-04-04",
+   "round": "Final, game 5",
+   "opponent": "Delfines de Puerto Vallarta",
+   "home": true,
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "result": "W 4-1",
+   "note": "Kender Villegas complete game.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "date": "2026-04-05",
+   "round": "Final, game 6",
+   "opponent": "Delfines de Puerto Vallarta",
+   "home": false,
+   "venue": "Puerto Vallarta",
+   "result": "W 10-7",
+   "note": "Extra innings. Champions! Series won 4-2.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  }
  ],
  "roster": [],
  "standouts": [
-  {"name": "Samuel Zamudio", "pos": "C", "note": "Finals MVP. Cleanup hitter whose 9th-inning three-run homer sent the Jaibos to the final.", "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"},
-  {"name": "Juliandry Higuera", "pos": "P", "from": "Venezuela", "note": "Winning pitcher in the 3-0 semifinal clincher at Tuxpan.", "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"},
-  {"name": "Kender Villegas", "pos": "P", "note": "Complete-game win, 4-1, in Game 5 of the final at home.", "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"},
-  {"name": "Alberto Hecheverría", "pos": "P", "note": "Winning pitcher in the title clincher, 10-7 in extras.", "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"},
-  {"name": "Fermín López", "pos": "", "note": "Two-run homer in the 7-6 semifinal opener.", "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"},
-  {"name": "Felipe González", "pos": "P", "note": "Started and won the semifinal opener.", "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"},
-  {"name": "Luis Iván Rodríguez", "pos": "P", "note": "Closed out the semifinal opener for the save.", "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"},
-  {"name": "Brayan Vázquez, Hans Chacón", "pos": "", "note": "Drove in runs in the championship clincher.", "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"}
+  {
+   "name": "Samuel Zamudio",
+   "pos": "C",
+   "note": "Finals MVP. Cleanup hitter whose 9th-inning three-run homer sent the Jaibos to the final.",
+   "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"
+  },
+  {
+   "name": "Juliandry Higuera",
+   "pos": "P",
+   "from": "Venezuela",
+   "note": "Winning pitcher in the 3-0 semifinal clincher at Tuxpan.",
+   "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"
+  },
+  {
+   "name": "Kender Villegas",
+   "pos": "P",
+   "note": "Complete-game win, 4-1, in Game 5 of the final at home.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "name": "Alberto Hecheverría",
+   "pos": "P",
+   "note": "Winning pitcher in the title clincher, 10-7 in extras.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "name": "Fermín López",
+   "pos": "",
+   "note": "Two-run homer in the 7-6 semifinal opener.",
+   "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"
+  },
+  {
+   "name": "Felipe González",
+   "pos": "P",
+   "note": "Started and won the semifinal opener.",
+   "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"
+  },
+  {
+   "name": "Luis Iván Rodríguez",
+   "pos": "P",
+   "note": "Closed out the semifinal opener for the save.",
+   "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"
+  },
+  {
+   "name": "Brayan Vázquez, Hans Chacón",
+   "pos": "",
+   "note": "Drove in runs in the championship clincher.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  }
  ],
  "stats": [],
  "facts": [
   "The Jaibos won the first league title in club history on April 5, 2026, beating Delfines de Puerto Vallarta 4 games to 2. The clincher went to extra innings, 10-7, in Vallarta.",
-  "It was their second straight trip to the final. They knocked out Coqueros de Tuxpan 4-2 in the semis to get there.",
+  "It was their second straight trip to the final. A year earlier, Tabaqueros de Santiago beat them 4 games to 2. This time they knocked out Coqueros de Tuxpan 4-2 in the semis and finished the job.",
   "A jaiba is a crab. The Jaibos are Sayulita's crabs, and the kids' team is the Jaibitos.",
   "Baseball in Sayulita goes back to at least the 1970s. The club is run by volunteers and community donations.",
   "Home is Estadio Manuel Rodríguez Sánchez on the north side of town. Sunday afternoon games are a tradition.",
   "The league is the Liga Nayarita de Béisbol \"Germán Jiménez Camarena\", a winter league founded in 2000 for Nayarit-born players plus a few veterans.",
   "Playoff series are best of seven. Six teams make the playoffs.",
-  "Tabaqueros de Santiago are the league's most decorated club and won the 2024-25 title, the year before the Jaibos broke through.",
+  "The league is named for Germán Jiménez Camarena, a lefty from Santiago Ixcuintla, Nayarit, who pitched for the Atlanta Braves in 1988. His only big-league win came against the Mets at Shea Stadium.",
   "The Bahía de Banderas municipality pays for the team's bus rides to away games.",
   "Want pro ball too? Jaguares de Nayarit play in the Mexican Pacific League in Tepic, which opens its season in mid-October."
  ],
- "league_teams": ["Jaibos de Sayulita", "Delfines de Puerto Vallarta", "Coqueros de Tuxpan", "Tabaqueros de Santiago", "Camaroneros de Tecuala", "Cachorros de Acaponeta", "Pureros de Compostela", "Ocelotes UAN", "Vaqueros de Rosamorada", "Tiburones de San Blas"],
- "ballpark": {"name": "Estadio Manuel Rodríguez Sánchez", "where": "North side of Sayulita", "map": "https://www.google.com/maps/search/?api=1&query=Estadio+Manuel+Rodriguez+Sanchez+Sayulita"},
+ "league_teams": [
+  "Jaibos de Sayulita",
+  "Delfines de Puerto Vallarta",
+  "Coqueros de Tuxpan",
+  "Tabaqueros de Santiago",
+  "Camaroneros de Tecuala",
+  "Cachorros de Acaponeta",
+  "Pureros de Compostela",
+  "Ocelotes UAN",
+  "Vaqueros de Rosamorada",
+  "Tiburones de San Blas"
+ ],
+ "ballpark": {
+  "name": "Estadio Manuel Rodríguez Sánchez",
+  "where": "North side of Sayulita",
+  "map": "https://www.google.com/maps/search/?api=1&query=Estadio+Manuel+Rodriguez+Sanchez+Sayulita"
+ },
  "links": [
-  {"label": "Championship recap (NTV)", "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"},
-  {"label": "Title celebration (Tribuna de la Bahía)", "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeonato-liga-nayarita-celebracion/"},
-  {"label": "Team history (Sayulita Life)", "url": "https://www.sayulitalife.com/sayulero/sayulitalifes-monthly-5000-donation-goes-to-los-jaibos-de-sayulita/"}
+  {
+   "label": "Championship recap (NTV)",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "label": "Title celebration (Tribuna de la Bahía)",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeonato-liga-nayarita-celebracion/"
+  },
+  {
+   "label": "Team history (Sayulita Life)",
+   "url": "https://www.sayulitalife.com/sayulero/sayulitalifes-monthly-5000-donation-goes-to-los-jaibos-de-sayulita/"
+  }
  ]
 }
