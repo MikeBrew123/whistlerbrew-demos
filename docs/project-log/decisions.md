@@ -33,3 +33,6 @@ PAT named `n8n-wildfire-writer`, scoped to MikeBrew123/whistlerbrew-demos, Conte
 
 ## 2026-09-28
 - Added /shopping (Shopping in Whistler). Static page + data.json pushed daily by the Mac mini (HomeBrain shopper/whistler-deals.py) via the GitHub contents API. Link is /shopping/index.html because /shopping/ 404s on Pages.
+
+## 2026-10-10
+- /sayulita is public: town WhatsApp groups only, never friend chats, no personal contact; hide list via Hermes (Brew).

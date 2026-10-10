@@ -84,3 +84,6 @@ Sources merged in order:
 - GitHub PAT: `whistlerbrew-demos/secrets/api-keys.json` → `.github.pat`
 - N8N API key: `carnivore-weekly/secrets/api-keys.json` → `.n8n.api_key`
 - Anthropic API key: `carnivore-weekly/secrets/api-keys.json` → `.anthropic.key`
+
+## 2026-10-10 Sayulita Today (/sayulita)
+- Static page public/sayulita/index.html + data.json, pushed twice a day by the Mac Mini (project-nexus/trip/public/sayulita_page.py via GitHub Contents API, same PAT as shopping). Client-side Open-Meteo beach strip, ES toggle from data.es map, Nightlife/Fitness/Other and Drinks/Food tabs, festival day programs. Koozie NFC tag points here.
