@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaibos de Sayulita</title>
+<meta name="description" content="Program guide for the Jaibos de Sayulita baseball team: schedule, results, players and talking points. Updated automatically.">
+<meta name="theme-color" content="#d9452b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fff8ef; --card: #ffffff; --ink: #2a1f1a; --muted: #7a6a5f; --line: #f0e2d2;
+  --sun: #d9452b; --sea: #138a8a; --lime: #4f9a2f; --gold: #f2b134; --navy: #1d3557;
+  --shadow: 0 1px 2px rgba(60,30,10,.06), 0 4px 14px rgba(60,30,10,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1412; --card: #251d1a; --ink: #f6ece2; --muted: #b3a196; --line: #3a2e29; --lime: #7cb342;
+    --shadow: 0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1412; --card: #251d1a; --ink: #f6ece2; --muted: #b3a196; --line: #3a2e29; --lime: #7cb342;
+  --shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 0 16px 48px; }
+.stitch { height: 14px; background:
+  radial-gradient(circle at 7px 7px, var(--sun) 2.4px, transparent 3px) 0 0/22px 14px,
+  linear-gradient(var(--navy), var(--navy)) 0 6px/100% 2px no-repeat; opacity: .9; }
+header { padding: 22px 0 8px; }
+.kicker { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--sea); }
+h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 9vw, 48px); line-height: 1; margin: 4px 0 0; letter-spacing: -.02em; }
+h1 span { color: var(--sun); }
+.sub { color: var(--muted); margin: 8px 0 0; font-size: 15px; }
+.stamp { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--muted); }
+.stamp b { color: var(--sea); font-weight: 600; }
+h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 22px; margin: 30px 0 10px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+h2 small { font: 500 13px Inter, sans-serif; color: var(--muted); }
+.banner { margin-top: 18px; background: linear-gradient(135deg, var(--sun), #a8321d); color: #fff; border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow); }
+.banner .k { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .9; font-weight: 600; }
+.banner .big { font-family: Fraunces, Georgia, serif; font-size: 24px; font-weight: 800; margin: 2px 0 0; }
+.banner p { margin: 6px 0 0; font-size: 15px; opacity: .95; }
+.list { display: grid; gap: 10px; }
+.item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: start; }
+.when { text-align: center; border-radius: 10px; padding: 6px 2px; background: color-mix(in srgb, var(--sea) 12%, transparent); color: var(--sea); font-weight: 600; font-size: 13px; line-height: 1.2; }
+.when b { display: block; font-family: Fraunces, Georgia, serif; font-size: 20px; }
+.res .w { background: color-mix(in srgb, var(--lime) 16%, transparent); color: var(--lime); }
+.res .l { background: color-mix(in srgb, var(--sun) 12%, transparent); color: var(--sun); }
+.res .when b { font-size: 16px; }
+.t { font-weight: 600; margin: 0; overflow-wrap: anywhere; }
+.m { color: var(--muted); font-size: 14px; margin: 2px 0 0; overflow-wrap: anywhere; }
+.m a, .links a, .park a { color: var(--sea); }
+.tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 99px; background: var(--line); color: var(--muted); margin-left: 4px; vertical-align: 1px; }
+.pos { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #fff; font: 700 14px Inter, sans-serif; }
+.player { grid-template-columns: 44px 1fr; }
+.empty { color: var(--muted); font-size: 15px; background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 14px; }
+.facts { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: f; }
+.facts li { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px 12px 48px; position: relative; box-shadow: var(--shadow); font-size: 15px; }
+.facts li::before { counter-increment: f; content: counter(f); position: absolute; left: 14px; top: 12px; width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: #3a2600; font: 700 13px/24px Inter, sans-serif; text-align: center; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 13px; padding: 4px 10px; border-radius: 99px; background: var(--card); border: 1px solid var(--line); }
+.chip.us { background: var(--sun); color: #fff; border-color: var(--sun); font-weight: 600; }
+.park { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; box-shadow: var(--shadow); }
+.links { display: grid; gap: 6px; font-size: 14px; }
+footer { margin-top: 36px; color: var(--muted); font-size: 13px; text-align: center; }
+footer a { color: var(--sea); }
+</style>
+</head>
+<body>
+<div class="stitch" aria-hidden="true"></div>
+<main class="wrap">
+  <header>
+    <div class="kicker">Program guide · Liga Nayarita de Béisbol</div>
+    <h1>¡Arriba los <span>Jaibos!</span> 🦀</h1>
+    <p class="sub">Sayulita's baseball team. Schedule, results, players and a few things to say between innings.</p>
+    <span class="stamp" id="stamp">Loading…</span>
+  </header>
+
+  <section class="banner" id="banner" hidden>
+    <div class="k" id="seasonLabel"></div>
+    <div class="big" id="seasonStatus"></div>
+    <p id="seasonNote"></p>
+  </section>
+
+  <h2>Next games</h2>
+  <div class="list" id="next"></div>
+
+  <h2>Results <small id="resLabel"></small></h2>
+  <div class="list res" id="results"></div>
+
+  <h2>Roster <small id="mgr"></small></h2>
+  <div class="list" id="roster"></div>
+
+  <h2>Stats</h2>
+  <div class="list" id="stats"></div>
+
+  <h2>2026 title run standouts</h2>
+  <div class="list" id="standouts"></div>
+
+  <h2>Talking points 🗣️</h2>
+  <ol class="facts" id="facts"></ol>
+
+  <h2>The ballpark ⚾</h2>
+  <div class="park" id="park"></div>
+
+  <h2>The league</h2>
+  <div class="chips" id="teams"></div>
+
+  <h2>Read more</h2>
+  <div class="links" id="links"></div>
+
+  <footer>
+    Built from league news, local press and the town calendar. Updated automatically.<br>
+    Game times change. Check with the team before you head to the park.<br><br>
+    <a href="/sayulita">Sayulita hoy</a> · <a href="https://whistlerbrew.com/projects">whistlerbrew.com</a>
+  </footer>
+</main>
+<script>
+(function () {
+  var TZ = "America/Mexico_City";
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+  function day(iso) { return new Date(iso + "T12:00:00"); }
+  function fmtDay(iso, opt) { try { return day(iso).toLocaleDateString("en-US", opt); } catch (e) { return iso; } }
+  function time12(t) {
+    if (!t) return "";
+    var p = t.split(":"), h = +p[0], m = p[1] || "00";
+    return (h % 12 || 12) + (m === "00" ? "" : ":" + m) + (h < 12 ? "am" : "pm");
+  }
+  function ago(iso) {
+    var mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (isNaN(mins)) return "";
+    if (mins < 60) return mins + " min ago";
+    if (mins < 48 * 60) return Math.round(mins / 60) + " h ago";
+    return Math.round(mins / 1440) + " days ago";
+  }
+  function link(u, txt) { return /^https:\/\//.test(u || "") ? ' · <a href="' + esc(u) + '" rel="noopener" target="_blank">' + (txt || "source") + "</a>" : ""; }
+  function tag(s) { return s ? '<span class="tag">' + esc(s) + "</span>" : ""; }
+  function fill(el, items, render, emptyText) {
+    el.innerHTML = items && items.length ? items.map(render).join("") : '<div class="empty">' + esc(emptyText) + "</div>";
+  }
+  function vs(g) { return (g.home ? "vs " : "at ") + g.opponent; }
+  function nextRow(g) {
+    return '<article class="item"><div class="when">' + esc(fmtDay(g.date, { weekday: "short" })) + "<b>" + esc(fmtDay(g.date, { month: "short", day: "numeric" })) +
+      '</b></div><div><p class="t">' + esc(vs(g)) + tag(g.home ? "Home" : "Away") + '</p><p class="m">' +
+      esc([g.time ? time12(g.time) : "", g.venue, g.round].filter(Boolean).join(" · ")) + link(g.url, "details") + "</p></div></article>";
+  }
+  function resRow(g) {
+    var r = String(g.result || ""), cls = /^W/i.test(r) ? "w" : /^L/i.test(r) ? "l" : "";
+    return '<article class="item"><div class="when ' + cls + '">' + esc(fmtDay(g.date, { month: "short", day: "numeric" })) + "<b>" + esc(r || "?") +
+      '</b></div><div><p class="t">' + esc(vs(g)) + tag(g.round) + '</p><p class="m">' + esc(g.venue) + link(g.url) +
+      (g.note ? "<br>" + esc(g.note) : "") + "</p></div></article>";
+  }
+  function playerRow(p) {
+    var meta = [p.from ? "From " + p.from : "", p.note].filter(Boolean).join(" · ");
+    return '<article class="item player"><div class="pos">' + esc(p.pos || "⚾") + '</div><div><p class="t">' + esc(p.name) +
+      (p.number ? ' <span class="tag">#' + esc(p.number) + "</span>" : "") + '</p><p class="m">' + esc(meta) + link(p.url) + "</p></div></article>";
+  }
+  function statRow(s) {
+    return '<article class="item player"><div class="pos">' + esc(s.pos || "📊") + '</div><div><p class="t">' + esc(s.name) +
+      '</p><p class="m">' + esc(s.line) + link(s.url) + "</p></div></article>";
+  }
+  var todayIso = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date());
+
+  fetch("data.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+    $("stamp").innerHTML = d.updated ? "Updated <b>" + esc(ago(d.updated)) + "</b>" : "";
+    var s = d.season || {};
+    if (s.status || s.note) {
+      $("seasonLabel").textContent = s.label || ""; $("seasonStatus").textContent = s.status || ""; $("seasonNote").textContent = s.note || "";
+      $("banner").hidden = false;
+    }
+    var games = (d.games || []).slice().sort(function (a, b) { return (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")); });
+    fill($("next"), games.filter(function (g) { return g.date >= todayIso && !g.result; }), nextRow,
+      "No games on the calendar yet. The schedule shows up here as soon as the league posts it.");
+    var res = games.filter(function (g) { return g.result; }).reverse();
+    if (res.length) $("resLabel").textContent = "latest first";
+    fill($("results"), res, resRow, "No results yet this season.");
+    if (d.manager) $("mgr").textContent = "Manager: " + d.manager;
+    fill($("roster"), d.roster, playerRow, "The 2026-27 roster is not public yet. Names go up here once the team or league lists them.");
+    fill($("stats"), d.stats, statRow, "Season stats start once games do. Highlights from last year's title run are below.");
+    fill($("standouts"), d.standouts, playerRow, "");
+    $("facts").innerHTML = (d.facts || []).map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("");
+    var p = d.ballpark || {};
+    $("park").innerHTML = '<p class="t">' + esc(p.name) + '</p><p class="m">' + esc(p.where) + link(p.map, "map") + "</p>";
+    $("teams").innerHTML = (d.league_teams || []).map(function (t) { return '<span class="chip' + (/Sayulita/.test(t) ? " us" : "") + '">' + esc(t) + "</span>"; }).join("");
+    $("links").innerHTML = (d.links || []).filter(function (l) { return /^https:\/\//.test(l.url || ""); })
+      .map(function (l) { return '<a href="' + esc(l.url) + '" rel="noopener" target="_blank">' + esc(l.label) + " ↗</a>"; }).join("");
+  }).catch(function () {
+    $("stamp").textContent = "Could not load the guide. Try again in a minute.";
+  });
+})();
+</script>
+</body>
+</html>

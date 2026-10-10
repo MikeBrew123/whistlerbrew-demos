@@ -71,6 +71,14 @@ const PROJECTS: Project[] = [
     external: true,
   },
   {
+    name: "Jaibos de Sayulita",
+    href: "/jaibos/index.html",
+    description: "Program guide for Sayulita's baseball team, the 2026 Liga Nayarita champions: schedule, results, players and talking points for the stands. Refreshed daily from the Mini.",
+    status: "NEW",
+    accent: "#d9452b",
+    external: true,
+  },
+  {
     name: "Shopping in Whistler",
     href: "/shopping/index.html",
     description: "This week's best grocery prices across Nesters, Independent, FreshSt, Shoppers and Creekside. Meat ranked per pound, plus loyalty points. Updated every morning from the Home Brain.",

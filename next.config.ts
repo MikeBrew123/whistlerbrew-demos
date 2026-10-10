@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     return [
       { source: '/pushup', destination: '/pushup/index.html', permanent: false },
       { source: '/sayulita', destination: '/sayulita/index.html', permanent: false },
+      { source: '/jaibos', destination: '/jaibos/index.html', permanent: false },
       { source: '/wildfire', destination: '/wildfire/index.html', permanent: false },
       { source: '/opus', destination: '/opus/index.html', permanent: false },
       { source: '/firesmart', destination: '/firesmart/index.html', permanent: false },
