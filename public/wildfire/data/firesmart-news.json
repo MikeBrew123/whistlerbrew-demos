@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T04:00:34.276Z",
+  "updated_at": "2026-10-10T10:00:34.163Z",
   "zones": {
     "coastal": [
       {
@@ -31,15 +31,6 @@
     "cariboo": [],
     "northwest": [],
     "southeast": [],
-    "all": [
-      {
-        "title": "Climate-driven wildfires in Canada could cost future generations trillions: study",
-        "link": "https://globalnews.ca/news/12093537/climate-driven-wildfires-cost-trillions/",
-        "description": "\"A motivation of this study was to put it into economic terms that the general public could grasp a little bit better,\" researcher Sian Kou-Giesbrecht said.",
-        "pubDate": "Thu, 08 Oct 2026 23:29:43 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/08/36af082b2cee0e0b021e9350a5af96466c7026a525e16d965dc8f28209122383_03c942.jpg?quality=65&#038;strip=all"
-      }
-    ]
+    "all": []
   }
 }
