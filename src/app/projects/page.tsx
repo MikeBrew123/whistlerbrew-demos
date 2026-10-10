@@ -63,6 +63,14 @@ const PROJECTS: Project[] = [
     external: true,
   },
   {
+    name: "Sayulita Today",
+    href: "/sayulita/index.html",
+    description: "What's on in Sayulita: events, happy hours, fiestas and a cash tip. Pulled from the town WhatsApp groups, local calendars and the web twice a day. The koozie NFC tag points here.",
+    status: "NEW",
+    accent: "#e8553d",
+    external: true,
+  },
+  {
     name: "Shopping in Whistler",
     href: "/shopping/index.html",
     description: "This week's best grocery prices across Nesters, Independent, FreshSt, Shoppers and Creekside. Meat ranked per pound, plus loyalty points. Updated every morning from the Home Brain.",

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sayulita Today</title>
+<meta name="description" content="What's happening in Sayulita today: events, happy hours, festivals and a cash tip. Updated twice a day.">
+<meta name="theme-color" content="#e8553d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fff8ef; --card: #ffffff; --ink: #2a1f1a; --muted: #7a6a5f; --line: #f0e2d2;
+  --sun: #e8553d; --sea: #138a8a; --lime: #7cb342; --gold: #f2b134; --pink: #e05c9b;
+  --shadow: 0 1px 2px rgba(60,30,10,.06), 0 4px 14px rgba(60,30,10,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1412; --card: #251d1a; --ink: #f6ece2; --muted: #b3a196; --line: #3a2e29;
+    --shadow: 0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1412; --card: #251d1a; --ink: #f6ece2; --muted: #b3a196; --line: #3a2e29;
+  --shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 0 16px 48px; }
+.flags { height: 22px; background:
+  linear-gradient(135deg, transparent 50%, var(--bg) 50%) 0 0/22px 22px,
+  linear-gradient(90deg, var(--sun) 0 20%, var(--gold) 20% 40%, var(--lime) 40% 60%, var(--sea) 60% 80%, var(--pink) 80%) 0 0/110px 22px; }
+header { padding: 22px 0 8px; }
+h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 9vw, 48px); line-height: 1; margin: 0; letter-spacing: -.02em; }
+h1 span { color: var(--sun); }
+.sub { color: var(--muted); margin: 8px 0 0; font-size: 15px; }
+.stamp { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--muted); }
+.stamp b { color: var(--sea); font-weight: 600; }
+h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 22px; margin: 30px 0 10px; display: flex; align-items: baseline; gap: 8px; }
+h2 small { font: 500 13px Inter, sans-serif; color: var(--muted); }
+.cash { margin-top: 18px; background: linear-gradient(135deg, var(--sea), #0e6b6b); color: #fff; border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow); }
+.cash .k { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .85; font-weight: 600; }
+.cash p { margin: 4px 0 0; font-size: 17px; font-weight: 500; }
+.list { display: grid; gap: 10px; }
+.item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: start; }
+.when { text-align: center; border-radius: 10px; padding: 6px 2px; background: color-mix(in srgb, var(--sun) 12%, transparent); color: var(--sun); font-weight: 600; font-size: 13px; line-height: 1.2; }
+.when b { display: block; font-family: Fraunces, Georgia, serif; font-size: 20px; }
+.hh .when { background: color-mix(in srgb, var(--gold) 20%, transparent); color: #a86d00; }
+:root[data-theme="dark"] .hh .when { color: var(--gold); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hh .when { color: var(--gold); } }
+.fest .when { background: color-mix(in srgb, var(--pink) 14%, transparent); color: var(--pink); }
+.t { font-weight: 600; margin: 0; overflow-wrap: anywhere; }
+.m { color: var(--muted); font-size: 14px; margin: 2px 0 0; overflow-wrap: anywhere; }
+.m a { color: var(--sea); }
+.tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 99px; background: var(--line); color: var(--muted); margin-left: 4px; vertical-align: 1px; }
+.empty { color: var(--muted); font-size: 15px; background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 14px; }
+footer { margin-top: 36px; color: var(--muted); font-size: 13px; text-align: center; }
+footer a { color: var(--sea); }
+</style>
+</head>
+<body>
+<div class="flags" aria-hidden="true"></div>
+<main class="wrap">
+  <header>
+    <h1>Sayulita <span>hoy</span></h1>
+    <p class="sub">What's happening in town today and this week. Happy hours, events, fiestas.</p>
+    <span class="stamp" id="stamp">Loading…</span>
+  </header>
+
+  <section class="cash" id="cash" hidden>
+    <div class="k">💵 Cash tip</div>
+    <p id="cashText"></p>
+  </section>
+
+  <h2>Today <small id="todayLabel"></small></h2>
+  <div class="list" id="today"></div>
+
+  <h2>Happy hours 🍹</h2>
+  <div class="list hh" id="hh"></div>
+
+  <h2>Coming up</h2>
+  <div class="list" id="week"></div>
+
+  <h2>Fiestas coming up 🎉</h2>
+  <div class="list fest" id="fest"></div>
+
+  <footer>
+    Pulled from town chat groups, local calendars and the web, twice a day.<br>
+    Plans change in Sayulita. Double-check with the venue. ¡Buen provecho!<br><br>
+    <a href="https://whistlerbrew.com/projects">whistlerbrew.com</a>
+  </footer>
+</main>
+<script>
+(function () {
+  var TZ = "America/Mexico_City";
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+  function day(iso) { return new Date(iso + "T12:00:00"); }
+  function fmtDay(iso, opt) { try { return day(iso).toLocaleDateString("en-US", opt); } catch (e) { return iso; } }
+  function time12(t) {
+    if (!t) return "";
+    var p = t.split(":"), h = +p[0], m = p[1] || "00";
+    return (h % 12 || 12) + (m === "00" ? "" : ":" + m) + (h < 12 ? "am" : "pm");
+  }
+  function span(a, b) { return a && b ? time12(a) + " to " + time12(b) : time12(a); }
+  function ago(iso) {
+    var mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (isNaN(mins)) return "";
+    if (mins < 60) return mins + " min ago";
+    if (mins < 48 * 60) return Math.round(mins / 60) + " h ago";
+    return Math.round(mins / 1440) + " days ago";
+  }
+  function link(u) { return /^https:\/\//.test(u || "") ? ' · <a href="' + esc(u) + '" rel="noopener" target="_blank">details</a>' : ""; }
+  function tag(s) { return s ? '<span class="tag">' + esc(s) + "</span>" : ""; }
+  function fill(el, items, render, emptyText) {
+    el.innerHTML = items && items.length ? items.map(render).join("") : '<div class="empty">' + esc(emptyText) + "</div>";
+  }
+  function eventRow(showDay) {
+    return function (e) {
+      var whenTop = showDay ? fmtDay(e.date, { weekday: "short" }) : (e.start ? time12(e.start) : "All");
+      var whenBig = showDay ? fmtDay(e.date, { day: "numeric" }) : (e.start ? "" : "day");
+      var meta = [e.venue, showDay ? span(e.start, e.end) : (e.end ? "until " + time12(e.end) : "")].filter(Boolean).join(" · ");
+      return '<article class="item"><div class="when">' + esc(whenTop) + (whenBig ? "<b>" + esc(whenBig) + "</b>" : "") +
+        '</div><div><p class="t">' + esc(e.title) + tag(e.source) + '</p><p class="m">' + esc(meta) + link(e.url) +
+        (e.note ? "<br>" + esc(e.note) : "") + "</p></div></article>";
+    };
+  }
+  function hhRow(h) {
+    return '<article class="item"><div class="when">' + esc(h.start ? time12(h.start) : "🍻") + (h.end ? "<b>–" + esc(time12(h.end)) + "</b>" : "") +
+      '</div><div><p class="t">' + esc(h.venue) + '</p><p class="m">' + esc([h.deal, h.days].filter(Boolean).join(" · ")) + "</p></div></article>";
+  }
+  function festRow(f) {
+    var a = fmtDay(f.start, { month: "short", day: "numeric" });
+    var b = f.end && f.end !== f.start ? fmtDay(f.end, { month: "short", day: "numeric" }) : "";
+    return '<article class="item"><div class="when">' + esc(fmtDay(f.start, { month: "short" })) + "<b>" + esc(fmtDay(f.start, { day: "numeric" })) +
+      '</b></div><div><p class="t">' + esc(f.title) + '</p><p class="m">' + esc([b ? a + " to " + b : a, f.where].filter(Boolean).join(" · ")) +
+      link(f.url) + (f.note ? "<br>" + esc(f.note) : "") + "</p></div></article>";
+  }
+  var todayIso = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date());
+  $("todayLabel").textContent = fmtDay(todayIso, { weekday: "long", month: "long", day: "numeric" });
+
+  fetch("data.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+    $("stamp").innerHTML = d.updated ? "Updated <b>" + esc(ago(d.updated)) + "</b>" : "";
+    if (d.cash_tip) { $("cashText").textContent = d.cash_tip; $("cash").hidden = false; }
+    var ev = (d.events || []).filter(function (e) { return e.date >= todayIso; })
+      .sort(function (a, b) { return (a.date + (a.start || "")).localeCompare(b.date + (b.start || "")); });
+    fill($("today"), ev.filter(function (e) { return e.date === todayIso; }), eventRow(false), "Nothing posted yet for today. Beach day? 🏖️");
+    fill($("week"), ev.filter(function (e) { return e.date > todayIso; }), eventRow(true), "Nothing else posted yet.");
+    fill($("hh"), d.happy_hours, hhRow, "No happy hour specials posted lately.");
+    fill($("fest"), (d.festivals || []).filter(function (f) { return (f.end || f.start) >= todayIso; }), festRow, "No festivals on the calendar right now.");
+  }).catch(function () {
+    $("stamp").textContent = "Could not load today's list. Try again in a minute.";
+  });
+})();
+</script>
+</body>
+</html>

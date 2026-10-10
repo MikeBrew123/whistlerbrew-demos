@@ -1,0 +1,61 @@
+{
+ "updated": "2026-10-10T13:13-07:00",
+ "cash_tip": "",
+ "events": [
+  {
+   "date": "2026-11-23",
+   "start": "17:00",
+   "end": "18:30",
+   "title": "Pickleball Nights for a Good Cause",
+   "venue": "Escuela Primaria Damián Carmona",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-11-23/",
+   "note": "Supports Mujeres Movimiento"
+  },
+  {
+   "date": "2026-12-18",
+   "start": "17:00",
+   "end": "18:30",
+   "title": "Pickleball Nights for a Good Cause",
+   "venue": "Escuela Primaria Damián Carmona",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-12-18/",
+   "note": "Supports Mujeres Movimiento"
+  }
+ ],
+ "happy_hours": [],
+ "festivals": [
+  {
+   "title": "Día de Muertos",
+   "start": "2026-10-29",
+   "end": "2026-11-02",
+   "where": "Plaza and cemetery",
+   "note": "Marigold altars, Catrinas, candlelight at the cemetery on Nov 1 and 2.",
+   "url": ""
+  },
+  {
+   "title": "Festival Gourmet International",
+   "start": "2026-11-12",
+   "end": "2026-11-22",
+   "where": "Vallarta and Riviera Nayarit",
+   "note": "Guest chefs and special menus around the bay.",
+   "url": ""
+  },
+  {
+   "title": "Virgen de Guadalupe",
+   "start": "2026-12-01",
+   "end": "2026-12-12",
+   "where": "Town church and plaza",
+   "note": "Nightly processions, building to fireworks and music on Dec 12.",
+   "url": ""
+  },
+  {
+   "title": "Las Posadas",
+   "start": "2026-12-16",
+   "end": "2026-12-24",
+   "where": "Around town",
+   "note": "Evening processions leading up to Christmas.",
+   "url": ""
+  }
+ ]
+}
