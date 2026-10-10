@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-10T13:35-07:00",
- "cash_tip": "",
+ "updated": "2026-10-10T13:38-07:00",
+ "cash_tip": "More places in town take cards now, delivery spots included, but bring some pesos for small stalls, tips, and anywhere that's cash only.",
  "events": [
   {
    "date": "2026-10-10",
@@ -9,7 +9,8 @@
    "title": "Solidarity Raffle for Families in Gaza (drawing)",
    "venue": "",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "other"
   },
   {
    "date": "2026-10-10",
@@ -18,7 +19,8 @@
    "title": "Hatha Yoga",
    "venue": "Viajero Hostel",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "fit"
   },
   {
    "date": "2026-10-10",
@@ -27,7 +29,8 @@
    "title": "New Moon Women's Cacao Song Circle (Andrea)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "fit"
   },
   {
    "date": "2026-10-10",
@@ -36,7 +39,8 @@
    "title": "Restorative Yoga with Graziella",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": "https://www.sayulitayogacenter.com/"
+   "url": "https://www.sayulitayogacenter.com/classes",
+   "category": "fit"
   },
   {
    "date": "2026-10-10",
@@ -45,16 +49,8 @@
    "title": "Restorative Iyengar Yoga",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": "https://www.sayulitayogacenter.com/"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "12:30",
-   "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ at The Dock",
-   "venue": "The Dock, Pescadores 5",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-10/"
+   "url": "https://www.sayulitayogacenter.com/classes",
+   "category": "fit"
   },
   {
    "date": "2026-10-10",
@@ -63,25 +59,8 @@
    "title": "Sol Sirena Jewelry Workshop",
    "venue": "My Sister's Hostel, Sayulita",
    "source": "Town chat",
-   "url": ""
-  },
-  {
-   "date": "2026-10-10",
-   "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop, C. Miramar 51",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-10/"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "20:30",
-   "end": "23:30",
-   "title": "Live Music at Sayulita Sandbar",
-   "venue": "Sandbar, Av. Revolución 27",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-10-10/"
+   "url": "",
+   "category": "other"
   },
   {
    "date": "2026-10-10",
@@ -90,16 +69,8 @@
    "title": "Latin Night with Gaby Swan y Los Rumberos",
    "venue": "Sandbar Sayulita",
    "source": "Town chat",
-   "url": ""
-  },
-  {
-   "date": "2026-10-14",
-   "start": "20:00",
-   "end": "21:00",
-   "title": "Salsa Dance with Laura",
-   "venue": "Latitude 20, Manuel N. Navarrete 79",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-10-14/"
+   "url": "",
+   "category": "night"
   },
   {
    "date": "2026-10-16",
@@ -108,34 +79,18 @@
    "title": "VOICES: Women's Sound Circle (Lexi)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": ""
-  },
-  {
-   "date": "2026-10-17",
-   "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop, C. Miramar 51",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-17/"
-  },
-  {
-   "date": "2026-10-17",
-   "start": "20:30",
-   "end": "23:30",
-   "title": "Live Music at Sayulita Sandbar",
-   "venue": "Sandbar, Av. Revolución 27",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-10-17/"
+   "url": "",
+   "category": "fit"
   },
   {
    "date": "2026-10-17",
    "start": "21:00",
    "end": "03:00",
    "title": "PERREO PA LXS NENXS 3",
-   "venue": "GOAT Beach Club Sayulita",
+   "venue": "Goat Beach Club Sayulita",
    "source": "Web",
-   "url": "https://allevents.in/sayulita/perreo-pa-lxs-nenxs-3/100002000497398571"
+   "url": "https://allevents.in/sayulita/perreo-pa-lxs-nenxs-3/100002000497398571",
+   "category": "night"
   },
   {
    "date": "2026-10-18",
@@ -144,7 +99,8 @@
    "title": "Classes Begin",
    "venue": "",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "other"
   },
   {
    "date": "2026-10-19",
@@ -153,7 +109,8 @@
    "title": "Yin Yoga & Sound with Shanna Mota",
    "venue": "ANIMA, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "fit"
   },
   {
    "date": "2026-10-20",
@@ -162,7 +119,8 @@
    "title": "Halloween Ceramics Workshop",
    "venue": "Terracota Solar Taller de Cerámica",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "other"
   },
   {
    "date": "2026-10-20",
@@ -171,7 +129,8 @@
    "title": "Kids Yoga Club",
    "venue": "Nomada",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "fit"
   },
   {
    "date": "2026-10-20",
@@ -180,7 +139,8 @@
    "title": "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)",
    "venue": "Galería Palu",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "other"
   },
   {
    "date": "2026-10-20",
@@ -189,7 +149,8 @@
    "title": "Breath into Being (Gal)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "fit"
   },
   {
    "date": "2026-10-21",
@@ -198,7 +159,8 @@
    "title": "Adult Jazz class starts",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": ""
+   "url": "https://www.sayulitayogacenter.com/classes",
+   "category": "fit"
   },
   {
    "date": "2026-10-22",
@@ -207,7 +169,8 @@
    "title": "Halloween-themed mug ceramics workshop (ages 8-16)",
    "venue": "Terracota Solar Taller de Cerámica",
    "source": "Town chat",
-   "url": ""
+   "url": "",
+   "category": "other"
   },
   {
    "date": "2026-10-22",
@@ -216,52 +179,28 @@
    "title": "Gong Bath (Andrea)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": ""
-  },
-  {
-   "date": "2026-10-24",
-   "start": "18:00",
-   "end": "22:00",
-   "title": "Experience en SERES by Baby's Burgers",
-   "venue": "SERES Beach Hotel, Delfines 219",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/experience-en-seres-by-babys-burgers/"
+   "url": "",
+   "category": "fit"
   },
   {
    "date": "2026-10-24",
    "start": "20:00",
    "end": "02:00",
    "title": "Chancha Vía Circuito + Vedant + Kenlai",
-   "venue": "Manuel N. Navarrete 7",
+   "venue": "Manuel N. Navarrete 7, Sayulita",
    "source": "Web",
-   "url": "https://allevents.in/sayulita/chancha-via-circuito-vedant-kenlai/100001998648492443"
-  },
-  {
-   "date": "2026-10-25",
-   "start": "10:00",
-   "end": "15:00",
-   "title": "Casa Paloma Estate Sale",
-   "venue": "Casa Paloma, Manuel N. Navarrete 99",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/casa-paloma-estate-sale/"
+   "url": "https://allevents.in/sayulita/chancha-via-circuito-vedant-kenlai/100001998648492443",
+   "category": "night"
   },
   {
    "date": "2026-11-06",
    "start": "10:00",
    "end": "14:00",
-   "title": "Mercado del Pueblo",
-   "venue": "Calle Revolución",
+   "title": "Mercado del Pueblo (farmers market)",
+   "venue": "Mercado del Pueblo, Av. Revolución",
    "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-06/"
-  },
-  {
-   "date": "2026-11-07",
-   "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop, C. Miramar 51",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-07/"
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-06/",
+   "category": "other"
   },
   {
    "date": "2026-11-07",
@@ -270,22 +209,15 @@
    "title": "Live Music at Sayulita Sandbar",
    "venue": "Sandbar, Av. Revolución 27",
    "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-11-07/"
+   "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-11-07/",
+   "category": "night"
   }
  ],
  "happy_hours": [
   {
    "type": "drink",
-   "venue": "Reef Sayulita Kombucha Bar (Av. Revolución #20)",
-   "deal": "Monthly special: buy 10 kombuchas, get 2 free, any flavor",
-   "days": "All month",
-   "start": null,
-   "end": null
-  },
-  {
-   "type": "drink",
    "venue": "Pineapple Paradise",
-   "deal": "Happy hour all day during NFL games",
+   "deal": "Happy hour all day on NFL game days",
    "days": "NFL game days",
    "start": null,
    "end": null
@@ -299,33 +231,25 @@
    "end": "21:00"
   },
   {
-   "type": "food",
-   "venue": "Mucho Bueno / Paku Paku (José Mariscal 10)",
-   "deal": "Sushi happy hour: hand rolls $85, nigiri $50 each, sashimi $160",
-   "days": "Daily",
-   "start": "13:00",
-   "end": "17:00"
+   "type": "drink",
+   "venue": "Reef Sayulita Kombucha Bar (Av. Revolución 20)",
+   "deal": "Buy 10 kombuchas, get 2 free, any flavor (October monthly special)",
+   "days": "All month",
+   "start": null,
+   "end": null
   },
   {
    "type": "food",
    "venue": "JahGyro Gyros (delivery only)",
-   "deal": "Falafel gyro $120, Pollo $140, new Monchoso (chicken + falafel) $160. Order by WhatsApp, cards accepted",
+   "deal": "Gyros: Falafel $120, Pollo $140, new Monchoso (chicken + falafel) $160; order by WhatsApp, cards accepted",
    "days": "Wed-Fri",
    "start": "18:00",
    "end": "22:30"
   },
   {
    "type": "food",
-   "venue": "Papá Omar (José Mariscal #13, in the plaza)",
-   "deal": "Lebanese street food at the new location: falafel, shawarma, hummus, tabouli, fries, vegan and meat options",
-   "days": "Daily except Wednesday",
-   "start": "12:00",
-   "end": "02:00"
-  },
-  {
-   "type": "food",
    "venue": "Ling Ling Food",
-   "deal": "Build-your-own box from $110: rice or pasta, protein, 3 veggies, sauce. Extras: avocado $21, egg $17, peanut $11",
+   "deal": "Build-your-own box from $110 MXN (rice or pasta, protein, 3 veggies, sauce); extras: avocado $21, egg $17, peanut $11",
    "days": "Daily",
    "start": null,
    "end": null
@@ -333,15 +257,7 @@
   {
    "type": "food",
    "venue": "Deli Deli Sayulita (Miramar 39, across from the Pineapple)",
-   "deal": "Roast beef sandwich on rye $150 with chips or pretzels and pickles",
-   "days": "Daily",
-   "start": null,
-   "end": null
-  },
-  {
-   "type": "food",
-   "venue": "Artisanal Lasagnas (WhatsApp orders)",
-   "deal": "Beef ragù or spinach ricotta lasagna $140; banana bread or sea salt brownie $50",
+   "deal": "Roast beef on rye $150 with chips or pretzels and pickles",
    "days": "Daily",
    "start": null,
    "end": null
@@ -353,17 +269,17 @@
    "start": "2026-10-16",
    "end": "2026-10-18",
    "where": "Sayulita Main Beach",
-   "note": "The town's biggest annual longboard contest, open to spectators",
+   "note": "Sayulita's biggest annual longboard contest, register at sayulitalongboardcontest.mx",
    "url": "https://www.sayulitalife.com/sayulero/calendar/sayulita-longboard-competition/",
    "schedule": []
   },
   {
-   "title": "Día de Muertos Celebrations",
-   "start": "2026-10-28",
+   "title": "Día de Muertos",
+   "start": "2026-10-29",
    "end": "2026-11-02",
-   "where": "Around town, plaza to cemetery",
-   "note": "Catrina parade, surf and SUP contest, music and food. Full schedule not posted yet",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/dia-de-muertos-celebrations/",
+   "where": "Plaza and cemetery",
+   "note": "Marigold altars, Catrinas, candlelight at the cemetery on Nov 1 and 2.",
+   "url": "",
    "schedule": []
   },
   {
@@ -373,6 +289,15 @@
    "where": "Sayulita",
    "note": "",
    "url": "https://turismo.bahiadebanderas.gob.mx/eventos/",
+   "schedule": []
+  },
+  {
+   "title": "International Day of the Dead Surf Tournament (3rd edition)",
+   "start": "2026-10-29",
+   "end": "2026-11-01",
+   "where": "Sayulita",
+   "note": "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing",
+   "url": "https://www.tusbuenasnoticias.com/noticias/arte-y-cultura/2026/10/08/65437-festival-dia-de-muertos-bahia-de-banderas-2026-fechas-sedes-y-actividades",
    "schedule": []
   },
   {
