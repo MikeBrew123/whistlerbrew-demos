@@ -57,6 +57,16 @@ h2 small { font: 500 13px Inter, sans-serif; color: var(--muted); }
 .tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 1px 7px; border-radius: 99px; background: var(--line); color: var(--muted); margin-left: 4px; vertical-align: 1px; }
 a.jaibos { margin-top: 10px; color: inherit; text-decoration: none; border-color: color-mix(in srgb, var(--sun) 40%, var(--line)); }
 a.jaibos .when { background: color-mix(in srgb, var(--sea) 12%, transparent); color: var(--sea); }
+.tabs { display: flex; gap: 6px; margin: 0 0 10px; overflow-x: auto; scrollbar-width: none; }
+.tabs button { flex: 0 0 auto; font: 600 14px Inter, sans-serif; color: var(--muted); background: var(--card); border: 1px solid var(--line); border-radius: 99px; padding: 7px 13px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tabs button span { opacity: .6; font-weight: 500; margin-left: 3px; }
+.prog { margin: 8px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.prog li { display: grid; grid-template-columns: 58px 1fr; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.prog li b { color: var(--pink); font-weight: 600; }
+.prog li.d { display: block; font-weight: 600; color: var(--ink); padding-top: 10px; border: 0; }
+details summary { cursor: pointer; color: var(--sea); font-size: 14px; margin-top: 6px; }
+.tag.on { background: var(--pink); color: #fff; }
 .empty { color: var(--muted); font-size: 15px; background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 14px; }
 footer { margin-top: 36px; color: var(--muted); font-size: 13px; text-align: center; }
 footer a { color: var(--sea); }
@@ -67,7 +77,7 @@ footer a { color: var(--sea); }
 <main class="wrap">
   <header>
     <h1>Sayulita <span>hoy</span></h1>
-    <p class="sub">What's happening in town today and this week. Happy hours, events, fiestas.</p>
+    <p class="sub">What's happening in town today and this week. Nightlife, deals, fiestas.</p>
     <span class="stamp" id="stamp">Loading…</span>
   </header>
 
@@ -76,17 +86,20 @@ footer a { color: var(--sea); }
     <p id="cashText"></p>
   </section>
 
-  <h2>Today <small id="todayLabel"></small></h2>
+  <h2>Events</h2>
+  <div class="tabs" role="tablist" id="evTabs"></div>
+  <h2 style="margin-top:14px">Today <small id="todayLabel"></small></h2>
   <div class="list" id="today"></div>
 
-  <h2>Happy hours 🍹</h2>
+  <h2>Deals & happy hours</h2>
+  <div class="tabs" role="tablist" id="dealTabs"></div>
   <div class="list hh" id="hh"></div>
 
   <h2>Coming up</h2>
   <div class="list" id="week"></div>
   <a class="item jaibos" href="/jaibos"><div class="when">⚾<b>🦀</b></div><div><p class="t">Jaibos de Sayulita</p><p class="m">Our baseball team, the reigning league champs. Schedule, results and players.</p></div></a>
 
-  <h2>Fiestas coming up 🎉</h2>
+  <h2>Fiestas 🎉</h2>
   <div class="list fest" id="fest"></div>
 
   <footer>
@@ -145,8 +158,43 @@ footer a { color: var(--sea); }
     var a = fmtDay(f.start, { month: "short", day: "numeric" });
     var b = f.end && f.end !== f.start ? fmtDay(f.end, { month: "short", day: "numeric" }) : "";
     return '<article class="item"><div class="when">' + esc(fmtDay(f.start, { month: "short" })) + "<b>" + esc(fmtDay(f.start, { day: "numeric" })) +
-      '</b></div><div><p class="t">' + esc(f.title) + '</p><p class="m">' + esc([b ? a + " to " + b : a, f.where].filter(Boolean).join(" · ")) +
-      link(f.url) + (f.note ? "<br>" + esc(f.note) : "") + "</p></div></article>";
+      '</b></div><div><p class="t">' + esc(f.title) + (f.start <= todayIso ? '<span class="tag on">On now</span>' : "") + '</p><p class="m">' + esc([b ? a + " to " + b : a, f.where].filter(Boolean).join(" · ")) +
+      link(f.url) + (f.note ? "<br>" + esc(f.note) : "") + "</p>" + program(f) + "</div></article>";
+  }
+  var EV_TABS = [["night", "🌙 Nightlife"], ["fit", "🧘 Fitness"], ["other", "✨ Other"]];
+  var DEAL_TABS = [["drink", "🍹 Drinks"], ["food", "🌮 Food"]];
+  var FIT = /yoga|pilates|breath|meditat|sound bath|sound healing|cacao|reiki|ecstatic|fitness|workout|crossfit|boxing|muay|gym|stretch|mobility|run club|5k|10k|marat|pickleball|surf (lesson|class)|wellness|retreat|healing|circle|gong|kirtan|qi ?gong|tai chi|bootcamp|hiit|zumba/i;
+  var NIGHT = /\bdj\b|live music|jazz|karaoke|night|party|fiesta|salsa|bachata|latin|concert|band|show|tasting|perreo|trivia|open mic|cumbia|reggae|rock|dance party|bar\b|cantina|mezcal|cocktail|sunset session|comedy|drag|disco/i;
+  function evCat(e) { return e.category || (FIT.test(e.title) ? "fit" : NIGHT.test(e.title + " " + (e.venue || "")) ? "night" : "other"); }
+  function dealCat(h) { return h.type || (/beer|cerveza|cocktail|margarita|mezcal|tequila|wine|vino|drink|bebida|shot|2x1 drinks|kombucha|coffee|caf[eé]|smoothie|juice|happy hour/i.test(h.deal || "") ? "drink" : "food"); }
+  function pick(key, def) { try { return localStorage.getItem(key) || def; } catch (e) { return def; } }
+  function keep(key, v) { try { localStorage.setItem(key, v); } catch (e) {} }
+  function tabs(el, defs, counts, cur, onPick) {
+    el.innerHTML = defs.map(function (t) {
+      return '<button role="tab" data-k="' + t[0] + '" aria-selected="' + (t[0] === cur) + '">' + esc(t[1]) + "<span>" + (counts[t[0]] || 0) + "</span></button>";
+    }).join("");
+    el.onclick = function (ev) { var b = ev.target.closest("button"); if (b) onPick(b.dataset.k); };
+  }
+  function count(items, fn) { var c = {}; items.forEach(function (i) { var k = fn(i); c[k] = (c[k] || 0) + 1; }); return c; }
+  function progRows(rows) {
+    return rows.map(function (r) {
+      return "<li><b>" + esc(r.time ? time12(r.time) : "") + "</b><div>" + esc(r.title) + (r.where ? ' <span class="m">· ' + esc(r.where) + "</span>" + go(r.where) : "") + "</div></li>";
+    }).join("");
+  }
+  function program(f) {
+    var sched = (f.schedule || []).filter(function (r) { return r.date >= todayIso; })
+      .sort(function (a, b) { return (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")); });
+    if (!sched.length) return "";
+    var today = sched.filter(function (r) { return r.date === todayIso; });
+    var later = sched.filter(function (r) { return r.date > todayIso; });
+    var out = today.length ? '<ul class="prog"><li class="d">Today\'s program</li>' + progRows(today) + "</ul>" : "";
+    if (later.length) {
+      var days = {}, order = [];
+      later.forEach(function (r) { if (!days[r.date]) { days[r.date] = []; order.push(r.date); } days[r.date].push(r); });
+      out += "<details" + (today.length ? "" : " open") + "><summary>" + (today.length ? "Rest of the program" : "Program by day") + '</summary><ul class="prog">' +
+        order.map(function (d) { return '<li class="d">' + esc(fmtDay(d, { weekday: "long", month: "short", day: "numeric" })) + "</li>" + progRows(days[d]); }).join("") + "</ul></details>";
+    }
+    return out;
   }
   var todayIso = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date());
   $("todayLabel").textContent = fmtDay(todayIso, { weekday: "long", month: "long", day: "numeric" });
@@ -156,10 +204,20 @@ footer a { color: var(--sea); }
     if (d.cash_tip) { $("cashText").textContent = d.cash_tip; $("cash").hidden = false; }
     var ev = (d.events || []).filter(function (e) { return e.date >= todayIso; })
       .sort(function (a, b) { return (a.date + (a.start || "")).localeCompare(b.date + (b.start || "")); });
-    fill($("today"), ev.filter(function (e) { return e.date === todayIso; }), eventRow(false), "Nothing posted yet for today. Beach day? 🏖️");
-    fill($("week"), ev.filter(function (e) { return e.date > todayIso; }), eventRow(true), "Nothing else posted yet.");
-    fill($("hh"), d.happy_hours, hhRow, "No happy hour specials posted lately.");
-    fill($("fest"), (d.festivals || []).filter(function (f) { return (f.end || f.start) >= todayIso; }), festRow, "No festivals on the calendar right now.");
+    var evTab = pick("sy-ev", "night"), dealTab = pick("sy-deal", "drink"), deals = d.happy_hours || [];
+    function drawEv() {
+      tabs($("evTabs"), EV_TABS, count(ev, evCat), evTab, function (k) { evTab = k; keep("sy-ev", k); drawEv(); });
+      var mine = ev.filter(function (e) { return evCat(e) === evTab; });
+      fill($("today"), mine.filter(function (e) { return e.date === todayIso; }), eventRow(false), "Nothing in this list for today yet.");
+      fill($("week"), mine.filter(function (e) { return e.date > todayIso; }), eventRow(true), "Nothing else in this list yet.");
+    }
+    function drawDeals() {
+      tabs($("dealTabs"), DEAL_TABS, count(deals, dealCat), dealTab, function (k) { dealTab = k; keep("sy-deal", k); drawDeals(); });
+      fill($("hh"), deals.filter(function (h) { return dealCat(h) === dealTab; }), hhRow, "No specials posted lately.");
+    }
+    drawEv(); drawDeals();
+    fill($("fest"), (d.festivals || []).filter(function (f) { return (f.end || f.start) >= todayIso; })
+      .sort(function (a, b) { return (b.start <= todayIso) - (a.start <= todayIso) || a.start.localeCompare(b.start); }), festRow, "No festivals on the calendar right now.");
   }).catch(function () {
     $("stamp").textContent = "Could not load today's list. Try again in a minute.";
   });
