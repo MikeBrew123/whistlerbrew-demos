@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-10T13:20-07:00",
- "cash_tip": "",
+ "updated": "2026-10-10T13:24-07:00",
+ "cash_tip": "Lots of spots in town, including the delivery food places, now take cards, but keep some pesos on hand for small vendors and street food.",
  "events": [
   {
    "date": "2026-10-10",
@@ -9,7 +9,7 @@
    "title": "Solidarity Raffle for Families in Gaza (drawing)",
    "venue": "",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-10",
@@ -18,7 +18,7 @@
    "title": "Hatha Yoga",
    "venue": "Viajero Hostel",
    "source": "Town chat",
-   "url": null
+   "url": "https://viajerohostels.com/en/producto/sayulita/"
   },
   {
    "date": "2026-10-10",
@@ -27,7 +27,7 @@
    "title": "New Moon Women's Cacao Song Circle (Andrea)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-10",
@@ -36,7 +36,7 @@
    "title": "Restorative Yoga with Graziella",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": null
+   "url": "https://www.sayulitayogacenter.com/classes"
   },
   {
    "date": "2026-10-10",
@@ -45,14 +45,14 @@
    "title": "Restorative Iyengar Yoga",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": null
+   "url": "https://www.sayulitayogacenter.com/classes"
   },
   {
    "date": "2026-10-10",
    "start": "12:30",
    "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ at The Dock",
-   "venue": "The Dock, Pescadores 5",
+   "title": "¡Sábado al Muelle! (Saturday at The Dock)",
+   "venue": "The Dock, Pescadores 5, Sayulita",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-10/"
   },
@@ -63,7 +63,7 @@
    "title": "Sol Sirena Jewelry Workshop",
    "venue": "My Sister's Hostel, Sayulita",
    "source": "Town chat",
-   "url": null
+   "url": "https://sisterssayulita.com/"
   },
   {
    "date": "2026-10-10",
@@ -90,13 +90,13 @@
    "title": "Latin Night with Gaby Swan y Los Rumberos",
    "venue": "Sandbar Sayulita",
    "source": "Town chat",
-   "url": null
+   "url": "https://www.sayulitasandbar.com/"
   },
   {
    "date": "2026-10-10",
    "start": "22:00",
    "end": "23:30",
-   "title": "Karaoke & Ping Pong Tournament",
+   "title": "Karaoke & Ping Pong Tournament at La Redonda",
    "venue": "La Redonda, Manuel N. Navarrete 14",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/karaoke-ping-pong-tournament-at-la-redonda/2026-10-10/"
@@ -117,16 +117,16 @@
    "title": "VOICES: Women's Sound Circle (Lexi)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-17",
    "start": "21:00",
-   "end": null,
-   "title": "PERREO PA LXS NENXS 3",
-   "venue": "Goat Beach Club Sayulita",
+   "end": "03:00",
+   "title": "PERREO PA LXS NENXS 3 (Tori Fest)",
+   "venue": "GOAT Beach Club Sayulita",
    "source": "Web",
-   "url": "https://allevents.in/sayulita/perreo-pa-lxs-nenxs-3/100002000497398571"
+   "url": "https://www.eventbrite.ca/e/perreo-pa-lxs-nenxs-3-tickets-2000497398571"
   },
   {
    "date": "2026-10-18",
@@ -135,7 +135,7 @@
    "title": "Classes Begin",
    "venue": "",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-19",
@@ -144,7 +144,7 @@
    "title": "Yin Yoga & Sound with Shanna Mota",
    "venue": "ANIMA, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-20",
@@ -153,7 +153,7 @@
    "title": "Halloween Ceramics Workshop",
    "venue": "Terracota Solar Taller de Cerámica",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-20",
@@ -162,7 +162,7 @@
    "title": "Kids Yoga Club",
    "venue": "Nomada",
    "source": "Town chat",
-   "url": null
+   "url": "https://nomadasayulita.com/yoga-shala/"
   },
   {
    "date": "2026-10-20",
@@ -171,7 +171,7 @@
    "title": "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)",
    "venue": "Galería Palu",
    "source": "Town chat",
-   "url": null
+   "url": "https://www.facebook.com/palugallery/"
   },
   {
    "date": "2026-10-20",
@@ -180,7 +180,7 @@
    "title": "Breath into Being (Gal)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-21",
@@ -189,7 +189,7 @@
    "title": "Adult Jazz class starts",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": null
+   "url": "https://www.sayulitayogacenter.com/classes"
   },
   {
    "date": "2026-10-22",
@@ -198,7 +198,7 @@
    "title": "Halloween-themed mug ceramics workshop (ages 8-16)",
    "venue": "Terracota Solar Taller de Cerámica",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-22",
@@ -207,14 +207,14 @@
    "title": "Gong Bath (Andrea)",
    "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
    "source": "Town chat",
-   "url": null
+   "url": ""
   },
   {
    "date": "2026-10-24",
    "start": "20:00",
-   "end": null,
+   "end": "02:00",
    "title": "Chancha Vía Circuito + Vedant + Kenlai",
-   "venue": "Manuel N. Navarrete 7",
+   "venue": "Manuel N. Navarrete 7, Sayulita",
    "source": "Web",
    "url": "https://allevents.in/sayulita/chancha-via-circuito-vedant-kenlai/100001998648492443"
   },
@@ -230,11 +230,32 @@
  ],
  "happy_hours": [
   {
-   "venue": "Mucho Bueno / Paku Paku (José Mariscal 10)",
-   "deal": "Sushi happy hour 1-5 PM: hand rolls $85, nigiris $50/pc, sashimi $160. Bar happy hour 6-9 PM. Mucho Bueno Roll $190, delivery via WhatsApp",
-   "days": "Daily",
-   "start": "13:00",
-   "end": "21:00"
+   "venue": "Papá Omar",
+   "deal": "Lebanese street food (falafel, shawarma, hummus, tabouli, fries), vegan and meat options, at the new plaza location, José Mariscal #13",
+   "days": "Daily except Wednesday",
+   "start": "12:00",
+   "end": "02:00"
+  },
+  {
+   "venue": "JahGyro Gyros",
+   "deal": "Delivery-only gyros: Falafel $120, Pollo $140, new Monchoso (chicken + falafel) $160; order by WhatsApp, cards accepted",
+   "days": "Wed-Fri",
+   "start": "18:00",
+   "end": "22:30"
+  },
+  {
+   "venue": "Ling Ling Food",
+   "deal": "Build-your-own box from $110 MXN (rice or pasta, protein, 3 veggies, sauce); extras avocado $21, egg $17, peanut $11",
+   "days": "",
+   "start": null,
+   "end": null
+  },
+  {
+   "venue": "Reef Sayulita Kombucha Bar",
+   "deal": "Buy 10 kombuchas, get 2 free, any flavor (Av. Revolución #20)",
+   "days": "All October",
+   "start": null,
+   "end": null
   },
   {
    "venue": "Pineapple Paradise",
@@ -244,30 +265,16 @@
    "end": null
   },
   {
-   "venue": "Reef Sayulita Kombucha Bar (Av. Revolución #20)",
-   "deal": "Buy 10 kombuchas, get 2 free, any flavor",
-   "days": "All month (October)",
-   "start": null,
-   "end": null
-  },
-  {
-   "venue": "JahGyro Gyros (delivery only)",
-   "deal": "Falafel gyro $120, Pollo $140, new Monchoso (chicken + falafel) $160; order by WhatsApp, cards accepted",
-   "days": "Wed-Fri",
+   "venue": "Mucho Bueno / Paku Paku",
+   "deal": "Happy hour at José Mariscal 10; Mucho Bueno Roll $190, delivery via WhatsApp",
+   "days": "",
    "start": "18:00",
-   "end": "22:30"
+   "end": "21:00"
   },
   {
-   "venue": "Ling Ling Food",
-   "deal": "Build-your-own box from $110: rice or pasta, protein (shrimp or beef +$33), 3 veggies, sauce; extras avocado $21, egg $17, peanut $11",
-   "days": "Daily",
-   "start": null,
-   "end": null
-  },
-  {
-   "venue": "Deli Deli Sayulita (Miramar 39, across from the Pineapple)",
-   "deal": "Roast beef sandwich on rye $150 with chips or pretzels and pickles",
-   "days": "Daily",
+   "venue": "Deli Deli Sayulita",
+   "deal": "Roast beef sandwich on rye $150 with chips or pretzels and pickles (Miramar 39, across from the Pineapple)",
+   "days": "",
    "start": null,
    "end": null
   }
