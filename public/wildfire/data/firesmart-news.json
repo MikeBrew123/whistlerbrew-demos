@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-10-09T22:00:34.172Z",
+  "updated_at": "2026-10-10T04:00:34.276Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Reservoir inflows in Comox Valley lowest in 64 years as warm, dry fall persists",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/comox-valley-water-levels-9.7374652?cmp=rss",
+        "description": "Reduced water levels have prompted a variety of consequences — including a return to Stage 3 water restrictions, the temporary closure of a boat ramp and one conservation group monitoring for any impact to spawning salmon.",
+        "pubDate": "Fri, 09 Oct 2026 10:00:00 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Sooke's infrastructure to play key role in municipal election",
         "link": "https://www.cbc.ca/news/canada/british-columbia/sooke-infrastructure-plays-key-role-municipal-elections-9.7370362?cmp=rss",
         "description": "In the District of Sooke on Vancouver Island, the population has been growing steadily since the early 2000s — and local infrastructure has been struggling to keep pace due to environmental regulations, and a growing strain on limited resources.",
         "pubDate": "Fri, 09 Oct 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "B.C. teen rescued from 'Widowmaker' mountain trail says AI isn't to blame",
-        "link": "https://www.cbc.ca/news/canada/hiker-ai-stuck-mountain-9.7373964?cmp=rss",
-        "description": "Bryce Gowryluk, 16, was lifted from Crown Mountain by helicopter Saturday after accidentally taking what's called the \"Widowmaker\" climbing route.",
-        "pubDate": "Thu, 08 Oct 2026 20:05:22 EDT",
         "source": "CBC BC"
       }
     ],
@@ -25,32 +25,10 @@
         "pubDate": "Fri, 09 Oct 2026 18:42:20 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2026/10/Screenshot-2026-10-08-180039.png"
-      },
-      {
-        "title": "Transformative former B.C. attorney general Colin Gablemann dead at 82",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/colin-gablemann-former-attorney-general-9.7375206?cmp=rss",
-        "description": "Colin Gablemann, the transformative former British Columbia attorney general who played a key role in the creation of the province's freedom of information laws and recognizing Indigenous rights has died at the age of 82.",
-        "pubDate": "Fri, 09 Oct 2026 11:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Author tells B.C. defamation trial sexual assault claim derailed career, ability to write",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/steven-galloway-defamation-trial-can-t-write-9.7375131?cmp=rss",
-        "description": "Author and former UBC creative writing professor Steven Galloway wept as he testified that he can no longer write since unproven allegations of sexual assault derailed his career.",
-        "pubDate": "Thu, 08 Oct 2026 21:41:09 EDT",
-        "source": "CBC BC"
       }
     ],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Massive gold mine casts shadow over municipal election in small Cariboo town",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wells-gold-mine-municipal-election-9.7367238?cmp=rss",
-        "description": "Two candidates are campaigning for mayor, as approval of the Cariboo Gold Project has created disruption in the Gold-Rush-era town of Wells, B.C. — known for its vibrant artistic community and the gateway for Barkerville Historic Park and the Bowron Lakes.",
-        "pubDate": "Thu, 08 Oct 2026 09:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": [
