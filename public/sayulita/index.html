@@ -70,115 +70,142 @@ details summary { cursor: pointer; color: var(--sea); font-size: 14px; margin-to
 .empty { color: var(--muted); font-size: 15px; background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 14px; }
 footer { margin-top: 36px; color: var(--muted); font-size: 13px; text-align: center; }
 footer a { color: var(--sea); }
+.beach { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; box-shadow: var(--shadow); min-width: 0; }
+.tile .k { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.tile b { display: block; font-family: Fraunces, Georgia, serif; font-size: 19px; margin-top: 2px; }
+.tile small { display: block; color: var(--muted); font-size: 13px; }
+header { position: relative; }
+.lang { position: absolute; top: 22px; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 99px; padding: 6px 12px; cursor: pointer; }
 </style>
 </head>
 <body>
 <div class="flags" aria-hidden="true"></div>
 <main class="wrap">
   <header>
+    <button class="lang" id="lang" type="button" aria-label="Español">ES</button>
     <h1>Sayulita <span>hoy</span></h1>
-    <p class="sub">What's happening in town today and this week. Nightlife, deals, fiestas.</p>
+    <p class="sub" data-i="sub"></p>
     <span class="stamp" id="stamp">Loading…</span>
   </header>
 
+  <section class="beach" id="beach" hidden>
+    <div class="tile"><div class="k">🏄 <span data-i="surf"></span></div><b id="bSurf"></b><small id="bSurf2"></small></div>
+    <div class="tile"><div class="k">🌊 <span data-i="tide"></span></div><b id="bTide"></b><small id="bTide2"></small></div>
+    <div class="tile"><div class="k">🌅 <span data-i="sunset"></span></div><b id="bSun"></b><small id="bSun2"></small></div>
+    <div class="tile"><div class="k">🌡️ <span data-i="water"></span></div><b id="bWater"></b><small id="bWater2"></small></div>
+  </section>
+
   <section class="cash" id="cash" hidden>
-    <div class="k">💵 Cash tip</div>
+    <div class="k">💵 <span data-i="cash"></span></div>
     <p id="cashText"></p>
   </section>
 
-  <h2>Events</h2>
+  <h2 data-i="events"></h2>
   <div class="tabs" role="tablist" id="evTabs"></div>
-  <h2 style="margin-top:14px">Today <small id="todayLabel"></small></h2>
+  <h2 style="margin-top:14px"><span data-i="today"></span> <small id="todayLabel"></small></h2>
   <div class="list" id="today"></div>
 
-  <h2>Deals & happy hours</h2>
+  <h2 data-i="deals"></h2>
   <div class="tabs" role="tablist" id="dealTabs"></div>
   <div class="list hh" id="hh"></div>
 
-  <h2>Coming up</h2>
+  <h2 data-i="coming"></h2>
   <div class="list" id="week"></div>
-  <a class="item jaibos" href="/jaibos"><div class="when">⚾<b>🦀</b></div><div><p class="t">Jaibos de Sayulita</p><p class="m">Our baseball team, the reigning league champs. Schedule, results and players.</p></div></a>
+  <a class="item jaibos" href="/jaibos"><div class="when">⚾<b>🦀</b></div><div><p class="t">Jaibos de Sayulita</p><p class="m" data-i="jaibos"></p></div></a>
 
-  <h2>Fiestas 🎉</h2>
+  <h2><span data-i="fiestas"></span> 🎉</h2>
   <div class="list fest" id="fest"></div>
 
   <footer>
-    Pulled from town chat groups, local calendars and the web, twice a day.<br>
-    Plans change in Sayulita. Double-check with the venue. ¡Buen provecho!<br><br>
+    <span data-i="foot1"></span><br>
+    <span data-i="foot2"></span><br><br>
     <a href="https://whistlerbrew.com/projects">whistlerbrew.com</a>
   </footer>
 </main>
 <script>
 (function () {
-  var TZ = "America/Mexico_City";
+  var TZ = "America/Mexico_City", LAT = 20.87, LON = -105.45;
+  var UI = {
+    en: { sub: "What's happening in town today and this week. Nightlife, deals, fiestas.", surf: "Surf", tide: "Tide", sunset: "Sunset",
+      water: "Water", cash: "Cash tip", events: "Events", today: "Today", deals: "Deals & happy hours", coming: "Coming up", fiestas: "Fiestas",
+      jaibos: "Our baseball team, the reigning league champs. Schedule, results and players.",
+      foot1: "Pulled from town chat groups, local calendars and the web, twice a day.",
+      foot2: "Plans change in Sayulita. Double-check with the venue. ¡Buen provecho!",
+      night: "🌙 Nightlife", fit: "🧘 Fitness", other: "✨ Other", drink: "🍹 Drinks", food: "🌮 Food",
+      updated: "Updated", ago: "ago", min: "min", h: "h", days: "days", details: "details", directions: "📍 directions",
+      emptyToday: "Nothing in this list for today yet.", emptyLater: "Nothing else in this list yet.", emptyDeals: "No specials posted lately.",
+      emptyFest: "No festivals on the calendar right now.", onNow: "On now", todayProg: "Today's program", rest: "Rest of the program",
+      byDay: "Program by day", to: "to", until: "until", allDay: "All", day: "day", loadFail: "Could not load today's list. Try again in a minute.",
+      high: "High", low: "Low", rising: "rising", falling: "falling", sunrise: "Sunrise", air: "Air", uv: "UV",
+      flat: "Flat, swim day", small: "Small and fun", good: "Good waves", big: "Big, experts only", from: "from", approx: "approx." },
+    es: { sub: "Qué pasa en el pueblo hoy y esta semana. Vida nocturna, promos, fiestas.", surf: "Surf", tide: "Marea", sunset: "Atardecer",
+      water: "Agua", cash: "Tip de efectivo", events: "Eventos", today: "Hoy", deals: "Promos y happy hours", coming: "Próximamente", fiestas: "Fiestas",
+      jaibos: "Nuestro equipo de béisbol, campeones de la liga. Calendario, resultados y jugadores.",
+      foot1: "Tomado de los grupos del pueblo, calendarios locales y la web, dos veces al día.",
+      foot2: "Los planes cambian en Sayulita. Confirma con el lugar. ¡Buen provecho!",
+      night: "🌙 Nocturna", fit: "🧘 Bienestar", other: "✨ Otros", drink: "🍹 Bebidas", food: "🌮 Comida",
+      updated: "Actualizado hace", ago: "", min: "min", h: "h", days: "días", details: "detalles", directions: "📍 cómo llegar",
+      emptyToday: "Nada en esta lista para hoy todavía.", emptyLater: "Nada más en esta lista todavía.", emptyDeals: "No hay promos recientes.",
+      emptyFest: "No hay fiestas en el calendario ahora.", onNow: "Ahora", todayProg: "Programa de hoy", rest: "Resto del programa",
+      byDay: "Programa por día", to: "a", until: "hasta", allDay: "Todo", day: "el día", loadFail: "No se pudo cargar. Intenta en un minuto.",
+      high: "Alta", low: "Baja", rising: "subiendo", falling: "bajando", sunrise: "Amanecer", air: "Aire", uv: "UV",
+      flat: "Plano, día de nadar", small: "Pequeño y divertido", good: "Buenas olas", big: "Grande, solo expertos", from: "del", approx: "aprox." }
+  };
+  var LANG = "en";
+  try { LANG = localStorage.getItem("sy-lang") === "es" ? "es" : "en"; } catch (e) {}
+  function T(k) { return k in UI[LANG] ? UI[LANG][k] : (UI.en[k] || k); }
+  var ES = {};
+  function tr(s) { return LANG === "es" && s && ES[s] ? ES[s] : s; }
+  var LOC = function () { return LANG === "es" ? "es-MX" : "en-US"; };
+
   var $ = function (id) { return document.getElementById(id); };
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
   function day(iso) { return new Date(iso + "T12:00:00"); }
-  function fmtDay(iso, opt) { try { return day(iso).toLocaleDateString("en-US", opt); } catch (e) { return iso; } }
+  function fmtDay(iso, opt) { try { return day(iso).toLocaleDateString(LOC(), opt); } catch (e) { return iso; } }
   function time12(t) {
     if (!t) return "";
     var p = t.split(":"), h = +p[0], m = p[1] || "00";
+    if (LANG === "es") return h + ":" + m;
     return (h % 12 || 12) + (m === "00" ? "" : ":" + m) + (h < 12 ? "am" : "pm");
   }
-  function span(a, b) { return a && b ? time12(a) + " to " + time12(b) : time12(a); }
+  function span(a, b) { return a && b ? time12(a) + " " + T("to") + " " + time12(b) : time12(a); }
   function ago(iso) {
-    var mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    var mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000), v;
     if (isNaN(mins)) return "";
-    if (mins < 60) return mins + " min ago";
-    if (mins < 48 * 60) return Math.round(mins / 60) + " h ago";
-    return Math.round(mins / 1440) + " days ago";
+    v = mins < 60 ? mins + " " + T("min") : mins < 2880 ? Math.round(mins / 60) + " " + T("h") : Math.round(mins / 1440) + " " + T("days");
+    return (v + " " + T("ago")).trim();
   }
-  function link(u) { return /^https:\/\//.test(u || "") ? ' · <a href="' + esc(u) + '" rel="noopener" target="_blank">details</a>' : ""; }
+  function link(u) { return /^https:\/\//.test(u || "") ? ' · <a href="' + esc(u) + '" rel="noopener" target="_blank">' + T("details") + "</a>" : ""; }
   var IOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
   function go(place) {
     if (!place || /delivery|online|around town|tbd/i.test(place)) return "";
     var q = encodeURIComponent(place + (/sayulita/i.test(place) ? "" : ", Sayulita, Nayarit"));
     var u = IOS ? "https://maps.apple.com/?daddr=" + q : "https://www.google.com/maps/dir/?api=1&destination=" + q;
-    return ' · <a href="' + u + '" rel="noopener" target="_blank">📍 directions</a>';
+    return ' · <a href="' + u + '" rel="noopener" target="_blank">' + T("directions") + "</a>";
   }
-  function tag(s) { return s ? '<span class="tag">' + esc(s) + "</span>" : ""; }
+  var SRC = { "Town chat": { es: "Grupo del pueblo" }, "Web": { es: "Web" } };
+  function tag(s) { return s ? '<span class="tag">' + esc(LANG === "es" && SRC[s] ? SRC[s].es : s) + "</span>" : ""; }
   function fill(el, items, render, emptyText) {
     el.innerHTML = items && items.length ? items.map(render).join("") : '<div class="empty">' + esc(emptyText) + "</div>";
   }
   function eventRow(showDay) {
     return function (e) {
-      var whenTop = showDay ? fmtDay(e.date, { weekday: "short" }) : (e.start ? time12(e.start) : "All");
-      var whenBig = showDay ? fmtDay(e.date, { day: "numeric" }) : (e.start ? "" : "day");
-      var meta = [e.venue, showDay ? span(e.start, e.end) : (e.end ? "until " + time12(e.end) : "")].filter(Boolean).join(" · ");
+      var whenTop = showDay ? fmtDay(e.date, { weekday: "short" }) : (e.start ? time12(e.start) : T("allDay"));
+      var whenBig = showDay ? fmtDay(e.date, { day: "numeric" }) : (e.start ? "" : T("day"));
+      var meta = [e.venue, showDay ? span(e.start, e.end) : (e.end ? T("until") + " " + time12(e.end) : "")].filter(Boolean).join(" · ");
       return '<article class="item"><div class="when">' + esc(whenTop) + (whenBig ? "<b>" + esc(whenBig) + "</b>" : "") +
-        '</div><div><p class="t">' + esc(e.title) + tag(e.source) + '</p><p class="m">' + esc(meta) + link(e.url) + go(e.venue) +
-        (e.note ? "<br>" + esc(e.note) : "") + "</p></div></article>";
+        '</div><div><p class="t">' + esc(tr(e.title)) + tag(e.source) + '</p><p class="m">' + esc(meta) + link(e.url) + go(e.venue) +
+        (e.note ? "<br>" + esc(tr(e.note)) : "") + "</p></div></article>";
     };
   }
   function hhRow(h) {
     return '<article class="item"><div class="when">' + esc(h.start ? time12(h.start) : "🍻") + (h.end ? "<b>–" + esc(time12(h.end)) + "</b>" : "") +
-      '</div><div><p class="t">' + esc(h.venue) + '</p><p class="m">' + esc([h.deal, h.days].filter(Boolean).join(" · ")) + go(h.venue) + "</p></div></article>";
+      '</div><div><p class="t">' + esc(h.venue) + '</p><p class="m">' + esc([tr(h.deal), tr(h.days)].filter(Boolean).join(" · ")) + go(h.venue) + "</p></div></article>";
   }
-  function festRow(f) {
-    var a = fmtDay(f.start, { month: "short", day: "numeric" });
-    var b = f.end && f.end !== f.start ? fmtDay(f.end, { month: "short", day: "numeric" }) : "";
-    return '<article class="item"><div class="when">' + esc(fmtDay(f.start, { month: "short" })) + "<b>" + esc(fmtDay(f.start, { day: "numeric" })) +
-      '</b></div><div><p class="t">' + esc(f.title) + (f.start <= todayIso ? '<span class="tag on">On now</span>' : "") + '</p><p class="m">' + esc([b ? a + " to " + b : a, f.where].filter(Boolean).join(" · ")) +
-      link(f.url) + (f.note ? "<br>" + esc(f.note) : "") + "</p>" + program(f) + "</div></article>";
-  }
-  var EV_TABS = [["night", "🌙 Nightlife"], ["fit", "🧘 Fitness"], ["other", "✨ Other"]];
-  var DEAL_TABS = [["drink", "🍹 Drinks"], ["food", "🌮 Food"]];
-  var FIT = /yoga|pilates|breath|meditat|sound bath|sound healing|cacao|reiki|ecstatic|fitness|workout|crossfit|boxing|muay|gym|stretch|mobility|run club|5k|10k|marat|pickleball|surf (lesson|class)|wellness|retreat|healing|circle|gong|kirtan|qi ?gong|tai chi|bootcamp|hiit|zumba/i;
-  var NIGHT = /\bdj\b|live music|jazz|karaoke|night|party|fiesta|salsa|bachata|latin|concert|band|show|tasting|perreo|trivia|open mic|cumbia|reggae|rock|dance party|bar\b|cantina|mezcal|cocktail|sunset session|comedy|drag|disco/i;
-  function evCat(e) { return e.category || (FIT.test(e.title) ? "fit" : NIGHT.test(e.title + " " + (e.venue || "")) ? "night" : "other"); }
-  function dealCat(h) { return h.type || (/beer|cerveza|cocktail|margarita|mezcal|tequila|wine|vino|drink|bebida|shot|2x1 drinks|kombucha|coffee|caf[eé]|smoothie|juice|happy hour/i.test(h.deal || "") ? "drink" : "food"); }
-  function pick(key, def) { try { return localStorage.getItem(key) || def; } catch (e) { return def; } }
-  function keep(key, v) { try { localStorage.setItem(key, v); } catch (e) {} }
-  function tabs(el, defs, counts, cur, onPick) {
-    el.innerHTML = defs.map(function (t) {
-      return '<button role="tab" data-k="' + t[0] + '" aria-selected="' + (t[0] === cur) + '">' + esc(t[1]) + "<span>" + (counts[t[0]] || 0) + "</span></button>";
-    }).join("");
-    el.onclick = function (ev) { var b = ev.target.closest("button"); if (b) onPick(b.dataset.k); };
-  }
-  function count(items, fn) { var c = {}; items.forEach(function (i) { var k = fn(i); c[k] = (c[k] || 0) + 1; }); return c; }
   function progRows(rows) {
     return rows.map(function (r) {
-      return "<li><b>" + esc(r.time ? time12(r.time) : "") + "</b><div>" + esc(r.title) + (r.where ? ' <span class="m">· ' + esc(r.where) + "</span>" + go(r.where) : "") + "</div></li>";
+      return "<li><b>" + esc(r.time ? time12(r.time) : "") + "</b><div>" + esc(tr(r.title)) + (r.where ? ' <span class="m">· ' + esc(r.where) + "</span>" + go(r.where) : "") + "</div></li>";
     }).join("");
   }
   function program(f) {
@@ -187,40 +214,118 @@ footer a { color: var(--sea); }
     if (!sched.length) return "";
     var today = sched.filter(function (r) { return r.date === todayIso; });
     var later = sched.filter(function (r) { return r.date > todayIso; });
-    var out = today.length ? '<ul class="prog"><li class="d">Today\'s program</li>' + progRows(today) + "</ul>" : "";
+    var out = today.length ? '<ul class="prog"><li class="d">' + esc(T("todayProg")) + "</li>" + progRows(today) + "</ul>" : "";
     if (later.length) {
       var days = {}, order = [];
       later.forEach(function (r) { if (!days[r.date]) { days[r.date] = []; order.push(r.date); } days[r.date].push(r); });
-      out += "<details" + (today.length ? "" : " open") + "><summary>" + (today.length ? "Rest of the program" : "Program by day") + '</summary><ul class="prog">' +
+      out += "<details" + (today.length ? "" : " open") + "><summary>" + esc(T(today.length ? "rest" : "byDay")) + '</summary><ul class="prog">' +
         order.map(function (d) { return '<li class="d">' + esc(fmtDay(d, { weekday: "long", month: "short", day: "numeric" })) + "</li>" + progRows(days[d]); }).join("") + "</ul></details>";
     }
     return out;
   }
-  var todayIso = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date());
-  $("todayLabel").textContent = fmtDay(todayIso, { weekday: "long", month: "long", day: "numeric" });
+  function festRow(f) {
+    var a = fmtDay(f.start, { month: "short", day: "numeric" });
+    var b = f.end && f.end !== f.start ? fmtDay(f.end, { month: "short", day: "numeric" }) : "";
+    return '<article class="item"><div class="when">' + esc(fmtDay(f.start, { month: "short" })) + "<b>" + esc(fmtDay(f.start, { day: "numeric" })) +
+      '</b></div><div><p class="t">' + esc(tr(f.title)) + (f.start <= todayIso ? '<span class="tag on">' + esc(T("onNow")) + "</span>" : "") +
+      '</p><p class="m">' + esc([b ? a + " " + T("to") + " " + b : a, f.where].filter(Boolean).join(" · ")) +
+      link(f.url) + (f.note ? "<br>" + esc(tr(f.note)) : "") + "</p>" + program(f) + "</div></article>";
+  }
 
-  fetch("data.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
-    $("stamp").innerHTML = d.updated ? "Updated <b>" + esc(ago(d.updated)) + "</b>" : "";
-    if (d.cash_tip) { $("cashText").textContent = d.cash_tip; $("cash").hidden = false; }
+  var EV_TABS = ["night", "fit", "other"], DEAL_TABS = ["drink", "food"];
+  var FIT = /yoga|pilates|breath|meditat|sound bath|sound healing|cacao|reiki|ecstatic|fitness|workout|crossfit|boxing|muay|gym|stretch|mobility|run club|5k|10k|marat|pickleball|surf (lesson|class)|wellness|retreat|healing|circle|gong|kirtan|qi ?gong|tai chi|bootcamp|hiit|zumba/i;
+  var NIGHT = /\bdj\b|live music|jazz|karaoke|night|party|fiesta|salsa|bachata|latin|concert|band|show|tasting|perreo|trivia|open mic|cumbia|reggae|rock|dance party|bar\b|cantina|mezcal|cocktail|sunset session|comedy|drag|disco/i;
+  function evCat(e) { return e.category || (FIT.test(e.title) ? "fit" : NIGHT.test(e.title + " " + (e.venue || "")) ? "night" : "other"); }
+  function dealCat(h) { return h.type || (/beer|cerveza|cocktail|margarita|mezcal|tequila|wine|vino|drink|bebida|shot|kombucha|coffee|caf[eé]|smoothie|juice|happy hour/i.test(h.deal || "") ? "drink" : "food"); }
+  function pick(key, def) { try { return localStorage.getItem(key) || def; } catch (e) { return def; } }
+  function keep(key, v) { try { localStorage.setItem(key, v); } catch (e) {} }
+  function tabs(el, keys, counts, cur, onPick) {
+    el.innerHTML = keys.map(function (k) {
+      return '<button role="tab" data-k="' + k + '" aria-selected="' + (k === cur) + '">' + esc(T(k)) + "<span>" + (counts[k] || 0) + "</span></button>";
+    }).join("");
+    el.onclick = function (ev) { var b = ev.target.closest("button"); if (b) onPick(b.dataset.k); };
+  }
+  function count(items, fn) { var c = {}; items.forEach(function (i) { var k = fn(i); c[k] = (c[k] || 0) + 1; }); return c; }
+
+  // ---------------------------------------------------------------- beach strip (Open-Meteo, free, live)
+  var BEACH = null;
+  function cToF(c) { return Math.round(c * 9 / 5 + 32); }
+  function compass(deg) { return ["N","NE","E","SE","S","SW","W","NW"][Math.round(deg / 45) % 8]; }
+  function hhmm(iso) { return iso ? iso.slice(11, 16) : ""; }
+  function drawBeach() {
+    var b = BEACH;
+    if (!b) return;
+    var ft = b.wave * 3.281, lo = Math.max(0, Math.floor(ft)), hi = Math.max(1, Math.ceil(ft + 0.5));
+    var feel = b.wave < 0.4 ? "flat" : b.wave < 1.0 ? "small" : b.wave < 2.0 ? "good" : "big";
+    $("bSurf").textContent = lo + "–" + hi + " ft · " + Math.round(b.period) + "s";
+    $("bSurf2").textContent = T(feel) + " · " + T("from") + " " + compass(b.dir);
+    if (b.nextTide) {
+      $("bTide").textContent = T(b.nextTide.kind) + " " + time12(hhmm(b.nextTide.time));
+      $("bTide2").textContent = (b.rising ? T("rising") : T("falling")) + " · " + T("approx");
+    }
+    $("bSun").textContent = time12(hhmm(b.sunset));
+    $("bSun2").textContent = T("sunrise") + " " + time12(hhmm(b.sunrise));
+    $("bWater").textContent = Math.round(b.sst) + "°C · " + cToF(b.sst) + "°F";
+    $("bWater2").textContent = T("air") + " " + Math.round(b.air) + "° · " + T("uv") + " " + Math.round(b.uv);
+    $("beach").hidden = false;
+  }
+  function loadBeach() {
+    var q = "latitude=" + LAT + "&longitude=" + LON + "&timezone=America%2FMexico_City&forecast_days=2";
+    Promise.all([
+      fetch("https://marine-api.open-meteo.com/v1/marine?" + q + "&hourly=wave_height,wave_period,swell_wave_direction,sea_level_height_msl,sea_surface_temperature").then(function (r) { return r.json(); }),
+      fetch("https://api.open-meteo.com/v1/forecast?" + q + "&daily=sunrise,sunset,uv_index_max&current=temperature_2m").then(function (r) { return r.json(); })
+    ]).then(function (res) {
+      var m = res[0].hourly, w = res[1];
+      var now = new Intl.DateTimeFormat("sv-SE", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit" }).format(new Date()).replace(" ", "T") + ":00";
+      var i = Math.max(0, m.time.indexOf(now)), lvl = m.sea_level_height_msl, next = null;
+      for (var j = Math.max(1, i + 1); j < lvl.length - 1; j++) {
+        if (lvl[j] > lvl[j - 1] && lvl[j] >= lvl[j + 1]) { next = { kind: "high", time: m.time[j] }; break; }
+        if (lvl[j] < lvl[j - 1] && lvl[j] <= lvl[j + 1]) { next = { kind: "low", time: m.time[j] }; break; }
+      }
+      BEACH = { wave: m.wave_height[i], period: m.wave_period[i], dir: m.swell_wave_direction[i], sst: m.sea_surface_temperature[i],
+        nextTide: next, rising: lvl[i + 1] > lvl[i], sunset: w.daily.sunset[0], sunrise: w.daily.sunrise[0 + (w.daily.sunrise[0] < now ? 1 : 0)] || w.daily.sunrise[0],
+        air: w.current.temperature_2m, uv: w.daily.uv_index_max[0] };
+      drawBeach();
+    }).catch(function () {});
+  }
+
+  // ---------------------------------------------------------------- render
+  var todayIso = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date());
+  var DATA = null;
+  function render() {
+    document.documentElement.lang = LANG;
+    $("lang").textContent = LANG === "es" ? "EN" : "ES";
+    $("lang").setAttribute("aria-label", LANG === "es" ? "English" : "Español");
+    [].forEach.call(document.querySelectorAll("[data-i]"), function (el) { el.textContent = T(el.dataset.i); });
+    $("todayLabel").textContent = fmtDay(todayIso, { weekday: "long", month: "long", day: "numeric" });
+    drawBeach();
+    if (!DATA) return;
+    var d = DATA;
+    $("stamp").innerHTML = d.updated ? esc(T("updated")) + " <b>" + esc(ago(d.updated)) + "</b>" : "";
+    if (d.cash_tip) { $("cashText").textContent = tr(d.cash_tip); $("cash").hidden = false; }
     var ev = (d.events || []).filter(function (e) { return e.date >= todayIso; })
       .sort(function (a, b) { return (a.date + (a.start || "")).localeCompare(b.date + (b.start || "")); });
     var evTab = pick("sy-ev", "night"), dealTab = pick("sy-deal", "drink"), deals = d.happy_hours || [];
     function drawEv() {
       tabs($("evTabs"), EV_TABS, count(ev, evCat), evTab, function (k) { evTab = k; keep("sy-ev", k); drawEv(); });
       var mine = ev.filter(function (e) { return evCat(e) === evTab; });
-      fill($("today"), mine.filter(function (e) { return e.date === todayIso; }), eventRow(false), "Nothing in this list for today yet.");
-      fill($("week"), mine.filter(function (e) { return e.date > todayIso; }), eventRow(true), "Nothing else in this list yet.");
+      fill($("today"), mine.filter(function (e) { return e.date === todayIso; }), eventRow(false), T("emptyToday"));
+      fill($("week"), mine.filter(function (e) { return e.date > todayIso; }), eventRow(true), T("emptyLater"));
     }
     function drawDeals() {
       tabs($("dealTabs"), DEAL_TABS, count(deals, dealCat), dealTab, function (k) { dealTab = k; keep("sy-deal", k); drawDeals(); });
-      fill($("hh"), deals.filter(function (h) { return dealCat(h) === dealTab; }), hhRow, "No specials posted lately.");
+      fill($("hh"), deals.filter(function (h) { return dealCat(h) === dealTab; }), hhRow, T("emptyDeals"));
     }
     drawEv(); drawDeals();
     fill($("fest"), (d.festivals || []).filter(function (f) { return (f.end || f.start) >= todayIso; })
-      .sort(function (a, b) { return (b.start <= todayIso) - (a.start <= todayIso) || a.start.localeCompare(b.start); }), festRow, "No festivals on the calendar right now.");
-  }).catch(function () {
-    $("stamp").textContent = "Could not load today's list. Try again in a minute.";
-  });
+      .sort(function (a, b) { return (b.start <= todayIso) - (a.start <= todayIso) || a.start.localeCompare(b.start); }), festRow, T("emptyFest"));
+  }
+  $("lang").onclick = function () { LANG = LANG === "es" ? "en" : "es"; keep("sy-lang", LANG); render(); };
+  render();
+  loadBeach();
+  fetch("data.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+    DATA = d; ES = d.es || {}; render();
+  }).catch(function () { $("stamp").textContent = T("loadFail"); });
 })();
 </script>
 </body>
