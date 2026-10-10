@@ -1,7 +1,14 @@
 {
-  "updated_at": "2026-10-10T16:00:34.039Z",
+  "updated_at": "2026-10-10T22:00:34.138Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Strong winds topple trees, knock out power to thousands in B.C.'s Lower Mainland",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/lower-mainland-windstorm-power-outage-damage-9.7376969?cmp=rss",
+        "description": "British Columbia's Lower Mainland got an early taste of fall weather on Friday, with strong winds pummeling the region.",
+        "pubDate": "Fri, 09 Oct 2026 22:39:54 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Reservoir inflows in Comox Valley lowest in 64 years as warm, dry fall persists",
         "link": "https://www.cbc.ca/news/canada/british-columbia/comox-valley-water-levels-9.7374652?cmp=rss",
@@ -10,10 +17,10 @@
         "source": "CBC BC"
       },
       {
-        "title": "Sooke's infrastructure to play key role in municipal election",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/sooke-infrastructure-plays-key-role-municipal-elections-9.7370362?cmp=rss",
-        "description": "In the District of Sooke on Vancouver Island, the population has been growing steadily since the early 2000s — and local infrastructure has been struggling to keep pace due to environmental regulations, and a growing strain on limited resources.",
-        "pubDate": "Fri, 09 Oct 2026 09:00:00 EDT",
+        "title": "B.C. Conservatives drop Victoria-Beacon Hill candidate after offensive social media posts",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/b-c-conservatives-drop-candidate-for-victoria-beacon-hill-after-offensive-social-media-posts-9.7374798?cmp=rss",
+        "description": "Victoria-Beacon Hill candidate Joachim Agou has apologized after the B.C. Conservatives dropped him over several offensive social media posts he made, but says he still plans to run in the coming election.",
+        "pubDate": "Thu, 08 Oct 2026 17:24:02 EDT",
         "source": "CBC BC"
       }
     ],
