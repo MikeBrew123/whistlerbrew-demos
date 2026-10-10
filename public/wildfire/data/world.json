@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T22:01:28.395Z",
+  "updated_at": "2026-10-10T10:01:27.636Z",
   "fires": [
     {
       "country": "Belgium",
@@ -202,6 +202,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Toronto Zoo sees drop in 2026 visitors due to wildfire smoke, extreme heat\",\n      \"url\": \"https://globalnews.ca/news/12093097/toronto-zoo-drop-2026-"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Okanagan growers say crop insurance isn't keeping up with a changing climate\",\n      \"url\": \"https://globalnews.ca/news/12093745/okanagan-growers-cro"
   }
 }
