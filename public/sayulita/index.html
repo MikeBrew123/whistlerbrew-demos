@@ -82,6 +82,7 @@ footer a { color: var(--sea); }
 
   <h2>Coming up</h2>
   <div class="list" id="week"></div>
+  <a class="item jaibos" href="/jaibos"><div class="when">⚾<b>🦀</b></div><div><p class="t">Jaibos de Sayulita</p><p class="m">Our baseball team, the reigning league champs. Schedule, results and players.</p></div></a>
 
   <h2>Fiestas coming up 🎉</h2>
   <div class="list fest" id="fest"></div>
@@ -113,6 +114,13 @@ footer a { color: var(--sea); }
     return Math.round(mins / 1440) + " days ago";
   }
   function link(u) { return /^https:\/\//.test(u || "") ? ' · <a href="' + esc(u) + '" rel="noopener" target="_blank">details</a>' : ""; }
+  var IOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  function go(place) {
+    if (!place || /delivery|online|around town|tbd/i.test(place)) return "";
+    var q = encodeURIComponent(place + (/sayulita/i.test(place) ? "" : ", Sayulita, Nayarit"));
+    var u = IOS ? "https://maps.apple.com/?daddr=" + q : "https://www.google.com/maps/dir/?api=1&destination=" + q;
+    return ' · <a href="' + u + '" rel="noopener" target="_blank">📍 directions</a>';
+  }
   function tag(s) { return s ? '<span class="tag">' + esc(s) + "</span>" : ""; }
   function fill(el, items, render, emptyText) {
     el.innerHTML = items && items.length ? items.map(render).join("") : '<div class="empty">' + esc(emptyText) + "</div>";
@@ -123,13 +131,13 @@ footer a { color: var(--sea); }
       var whenBig = showDay ? fmtDay(e.date, { day: "numeric" }) : (e.start ? "" : "day");
       var meta = [e.venue, showDay ? span(e.start, e.end) : (e.end ? "until " + time12(e.end) : "")].filter(Boolean).join(" · ");
       return '<article class="item"><div class="when">' + esc(whenTop) + (whenBig ? "<b>" + esc(whenBig) + "</b>" : "") +
-        '</div><div><p class="t">' + esc(e.title) + tag(e.source) + '</p><p class="m">' + esc(meta) + link(e.url) +
+        '</div><div><p class="t">' + esc(e.title) + tag(e.source) + '</p><p class="m">' + esc(meta) + link(e.url) + go(e.venue) +
         (e.note ? "<br>" + esc(e.note) : "") + "</p></div></article>";
     };
   }
   function hhRow(h) {
     return '<article class="item"><div class="when">' + esc(h.start ? time12(h.start) : "🍻") + (h.end ? "<b>–" + esc(time12(h.end)) + "</b>" : "") +
-      '</div><div><p class="t">' + esc(h.venue) + '</p><p class="m">' + esc([h.deal, h.days].filter(Boolean).join(" · ")) + "</p></div></article>";
+      '</div><div><p class="t">' + esc(h.venue) + '</p><p class="m">' + esc([h.deal, h.days].filter(Boolean).join(" · ")) + go(h.venue) + "</p></div></article>";
   }
   function festRow(f) {
     var a = fmtDay(f.start, { month: "short", day: "numeric" });
