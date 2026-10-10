@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T13:27-07:00",
+ "updated": "2026-10-10T13:40-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Reigning champions 🏆",
@@ -9,50 +9,55 @@
  "games": [
   {
    "date": "2026-03-13",
-   "round": "Semifinal, game 1",
+   "time": null,
    "opponent": "Coqueros de Tuxpan",
    "home": true,
    "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "round": "Semifinal, game 1",
    "result": "W 7-6",
    "note": "Fermín López two-run homer. Felipe González the win, Luis Iván Rodríguez the save.",
    "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"
   },
   {
    "date": "2026-03-22",
-   "round": "Semifinal, game 6",
+   "time": null,
    "opponent": "Coqueros de Tuxpan",
    "home": false,
    "venue": "Tuxpan",
+   "round": "Semifinal, game 6",
    "result": "W 3-0",
    "note": "Samuel Zamudio three-run homer in the 9th to clinch the series 4-2.",
    "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"
   },
   {
    "date": "2026-04-03",
-   "round": "Final, game 4",
+   "time": null,
    "opponent": "Delfines de Puerto Vallarta",
    "home": false,
    "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
+   "round": "Final, game 4",
    "result": "L 0-4",
    "note": "Series tied 2-2.",
    "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
   },
   {
    "date": "2026-04-04",
-   "round": "Final, game 5",
+   "time": null,
    "opponent": "Delfines de Puerto Vallarta",
    "home": true,
    "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "round": "Final, game 5",
    "result": "W 4-1",
    "note": "Kender Villegas complete game.",
    "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
   },
   {
    "date": "2026-04-05",
-   "round": "Final, game 6",
+   "time": null,
    "opponent": "Delfines de Puerto Vallarta",
    "home": false,
    "venue": "Puerto Vallarta",
+   "round": "Final, game 6",
    "result": "W 10-7",
    "note": "Extra innings. Champions! Series won 4-2.",
    "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
