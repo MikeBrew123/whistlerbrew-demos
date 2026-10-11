@@ -1,97 +1,7 @@
 {
- "updated": "2026-10-10T13:56-07:00",
+ "updated": "2026-10-11T06:52-07:00",
  "cash_tip": "",
  "events": [
-  {
-   "date": "2026-10-10",
-   "start": null,
-   "end": null,
-   "title": "Solidarity Raffle for Families in Gaza (drawing)",
-   "venue": "",
-   "source": "Town chat",
-   "url": "",
-   "category": "other"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "09:00",
-   "end": null,
-   "title": "Hatha Yoga",
-   "venue": "Viajero Hostel",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "10:00",
-   "end": null,
-   "title": "New Moon Women's Cacao Song Circle (Andrea)",
-   "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "10:00",
-   "end": null,
-   "title": "Restorative Yoga with Graziella",
-   "venue": "Sayulita Yoga Center",
-   "source": "Town chat",
-   "url": "https://www.sayulitayogacenter.com/",
-   "category": "fit"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "10:00",
-   "end": "11:30",
-   "title": "Restorative Iyengar Yoga",
-   "venue": "Sayulita Yoga Center",
-   "source": "Town chat",
-   "url": "https://www.sayulitayogacenter.com/",
-   "category": "fit"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "12:30",
-   "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ day party",
-   "venue": "At The Dock, Pescadores 5",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-10/",
-   "category": "night"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "17:00",
-   "end": "19:00",
-   "title": "Sol Sirena Jewelry Workshop",
-   "venue": "My Sister's Hostel, Sayulita",
-   "source": "Town chat",
-   "url": "",
-   "category": "other"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop, C. Miramar 51",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-10/",
-   "category": "night"
-  },
-  {
-   "date": "2026-10-10",
-   "start": "21:00",
-   "end": null,
-   "title": "Latin Night with Gaby Swan y Los Rumberos",
-   "venue": "Sandbar Sayulita",
-   "source": "Town chat",
-   "url": "",
-   "category": "night"
-  },
   {
    "date": "2026-10-13",
    "start": "20:00",
@@ -114,10 +24,20 @@
   },
   {
    "date": "2026-10-14",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-14/",
+   "category": "night"
+  },
+  {
+   "date": "2026-10-14",
    "start": "20:00",
    "end": "21:00",
    "title": "Salsa Dance with Laura",
-   "venue": "Latitude 20",
+   "venue": "Latitude 20, Manuel N. Navarrete 79",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-10-14/",
    "category": "night"
@@ -133,13 +53,13 @@
    "category": "fit"
   },
   {
-   "date": "2026-10-17",
-   "start": "12:30",
-   "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ day party",
-   "venue": "At The Dock, Pescadores 5",
+   "date": "2026-10-16",
+   "start": "21:00",
+   "end": "23:59",
+   "title": "Ping Pong Tournament then Karaoke",
+   "venue": "Sayulita Sandbar, Av. Revolución 27",
    "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-17/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/ping-pong-tournament-then-karaoke-at-sayulita-sandbar/2026-10-16/",
    "category": "night"
   },
   {
@@ -156,7 +76,7 @@
    "date": "2026-10-17",
    "start": "21:00",
    "end": "03:00",
-   "title": "PERREO PA LXS NENXS 3",
+   "title": "PERREO PA LXS NENXS 3 (reggaeton party + twerk contest)",
    "venue": "GOAT Beach Club Sayulita",
    "source": "Web",
    "url": "https://allevents.in/sayulita/perreo-pa-lxs-nenxs-3/100002000497398571",
@@ -199,7 +119,7 @@
    "title": "Kids Yoga Club",
    "venue": "Nomada",
    "source": "Town chat",
-   "url": "",
+   "url": "https://nomadasayulita.com/yoga-shala/",
    "category": "fit"
   },
   {
@@ -209,7 +129,7 @@
    "title": "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)",
    "venue": "Galería Palu",
    "source": "Town chat",
-   "url": "",
+   "url": "https://www.palugallery.com/",
    "category": "other"
   },
   {
@@ -229,8 +149,18 @@
    "title": "Adult Jazz class starts",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": "https://www.sayulitayogacenter.com/classes",
+   "url": "https://www.sayulitayogacenter.com/",
    "category": "fit"
+  },
+  {
+   "date": "2026-10-21",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-21/",
+   "category": "night"
   },
   {
    "date": "2026-10-21",
@@ -264,6 +194,16 @@
   },
   {
    "date": "2026-10-24",
+   "start": "12:30",
+   "end": "18:00",
+   "title": "¡Sábado al Muelle! (Saturday at The Dock)",
+   "venue": "At The Dock, Pescadores 5",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-24/",
+   "category": "other"
+  },
+  {
+   "date": "2026-10-24",
    "start": "15:00",
    "end": null,
    "title": "Viva La Vida, Live Life Yoga Retreat",
@@ -275,11 +215,31 @@
   {
    "date": "2026-10-24",
    "start": "18:00",
+   "end": null,
+   "title": "Sound Weaving (Lexi)",
+   "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
+   "source": "Town chat",
+   "url": "",
+   "category": "fit"
+  },
+  {
+   "date": "2026-10-24",
+   "start": "18:00",
    "end": "22:00",
    "title": "Experience en SERES by Baby's Burgers",
    "venue": "SERES Beach Hotel, Delfines 219",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/experience-en-seres-by-babys-burgers/",
+   "category": "night"
+  },
+  {
+   "date": "2026-10-24",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-24/",
    "category": "night"
   },
   {
@@ -297,7 +257,7 @@
    "start": "20:30",
    "end": "23:30",
    "title": "Live Music at Sayulita Sandbar",
-   "venue": "Sayulita Sandbar",
+   "venue": "Sayulita Sandbar, Av. Revolución 27",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-10-24/",
    "category": "night"
@@ -307,20 +267,30 @@
    "start": "17:00",
    "end": "18:30",
    "title": "Pickleball Nights For a Good Cause",
-   "venue": "Escuela Primaria Damián Carmona",
+   "venue": "Escuela Primaria Damián Carmona, C. Chiripa 1",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-10-26/",
    "category": "fit"
   },
   {
+   "date": "2026-10-28",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-28/",
+   "category": "night"
+  },
+  {
    "date": "2026-10-31",
    "start": "12:30",
    "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ day party",
+   "title": "¡Sábado al Muelle! (Saturday at The Dock)",
    "venue": "At The Dock, Pescadores 5",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-31/",
-   "category": "night"
+   "category": "other"
   },
   {
    "date": "2026-10-31",
@@ -330,6 +300,16 @@
    "venue": "Sayulita Wine Shop, C. Miramar 51",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-31/",
+   "category": "night"
+  },
+  {
+   "date": "2026-11-04",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-04/",
    "category": "night"
   },
   {
@@ -347,10 +327,40 @@
    "start": "10:00",
    "end": "14:00",
    "title": "Mercado del Pueblo",
-   "venue": "Calle Revolución",
+   "venue": "Mercado del Pueblo, Av. Revolución",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-06/",
    "category": "other"
+  },
+  {
+   "date": "2026-11-06",
+   "start": "21:00",
+   "end": "23:59",
+   "title": "Ping Pong Tournament then Karaoke",
+   "venue": "Sayulita Sandbar, Av. Revolución 27",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/ping-pong-tournament-then-karaoke-at-sayulita-sandbar/2026-11-06/",
+   "category": "night"
+  },
+  {
+   "date": "2026-11-07",
+   "start": "12:30",
+   "end": "18:00",
+   "title": "¡Sábado al Muelle! (Saturday at The Dock)",
+   "venue": "At The Dock, Pescadores 5",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-11-07/",
+   "category": "other"
+  },
+  {
+   "date": "2026-11-07",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-07/",
+   "category": "night"
   },
   {
    "date": "2026-11-07",
@@ -366,24 +376,8 @@
  "happy_hours": [
   {
    "type": "drink",
-   "venue": "Mucho Bueno / Paku Paku",
-   "deal": "Happy hour",
-   "days": "Daily",
-   "start": "18:00",
-   "end": "21:00"
-  },
-  {
-   "type": "food",
-   "venue": "Mucho Bueno / Paku Paku",
-   "deal": "Sushi happy hour: hand rolls $85, nigiri $50/pc, sashimi $160",
-   "days": "Daily",
-   "start": "13:00",
-   "end": "17:00"
-  },
-  {
-   "type": "drink",
    "venue": "Pineapple Paradise",
-   "deal": "Happy hour all day on NFL game days",
+   "deal": "All-day happy hour during NFL games",
    "days": "NFL game days",
    "start": null,
    "end": null
@@ -398,32 +392,24 @@
   },
   {
    "type": "food",
-   "venue": "JahGyro Gyros (delivery only)",
-   "deal": "Falafel gyro $120, Pollo $140, new Monchoso (chicken + falafel) $160; order by WhatsApp, cards accepted",
-   "days": "Wed–Fri",
+   "venue": "Papá Omar",
+   "deal": "Lebanese street food: falafel, shawarma, hummus, tabouli and fries, with vegan and meat options, at the new plaza location, José Mariscal #13",
+   "days": "Thu-Tue (closed Wed)",
+   "start": "12:00",
+   "end": "02:00"
+  },
+  {
+   "type": "food",
+   "venue": "JahGyro Gyros",
+   "deal": "Delivery-only gyros: Falafel $120, Pollo $140, Monchoso (chicken + falafel) $160. Order by WhatsApp, cards accepted",
+   "days": "Wed-Fri",
    "start": "18:00",
    "end": "22:30"
   },
   {
    "type": "food",
    "venue": "Ling Ling Food",
-   "deal": "Build-your-own box from $110 MXN: rice or pasta, protein, 3 veggies and sauce",
-   "days": "Daily",
-   "start": null,
-   "end": null
-  },
-  {
-   "type": "food",
-   "venue": "Deli Deli Sayulita (Miramar 39)",
-   "deal": "Roast beef on rye $150 with chips or pretzels and pickles",
-   "days": "Daily",
-   "start": null,
-   "end": null
-  },
-  {
-   "type": "food",
-   "venue": "Artisanal lasagnas (WhatsApp order)",
-   "deal": "Beef ragù or spinach ricotta lasagna $140; banana bread or brownie $50",
+   "deal": "Build-your-own box from $110 MXN: rice or pasta, protein, 3 veggies and sauce. Extras: avocado $21, egg $17, peanut $11",
    "days": "Daily",
    "start": null,
    "end": null
@@ -435,7 +421,7 @@
    "start": "2026-10-16",
    "end": "2026-10-18",
    "where": "Sayulita Main Beach",
-   "note": "Sayulita's biggest annual longboard contest, open sign-up",
+   "note": "Sayulita's biggest annual longboard contest, all day, spectators welcome.",
    "url": "https://www.sayulitalife.com/sayulero/calendar/sayulita-longboard-competition/",
    "schedule": []
   },
@@ -443,8 +429,8 @@
    "title": "Día de Muertos Celebrations",
    "start": "2026-10-28",
    "end": "2026-11-02",
-   "where": "Town-wide, Sayulita",
-   "note": "Catrina parade, surf and SUP contest, music and food; full schedule not yet published",
+   "where": "Sayulita town and beach",
+   "note": "Catrina parade, surf and SUP contest, music and food.",
    "url": "https://www.sayulitalife.com/sayulero/calendar/dia-de-muertos-celebrations/",
    "schedule": []
   },
@@ -504,49 +490,44 @@
   }
  ],
  "es": {
-  "Happy hour all day on NFL game days": "Happy hour todo el día en días de partido de la NFL",
-  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
-  "Adult Jazz class starts": "Arranca la clase de jazz para adultos",
-  "Community Potluck": "Comida comunitaria de traje",
-  "Halloween Ceramics Workshop": "Taller de cerámica de Halloween",
-  "Sayulita's biggest annual longboard contest, open sign-up": "La competencia anual de longboard más grande de Sayulita, inscripciones abiertas",
-  "International Day of the Dead Surf Tournament (3rd edition)": "Torneo Internacional de Surf de Día de Muertos (3a edición)",
+  "Thu-Tue (closed Wed)": "Jue-Mar (cerrado los miércoles)",
+  "VOICES: Women's Sound Circle (Lexi)": "VOICES: círculo de sonido para mujeres (Lexi)",
+  "Pickleball Nights For a Good Cause": "Noches de pickleball con causa",
   "Yin Yoga & Sound with Shanna Mota": "Yin yoga y sonido con Shanna Mota",
-  "Solidarity Raffle for Families in Gaza (drawing)": "Rifa solidaria para familias en Gaza (sorteo)",
-  "Beef ragù or spinach ricotta lasagna $140; banana bread or brownie $50": "Lasaña de ragù de res o de espinaca con ricotta $140; pan de plátano o brownie $50",
-  "New Moon Women's Cacao Song Circle (Andrea)": "Círculo de canto y cacao para mujeres en luna nueva (Andrea)",
-  "Roast beef on rye $150 with chips or pretzels and pickles": "Sándwich de roast beef en pan de centeno $150 con papas o pretzels y pepinillos",
-  "Halloween-themed mug ceramics workshop (ages 8-16)": "Taller de cerámica para hacer tazas con temática de Halloween (de 8 a 16 años)",
-  "Restorative Yoga with Graziella": "Yoga restaurativo con Graziella",
-  "Build-your-own box from $110 MXN: rice or pasta, protein, 3 veggies and sauce": "Arma tu caja desde $110 MXN: arroz o pasta, proteína, 3 verduras y salsa",
   "Kids Yoga Club": "Club de yoga para niños",
-  "Latin Night with Gaby Swan y Los Rumberos": "Noche latina con Gaby Swan y Los Rumberos",
-  "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, Clase 1: Creación (taller de cerámica de Terracota Solar)",
-  "Restorative Iyengar Yoga": "Yoga Iyengar restaurativo",
-  "Viva La Vida, Live Life Yoga Retreat": "Retiro de yoga Viva La Vida, Live Life",
+  "Wed-Fri": "Mié-Vie",
   "Día de Muertos Celebrations": "Celebraciones de Día de Muertos",
   "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
-  "Sol Sirena Jewelry Workshop": "Taller de joyería Sol Sirena",
-  "Buy 10 kombuchas, get 2 free, any flavor (October special)": "Compra 10 kombuchas y llévate 2 gratis, de cualquier sabor (promo de octubre)",
-  "Sushi happy hour: hand rolls $85, nigiri $50/pc, sashimi $160": "Happy hour de sushi: hand rolls $85, nigiri $50 c/u, sashimi $160",
-  "Classes Begin": "Inicio de clases",
-  "NFL game days": "Días de partido de la NFL",
-  "Gong Bath (Andrea)": "Baño de gong (Andrea)",
-  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
-  "¡Sábado al Muelle! DJ day party": "¡Sábado al Muelle! Fiesta de día con DJ",
-  "Pickleball Nights For a Good Cause": "Noches de pickleball con causa",
-  "Falafel gyro $120, Pollo $140, new Monchoso (chicken + falafel) $160; order by WhatsApp, cards accepted": "Gyro de falafel $120, de pollo $140, nuevo Monchoso (pollo + falafel) $160; pide por WhatsApp, se aceptan tarjetas",
-  "Wed–Fri": "Mié a vie",
-  "VOICES: Women's Sound Circle (Lexi)": "VOICES: círculo de sonido para mujeres (Lexi)",
-  "Sayulita Longboard Competition": "Competencia de Longboard de Sayulita",
-  "Experience en SERES by Baby's Burgers": "Experiencia en SERES por Baby's Burgers",
-  "Hatha Yoga": "Hatha yoga",
-  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
-  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
+  "Sayulita's biggest annual longboard contest, all day, spectators welcome.": "El concurso anual de longboard más grande de Sayulita, todo el día, el público es bienvenido.",
   "Daily": "Diario",
-  "Salsa Dance with Laura": "Baile de salsa con Laura",
+  "Gong Bath (Andrea)": "Baño de gong (Andrea)",
   "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing": "Alrededor de 500,000 MXN en premios: shortboard, longboard, SUP, bodyboard y surf con perros",
-  "Catrina parade, surf and SUP contest, music and food; full schedule not yet published": "Desfile de Catrinas, competencia de surf y SUP, música y comida; el programa completo aún no se publica"
+  "Halloween-themed mug ceramics workshop (ages 8-16)": "Taller de cerámica para hacer tazas con temática de Halloween (de 8 a 16 años)",
+  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
+  "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, Clase 1: Creación (taller de cerámica de Terracota Solar)",
+  "Classes Begin": "Inicio de clases",
+  "Buy 10 kombuchas, get 2 free, any flavor (October special)": "Compra 10 kombuchas y llévate 2 gratis, de cualquier sabor (promo de octubre)",
+  "Build-your-own box from $110 MXN: rice or pasta, protein, 3 veggies and sauce. Extras: avocado $21, egg $17, peanut $11": "Arma tu caja desde $110 MXN: arroz o pasta, proteína, 3 verduras y salsa. Extras: aguacate $21, huevo $17, cacahuate $11",
+  "PERREO PA LXS NENXS 3 (reggaeton party + twerk contest)": "PERREO PA LXS NENXS 3 (fiesta de reggaetón + concurso de twerk)",
+  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
+  "International Day of the Dead Surf Tournament (3rd edition)": "Torneo Internacional de Surf de Día de Muertos (3a edición)",
+  "Community Potluck": "Comida comunitaria de traje",
+  "Delivery-only gyros: Falafel $120, Pollo $140, Monchoso (chicken + falafel) $160. Order by WhatsApp, cards accepted": "Gyros solo a domicilio: Falafel $120, Pollo $140, Monchoso (pollo + falafel) $160. Pide por WhatsApp, se aceptan tarjetas",
+  "Halloween Ceramics Workshop": "Taller de cerámica de Halloween",
+  "Catrina parade, surf and SUP contest, music and food.": "Desfile de Catrinas, concurso de surf y SUP, música y comida.",
+  "Lebanese street food: falafel, shawarma, hummus, tabouli and fries, with vegan and meat options, at the new plaza location, José Mariscal #13": "Comida callejera libanesa: falafel, shawarma, hummus, tabule y papas fritas, con opciones veganas y con carne, en la nueva ubicación de la plaza, José Mariscal #13",
+  "Sayulita Longboard Competition": "Competencia de Longboard de Sayulita",
+  "Viva La Vida, Live Life Yoga Retreat": "Retiro de yoga Viva La Vida, Live Life",
+  "NFL game days": "Días de partido de la NFL",
+  "All-day happy hour during NFL games": "Happy hour todo el día durante los partidos de la NFL",
+  "Sound Weaving (Lexi)": "Tejido de sonido (Lexi)",
+  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
+  "Adult Jazz class starts": "Arranca la clase de jazz para adultos",
+  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
+  "Ping Pong Tournament then Karaoke": "Torneo de ping pong y después karaoke",
+  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
+  "Salsa Dance with Laura": "Baile de salsa con Laura",
+  "¡Sábado al Muelle! (Saturday at The Dock)": "¡Sábado al Muelle!",
+  "Experience en SERES by Baby's Burgers": "Experiencia en SERES por Baby's Burgers"
  }
 }
