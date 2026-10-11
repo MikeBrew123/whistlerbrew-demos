@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T07:05-07:00",
+ "updated": "2026-10-11T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -366,20 +366,20 @@
       },
       {
        "store": "FreshSt",
-       "name": "Family Pack Fresh Local Chicken Breast Tenders",
-       "price": "$28.64 avg/ea",
+       "name": "Fresh Local Marinated Bone-In Skin-On Chicken Breast",
+       "price": "$6.94 avg/ea",
        "was": null,
-       "per": 12.99,
+       "per": 8.99,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020039000000_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020941900000_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 12.99,
-      "name": "Family Pack Fresh Local Chicken Breast Tenders"
+      "per": 8.99,
+      "name": "Fresh Local Marinated Bone-In Skin-On Chicken Breast"
      },
      "pct_cheaper": 11,
      "next_store": "Nesters",
@@ -535,8 +535,26 @@
        "until": "Oct 12",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/436041480/1790796887/extra_large.jpg"
+      },
+      {
+       "store": "FreshSt",
+       "name": "Harvest - Applewood Bacon 500g",
+       "price": "$19.49",
+       "was": null,
+       "per": 17.68,
+       "sale": false,
+       "until": "",
+       "reg": null,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005739380032_00.jpg?width=500"
       }
-     ]
+     ],
+     "everyday": {
+      "store": "FreshSt",
+      "per": 17.68,
+      "name": "Harvest - Applewood Bacon 500g"
+     },
+     "pct_cheaper": 76,
+     "next_store": "FreshSt"
     },
     {
      "item": "Sausages",
@@ -1174,6 +1192,15 @@
   "week_of": "2026-10-08",
   "standings": [
    {
+    "store": "Shoppers",
+    "points": 27,
+    "wins": 5,
+    "big_wins": 3,
+    "real_sales": 6,
+    "fake_sales": 0,
+    "avg_margin": 33
+   },
+   {
     "store": "Independent",
     "points": 22,
     "wins": 4,
@@ -1184,21 +1211,12 @@
    },
    {
     "store": "Nesters",
-    "points": 21,
+    "points": 17,
     "wins": 4,
     "big_wins": 1,
-    "real_sales": 7,
-    "fake_sales": 0,
+    "real_sales": 6,
+    "fake_sales": 1,
     "avg_margin": 23
-   },
-   {
-    "store": "Shoppers",
-    "points": 21,
-    "wins": 4,
-    "big_wins": 2,
-    "real_sales": 5,
-    "fake_sales": 0,
-    "avg_margin": 22
    },
    {
     "store": "FreshSt",
@@ -1227,12 +1245,12 @@
    },
    {
     "store": "Nesters",
-    "points": 70,
+    "points": 66,
     "weeks_won": 0
    },
    {
     "store": "Shoppers",
-    "points": 25,
+    "points": 31,
     "weeks_won": 0
    },
    {
