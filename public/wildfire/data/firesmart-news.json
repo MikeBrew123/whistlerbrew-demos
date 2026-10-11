@@ -1,26 +1,12 @@
 {
-  "updated_at": "2026-10-10T22:00:34.138Z",
+  "updated_at": "2026-10-11T04:00:34.320Z",
   "zones": {
     "coastal": [
-      {
-        "title": "Strong winds topple trees, knock out power to thousands in B.C.'s Lower Mainland",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lower-mainland-windstorm-power-outage-damage-9.7376969?cmp=rss",
-        "description": "British Columbia's Lower Mainland got an early taste of fall weather on Friday, with strong winds pummeling the region.",
-        "pubDate": "Fri, 09 Oct 2026 22:39:54 EDT",
-        "source": "CBC BC"
-      },
       {
         "title": "Reservoir inflows in Comox Valley lowest in 64 years as warm, dry fall persists",
         "link": "https://www.cbc.ca/news/canada/british-columbia/comox-valley-water-levels-9.7374652?cmp=rss",
         "description": "Reduced water levels have prompted a variety of consequences — including a return to Stage 3 water restrictions, the temporary closure of a boat ramp and one conservation group monitoring for any impact to spawning salmon.",
         "pubDate": "Fri, 09 Oct 2026 10:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "B.C. Conservatives drop Victoria-Beacon Hill candidate after offensive social media posts",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/b-c-conservatives-drop-candidate-for-victoria-beacon-hill-after-offensive-social-media-posts-9.7374798?cmp=rss",
-        "description": "Victoria-Beacon Hill candidate Joachim Agou has apologized after the B.C. Conservatives dropped him over several offensive social media posts he made, but says he still plans to run in the coming election.",
-        "pubDate": "Thu, 08 Oct 2026 17:24:02 EDT",
         "source": "CBC BC"
       }
     ],
@@ -32,9 +18,24 @@
         "pubDate": "Fri, 09 Oct 2026 20:00:21 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2024/07/kimberly-this-one.jpg?quality=65&#038;strip=all"
+      },
+      {
+        "title": "Kelowna's Taylor Ruck earns her 2nd silver at swimming World Cup",
+        "link": "https://www.cbc.ca/sports/olympics/summer/aquatics/swimming/ruck-knox-canadian-recap-swimming-world-cup-tashkent-9.7376158?cmp=rss",
+        "description": "Canadian swimmers Taylor Ruck and Finlay Knox added to their medal hauls Friday at the second stop of the three-meet World Aquatics Swimming World Cup series in Tashkent, Uzbekistan.",
+        "pubDate": "Fri, 09 Oct 2026 14:47:18 EDT",
+        "source": "CBC BC"
       }
     ],
-    "prince-george": [],
+    "prince-george": [
+      {
+        "title": "Peace River North voters facing limited provincial political choices",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/two-candidate-race-in-peace-river-north-limited-choices-9.7373451?cmp=rss",
+        "description": "Voters in the Peace River North riding have just two choices in the 2026 provincial snap election: B.C. Conservative candidate Curtis Whitford or Independent candidate Jordan Kealy. No other candidates will be on the ballot, including representatives from the B.C. NDP or B.C. Greens.",
+        "pubDate": "Sat, 10 Oct 2026 06:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
