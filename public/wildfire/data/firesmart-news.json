@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T04:00:34.320Z",
+  "updated_at": "2026-10-11T10:00:34.118Z",
   "zones": {
     "coastal": [
       {
@@ -18,24 +18,9 @@
         "pubDate": "Fri, 09 Oct 2026 20:00:21 +0000",
         "source": "Global BC News",
         "image": "https://globalnews.ca/wp-content/uploads/2024/07/kimberly-this-one.jpg?quality=65&#038;strip=all"
-      },
-      {
-        "title": "Kelowna's Taylor Ruck earns her 2nd silver at swimming World Cup",
-        "link": "https://www.cbc.ca/sports/olympics/summer/aquatics/swimming/ruck-knox-canadian-recap-swimming-world-cup-tashkent-9.7376158?cmp=rss",
-        "description": "Canadian swimmers Taylor Ruck and Finlay Knox added to their medal hauls Friday at the second stop of the three-meet World Aquatics Swimming World Cup series in Tashkent, Uzbekistan.",
-        "pubDate": "Fri, 09 Oct 2026 14:47:18 EDT",
-        "source": "CBC BC"
       }
     ],
-    "prince-george": [
-      {
-        "title": "Peace River North voters facing limited provincial political choices",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/two-candidate-race-in-peace-river-north-limited-choices-9.7373451?cmp=rss",
-        "description": "Voters in the Peace River North riding have just two choices in the 2026 provincial snap election: B.C. Conservative candidate Curtis Whitford or Independent candidate Jordan Kealy. No other candidates will be on the ballot, including representatives from the B.C. NDP or B.C. Greens.",
-        "pubDate": "Sat, 10 Oct 2026 06:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
