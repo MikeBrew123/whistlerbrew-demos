@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T10:01:18.567Z",
+  "updated_at": "2026-10-12T16:01:25.554Z",
   "fires": [
     {
       "country": "Belgium",
@@ -207,14 +207,15 @@
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 27
+      "world_fires": 28
     },
-    "deduped": 1,
-    "rerouted": 0,
+    "deduped": 0,
+    "rerouted": 1,
     "notes": [
-      "Merged BBC orangutan video article into Indonesian Wildfires entry (same subject, same fire event)",
-      "Preserved all 27 active fires from existing_fires list",
-      "All images retained from original sources"
+      "Moved 1 world article about orangutans released after Borneo fires to Indonesian Wildfires fire entry (consolidated with existing fire data)",
+      "All 26 existing_fires entries preserved as Active",
+      "No Canadian news articles in input",
+      "No duplicates across sources found"
     ]
   }
 }
