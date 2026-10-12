@@ -1,57 +1,51 @@
 {
-  "updated_at": "2026-10-12T10:00:33.633Z",
+  "updated_at": "2026-10-12T16:00:34.668Z",
   "zones": {
     "coastal": [
-      {
-        "title": "Man hospitalized after police-involved shooting in Burnaby",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/man-hospitalized-after-police-involved-shooting-in-burnaby-9.7377833?cmp=rss",
-        "description": "One man is in hospital with serious injuries and the province's civilian police oversight agency is investigating after a police-involved shooting in Burnaby on Sunday morning, RCMP say.",
-        "pubDate": "Sun, 11 Oct 2026 23:07:29 EDT",
-        "source": "CBC BC"
-      },
       {
         "title": "Pattullo Bridge arches to be removed over Thanksgiving long weekend",
         "link": "https://www.cbc.ca/news/canada/british-columbia/pattullo-bridge-arches-being-removed-9.7377426?cmp=rss",
         "description": "Business owners near the Pattullo Bridge hope improved traffic flow will mean more customers, as crews began removing the bridge’s steel arches Friday — one more step toward completing the long-awaited replacement project.",
         "pubDate": "Sun, 11 Oct 2026 11:00:00 EDT",
         "source": "CBC BC"
-      },
+      }
+    ],
+    "kamloops": [
+      {
+        "title": "Okanagan growers say crop insurance isn&#8217;t keeping up with a changing climate",
+        "link": "https://globalnews.ca/news/12093745/okanagan-growers-crop-insurance-not-keeping-up-changing-climate/",
+        "description": "The weather can bring extreme heat, cold, drought, hail or wildfire smoke, and any one of those can wipe out a crop or make grapes impossible to sell.",
+        "pubDate": "Fri, 09 Oct 2026 18:42:20 +0000",
+        "source": "Global BC News",
+        "image": "https://globalnews.ca/wp-content/uploads/2026/10/Screenshot-2026-10-08-180039.png"
+      }
+    ],
+    "prince-george": [],
+    "cariboo": [
+      {
+        "title": "Incumbent faces off against former mayor in Williams Lake election",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/williams-lake-mayor-election-9.7372694?cmp=rss",
+        "description": "It will be a choice between two experienced candidates when Williams Lake voters go to the polls for the Oct. 17 municipal election.",
+        "pubDate": "Mon, 12 Oct 2026 08:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "northwest": [],
+    "southeast": [
+      {
+        "title": "How could wildfires affect Kimberley's drinking water? A $400K project aims to find out",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfires-affect-drinking-water-kimberley-9.7373505?cmp=rss",
+        "description": "Wildfires can change water quality and availability long after the flames are out. A new project in Kimberley, B.C., aims to better understand those risks.",
+        "pubDate": "Mon, 12 Oct 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "all": [
       {
         "title": "Strong winds topple trees, knock out power to thousands in B.C.'s Lower Mainland",
         "link": "https://www.cbc.ca/news/canada/british-columbia/lower-mainland-windstorm-power-outage-damage-9.7376969?cmp=rss",
         "description": "British Columbia's Lower Mainland got an early taste of fall weather on Friday, with strong winds pummeling the region.",
         "pubDate": "Fri, 09 Oct 2026 22:39:54 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
-      {
-        "title": "B.C. woman who married ISIS fighter pleads guilty to terrorism charge",
-        "link": "https://globalnews.ca/news/12097631/bc-woman-married-isis-fighter-pleads-guilty-terrorism-charge/",
-        "description": "Kimberly Polman pleaded guilty to one count of leaving Canada to participate in the activities of a terrorist group, the Public Prosecution Service of Canada confirmed.",
-        "pubDate": "Fri, 09 Oct 2026 20:00:21 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2024/07/kimberly-this-one.jpg?quality=65&#038;strip=all"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Roller hockey players frustrated by Burnaby ban on inline skates at sports boxes",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/roller-hockey-ban-burnaby-9.7377383?cmp=rss",
-        "description": "Inline skates have been banned from Burnaby’s two newest multi-use sports boxes, leaving roller hockey players concerned about the next generation of players and with few options to play outdoors.",
-        "pubDate": "Sat, 10 Oct 2026 22:39:51 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "cariboo": [],
-    "northwest": [],
-    "southeast": [],
-    "all": [
-      {
-        "title": "Officials adjust border crossing hours as B.C. drops seasonal time change",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-border-crossing-hours-time-change-9.7377028?cmp=rss",
-        "description": "British Columbia's decision to end time changes has prompted the Canada Border Services Agency to alter its opening hours at nine land crossings to align with neighbouring U.S. ports of entry.",
-        "pubDate": "Sat, 10 Oct 2026 00:39:25 EDT",
         "source": "CBC BC"
       }
     ]
