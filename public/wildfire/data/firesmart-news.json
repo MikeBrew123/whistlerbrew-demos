@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-12T16:00:34.668Z",
+  "updated_at": "2026-10-12T22:00:34.217Z",
   "zones": {
     "coastal": [
       {
-        "title": "Pattullo Bridge arches to be removed over Thanksgiving long weekend",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/pattullo-bridge-arches-being-removed-9.7377426?cmp=rss",
-        "description": "Business owners near the Pattullo Bridge hope improved traffic flow will mean more customers, as crews began removing the bridge’s steel arches Friday — one more step toward completing the long-awaited replacement project.",
-        "pubDate": "Sun, 11 Oct 2026 11:00:00 EDT",
+        "title": "New Westminster apartment building evacuated due to early morning fire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fire-new-westminster-9.7377553?cmp=rss",
+        "description": "An emergency reception centre has been set up for displaced residents at the təməsew̓txʷ Aquatic and Community Centre located on East 6th Avenue.",
+        "pubDate": "Sun, 11 Oct 2026 11:16:58 EDT",
         "source": "CBC BC"
       }
     ],
@@ -40,14 +40,6 @@
         "source": "CBC BC"
       }
     ],
-    "all": [
-      {
-        "title": "Strong winds topple trees, knock out power to thousands in B.C.'s Lower Mainland",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lower-mainland-windstorm-power-outage-damage-9.7376969?cmp=rss",
-        "description": "British Columbia's Lower Mainland got an early taste of fall weather on Friday, with strong winds pummeling the region.",
-        "pubDate": "Fri, 09 Oct 2026 22:39:54 EDT",
-        "source": "CBC BC"
-      }
-    ]
+    "all": []
   }
 }
