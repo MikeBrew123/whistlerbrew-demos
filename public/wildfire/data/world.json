@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:01:24.200Z",
+  "updated_at": "2026-10-12T10:01:18.567Z",
   "fires": [
     {
       "country": "Belgium",
@@ -173,7 +173,7 @@
       "country": "Indonesia",
       "name": "Indonesian Wildfires (Borneo & Regional)",
       "status": "Active",
-      "summary": "Indonesia experiencing one of its worst wildfire seasons. Wildfires in Borneo have destroyed part of the natural habitat of hundreds of orangutans, risking the species' survival. Toxic haze causing Singapore's landmarks to disappear, impacting countries around South East Asia. Rescuers relocated apes after habitats threatened by intense wildfires over summer.",
+      "summary": "Indonesia experiencing one of its worst wildfire seasons. Wildfires in Borneo have destroyed part of the natural habitat of hundreds of orangutans, risking the species' survival. Toxic haze causing Singapore's landmarks to disappear, impacting countries around South East Asia. Rescuers relocated apes after habitats threatened by intense wildfires over summer. Critically endangered orangutans released back into wild after rescue from August-September fires.",
       "link": "https://www.bbc.co.uk/news/videos/cmp8g7gel3xlo?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9997/live/310516d0-c22d-11f1-bc2e-018d645d8d21.jpg"
     },
@@ -207,15 +207,14 @@
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 1
+      "world_fires": 27
     },
     "deduped": 1,
     "rerouted": 0,
     "notes": [
-      "Merged Borneo orangutan story with Indonesian Wildfires fire entry",
-      "All 25 existing fires preserved as Active status",
-      "No fires dropped (none contained >60 days ago)",
-      "No misdirected content found"
+      "Merged BBC orangutan video article into Indonesian Wildfires entry (same subject, same fire event)",
+      "Preserved all 27 active fires from existing_fires list",
+      "All images retained from original sources"
     ]
   }
 }
