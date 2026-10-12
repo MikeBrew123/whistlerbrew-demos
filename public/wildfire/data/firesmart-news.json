@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-10-12T04:00:34.146Z",
+  "updated_at": "2026-10-12T10:00:33.633Z",
   "zones": {
     "coastal": [
+      {
+        "title": "Man hospitalized after police-involved shooting in Burnaby",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/man-hospitalized-after-police-involved-shooting-in-burnaby-9.7377833?cmp=rss",
+        "description": "One man is in hospital with serious injuries and the province's civilian police oversight agency is investigating after a police-involved shooting in Burnaby on Sunday morning, RCMP say.",
+        "pubDate": "Sun, 11 Oct 2026 23:07:29 EDT",
+        "source": "CBC BC"
+      },
       {
         "title": "Pattullo Bridge arches to be removed over Thanksgiving long weekend",
         "link": "https://www.cbc.ca/news/canada/british-columbia/pattullo-bridge-arches-being-removed-9.7377426?cmp=rss",
         "description": "Business owners near the Pattullo Bridge hope improved traffic flow will mean more customers, as crews began removing the bridge’s steel arches Friday — one more step toward completing the long-awaited replacement project.",
         "pubDate": "Sun, 11 Oct 2026 11:00:00 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "New Westminster apartment building evacuated due to early morning fire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fire-new-westminster-9.7377553?cmp=rss",
-        "description": "An emergency reception centre has been set up for displaced residents at the təməsew̓txʷ Aquatic and Community Centre located on East 6th Avenue.",
-        "pubDate": "Sun, 11 Oct 2026 11:16:58 EDT",
         "source": "CBC BC"
       },
       {
@@ -36,10 +36,10 @@
     ],
     "prince-george": [
       {
-        "title": "Peace River North voters facing limited provincial political choices",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/two-candidate-race-in-peace-river-north-limited-choices-9.7373451?cmp=rss",
-        "description": "Voters in the Peace River North riding have just two choices in the 2026 provincial snap election: B.C. Conservative candidate Curtis Whitford or Independent candidate Jordan Kealy. No other candidates will be on the ballot, including representatives from the B.C. NDP or B.C. Greens.",
-        "pubDate": "Sat, 10 Oct 2026 06:00:00 EDT",
+        "title": "Roller hockey players frustrated by Burnaby ban on inline skates at sports boxes",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/roller-hockey-ban-burnaby-9.7377383?cmp=rss",
+        "description": "Inline skates have been banned from Burnaby’s two newest multi-use sports boxes, leaving roller hockey players concerned about the next generation of players and with few options to play outdoors.",
+        "pubDate": "Sat, 10 Oct 2026 22:39:51 EDT",
         "source": "CBC BC"
       }
     ],
@@ -48,46 +48,11 @@
     "southeast": [],
     "all": [
       {
-        "title": "&#8216;Pyroterrorists&#8217; may increasingly use wildfire as a weapon, expert warns",
-        "link": "https://wildfiretoday.com/pyroterrorists-may-increasingly-use-wildfire-as-a-weapon-expert-warns/",
-        "description": "Over a decade ago, the then-US Forest Service’s Deputy Director of Fire and Aviation Management, Robert Baird, warned the nation about the growing threat of &#8220;pyroterrorism,&#8221; specifically the threat of al-Qaeda setting wildfires. His warning has been echoed by experts worldwide in the 13 years since. Firefighter with Fire Rescue Victoria and High Threat Response Educator [&#8230;]",
-        "pubDate": "Sun, 11 Oct 2026 23:16:03 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Sorting and sharing in the world of new technology",
-        "link": "https://wildfiretoday.com/sorting-and-sharing-in-the-world-of-new-technology/",
-        "description": "Wildfire agencies are regularly approached by companies spruiking the next best thing in innovation for wildfire prevention, preparedness, detection, response, recovery or fuels management. The decision to adopt, or to not adopt, any particular innovation is a difficult one that straddles the competing priorities of budget limitations, risk appetite and technological wisdom. How do you [&#8230;]",
-        "pubDate": "Tue, 06 Oct 2026 05:28:40 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Advancing community wildfire adaptation",
-        "link": "https://wildfiretoday.com/advancing-community-wildfire-adaptation/",
-        "description": "Community wildfire adaption activities may not work as well as hoped because they downplay the importance of local contexts and local input, argues Catrin Edgeley from Utah State University, in an editorial for the International Journal of Wildland Fire. Science, policy and practice surrounding how human communities navigate wildfire adaptation continue to evolve across changing [&#8230;]",
-        "pubDate": "Mon, 05 Oct 2026 03:09:48 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Winning ideas to transform wildfire detection and response",
-        "link": "https://wildfiretoday.com/winning-ideas-to-transform-wildfire-detection-and-response/",
-        "description": "Teams from across the world have competed to build transformative technology for wildfire detection and response. The winners were given hundreds of thousands of dollars to continue their development. The teams were awarded the funds at the XPRIZE Wildfire Competition Awardee Ceremony at the New York City Fire Museum on Sept. 23. Nine of the [&#8230;]",
-        "pubDate": "Sun, 27 Sep 2026 22:52:30 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Using a bot to help burn more fuel, more often",
-        "link": "https://wildfiretoday.com/using-a-bot-to-help-burn-more-fuel-more-often/",
-        "description": "Burn Bot is large, tank-like vehicle that wants to solve the most troubling of fuel mitigation questions – how can you manage more area, across all sorts of terrain, in all sorts of weather, at all times of the year, without overtaxing or endangering local crews, and without smothering communities with smoke? Mechanical fuel mitigation [&#8230;]",
-        "pubDate": "Thu, 24 Sep 2026 06:51:33 +0000",
-        "source": "Wildfire Today"
-      },
-      {
-        "title": "Canada&#8217;s largest fire detector acquires US wildfire business despite barriers",
-        "link": "https://wildfiretoday.com/canadas-largest-fire-detector-acquires-us-wildfire-business-despite-barriers/",
-        "description": "Wildfire detection company SenseNet, Canada&#8217;s largest wildfire detection operator, recently announced the acquisition of N5 Sensors&#8216; wildfire-related assets, a semiconductor producer in the United States, despite the company&#8217;s recent failure in a federal audit and the two nations being in the middle of a trade war. N5 builds environmental and chemical sensor platforms for air [&#",
-        "pubDate": "Wed, 23 Sep 2026 08:14:49 +0000",
-        "source": "Wildfire Today"
+        "title": "Officials adjust border crossing hours as B.C. drops seasonal time change",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/bc-border-crossing-hours-time-change-9.7377028?cmp=rss",
+        "description": "British Columbia's decision to end time changes has prompted the Canada Border Services Agency to alter its opening hours at nine land crossings to align with neighbouring U.S. ports of entry.",
+        "pubDate": "Sat, 10 Oct 2026 00:39:25 EDT",
+        "source": "CBC BC"
       }
     ]
   }
