@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-10-12T22:00:34.217Z",
+  "updated_at": "2026-10-13T04:00:34.248Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "New Westminster apartment building evacuated due to early morning fire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fire-new-westminster-9.7377553?cmp=rss",
-        "description": "An emergency reception centre has been set up for displaced residents at the təməsew̓txʷ Aquatic and Community Centre located on East 6th Avenue.",
-        "pubDate": "Sun, 11 Oct 2026 11:16:58 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "coastal": [],
     "kamloops": [
       {
         "title": "Okanagan growers say crop insurance isn&#8217;t keeping up with a changing climate",
@@ -21,15 +13,7 @@
       }
     ],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Incumbent faces off against former mayor in Williams Lake election",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/williams-lake-mayor-election-9.7372694?cmp=rss",
-        "description": "It will be a choice between two experienced candidates when Williams Lake voters go to the polls for the Oct. 17 municipal election.",
-        "pubDate": "Mon, 12 Oct 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [
       {
@@ -40,6 +24,14 @@
         "source": "CBC BC"
       }
     ],
-    "all": []
+    "all": [
+      {
+        "title": "B.C. Conservative campaign director under fire for anti-Islam posts",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/anti-islam-posts-katy-merrifield-9.7377353?cmp=rss",
+        "description": "The campaign director for the B.C. Conservatives is facing criticism over anti-Islam posts she shared on social media earlier this year, just days after the party fired another candidate over his own offensive posts.",
+        "pubDate": "Sat, 10 Oct 2026 21:43:17 EDT",
+        "source": "CBC BC"
+      }
+    ]
   }
 }
