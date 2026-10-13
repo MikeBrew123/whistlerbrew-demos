@@ -1,25 +1,8 @@
 {
-  "updated_at": "2026-10-13T10:00:33.746Z",
+  "updated_at": "2026-10-13T16:00:34.524Z",
   "zones": {
-    "coastal": [
-      {
-        "title": "New Westminster apartment building evacuated due to early morning fire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/fire-new-westminster-9.7377553?cmp=rss",
-        "description": "An emergency reception centre has been set up for displaced residents at the təməsew̓txʷ Aquatic and Community Centre located on East 6th Avenue.",
-        "pubDate": "Sun, 11 Oct 2026 11:16:58 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "kamloops": [
-      {
-        "title": "Okanagan growers say crop insurance isn&#8217;t keeping up with a changing climate",
-        "link": "https://globalnews.ca/news/12093745/okanagan-growers-crop-insurance-not-keeping-up-changing-climate/",
-        "description": "The weather can bring extreme heat, cold, drought, hail or wildfire smoke, and any one of those can wipe out a crop or make grapes impossible to sell.",
-        "pubDate": "Fri, 09 Oct 2026 18:42:20 +0000",
-        "source": "Global BC News",
-        "image": "https://globalnews.ca/wp-content/uploads/2026/10/Screenshot-2026-10-08-180039.png"
-      }
-    ],
+    "coastal": [],
+    "kamloops": [],
     "prince-george": [],
     "cariboo": [
       {
@@ -33,19 +16,19 @@
     "northwest": [],
     "southeast": [
       {
-        "title": "How could wildfires affect Kimberley's drinking water? A $400K project aims to find out",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/wildfires-affect-drinking-water-kimberley-9.7373505?cmp=rss",
-        "description": "Wildfires can change water quality and availability long after the flames are out. A new project in Kimberley, B.C., aims to better understand those risks.",
-        "pubDate": "Mon, 12 Oct 2026 07:00:00 EDT",
+        "title": "B.C. man reunited with beloved flute, 5 years after it floated away down a Yukon river",
+        "link": "https://www.cbc.ca/news/canada/north/b-c-man-reunited-with-beloved-flute-5-years-after-it-floated-away-down-a-yukon-river-9.7376163?cmp=rss",
+        "description": "Jun Takahashi was stunned when he saw the online post: someone in the Yukon bush had found a canoe barrel full of his mildew-y camping gear, and his long-lost flute.",
+        "pubDate": "Mon, 12 Oct 2026 09:00:00 EDT",
         "source": "CBC BC"
       }
     ],
     "all": [
       {
-        "title": "B.C. Conservative campaign director under fire for anti-Islam posts",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/anti-islam-posts-katy-merrifield-9.7377353?cmp=rss",
-        "description": "The campaign director for the B.C. Conservatives is facing criticism over anti-Islam posts she shared on social media earlier this year, just days after the party fired another candidate over his own offensive posts.",
-        "pubDate": "Sat, 10 Oct 2026 21:43:17 EDT",
+        "title": "Pattullo Bridge arches to be removed over Thanksgiving long weekend",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/pattullo-bridge-arches-being-removed-9.7377426?cmp=rss",
+        "description": "Business owners near the Pattullo Bridge hope improved traffic flow will mean more customers, as crews began removing the bridge’s steel arches Friday — one more step toward completing the long-awaited replacement project.",
+        "pubDate": "Sun, 11 Oct 2026 11:00:00 EDT",
         "source": "CBC BC"
       }
     ]
