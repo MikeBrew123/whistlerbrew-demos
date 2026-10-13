@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:01:25.554Z",
+  "updated_at": "2026-10-13T22:01:25.260Z",
   "fires": [
     {
       "country": "Belgium",
@@ -203,19 +203,20 @@
   "last_report": {
     "items_in": {
       "canada": 0,
-      "world": 1
+      "world": 0
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 28
+      "world_fires": 26
     },
     "deduped": 0,
-    "rerouted": 1,
+    "rerouted": 0,
     "notes": [
-      "Moved 1 world article about orangutans released after Borneo fires to Indonesian Wildfires fire entry (consolidated with existing fire data)",
-      "All 26 existing_fires entries preserved as Active",
-      "No Canadian news articles in input",
-      "No duplicates across sources found"
+      "All 26 existing fires preserved as Active status",
+      "No new articles provided in input",
+      "No deduplication needed",
+      "No fires contained >60 days ago to drop",
+      "All image fields preserved"
     ]
   }
 }
