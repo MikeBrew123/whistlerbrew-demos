@@ -1,18 +1,10 @@
 {
-  "updated_at": "2026-10-13T16:00:34.524Z",
+  "updated_at": "2026-10-13T22:00:34.108Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Incumbent faces off against former mayor in Williams Lake election",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/williams-lake-mayor-election-9.7372694?cmp=rss",
-        "description": "It will be a choice between two experienced candidates when Williams Lake voters go to the polls for the Oct. 17 municipal election.",
-        "pubDate": "Mon, 12 Oct 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [
       {
@@ -25,10 +17,10 @@
     ],
     "all": [
       {
-        "title": "Pattullo Bridge arches to be removed over Thanksgiving long weekend",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/pattullo-bridge-arches-being-removed-9.7377426?cmp=rss",
-        "description": "Business owners near the Pattullo Bridge hope improved traffic flow will mean more customers, as crews began removing the bridge’s steel arches Friday — one more step toward completing the long-awaited replacement project.",
-        "pubDate": "Sun, 11 Oct 2026 11:00:00 EDT",
+        "title": "How a loophole in Canada's species-at-risk law can leave wildlife in limbo",
+        "link": "https://www.cbc.ca/news/canada/legal-loophole-undermining-species-at-risk-act-9.7368066?cmp=rss",
+        "description": "A new study finds a legal gap in Canada's Species at Risk Act can leave species waiting years for protection, with 153 of 288 cases overdue and still unresolved as of January 2025.",
+        "pubDate": "Mon, 12 Oct 2026 04:00:00 EDT",
         "source": "CBC BC"
       }
     ]
