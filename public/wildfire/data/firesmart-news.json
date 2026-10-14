@@ -1,18 +1,10 @@
 {
-  "updated_at": "2026-10-14T04:00:34.032Z",
+  "updated_at": "2026-10-14T10:00:34.092Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
     "prince-george": [],
-    "cariboo": [
-      {
-        "title": "Incumbent faces off against former mayor in Williams Lake election",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/williams-lake-mayor-election-9.7372694?cmp=rss",
-        "description": "It will be a choice between two experienced candidates when Williams Lake voters go to the polls for the Oct. 17 municipal election.",
-        "pubDate": "Mon, 12 Oct 2026 08:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": []
