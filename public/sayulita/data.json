@@ -1,37 +1,7 @@
 {
- "updated": "2026-10-13T12:50-07:00",
+ "updated": "2026-10-14T06:55-07:00",
  "cash_tip": "",
  "events": [
-  {
-   "date": "2026-10-13",
-   "start": "15:00",
-   "end": "18:00",
-   "title": "Sayulita Fun Club After-School Care (ages 5-12)",
-   "venue": "",
-   "source": "Town chat",
-   "url": "",
-   "category": "other"
-  },
-  {
-   "date": "2026-10-13",
-   "start": "20:00",
-   "end": "22:00",
-   "title": "Community Potluck at ITH Amazing Surf Hostel",
-   "venue": "ITH Amazing Surf Hostel, C. Pelícanos 102",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/community-potluck-at-ith-amazing-surf-hostel/",
-   "category": "other"
-  },
-  {
-   "date": "2026-10-13",
-   "start": "20:00",
-   "end": "22:00",
-   "title": "Community Potluck",
-   "venue": "ITH Amazing Surf Hostel",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/community-potluck-at-ith-amazing-surf-hostel/2026-10-13/",
-   "category": "other"
-  },
   {
    "date": "2026-10-14",
    "start": "15:00",
@@ -116,8 +86,8 @@
    "date": "2026-10-17",
    "start": "12:30",
    "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ at The Dock",
-   "venue": "The Dock, Pescadores 5",
+   "title": "Sábado al Muelle (DJ to sunset)",
+   "venue": "At The Dock, Pescadores 5",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-17/",
    "category": "night"
@@ -146,8 +116,8 @@
    "date": "2026-10-17",
    "start": "21:00",
    "end": "03:00",
-   "title": "PERREO PA LXS NENXS 3",
-   "venue": "Goat Beach Club Sayulita",
+   "title": "PERREO PA LXS NENXS 3 (reggaeton night + twerk contest)",
+   "venue": "GOAT Beach Club Sayulita",
    "source": "Web",
    "url": "https://allevents.in/sayulita/perreo-pa-lxs-nenxs-3/100002000497398571",
    "category": "night"
@@ -213,6 +183,16 @@
    "category": "fit"
   },
   {
+   "date": "2026-10-20",
+   "start": "20:00",
+   "end": "22:00",
+   "title": "Community Potluck",
+   "venue": "ITH Amazing Surf Hostel, C. Pelícanos 102",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/community-potluck-at-ith-amazing-surf-hostel/2026-10-20/",
+   "category": "other"
+  },
+  {
    "date": "2026-10-21",
    "start": "13:30",
    "end": "14:30",
@@ -274,16 +254,6 @@
   },
   {
    "date": "2026-10-24",
-   "start": "12:30",
-   "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ at The Dock",
-   "venue": "The Dock, Pescadores 5",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-24/",
-   "category": "night"
-  },
-  {
-   "date": "2026-10-24",
    "start": "15:00",
    "end": null,
    "title": "Viva La Vida, Live Life Yoga Retreat",
@@ -305,21 +275,21 @@
   {
    "date": "2026-10-24",
    "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop, C. Miramar 51",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-24/",
-   "category": "night"
-  },
-  {
-   "date": "2026-10-24",
-   "start": "18:00",
    "end": "22:00",
    "title": "Experience en SERES by Baby's Burgers",
    "venue": "SERES Beach Hotel, Delfines 219",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/experience-en-seres-by-babys-burgers/",
+   "category": "night"
+  },
+  {
+   "date": "2026-10-24",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-24/",
    "category": "night"
   },
   {
@@ -343,14 +313,14 @@
    "category": "night"
   },
   {
-   "date": "2026-10-25",
-   "start": "10:00",
-   "end": "15:00",
-   "title": "Casa Paloma Estate Sale",
-   "venue": "Casa Paloma, Manuel N. Navarrete 99",
+   "date": "2026-10-26",
+   "start": "17:00",
+   "end": "18:30",
+   "title": "Pickleball Nights for a Good Cause (school fundraiser)",
+   "venue": "Escuela Primaria Damián Carmona, C. Chiripa 1",
    "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/casa-paloma-estate-sale/",
-   "category": "other"
+   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-10-26/",
+   "category": "fit"
   },
   {
    "date": "2026-10-26",
@@ -363,6 +333,26 @@
    "category": "fit"
   },
   {
+   "date": "2026-10-27",
+   "start": "15:15",
+   "end": "16:30",
+   "title": "Kids Yoga Club",
+   "venue": "Nomada",
+   "source": "Town chat",
+   "url": "https://nomadasayulita.com/contact/",
+   "category": "fit"
+  },
+  {
+   "date": "2026-10-27",
+   "start": "16:30",
+   "end": "18:30",
+   "title": "Clay Pieces for Your Ofrenda – Class 2: Glazing (Terracota Solar ceramics workshop)",
+   "venue": "Galería Palu",
+   "source": "Town chat",
+   "url": "",
+   "category": "other"
+  },
+  {
    "date": "2026-10-28",
    "start": "18:00",
    "end": "21:00",
@@ -371,16 +361,6 @@
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-10-28/",
    "category": "night"
-  },
-  {
-   "date": "2026-10-30",
-   "start": "07:30",
-   "end": "08:30",
-   "title": "Social Run Club",
-   "venue": "Plaza Cocula, C. Libertad 15-R",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/social-run-club/2026-10-30/",
-   "category": "fit"
   },
   {
    "date": "2026-10-31",
@@ -414,9 +394,19 @@
   },
   {
    "date": "2026-11-06",
+   "start": "07:30",
+   "end": "08:30",
+   "title": "Social Run Club",
+   "venue": "Plaza Cocula, C. Libertad 15",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/social-run-club/2026-11-06/",
+   "category": "fit"
+  },
+  {
+   "date": "2026-11-06",
    "start": "10:00",
    "end": "14:00",
-   "title": "Mercado del Pueblo",
+   "title": "Mercado del Pueblo (farmers market)",
    "venue": "Mercado del Pueblo, Av. Revolución",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-06/",
@@ -430,16 +420,6 @@
    "venue": "Sayulita Sandbar, Av. Revolución 27",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/ping-pong-tournament-then-karaoke-at-sayulita-sandbar/2026-11-06/",
-   "category": "night"
-  },
-  {
-   "date": "2026-11-07",
-   "start": "12:30",
-   "end": "18:00",
-   "title": "¡Sábado al Muelle! DJ at The Dock",
-   "venue": "The Dock, Pescadores 5",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-11-07/",
    "category": "night"
   },
   {
@@ -467,22 +447,22 @@
   {
    "type": "drink",
    "venue": "Pineapple Paradise",
-   "deal": "All-day happy hour on game days",
+   "deal": "Happy hour all day on game day",
    "days": "Game days",
    "start": null,
    "end": null
   },
   {
    "type": "drink",
-   "venue": "Mucho Bueno (José Mariscal 10)",
-   "deal": "Happy hour",
+   "venue": "Mucho Bueno",
+   "deal": "Happy hour at José Mariscal 10",
    "days": "Daily",
    "start": "18:00",
    "end": "21:00"
   },
   {
    "type": "food",
-   "venue": "Mucho Bueno (José Mariscal 10)",
+   "venue": "Mucho Bueno",
    "deal": "Featured Mucho Bueno Roll $190 MXN, delivery via WhatsApp",
    "days": "Daily",
    "start": null,
@@ -490,8 +470,16 @@
   },
   {
    "type": "food",
+   "venue": "Sushi spot (unnamed)",
+   "deal": "Sushi happy hour",
+   "days": "Daily",
+   "start": "13:00",
+   "end": "17:00"
+  },
+  {
+   "type": "food",
    "venue": "Ling Ling Food",
-   "deal": "Build-your-own box from $110 MXN: rice or pasta base, protein, 3 veggies and sauce. Add avocado $21, scrambled egg $17, peanuts $11",
+   "deal": "Build-your-own box from $110 MXN (rice or pasta, protein, 3 veggies, sauce); avocado +$21, scrambled egg +$17, peanut +$11",
    "days": "Daily",
    "start": null,
    "end": null
@@ -499,13 +487,73 @@
   {
    "type": "food",
    "venue": "Bites",
-   "deal": "Daily special: Crunchy Geisha crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche",
-   "days": "Daily special (posted Oct 10-11)",
+   "deal": "Special of the day: Crunchy Geisha crispy shrimp tempura burger on toasted sesame brioche",
+   "days": "Daily special",
+   "start": null,
+   "end": null
+  },
+  {
+   "type": "food",
+   "venue": "Gourmet pizza restaurant",
+   "deal": "Medium pizza for 99 pesos",
+   "days": "Ongoing promo",
    "start": null,
    "end": null
   }
  ],
  "festivals": [
+  {
+   "title": "Sayulita Longboard Contest 2026",
+   "start": "2026-10-16",
+   "end": "2026-10-18",
+   "where": "Sayulita main beach",
+   "note": "Open, Junior and Kahuna divisions, an aerial show and a night tournament.",
+   "url": "https://sayulitalongboardcontest.mx/",
+   "schedule": [
+    {
+     "date": "2026-10-15",
+     "time": null,
+     "title": "Kit distribution and competitor meeting",
+     "where": "Playa Sayulita"
+    },
+    {
+     "date": "2026-10-16",
+     "time": null,
+     "title": "Elimination heats begin",
+     "where": "Playa Sayulita"
+    },
+    {
+     "date": "2026-10-16",
+     "time": null,
+     "title": "Night competition heats begin",
+     "where": "Playa Sayulita"
+    },
+    {
+     "date": "2026-10-17",
+     "time": null,
+     "title": "Longboard qualifying rounds",
+     "where": "Playa Sayulita"
+    },
+    {
+     "date": "2026-10-17",
+     "time": null,
+     "title": "Night competition finals",
+     "where": "Playa Sayulita"
+    },
+    {
+     "date": "2026-10-18",
+     "time": null,
+     "title": "Longboard finals",
+     "where": "Playa Sayulita"
+    },
+    {
+     "date": "2026-10-18",
+     "time": null,
+     "title": "Awards ceremony",
+     "where": "Playa Sayulita"
+    }
+   ]
+  },
   {
    "title": "Sayulita Longboard Competition",
    "start": "2026-10-16",
@@ -517,25 +565,25 @@
     {
      "date": "2026-10-15",
      "time": null,
-     "title": "Competitor kit pickup and competitors' meeting",
-     "where": "Sayulita (venue not published)"
+     "title": "Entrega de kits y reunión de competidores",
+     "where": "Playa Sayulita"
     },
     {
      "date": "2026-10-16",
      "time": null,
-     "title": "Longboard elimination heats and night competition trials",
+     "title": "Heats eliminatorios y pruebas nocturnas",
      "where": "Playa Sayulita"
     },
     {
      "date": "2026-10-17",
      "time": null,
-     "title": "Longboard qualifying rounds continue; night finals decided",
+     "title": "Clasificatorias de Long Board y finales nocturnas",
      "where": "Playa Sayulita"
     },
     {
      "date": "2026-10-18",
      "time": null,
-     "title": "Longboard finals and awards ceremony",
+     "title": "Finales de Long Board y ceremonia de premiación",
      "where": "Playa Sayulita"
     }
    ]
@@ -544,8 +592,8 @@
    "title": "Día de Muertos Celebrations",
    "start": "2026-10-28",
    "end": "2026-11-02",
-   "where": "Sayulita town and beach",
-   "note": "Catrina parade, surf and SUP contest, music and food, full schedule still to come",
+   "where": "Around town, Sayulita",
+   "note": "Catrina parade, surf and SUP contest, music and food. The full schedule is not out yet.",
    "url": "https://www.sayulitalife.com/sayulero/calendar/dia-de-muertos-celebrations/",
    "schedule": []
   },
@@ -605,53 +653,62 @@
   }
  ],
  "es": {
-  "Longboard finals and awards ceremony": "Finales de longboard y ceremonia de premiación",
-  "Experience en SERES by Baby's Burgers": "Experiencia en SERES por Baby's Burgers",
-  "Build-your-own box from $110 MXN: rice or pasta base, protein, 3 veggies and sauce. Add avocado $21, scrambled egg $17, peanuts $11": "Arma tu caja desde $110 MXN: base de arroz o pasta, proteína, 3 verduras y salsa. Agrega aguacate $21, huevo revuelto $17, cacahuates $11",
-  "VOICES: Women's Sound Circle (Lexi)": "VOICES: círculo de sonido para mujeres (Lexi)",
-  "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing": "Alrededor de 500,000 MXN en premios: shortboard, longboard, SUP, bodyboard y surf con perros",
-  "Viva La Vida, Live Life Yoga Retreat": "Retiro de yoga Viva La Vida, Live Life",
-  "Featured Mucho Bueno Roll $190 MXN, delivery via WhatsApp": "Rollo destacado Mucho Bueno Roll $190 MXN, entrega a domicilio por WhatsApp",
-  "Ping Pong Tournament then Karaoke": "Torneo de ping pong y después karaoke",
-  "Halloween-themed mug ceramics workshop (ages 8-16)": "Taller de cerámica para hacer tazas con temática de Halloween (de 8 a 16 años)",
-  "Free Pickleball, Cornhole Tourney and Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
-  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "Daily": "Diario",
-  "Salsa Dance with Laura": "Baile de salsa con Laura",
-  "Daily special: Crunchy Geisha crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche": "Especial del día: hamburguesa Crunchy Geisha de camarón tempura crujiente con pepino, ensalada de col y salsa cremosa estilo asiático en pan brioche tostado con ajonjolí",
-  "International Day of the Dead Surf Tournament (3rd edition)": "Torneo Internacional de Surf de Día de Muertos (3a edición)",
-  "Classes Begin": "Inicio de clases",
-  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
-  "Longboard elimination heats and night competition trials": "Heats eliminatorios de longboard y pruebas para la competencia nocturna",
-  "Casa Paloma Estate Sale": "Venta de garaje de Casa Paloma",
-  "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, Clase 1: Creación (taller de cerámica de Terracota Solar)",
-  "Longboard qualifying rounds continue; night finals decided": "Continúan las rondas clasificatorias de longboard; se definen las finales nocturnas",
-  "Yin Yoga & Sound Full Moon Ceremony": "Ceremonia de luna llena con Yin Yoga y sonido",
-  "Sayulita Fun Club After-School Care (ages 5-12)": "Sayulita Fun Club, cuidado extraescolar (de 5 a 12 años)",
-  "Photography Workshop with Maestra Leonie (10 weekly sessions)": "Taller de fotografía con la Maestra Leonie (10 sesiones semanales)",
-  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
-  "Yin Yoga & Sound with Shanna Mota": "Yin yoga y sonido con Shanna Mota",
-  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
-  "Sound Weaving (Lexi)": "Tejido de sonido (Lexi)",
-  "Game days": "Días de partido",
-  "Community Potluck": "Comida comunitaria de traje",
-  "Día de Muertos Celebrations": "Celebraciones de Día de Muertos",
   "Aftercare – Sayulita Kids After-School Program (ages 4-9)": "Aftercare – Programa extraescolar para niños en Sayulita (de 4 a 9 años)",
-  "Kids Yoga Club": "Club de yoga para niños",
-  "Community Potluck at ITH Amazing Surf Hostel": "Comida compartida comunitaria en ITH Amazing Surf Hostel",
-  "Kirtan Thursday with Andrea Cueva": "Kirtan los jueves con Andrea Cueva",
-  "Gong Bath (Andrea)": "Baño de gong (Andrea)",
-  "Halloween Ceramics Workshop": "Taller de cerámica de Halloween",
+  "Featured Mucho Bueno Roll $190 MXN, delivery via WhatsApp": "Rollo destacado Mucho Bueno Roll $190 MXN, entrega a domicilio por WhatsApp",
+  "Pickleball Nights for a Good Cause (school fundraiser)": "Noches de pickleball con causa (recaudación de fondos para la escuela)",
+  "Mercado del Pueblo (farmers market)": "Mercado del Pueblo (mercado de productores locales)",
+  "Photography Workshop with Maestra Leonie (10 weekly sessions)": "Taller de fotografía con la Maestra Leonie (10 sesiones semanales)",
+  "Medium pizza for 99 pesos": "Pizza mediana por 99 pesos",
+  "Elimination heats begin": "Arrancan los heats eliminatorios",
+  "Sound Weaving (Lexi)": "Tejido de sonido (Lexi)",
+  "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, Clase 1: Creación (taller de cerámica de Terracota Solar)",
+  "Open, Junior and Kahuna divisions, an aerial show and a night tournament.": "Categorías Open, Junior y Kahuna, un show aéreo y un torneo nocturno.",
+  "Special of the day: Crunchy Geisha crispy shrimp tempura burger on toasted sesame brioche": "Especial del día: hamburguesa Crunchy Geisha de camarón en tempura crujiente en pan brioche de ajonjolí tostado",
+  "Sábado al Muelle (DJ to sunset)": "Sábado al Muelle (DJ hasta el atardecer)",
+  "International Day of the Dead Surf Tournament (3rd edition)": "Torneo Internacional de Surf de Día de Muertos (3a edición)",
+  "Adult Jazz class starts": "Arranca la clase de jazz para adultos",
+  "Experience en SERES by Baby's Burgers": "Experiencia en SERES por Baby's Burgers",
+  "Happy hour at José Mariscal 10": "Happy hour en José Mariscal 10",
+  "Salsa Dance with Laura": "Baile de salsa con Laura",
+  "Community Potluck": "Comida comunitaria de traje",
+  "Daily": "Diario",
   "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
   "Sayulita Longboard Competition": "Competencia de Longboard de Sayulita",
-  "Daily special (posted Oct 10-11)": "Especial del día (publicado 10-11 de oct.)",
-  "Catrina parade, surf and SUP contest, music and food, full schedule still to come": "Desfile de Catrinas, concurso de surf y SUP, música y comida; el programa completo se anunciará pronto",
-  "¡Sábado al Muelle! DJ at The Dock": "¡Sábado al Muelle! DJ en The Dock",
-  "All-day happy hour on game days": "Happy hour todo el día en días de partido",
-  "Adult Jazz class starts": "Arranca la clase de jazz para adultos",
-  "Competitor kit pickup and competitors' meeting": "Entrega de kits y junta de competidores",
+  "Catrina parade, surf and SUP contest, music and food. The full schedule is not out yet.": "Desfile de Catrinas, concurso de surf y SUP, música y comida. Todavía no se publica el programa completo.",
+  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
+  "Kirtan Thursday with Andrea Cueva": "Kirtan los jueves con Andrea Cueva",
+  "Happy hour all day on game day": "Happy hour todo el día en día de partido",
+  "Clay Pieces for Your Ofrenda – Class 2: Glazing (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, clase 2: esmaltado (taller de cerámica Terracota Solar)",
+  "Halloween Ceramics Workshop": "Taller de cerámica de Halloween",
+  "Social Run Club": "Club social de corredores",
+  "Sushi happy hour": "Happy hour de sushi",
+  "Free Pickleball, Cornhole Tourney and Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
+  "PERREO PA LXS NENXS 3 (reggaeton night + twerk contest)": "PERREO PA LXS NENXS 3 (noche de reguetón + concurso de twerk)",
+  "VOICES: Women's Sound Circle (Lexi)": "VOICES: círculo de sonido para mujeres (Lexi)",
   "Annual longboard surf contest, open to spectators and entrants": "Concurso anual de surf longboard, abierto al público y a participantes",
-  "Social Run Club": "Club social de corredores"
+  "Night competition finals": "Finales de la competencia nocturna",
+  "Ongoing promo": "Promoción vigente",
+  "Yin Yoga & Sound with Shanna Mota": "Yin yoga y sonido con Shanna Mota",
+  "Halloween-themed mug ceramics workshop (ages 8-16)": "Taller de cerámica para hacer tazas con temática de Halloween (de 8 a 16 años)",
+  "Awards ceremony": "Ceremonia de premiación",
+  "Viva La Vida, Live Life Yoga Retreat": "Retiro de yoga Viva La Vida, Live Life",
+  "Daily special": "Especial del día",
+  "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing": "Alrededor de 500,000 MXN en premios: shortboard, longboard, SUP, bodyboard y surf con perros",
+  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
+  "Longboard finals": "Finales de longboard",
+  "Kit distribution and competitor meeting": "Entrega de kits y reunión de competidores",
+  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
+  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
+  "Gong Bath (Andrea)": "Baño de gong (Andrea)",
+  "Ping Pong Tournament then Karaoke": "Torneo de ping pong y después karaoke",
+  "Classes Begin": "Inicio de clases",
+  "Longboard qualifying rounds": "Rondas clasificatorias de longboard",
+  "Game days": "Días de partido",
+  "Yin Yoga & Sound Full Moon Ceremony": "Ceremonia de luna llena con Yin Yoga y sonido",
+  "Build-your-own box from $110 MXN (rice or pasta, protein, 3 veggies, sauce); avocado +$21, scrambled egg +$17, peanut +$11": "Arma tu caja desde $110 MXN (arroz o pasta, proteína, 3 verduras, salsa); aguacate +$21, huevo revuelto +$17, cacahuate +$11",
+  "Night competition heats begin": "Arrancan los heats de la competencia nocturna",
+  "Kids Yoga Club": "Club de yoga para niños",
+  "Día de Muertos Celebrations": "Celebraciones de Día de Muertos",
+  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre."
  }
 }
