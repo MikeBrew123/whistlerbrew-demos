@@ -67,6 +67,7 @@ a.jaibos .when { background: color-mix(in srgb, var(--sea) 12%, transparent); co
 .prog li.d { display: block; font-weight: 600; color: var(--ink); padding-top: 10px; border: 0; }
 details summary { cursor: pointer; color: var(--sea); font-size: 14px; margin-top: 6px; }
 .tag.on { background: var(--pink); color: #fff; }
+.list .sub { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin: 8px 2px 0; }
 .empty { color: var(--muted); font-size: 15px; background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 14px; }
 footer { margin-top: 36px; color: var(--muted); font-size: 13px; text-align: center; }
 footer a { color: var(--sea); }
@@ -134,7 +135,7 @@ header { position: relative; }
       foot2: "Plans change in Sayulita. Double-check with the venue. ¡Buen provecho!",
       night: "🌙 Nightlife", fit: "🧘 Fitness", other: "✨ Other", drink: "🍹 Drinks", food: "🌮 Food",
       updated: "Updated", ago: "ago", min: "min", h: "h", days: "days", details: "details", directions: "📍 directions",
-      emptyToday: "Nothing in this list for today yet.", emptyLater: "Nothing else in this list yet.", emptyDeals: "No specials posted lately.",
+      emptyToday: "Nothing in this list for today yet.", emptyLater: "Nothing else in this list yet.", emptyDeals: "No specials posted lately.", usual: "Every week",
       emptyFest: "No festivals on the calendar right now.", onNow: "On now", todayProg: "Today's program", rest: "Rest of the program",
       byDay: "Program by day", to: "to", until: "until", allDay: "All", day: "day", loadFail: "Could not load today's list. Try again in a minute.",
       high: "High", low: "Low", rising: "rising", falling: "falling", sunrise: "Sunrise", air: "Air", uv: "UV",
@@ -146,7 +147,7 @@ header { position: relative; }
       foot2: "Los planes cambian en Sayulita. Confirma con el lugar. ¡Buen provecho!",
       night: "🌙 Nocturna", fit: "🧘 Bienestar", other: "✨ Otros", drink: "🍹 Bebidas", food: "🌮 Comida",
       updated: "Actualizado hace", ago: "", min: "min", h: "h", days: "días", details: "detalles", directions: "📍 cómo llegar",
-      emptyToday: "Nada en esta lista para hoy todavía.", emptyLater: "Nada más en esta lista todavía.", emptyDeals: "No hay promos recientes.",
+      emptyToday: "Nada en esta lista para hoy todavía.", emptyLater: "Nada más en esta lista todavía.", emptyDeals: "No hay promos recientes.", usual: "Cada semana",
       emptyFest: "No hay fiestas en el calendario ahora.", onNow: "Ahora", todayProg: "Programa de hoy", rest: "Resto del programa",
       byDay: "Programa por día", to: "a", until: "hasta", allDay: "Todo", day: "el día", loadFail: "No se pudo cargar. Intenta en un minuto.",
       high: "Alta", low: "Baja", rising: "subiendo", falling: "bajando", sunrise: "Amanecer", air: "Aire", uv: "UV",
@@ -314,7 +315,10 @@ header { position: relative; }
     }
     function drawDeals() {
       tabs($("dealTabs"), DEAL_TABS, count(deals, dealCat), dealTab, function (k) { dealTab = k; keep("sy-deal", k); drawDeals(); });
-      fill($("hh"), deals.filter(function (h) { return dealCat(h) === dealTab; }), hhRow, T("emptyDeals"));
+      var mine = deals.filter(function (h) { return dealCat(h) === dealTab; });
+      var now = mine.filter(function (h) { return !h.usual; }), usual = mine.filter(function (h) { return h.usual; });
+      fill($("hh"), now, hhRow, T("emptyDeals"));
+      if (usual.length) $("hh").innerHTML = (now.length ? $("hh").innerHTML : "") + '<p class="sub">' + esc(T("usual")) + "</p>" + usual.map(hhRow).join("");
     }
     drawEv(); drawDeals();
     fill($("fest"), (d.festivals || []).filter(function (f) { return (f.end || f.start) >= todayIso; })
