@@ -1,16 +1,16 @@
 {
- "updated": "2026-10-16T16:07-07:00",
+ "updated": "2026-10-16T16:32-07:00",
  "stats": {
   "videos": 97,
-  "comments": 8240,
+  "comments": 8239,
   "youtube": 2780,
-  "reddit": 5460,
+  "reddit": 5459,
   "threads": 686,
   "people": 1063
  },
  "intro": {
-  "en": "Visitors love these laid-back beach towns for their excellent food, great surfing, beautiful beaches, and family-friendly atmosphere.",
-  "es": "Los visitantes aman estos pueblos costeros por su comida excelente, surfing fantástico, playas hermosas y ambiente familiar."
+  "en": "Visitors rave most about Sayulita and San Pancho's incredible taco spots, chill beach days, friendly surf lessons, and laid-back local vibe.",
+  "es": "A los visitantes les encanta sobre todo la increíble oferta de tacos, los días relajados de playa, las clases de surf con instructores amigables y el ambiente tranquilo de Sayulita y San Pancho."
  },
  "min_people": 3,
  "picks": [
@@ -1496,83 +1496,63 @@
   }
  ],
  "warnings": [],
- "skip": [
-  {
-   "name": "Mary's Taco Sayulita",
-   "critics": 5,
-   "fans": 22,
-   "last": "2026-02",
-   "reasons": [
-    "overrated",
-    "soggy tortillas, not fresh"
-   ],
-   "quotes": [
-    "tortillas were soggy and food was very heavy, did not taste fresh",
-    "Tortillas were soggy and food was very heavy, did not taste fresh"
-   ]
-  },
-  {
-   "name": "Kaliva",
-   "critics": 2,
-   "fans": 2,
-   "last": "2026-02",
-   "reasons": [
-    "overpriced, expensive"
-   ],
-   "quotes": [
-    "Expat places I would avoid would be Kaliva/Sports Garden, Xoc",
-    "kaliva was almost double most of the smaller places"
-   ]
-  }
- ],
+ "skip": [],
  "tips": [
   {
-   "en": "Budget 1,000 to 2,000 pesos daily for comfortable meals.",
-   "es": "Presupuesta 1,000 a 2,000 pesos diarios para comidas.",
-   "category": "money",
-   "people": 4
+   "en": "Carry pesos cash, especially for tips and small vendors; cards work at many restaurants.",
+   "es": "Lleva efectivo en pesos, sobre todo para propinas y pequeños negocios; muchos restaurantes también aceptan tarjeta.",
+   "category": "tip",
+   "people": 5,
+   "quote": "nearly all places accept tap to pay, choose pesos"
   },
   {
-   "en": "Rain mostly falls at night; avoid beach 11am-5pm.",
-   "es": "Lluvia mayormente nocturna; evita playa entre 11am-5pm.",
-   "category": "timing",
-   "people": 4
+   "en": "Uber, taxis with fixed posted prices, and local buses all serve the area, though Uber availability can vary.",
+   "es": "Uber, taxis con precios fijos publicados y camiones locales cubren la zona, aunque la disponibilidad de Uber puede variar.",
+   "category": "tip",
+   "people": 5,
+   "quote": "Fixed prices from PV to Sayulita. Signs inside the taxis."
   },
   {
-   "en": "Pay in pesos for best prices and worker preference.",
-   "es": "Paga en pesos para mejores precios y preferencia.",
-   "category": "money",
-   "people": 3
+   "en": "Renting a golf cart or ATV (around 500 pesos a day) is a fun way to get around locally.",
+   "es": "Rentar un carrito de golf o un ATV (alrededor de 500 pesos al día) es una forma divertida de moverte por la zona.",
+   "category": "tip",
+   "people": 4,
+   "quote": "rentar un carrito de golf y recorrer todo"
   },
   {
-   "en": "Take local buses for budget transport; under $3 cost.",
-   "es": "Toma autobuses locales para transporte barato, menos de $3.",
-   "category": "getting-around",
-   "people": 3
+   "en": "Catching the Día de los Muertos parade in late October or November is a lively, worthwhile experience.",
+   "es": "Ver el desfile de Día de los Muertos a finales de octubre o en noviembre es una experiencia animada y que vale la pena.",
+   "category": "tip",
+   "people": 4,
+   "quote": "Don't miss the dia de los Muertos parade...Get candy for kids"
   },
   {
-   "en": "Visit November for fewer rain days; October is unpredictable.",
-   "es": "Visita noviembre para menos lluvia; octubre es impredecible.",
-   "category": "timing",
-   "people": 3
+   "en": "Before storms, pack a portable charger, cash, and extra water and food; power and wifi may cut out.",
+   "es": "Antes de una tormenta, lleva un cargador portátil, efectivo, y agua y comida extra; la luz y el wifi pueden fallar.",
+   "category": "tip",
+   "people": 4,
+   "quote": "We will likely lose electricity, cell service and wifi"
   },
   {
-   "en": "Rent homes via Facebook groups or Sayulitalife.com.",
-   "es": "Renta casas en grupos de Facebook o Sayulitalife.com.",
-   "category": "booking",
-   "people": 3
+   "en": "Natural fiber clothing and comfortable sandals handle the heat and cobblestone streets better than synthetic fabrics.",
+   "es": "La ropa de fibras naturales y las sandalias cómodas resisten mejor el calor y las calles de empedrado que la ropa sintética.",
+   "category": "tip",
+   "people": 4,
+   "quote": "hilly town, cobblestones, be careful of your steps"
   },
   {
-   "en": "Families with kids welcome; February and August ideal.",
-   "es": "Familias con niños bienvenidas; febrero y agosto ideales.",
-   "category": "timing",
-   "people": 3
+   "en": "Daily food costs often run 1,000-2,000 pesos per person, with tacos the most budget-friendly option.",
+   "es": "Los gastos diarios de comida suelen ser de 1,000 a 2,000 pesos por persona; los tacos son la opción más económica.",
+   "category": "tip",
+   "people": 3,
+   "quote": "1000 pesos per day per person recommended"
   },
   {
-   "en": "Hike jungle trails and take surf lessons.",
-   "es": "Haz senderismo en la selva y lecciones de surf.",
-   "category": "activities",
-   "people": 3
+   "en": "Search Facebook groups or Sayulitalife.com for rentals, and consider finalizing in person to avoid scam listings.",
+   "es": "Busca rentas en grupos de Facebook o en Sayulitalife.com, y considera cerrar el trato en persona para evitar estafas.",
+   "category": "warning",
+   "people": 3,
+   "quote": "There's a lot of scams. Get there first to rent in person."
   }
  ]
 }
