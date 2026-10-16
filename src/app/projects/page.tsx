@@ -71,6 +71,14 @@ const PROJECTS: Project[] = [
     external: true,
   },
   {
+    name: "Sayulita AI Concierge",
+    href: "/sayulita/concierge/index.html",
+    description: "What visitors keep recommending in Sayulita and San Pancho, ranked from a year of YouTube comments. Haiku pulls out the places and tips, and a pick only counts when 3 or more different people mention it. Refreshed monthly from the Mini.",
+    status: "NEW",
+    accent: "#138a8a",
+    external: true,
+  },
+  {
     name: "Jaibos de Sayulita",
     href: "/jaibos/index.html",
     description: "Program guide for Sayulita's baseball team, the 2026 Liga Nayarita champions: schedule, results, players and talking points for the stands. Refreshed daily from the Mini.",
