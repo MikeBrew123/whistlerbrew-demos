@@ -1,7 +1,47 @@
 {
- "updated": "2026-10-16T07:53-07:00",
- "cash_tip": "Sayulita ATMs charge high fees on US cards, so if you're passing through San Pancho, the ATM at the hospital there is the cheaper option at about 60 pesos per withdrawal. Take out enough pesos in one go to cover the next few days.",
+ "updated": "2026-10-16T08:09-07:00",
+ "cash_tip": "Skip the pricey ATMs in Sayulita. If you have a US card, the ATM at the San Pancho hospital is the cheapest around (about a 60 peso fee), so take out enough pesos for the weekend in one go.",
  "events": [
+  {
+   "date": "2026-10-16",
+   "start": null,
+   "end": null,
+   "title": "Friday Community Yoga Class",
+   "venue": "Rose Room Yoga (",
+   "source": "Town chat",
+   "url": "",
+   "category": "fit"
+  },
+  {
+   "date": "2026-10-16",
+   "start": "09:30",
+   "end": "14:30",
+   "title": "Sayulita Fun Club Non-School Day Program (ages 5-12)",
+   "venue": "",
+   "source": "Town chat",
+   "url": "",
+   "category": "other"
+  },
+  {
+   "date": "2026-10-16",
+   "start": "15:00",
+   "end": "17:00",
+   "title": "Cuidado Aftercare - Sayulita Kids After-School Program (ages 4-9)",
+   "venue": "Plaza Nawalli - Alberca y Palapa",
+   "source": "Town chat",
+   "url": "",
+   "category": "other"
+  },
+  {
+   "date": "2026-10-16",
+   "start": "18:00",
+   "end": "20:00",
+   "title": "Clay Club – Ceramics Friday",
+   "venue": "Art House Ceramica",
+   "source": "Town chat",
+   "url": "",
+   "category": "other"
+  },
   {
    "date": "2026-10-16",
    "start": "18:00",
@@ -11,6 +51,16 @@
    "source": "Town chat",
    "url": "",
    "category": "fit"
+  },
+  {
+   "date": "2026-10-16",
+   "start": "20:00",
+   "end": null,
+   "title": "Live Music: Emmy & Marcos",
+   "venue": "Pineapple Paradise",
+   "source": "Town chat",
+   "url": "",
+   "category": "night"
   },
   {
    "date": "2026-10-16",
@@ -74,6 +124,16 @@
   },
   {
    "date": "2026-10-19",
+   "start": "15:00",
+   "end": "17:00",
+   "title": "Aloha Kids Club – After School Club with Miss Valeria and Miss Amanda",
+   "venue": "",
+   "source": "Town chat",
+   "url": "",
+   "category": "other"
+  },
+  {
+   "date": "2026-10-19",
    "start": "18:00",
    "end": "19:00",
    "title": "Yin Yoga & Sound with Shanna Mota",
@@ -88,6 +148,16 @@
    "end": "13:30",
    "title": "Halloween Ceramics Workshop",
    "venue": "Terracota Solar Taller de Cerámica",
+   "source": "Town chat",
+   "url": "",
+   "category": "other"
+  },
+  {
+   "date": "2026-10-20",
+   "start": "15:00",
+   "end": "18:00",
+   "title": "Sayulita Fun Club After-School Care (ages 5-12)",
+   "venue": "",
    "source": "Town chat",
    "url": "",
    "category": "other"
@@ -121,6 +191,16 @@
    "source": "Town chat",
    "url": "",
    "category": "fit"
+  },
+  {
+   "date": "2026-10-20",
+   "start": "18:00",
+   "end": null,
+   "title": "Wine Tasting \"Sommelier's Choice\" by Fabio Rivero – wine pairing 4-course meal",
+   "venue": "Public House",
+   "source": "Town chat",
+   "url": "",
+   "category": "night"
   },
   {
    "date": "2026-10-20",
@@ -483,7 +563,48 @@
    "category": "night"
   }
  ],
- "happy_hours": [],
+ "happy_hours": [
+  {
+   "type": "food",
+   "venue": "Bites",
+   "deal": "Daily special: Crunchy Geisha, a crispy shrimp tempura burger with cucumber, coleslaw and Asian-style creamy sauce on toasted sesame brioche",
+   "days": "Daily",
+   "start": null,
+   "end": null
+  },
+  {
+   "type": "food",
+   "venue": "Ling Ling Food",
+   "deal": "Build-your-own box from $110 MXN: rice or pasta, chicken, shrimp or beef, 3 veggies and sauce; extras avocado $21, egg $17, peanut $11",
+   "days": "Daily",
+   "start": null,
+   "end": null
+  },
+  {
+   "type": "food",
+   "venue": "Jahgyro",
+   "deal": "Falafel, chicken shawarma and hummus delivered in Sayulita; cards accepted",
+   "days": "Wed-Fri",
+   "start": "18:00",
+   "end": "22:30"
+  },
+  {
+   "type": "drink",
+   "venue": "Local sports bar",
+   "deal": "Happy hour all day on game day",
+   "days": "Game days",
+   "start": null,
+   "end": null
+  },
+  {
+   "type": "drink",
+   "venue": "Music night venue",
+   "deal": "Happy hour all night during music night, free entrance",
+   "days": "Music nights",
+   "start": null,
+   "end": null
+  }
+ ],
  "festivals": [
   {
    "title": "Sayulita Longboard Competition",
@@ -618,47 +739,64 @@
   }
  ],
  "es": {
-  "Viva La Vida, Live Life Yoga Retreat": "Retiro de yoga Viva La Vida, Live Life",
-  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
-  "Kids Yoga Club": "Club de yoga para niños",
-  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
-  "Experience en SERES by Baby's Burgers": "Experiencia en SERES por Baby's Burgers",
-  "First elimination heats and night competition opening rounds": "Primeros heats eliminatorios y rondas iniciales de la competencia nocturna",
-  "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing": "Alrededor de 500,000 MXN en premios: shortboard, longboard, SUP, bodyboard y surf con perros",
-  "Halloween Ceramics Workshop": "Taller de cerámica de Halloween",
-  "Longboard finals and awards ceremony": "Finales de longboard y ceremonia de premiación",
-  "Classes Begin": "Inicio de clases",
-  "Catrina parade, surf and SUP contest, music and food; official schedule not yet posted.": "Desfile de Catrinas, competencia de surf y SUP, música y comida; el horario oficial aún no se publica.",
-  "Sound Weaving (Lexi)": "Tejido de sonido (Lexi)",
-  "Kit pickup and competitors' meeting": "Entrega de kits y junta de competidores",
-  "Open, Junior and Kahuna divisions, an aerial show and a night tournament.": "Categorías Open, Junior y Kahuna, un show aéreo y un torneo nocturno.",
-  "Latitude 20 Reopening Party with Akuaman Sound System and La Chanta Chamuya (Costume Party)": "Fiesta de reapertura de Latitude 20 con Akuaman Sound System y La Chanta Chamuya (fiesta de disfraces)",
-  "Salsa Dance with Laura at Latitude 20": "Baile de salsa con Laura en Latitude 20",
-  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
-  "Community Beach Cleanup": "Limpieza comunitaria de playa",
-  "Restorative Iyengar Yoga": "Yoga Iyengar restaurativo",
-  "Clay Pieces for Your Ofrenda – Class 2: Glazing (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, clase 2: esmaltado (taller de cerámica Terracota Solar)",
-  "Día de Muertos Celebrations": "Celebraciones de Día de Muertos",
-  "Ping Pong Tournament then Karaoke": "Torneo de ping pong y después karaoke",
-  "Halloween-themed mug ceramics workshop (ages 8-16)": "Taller de cerámica para hacer tazas con temática de Halloween (de 8 a 16 años)",
-  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
-  "Three-day longboard surf contest on the main beach.": "Competencia de surf de longboard de tres días en la playa principal.",
-  "Community Potluck": "Comida comunitaria de traje",
-  "Mercado del Pueblo (farmers market)": "Mercado del Pueblo (mercado de productores locales)",
-  "Longboard qualifying rounds and night competition finals": "Rondas clasificatorias de longboard y finales de la competencia nocturna",
-  "Crystal Sound Healing (Leah)": "Sanación con sonido de cristal (Leah)",
-  "Gong Bath (Andrea)": "Baño de gong (Andrea)",
-  "Adult Jazz class starts": "Arranca la clase de jazz para adultos",
-  "Sayulita ATMs charge high fees on US cards, so if you're passing through San Pancho, the ATM at the hospital there is the cheaper option at about 60 pesos per withdrawal. Take out enough pesos in one go to cover the next few days.": "Los cajeros de Sayulita cobran comisiones altas con tarjetas de Estados Unidos, así que si vas a pasar por San Pancho, el cajero del hospital de allá es la opción más barata, con una comisión de unos 60 pesos por retiro. Saca suficientes pesos de una sola vez para cubrir los próximos días.",
-  "Sayulita Longboard Competition": "Competencia de Longboard de Sayulita",
+  "Cuidado Aftercare - Sayulita Kids After-School Program (ages 4-9)": "Cuidado Aftercare - Programa extraescolar para niños en Sayulita (de 4 a 9 años)",
   "International Day of the Dead Surf Tournament (3rd edition)": "Torneo Internacional de Surf de Día de Muertos (3a edición)",
-  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
-  "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, Clase 1: Creación (taller de cerámica de Terracota Solar)",
-  "VOICES: Women's Sound Circle (Lexi)": "VOICES: círculo de sonido para mujeres (Lexi)",
-  "Casa Paloma Estate Sale": "Venta de garaje de Casa Paloma",
-  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "Salsa Dance with Laura": "Baile de salsa con Laura",
+  "Wine Tasting \"Sommelier's Choice\" by Fabio Rivero – wine pairing 4-course meal": "Cata de vinos \"Sommelier's Choice\" con Fabio Rivero – cena de 4 tiempos con maridaje",
+  "Viva La Vida, Live Life Yoga Retreat": "Retiro de yoga Viva La Vida, Live Life",
+  "Experience en SERES by Baby's Burgers": "Experiencia en SERES por Baby's Burgers",
+  "Three-day longboard surf contest on the main beach.": "Competencia de surf de longboard de tres días en la playa principal.",
+  "Open, Junior and Kahuna divisions, an aerial show and a night tournament.": "Categorías Open, Junior y Kahuna, un show aéreo y un torneo nocturno.",
+  "Daily special: Crunchy Geisha, a crispy shrimp tempura burger with cucumber, coleslaw and Asian-style creamy sauce on toasted sesame brioche": "Especial del día: Crunchy Geisha, una hamburguesa de camarón en tempura crujiente con pepino, ensalada de col y salsa cremosa estilo asiático en pan brioche tostado con ajonjolí",
+  "Game days": "Días de partido",
   "Yin Yoga & Sound with Shanna Mota": "Yin yoga y sonido con Shanna Mota",
-  "Yin Yoga & Sound Full Moon Ceremony": "Ceremonia de luna llena con Yin Yoga y sonido"
+  "Ping Pong Tournament then Karaoke": "Torneo de ping pong y después karaoke",
+  "Sound Weaving (Lexi)": "Tejido de sonido (Lexi)",
+  "Crystal Sound Healing (Leah)": "Sanación con sonido de cristal (Leah)",
+  "Music nights": "Noches de música",
+  "Falafel, chicken shawarma and hummus delivered in Sayulita; cards accepted": "Falafel, shawarma de pollo y hummus a domicilio en Sayulita; se aceptan tarjetas",
+  "Kit pickup and competitors' meeting": "Entrega de kits y junta de competidores",
+  "Halloween Ceramics Workshop": "Taller de cerámica de Halloween",
+  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
+  "Halloween-themed mug ceramics workshop (ages 8-16)": "Taller de cerámica para hacer tazas con temática de Halloween (de 8 a 16 años)",
+  "Día de Muertos Celebrations": "Celebraciones de Día de Muertos",
+  "Salsa Dance with Laura at Latitude 20": "Baile de salsa con Laura en Latitude 20",
+  "Classes Begin": "Inicio de clases",
+  "Yin Yoga & Sound Full Moon Ceremony": "Ceremonia de luna llena con Yin Yoga y sonido",
+  "Build-your-own box from $110 MXN: rice or pasta, chicken, shrimp or beef, 3 veggies and sauce; extras avocado $21, egg $17, peanut $11": "Arma tu caja desde $110 MXN: arroz o pasta, pollo, camarón o res, 3 verduras y salsa; extras: aguacate $21, huevo $17, cacahuate $11",
+  "Catrina parade, surf and SUP contest, music and food; official schedule not yet posted.": "Desfile de Catrinas, competencia de surf y SUP, música y comida; el horario oficial aún no se publica.",
+  "Wed-Fri": "Mié-Vie",
+  "Sayulita Longboard Competition": "Competencia de Longboard de Sayulita",
+  "Longboard qualifying rounds and night competition finals": "Rondas clasificatorias de longboard y finales de la competencia nocturna",
+  "Daily": "Diario",
+  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
+  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
+  "Clay Pieces for Your Ofrenda – Class 1: Creation (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, Clase 1: Creación (taller de cerámica de Terracota Solar)",
+  "Restorative Iyengar Yoga": "Yoga Iyengar restaurativo",
+  "Adult Jazz class starts": "Arranca la clase de jazz para adultos",
+  "Longboard finals and awards ceremony": "Finales de longboard y ceremonia de premiación",
+  "Happy hour all night during music night, free entrance": "Happy hour toda la noche durante la noche de música, entrada libre",
+  "First elimination heats and night competition opening rounds": "Primeros heats eliminatorios y rondas iniciales de la competencia nocturna",
+  "Sayulita Fun Club Non-School Day Program (ages 5-12)": "Sayulita Fun Club: programa para días sin clases (de 5 a 12 años)",
+  "Salsa Dance with Laura": "Baile de salsa con Laura",
+  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
+  "Aloha Kids Club – After School Club with Miss Valeria and Miss Amanda": "Aloha Kids Club – Club extraescolar con Miss Valeria y Miss Amanda",
+  "Casa Paloma Estate Sale": "Venta de garaje de Casa Paloma",
+  "Latitude 20 Reopening Party with Akuaman Sound System and La Chanta Chamuya (Costume Party)": "Fiesta de reapertura de Latitude 20 con Akuaman Sound System y La Chanta Chamuya (fiesta de disfraces)",
+  "VOICES: Women's Sound Circle (Lexi)": "VOICES: círculo de sonido para mujeres (Lexi)",
+  "Gong Bath (Andrea)": "Baño de gong (Andrea)",
+  "Kids Yoga Club": "Club de yoga para niños",
+  "Community Potluck": "Comida comunitaria de traje",
+  "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing": "Alrededor de 500,000 MXN en premios: shortboard, longboard, SUP, bodyboard y surf con perros",
+  "Live Music: Emmy & Marcos": "Música en vivo: Emmy & Marcos",
+  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
+  "Clay Club – Ceramics Friday": "Clay Club – Viernes de cerámica",
+  "Friday Community Yoga Class": "Clase comunitaria de yoga los viernes",
+  "Sayulita Fun Club After-School Care (ages 5-12)": "Sayulita Fun Club, cuidado extraescolar (de 5 a 12 años)",
+  "Happy hour all day on game day": "Happy hour todo el día en día de partido",
+  "Community Beach Cleanup": "Limpieza comunitaria de playa",
+  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
+  "Mercado del Pueblo (farmers market)": "Mercado del Pueblo (mercado de productores locales)",
+  "Skip the pricey ATMs in Sayulita. If you have a US card, the ATM at the San Pancho hospital is the cheapest around (about a 60 peso fee), so take out enough pesos for the weekend in one go.": "Evita los cajeros caros de Sayulita. Si tienes tarjeta de EE. UU., el cajero del hospital de San Pancho es el más barato de la zona (comisión de unos 60 pesos), así que saca de una vez suficientes pesos para todo el fin de semana.",
+  "Clay Pieces for Your Ofrenda – Class 2: Glazing (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, clase 2: esmaltado (taller de cerámica Terracota Solar)"
  }
 }
