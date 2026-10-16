@@ -86,6 +86,26 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
 .rank b { font-size: 22px; }
 .warn .when { background: color-mix(in srgb, var(--sun) 12%, transparent); color: var(--sun); }
 .tag.miss { background: var(--gold); color: #3a2600; }
+.plan { margin-top: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+.plan .top { padding: 14px 16px 10px; background: linear-gradient(135deg, var(--sea), #0e6b6b); color: #fff; }
+.plan .top .k { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .85; font-weight: 600; }
+.plan .top h3 { margin: 4px 0 2px; font: 700 20px/1.2 Fraunces, Georgia, serif; }
+.plan .top p { margin: 0; font-size: 14px; opacity: .92; }
+.stop { display: grid; grid-template-columns: 58px 1fr; gap: 10px; padding: 12px 16px; border-top: 1px solid var(--line); }
+.stop:first-of-type { border-top: 0; }
+.stop .tm { font-weight: 700; font-size: 13px; color: var(--sun); line-height: 1.25; }
+.stop .tm small { display: block; font-weight: 500; color: var(--muted); font-size: 11px; text-transform: capitalize; }
+.stop .p { font-weight: 700; margin: 0; }
+.stop .w { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
+.stop .o { margin: 6px 0 0; font-size: 13px; background: color-mix(in srgb, var(--gold) 16%, transparent); border-radius: 8px; padding: 5px 8px; }
+.stop .sw { margin-top: 6px; background: none; border: 0; padding: 0; color: var(--sea); font: 600 13px Inter, sans-serif; cursor: pointer; }
+.stop.alt { background: color-mix(in srgb, var(--sea) 7%, transparent); }
+.orders { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.orders span { font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 99px; background: color-mix(in srgb, var(--gold) 22%, transparent); }
+.orders span b { font-weight: 500; opacity: .7; margin-left: 3px; }
+.lk { margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.lk a { font-size: 12px; font-weight: 600; text-decoration: none; padding: 4px 9px; border-radius: 99px; border: 1px solid var(--line); color: var(--sea); background: var(--card); }
+.q { margin: 6px 0 0; font-size: 13px; font-style: italic; color: var(--ink); border-left: 3px solid var(--line); padding-left: 8px; }
 .how { margin-top: 28px; background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 12px 14px; color: var(--muted); font-size: 14px; }
 </style>
 </head>
@@ -100,6 +120,8 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
     <p class="intro" id="intro"></p>
     <a class="back" href="/sayulita/index.html" data-i="back"></a>
   </header>
+
+  <section class="plan" id="plan" hidden></section>
 
   <h2 data-i="picks"></h2>
   <div class="tabs" role="tablist" id="catTabs"></div>
@@ -118,13 +140,15 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
 (function () {
   var UI = {
     en: { h1a: "Sayulita", h1b: "AI Concierge", sub: "What visitors keep recommending in Sayulita and San Pancho, from a year of YouTube and Reddit comments.",
-      back: "← Sayulita today", picks: "Top picks", tips: "Insider tips", warn: "Watch out for", all: "All", eat: "Food & drinks",
+      back: "← Sayulita today", planK: "Today's plan", swap: "Not feeling it? Swap →", back2: "← Back to the plan", order: "Order", web: "🌐 Website", ig: "📷 Instagram", maps: "📍 Google Maps", sl: "Sayulita Life", reviews: "Google reviews", street: "🌮 Street food",
+      picks: "Top picks", tips: "Insider tips", warn: "Locals would skip", skipN: "{c} would skip", likeN: "{f} like it", skipNote: "Fair-game gripes only (price, taste, service). Two or more different people, in their own words.", all: "All", eat: "Food & drinks",
       sea: "Surf & beaches", more: "Outdoors & more", people: "people recommend", critics: "warn about it", last: "last mentioned",
       miss: "Not on Sayulita Today", directions: "directions", updated: "Updated", empty: "The concierge is reading comments. Check back soon.",
       none: "Nothing here yet.", stats: "{y} YouTube and {r} Reddit comments",
       how: "How this works: once a month we read new comments from the past 12 months on YouTube travel videos and in r/sayulita and r/mexicotravel. AI pulls out the places and tips people recommend from their own visits. A place only shows here when at least 3 different people mention it, and recent comments count more. Creator comments and links are ignored. Always check hours with the venue." },
     es: { h1a: "Tu Conserje", h1b: "IA de Sayulita", sub: "Lo que los visitantes siempre recomiendan en Sayulita y San Pancho, según un año de comentarios en YouTube y Reddit.",
-      back: "← Sayulita hoy", picks: "Los favoritos", tips: "Tips de la gente", warn: "Ojo con esto", all: "Todo", eat: "Comida y bebidas",
+      back: "← Sayulita hoy", planK: "El plan de hoy", swap: "¿No se te antoja? Cambia →", back2: "← Volver al plan", order: "Pide", web: "🌐 Sitio web", ig: "📷 Instagram", maps: "📍 Google Maps", sl: "Sayulita Life", reviews: "reseñas en Google", street: "🌮 Comida callejera",
+      picks: "Los favoritos", tips: "Tips de la gente", warn: "Lo que los locales evitarían", skipN: "{c} lo evitarían", likeN: "a {f} les gusta", skipNote: "Sólo quejas justas (precio, sabor, servicio). Dos o más personas distintas, con sus propias palabras.", all: "Todo", eat: "Comida y bebidas",
       sea: "Surf y playas", more: "Naturaleza y más", people: "personas lo recomiendan", critics: "advierten", last: "última mención",
       miss: "No está en Sayulita Hoy", directions: "cómo llegar", updated: "Actualizado", empty: "El conserje está leyendo comentarios. Vuelve pronto.",
       none: "Nada por aquí todavía.", stats: "{y} comentarios de YouTube y {r} de Reddit",
@@ -149,9 +173,54 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
   function fill(el, items, row) { el.innerHTML = items.length ? items.map(row).join("") : '<div class="empty">' + esc(T("none")) + "</div>"; }
   function pickRow(p, i) {
     var town = p.town && p.town !== "Sayulita" ? ' <span class="tag">' + esc(p.town) + "</span>" : "";
-    var miss = "";
-    return '<article class="item"><div class="when rank">#<b>' + (i + 1) + '</b></div><div><p class="t">' + esc(p.name) + town + miss +
-      '</p><p class="m">' + esc(blurb(p)) + '</p><p class="m">👥 ' + p.fans + " " + esc(T("people")) + " · " + esc(T("last")) + " " + esc(month(p.last)) + go(p) + "</p></div></article>";
+    var price = p.price ? ' <span class="tag">' + esc(p.price) + "</span>" : "";
+    var orders = (p.orders || []).length ? '<div class="orders">' + p.orders.map(function (o) {
+      return "<span>" + esc(o.item) + (o.people > 1 ? "<b>×" + o.people + "</b>" : "") + "</span>"; }).join("") + "</div>" : "";
+    var meta = [p.vibe, p.when].filter(Boolean).join(" · ");
+    return '<article class="item"><div class="when rank">#<b>' + (i + 1) + '</b></div><div><p class="t">' + esc(p.name) + town + price +
+      '</p><p class="m">' + esc(blurb(p)) + "</p>" + (meta ? '<p class="m">' + esc(meta) + "</p>" : "") + orders +
+      (p.quote ? '<p class="q">“' + esc(p.quote) + '”</p>' : "") +
+      '<p class="m">👥 ' + p.fans + " " + esc(T("people")) + (p.google ? " · ⭐ " + p.google.rating + " (" + (p.google.reviews || 0).toLocaleString() + " " + esc(T("reviews")) + ")" : "") +
+      " · " + esc(T("last")) + " " + esc(month(p.last)) + "</p>" + linkRow(p) + "</div></article>";
+  }
+  function linkRow(p) {
+    var l = p.links || {}, out = [];
+    out.push('<a href="' + esc(l.maps || mapsUrl(p)) + '" rel="noopener" target="_blank">' + esc(T("maps")) + "</a>");
+    if (/^https:\/\//.test(l.web || "")) out.push('<a href="' + esc(l.web) + '" rel="noopener" target="_blank">' + esc(T("web")) + "</a>");
+    if (/^https:\/\//.test(l.ig || "")) out.push('<a href="' + esc(l.ig) + '" rel="noopener" target="_blank">' + esc(T("ig")) + "</a>");
+    if (/^https:\/\//.test(l.sl || "")) out.push('<a href="' + esc(l.sl) + '" rel="noopener" target="_blank">' + esc(T("sl")) + "</a>");
+    return '<div class="lk">' + out.join("") + "</div>";
+  }
+  function mapsUrl(p) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.name + ", " + (p.town === "San Pancho" ? "San Pancho" : "Sayulita") + ", Nayarit"); }
+  var PLAN = null, swapped = {};
+  function L(o, k) { return o ? (LANG === "es" ? (o[k + "_es"] || o[k + "_en"]) : (o[k + "_en"] || o[k + "_es"])) || "" : ""; }
+  function time12(t) { if (!t) return ""; var a = t.split(":"), h = +a[0]; return LANG === "es" ? h + ":" + a[1] : (h % 12 || 12) + (a[1] === "00" ? "" : ":" + a[1]) + (h < 12 ? "am" : "pm"); }
+  function stopHtml(s, n) {
+    var alt = swapped[n] && s.swap && s.swap.place, x = alt ? s.swap : s;
+    return '<div class="stop' + (alt ? " alt" : "") + '"><div class="tm">' + esc(time12(s.time)) + "<small>" + esc(s.kind || "") + '</small></div><div><p class="p">' +
+      esc(L(x, "title") || x.place) + '</p><p class="w">' + esc(x.place) + " · " + esc(L(x, "why")) + pinFor(x.place) + "</p>" +
+      (!alt && L(s, "order") ? '<p class="o">🍽️ ' + esc(T("order")) + ": " + esc(L(s, "order")) + "</p>" : "") +
+      (s.swap && s.swap.place ? '<button class="sw" type="button" data-n="' + n + '">' + esc(alt ? T("back2") : T("swap")) + "</button>" : "") + "</div></div>";
+  }
+  function pinFor(name) {
+    var all = D ? (D.picks || []).concat(D.street || []) : [], n = (name || "").toLowerCase();
+    var p = all.filter(function (q) { var m = q.name.toLowerCase(); return m === n || m.indexOf(n) === 0 || n.indexOf(m) === 0; })[0];
+    var u = p && p.links && p.links.maps ? p.links.maps : mapsUrl({ name: name });
+    return ' · <a href="' + esc(u) + '" rel="noopener" target="_blank">' + esc(T("directions")) + "</a>";
+  }
+  function drawPlan() {
+    var today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Mexico_City" }).format(new Date());
+    if (!PLAN || PLAN.date !== today || !(PLAN.stops || []).length) { $("plan").hidden = true; return; }
+    $("plan").innerHTML = '<div class="top"><div class="k">🗓️ ' + esc(T("planK")) + "</div><h3>" + esc(L(PLAN, "headline")) + "</h3><p>" + esc(L(PLAN, "weather")) + "</p></div>" +
+      PLAN.stops.map(stopHtml).join("");
+    $("plan").hidden = false;
+  }
+  function skipRow(p) {
+    var why = (p.reasons || []).join(", ");
+    var counts = T("skipN").replace("{c}", p.critics) + (p.fans ? " · " + T("likeN").replace("{f}", p.fans) : "");
+    return '<article class="item"><div class="when">🤔</div><div><p class="t">' + esc(p.name) + "</p>" + (why ? '<p class="m">' + esc(why) + "</p>" : "") +
+      (p.quotes || []).map(function (q) { return '<p class="q">“' + esc(q) + '”</p>'; }).join("") +
+      '<p class="m">👥 ' + esc(counts) + " · " + esc(T("last")) + " " + esc(month(p.last)) + "</p></div></article>";
   }
   function warnRow(p) {
     return '<article class="item"><div class="when">⚠️</div><div><p class="t">' + esc(p.name) + '</p><p class="m">' + esc(blurb(p)) +
@@ -170,19 +239,23 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
     $("stamp").innerHTML = esc(T("updated")) + " <b>" + esc(month((D.updated || "").slice(0, 7))) + "</b> · " +
       esc(T("stats").replace("{y}", (s.youtube || 0).toLocaleString()).replace("{r}", (s.reddit || 0).toLocaleString()));
     $("intro").textContent = (D.intro && (D.intro[LANG] || D.intro.en)) || "";
-    var keys = ["all", "eat", "sea", "more"], picks = D.picks || [];
+    drawPlan();
+    var keys = ["all", "street", "eat", "sea", "more"], picks = D.picks || [];
     $("catTabs").innerHTML = keys.map(function (k) {
-      var n = k === "all" ? picks.length : picks.filter(function (p) { return group(p) === k; }).length;
+      var n = k === "all" ? picks.length : k === "street" ? (D.street || []).length : picks.filter(function (p) { return group(p) === k; }).length;
       return '<button role="tab" data-k="' + k + '" aria-selected="' + (k === cat) + '">' + esc(T(k)) + "<span>" + n + "</span></button>";
     }).join("");
     Array.prototype.forEach.call($("catTabs").children, function (b) { b.onclick = function () { cat = b.getAttribute("data-k"); try { localStorage.setItem("sy-cc", cat); } catch (e) {} render(); }; });
-    fill($("picks"), picks.filter(function (p) { return cat === "all" || group(p) === cat; }).slice(0, 25), pickRow);
+    fill($("picks"), cat === "street" ? (D.street || []) : picks.filter(function (p) { return cat === "all" || group(p) === cat; }).slice(0, 25), pickRow);
     fill($("tips"), D.tips || [], tipRow);
-    fill($("warns"), D.warnings || [], warnRow);
+    $("warns").innerHTML = (D.skip || []).length ? '<p class="m" style="margin:0 0 4px">' + esc(T("skipNote")) + "</p>" + D.skip.map(skipRow).join("") :
+      (D.warnings || []).length ? D.warnings.map(warnRow).join("") : '<div class="empty">' + esc(T("none")) + "</div>";
   }
   $("lang").onclick = function () { LANG = LANG === "es" ? "en" : "es"; try { localStorage.setItem("sy-lang", LANG); } catch (e) {} render(); };
+  $("plan").onclick = function (ev) { var b = ev.target.closest(".sw"); if (b) { var n = b.dataset.n; swapped[n] = !swapped[n]; drawPlan(); } };
   render();
-  fetch("data.json?t=" + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { D = d; render(); }).catch(function () {});
+  fetch("today.json?t=" + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { PLAN = d; drawPlan(); }).catch(function () {});
+  fetch("data.json?t=" + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { D = d; render(); drawPlan(); }).catch(function () {});
 })();
 </script>
 </body>
