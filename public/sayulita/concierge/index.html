@@ -130,7 +130,7 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
   <h2 data-i="tips"></h2>
   <div class="list" id="tips"></div>
 
-  <h2 data-i="warn"></h2>
+  <h2 data-i="warn" id="warnH"></h2>
   <div class="list warn" id="warns"></div>
 
   <div class="how" data-i="how"></div>
@@ -142,14 +142,14 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
     en: { h1a: "Sayulita", h1b: "AI Concierge", sub: "What visitors keep recommending in Sayulita and San Pancho, from a year of YouTube and Reddit comments.",
       back: "← Sayulita today", planK: "Today's plan", swap: "Not feeling it? Swap →", back2: "← Back to the plan", order: "Order", web: "🌐 Website", ig: "📷 Instagram", maps: "📍 Google Maps", sl: "Sayulita Life", reviews: "Google reviews", street: "🌮 Street food",
       picks: "Top picks", tips: "Insider tips", warn: "Locals would skip", skipN: "{c} would skip", likeN: "{f} like it", skipNote: "Fair-game gripes only (price, taste, service). Two or more different people, in their own words.", all: "All", eat: "Food & drinks",
-      sea: "Surf & beaches", more: "Outdoors & more", people: "people recommend", critics: "warn about it", last: "last mentioned",
+      sea: "Surf & beaches", more: "Outdoors & more", people: "people recommend", said: "people said this", critics: "warn about it", last: "last mentioned",
       miss: "Not on Sayulita Today", directions: "directions", updated: "Updated", empty: "The concierge is reading comments. Check back soon.",
       none: "Nothing here yet.", stats: "{y} YouTube and {r} Reddit comments",
       how: "How this works: once a month we read new comments from the past 12 months on YouTube travel videos and in r/sayulita and r/mexicotravel. AI pulls out the places and tips people recommend from their own visits. A place only shows here when at least 3 different people mention it, and recent comments count more. Creator comments and links are ignored. Always check hours with the venue." },
     es: { h1a: "Tu Conserje", h1b: "IA de Sayulita", sub: "Lo que los visitantes siempre recomiendan en Sayulita y San Pancho, según un año de comentarios en YouTube y Reddit.",
       back: "← Sayulita hoy", planK: "El plan de hoy", swap: "¿No se te antoja? Cambia →", back2: "← Volver al plan", order: "Pide", web: "🌐 Sitio web", ig: "📷 Instagram", maps: "📍 Google Maps", sl: "Sayulita Life", reviews: "reseñas en Google", street: "🌮 Comida callejera",
       picks: "Los favoritos", tips: "Tips de la gente", warn: "Lo que los locales evitarían", skipN: "{c} lo evitarían", likeN: "a {f} les gusta", skipNote: "Sólo quejas justas (precio, sabor, servicio). Dos o más personas distintas, con sus propias palabras.", all: "Todo", eat: "Comida y bebidas",
-      sea: "Surf y playas", more: "Naturaleza y más", people: "personas lo recomiendan", critics: "advierten", last: "última mención",
+      sea: "Surf y playas", more: "Naturaleza y más", people: "personas lo recomiendan", said: "personas lo dijeron", critics: "advierten", last: "última mención",
       miss: "No está en Sayulita Hoy", directions: "cómo llegar", updated: "Actualizado", empty: "El conserje está leyendo comentarios. Vuelve pronto.",
       none: "Nada por aquí todavía.", stats: "{y} comentarios de YouTube y {r} de Reddit",
       how: "Cómo funciona: una vez al mes leemos los comentarios nuevos de los últimos 12 meses en videos de viaje de YouTube y en r/sayulita y r/mexicotravel. La IA saca los lugares y tips que la gente recomienda por experiencia propia. Un lugar sólo aparece si al menos 3 personas distintas lo mencionan, y los comentarios recientes cuentan más. Se ignoran los comentarios de los creadores y los links. Confirma horarios con el lugar." }
@@ -228,7 +228,8 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
   }
   function tipRow(t) {
     return '<article class="item"><div class="when">' + (t.category === "warning" ? "⚠️" : "💡") + '</div><div><p class="t" style="font-weight:500">' +
-      esc(LANG === "es" ? (t.es || t.en) : t.en) + "</p></div></article>";
+      esc(LANG === "es" ? (t.es || t.en) : t.en) + "</p>" + (t.quote ? '<p class="q">“' + esc(t.quote) + '”</p>' : "") +
+      (t.people ? '<p class="m">👥 ' + t.people + " " + esc(T("said")) + "</p>" : "") + "</div></article>";
   }
   function render() {
     document.documentElement.lang = LANG;
@@ -248,6 +249,8 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
     Array.prototype.forEach.call($("catTabs").children, function (b) { b.onclick = function () { cat = b.getAttribute("data-k"); try { localStorage.setItem("sy-cc", cat); } catch (e) {} render(); }; });
     fill($("picks"), cat === "street" ? (D.street || []) : picks.filter(function (p) { return cat === "all" || group(p) === cat; }).slice(0, 25), pickRow);
     fill($("tips"), D.tips || [], tipRow);
+    var anyWarn = (D.skip || []).length || (D.warnings || []).length;
+    $("warnH").hidden = !anyWarn; $("warns").hidden = !anyWarn;
     $("warns").innerHTML = (D.skip || []).length ? '<p class="m" style="margin:0 0 4px">' + esc(T("skipNote")) + "</p>" + D.skip.map(skipRow).join("") :
       (D.warnings || []).length ? D.warnings.map(warnRow).join("") : '<div class="empty">' + esc(T("none")) + "</div>";
   }
