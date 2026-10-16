@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T14:22-07:00",
+ "updated": "2026-10-16T14:35-07:00",
  "stats": {
   "videos": 97,
   "comments": 8240,
@@ -9,8 +9,8 @@
   "people": 1062
  },
  "intro": {
-  "en": "People love Sayulita and San Pancho for their laid-back vibe, amazing food, and endless outdoor adventures.",
-  "es": "La gente ama Sayulita y San Pancho por su vibra relajada, comida increíble y aventuras al aire libre interminables."
+  "en": "Visitors love Sayulita and San Pancho for incredible fresh food, world-class surfing, and laid-back Pacific beach culture.",
+  "es": "Los visitantes aman Sayulita y San Pancho por comida fresca increíble, surfing de clase mundial, y cultura de playa relajada."
  },
  "min_people": 3,
  "picks": [
@@ -23,8 +23,8 @@
    "fans": 21,
    "critics": 5,
    "last": "2026-09",
-   "en": "Visitors rave about Mary's fish and shrimp tacos and homemade horchata.",
-   "es": "Los visitantes adoran los tacos de pescado y camarón de Mary's y la horchata casera.",
+   "en": "Life-changing fish and shrimp tacos everyone raves about.",
+   "es": "Tacos de pez y camarón increíbles que todos adoran.",
    "on_today": false
   },
   {
@@ -36,8 +36,8 @@
    "fans": 16,
    "critics": 0,
    "last": "2026-09",
-   "en": "La Lancha is a legit surf spot popular with learners and experienced surfers alike.",
-   "es": "La Lancha es un lugar legítimo para surfear popular con principiantes y surfistas experimentados.",
+   "en": "Popular surf spot with lessons; locals and tourists love it.",
+   "es": "Lugar de surf popular con lecciones; locales y turistas lo aman.",
    "on_today": false
   },
   {
@@ -49,8 +49,8 @@
    "fans": 15,
    "critics": 0,
    "last": "2026-09",
-   "en": "Don Pedro's upstairs offers intimate views; main floor provides casual, consistently good food.",
-   "es": "Don Pedro's arriba ofrece vistas íntimas; el piso principal proporciona comida casual consistentemente buena.",
+   "en": "Upstairs offers intimate views and good food; downstairs is louder.",
+   "es": "Arriba ofrece vistas íntimas y buena comida; abajo es más ruidoso.",
    "on_today": false
   },
   {
@@ -62,8 +62,8 @@
    "fans": 15,
    "critics": 0,
    "last": "2026-10",
-   "en": "Lo de Marcos is a walkable beach town nearby with calm, mellow atmosphere.",
-   "es": "Lo de Marcos es un pueblo playero cercano accesible a pie con atmósfera tranquila.",
+   "en": "Nearby mellow beach town with beautiful sand; great for families.",
+   "es": "Pueblo playa cercano con arena hermosa; excelente para familias.",
    "on_today": false
   },
   {
@@ -75,8 +75,8 @@
    "fans": 13,
    "critics": 0,
    "last": "2026-10",
-   "en": "Sayulita Sandbar offers ping pong, pickleball, cornhole, sports, karaoke and great burgers.",
-   "es": "Sayulita Sandbar ofrece ping pong, pádel de playa, cornhole, deportes, karaoke y excelentes hamburguesas.",
+   "en": "New bar with games and sports on TV.",
+   "es": "Bar nuevo con juegos (pickleball, ping pong, cornhole) y deportes.",
    "on_today": true
   },
   {
@@ -88,8 +88,8 @@
    "fans": 16,
    "critics": 2,
    "last": "2026-09",
-   "en": "Playa Los Muertos is smaller, less crowded, with gentler waves and food vendors.",
-   "es": "Playa Los Muertos es más pequeña, menos concurrida, con olas suaves y vendedores de comida.",
+   "en": "Smaller, less crowded beach with rocks that create gentle swimming.",
+   "es": "Playa más pequeña y tranquila con rocas que crean nado suave.",
    "on_today": false
   },
   {
@@ -101,8 +101,8 @@
    "fans": 11,
    "critics": 1,
    "last": "2026-09",
-   "en": "Playa Carricitos offers solitude and beautiful sunsets after a 20-30 minute hike.",
-   "es": "Playa Carricitos ofrece soledad y puestas de sol hermosas después de una caminata de 20-30 minutos.",
+   "en": "Secluded beach with stunning sunsets and beautiful scenery.",
+   "es": "Playa aislada con atardeceres impresionantes y escenario hermoso.",
    "on_today": false
   },
   {
@@ -114,8 +114,8 @@
    "fans": 10,
    "critics": 0,
    "last": "2026-09",
-   "en": "Public House on the square has a reliable ATM and chill local vibe.",
-   "es": "Public House en la plaza tiene un cajero automático confiable y atmósfera local tranquila.",
+   "en": "Plaza bar with a more reliable ATM than many places.",
+   "es": "Bar en plaza con cajero automático más confiable que otros.",
    "on_today": true
   },
   {
@@ -127,8 +127,8 @@
    "fans": 9,
    "critics": 0,
    "last": "2026-07",
-   "en": "Tacos Tal Ivan in the main square serves reliable tacos with extended hours.",
-   "es": "Tacos Tal Ivan en la plaza principal sirve tacos confiables con horarios extendidos.",
+   "en": "Reliable taco stand in main square with long hours.",
+   "es": "Puesto de tacos confiable en plaza mayor con horario extendido.",
    "on_today": false
   },
   {
@@ -140,8 +140,8 @@
    "fans": 8,
    "critics": 0,
    "last": "2026-09",
-   "en": "Hotelito Los Sueños is near the beach with breakfast buffet and yoga classes.",
-   "es": "Hotelito Los Sueños está cerca de la playa con bufet de desayuno y clases de yoga.",
+   "en": "Budget-friendly hotel close to beach with daily breakfast and vegan options.",
+   "es": "Hotel económico cerca de playa con desayuno buffet diario y opciones veganas.",
    "on_today": false
   },
   {
@@ -153,8 +153,8 @@
    "fans": 8,
    "critics": 0,
    "last": "2026-07",
-   "en": "Sur 38 offers tapas and wine in an intimate, quiet, upscale setting.",
-   "es": "Sur 38 ofrece tapas y vino en un ambiente íntimo, tranquilo y de lujo.",
+   "en": "Upscale tapas and wine restaurant, quieter than most.",
+   "es": "Restaurante upscale de tapas y vino, más tranquilo que otros.",
    "on_today": false
   },
   {
@@ -166,8 +166,8 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-06",
-   "en": "Risa at Surf It Out is highly recommended for personalized, excellent surf lessons.",
-   "es": "Risa en Surf It Out es altamente recomendada para lecciones de surf personalizadas y excelentes.",
+   "en": "Best-reviewed surf instructor Risa teaches personalized lessons here.",
+   "es": "La mejor instructora de surf Risa enseña lecciones personalizadas aquí.",
    "on_today": false
   },
   {
@@ -179,8 +179,8 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-10",
-   "en": "Tacos Toño's suadero melts in mouth with an excellent condiments bar.",
-   "es": "La carne de suadero de Tacos Toño se derrite en la boca con excelente barra de condimentos.",
+   "en": "Local favorite for best tacos, with excellent condiments bar.",
+   "es": "Favorito local para los mejores tacos, con excelente barra de condimentos.",
    "on_today": false
   },
   {
@@ -192,8 +192,8 @@
    "fans": 9,
    "critics": 1,
    "last": "2026-07",
-   "en": "Alley Cat Tours offers all-inclusive snorkel trips with great food to nearby islands.",
-   "es": "Alley Cat Tours ofrece viajes de snorkel todo incluido con buena comida a islas cercanas.",
+   "en": "Eco-friendly all-inclusive snorkel boat tours with great food.",
+   "es": "Tours de snorkel en bote ecológicos y todo incluido con buena comida.",
    "on_today": false
   },
   {
@@ -205,8 +205,8 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-07",
-   "en": "Alto Alto provides upscale Mediterranean dining in a fun, energetic location.",
-   "es": "Alto Alto proporciona comida mediterránea de lujo en una ubicación divertida y energética.",
+   "en": "Mediterranean upscale restaurant perfect for special dinners.",
+   "es": "Restaurante mediterráneo upscale perfecto para cenas especiales.",
    "on_today": true
   },
   {
@@ -218,8 +218,8 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-10",
-   "en": "Aaleyah's serves the best margaritas with owner's family tequila and friendly staff.",
-   "es": "Aaleyah's sirve las mejores margaritas con tequila de la familia del dueño y personal amable.",
+   "en": "Famous for margaritas made with owner's family tequila recipe.",
+   "es": "Famoso por margaritas hechas con receta de tequila de la familia.",
    "on_today": false
   },
   {
@@ -231,8 +231,8 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-07",
-   "en": "Viajero Hostel offers nightly social events, clean rooms, good food and pool.",
-   "es": "Viajero Hostel ofrece eventos sociales nocturnos, habitaciones limpias, buena comida y piscina.",
+   "en": "Social hostel with nightly activities, pool, and communal atmosphere.",
+   "es": "Hostal social con actividades nocturnas, piscina, y ambiente comunitario.",
    "on_today": false
   },
   {
@@ -244,8 +244,8 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-06",
-   "en": "Pineapple Paradise offers excellent sandwiches, people watching and Wednesday karaoke nights.",
-   "es": "Pineapple Paradise ofrece excelentes sándwiches, observación de gente y noches de karaoke los miércoles.",
+   "en": "Great for people-watching with excellent sandwiches and fun karaoke.",
+   "es": "Excelente para observar gente con sándwiches excelentes y karaoke divertido.",
    "on_today": true
   },
   {
@@ -257,8 +257,8 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-08",
-   "en": "My Sister's House is an affordable women-only hostel with outside kitchen access.",
-   "es": "My Sister's House es un albergue solo para mujeres asequible con acceso a cocina exterior.",
+   "en": "Affordable women-only hostel with outdoor cooking facilities.",
+   "es": "Hostal económico solo para mujeres con instalaciones de cocina al aire libre.",
    "on_today": false
   },
   {
@@ -270,8 +270,8 @@
    "fans": 8,
    "critics": 1,
    "last": "2026-08",
-   "en": "Monkey Mountain hike offers beautiful views; hiring a guide is highly recommended.",
-   "es": "La caminata de Monkey Mountain ofrece vistas hermosas; se recomienda altamente contratar un guía.",
+   "en": "Popular hiking spot; guides available for best experience.",
+   "es": "Lugar de senderismo popular; guías disponibles para mejor experiencia.",
    "on_today": false
   },
   {
@@ -283,8 +283,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-09",
-   "en": "Anchor Cafe serves amazing coffee and vegan options, operating since 2016.",
-   "es": "Anchor Cafe sirve café excelente y opciones veganas, operando desde 2016.",
+   "en": "Beloved cafe with vegan smoothies, chia parfaits, and excellent coffee.",
+   "es": "Cafe querida con smoothies veganos, parfaits de chía, y café excelente.",
    "on_today": false
   },
   {
@@ -296,8 +296,8 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-05",
-   "en": "Northswell offers vegan menu with traditional Mexican dishes and excellent vegan breakfast.",
-   "es": "Northswell ofrece menú vegano con platos mexicanos tradicionales y excelente desayuno vegano.",
+   "en": "Vegan-friendly cafe with breakfast featuring multiple plant-based milk options.",
+   "es": "Cafe vegana con desayuno con múltiples opciones de leche a base de plantas.",
    "on_today": false
   },
   {
@@ -309,8 +309,8 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-06",
-   "en": "The Dock serves puttanesca right on the beach with good food and drinks.",
-   "es": "The Dock sirve puttanesca justo en la playa con buena comida y bebidas.",
+   "en": "Beachfront restaurant famous for puttanesca and good drinks.",
+   "es": "Restaurante frente a playa famoso por puttanesca y bebidas buenas.",
    "on_today": true
   },
   {
@@ -322,8 +322,8 @@
    "fans": 7,
    "critics": 1,
    "last": "2026-09",
-   "en": "Marietas Islands offers incredible snorkeling with lunch included; currents can be strong.",
-   "es": "Las Islas Marietas ofrecen snorkel increíble con almuerzo incluido; las corrientes pueden ser fuertes.",
+   "en": "Popular day-trip snorkel destination with park fees and lunch included.",
+   "es": "Destino de snorkel popular para excursión diaria con cuotas y almuerzo incluido.",
    "on_today": false
   },
   {
@@ -335,8 +335,8 @@
    "fans": 8,
    "critics": 2,
    "last": "2026-10",
-   "en": "Kapital Bank reopened with reliably working ATMs for consistent cash access.",
-   "es": "Kapital Bank reabrió con cajeros automáticos que funcionan confiablemente para acceso consistente a efectivo.",
+   "en": "Recently reopened bank with reliable ATM access.",
+   "es": "Banco recientemente reabierto con acceso confiable a cajero automático.",
    "on_today": false
   },
   {
@@ -348,8 +348,8 @@
    "fans": 7,
    "critics": 1,
    "last": "2026-07",
-   "en": "El Espresso offers reliable coffee and a consistently working ATM in town.",
-   "es": "El Espresso ofrece café confiable y un cajero automático que funciona constantemente en el centro.",
+   "en": "Central cafe with reliable ATM access.",
+   "es": "Cafe central con acceso confiable a cajero automático.",
    "on_today": false
   },
   {
@@ -361,8 +361,8 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-09",
-   "en": "M&F Coffee Roasters serves well-regarded medium roast coffee in a small shop.",
-   "es": "M&F Coffee Roasters sirve café de tostado medio bien considerado en una pequeña tienda.",
+   "en": "Small coffee roastery with quality roasts from local regions.",
+   "es": "Pequeño tostador de café con tostadas de calidad de regiones locales.",
    "on_today": false
   },
   {
@@ -374,8 +374,8 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-07",
-   "en": "Tropical House offers breakfast, sports bar atmosphere and fantastic Tuesday nights.",
-   "es": "Tropical House ofrece desayuno, atmósfera de bar deportivo y noches de martes fantásticas.",
+   "en": "Sports bar with breakfast service and lively atmosphere.",
+   "es": "Bar de deportes con servicio de desayuno y ambiente animado.",
    "on_today": false
   },
   {
@@ -387,8 +387,8 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-03",
-   "en": "The Embers has live music regularly, private seating and becomes a dance club.",
-   "es": "The Embers tiene música en vivo regularmente, asientos privados y se convierte en club de baile.",
+   "en": "Live music venue that transforms into dance club at night.",
+   "es": "Lugar de música en vivo que se transforma en club de baile.",
    "on_today": true
   },
   {
@@ -400,8 +400,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-07",
-   "en": "Rincón de Guayabitos is 20 minutes north with lower accommodation prices.",
-   "es": "Rincón de Guayabitos está 20 minutos al norte con precios de alojamiento más bajos.",
+   "en": "Nearby beach town with more affordable accommodations.",
+   "es": "Pueblo playa cercano con alojamientos más asequibles.",
    "on_today": false
   },
   {
@@ -413,8 +413,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-09",
-   "en": "Choco Banana serves surprisingly good bean burgers with fresh ingredients.",
-   "es": "Choco Banana sirve hamburguesas de frijoles sorprendentemente buenas con ingredientes frescos.",
+   "en": "Casual spot with surprisingly good bean burgers.",
+   "es": "Lugar casual con hamburguesas de frijoles sorprendentemente buenas.",
    "on_today": false
   },
   {
@@ -426,8 +426,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-07",
-   "en": "Matiz Mariscos offers fresh seafood including atun tostada and cold micheladas.",
-   "es": "Matiz Mariscos ofrece mariscos frescos incluyendo tostada de atún y micheladas frías.",
+   "en": "Popular seafood spot; try the tuna tostada.",
+   "es": "Lugar de mariscos popular; prueba la tostada de atún.",
    "on_today": false
   },
   {
@@ -439,8 +439,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-10",
-   "en": "Naty's Cocina serves delicious inexpensive vegetarian tacos during daytime hours only.",
-   "es": "Naty's Cocina sirve deliciosos tacos vegetarianos económicos solo durante las horas del día.",
+   "en": "Amazing vegetarian and vegan tacos at great prices; daytime only.",
+   "es": "Tacos vegetarianos y veganos increíbles a precios excelentes; solo durante el día.",
    "on_today": false
   },
   {
@@ -452,8 +452,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-08",
-   "en": "Escondido Bar features female house musicians and cocktails with 2-for-1 deals.",
-   "es": "Escondido Bar presenta músicos de la casa femenina y cócteles con ofertas de 2x1.",
+   "en": "Cocktail bar with great deals and live music performances.",
+   "es": "Bar de cócteles con excelentes ofertas y actuaciones de música en vivo.",
    "on_today": false
   },
   {
@@ -465,8 +465,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-09",
-   "en": "Tierra Tropical Beach Club offers day passes with amazing food and spacious pool.",
-   "es": "Tierra Tropical Beach Club ofrece pases diarios con comida amazing y piscina espaciosa.",
+   "en": "Beautiful beach club with pool, food, and spa services.",
+   "es": "Club de playa hermoso con piscina, comida, y servicios de spa.",
    "on_today": false
   },
   {
@@ -478,8 +478,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-06",
-   "en": "Marea Cafe serves affordable food with vegan options, excellent for breakfast.",
-   "es": "Marea Cafe sirve comida asequible con opciones veganas, excelente para el desayuno.",
+   "en": "Charming affordable cafe with amazing breakfast and great vibe.",
+   "es": "Cafe encantador y asequible con desayuno increíble y ambiente excelente.",
    "on_today": false
   },
   {
@@ -491,8 +491,8 @@
    "fans": 6,
    "critics": 1,
    "last": "2026-06",
-   "en": "Carbon offers a quiet patio with cozy vibe and open kitchen, opens 8pm.",
-   "es": "Carbon ofrece un patio tranquilo con vibra acogedora y cocina abierta, abre a las 8pm.",
+   "en": "Cozy street patio with open kitchen on quiet north side.",
+   "es": "Patio de calle acogedor con cocina abierta en lado norte tranquilo.",
    "on_today": false
   },
   {
@@ -504,8 +504,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-07",
-   "en": "El Itacate serves jamaica and vegetable tacos with amazing aguas frescas.",
-   "es": "El Itacate sirve tacos de jamaica y vegetales con aguas frescas deliciosas.",
+   "en": "Good vegan taco options and amazing fresh drinks.",
+   "es": "Buenas opciones de tacos veganos y bebidas frescas increíbles.",
    "on_today": false
   },
   {
@@ -517,8 +517,8 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-06",
-   "en": "Tiburón offers excellent fish of the day and highly praised watermelon margaritas.",
-   "es": "Tiburón ofrece excelente pescado del día y margaritas de sandía altamente elogiadas.",
+   "en": "Excellent fish restaurant with creative dishes and cocktails.",
+   "es": "Restaurante de pez excelente con platillos creativos y cócteles.",
    "on_today": false
   },
   {
@@ -530,59 +530,17 @@
    "fans": 4,
    "critics": 0,
    "last": "2026-09",
-   "en": "Julia's Jungle Kitchen serves best coffee inside Nawalli's Plaza on Calle Miramar.",
-   "es": "Julia's Jungle Kitchen sirve el mejor café dentro de Nawalli's Plaza en Calle Miramar.",
+   "en": "Breakfast spot with great coffee inside Nawalli's Plaza.",
+   "es": "Lugar de desayuno con café excelente dentro de Nawalli's Plaza.",
    "on_today": false
   }
  ],
  "warnings": [],
  "tips": [
   {
-   "en": "Budget 1000-2000 pesos daily, or eat three excellent meals for US$40/day.",
-   "es": "Presupuesta 1000-2000 pesos diarios, o come tres comidas excelentes por US$40/día.",
-   "category": "money",
-   "people": 4
-  },
-  {
-   "en": "Rent golf carts (500 pesos/day) or ATVs to explore surrounding areas easily.",
-   "es": "Renta carritos de golf (500 pesos/día) o ATVs para explorar áreas cercanas fácilmente.",
-   "category": "getting around",
-   "people": 4
-  },
-  {
-   "en": "Murals cover town; Thursday market at Marina; huge Dia de los Muertos parade.",
-   "es": "Murales cubren pueblo; mercado jueves en Marina; enorme desfile Día de Muertos.",
-   "category": "activities",
-   "people": 4
-  },
-  {
-   "en": "San Pancho offers quieter, more laid-back alternative to busier Sayulita atmosphere.",
-   "es": "San Pancho ofrece alternativa más tranquila y relajada a atmósfera ocupada de Sayulita.",
-   "category": "neighborhoods",
-   "people": 4
-  },
-  {
-   "en": "Tip in pesos not USD; exchange cash before arriving for better rates.",
-   "es": "Propina en pesos no USD; cambia efectivo antes de llegar para mejores tasas.",
-   "category": "money",
-   "people": 3
-  },
-  {
-   "en": "October unpredictable; November cooler and drier, best time for visiting area.",
-   "es": "Octubre impredecible; noviembre más fresco y seco, mejor época para visitar.",
-   "category": "timing",
-   "people": 3
-  },
-  {
-   "en": "Wear sturdy shoes for cobblestones; pack strong sunscreen for intense sun.",
-   "es": "Usa zapatos firmes para adoquines; empaca protector solar fuerte para sol intenso.",
-   "category": "what to bring",
-   "people": 3
-  },
-  {
-   "en": "Monkey Mountain hike and panga fishing available; hire guide for experience.",
-   "es": "Caminata Monkey Mountain y pesca panga disponible; contrata guía para mejor experiencia.",
-   "category": "activities",
+   "en": "Rent golf carts or ATVs (500 pesos daily) to explore beyond walking.",
+   "es": "Rente carritos de golf o ATVs (500 pesos diarios) para explorar.",
+   "category": "getting_around",
    "people": 3
   }
  ]
