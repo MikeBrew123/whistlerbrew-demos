@@ -117,18 +117,18 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
 <script>
 (function () {
   var UI = {
-    en: { h1a: "Sayulita", h1b: "AI Concierge", sub: "What visitors keep recommending in Sayulita and San Pancho, from a year of YouTube comments.",
+    en: { h1a: "Sayulita", h1b: "AI Concierge", sub: "What visitors keep recommending in Sayulita and San Pancho, from a year of YouTube and Reddit comments.",
       back: "← Sayulita today", picks: "Top picks", tips: "Insider tips", warn: "Watch out for", all: "All", eat: "Food & drinks",
       sea: "Surf & beaches", more: "Outdoors & more", people: "people recommend", critics: "warn about it", last: "last mentioned",
       miss: "Not on Sayulita Today", directions: "directions", updated: "Updated", empty: "The concierge is reading comments. Check back soon.",
-      none: "Nothing here yet.", stats: "{c} comments from {v} videos",
-      how: "How this works: once a month we read new comments on YouTube videos about Sayulita and San Pancho from the past 12 months. AI pulls out the places and tips people recommend from their own visits. A place only shows here when at least 3 different people mention it, and recent comments count more. Creator comments and links are ignored. Always check hours with the venue." },
-    es: { h1a: "Tu Conserje", h1b: "IA de Sayulita", sub: "Lo que los visitantes siempre recomiendan en Sayulita y San Pancho, según un año de comentarios en YouTube.",
+      none: "Nothing here yet.", stats: "{y} YouTube and {r} Reddit comments",
+      how: "How this works: once a month we read new comments from the past 12 months on YouTube travel videos and in r/sayulita and r/mexicotravel. AI pulls out the places and tips people recommend from their own visits. A place only shows here when at least 3 different people mention it, and recent comments count more. Creator comments and links are ignored. Always check hours with the venue." },
+    es: { h1a: "Tu Conserje", h1b: "IA de Sayulita", sub: "Lo que los visitantes siempre recomiendan en Sayulita y San Pancho, según un año de comentarios en YouTube y Reddit.",
       back: "← Sayulita hoy", picks: "Los favoritos", tips: "Tips de la gente", warn: "Ojo con esto", all: "Todo", eat: "Comida y bebidas",
       sea: "Surf y playas", more: "Naturaleza y más", people: "personas lo recomiendan", critics: "advierten", last: "última mención",
       miss: "No está en Sayulita Hoy", directions: "cómo llegar", updated: "Actualizado", empty: "El conserje está leyendo comentarios. Vuelve pronto.",
-      none: "Nada por aquí todavía.", stats: "{c} comentarios de {v} videos",
-      how: "Cómo funciona: una vez al mes leemos los comentarios nuevos de videos de YouTube sobre Sayulita y San Pancho de los últimos 12 meses. La IA saca los lugares y tips que la gente recomienda por experiencia propia. Un lugar sólo aparece si al menos 3 personas distintas lo mencionan, y los comentarios recientes cuentan más. Se ignoran los comentarios de los creadores y los links. Confirma horarios con el lugar." }
+      none: "Nada por aquí todavía.", stats: "{y} comentarios de YouTube y {r} de Reddit",
+      how: "Cómo funciona: una vez al mes leemos los comentarios nuevos de los últimos 12 meses en videos de viaje de YouTube y en r/sayulita y r/mexicotravel. La IA saca los lugares y tips que la gente recomienda por experiencia propia. Un lugar sólo aparece si al menos 3 personas distintas lo mencionan, y los comentarios recientes cuentan más. Se ignoran los comentarios de los creadores y los links. Confirma horarios con el lugar." }
   };
   var LANG = "en"; try { LANG = localStorage.getItem("sy-lang") === "es" ? "es" : "en"; } catch (e) {}
   function T(k) { return UI[LANG][k] || UI.en[k] || k; }
@@ -149,7 +149,7 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
   function fill(el, items, row) { el.innerHTML = items.length ? items.map(row).join("") : '<div class="empty">' + esc(T("none")) + "</div>"; }
   function pickRow(p, i) {
     var town = p.town && p.town !== "Sayulita" ? ' <span class="tag">' + esc(p.town) + "</span>" : "";
-    var miss = p.on_today === false ? ' <span class="tag miss">' + esc(T("miss")) + "</span>" : "";
+    var miss = "";
     return '<article class="item"><div class="when rank">#<b>' + (i + 1) + '</b></div><div><p class="t">' + esc(p.name) + town + miss +
       '</p><p class="m">' + esc(blurb(p)) + '</p><p class="m">👥 ' + p.fans + " " + esc(T("people")) + " · " + esc(T("last")) + " " + esc(month(p.last)) + go(p) + "</p></div></article>";
   }
@@ -168,7 +168,7 @@ header h1 { padding-right: 58px; font-size: clamp(32px, 8vw, 46px); }
     if (!D) { $("stamp").textContent = ""; $("picks").innerHTML = '<div class="empty">' + esc(T("empty")) + "</div>"; return; }
     var s = D.stats || {};
     $("stamp").innerHTML = esc(T("updated")) + " <b>" + esc(month((D.updated || "").slice(0, 7))) + "</b> · " +
-      esc(T("stats").replace("{c}", (s.comments || 0).toLocaleString()).replace("{v}", s.videos || 0));
+      esc(T("stats").replace("{y}", (s.youtube || 0).toLocaleString()).replace("{r}", (s.reddit || 0).toLocaleString()));
     $("intro").textContent = (D.intro && (D.intro[LANG] || D.intro.en)) || "";
     var keys = ["all", "eat", "sea", "more"], picks = D.picks || [];
     $("catTabs").innerHTML = keys.map(function (k) {
