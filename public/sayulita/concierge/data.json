@@ -1,16 +1,16 @@
 {
- "updated": "2026-10-16T14:35-07:00",
+ "updated": "2026-10-16T16:07-07:00",
  "stats": {
   "videos": 97,
   "comments": 8240,
   "youtube": 2780,
   "reddit": 5460,
   "threads": 686,
-  "people": 1062
+  "people": 1063
  },
  "intro": {
-  "en": "Visitors love Sayulita and San Pancho for incredible fresh food, world-class surfing, and laid-back Pacific beach culture.",
-  "es": "Los visitantes aman Sayulita y San Pancho por comida fresca increíble, surfing de clase mundial, y cultura de playa relajada."
+  "en": "Visitors love these laid-back beach towns for their excellent food, great surfing, beautiful beaches, and family-friendly atmosphere.",
+  "es": "Los visitantes aman estos pueblos costeros por su comida excelente, surfing fantástico, playas hermosas y ambiente familiar."
  },
  "min_people": 3,
  "picks": [
@@ -23,9 +23,42 @@
    "fans": 21,
    "critics": 5,
    "last": "2026-09",
-   "en": "Life-changing fish and shrimp tacos everyone raves about.",
-   "es": "Tacos de pez y camarón increíbles que todos adoran.",
-   "on_today": false
+   "en": "Get fish and shrimp tacos; generous portions though reviews are mixed.",
+   "es": "Come por los tacos de camarón y pescado; porciones generosas, pero las opiniones son mixtas.",
+   "orders": [
+    {
+     "item": "Fish tacos",
+     "people": 8
+    },
+    {
+     "item": "Shrimp tacos",
+     "people": 8
+    },
+    {
+     "item": "Garlic shrimp",
+     "people": 2
+    },
+    {
+     "item": "Horchata",
+     "people": 1
+    },
+    {
+     "item": "Poblano and cheese empanada",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "$$",
+   "quote": "My husband would double agree with you for the mary's fish and shrimp tacos. He dreams of them.",
+   "vibe": "busy casual spot, mixed reviews",
+   "links": {
+    "maps": "https://maps.google.com/?cid=15358387411800239256&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 2416
+   }
   },
   {
    "name": "La Lancha Beach",
@@ -36,9 +69,21 @@
    "fans": 16,
    "critics": 0,
    "last": "2026-09",
-   "en": "Popular surf spot with lessons; locals and tourists love it.",
-   "es": "Lugar de surf popular con lecciones; locales y turistas lo aman.",
-   "on_today": false
+   "en": "Perfect for beginner surfers with small waves, uncrowded water, and local instructors available.",
+   "es": "Perfecta para surfistas principiantes con olas pequeñas, agua tranquila e instructores locales disponibles.",
+   "orders": [],
+   "street": false,
+   "when": "February best for waves, good for lessons",
+   "price": "",
+   "quote": "It was my first time surfing ever, and I was very grateful for the small waves and uncrowded waters.",
+   "vibe": "beginner-friendly, uncrowded, beautiful",
+   "links": {
+    "maps": "https://maps.google.com/?cid=12844829637911513045&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 713
+   }
   },
   {
    "name": "Don Pedro's Restaurant & Bar",
@@ -49,9 +94,32 @@
    "fans": 15,
    "critics": 0,
    "last": "2026-09",
-   "en": "Upstairs offers intimate views and good food; downstairs is louder.",
-   "es": "Arriba ofrece vistas íntimas y buena comida; abajo es más ruidoso.",
-   "on_today": false
+   "en": "Upscale restaurant with ocean views, excellent for large groups and special occasions.",
+   "es": "Restaurante de lujo con vistas al océano, excelente para grupos grandes y ocasiones especiales.",
+   "orders": [
+    {
+     "item": "Oysters",
+     "people": 1
+    },
+    {
+     "item": "Braised artichoke",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "$$$",
+   "quote": "On the more fancy/expensive side but good for large groups and great view of the ocean with an awesome menu.",
+   "vibe": "upscale, ocean view, intimate",
+   "links": {
+    "web": "https://donpedros.com/",
+    "sl": "https://www.sayulitalife.com/business/donpedro",
+    "maps": "https://maps.google.com/?cid=17305837910640012426&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.3,
+    "reviews": 2820
+   }
   },
   {
    "name": "Lo de Marcos",
@@ -62,9 +130,18 @@
    "fans": 15,
    "critics": 0,
    "last": "2026-10",
-   "en": "Nearby mellow beach town with beautiful sand; great for families.",
-   "es": "Pueblo playa cercano con arena hermosa; excelente para familias.",
-   "on_today": false
+   "en": "Quiet beach town with calm waters perfect for swimming and peaceful beach days.",
+   "es": "Pueblo de playa tranquilo con aguas calmadas perfectas para nadar y días pacíficos en la playa.",
+   "orders": [],
+   "street": false,
+   "when": "good for lunch and wandering",
+   "price": "",
+   "quote": "Lo of Marcos is a very sleepy, laid back town, go for lunch and a wander on the fine sandy beach.",
+   "vibe": "sleepy, laid-back, safe swimming",
+   "links": {
+    "maps": "https://maps.google.com/?cid=17398658898055301402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": null
   },
   {
    "name": "Sayulita Sandbar",
@@ -75,9 +152,37 @@
    "fans": 13,
    "critics": 0,
    "last": "2026-10",
-   "en": "New bar with games and sports on TV.",
-   "es": "Bar nuevo con juegos (pickleball, ping pong, cornhole) y deportes.",
-   "on_today": true
+   "en": "Sports bar with free games, cheap burgers and wings, live music; perfect for meeting people.",
+   "es": "Bar deportivo con juegos gratis, hamburguesas y alitas económicas, música en vivo; perfecto para conocer gente.",
+   "orders": [
+    {
+     "item": "Smash burgers",
+     "people": 12
+    },
+    {
+     "item": "Smoked wings",
+     "people": 12
+    },
+    {
+     "item": "Beers",
+     "people": 5
+    }
+   ],
+   "street": false,
+   "when": "open 2pm Saturdays, events nightly except Tuesdays",
+   "price": "$",
+   "quote": "I love the sandbar on revolucion. Amazing food and loads of games and cool people. V big too.",
+   "vibe": "games, sports, live music, social",
+   "links": {
+    "web": "https://www.sayulitasandbar.com/",
+    "ig": "https://www.instagram.com/sandbar.sayulita/",
+    "sl": "https://www.sayulitalife.com/business/sandbar",
+    "maps": "https://maps.google.com/?cid=10391204213801120370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.9,
+    "reviews": 87
+   }
   },
   {
    "name": "Playa Los Muertos",
@@ -88,9 +193,21 @@
    "fans": 16,
    "critics": 2,
    "last": "2026-09",
-   "en": "Smaller, less crowded beach with rocks that create gentle swimming.",
-   "es": "Playa más pequeña y tranquila con rocas que crean nado suave.",
-   "on_today": false
+   "en": "Gentle beach with protective rocks and calm waters, best for families and swimmers.",
+   "es": "Playa tranquila con rocas protectoras y aguas calmadas, ideal para familias y nadadores.",
+   "orders": [],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "The only beach we swim at in Sayulita is Los Muertos - the rocks surrounding it break up the cross-tide and it's much gentler.",
+   "vibe": "calm, safe, family-friendly",
+   "links": {
+    "maps": "https://maps.google.com/?cid=8137083115922858690&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 3032
+   }
   },
   {
    "name": "Playa Carricitos",
@@ -101,9 +218,21 @@
    "fans": 11,
    "critics": 1,
    "last": "2026-09",
-   "en": "Secluded beach with stunning sunsets and beautiful scenery.",
-   "es": "Playa aislada con atardeceres impresionantes y escenario hermoso.",
-   "on_today": false
+   "en": "Hike or drive to this secluded beach for the most beautiful sunsets you'll ever see.",
+   "es": "Camina o conduce a esta playa aislada para los atardeceres más bellos que jamás hayas visto.",
+   "orders": [],
+   "street": false,
+   "when": "sunset",
+   "price": "",
+   "quote": "I saw the most beautiful sunset of my life there and saw whales jump out of the water.",
+   "vibe": "secluded beach, pristine sunsets, virtually no crowds",
+   "links": {
+    "maps": "https://maps.google.com/?cid=4973111063470999096&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 392
+   }
   },
   {
    "name": "Public House",
@@ -114,9 +243,29 @@
    "fans": 10,
    "critics": 0,
    "last": "2026-09",
-   "en": "Plaza bar with a more reliable ATM than many places.",
-   "es": "Bar en plaza con cajero automático más confiable que otros.",
-   "on_today": true
+   "en": "Sports bar with craft beers on the plaza; great for watching World Cup and Mexico games.",
+   "es": "Bar deportivo con cervezas artesanales en la plaza; excelente para ver Copa Mundial y partidos de México.",
+   "orders": [
+    {
+     "item": "craft beers",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "Thursday nights for DJ sets",
+   "price": "",
+   "quote": "So many great places to watch World Cup and during Mexico games the place is popping.",
+   "vibe": "lively sports bar, craft beers, plaza location",
+   "links": {
+    "web": "https://sayulitapublichouse.com/",
+    "ig": "https://www.instagram.com/sayulitapublichouse/",
+    "sl": "https://www.sayulitalife.com/business/public-house",
+    "maps": "https://maps.google.com/?cid=8283276397202326633&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 328
+   }
   },
   {
    "name": "Tacos Al Pastor Tal Ivan",
@@ -127,9 +276,27 @@
    "fans": 9,
    "critics": 0,
    "last": "2026-07",
-   "en": "Reliable taco stand in main square with long hours.",
-   "es": "Puesto de tacos confiable en plaza mayor con horario extendido.",
-   "on_today": false
+   "en": "Quick and cheap al pastor tacos on the plaza with long hours.",
+   "es": "Tacos al pastor rápidos y económicos en la plaza con horarios extendidos.",
+   "orders": [
+    {
+     "item": "al pastor tacos",
+     "people": 5
+    }
+   ],
+   "street": true,
+   "when": "long hours",
+   "price": "$",
+   "quote": "They have the best Al pastor tacos.",
+   "vibe": "quick, cheap, long-hours plaza stand",
+   "links": {
+    "sl": "https://www.sayulitalife.com/business/tacoselivan",
+    "maps": "https://maps.google.com/?cid=3997489586546150230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.5,
+    "reviews": 869
+   }
   },
   {
    "name": "Hotelito Los Sueños",
@@ -140,9 +307,27 @@
    "fans": 8,
    "critics": 0,
    "last": "2026-09",
-   "en": "Budget-friendly hotel close to beach with daily breakfast and vegan options.",
-   "es": "Hotel económico cerca de playa con desayuno buffet diario y opciones veganas.",
-   "on_today": false
+   "en": "Hotel with daily yoga, great breakfast buffet with vegan options, and two pools near beach.",
+   "es": "Hotel con yoga diario, excelente buffet de desayuno con opciones veganas y dos piscinas cerca de la playa.",
+   "orders": [
+    {
+     "item": "breakfast buffet",
+     "people": 4
+    }
+   ],
+   "street": false,
+   "when": "breakfast until 1130, morning and evening yoga",
+   "price": "$$",
+   "quote": "Great breakfast buffet with lots of options, daily yoga opportunities, 2 pools, quiet area steps from the beach.",
+   "vibe": "yoga-focused hotel, breakfast buffet, quiet beach",
+   "links": {
+    "web": "https://hotelitolossuenos.com/",
+    "maps": "https://maps.google.com/?cid=12423658995168339159&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 278
+   }
   },
   {
    "name": "Sur 38",
@@ -153,9 +338,25 @@
    "fans": 8,
    "critics": 0,
    "last": "2026-07",
-   "en": "Upscale tapas and wine restaurant, quieter than most.",
-   "es": "Restaurante upscale de tapas y vino, más tranquilo que otros.",
-   "on_today": false
+   "en": "Upscale tapas and wine spot with intimate, cozy atmosphere.",
+   "es": "Lugar elegante de tapas y vino con atmósfera íntima y acogedora.",
+   "orders": [
+    {
+     "item": "tapas",
+     "people": 1
+    },
+    {
+     "item": "wine",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "$$$",
+   "quote": "We like to go to Sur38 for tapas and wine, it's a little fancier.",
+   "vibe": "upscale tapas and wine, intimate setting",
+   "links": {},
+   "google": null
   },
   {
    "name": "Surf It Out",
@@ -166,9 +367,22 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-06",
-   "en": "Best-reviewed surf instructor Risa teaches personalized lessons here.",
-   "es": "La mejor instructora de surf Risa enseña lecciones personalizadas aquí.",
-   "on_today": false
+   "en": "Book Risa for surf lessons; she's the best instructor and her dog surfs too.",
+   "es": "Reserva a Risa para clases de surf; es la mejor instructora y su perro también practica surf.",
+   "orders": [],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "Risa at surf it out is hands down the best you could book.",
+   "vibe": "excellent instructor, her dog surfs",
+   "links": {
+    "web": "https://www.sayulitasurfcenter.com/",
+    "maps": "https://maps.google.com/?cid=15053712108258937529&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 109
+   }
   },
   {
    "name": "Tacos Toño",
@@ -179,9 +393,26 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-10",
-   "en": "Local favorite for best tacos, with excellent condiments bar.",
-   "es": "Favorito local para los mejores tacos, con excelente barra de condimentos.",
-   "on_today": false
+   "en": "Get suadero at this late-night stand: the fat melts in your mouth.",
+   "es": "Prueba suadero en este puesto nocturno: la grasa se derrite en tu boca.",
+   "orders": [
+    {
+     "item": "suadero",
+     "people": 1
+    }
+   ],
+   "street": true,
+   "when": "often open late",
+   "price": "$",
+   "quote": "Suadero is my fave - the fat melts in your mouth",
+   "vibe": "older couple, cash only, crowded nights",
+   "links": {
+    "maps": "https://maps.google.com/?cid=13538011711464320816&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 228
+   }
   },
   {
    "name": "Alley Cat Tours",
@@ -192,9 +423,39 @@
    "fans": 9,
    "critics": 1,
    "last": "2026-07",
-   "en": "Eco-friendly all-inclusive snorkel boat tours with great food.",
-   "es": "Tours de snorkel en bote ecológicos y todo incluido con buena comida.",
-   "on_today": false
+   "en": "Take a catamaran to Isla Marietas with snorkeling and all-inclusive food.",
+   "es": "Toma un catamarán a Isla Marietas con snorkel y comida incluida.",
+   "orders": [
+    {
+     "item": "catamaran tour",
+     "people": 7
+    },
+    {
+     "item": "Marietas excursion",
+     "people": 3
+    },
+    {
+     "item": "snorkeling",
+     "people": 2
+    },
+    {
+     "item": "quad rental",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "1000% yes. I've been to Mexico 13 times and this was by far the best boat excursion.",
+   "vibe": "family-oriented, all-inclusive, friendly",
+   "links": {
+    "web": "https://allycattours.com/",
+    "maps": "https://maps.google.com/?cid=6125152452006301185&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 5,
+    "reviews": 559
+   }
   },
   {
    "name": "Alto Alto",
@@ -205,9 +466,29 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-07",
-   "en": "Mediterranean upscale restaurant perfect for special dinners.",
-   "es": "Restaurante mediterráneo upscale perfecto para cenas especiales.",
-   "on_today": true
+   "en": "Try Alto Alto for fancy Mediterranean dinner, perfect for special occasions.",
+   "es": "Prueba Alto Alto para cena mediterránea elegante, perfecta para ocasiones especiales.",
+   "orders": [
+    {
+     "item": "Mediterranean dinner",
+     "people": 2
+    }
+   ],
+   "street": false,
+   "when": "dinner",
+   "price": "$$$",
+   "quote": "Dinner at Alto Alto was great for a fun, upscale location",
+   "vibe": "upscale, Mediterranean, wedding-worthy",
+   "links": {
+    "web": "https://altoaltosayulita.com/",
+    "ig": "https://www.instagram.com/altoaltosayulita/",
+    "sl": "https://www.sayulitalife.com/business/alto-alto",
+    "maps": "https://maps.google.com/?cid=18285723410439965949&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 249
+   }
   },
   {
    "name": "Aaleyah's Wings",
@@ -218,9 +499,38 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-10",
-   "en": "Famous for margaritas made with owner's family tequila recipe.",
-   "es": "Famoso por margaritas hechas con receta de tequila de la familia.",
-   "on_today": false
+   "en": "Grab margaritas and wings at Aaleyah's for real, unfussy Mexican food.",
+   "es": "Prueba margaritas y alitas en Aaleyah's, comida mexicana real y despreocupada.",
+   "orders": [
+    {
+     "item": "wings",
+     "people": 3
+    },
+    {
+     "item": "margaritas",
+     "people": 2
+    },
+    {
+     "item": "house tequila",
+     "people": 2
+    },
+    {
+     "item": "fish tacos",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "$",
+   "quote": "if you want real! not touristy mexican food go to Aaleyah's.",
+   "vibe": "friendly owners, real Mexican, welcoming",
+   "links": {
+    "maps": "https://maps.google.com/?cid=397116528392720235&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.3,
+    "reviews": 259
+   }
   },
   {
    "name": "Viajero Hostel",
@@ -231,9 +541,35 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-07",
-   "en": "Social hostel with nightly activities, pool, and communal atmosphere.",
-   "es": "Hostal social con actividades nocturnas, piscina, y ambiente comunitario.",
-   "on_today": false
+   "en": "Stay at Viajero for nightly events, yoga, and a friendly, social scene.",
+   "es": "Alójate en Viajero para eventos nocturnos, yoga y un ambiente amigable y social.",
+   "orders": [
+    {
+     "item": "nightly events",
+     "people": 2
+    },
+    {
+     "item": "yoga",
+     "people": 1
+    },
+    {
+     "item": "pool",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "$$",
+   "quote": "They make you feel at home and i knew all of them by name after my trip",
+   "vibe": "social, friendly staff, clean, lively",
+   "links": {
+    "web": "https://www.viajerohostels.com/es/destinos-mexico/sayulita/",
+    "maps": "https://maps.google.com/?cid=3752892557199245365&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 882
+   }
   },
   {
    "name": "Pineapple Paradise",
@@ -244,9 +580,34 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-06",
-   "en": "Great for people-watching with excellent sandwiches and fun karaoke.",
-   "es": "Excelente para observar gente con sándwiches excelentes y karaoke divertido.",
-   "on_today": true
+   "en": "Hit Pineapple Paradise for smash burger tacos and specialty cocktails in a lively spot.",
+   "es": "Ve a Pineapple Paradise por smash burger tacos y cócteles especiales en un lugar animado.",
+   "orders": [
+    {
+     "item": "specialty cocktails",
+     "people": 2
+    },
+    {
+     "item": "smash burger taco",
+     "people": 1
+    },
+    {
+     "item": "sandwiches",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "happy hour, events",
+   "price": "$$",
+   "quote": "Go to Pineapple Paradise for the smash burger taco(be sure to try the jalapeno relish).",
+   "vibe": "sports bar, people-watching, fun crowd",
+   "links": {
+    "maps": "https://maps.google.com/?cid=1724703292935515681&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.7,
+    "reviews": 237
+   }
   },
   {
    "name": "My Sister's House",
@@ -257,9 +618,22 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-08",
-   "en": "Affordable women-only hostel with outdoor cooking facilities.",
-   "es": "Hostal económico solo para mujeres con instalaciones de cocina al aire libre.",
-   "on_today": false
+   "en": "Stay at My Sister's House—a women-only hostel with yoga, cooking classes, and budget living.",
+   "es": "Quédate en My Sister's House, un albergue solo para mujeres con yoga, clases de cocina, y hospedaje económico.",
+   "orders": [],
+   "street": false,
+   "when": "",
+   "price": "$",
+   "quote": "You can cook outside and there is a fridge on the patio. So cheap also!",
+   "vibe": "women-only, yoga, budget-friendly",
+   "links": {
+    "web": "https://sisterssayulita.com/",
+    "maps": "https://maps.google.com/?cid=2926680532425808619&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 297
+   }
   },
   {
    "name": "Monkey Mountain",
@@ -270,22 +644,22 @@
    "fans": 8,
    "critics": 1,
    "last": "2026-08",
-   "en": "Popular hiking spot; guides available for best experience.",
-   "es": "Lugar de senderismo popular; guías disponibles para mejor experiencia.",
-   "on_today": false
-  },
-  {
-   "name": "Anchor Cafe",
-   "town": "Sayulita",
-   "category": "food",
-   "people": 6,
-   "creators": 1,
-   "fans": 5,
-   "critics": 0,
-   "last": "2026-09",
-   "en": "Beloved cafe with vegan smoothies, chia parfaits, and excellent coffee.",
-   "es": "Cafe querida con smoothies veganos, parfaits de chía, y café excelente.",
-   "on_today": false
+   "en": "Hike Monkey Mountain from Higuera Blanca; bring water, sunscreen, and good shoes for this hot trail.",
+   "es": "Camina Monkey Mountain desde Higuera Blanca; trae agua, protector solar, y buenos zapatos para esta caminata caliente.",
+   "orders": [],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "Monkey mountain is easy alone. Uber to Higuera Blanca, and then follow the trail using Alltrails. Wear good shoes and sunscreen, take water, it is a hot one.",
+   "vibe": "jungle hike, scenic, hot, accessible",
+   "links": {
+    "web": "https://www.monkeymountainhike.mx/",
+    "maps": "https://maps.google.com/?cid=14197291500715669251&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 514
+   }
   },
   {
    "name": "Northswell Cafe",
@@ -296,9 +670,31 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-05",
-   "en": "Vegan-friendly cafe with breakfast featuring multiple plant-based milk options.",
-   "es": "Cafe vegana con desayuno con múltiples opciones de leche a base de plantas.",
-   "on_today": false
+   "en": "Northswell serves amazing vegan breakfast and those chorizo burritos everyone raves about.",
+   "es": "Northswell sirve un desayuno vegano increíble y esos burritos de chorizo que todos alaban.",
+   "orders": [
+    {
+     "item": "vegan breakfast",
+     "people": 3
+    },
+    {
+     "item": "chorizo burrito",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "breakfast, lunch",
+   "price": "",
+   "quote": "Northswell is wonderful (looooove the chorizo burrito)",
+   "vibe": "vegan cafe, casual, bright, welcoming",
+   "links": {
+    "web": "https://instagram.com/northswell.sabor.natural?igshid=YmMyMTA2M2Y=",
+    "maps": "https://maps.google.com/?cid=1519928833386841123&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 5,
+    "reviews": 187
+   }
   },
   {
    "name": "The Dock",
@@ -309,9 +705,29 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-06",
-   "en": "Beachfront restaurant famous for puttanesca and good drinks.",
-   "es": "Restaurante frente a playa famoso por puttanesca y bebidas buenas.",
-   "on_today": true
+   "en": "The Dock's a great beachfront dinner spot with good food, drinks, and an awesome vibe.",
+   "es": "The Dock es un excelente restaurante frente a la playa para cenar con buena comida, bebidas, y ambiente genial.",
+   "orders": [
+    {
+     "item": "puttanesca",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "dinner",
+   "price": "",
+   "quote": "We went to it our first night in town. It was right on the beach, good food, good drinks, it was so nice",
+   "vibe": "beachfront, dinner, lively, screens",
+   "links": {
+    "web": "https://www.thedocksayulita.com/",
+    "ig": "https://www.instagram.com/thedocksayulita/",
+    "sl": "https://www.sayulitalife.com/business/the-dock",
+    "maps": "https://maps.google.com/?cid=10813782660059040558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.7,
+    "reviews": 340
+   }
   },
   {
    "name": "Marietas Islands",
@@ -322,9 +738,16 @@
    "fans": 7,
    "critics": 1,
    "last": "2026-09",
-   "en": "Popular day-trip snorkel destination with park fees and lunch included.",
-   "es": "Destino de snorkel popular para excursión diaria con cuotas y almuerzo incluido.",
-   "on_today": false
+   "en": "Book a day-trip snorkel tour to Marietas Islands with equipment, park fees, and lunch included.",
+   "es": "Reserva un tour de snorkel de día a las Islas Marietas con equipo, tarifas de parque, y almuerzo incluido.",
+   "orders": [],
+   "street": false,
+   "when": "day trips",
+   "price": "$",
+   "quote": "1600 pesos for an incredible trip to Las Marietas that included snorkeling equipment, park fees, and lunch.",
+   "vibe": "snorkeling tour, scenic, boat pickup",
+   "links": {},
+   "google": null
   },
   {
    "name": "Kapital Bank",
@@ -335,9 +758,22 @@
    "fans": 8,
    "critics": 2,
    "last": "2026-10",
-   "en": "Recently reopened bank with reliable ATM access.",
-   "es": "Banco recientemente reabierto con acceso confiable a cajero automático.",
-   "on_today": false
+   "en": "Kapital Bank's ATMs on Avenida Revolucion are the most reliable for consistent cash access in town.",
+   "es": "Los cajeros del Banco Kapital en Avenida Revolucion son los más confiables para acceso de efectivo consistente en el pueblo.",
+   "orders": [],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "The ATM situation is still bad but has improved in the last 2 weeks. Kapitol bank just reopened their ATM's.",
+   "vibe": "ATM access, improving reliability, cash",
+   "links": {
+    "web": "https://kapital.com/",
+    "maps": "https://maps.google.com/?cid=13194553491465015368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 3.7,
+    "reviews": 54
+   }
   },
   {
    "name": "El Espresso",
@@ -348,9 +784,28 @@
    "fans": 7,
    "critics": 1,
    "last": "2026-07",
-   "en": "Central cafe with reliable ATM access.",
-   "es": "Cafe central con acceso confiable a cajero automático.",
-   "on_today": false
+   "en": "Get the amazing chilaquiles at this central plaza cafe beloved for breakfast.",
+   "es": "Come los increibles chilaquiles en este cafe de plaza central amado por el desayuno.",
+   "orders": [
+    {
+     "item": "chilaquiles",
+     "people": 2
+    }
+   ],
+   "street": false,
+   "when": "breakfast",
+   "price": "",
+   "quote": "food was amazing we got the chilaqules",
+   "vibe": "central plaza cafe, breakfast hub",
+   "links": {
+    "ig": "https://www.instagram.com/cafe_el_espresso_sayulita/",
+    "sl": "https://www.sayulitalife.com/business/elespresso",
+    "maps": "https://maps.google.com/?cid=10273881507608002165&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.3,
+    "reviews": 586
+   }
   },
   {
    "name": "M&F Coffee Roasters",
@@ -361,9 +816,26 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-09",
-   "en": "Small coffee roastery with quality roasts from local regions.",
-   "es": "Pequeño tostador de café con tostadas de calidad de regiones locales.",
-   "on_today": false
+   "en": "Order their freshly roasted medium roast from Nayarit or Chiapas beans.",
+   "es": "Pide su cafe de tueste medio recien tostado de los granos Nayarit o Chiapas.",
+   "orders": [
+    {
+     "item": "medium roast coffee",
+     "people": 4
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "$",
+   "quote": "I smelled the distinct aroma of roasting coffee",
+   "vibe": "specialty roastery, small shop",
+   "links": {
+    "maps": "https://maps.google.com/?cid=17922048119502407836&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 100
+   }
   },
   {
    "name": "Tropical House Cafe",
@@ -374,9 +846,31 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-07",
-   "en": "Sports bar with breakfast service and lively atmosphere.",
-   "es": "Bar de deportes con servicio de desayuno y ambiente animado.",
-   "on_today": false
+   "en": "Get the amazing ceviche and spicy margarita while chatting with Luis, the sweetest bartender.",
+   "es": "Come el increible ceviche y margarita picante mientras platicas con Luis, el bartender mas dulce.",
+   "orders": [
+    {
+     "item": "ceviche",
+     "people": 3
+    },
+    {
+     "item": "spicy margarita",
+     "people": 2
+    }
+   ],
+   "street": false,
+   "when": "breakfast and evenings",
+   "price": "",
+   "quote": "Go see Luis at Tropical House - they have amazing ceviche, and a delicioussss spicy margarita!",
+   "vibe": "friendly bar, great staff, ocean view",
+   "links": {
+    "sl": "https://www.sayulitalife.com/business/tropical-house",
+    "maps": "https://maps.google.com/?cid=9934485184963276676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 372
+   }
   },
   {
    "name": "The Embers",
@@ -387,9 +881,24 @@
    "fans": 6,
    "critics": 0,
    "last": "2026-03",
-   "en": "Live music venue that transforms into dance club at night.",
-   "es": "Lugar de música en vivo que se transforma en club de baile.",
-   "on_today": true
+   "en": "Experience dinner that becomes a nightclub, with dancing till sunrise on weekends.",
+   "es": "Vive cena que se convierte en discoteca, con baile hasta la madrugada los fines de semana.",
+   "orders": [],
+   "street": false,
+   "when": "weekends, goes till 5-6am on Saturdays",
+   "price": "",
+   "quote": "After dinner they take the tables away and it turns into a club with dancing so they are prepared to host large groups.",
+   "vibe": "nightclub, dancing, romantic, elegant",
+   "links": {
+    "web": "https://theemberssayulita.com/",
+    "ig": "https://www.instagram.com/theemberssayu?igsh=MW5zOTI4aTcxYnh6cw==",
+    "sl": "https://www.sayulitalife.com/business/embers-restaurant",
+    "maps": "https://maps.google.com/?cid=13978090452564052432&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.9,
+    "reviews": 207
+   }
   },
   {
    "name": "Rincón de Guayabitos",
@@ -400,9 +909,22 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-07",
-   "en": "Nearby beach town with more affordable accommodations.",
-   "es": "Pueblo playa cercano con alojamientos más asequibles.",
-   "on_today": false
+   "en": "Just 20 minutes north, this beach town offers similar charm at much lower prices.",
+   "es": "A solo 20 minutos al norte, este pueblo costero ofrece encanto similar a precios mucho mas bajos.",
+   "orders": [],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "Checkout rincon de guayabitos 20 min north for rent half the price",
+   "vibe": "beach destination, cheaper than Sayulita",
+   "links": {
+    "web": "https://www.reservaguayabitos.com/",
+    "maps": "https://maps.google.com/?cid=4225385117641517184&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 4969
+   }
   },
   {
    "name": "Choco Banana",
@@ -413,9 +935,21 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-09",
-   "en": "Casual spot with surprisingly good bean burgers.",
-   "es": "Lugar casual con hamburguesas de frijoles sorprendentemente buenas.",
-   "on_today": false
+   "en": "Get the surprisingly delicious bean burger, especially popular with vegan diners.",
+   "es": "Come la hamburguesa de frijoles sorprendentemente deliciosa, especialmente popular con diners vegetarianos.",
+   "orders": [
+    {
+     "item": "bean burger",
+     "people": 2
+    }
+   ],
+   "street": false,
+   "when": "closes at 5 (lunch hours)",
+   "price": "",
+   "quote": "The bean burger at Chocobanana was surprisingly awesome!",
+   "vibe": "casual lunch spot, vegan-friendly",
+   "links": {},
+   "google": null
   },
   {
    "name": "Matiz Mariscos",
@@ -426,9 +960,28 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-07",
-   "en": "Popular seafood spot; try the tuna tostada.",
-   "es": "Lugar de mariscos popular; prueba la tostada de atún.",
-   "on_today": false
+   "en": "Try the atun tostada at this seafood lunch spot.",
+   "es": "Pide la tostada de atún en Matiz, es excelente para comer.",
+   "orders": [
+    {
+     "item": "atun tostada",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "Lunch",
+   "price": "",
+   "quote": "Go to Matiz and get the atun tostada, thank me later!!",
+   "vibe": "seafood lunch spot",
+   "links": {
+    "ig": "https://www.instagram.com/mariscos_matiz?igsh=dmxlZ2hwNGJkcjV3",
+    "sl": "https://www.sayulitalife.com/business/matiz",
+    "maps": "https://maps.google.com/?cid=12488774267616717377&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.7,
+    "reviews": 256
+   }
   },
   {
    "name": "Naty's Cocina",
@@ -439,9 +992,27 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-10",
-   "en": "Amazing vegetarian and vegan tacos at great prices; daytime only.",
-   "es": "Tacos vegetarianos y veganos increíbles a precios excelentes; solo durante el día.",
-   "on_today": false
+   "en": "Grab vegetarian tacos at Naty's before they close mid-afternoon.",
+   "es": "Prueba los tacos vegetarianos en Naty's antes de que cierren.",
+   "orders": [
+    {
+     "item": "vegetarian tacos",
+     "people": 2
+    }
+   ],
+   "street": true,
+   "when": "Breakfast and lunch, closes mid-afternoon",
+   "price": "$",
+   "quote": "I remember Naty's Cocina as having amazing delicious vegetarian tacos.",
+   "vibe": "small spot, street seating",
+   "links": {
+    "sl": "https://www.sayulitalife.com/business/natys",
+    "maps": "https://maps.google.com/?cid=8853263357154260367&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 357
+   }
   },
   {
    "name": "Escondido Bar",
@@ -452,9 +1023,29 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-08",
-   "en": "Cocktail bar with great deals and live music performances.",
-   "es": "Bar de cócteles con excelentes ofertas y actuaciones de música en vivo.",
-   "on_today": false
+   "en": "Escondido makes the best cocktails in town with great daytime vibes.",
+   "es": "Pide los mejores cócteles en Escondido con excelente ambiente.",
+   "orders": [
+    {
+     "item": "cocktails",
+     "people": 2
+    }
+   ],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "It's like a working bar during the day with good wifi, good vibes.",
+   "vibe": "working bar, good vibes, wifi",
+   "links": {
+    "web": "https://www.escondidobarsayulita.com/",
+    "ig": "https://www.instagram.com/escondidobar/",
+    "sl": "https://www.sayulitalife.com/business/bar-escondido",
+    "maps": "https://maps.google.com/?cid=13454089368774449878&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 149
+   }
   },
   {
    "name": "Tierra Tropical Beach Club",
@@ -465,9 +1056,24 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-09",
-   "en": "Beautiful beach club with pool, food, and spa services.",
-   "es": "Club de playa hermoso con piscina, comida, y servicios de spa.",
-   "on_today": false
+   "en": "Spend a day at this luxurious beach club with excellent food and drinks.",
+   "es": "Pasa un día en este club de playa lujoso con excelente comida y bebidas.",
+   "orders": [],
+   "street": false,
+   "when": "Closed Mondays",
+   "price": "$$$",
+   "quote": "it's heaven! $500 pesos for the day, but you can stay all day and it's so luxurious and quiet!",
+   "vibe": "luxurious, quiet, exclusive beach club",
+   "links": {
+    "web": "https://tierratropical.com.mx/tierra-tropical.php",
+    "ig": "https://www.instagram.com/tierratropicalbeachclub/",
+    "sl": "https://www.sayulitalife.com/business/tierra-tropical-beach-club",
+    "maps": "https://maps.google.com/?cid=13910622938296126475&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.5,
+    "reviews": 516
+   }
   },
   {
    "name": "Marea Cafe",
@@ -478,9 +1084,33 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-06",
-   "en": "Charming affordable cafe with amazing breakfast and great vibe.",
-   "es": "Cafe encantador y asequible con desayuno increíble y ambiente excelente.",
-   "on_today": false
+   "en": "Marea serves great sandwiches and coffee with a lovely vibe in Plaza Nawalli.",
+   "es": "Marea sirve excelentes sándwiches y café con un ambiente agradable en Plaza Nawalli.",
+   "orders": [
+    {
+     "item": "croissant sandwich",
+     "people": 1
+    },
+    {
+     "item": "mushroom sandwich",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "Breakfast and lunch",
+   "price": "$",
+   "quote": "Idk if the coffee is particularly great or anything, but I really loved the vibe at Marea Cafe.",
+   "vibe": "cozy plaza breakfast cafe",
+   "links": {
+    "web": "https://mareacafe.com/",
+    "ig": "https://www.instagram.com/marea.cafesayu?igsh=MW9la2xyandkbmk5Yg==",
+    "sl": "https://www.sayulitalife.com/business/marea-cafe",
+    "maps": "https://maps.google.com/?cid=18266214261751737694&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 118
+   }
   },
   {
    "name": "Carbon",
@@ -491,9 +1121,21 @@
    "fans": 6,
    "critics": 1,
    "last": "2026-06",
-   "en": "Cozy street patio with open kitchen on quiet north side.",
-   "es": "Patio de calle acogedor con cocina abierta en lado norte tranquilo.",
-   "on_today": false
+   "en": "Carbon's patio serves fantastic burgers in a cozy, quiet neighborhood spot.",
+   "es": "El patio de Carbon sirve hamburguesas fantásticas en un lugar acogedor y tranquilo.",
+   "orders": [
+    {
+     "item": "burger",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "Open from 8pm, closed Thursdays",
+   "price": "",
+   "quote": "it's a little street patio in the north side so it's quieter. it's such a cozy vibe.",
+   "vibe": "cozy street patio, quiet, open kitchen",
+   "links": {},
+   "google": null
   },
   {
    "name": "El Itacate",
@@ -504,9 +1146,38 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-07",
-   "en": "Good vegan taco options and amazing fresh drinks.",
-   "es": "Buenas opciones de tacos veganos y bebidas frescas increíbles.",
-   "on_today": false
+   "en": "Try their amazing itacate burrito and fresh aguas frescas at this neighborhood spot.",
+   "es": "Prueba su increíble burrito itacate y las aguas frescas en este lugar del barrio.",
+   "orders": [
+    {
+     "item": "Tacos",
+     "people": 3
+    },
+    {
+     "item": "Itacate",
+     "people": 1
+    },
+    {
+     "item": "Arrachera",
+     "people": 1
+    },
+    {
+     "item": "Aguas frescas",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "breakfast and lunch",
+   "price": "",
+   "quote": "a burrito with a cheese wrap instead of tortilla...sooooo good",
+   "vibe": "casual local spot, colorful, vegan-friendly",
+   "links": {
+    "maps": "https://maps.google.com/?cid=12740992199223819076&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.4,
+    "reviews": 968
+   }
   },
   {
    "name": "Tiburón",
@@ -517,9 +1188,33 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-06",
-   "en": "Excellent fish restaurant with creative dishes and cocktails.",
-   "es": "Restaurante de pez excelente con platillos creativos y cócteles.",
-   "on_today": false
+   "en": "Their fish of the day and tuna poke wontons are excellent; try the watermelon margarita.",
+   "es": "El pescado del día y los wontons de atún son excelentes, prueba la margarita de sandía.",
+   "orders": [
+    {
+     "item": "Fish of the day",
+     "people": 2
+    },
+    {
+     "item": "Tuna poke with wontons",
+     "people": 1
+    },
+    {
+     "item": "Watermelon margarita",
+     "people": 1
+    },
+    {
+     "item": "Ahi wonton appetizer",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "dinner",
+   "price": "",
+   "quote": "Great fish of the day, ahi wonton appetizer and specials",
+   "vibe": "breezy seafood, great cocktails, friendly service",
+   "links": {},
+   "google": null
   },
   {
    "name": "Julia's Jungle Kitchen",
@@ -530,17 +1225,353 @@
    "fans": 4,
    "critics": 0,
    "last": "2026-09",
-   "en": "Breakfast spot with great coffee inside Nawalli's Plaza.",
-   "es": "Lugar de desayuno con café excelente dentro de Nawalli's Plaza.",
-   "on_today": false
+   "en": "Go for the best coffee in town and great breakfast and lunch options.",
+   "es": "Ve por el mejor café del pueblo y excelentes opciones de desayuno y almuerzo.",
+   "orders": [
+    {
+     "item": "Coffee",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "breakfast and lunch",
+   "price": "",
+   "quote": "Julia's is open, best coffee!",
+   "vibe": "cozy cafe inside Nawalli's Plaza, best coffee",
+   "links": {
+    "web": "https://www.juliassayulita.com/",
+    "maps": "https://maps.google.com/?cid=4276768850238211339&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.9,
+    "reviews": 31
+   }
+  },
+  {
+   "name": "Bichos Tacos",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 5,
+   "creators": 0,
+   "fans": 5,
+   "critics": 0,
+   "last": "2026-06",
+   "en": "Try the birria tacos that people rave about as incredibly fresh and flavorful.",
+   "es": "Prueba los tacos de birria que la gente elogia como increíblemente frescos y sabrosos.",
+   "orders": [
+    {
+     "item": "Tacos",
+     "people": 2
+    },
+    {
+     "item": "Birria",
+     "people": 1
+    },
+    {
+     "item": "Cocktails",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "dinner",
+   "price": "",
+   "quote": "the tacos are so fresh and yummy",
+   "vibe": "casual taco spot, fresh and vibrant",
+   "links": {
+    "maps": "https://maps.google.com/?cid=8677621324562527539&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 409
+   }
+  }
+ ],
+ "street": [
+  {
+   "name": "Tacos Al Pastor Tal Ivan",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 9,
+   "creators": 0,
+   "fans": 9,
+   "critics": 0,
+   "last": "2026-07",
+   "en": "Quick and cheap al pastor tacos on the plaza with long hours.",
+   "es": "Tacos al pastor rápidos y económicos en la plaza con horarios extendidos.",
+   "orders": [
+    {
+     "item": "al pastor tacos",
+     "people": 5
+    }
+   ],
+   "street": true,
+   "when": "long hours",
+   "price": "$",
+   "quote": "They have the best Al pastor tacos.",
+   "vibe": "quick, cheap, long-hours plaza stand",
+   "links": {
+    "sl": "https://www.sayulitalife.com/business/tacoselivan",
+    "maps": "https://maps.google.com/?cid=3997489586546150230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.5,
+    "reviews": 869
+   }
+  },
+  {
+   "name": "Tacos Toño",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 7,
+   "creators": 0,
+   "fans": 7,
+   "critics": 0,
+   "last": "2026-10",
+   "en": "Get suadero at this late-night stand: the fat melts in your mouth.",
+   "es": "Prueba suadero en este puesto nocturno: la grasa se derrite en tu boca.",
+   "orders": [
+    {
+     "item": "suadero",
+     "people": 1
+    }
+   ],
+   "street": true,
+   "when": "often open late",
+   "price": "$",
+   "quote": "Suadero is my fave - the fat melts in your mouth",
+   "vibe": "older couple, cash only, crowded nights",
+   "links": {
+    "maps": "https://maps.google.com/?cid=13538011711464320816&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 228
+   }
+  },
+  {
+   "name": "Naty's Cocina",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 5,
+   "creators": 0,
+   "fans": 5,
+   "critics": 0,
+   "last": "2026-10",
+   "en": "Grab vegetarian tacos at Naty's before they close mid-afternoon.",
+   "es": "Prueba los tacos vegetarianos en Naty's antes de que cierren.",
+   "orders": [
+    {
+     "item": "vegetarian tacos",
+     "people": 2
+    }
+   ],
+   "street": true,
+   "when": "Breakfast and lunch, closes mid-afternoon",
+   "price": "$",
+   "quote": "I remember Naty's Cocina as having amazing delicious vegetarian tacos.",
+   "vibe": "small spot, street seating",
+   "links": {
+    "sl": "https://www.sayulitalife.com/business/natys",
+    "maps": "https://maps.google.com/?cid=8853263357154260367&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.8,
+    "reviews": 357
+   }
+  },
+  {
+   "name": "Churro Couple",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 2,
+   "creators": 0,
+   "fans": 2,
+   "critics": 0,
+   "last": "2026-07",
+   "en": "The Churro Couple stand is a street favorite you can't pass without grabbing some.",
+   "es": "El Churro Couple es un favorito callejero que no puedes pasar sin agarrar algunos.",
+   "orders": [
+    {
+     "item": "churros",
+     "people": 3
+    }
+   ],
+   "street": true,
+   "when": "",
+   "price": "",
+   "quote": "I second the churro couple. Can't walk by without getting some.",
+   "vibe": "street stand by field, irresistible",
+   "links": {},
+   "google": null
+  },
+  {
+   "name": "Mimi's Cake Stand",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 2,
+   "creators": 0,
+   "fans": 2,
+   "critics": 0,
+   "last": "2026-07",
+   "en": "Get the tres leches cakes at this plaza stand, locals swear by them.",
+   "es": "Consigue los pasteles de tres leches en este puesto de plaza, son increíbles.",
+   "orders": [
+    {
+     "item": "tres leches",
+     "people": 2
+    },
+    {
+     "item": "cakes",
+     "people": 2
+    }
+   ],
+   "street": true,
+   "when": "",
+   "price": "$",
+   "quote": "Mimi's cakes are so damn good.",
+   "vibe": "plaza stand, local favorite, fresh sweets",
+   "links": {},
+   "google": null
+  },
+  {
+   "name": "Burrito Revolution",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 2,
+   "creators": 0,
+   "fans": 2,
+   "critics": 0,
+   "last": "2026-02",
+   "en": "Try Burrito Revolución food truck for amazing vegetarian burritos with awesome sauces.",
+   "es": "Prueba el food truck Burrito Revolución por sus increíbles burritos vegetarianos.",
+   "orders": [
+    {
+     "item": "vegetarian burritos",
+     "people": 1
+    }
+   ],
+   "street": true,
+   "when": "",
+   "price": "",
+   "quote": "The owner was cool, sat down with my wife and myself and chatted for awhile and then he brought a bottle of tequila to the table and he kept pouring four or five shots for him and I on the house.",
+   "vibe": "food truck, friendly owner, fresh vegetarian",
+   "links": {
+    "maps": "https://maps.google.com/?cid=18300533860686588499&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.4,
+    "reviews": 312
+   }
+  },
+  {
+   "name": "Don Crispin",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 2,
+   "creators": 0,
+   "fans": 2,
+   "critics": 0,
+   "last": "2026-01",
+   "en": "Find Don Crispin's wheelbarrow for the best coffee in town.",
+   "es": "Busca la carretilla de Don Crispin para el mejor café del pueblo.",
+   "orders": [
+    {
+     "item": "coffee",
+     "people": 2
+    }
+   ],
+   "street": true,
+   "when": "",
+   "price": "",
+   "quote": "Best coffee in town by far.",
+   "vibe": "wheelbarrow stand, legendary, local",
+   "links": {
+    "web": "https://donpedros.com/",
+    "maps": "https://maps.google.com/?cid=17305837910640012426&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.3,
+    "reviews": 2820
+   }
   }
  ],
  "warnings": [],
+ "skip": [
+  {
+   "name": "Mary's Taco Sayulita",
+   "critics": 5,
+   "fans": 22,
+   "last": "2026-02",
+   "reasons": [
+    "overrated",
+    "soggy tortillas, not fresh"
+   ],
+   "quotes": [
+    "tortillas were soggy and food was very heavy, did not taste fresh",
+    "Tortillas were soggy and food was very heavy, did not taste fresh"
+   ]
+  },
+  {
+   "name": "Kaliva",
+   "critics": 2,
+   "fans": 2,
+   "last": "2026-02",
+   "reasons": [
+    "overpriced, expensive"
+   ],
+   "quotes": [
+    "Expat places I would avoid would be Kaliva/Sports Garden, Xoc",
+    "kaliva was almost double most of the smaller places"
+   ]
+  }
+ ],
  "tips": [
   {
-   "en": "Rent golf carts or ATVs (500 pesos daily) to explore beyond walking.",
-   "es": "Rente carritos de golf o ATVs (500 pesos diarios) para explorar.",
-   "category": "getting_around",
+   "en": "Budget 1,000 to 2,000 pesos daily for comfortable meals.",
+   "es": "Presupuesta 1,000 a 2,000 pesos diarios para comidas.",
+   "category": "money",
+   "people": 4
+  },
+  {
+   "en": "Rain mostly falls at night; avoid beach 11am-5pm.",
+   "es": "Lluvia mayormente nocturna; evita playa entre 11am-5pm.",
+   "category": "timing",
+   "people": 4
+  },
+  {
+   "en": "Pay in pesos for best prices and worker preference.",
+   "es": "Paga en pesos para mejores precios y preferencia.",
+   "category": "money",
+   "people": 3
+  },
+  {
+   "en": "Take local buses for budget transport; under $3 cost.",
+   "es": "Toma autobuses locales para transporte barato, menos de $3.",
+   "category": "getting-around",
+   "people": 3
+  },
+  {
+   "en": "Visit November for fewer rain days; October is unpredictable.",
+   "es": "Visita noviembre para menos lluvia; octubre es impredecible.",
+   "category": "timing",
+   "people": 3
+  },
+  {
+   "en": "Rent homes via Facebook groups or Sayulitalife.com.",
+   "es": "Renta casas en grupos de Facebook o Sayulitalife.com.",
+   "category": "booking",
+   "people": 3
+  },
+  {
+   "en": "Families with kids welcome; February and August ideal.",
+   "es": "Familias con niños bienvenidas; febrero y agosto ideales.",
+   "category": "timing",
+   "people": 3
+  },
+  {
+   "en": "Hike jungle trails and take surf lessons.",
+   "es": "Haz senderismo en la selva y lecciones de surf.",
+   "category": "activities",
    "people": 3
   }
  ]
