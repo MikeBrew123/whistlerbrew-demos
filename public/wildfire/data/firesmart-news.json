@@ -1,10 +1,41 @@
 {
-  "updated_at": "2026-10-16T10:00:34.104Z",
+  "updated_at": "2026-10-16T16:00:34.336Z",
   "zones": {
     "coastal": [],
-    "kamloops": [],
-    "prince-george": [],
-    "cariboo": [],
+    "kamloops": [
+      {
+        "title": "In Kelowna's election debates on homelessness, unhoused residents feel left out of the conversation",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/kelowna-election-unhoused-voters-homelessness-debate-9.7382720?cmp=rss",
+        "description": "Homelessness and public safety have emerged as defining issues in Kelowna's municipal election, but some people living unhoused in the city say many candidates are leaving those most affected out of the conversation.",
+        "pubDate": "Thu, 15 Oct 2026 21:31:20 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "prince-george": [
+      {
+        "title": "New anti-gang unit for northern B.C. launched in Prince George",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/anti-gang-unit-launched-northern-bc-9.7382138?cmp=rss",
+        "description": "A new regional anti-gang unit for northern B.C. has officially launched in Prince George, announced during a press conference on Thursday.",
+        "pubDate": "Thu, 15 Oct 2026 20:51:20 EDT",
+        "source": "CBC BC"
+      },
+      {
+        "title": "Northern B.C. city calls for end to provincial e-scooter pilot program",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/fort-st-john-e-scooter-regulations-9.7382486?cmp=rss",
+        "description": "Fort St. John is joining calls for B.C. to end its electric scooter pilot program, and roll out province-wide regulations and the funding to enforce them.",
+        "pubDate": "Thu, 15 Oct 2026 20:04:53 EDT",
+        "source": "CBC BC"
+      }
+    ],
+    "cariboo": [
+      {
+        "title": "2 candidates vie to be Lytton's mayor 5 years after devastating fire",
+        "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-mayor-election-9.7382300?cmp=rss",
+        "description": "Voters in Lytton, B.C., will choose between two current council members in the race for mayor.",
+        "pubDate": "Fri, 16 Oct 2026 07:00:00 EDT",
+        "source": "CBC BC"
+      }
+    ],
     "northwest": [],
     "southeast": [],
     "all": []
