@@ -1,26 +1,10 @@
 {
-  "updated_at": "2026-10-16T22:00:34.650Z",
+  "updated_at": "2026-10-17T04:00:36.209Z",
   "zones": {
     "coastal": [],
     "kamloops": [],
-    "prince-george": [
-      {
-        "title": "New anti-gang unit for northern B.C. launched in Prince George",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/anti-gang-unit-launched-northern-bc-9.7382138?cmp=rss",
-        "description": "A new regional anti-gang unit for northern B.C. has officially launched in Prince George, announced during a press conference on Thursday.",
-        "pubDate": "Thu, 15 Oct 2026 20:51:20 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "cariboo": [
-      {
-        "title": "2 candidates vie to be Lytton's mayor 5 years after devastating fire",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/lytton-mayor-election-9.7382300?cmp=rss",
-        "description": "Voters in Lytton, B.C., will choose between two current council members in the race for mayor.",
-        "pubDate": "Fri, 16 Oct 2026 07:00:00 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "prince-george": [],
+    "cariboo": [],
     "northwest": [],
     "southeast": [],
     "all": []
