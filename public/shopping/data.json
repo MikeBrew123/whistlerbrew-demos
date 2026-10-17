@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T07:05-07:00",
+ "updated": "2026-10-17T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -613,16 +613,6 @@
      "unit": "/lb",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "PC CHICKEN (375g) or STREET CART PORK (500g) SAUSAGES",
-       "price": "$6.00 each",
-       "per": 7.26,
-       "sale": true,
-       "until": "Oct 17",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/436042150/1790796918/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
        "name": "Harvest - Garlic Coil Sausage 500g",
        "price": "$10.99",
@@ -639,15 +629,13 @@
       "per": 9.97,
       "name": "Harvest - Garlic Coil Sausage 500g"
      },
-     "pct_cheaper": 27,
-     "next_store": "FreshSt",
      "south": {
       "town": "Vancouver",
       "store": "No Frills",
       "name": "SCHNEIDERS GRILL 'EMS SMOKED SAUSAGES or JUICY JUMBOS, 375/4",
       "per": 6.05,
       "price": "$6.00",
-      "pct": 17
+      "pct": 39
      }
     },
     {
@@ -1002,16 +990,6 @@
      "unit": null,
      "deals": [
       {
-       "store": "Nesters",
-       "name": "Sponge Towels Ultra Paper Towels",
-       "price": "$7.99 ea",
-       "per": null,
-       "sale": true,
-       "until": "Oct 22",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/436878070/1791503508/extra_large.jpg"
-      },
-      {
        "store": "Independent",
        "name": "ROYALE BATHROOM TISSUE, 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS, 3=6 ROLLS OR",
        "price": "$7.00",
@@ -1042,14 +1020,14 @@
        "img": "https://f.wishabi.net/page_items/437061449/1791587740/extra_large.jpg"
       },
       {
-       "store": "Shoppers",
-       "name": "BOUNTY PAPER TOWELS 2 Roll - 3 Roll",
-       "price": "$6.99 each",
+       "store": "Nesters",
+       "name": "Sponge Towels Ultra Paper Towels",
+       "price": "$7.99 ea",
        "per": null,
        "sale": true,
-       "until": "Oct 17",
+       "until": "Oct 22",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/436040636/1790796903/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436878070/1791503508/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1060,6 +1038,16 @@
        "until": "Oct 19",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/437026111/1791598924/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
+       "name": "BOUNTY PAPER TOWELS (1 Roll), ZIPLOC STORAGE BAGS (16's - 100's) or DAWN ULTRA D",
+       "price": "$4.99 each",
+       "per": null,
+       "sale": true,
+       "until": "Oct 23",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437023341/1791598952/extra_large.jpg"
       }
      ]
     },
@@ -1067,16 +1055,6 @@
      "item": "Toilet paper",
      "unit": null,
      "deals": [
-      {
-       "store": "Independent",
-       "name": "ROYALE BATHROOM TISSUE, 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS, 3=6 ROLLS OR",
-       "price": "$7.00",
-       "per": null,
-       "sale": true,
-       "until": "Oct 22",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437061372/1791587747/extra_large.jpg"
-      },
       {
        "store": "Nesters",
        "name": "Western Family Bathroom Tissue (12=24 Rolls) or Ultra Soft (8=24 Rolls)",
@@ -1088,14 +1066,14 @@
        "img": "https://f.wishabi.net/page_items/436878073/1791503510/extra_large.jpg"
       },
       {
-       "store": "Shoppers",
-       "name": "PC BATHROOM TISSUE 12 Rolls",
-       "price": "$7.99 each",
+       "store": "Independent",
+       "name": "ROYALE BATHROOM TISSUE, 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS, 3=6 ROLLS OR",
+       "price": "$7.00",
        "per": null,
        "sale": true,
-       "until": "Oct 17",
+       "until": "Oct 22",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/436039337/1790796897/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437061372/1791587747/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1216,12 +1194,6 @@
      "detail": "Shoppers Drug Mart: when you spend $90 or more in-store or online (25x with a PC Financial card), coming soon, available tomorrow",
      "store": "Shoppers",
      "ends": ""
-    },
-    {
-     "title": "20,000 points",
-     "detail": "Shoppers Drug Mart: for every $100 spent on Wayspa gift cards",
-     "store": "Shoppers",
-     "ends": "Oct 16"
     }
    ]
   }
@@ -1256,12 +1228,12 @@
    },
    {
     "store": "Shoppers",
-    "points": 17,
-    "wins": 4,
-    "big_wins": 3,
-    "real_sales": 5,
+    "points": 11,
+    "wins": 3,
+    "big_wins": 2,
+    "real_sales": 4,
     "fake_sales": 2,
-    "avg_margin": 24
+    "avg_margin": 22
    },
    {
     "store": "FreshSt",
@@ -1300,7 +1272,7 @@
    },
    {
     "store": "Shoppers",
-    "points": 29,
+    "points": 23,
     "weeks_won": 0
    },
    {
@@ -1336,6 +1308,11 @@
    },
    "whistler_tax": [
     {
+     "store": "Shoppers",
+     "pct": 39,
+     "items": 4
+    },
+    {
      "store": "FreshSt",
      "pct": 38,
      "items": 3
@@ -1344,11 +1321,6 @@
      "store": "Nesters",
      "pct": 37,
      "items": 7
-    },
-    {
-     "store": "Shoppers",
-     "pct": 36,
-     "items": 5
     },
     {
      "store": "Independent",
