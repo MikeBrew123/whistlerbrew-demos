@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T07:05-07:00",
+ "updated": "2026-10-18T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -147,14 +147,14 @@
      "stores": [
       {
        "store": "FreshSt",
-       "name": "AAA Certified Angus Boneless Top Sirloin Steak",
-       "price": "$12.15 avg/ea",
-       "was": null,
-       "per": 24.49,
-       "sale": false,
+       "name": "AAA Certified Angus Beef Top Sirloin Roast",
+       "price": "$33.05 avg/ea",
+       "was": "$51.79 avg/ea",
+       "per": 14.99,
+       "sale": true,
        "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020001500000_00.jpg?width=500"
+       "reg": 23.49,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020000600000_00.jpg?width=500"
       }
      ],
      "everyday": {
@@ -1237,10 +1237,10 @@
    },
    {
     "store": "FreshSt",
-    "points": 9,
+    "points": 10,
     "wins": 1,
     "big_wins": 1,
-    "real_sales": 4,
+    "real_sales": 5,
     "fake_sales": 0,
     "avg_margin": 56
    },
@@ -1267,7 +1267,7 @@
    },
    {
     "store": "FreshSt",
-    "points": 32,
+    "points": 33,
     "weeks_won": 0
    },
    {
@@ -1298,13 +1298,13 @@
     "pct_over": 10
    },
    "deepest": {
-    "store": "Independent",
-    "item": "Chicken breast",
-    "name": "CHICKEN BREASTS",
-    "per": 6.88,
-    "reg": 9.97,
+    "store": "FreshSt",
+    "item": "Sirloin steak",
+    "name": "AAA Certified Angus Beef Top Sirloin Roast",
+    "per": 14.99,
+    "reg": 23.49,
     "unit": "/lb",
-    "pct_off": 31
+    "pct_off": 36
    },
    "whistler_tax": [
     {
