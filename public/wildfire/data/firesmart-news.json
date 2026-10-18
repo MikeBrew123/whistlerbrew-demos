@@ -1,32 +1,9 @@
 {
-  "updated_at": "2026-10-18T10:00:34.616Z",
+  "updated_at": "2026-10-18T16:00:34.268Z",
   "zones": {
     "coastal": [],
-    "kamloops": [
-      {
-        "title": "Tom Dyas re-elected mayor of Kelowna",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/tom-dyas-mayor-kelowna-2026-9.7385701?cmp=rss",
-        "description": "Dyas ran a campaign focused on public safety when he won the top job in 2022, in what was his first elected government role. He held off the challenge of Ron Cannan, a former councillor and MP for the area.",
-        "pubDate": "Sun, 18 Oct 2026 03:32:48 EDT",
-        "source": "CBC BC"
-      },
-      {
-        "title": "Kamloops voters choose former councillor Mike O’Reilly as mayor",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/kamloops-new-mayor-9.7385486?cmp=rss",
-        "description": "Voters in Kamloops, B.C., have chosen a familiar face to lead council in the next four years, electing two-term councillor Mike O'Reilly.",
-        "pubDate": "Sun, 18 Oct 2026 01:06:56 EDT",
-        "source": "CBC BC"
-      }
-    ],
-    "prince-george": [
-      {
-        "title": "Prince George voters choose former councillor Garth Frizzell as mayor",
-        "link": "https://www.cbc.ca/news/canada/british-columbia/prince-george-voters-choose-former-councillor-garth-frizzell-as-mayor-9.7385669?cmp=rss",
-        "description": "After a tight race between nine candidates, including an incumbent mayor and two former city councillors, Prince George voters have chosen former councillor Garth Frizzell to lead the city.",
-        "pubDate": "Sun, 18 Oct 2026 02:29:09 EDT",
-        "source": "CBC BC"
-      }
-    ],
+    "kamloops": [],
+    "prince-george": [],
     "cariboo": [],
     "northwest": [],
     "southeast": [],
