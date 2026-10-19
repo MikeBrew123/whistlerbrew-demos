@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18T07:05-07:00",
+ "updated": "2026-10-19T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -134,7 +134,8 @@
       "store": "FreshSt",
       "per": 38.49,
       "name": "AAA Certified Angus Beef Rib Eye Steak"
-     }
+     },
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Striploin steak",
@@ -161,7 +162,8 @@
       "store": "FreshSt",
       "per": 24.49,
       "name": "AAA Certified Angus Boneless Top Sirloin Steak"
-     }
+     },
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Beef roast",
@@ -261,7 +263,8 @@
       "store": "FreshSt",
       "per": 12.99,
       "name": "Fresh AAA Certified Angus Beef Brisket (subject to availabil"
-     }
+     },
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Chicken wings",
@@ -306,6 +309,7 @@
      },
      "pct_cheaper": 13,
      "next_store": "FreshSt",
+     "history": "Lowest in 3 weeks",
      "south": {
       "town": "Squamish",
       "store": "No Frills",
@@ -422,7 +426,8 @@
       "name": "Fresh Local Marinated Bone-In Skin-On Chicken Breast"
      },
      "pct_cheaper": 13,
-     "next_store": "Independent"
+     "next_store": "Independent",
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Pork belly",
@@ -444,7 +449,8 @@
       "store": "FreshSt",
       "per": 8.99,
       "name": "Canadian Fresh Side Pork Belly"
-     }
+     },
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Pork chops",
@@ -500,7 +506,8 @@
       "store": "FreshSt",
       "per": 6.99,
       "name": "Canadian Boneless Pork Shoulder Blade Roast"
-     }
+     },
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Pork tenderloin",
@@ -534,7 +541,8 @@
       "name": "Canadian Fresh Pork Tenderloin"
      },
      "pct_cheaper": 57,
-     "next_store": "FreshSt"
+     "next_store": "FreshSt",
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Ground pork",
@@ -578,7 +586,7 @@
        "sale": true,
        "until": "Oct 22",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437061488/1791587748/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437061258/1791587741/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -772,7 +780,8 @@
       "store": "FreshSt",
       "per": 9.49,
       "name": "Dairyland - Coffee Cream - 18% m.f. 473ml"
-     }
+     },
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Coffee cream 18%, big (946 mL+)",
@@ -790,16 +799,6 @@
      "unit": "/dozen",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "GRADE \"A\" LARGE WHITE EGGS",
-       "price": "$3.79 each SATURDAY, OCTOBER 17 & SUNDAY, OCTOBER 18 ONLY!",
-       "per": 3.79,
-       "sale": true,
-       "until": "Oct 19",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437026112/1791598925/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
        "name": "Golden Valley - Brown Eggs - Large 12pk",
        "price": "$5.59",
@@ -809,6 +808,16 @@
        "until": "",
        "reg": null,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005579910104_00.jpg?width=500"
+      },
+      {
+       "store": "Shoppers",
+       "name": "PC FREE-RUN EGGS",
+       "price": "$5.79 each",
+       "per": 5.79,
+       "sale": true,
+       "until": "Oct 23",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437025812/1791598966/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -816,8 +825,8 @@
       "per": 5.59,
       "name": "Golden Valley - Brown Eggs - Large 12pk"
      },
-     "pct_cheaper": 32,
-     "next_store": "FreshSt"
+     "pct_cheaper": 3,
+     "next_store": "Shoppers"
     },
     {
      "item": "Butter",
@@ -915,7 +924,8 @@
       "name": "Mt Lehman Cheese Co - Duchess Goat Cheese with Garlic 150g"
      },
      "pct_cheaper": 26,
-     "next_store": "Independent"
+     "next_store": "Independent",
+     "history": "Lowest in 3 weeks"
     },
     {
      "item": "Yogurt",
@@ -1031,23 +1041,23 @@
       },
       {
        "store": "Shoppers",
-       "name": "ROYALE TIGER (3 Roll) or PC MAX (2 Roll - 3 Roll) PAPER TOWELS",
-       "price": "$5.99 each SATURDAY, OCTOBER 17 & SUNDAY, OCTOBER 18 ONLY!",
-       "per": null,
-       "sale": true,
-       "until": "Oct 19",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437026111/1791598924/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
-       "name": "BOUNTY PAPER TOWELS (1 Roll), ZIPLOC STORAGE BAGS (16's - 100's) or DAWN ULTRA D",
-       "price": "$4.99 each",
+       "name": "GLAD CLING WRAP (30m), NO NAME PAPER TOWELS (2 Roll), ALUMINUM FOIL (25) or PLAS",
+       "price": "2/ $3.00 or 1.99 each",
        "per": null,
        "sale": true,
        "until": "Oct 23",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437023341/1791598952/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437025795/1791598957/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
+       "name": "BOUNTY PAPER TOWELS (4 Roll), SWIFFER DUSTERS, WET or DRY CLOTH REFILLS",
+       "price": "$12.99 each",
+       "per": null,
+       "sale": true,
+       "until": "Oct 23",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437022148/1791598935/extra_large.jpg"
       }
      ]
     },
@@ -1055,16 +1065,6 @@
      "item": "Toilet paper",
      "unit": null,
      "deals": [
-      {
-       "store": "Nesters",
-       "name": "Western Family Bathroom Tissue (12=24 Rolls) or Ultra Soft (8=24 Rolls)",
-       "price": "$6.99 ea",
-       "per": null,
-       "sale": true,
-       "until": "Oct 22",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/436878073/1791503510/extra_large.jpg"
-      },
       {
        "store": "Independent",
        "name": "ROYALE BATHROOM TISSUE, 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS, 3=6 ROLLS OR",
@@ -1076,14 +1076,14 @@
        "img": "https://f.wishabi.net/page_items/437061372/1791587747/extra_large.jpg"
       },
       {
-       "store": "Shoppers",
-       "name": "ROYALE BATHROOM TISSUE 12 Roll",
-       "price": "$5.99 each, SATURDAY, OCTOBER 17 & SUNDAY, OCTOBER 18 ONLY!",
+       "store": "Nesters",
+       "name": "Western Family Bathroom Tissue (12=24 Rolls) or Ultra Soft (8=24 Rolls)",
+       "price": "$6.99 ea",
        "per": null,
        "sale": true,
-       "until": "Oct 19",
+       "until": "Oct 22",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437021539/1791598925/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/436878073/1791503510/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -1227,22 +1227,22 @@
     "avg_margin": 26
    },
    {
-    "store": "Shoppers",
-    "points": 11,
-    "wins": 3,
-    "big_wins": 2,
-    "real_sales": 4,
-    "fake_sales": 2,
-    "avg_margin": 22
-   },
-   {
     "store": "FreshSt",
-    "points": 10,
-    "wins": 1,
+    "points": 13,
+    "wins": 2,
     "big_wins": 1,
     "real_sales": 5,
     "fake_sales": 0,
-    "avg_margin": 56
+    "avg_margin": 30
+   },
+   {
+    "store": "Shoppers",
+    "points": 2,
+    "wins": 2,
+    "big_wins": 1,
+    "real_sales": 3,
+    "fake_sales": 3,
+    "avg_margin": 17
    },
    {
     "store": "Creekside",
@@ -1267,12 +1267,12 @@
    },
    {
     "store": "FreshSt",
-    "points": 33,
+    "points": 36,
     "weeks_won": 0
    },
    {
     "store": "Shoppers",
-    "points": 23,
+    "points": 14,
     "weeks_won": 0
    },
    {
@@ -1284,9 +1284,9 @@
   "weeks_scored": 4,
   "awards": {
    "worth_the_drive": {
-    "store": "Independent",
-    "avg_margin": 26,
-    "wins": 5
+    "store": "FreshSt",
+    "avg_margin": 30,
+    "wins": 2
    },
    "fake_sale": {
     "store": "Shoppers",
