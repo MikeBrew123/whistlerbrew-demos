@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T07:05-07:00",
+ "updated": "2026-10-20T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -586,7 +586,7 @@
        "sale": true,
        "until": "Oct 22",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437061258/1791587741/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437061488/1791587748/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -758,7 +758,15 @@
       "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - L"
      },
      "pct_cheaper": 13,
-     "next_store": "FreshSt"
+     "next_store": "FreshSt",
+     "south": {
+      "town": "Squamish",
+      "store": "Costco",
+      "name": "Kicking Horse Coffee Jolly Ass Blend Organic Whole Bean Dark",
+      "per": 2.9,
+      "price": "Online Price $28.99",
+      "pct": 22
+     }
     },
     {
      "item": "Coffee cream 18%, small (473 mL)",
@@ -981,12 +989,12 @@
      "pct_cheaper": 10,
      "next_store": "Shoppers",
      "south": {
-      "town": "Squamish",
-      "store": "Walmart",
-      "name": "Verka Dahi yogurt",
-      "per": 0.4,
-      "price": "$3.98",
-      "pct": 29
+      "town": "Vancouver",
+      "store": "No Frills",
+      "name": "NANAK DAHI YOGURT, 750 g",
+      "per": 0.47,
+      "price": "$3.50",
+      "pct": 16
      }
     }
    ]
@@ -1066,16 +1074,6 @@
      "unit": null,
      "deals": [
       {
-       "store": "Independent",
-       "name": "ROYALE BATHROOM TISSUE, 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS, 3=6 ROLLS OR",
-       "price": "$7.00",
-       "per": null,
-       "sale": true,
-       "until": "Oct 22",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437061372/1791587747/extra_large.jpg"
-      },
-      {
        "store": "Nesters",
        "name": "Western Family Bathroom Tissue (12=24 Rolls) or Ultra Soft (8=24 Rolls)",
        "price": "$6.99 ea",
@@ -1084,6 +1082,16 @@
        "until": "Oct 22",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/436878073/1791503510/extra_large.jpg"
+      },
+      {
+       "store": "Independent",
+       "name": "ROYALE BATHROOM TISSUE, 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS, 3=6 ROLLS OR",
+       "price": "$7.00",
+       "per": null,
+       "sale": true,
+       "until": "Oct 22",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437061372/1791587747/extra_large.jpg"
       },
       {
        "store": "FreshSt",
