@@ -1,8 +1,8 @@
 {
- "headline_en": "Glassy morning waves, a sunset on a secret beach, tacos and games till late.",
- "headline_es": "Olas suaves en la mañana, atardecer en una playa secreta, tacos y juegos hasta tarde.",
- "weather_en": "Gentle surf under 1m all day, strong midday sun, barely any rain, sunset at 18:34.",
- "weather_es": "Olas suaves de menos de 1m todo el dia, sol fuerte al mediodia, casi nada de lluvia, atardecer a las 18:34.",
+ "headline_en": "Small, friendly waves and a Dia de Muertos ceramics buzz around town today.",
+ "headline_es": "Olas pequeñas y amigables, y un ambiente de cerámica de Día de Muertos por todo el pueblo hoy.",
+ "weather_en": "Gentle 0.8m waves all day, sunny skies, low rain chance, sunset at 18:33.",
+ "weather_es": "Olas suaves de 0.8m todo el día, cielo soleado, poca probabilidad de lluvia, atardecer a las 18:33.",
  "stops": [
   {
    "time": "08:00",
@@ -10,146 +10,146 @@
    "place": "El Espresso",
    "title_en": "Chilaquiles at the plaza",
    "title_es": "Chilaquiles en la plaza",
-   "why_en": "Start where the whole town starts: a central plaza cafe with a loyal chilaquiles following.",
-   "why_es": "Empieza donde empieza todo el pueblo: un cafe en la plaza con fama por sus chilaquiles.",
+   "why_en": "A central plaza breakfast hub, perfect for chilaquiles before the sun gets strong.",
+   "why_es": "Un punto central de desayuno en la plaza, perfecto para chilaquiles antes de que el sol apriete.",
    "order_en": "Chilaquiles",
    "order_es": "Chilaquiles",
    "swap": {
-    "place": "Northswell Cafe",
-    "title_en": "Vegan breakfast instead",
-    "title_es": "Desayuno vegano",
-    "why_en": "Bright, casual vegan cafe if you'd rather skip the classic plate.",
-    "why_es": "Cafe vegano, luminoso y relajado, si prefieres algo distinto al clasico."
+    "place": "Hotelito Los Sueños",
+    "title_en": "Quiet yoga-hotel breakfast",
+    "title_es": "Desayuno tranquilo en hotel de yoga",
+    "why_en": "A quieter breakfast buffet at a yoga-focused hotel on a calm beach, served until 11:30.",
+    "why_es": "Un desayuno buffet más tranquilo en un hotel enfocado en yoga junto a una playa calmada, servido hasta las 11:30."
    }
   },
   {
    "time": "09:30",
    "kind": "surf",
    "place": "La Lancha Beach",
-   "title_en": "Learn-to-surf session",
-   "title_es": "Clase de surf para principiantes",
-   "why_en": "Waves are a gentle 0.9m all morning, exactly what the beginner-friendly La Lancha setup wants.",
-   "why_es": "Las olas estan suaves, 0.9m toda la mañana, perfecto para el ambiente principiante de La Lancha.",
+   "title_en": "Gentle surf session",
+   "title_es": "Sesión de surf suave",
+   "why_en": "Waves are a beginner-friendly 0.8m all day, and La Lancha is the spot to learn.",
+   "why_es": "Las olas están en un amigable 0.8m todo el día, y La Lancha es el lugar ideal para aprender.",
    "order_en": "",
    "order_es": "",
    "swap": {
     "place": "Playa Los Muertos",
     "title_en": "Calm swim instead",
-    "title_es": "Nadar tranquilo",
-    "why_en": "Skip the board and just float at this calm, family-friendly beach.",
-    "why_es": "Olvida la tabla y solo flota en esta playa tranquila y familiar."
+    "title_es": "Nadar tranquilo en su lugar",
+    "why_en": "Calm, safe and family-friendly if surfing isn't the mood.",
+    "why_es": "Tranquila, segura y apta para familias si no se antoja surfear."
    }
   },
   {
-   "time": "12:30",
-   "kind": "afternoon",
-   "place": "La Mexicana Spanish School",
-   "title_en": "Beginner Spanish lesson",
-   "title_es": "Clase de español para principiantes",
-   "why_en": "UV is peaking, so duck indoors for a 12:30 lesson instead of baking on the sand.",
-   "why_es": "El sol esta en su punto mas fuerte, mejor entrar a una clase a las 12:30 en vez de asolearte.",
-   "order_en": "",
-   "order_es": "",
+   "time": "12:00",
+   "kind": "street food",
+   "place": "Tacos Al Pastor Tal Ivan",
+   "title_en": "Plaza street tacos",
+   "title_es": "Tacos callejeros en la plaza",
+   "why_en": "Long hours and a local favorite for quick, cheap al pastor.",
+   "why_es": "Horario largo y un favorito local para tacos al pastor rápidos y baratos.",
+   "order_en": "Al pastor tacos",
+   "order_es": "Tacos al pastor",
    "swap": {
-    "place": "Viajero Hostel",
-    "title_en": "Pool time instead",
-    "title_es": "Tiempo en la alberca",
-    "why_en": "If class isn't your thing, cool off by the pool at this social hostel.",
-    "why_es": "Si la clase no es lo tuyo, refrescate en la alberca de este hostal social."
+    "place": "Naty's Cocina",
+    "title_en": "Vegetarian street tacos",
+    "title_es": "Tacos callejeros vegetarianos",
+    "why_en": "A quieter street spot with vegetarian tacos, open through lunch.",
+    "why_es": "Un puesto callejero más tranquilo con tacos vegetarianos, abierto hasta la hora de la comida."
    }
   },
   {
    "time": "13:30",
-   "kind": "lunch",
-   "place": "Matiz Mariscos",
-   "title_en": "Seafood lunch",
-   "title_es": "Comida de mariscos",
-   "why_en": "A shaded seafood lunch spot is the right call while the sun is still high.",
-   "why_es": "Un lugar de mariscos con sombra es la mejor opcion mientras el sol sigue fuerte.",
-   "order_en": "Atun tostada",
-   "order_es": "Tostada de atun",
+   "kind": "afternoon",
+   "place": "Sayulita Yoga Center",
+   "title_en": "Shaded meditation session",
+   "title_es": "Sesión de meditación bajo techo",
+   "why_en": "UV hits 7.5 at midday, so this covered HETA Somatic Self-Inquiry Meditation keeps you out of the sun.",
+   "why_es": "El UV llega a 7.5 al mediodía, así que esta meditación HETA Somatic Self-Inquiry bajo techo te mantiene fuera del sol.",
+   "order_en": "",
+   "order_es": "",
    "swap": {
-    "place": "Choco Banana",
-    "title_en": "Vegan lunch instead",
-    "title_es": "Comida vegana",
-    "why_en": "Casual vegan-friendly spot if seafood isn't the mood, open until 5.",
-    "why_es": "Lugar casual y vegano si no quieres mariscos, abierto hasta las 5."
-   }
-  },
-  {
-   "time": "16:00",
-   "kind": "street food",
-   "place": "Tacos Al Pastor Tal Ivan",
-   "title_en": "Plaza taco stand",
-   "title_es": "Puesto de tacos en la plaza",
-   "why_en": "Long hours mean this cheap, quick al pastor stand is perfect for a late-afternoon bite.",
-   "why_es": "Tiene horario largo, ideal para un taco rapido y barato a media tarde.",
-   "order_en": "Al pastor tacos",
-   "order_es": "Tacos al pastor",
-   "swap": {
-    "place": "Mimi's Cake Stand",
-    "title_en": "Sweet stand instead",
-    "title_es": "Puesto de dulces",
-    "why_en": "Local favorite plaza stand for tres leches if you'd rather have dessert than tacos.",
-    "why_es": "Puesto favorito de la plaza con tres leches, si prefieres postre en vez de tacos."
+    "place": "Terracota Solar Taller de Cerámica",
+    "title_en": "Hands-on ceramics workshop",
+    "title_es": "Taller de cerámica práctico",
+    "why_en": "A creative, hands-on Halloween ceramics option instead of quiet meditation.",
+    "why_es": "Una opción creativa y práctica de cerámica de Halloween en lugar de meditación tranquila."
    }
   },
   {
    "time": "17:00",
    "kind": "happy hour",
    "place": "Alto Alto",
-   "title_en": "2x1 Aperol at golden hour",
-   "title_es": "2x1 de Aperol en la hora dorada",
-   "why_en": "The 5 to 8pm 2x1 Aperol Spritz deal lines up perfectly with pre-dinner drinks.",
-   "why_es": "La promo de 2x1 de Aperol Spritz de 5 a 8pm cae perfecto para la previa de la cena.",
-   "order_en": "2x1 Aperol Spritz",
-   "order_es": "2x1 Aperol Spritz",
+   "title_en": "2x1 Aperol Spritz",
+   "title_es": "2x1 Aperol Spritz",
+   "why_en": "Pre-dinner happy hour runs 17:00 to 20:00, a relaxed way to ease into evening.",
+   "why_es": "La hora feliz previa a la cena va de 17:00 a 20:00, una forma relajada de entrar a la noche.",
+   "order_en": "Aperol Spritz (2x1)",
+   "order_es": "Aperol Spritz (2x1)",
    "swap": {
-    "place": "reef Sayulita's Kombucha",
-    "title_en": "Kombucha instead",
-    "title_es": "Kombucha en vez de alcohol",
-    "why_en": "Buy 10 get 2 free all month if you'd rather skip the alcohol.",
-    "why_es": "Compra 10 y recibe 2 gratis todo el mes, si prefieres no tomar alcohol."
+    "place": "La Katrina Restaurant-Bar",
+    "title_en": "All-day happy hour",
+    "title_es": "Hora feliz todo el día",
+    "why_en": "A quieter all-day happy hour if you'd rather skip the busier crowd.",
+    "why_es": "Una hora feliz todo el día más tranquila si prefieres evitar el ambiente más concurrido."
    }
   },
   {
    "time": "18:15",
    "kind": "sunset",
    "place": "Playa Carricitos",
-   "title_en": "Sunset at the secluded beach",
-   "title_es": "Atardecer en la playa escondida",
-   "why_en": "Sunset hits at 18:34 and this quiet beach is made for exactly that moment.",
-   "why_es": "El atardecer es a las 18:34 y esta playa tranquila es perfecta para ese momento.",
+   "title_en": "Sunset at a secluded beach",
+   "title_es": "Atardecer en una playa escondida",
+   "why_en": "Secluded with pristine sunsets and almost no crowds, right as the sun sets at 18:33.",
+   "why_es": "Escondida, con atardeceres impecables y casi sin gente, justo cuando el sol se mete a las 18:33.",
    "order_en": "",
    "order_es": "",
    "swap": {
     "place": "Don Pedro's Restaurant & Bar",
-    "title_en": "Upscale ocean view instead",
-    "title_es": "Vista al mar mas elegante",
-    "why_en": "Watch the same sunset from an intimate ocean-view table if you want it dressier.",
-    "why_es": "Mira el mismo atardecer desde una mesa intima con vista al mar si buscas algo mas elegante."
+    "title_en": "Upscale sunset view",
+    "title_es": "Vista de atardecer más elegante",
+    "why_en": "An intimate, upscale ocean-view spot for a quieter sunset.",
+    "why_es": "Un lugar íntimo y elegante con vista al mar para un atardecer más tranquilo."
    }
   },
   {
-   "time": "20:00",
-   "kind": "night",
-   "place": "Sayulita Sandbar",
-   "title_en": "Dinner and games night",
-   "title_es": "Cena y noche de juegos",
-   "why_en": "Sandbar runs events every night except Tuesdays, so tonight's the social, games-and-live-music finish.",
-   "why_es": "Sandbar tiene eventos todas las noches excepto martes, asi que esta noche cierra con juegos y musica en vivo.",
-   "order_en": "Smash burgers, smoked wings",
-   "order_es": "Smash burgers, alitas ahumadas",
+   "time": "19:30",
+   "kind": "dinner",
+   "place": "Tiburón",
+   "title_en": "Breezy seafood dinner",
+   "title_es": "Cena de mariscos al aire libre",
+   "why_en": "Friendly service and great cocktails with a breezy seafood menu for dinner.",
+   "why_es": "Servicio amable y buenos cocteles con un menú de mariscos fresco para cenar.",
+   "order_en": "Fish of the day, Watermelon margarita",
+   "order_es": "Pescado del día, margarita de sandía",
    "swap": {
-    "place": "Papá Omar",
-    "title_en": "Quiet late-night plaza dinner instead",
-    "title_es": "Cena tranquila en la plaza",
-    "why_en": "Lebanese plaza spot open until 2am if you'd rather eat quietly than play games.",
-    "why_es": "Lugar libanes en la plaza abierto hasta las 2am si prefieres cenar tranquilo en vez de jugar."
+    "place": "Mary's Taco Sayulita",
+    "title_en": "Casual cheaper tacos",
+    "title_es": "Tacos casuales y más baratos",
+    "why_en": "A busy, casual, cheaper option with popular fish and shrimp tacos.",
+    "why_es": "Una opción casual, concurrida y más barata con populares tacos de pescado y camarón."
+   }
+  },
+  {
+   "time": "22:00",
+   "kind": "night",
+   "place": "Redonda",
+   "title_en": "Karaoke and ping pong",
+   "title_es": "Karaoke y ping pong",
+   "why_en": "A fun, social night out with karaoke and a ping pong tournament from 22:00.",
+   "why_es": "Una noche divertida y social con karaoke y torneo de ping pong desde las 22:00.",
+   "order_en": "",
+   "order_es": "",
+   "swap": {
+    "place": "ITH Amazing Surf Hostel",
+    "title_en": "Community potluck",
+    "title_es": "Convivio comunitario",
+    "why_en": "A quieter, social potluck from 20:00 if karaoke isn't the mood.",
+    "why_es": "Un convivio más tranquilo y social desde las 20:00 si no se antoja el karaoke."
    }
   }
  ],
- "date": "2026-10-19",
- "sunset": "18:34",
- "updated": "2026-10-19T07:07-07:00"
+ "date": "2026-10-20",
+ "sunset": "18:33",
+ "updated": "2026-10-20T07:06-07:00"
 }
