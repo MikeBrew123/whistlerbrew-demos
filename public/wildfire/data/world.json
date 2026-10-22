@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T16:01:26.335Z",
+  "updated_at": "2026-10-22T22:01:25.600Z",
   "fires": [
     {
       "country": "Belgium",
@@ -173,8 +173,8 @@
       "country": "Indonesia",
       "name": "Indonesian Wildfires (Borneo & Regional)",
       "status": "Active",
-      "summary": "Indonesia experiencing one of its worst wildfire seasons. Wildfires in Borneo have destroyed part of the natural habitat of hundreds of orangutans, risking the species' survival. Toxic haze causing Singapore's landmarks to disappear, impacting countries around South East Asia. Rescuers relocated apes after habitats threatened by intense wildfires over summer. Critically endangered orangutans released back into wild after rescue from August-September fires.",
-      "link": "https://www.bbc.co.uk/news/videos/cmp8g7gel3xlo?at_medium=RSS&at_campaign=rss",
+      "summary": "Indonesia experiencing one of its worst wildfire seasons. Wildfires in Borneo have destroyed part of the natural habitat of hundreds of orangutans, risking the species' survival. Toxic haze causing Singapore's landmarks to disappear, impacting countries around South East Asia. Rescuers relocated apes after habitats threatened by intense wildfires over summer. Critically endangered orangutans released back into wild after rescue from August-September fires. BBC reports on peat fires in central Kalimantan as the worst wildfire season in a decade.",
+      "link": "https://www.bbc.co.uk/news/videos/cmx2302xe931o?at_medium=RSS&at_campaign=rss",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9997/live/310516d0-c22d-11f1-bc2e-018d645d8d21.jpg"
     },
     {
@@ -201,7 +201,20 @@
     }
   ],
   "last_report": {
-    "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [],\n  \"world_fires\": [\n    {\n      \"country\": \"Belgium\",\n      \"name\": \"Belgian Nature Reserve Wildfire\",\n      \"status\": \"Active\",\n      \"summary\": \"Wildfire tearing throug"
+    "items_in": {
+      "canada": 0,
+      "world": 1
+    },
+    "items_out": {
+      "canada": 0,
+      "world_fires": 1
+    },
+    "deduped": 1,
+    "rerouted": 0,
+    "notes": [
+      "Merged Indonesia BBC peat fire article into existing Indonesian Wildfires entry; preserved existing image and updated summary",
+      "All 26 existing active fires retained",
+      "No Canada-specific news items provided"
+    ]
   }
 }
