@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T22:01:26.014Z",
+  "updated_at": "2026-10-22T16:01:26.335Z",
   "fires": [
     {
       "country": "Belgium",
@@ -201,23 +201,7 @@
     }
   ],
   "last_report": {
-    "items_in": {
-      "canada": 0,
-      "world": 0
-    },
-    "items_out": {
-      "canada": 0,
-      "world_fires": 27
-    },
-    "deduped": 0,
-    "rerouted": 0,
-    "notes": [
-      "No new Canada news provided",
-      "No new world fire articles provided",
-      "All 27 existing fires preserved as Active status",
-      "No fires contained >60 days ago to remove",
-      "No misrouted items detected between buckets",
-      "All image fields preserved from existing_fires"
-    ]
+    "error": "Claude parse failed",
+    "raw": "```json\n{\n  \"canada_news\": [],\n  \"world_fires\": [\n    {\n      \"country\": \"Belgium\",\n      \"name\": \"Belgian Nature Reserve Wildfire\",\n      \"status\": \"Active\",\n      \"summary\": \"Wildfire tearing throug"
   }
 }
