@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T07:05-07:00",
+ "updated": "2026-10-23T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -110,9 +110,9 @@
       {
        "store": "FreshSt",
        "name": "AAA Certified Angus Beef Rib Eye Steak",
-       "price": "$28.85 avg/ea",
+       "price": "$29.23 avg/ea",
        "was": null,
-       "per": 38.49,
+       "per": 38.99,
        "sale": false,
        "until": "",
        "reg": null,
@@ -121,17 +121,16 @@
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 38.49,
+      "per": 38.99,
       "name": "AAA Certified Angus Beef Rib Eye Steak"
      },
-     "history": "Lowest in 3 weeks",
      "south": {
       "town": "Squamish",
       "store": "Save-On-Foods",
       "name": "Rib Eye Steak",
       "per": 29.99,
       "price": "$29.99 lb",
-      "pct": 22
+      "pct": 23
      }
     },
     {
@@ -146,21 +145,20 @@
       {
        "store": "FreshSt",
        "name": "AAA Certified Angus Beef Top Sirloin Roast",
-       "price": "$33.05 avg/ea",
-       "was": "$51.79 avg/ea",
-       "per": 14.99,
-       "sale": true,
+       "price": "$51.79 avg/ea",
+       "was": null,
+       "per": 23.49,
+       "sale": false,
        "until": "",
-       "reg": 23.49,
+       "reg": null,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020000600000_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 24.49,
-      "name": "AAA Certified Angus Boneless Top Sirloin Steak"
-     },
-     "history": "Lowest in 3 weeks"
+      "per": 23.49,
+      "name": "AAA Certified Angus Beef Top Sirloin Roast"
+     }
     },
     {
      "item": "Beef roast",
@@ -178,14 +176,14 @@
       },
       {
        "store": "FreshSt",
-       "name": "AAA Certified Angus Beef Boneless Bottom Blade Pot Roast",
-       "price": "$29.74 avg/ea",
-       "was": "$36.35 avg/ea",
-       "per": 13.49,
-       "sale": true,
+       "name": "AAA Certified Angus Beef Inside Round Roast",
+       "price": "$26.21 avg/ea",
+       "was": null,
+       "per": 13.99,
+       "sale": false,
        "until": "",
-       "reg": 16.49,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020006200000_00.jpg?width=500"
+       "reg": null,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020003400000_00.jpg?width=500"
       }
      ],
      "everyday": {
@@ -193,7 +191,7 @@
       "per": 13.99,
       "name": "AAA Certified Angus Beef Inside Round Roast"
      },
-     "pct_cheaper": 33,
+     "pct_cheaper": 36,
      "next_store": "FreshSt",
      "history": "Lowest in 3 weeks"
     },
@@ -256,16 +254,6 @@
        "until": "",
        "reg": null,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020083400000_00.jpg?width=500"
-      },
-      {
-       "store": "Shoppers",
-       "name": "PC FULLY COOKED FROZEN CHICKEN BREAST CHUNKS (800g) or CHICKEN WINGS (907g)",
-       "price": "$17.49 each",
-       "per": 9.92,
-       "sale": true,
-       "until": "Oct 23",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437025800/1791598959/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -273,8 +261,6 @@
       "per": 8.99,
       "name": "Chicken Wings - Split Family Pack"
      },
-     "pct_cheaper": 9,
-     "next_store": "Shoppers",
      "south": {
       "town": "Vancouver",
       "store": "Real Canadian Superstore",
@@ -640,22 +626,22 @@
       },
       {
        "store": "FreshSt",
-       "name": "Sockeye Salmon Fillets - Frozen",
-       "price": "$55.04 avg/ea",
+       "name": "Fresh Wild Pacific Coho Salmon Fillets",
+       "price": "$14.60 avg/ea",
        "was": null,
-       "per": 28.53,
+       "per": 29.44,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020056800000_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020051500000_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 28.53,
-      "name": "Sockeye Salmon Fillets - Frozen"
+      "per": 29.44,
+      "name": "Fresh Wild Pacific Coho Salmon Fillets"
      },
-     "pct_cheaper": 21,
+     "pct_cheaper": 23,
      "next_store": "FreshSt"
     },
     {
@@ -730,16 +716,6 @@
        "until": "",
        "reg": 5.6,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0004195301941_00.jpg?width=500"
-      },
-      {
-       "store": "Shoppers",
-       "name": "KICKING HORSE WHOLE BEAN COFFEE",
-       "price": "$21.49 each",
-       "per": 4.73,
-       "sale": true,
-       "until": "Oct 23",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437026806/1791598968/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -856,9 +832,9 @@
        "price": "$5.49 each",
        "per": 1.21,
        "sale": true,
-       "until": "Oct 23",
+       "until": "Oct 30",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437024029/1791598929/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437278060/1791972497/extra_large.jpg"
       },
       {
        "store": "Nesters",
@@ -894,13 +870,13 @@
      "stores": [
       {
        "store": "Shoppers",
-       "name": "HELUVA GOOD! FRENCH ONION SOUR CREAM DIP (680g) OR ARMSTRONG SHREDDED CHEESE (32",
-       "price": "$6.49 each",
-       "per": 0.95,
+       "name": "PC HUMMUS (227g) or THE LAUGHING COW CHEESE PORTIONS (8's)",
+       "price": "$3.00 each",
+       "per": 1.32,
        "sale": true,
-       "until": "Oct 23",
+       "until": "Oct 30",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437022680/1791598953/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437281389/1791972522/extra_large.jpg"
       },
       {
        "store": "Nesters",
@@ -939,9 +915,16 @@
       "per": 8.66,
       "name": "Mt Lehman Cheese Co - Duchess Goat Cheese with Garlic 150g"
      },
-     "pct_cheaper": 37,
+     "pct_cheaper": 12,
      "next_store": "Nesters",
-     "history": "Lowest in 3 weeks"
+     "south": {
+      "town": "Squamish",
+      "store": "Walmart",
+      "name": "Black Diamond cheese slices",
+      "per": 0.85,
+      "price": "$3.47",
+      "pct": 36
+     }
     },
     {
      "item": "Yogurt",
@@ -969,13 +952,13 @@
       },
       {
        "store": "Shoppers",
-       "name": "NO NAME SLICES (20's), DANONE ACTIVIA YOGURT (8 x 100g) or PHILADELPHIA CREAM CH",
-       "price": "$4.99 each",
-       "per": 0.62,
+       "name": "DANONE ACTIVIA YOGURT TUB (650g) or NO NAME CREAM CHEESE (227g - 250g)",
+       "price": "$4.19 each",
+       "per": 0.64,
        "sale": true,
-       "until": "Oct 23",
+       "until": "Oct 30",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437022683/1791598956/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437281399/1791972529/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -1026,6 +1009,16 @@
        "img": "https://f.wishabi.net/page_items/437568621/1792193459/extra_large.jpg"
       },
       {
+       "store": "Independent",
+       "name": "BOUNTY PAPER TOWEL, 6=12 ROLL",
+       "price": "$18.00",
+       "per": null,
+       "sale": true,
+       "until": "Oct 29",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437568705/1792193448/extra_large.jpg"
+      },
+      {
        "store": "Nesters",
        "name": "Bounty Paper Towels",
        "price": "$8.99 ea",
@@ -1034,16 +1027,6 @@
        "until": "Oct 29",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/437528444/1792162875/extra_large.jpg"
-      },
-      {
-       "store": "Independent",
-       "name": "PC\u00ae MAX\u2122 PAPER TOWELS, 8'S",
-       "price": "$22.00",
-       "per": null,
-       "sale": true,
-       "until": "Oct 29",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437568624/1792193461/extra_large.jpg"
       },
       {
        "store": "Independent",
@@ -1057,13 +1040,13 @@
       },
       {
        "store": "Independent",
-       "name": "BOUNTY PAPER TOWEL, 6=12 ROLL",
-       "price": "$18.00",
+       "name": "PC\u00ae MAX\u2122 PAPER TOWELS, 8'S",
+       "price": "$22.00",
        "per": null,
        "sale": true,
        "until": "Oct 29",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437568705/1792193448/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437568624/1792193461/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1083,16 +1066,6 @@
      "deals": [
       {
        "store": "Independent",
-       "name": "ROYALE BATHROOM TISSUE, 8-16 ROLLS",
-       "price": "$6.00",
-       "per": null,
-       "sale": true,
-       "until": "Oct 29",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437568671/1792193458/extra_large.jpg"
-      },
-      {
-       "store": "Independent",
        "name": "PUREX BATHROOM TISSUE, 12 DOUBLE ROLLS, SPONGETOWELS PAPER TOWELS 3=6 ROLLS, SCO",
        "price": "$7.00",
        "per": null,
@@ -1100,6 +1073,16 @@
        "until": "Oct 29",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/437568621/1792193459/extra_large.jpg"
+      },
+      {
+       "store": "Independent",
+       "name": "ROYALE BATHROOM TISSUE, 8-16 ROLLS",
+       "price": "$6.00",
+       "per": null,
+       "sale": true,
+       "until": "Oct 29",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437568671/1792193458/extra_large.jpg"
       },
       {
        "store": "Independent",
@@ -1160,14 +1143,7 @@
     "Independent",
     "Shoppers"
    ],
-   "offers": [
-    {
-     "title": "20x the points",
-     "detail": "Shoppers Drug Mart: when you spend $90 or more in-store or online (25x with a PC Financial card), coming soon, available tomorrow",
-     "store": "Shoppers",
-     "ends": ""
-    }
-   ]
+   "offers": []
   }
  ],
  "points_rules": [
@@ -1190,22 +1166,22 @@
     "avg_margin": 21
    },
    {
-    "store": "FreshSt",
-    "points": 16,
+    "store": "Shoppers",
+    "points": 15,
     "wins": 3,
-    "big_wins": 1,
+    "big_wins": 2,
     "real_sales": 5,
-    "fake_sales": 0,
-    "avg_margin": 14
+    "fake_sales": 1,
+    "avg_margin": 38
    },
    {
-    "store": "Shoppers",
+    "store": "FreshSt",
     "points": 11,
-    "wins": 3,
-    "big_wins": 3,
-    "real_sales": 5,
-    "fake_sales": 3,
-    "avg_margin": 46
+    "wins": 2,
+    "big_wins": 1,
+    "real_sales": 3,
+    "fake_sales": 0,
+    "avg_margin": 16
    },
    {
     "store": "Nesters",
@@ -1214,7 +1190,7 @@
     "big_wins": 1,
     "real_sales": 5,
     "fake_sales": 2,
-    "avg_margin": 21
+    "avg_margin": 23
    },
    {
     "store": "Creekside",
@@ -1239,12 +1215,12 @@
    },
    {
     "store": "FreshSt",
-    "points": 47,
+    "points": 42,
     "weeks_won": 0
    },
    {
     "store": "Shoppers",
-    "points": 22,
+    "points": 26,
     "weeks_won": 0
    },
    {
@@ -1257,7 +1233,7 @@
   "awards": {
    "worth_the_drive": {
     "store": "Shoppers",
-    "avg_margin": 46,
+    "avg_margin": 38,
     "wins": 3
    },
    "fake_sale": {
@@ -1280,19 +1256,19 @@
    },
    "whistler_tax": [
     {
+     "store": "FreshSt",
+     "pct": 67,
+     "items": 3
+    },
+    {
      "store": "Shoppers",
-     "pct": 63,
-     "items": 7
+     "pct": 58,
+     "items": 5
     },
     {
      "store": "Nesters",
      "pct": 56,
      "items": 7
-    },
-    {
-     "store": "FreshSt",
-     "pct": 53,
-     "items": 4
     },
     {
      "store": "Independent",
