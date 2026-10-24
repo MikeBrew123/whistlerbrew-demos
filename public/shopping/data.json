@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T07:05-07:00",
+ "updated": "2026-10-24T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -890,13 +890,13 @@
       },
       {
        "store": "Independent",
-       "name": "PC\u00ae DELI CHEESE BLOCKS, 250 G",
+       "name": "KRAFT GRATED PARMESAN CHEESE, 250 G",
        "price": "$8.00",
        "per": 3.2,
        "sale": true,
        "until": "Oct 29",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437568841/1792193456/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437568683/1792193448/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -1009,16 +1009,6 @@
        "img": "https://f.wishabi.net/page_items/437568621/1792193459/extra_large.jpg"
       },
       {
-       "store": "Independent",
-       "name": "BOUNTY PAPER TOWEL, 6=12 ROLL",
-       "price": "$18.00",
-       "per": null,
-       "sale": true,
-       "until": "Oct 29",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437568705/1792193448/extra_large.jpg"
-      },
-      {
        "store": "Nesters",
        "name": "Bounty Paper Towels",
        "price": "$8.99 ea",
@@ -1047,6 +1037,16 @@
        "until": "Oct 29",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/437568624/1792193461/extra_large.jpg"
+      },
+      {
+       "store": "Independent",
+       "name": "BOUNTY PAPER TOWEL, 6=12 ROLL",
+       "price": "$18.00",
+       "per": null,
+       "sale": true,
+       "until": "Oct 29",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437568705/1792193448/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1096,6 +1096,16 @@
       },
       {
        "store": "Shoppers",
+       "name": "PC BATHROOM TISSUE (9 Roll - 12 Roll), PC PLANET FIRST (6 Roll) or BOUNTY (2 Rol",
+       "price": "$6.99 each, SATURDAY, OCTOBER 24 & SUNDAY, OCTOBER 25 ONLY!",
+       "per": null,
+       "sale": true,
+       "until": "Oct 26",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/437278304/1791972492/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
        "name": "CHARMIN ULTRA BATHROOM TISSUE (6 Roll) or ROYALE FACIAL TISSUES (4's - 6's)",
        "price": "$7.99 each",
        "per": null,
@@ -1113,16 +1123,6 @@
        "until": "Oct 30",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/437282385/1791972561/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
-       "name": "PC BATHROOM TISSUE (9 Roll - 12 Roll), PC PLANET FIRST (6 Roll) or BOUNTY (2 Rol",
-       "price": "$6.99 each, SATURDAY, OCTOBER 24 & SUNDAY, OCTOBER 25 ONLY!",
-       "per": null,
-       "sale": true,
-       "until": "Oct 26",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437278304/1791972492/extra_large.jpg"
       }
      ]
     }
