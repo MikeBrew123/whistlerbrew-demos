@@ -1,155 +1,137 @@
 {
- "headline_en": "Easy waves, tacos, sunset and live music: a full Saturday in Sayulita",
- "headline_es": "Olas suaves, tacos, atardecer y música en vivo: un sábado completo en Sayulita",
- "weather_en": "Waves 0.7 m and friendly for beginners, UV is high at midday, rain is possible so keep a covered backup, sunset 18:30.",
- "weather_es": "Olas de 0.7 m, buenas para principiantes, UV alto al mediodía, puede llover así que ten un plan techado, atardecer a las 18:30.",
+ "headline_en": "Easy waves in the morning, tacos at lunch, sunset spritzes before the clouds roll in",
+ "headline_es": "Olas suaves en la mañana, tacos al mediodía y spritz al atardecer antes de que lleguen las nubes",
+ "weather_en": "Waves stay at 0.7 m all day (beginner friendly). UV is high at midday, rain builds from mid-afternoon to about 63% around sunset, and the sun sets at 18:30.",
+ "weather_es": "Las olas se quedan en 0.7 m todo el día (ideal para principiantes). El UV es alto al mediodía, la lluvia sube desde media tarde a cerca de 63% al atardecer, y el sol se oculta a las 18:30.",
  "stops": [
   {
-   "time": "07:30",
+   "time": "08:30",
    "kind": "breakfast",
    "place": "El Espresso",
-   "title_en": "Plaza breakfast to start the day",
-   "title_es": "Desayuno en la plaza para empezar el día",
-   "why_en": "A central plaza cafe that locals use as their breakfast hub.",
-   "why_es": "Un café en la plaza central que los locales usan como punto de desayuno.",
+   "title_en": "Plaza breakfast",
+   "title_es": "Desayuno en la plaza",
+   "why_en": "The central plaza breakfast hub is a calm start before the sun gets strong.",
+   "why_es": "El café del centro de la plaza es el desayuno ideal para empezar tranquilo antes de que pegue el sol.",
    "order_en": "Chilaquiles",
    "order_es": "Chilaquiles",
    "swap": {
     "place": "Northswell Cafe",
-    "title_en": "Bright vegan breakfast",
-    "title_es": "Desayuno vegano y luminoso",
-    "why_en": "A casual, welcoming vegan cafe if you want something lighter.",
-    "why_es": "Un café vegano, casual y acogedor si quieres algo más ligero."
+    "title_en": "Vegan breakfast",
+    "title_es": "Desayuno vegano",
+    "why_en": "A bright, welcoming vegan cafe if you want something lighter.",
+    "why_es": "Un café vegano luminoso y acogedor si quieres algo más ligero."
    }
   },
   {
-   "time": "09:00",
+   "time": "10:00",
    "kind": "surf",
    "place": "La Lancha Beach",
-   "title_en": "Learn to surf on gentle waves",
-   "title_es": "Aprende a surfear con olas suaves",
-   "why_en": "Waves are 0.7 m, ideal for beginners, and the morning sun is still kind.",
-   "why_es": "Las olas son de 0.7 m, ideales para principiantes, y el sol de la mañana todavía es amable.",
+   "title_en": "Learn to surf",
+   "title_es": "Aprende a surfear",
+   "why_en": "Waves are a gentle 0.7 m, perfect for beginners, and you finish before the midday UV peaks.",
+   "why_es": "Las olas están en 0.7 m, perfectas para principiantes, y terminas antes del pico de UV del mediodía.",
    "order_en": "",
    "order_es": "",
    "swap": {
     "place": "Playa Los Muertos",
-    "title_en": "Calm swim and beach time",
-    "title_es": "Nado tranquilo y playa",
-    "why_en": "A calm, family-friendly beach for a relaxed dip instead of a lesson.",
-    "why_es": "Una playa tranquila y familiar para nadar sin prisa en lugar de tomar clase."
+    "title_en": "Calm beach morning",
+    "title_es": "Mañana tranquila en la playa",
+    "why_en": "A calm, family-friendly beach if you would rather float than surf.",
+    "why_es": "Una playa tranquila y familiar si prefieres flotar en lugar de surfear."
    }
   },
   {
-   "time": "12:00",
-   "kind": "lunch",
-   "place": "Matiz Mariscos",
-   "title_en": "Seafood lunch out of the midday sun",
-   "title_es": "Comida de mariscos fuera del sol de mediodía",
-   "why_en": "A seafood lunch spot, a good shady break while UV is at its peak.",
-   "why_es": "Un lugar de mariscos para comer, buena pausa a la sombra cuando el UV está más fuerte.",
-   "order_en": "Atún tostada",
-   "order_es": "Tostada de atún",
+   "time": "12:30",
+   "kind": "street food",
+   "place": "Tacos Al Pastor Tal Ivan",
+   "title_en": "Plaza street tacos",
+   "title_es": "Tacos de plaza",
+   "why_en": "A quick, cheap, long-hours plaza stand that is open right at lunchtime.",
+   "why_es": "Un puesto rápido y económico de la plaza, con horario largo y abierto a la hora de la comida.",
+   "order_en": "Al pastor tacos",
+   "order_es": "Tacos al pastor",
    "swap": {
-    "place": "Choco Banana",
-    "title_en": "Casual vegan-friendly lunch",
-    "title_es": "Comida casual con opciones veganas",
-    "why_en": "A cheaper, easygoing lunch spot (it closes at 5).",
-    "why_es": "Un lugar sencillo y más económico para comer (cierra a las 5)."
+    "place": "Naty's Cocina",
+    "title_en": "Vegetarian street tacos",
+    "title_es": "Tacos vegetarianos en la calle",
+    "why_en": "A small street-seating spot for meat-free tacos, open through lunch until mid-afternoon.",
+    "why_es": "Un lugarcito con mesas en la calle para tacos sin carne, abierto durante la comida y hasta media tarde."
    }
   },
   {
    "time": "15:00",
    "kind": "happy hour",
    "place": "At The Dock",
-   "title_en": "Happy hour at ¡Sábado al Muelle!",
-   "title_es": "Happy hour en ¡Sábado al Muelle!",
-   "why_en": "Happy hour drinks run 15:00 to 17:00 during the Saturday at The Dock event, with a lively beachfront crowd and cover if it rains.",
-   "why_es": "El happy hour va de 15:00 a 17:00 durante el evento Sábado al Muelle, con ambiente frente al mar y techo si llueve.",
+   "title_en": "Saturday at the Dock",
+   "title_es": "Sábado al Muelle",
+   "why_en": "¡Sábado al Muelle! runs 12:30 to 18:00 and drinks are on happy hour from 15:00 to 17:00, a fine place to ride out the afternoon clouds.",
+   "why_es": "¡Sábado al Muelle! va de 12:30 a 18:00 y los tragos están en happy hour de 15:00 a 17:00, un buen lugar para esperar las nubes de la tarde.",
    "order_en": "Happy hour drinks",
-   "order_es": "Bebidas del happy hour",
+   "order_es": "Tragos del happy hour",
    "swap": {
-    "place": "Alto Alto",
-    "title_en": "2x1 Aperol Spritz, a bit later",
-    "title_es": "2x1 en Aperol Spritz, un poco más tarde",
-    "why_en": "Their 2x1 Aperol Spritz runs 17:00 to 20:00 if you want a calmer, more upscale drink.",
-    "why_es": "Su 2x1 en Aperol Spritz va de 17:00 a 20:00 si prefieres algo más tranquilo y elegante."
+    "place": "Mimi's Cake Stand",
+    "title_en": "Sweet treat, no alcohol",
+    "title_es": "Antojo dulce sin alcohol",
+    "why_en": "A local-favorite plaza stand with fresh sweets for a cheap, alcohol-free break.",
+    "why_es": "Un puesto favorito de la plaza con dulces frescos para un descanso económico y sin alcohol."
    }
   },
   {
-   "time": "17:45",
+   "time": "17:30",
    "kind": "sunset",
-   "place": "Playa Carricitos",
-   "title_en": "Sunset on a secluded beach",
-   "title_es": "Atardecer en una playa apartada",
-   "why_en": "Pristine sunsets with virtually no crowds, just in time for 18:30.",
-   "why_es": "Atardeceres espectaculares casi sin gente, justo a tiempo para las 18:30.",
-   "order_en": "",
-   "order_es": "",
+   "place": "Alto Alto",
+   "title_en": "Spritz sunset toast",
+   "title_es": "Brindis de atardecer con spritz",
+   "why_en": "Aperol Spritz is 2x1 from 17:00 to 20:00, so toast the 18:30 sunset with the group (rain chance is rising, so bring an umbrella).",
+   "why_es": "El Aperol Spritz está 2x1 de 17:00 a 20:00, así que brinden por el atardecer de las 18:30 con el grupo (la lluvia va subiendo, lleven paraguas).",
+   "order_en": "2x1 Aperol Spritz",
+   "order_es": "Aperol Spritz 2x1",
    "swap": {
-    "place": "Tropical House Cafe",
-    "title_en": "Sunset from an ocean-view bar",
-    "title_es": "Atardecer desde un bar con vista al mar",
-    "why_en": "A friendly ocean-view bar with a roof overhead if clouds roll in.",
-    "why_es": "Un bar amigable con vista al mar y techo por si llegan las nubes."
+    "place": "Turtle Sanctuary",
+    "title_en": "Baby turtle release",
+    "title_es": "Liberación de tortuguitas",
+    "why_en": "At 18:00, only if hatchlings are ready (confirmed around 2 to 3 PM), a quiet and free-feeling alternative.",
+    "why_es": "A las 18:00, solo si las crías están listas (se confirma como a las 2 o 3 de la tarde), una opción tranquila."
    }
   },
   {
-   "time": "19:15",
+   "time": "19:30",
    "kind": "dinner",
    "place": "Tiburón",
-   "title_en": "Breezy seafood dinner",
-   "title_es": "Cena de mariscos con brisa",
-   "why_en": "Seafood with great cocktails and friendly service, one of the places people pick for dinner.",
-   "why_es": "Mariscos con muy buenos cocteles y servicio amable, uno de los lugares que la gente elige para cenar.",
+   "title_en": "Seafood dinner",
+   "title_es": "Cena de mariscos",
+   "why_en": "Breezy seafood with great cocktails and friendly service, a nice finish to the spritz hour.",
+   "why_es": "Mariscos con ambiente fresco, buenos cocteles y servicio amable, un buen cierre después del spritz.",
    "order_en": "Fish of the day, tuna poke with wontons, watermelon margarita",
    "order_es": "Pescado del día, poke de atún con wontons, margarita de sandía",
    "swap": {
     "place": "Bichos Tacos",
     "title_en": "Casual taco dinner",
     "title_es": "Cena casual de tacos",
-    "why_en": "A fresh, vibrant and more relaxed taco spot for dinner.",
-    "why_es": "Un lugar de tacos fresco, vibrante y más relajado para cenar."
+    "why_en": "A fresh, vibrant taco spot that is easier on the wallet.",
+    "why_es": "Un lugar de tacos fresco y vibrante, más ligero para el bolsillo."
    }
   },
   {
-   "time": "20:30",
+   "time": "21:00",
    "kind": "night",
    "place": "Sayulita Sandbar",
-   "title_en": "Live music at the Sandbar",
-   "title_es": "Música en vivo en el Sandbar",
+   "title_en": "Live music night",
+   "title_es": "Noche de música en vivo",
    "why_en": "Live music runs 20:30 to 23:30 in a social, games-and-sports setting.",
-   "why_es": "La música en vivo es de 20:30 a 23:30 en un ambiente social con juegos y deportes.",
-   "order_en": "Smash burgers, smoked wings, beers",
-   "order_es": "Smash burgers, alitas ahumadas, cervezas",
+   "why_es": "La música en vivo va de 20:30 a 23:30 en un ambiente social con juegos y deportes.",
+   "order_en": "Beers, smash burgers, smoked wings",
+   "order_es": "Cervezas, smash burgers, alitas ahumadas",
    "swap": {
-    "place": "The Embers",
-    "title_en": "Dancing and 2x1 night",
-    "title_es": "Baile y noche de 2x1",
-    "why_en": "An elegant nightclub with a 2x1 night, for people who want to dance until late.",
-    "why_es": "Un antro elegante con noche de 2x1, para quienes quieren bailar hasta tarde."
-   }
-  },
-  {
-   "time": "22:30",
-   "kind": "street food",
-   "place": "Tacos Toño",
-   "title_en": "Late-night street tacos",
-   "title_es": "Tacos callejeros de madrugada",
-   "why_en": "A beloved older couple's stand that is often open late; bring cash, it's cash only.",
-   "why_es": "Un puesto querido de una pareja mayor que suele abrir hasta tarde; lleva efectivo, solo aceptan efectivo.",
-   "order_en": "Suadero",
-   "order_es": "Suadero",
-   "swap": {
-    "place": "Churro Couple",
-    "title_en": "Sweet street snack instead",
-    "title_es": "Mejor un antojo dulce de la calle",
-    "why_en": "A street stand by the field with churros people find irresistible.",
-    "why_es": "Un puesto callejero junto a la cancha con churros que la gente dice que son irresistibles."
+    "place": "Carbon",
+    "title_en": "Quiet patio night",
+    "title_es": "Noche tranquila en el patio",
+    "why_en": "A cozy street patio with an open kitchen, open from 8pm, for a calmer evening.",
+    "why_es": "Un patio acogedor en la calle con cocina abierta, desde las 8pm, para una noche más tranquila."
    }
   }
  ],
  "date": "2026-10-24",
  "sunset": "18:30",
- "updated": "2026-10-24T06:16-07:00"
+ "updated": "2026-10-24T07:05-07:00"
 }
