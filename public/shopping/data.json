@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T07:05-07:00",
+ "updated": "2026-10-25T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -708,14 +708,14 @@
       },
       {
        "store": "FreshSt",
-       "name": "Lavazza - Qualita Oro Roasted Ground Coffee 250g",
-       "price": "$10.69",
-       "was": "$13.99",
-       "per": 4.28,
+       "name": "Level Ground - Organic Craft Blend Coffee - Peru Medium & Smooth - Ground 300g",
+       "price": "$12.99",
+       "was": "$19.79",
+       "per": 4.33,
        "sale": true,
        "until": "",
-       "reg": 5.6,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0004195301941_00.jpg?width=500"
+       "reg": 6.6,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0066159400033_00.jpg?width=500"
       }
      ],
      "everyday": {
@@ -723,7 +723,7 @@
       "per": 4.62,
       "name": "Republica Coffee Roasters - Organic The Perfect Storm Blend "
      },
-     "pct_cheaper": 13,
+     "pct_cheaper": 14,
      "next_store": "FreshSt",
      "south": {
       "town": "Squamish",
@@ -890,13 +890,13 @@
       },
       {
        "store": "Independent",
-       "name": "KRAFT GRATED PARMESAN CHEESE, 250 G",
+       "name": "PC\u00ae DELI CHEESE BLOCKS, 250 G",
        "price": "$8.00",
        "per": 3.2,
        "sale": true,
        "until": "Oct 29",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437568683/1792193448/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437568841/1792193456/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -963,19 +963,19 @@
       {
        "store": "FreshSt",
        "name": "Olympic Greek Yogurt - Plain 2% m.f. 1.75kg",
-       "price": "$14.99",
-       "was": "$16.99",
-       "per": 0.86,
-       "sale": true,
+       "price": "$16.99",
+       "was": null,
+       "per": 0.97,
+       "sale": false,
        "until": "",
-       "reg": 0.97,
+       "reg": null,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005916140220_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 1.0,
-      "name": "Activia Probiotic Yogurt - Blueberry 2.9% m.f. 650g"
+      "per": 0.97,
+      "name": "Olympic Greek Yogurt - Plain 2% m.f. 1.75kg"
      },
      "pct_cheaper": 3,
      "next_store": "Nesters",
@@ -1163,7 +1163,7 @@
     "big_wins": 2,
     "real_sales": 7,
     "fake_sales": 2,
-    "avg_margin": 21
+    "avg_margin": 22
    },
    {
     "store": "Shoppers",
@@ -1176,10 +1176,10 @@
    },
    {
     "store": "FreshSt",
-    "points": 11,
+    "points": 10,
     "wins": 2,
     "big_wins": 1,
-    "real_sales": 3,
+    "real_sales": 2,
     "fake_sales": 0,
     "avg_margin": 16
    },
@@ -1215,7 +1215,7 @@
    },
    {
     "store": "FreshSt",
-    "points": 42,
+    "points": 41,
     "weeks_won": 0
    },
    {
@@ -1255,11 +1255,6 @@
     "pct_off": 43
    },
    "whistler_tax": [
-    {
-     "store": "FreshSt",
-     "pct": 67,
-     "items": 3
-    },
     {
      "store": "Shoppers",
      "pct": 58,
