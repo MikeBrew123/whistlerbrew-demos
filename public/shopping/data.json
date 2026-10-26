@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T07:05-07:00",
+ "updated": "2026-10-26T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -176,24 +176,24 @@
       },
       {
        "store": "FreshSt",
-       "name": "AAA Certified Angus Beef Inside Round Roast",
-       "price": "$26.21 avg/ea",
+       "name": "AAA Certified Angus Beef Outside Round Roast",
+       "price": "$30.84 avg/ea",
        "was": null,
        "per": 13.99,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020003400000_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020003500000_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
       "per": 13.99,
-      "name": "AAA Certified Angus Beef Inside Round Roast"
+      "name": "AAA Certified Angus Beef Outside Round Roast"
      },
      "pct_cheaper": 36,
      "next_store": "FreshSt",
-     "history": "Lowest in 3 weeks"
+     "history": "Lowest in 4 weeks"
     },
     {
      "item": "Short ribs",
@@ -238,7 +238,7 @@
       "per": 12.99,
       "name": "Fresh AAA Certified Angus Beef Brisket (subject to availabil"
      },
-     "history": "Lowest in 3 weeks"
+     "history": "Lowest in 4 weeks"
     },
     {
      "item": "Chicken wings",
@@ -396,7 +396,7 @@
       "per": 8.99,
       "name": "Canadian Fresh Side Pork Belly"
      },
-     "history": "Lowest in 3 weeks",
+     "history": "Lowest in 4 weeks",
      "south": {
       "town": "Vancouver",
       "store": "Real Canadian Superstore",
@@ -469,7 +469,7 @@
       "per": 6.99,
       "name": "Canadian Boneless Pork Shoulder Blade Roast"
      },
-     "history": "Lowest in 3 weeks"
+     "history": "Lowest in 4 weeks"
     },
     {
      "item": "Pork tenderloin",
@@ -528,16 +528,6 @@
      "unit": "/lb",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "NO NAME BACON (375g) or SLICED BOLOGNA (500g)",
-       "price": "$3.99 each",
-       "per": 4.83,
-       "sale": true,
-       "until": "Oct 26",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437277748/1791972483/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
        "name": "Harvest - Applewood Bacon 500g",
        "price": "$19.49",
@@ -554,8 +544,14 @@
       "per": 17.68,
       "name": "Harvest - Applewood Bacon 500g"
      },
-     "pct_cheaper": 73,
-     "next_store": "FreshSt"
+     "south": {
+      "town": "Vancouver",
+      "store": "Real Canadian Superstore",
+      "name": "NO NAME\u00ae MILD SUGAR CURED BACON, 375 G",
+      "per": 4.83,
+      "price": "SALE $3.99",
+      "pct": 73
+     }
     },
     {
      "item": "Sausages",
@@ -600,7 +596,7 @@
      },
      "pct_cheaper": 49,
      "next_store": "FreshSt",
-     "history": "Lowest in 3 weeks",
+     "history": "Lowest in 4 weeks",
      "south": {
       "town": "Squamish",
       "store": "No Frills",
@@ -755,7 +751,7 @@
       "per": 9.49,
       "name": "Dairyland - Coffee Cream - 18% m.f. 473ml"
      },
-     "history": "Lowest in 3 weeks"
+     "history": "Lowest in 4 weeks"
     },
     {
      "item": "Coffee cream 18%, big (946 mL+)",
@@ -772,16 +768,6 @@
      "item": "Eggs",
      "unit": "/dozen",
      "stores": [
-      {
-       "store": "Shoppers",
-       "name": "GRADE \"A\" LARGE WHITE EGGS 1 Dozen",
-       "price": "$3.99 each, SATURDAY, OCTOBER 24 & SUNDAY, OCTOBER 25 ONLY!",
-       "per": 3.99,
-       "sale": true,
-       "until": "Oct 26",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437283081/1791972496/extra_large.jpg"
-      },
       {
        "store": "FreshSt",
        "name": "Golden Valley - Brown Eggs - Large 12pk",
@@ -809,8 +795,8 @@
       "per": 5.59,
       "name": "Golden Valley - Brown Eggs - Large 12pk"
      },
-     "pct_cheaper": 29,
-     "next_store": "FreshSt"
+     "pct_cheaper": 3,
+     "next_store": "Independent"
     },
     {
      "item": "Butter",
@@ -1050,13 +1036,13 @@
       },
       {
        "store": "Shoppers",
-       "name": "PC BATHROOM TISSUE (9 Roll - 12 Roll), PC PLANET FIRST (6 Roll) or BOUNTY (2 Rol",
-       "price": "$6.99 each, SATURDAY, OCTOBER 24 & SUNDAY, OCTOBER 25 ONLY!",
+       "name": "NO NAME DOUBLE ROLLS PAPER TOWEL 6 Roll",
+       "price": "$3.99 each",
        "per": null,
        "sale": true,
-       "until": "Oct 26",
+       "until": "Oct 30",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/437278304/1791972492/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/437280159/1791972544/extra_large.jpg"
       }
      ]
     },
@@ -1096,16 +1082,6 @@
       },
       {
        "store": "Shoppers",
-       "name": "PC BATHROOM TISSUE (9 Roll - 12 Roll), PC PLANET FIRST (6 Roll) or BOUNTY (2 Rol",
-       "price": "$6.99 each, SATURDAY, OCTOBER 24 & SUNDAY, OCTOBER 25 ONLY!",
-       "per": null,
-       "sale": true,
-       "until": "Oct 26",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/437278304/1791972492/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
        "name": "CHARMIN ULTRA BATHROOM TISSUE (6 Roll) or ROYALE FACIAL TISSUES (4's - 6's)",
        "price": "$7.99 each",
        "per": null,
@@ -1123,6 +1099,17 @@
        "until": "Oct 30",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/437282385/1791972561/extra_large.jpg"
+      },
+      {
+       "store": "FreshSt",
+       "name": "Royale - Bathroom Tissue - Double Rolls - Original 2 Ply 12pk",
+       "price": "$12.99",
+       "was": "$14.99",
+       "per": null,
+       "sale": true,
+       "until": "",
+       "reg": null,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006343570373_00.jpg?width=500"
       }
      ]
     }
@@ -1135,7 +1122,80 @@
    "stores": [
     "Nesters"
    ],
-   "offers": []
+   "offers": [
+    {
+     "title": "Earn 2x Points",
+     "detail": "Nesters Market: bonus points: earn one additional More Rewards point on each $1 spent",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Pay $17.99 for Cakes",
+     "detail": "Nesters Market: 875g, 950g, 970g or 1 kg, first 2",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Pay $11.99 for Mastro Gran Piatto Charcuterie",
+     "detail": "Nesters Market: 200g, first 1",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Pay $5.99 for Greenfield Sliced Meats",
+     "detail": "Nesters Market: 175g, first 2",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Pay $2.49 for Degree Antiperspirant",
+     "detail": "Nesters Market: 48g or 76g, first 4",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Pay $4.49 for Western Family Orange Juice",
+     "detail": "Nesters Market: 1.54 L, first 2",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Pay $3.99 for Taylor Farms Chopped Kits",
+     "detail": "Nesters Market: 292g-382g, first 2",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Pay $6.57 for Grimm's Sizzlin' Smokies",
+     "detail": "Nesters Market: 450g, first 1",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "15% off Canned Tomatoes",
+     "detail": "Nesters Market: Western Family, 796mL, first 2",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "Buy 2 Get 600 points on Pepsi Pop",
+     "detail": "Nesters Market: 1L, limit 2 promotional offers",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "20% off Coffee Pods",
+     "detail": "Nesters Market: Krispy Kreme or Timothy's, 30pk, first 1",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    },
+    {
+     "title": "45% off Taco Shells",
+     "detail": "Nesters Market: Old El Paso, 125g, 133g, first 1",
+     "store": "Nesters",
+     "ends": "Oct 28"
+    }
+   ]
   },
   {
    "program": "PC Optimum",
@@ -1143,7 +1203,44 @@
     "Independent",
     "Shoppers"
    ],
-   "offers": []
+   "offers": [
+    {
+     "title": "Any Eggs or Butter FREE - Limit 1",
+     "detail": "Shoppers Drug Mart: when you spend $40 or more on almost anything at Shoppers Drug Mart. Limit 1. Coming soon, available tomorrow (Oct 26)",
+     "store": "Shoppers",
+     "ends": "Nov 4"
+    },
+    {
+     "title": "15,000 points",
+     "detail": "Shoppers Drug Mart: when you spend $150 on Ikea gift cards",
+     "store": "Shoppers",
+     "ends": "Oct 30"
+    },
+    {
+     "title": "10,000 points",
+     "detail": "Shoppers Drug Mart: for every $100 spent on Carter's OshKosh b'Gosh or Wayspa gift cards",
+     "store": "Shoppers",
+     "ends": "Oct 30"
+    },
+    {
+     "title": "$3.99 each",
+     "detail": "Shoppers Drug Mart: Crest 3D White Advanced Glamorous White toothpaste (flyer deal)",
+     "store": "Shoppers",
+     "ends": "Oct 29"
+    },
+    {
+     "title": "$2.79 each",
+     "detail": "Shoppers Drug Mart: Dairyland 18% Coffee Cream (flyer deal)",
+     "store": "Shoppers",
+     "ends": "Oct 29"
+    },
+    {
+     "title": "2/$6 or $3.99 each",
+     "detail": "Shoppers Drug Mart: Cadbury Burnt Almond Dark Chocolate Bar (flyer deal)",
+     "store": "Shoppers",
+     "ends": "Oct 29"
+    }
+   ]
   }
  ],
  "points_rules": [
@@ -1166,22 +1263,13 @@
     "avg_margin": 22
    },
    {
-    "store": "Shoppers",
-    "points": 15,
-    "wins": 3,
-    "big_wins": 2,
-    "real_sales": 5,
-    "fake_sales": 1,
-    "avg_margin": 38
-   },
-   {
     "store": "FreshSt",
-    "points": 10,
-    "wins": 2,
+    "points": 13,
+    "wins": 3,
     "big_wins": 1,
     "real_sales": 2,
     "fake_sales": 0,
-    "avg_margin": 16
+    "avg_margin": 12
    },
    {
     "store": "Nesters",
@@ -1191,6 +1279,15 @@
     "real_sales": 5,
     "fake_sales": 2,
     "avg_margin": 23
+   },
+   {
+    "store": "Shoppers",
+    "points": 3,
+    "wins": 1,
+    "big_wins": 0,
+    "real_sales": 3,
+    "fake_sales": 1,
+    "avg_margin": 12
    },
    {
     "store": "Creekside",
@@ -1215,12 +1312,12 @@
    },
    {
     "store": "FreshSt",
-    "points": 41,
+    "points": 44,
     "weeks_won": 0
    },
    {
     "store": "Shoppers",
-    "points": 26,
+    "points": 14,
     "weeks_won": 0
    },
    {
@@ -1232,9 +1329,9 @@
   "weeks_scored": 5,
   "awards": {
    "worth_the_drive": {
-    "store": "Shoppers",
-    "avg_margin": 38,
-    "wins": 3
+    "store": "Independent",
+    "avg_margin": 22,
+    "wins": 5
    },
    "fake_sale": {
     "store": "Nesters",
@@ -1257,8 +1354,8 @@
    "whistler_tax": [
     {
      "store": "Shoppers",
-     "pct": 58,
-     "items": 5
+     "pct": 73,
+     "items": 4
     },
     {
      "store": "Nesters",
