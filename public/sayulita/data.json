@@ -1,132 +1,11 @@
 {
- "updated": "2026-10-26T12:50-07:00",
- "cash_tip": "No ATM reports came in today, but tonight's spots take both cards and cash: GOAT for the Sinners show ($300 at the door) and Papá Omar in the plaza until 2 AM. If you do need pesos, use a bank ATM in town, pick 'decline conversion' so you're charged in pesos, and keep small bills for tacos and taxis.",
+ "updated": "2026-10-27T07:00-07:00",
+ "cash_tip": "GOAT Beach Club and Papá Omar take both cards and cash, so you can save your pesos for places that only take cash. When you do withdraw, use a bank ATM instead of a standalone one, choose 'decline conversion' so you're charged in pesos, take out a larger amount once, and keep small bills for tacos, taxis and the market.",
  "feeds": {
-  "whatsapp": "2026-10-26T18:23:40+00:00",
-  "whatsapp_checked": "2026-10-26T18:30:03.750541+00:00"
+  "whatsapp": "2026-10-27T03:46:38+00:00",
+  "whatsapp_checked": "2026-10-27T13:30:00.319592+00:00"
  },
  "events": [
-  {
-   "date": "2026-10-26",
-   "start": null,
-   "end": null,
-   "title": "Cacao Circle with drawing meditation on the beach",
-   "venue": "in front of Sirrnas",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-10-26",
-   "start": "08:00",
-   "end": "09:00",
-   "title": "Vinyasa Yoga",
-   "venue": "Sayulinda Hotel (",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-10-26",
-   "start": "09:00",
-   "end": null,
-   "title": "Hatha Yoga",
-   "venue": "Viajero Hostel",
-   "source": "Town chat",
-   "url": "https://www.viajerohostels.com/en/destinations/mexico/viajero-sayulita-hostel",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-10-26",
-   "start": "12:30",
-   "end": "13:30",
-   "title": "Beginner Spanish Lessons",
-   "venue": "La Mexicana Spanish School",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/beginner-spanish-lessons/2026-10-26/",
-   "category": "other",
-   "recurring": true
-  },
-  {
-   "date": "2026-10-26",
-   "start": "15:00",
-   "end": "17:00",
-   "title": "Aloha Kids Club – After School Club with Miss Valeria and Miss Amanda",
-   "venue": "",
-   "source": "Town chat",
-   "url": "",
-   "category": "other",
-   "recurring": null
-  },
-  {
-   "date": "2026-10-26",
-   "start": "17:00",
-   "end": "18:30",
-   "title": "Pickleball Nights For a Good Cause",
-   "venue": "Escuela Primaria Damián Carmona",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-10-26/",
-   "category": "fit",
-   "recurring": true
-  },
-  {
-   "date": "2026-10-26",
-   "start": "17:00",
-   "end": null,
-   "title": "Spanish Conversation Club",
-   "venue": "Alchemize House",
-   "source": "Town chat",
-   "url": "",
-   "category": "other",
-   "recurring": null
-  },
-  {
-   "date": "2026-10-26",
-   "start": "18:00",
-   "end": "19:00",
-   "title": "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)",
-   "venue": "Turtle Sanctuary",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-10-26/",
-   "category": "other",
-   "recurring": true
-  },
-  {
-   "date": "2026-10-26",
-   "start": "18:00",
-   "end": null,
-   "title": "Yin Yoga & Sound Full Moon Ceremony",
-   "venue": "Anima, Calle Islas Marías & Calle Juan Escutia, Sayulita",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-10-26",
-   "start": "18:30",
-   "end": "20:00",
-   "title": "Cacao Circle and Drawing Meditation",
-   "venue": "",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/cacao-circle-and-drawing-meditation/",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-10-26",
-   "start": "18:30",
-   "end": null,
-   "title": "Cacao Circle - Art Therapy",
-   "venue": "Sirenas Bar (beach access)",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": null
-  },
   {
    "date": "2026-10-27",
    "start": "09:15",
@@ -168,6 +47,17 @@
    "venue": "Galería Palu",
    "source": "Town chat",
    "url": "https://www.palugallery.com/",
+   "category": "other",
+   "recurring": null
+  },
+  {
+   "date": "2026-10-27",
+   "start": "17:30",
+   "end": null,
+   "title": "ITH Sayulita Community Beach Cleanup",
+   "venue": "Sayulita beach",
+   "source": "Town chat",
+   "url": "",
    "category": "other",
    "recurring": null
   },
@@ -296,11 +186,11 @@
    "date": "2026-10-28",
    "start": "18:00",
    "end": null,
-   "title": "Día de Muertos Surf Tournament: athlete briefing & technical meeting",
-   "venue": "Terraza Hotel Sayulinda, Sayulita",
+   "title": "Torneo Internacional de Surf Día de Muertos: technical meeting",
+   "venue": "Terraza del Hotel Sayulinda",
    "source": "Web",
-   "url": "https://turismo.bahiadebanderas.gob.mx/festival-internacional-dia-de-muertos-bahia-de-banderas-2026/",
-   "category": "night",
+   "url": "https://tribunadelabahia.com.mx/festival-dia-de-muertos-bahia-de-banderas-2026-sayulita-surf/",
+   "category": "other",
    "recurring": null
   },
   {
@@ -373,17 +263,6 @@
    "date": "2026-10-30",
    "start": null,
    "end": null,
-   "title": "Muertos Make Up & Fresh Flower Crowns (reservation only)",
-   "venue": "",
-   "source": "Town chat",
-   "url": "",
-   "category": "other",
-   "recurring": true
-  },
-  {
-   "date": "2026-10-30",
-   "start": null,
-   "end": null,
    "title": "La Soltura del Cuerpo / Fluidité du Mouvement – movement class with Yuridia Ortega (class 1)",
    "venue": "La Bodega Teatro",
    "source": "Town chat",
@@ -404,6 +283,28 @@
   },
   {
    "date": "2026-10-30",
+   "start": null,
+   "end": null,
+   "title": "Muertos Make Up & Fresh Flower Crowns (reservation only)",
+   "venue": "",
+   "source": "Town chat",
+   "url": "",
+   "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-10-30",
+   "start": null,
+   "end": null,
+   "title": "Fiesta Catrina: live music jam + dance ft. jgatsby, art exhibition, Catrina face painting, Mexican snacks",
+   "venue": "Bar By Borre",
+   "source": "Town chat",
+   "url": "",
+   "category": "night",
+   "recurring": null
+  },
+  {
+   "date": "2026-10-30",
    "start": "07:30",
    "end": "08:30",
    "title": "Social Run Club",
@@ -421,6 +322,17 @@
    "venue": "Playa de los Muertos",
    "source": "Town chat",
    "url": "",
+   "category": "other",
+   "recurring": null
+  },
+  {
+   "date": "2026-10-30",
+   "start": "10:00",
+   "end": "14:00",
+   "title": "Mercado del Pueblo",
+   "venue": "Calle Revolución, across from Escondido Bar",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-06/",
    "category": "other",
    "recurring": null
   },
@@ -524,6 +436,17 @@
    "recurring": true
   },
   {
+   "date": "2026-10-30",
+   "start": "21:00",
+   "end": null,
+   "title": "LaMott DJ Set – Shamanic Downtempo",
+   "venue": "Smoke House Baldío",
+   "source": "Town chat",
+   "url": "",
+   "category": "night",
+   "recurring": null
+  },
+  {
    "date": "2026-10-31",
    "start": null,
    "end": null,
@@ -538,22 +461,22 @@
    "date": "2026-10-31",
    "start": null,
    "end": null,
-   "title": "Catrina Makeup (Day of the Dead face painting, by appointment)",
-   "venue": "",
+   "title": "Body Looseness / Fluidity of Movement - dance workshop with Yuridia Ortega (class 2)",
+   "venue": "La Bodega Teatro",
    "source": "Town chat",
-   "url": "",
-   "category": "other",
+   "url": "https://www.fabricadelasartessanpancho.org/la-bodega-teatro/teatro",
+   "category": "fit",
    "recurring": true
   },
   {
    "date": "2026-10-31",
    "start": null,
    "end": null,
-   "title": "Body Looseness / Fluidity of Movement - dance workshop with Yuridia Ortega (class 2)",
-   "venue": "La Bodega Teatro",
+   "title": "Catrina Makeup (Day of the Dead face painting, by appointment)",
+   "venue": "",
    "source": "Town chat",
-   "url": "https://www.fabricadelasartessanpancho.org/la-bodega-teatro/teatro",
-   "category": "fit",
+   "url": "",
+   "category": "other",
    "recurring": true
   },
   {
@@ -670,7 +593,7 @@
    "date": "2026-11-01",
    "start": null,
    "end": null,
-   "title": "Catrina Makeup (Day of the Dead face painting, by appointment)",
+   "title": "Muertos Make Up & Fresh Flower Crowns (reservation only)",
    "venue": "",
    "source": "Town chat",
    "url": "",
@@ -681,7 +604,7 @@
    "date": "2026-11-01",
    "start": null,
    "end": null,
-   "title": "Muertos Make Up & Fresh Flower Crowns (reservation only)",
+   "title": "Catrina Makeup (Day of the Dead face painting, by appointment)",
    "venue": "",
    "source": "Town chat",
    "url": "",
@@ -701,6 +624,17 @@
   },
   {
    "date": "2026-11-01",
+   "start": "16:00",
+   "end": "23:45",
+   "title": "'s Surf Photography Exhibition",
+   "venue": "La Redonda",
+   "source": "Town chat",
+   "url": "",
+   "category": "other",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-01",
    "start": "18:00",
    "end": "19:00",
    "title": "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)",
@@ -714,7 +648,7 @@
    "date": "2026-11-02",
    "start": null,
    "end": null,
-   "title": "Muertos Make Up & Fresh Flower Crowns (reservation only)",
+   "title": "Catrina Makeup (Day of the Dead face painting, by appointment)",
    "venue": "",
    "source": "Town chat",
    "url": "",
@@ -725,7 +659,7 @@
    "date": "2026-11-02",
    "start": null,
    "end": null,
-   "title": "Catrina Makeup (Day of the Dead face painting, by appointment)",
+   "title": "Muertos Make Up & Fresh Flower Crowns (reservation only)",
    "venue": "",
    "source": "Town chat",
    "url": "",
@@ -780,8 +714,8 @@
    "date": "2026-11-02",
    "start": "18:00",
    "end": null,
-   "title": "Cultural Immersion: Day of the Dead (traditions exhibit, sugar skull face painting, pan de muerto tasting & baking demo",
-   "venue": "Plaza Ágora (Marlin Street #15)",
+   "title": "Cultural Immersion: Día de Muertos (Raíces Turismo Biocultural) – tradition exhibit, calavera face painting, pan de muer",
+   "venue": "Plaza Ágora (Calle Marlin #15)",
    "source": "Town chat",
    "url": "",
    "category": "other",
@@ -791,8 +725,8 @@
    "date": "2026-11-02",
    "start": "18:00",
    "end": null,
-   "title": "Cultural Immersion: Día de Muertos (Raíces Turismo Biocultural) – tradition exhibit, calavera face painting, pan de muer",
-   "venue": "Plaza Ágora (Calle Marlin #15)",
+   "title": "Cultural Immersion: Day of the Dead (traditions exhibit, sugar skull face painting, pan de muerto tasting & baking demo",
+   "venue": "Plaza Ágora (Marlin Street #15)",
    "source": "Town chat",
    "url": "",
    "category": "other",
@@ -923,6 +857,17 @@
    "date": "2026-11-06",
    "start": null,
    "end": null,
+   "title": "Fall Ayurveda Cleanse – guided experience led by Jenn Poemer",
+   "venue": "Sayulita",
+   "source": "Town chat",
+   "url": "",
+   "category": "fit",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-06",
+   "start": null,
+   "end": null,
    "title": "Mercado del Pueblo season opening (first market day)",
    "venue": "Mercado del Pueblo",
    "source": "Town chat",
@@ -934,7 +879,7 @@
    "date": "2026-11-06",
    "start": null,
    "end": null,
-   "title": "Fall Ayurveda Cleanse – guided experience led by Jenn Poemer",
+   "title": "Fall Ayurveda Cleanse – guided experience (Nov 6–15)",
    "venue": "Sayulita",
    "source": "Town chat",
    "url": "",
@@ -1148,7 +1093,7 @@
    "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/beginner-spanish-lessons/2026-11-09/",
    "category": "other",
-   "recurring": null
+   "recurring": true
   },
   {
    "date": "2026-11-09",
@@ -1159,7 +1104,7 @@
    "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-11-09/",
    "category": "fit",
-   "recurring": null
+   "recurring": true
   },
   {
    "date": "2026-11-09",
@@ -1170,7 +1115,7 @@
    "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-09/",
    "category": "other",
-   "recurring": null
+   "recurring": true
   },
   {
    "date": "2026-11-10",
@@ -1230,11 +1175,33 @@
   {
    "date": "2026-11-11",
    "start": "17:00",
+   "end": "18:30",
+   "title": "Pickleball Nights For a Good Cause",
+   "venue": "Escuela Primaria Damián Carmona",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-11-11/",
+   "category": "fit",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-11",
+   "start": "17:00",
    "end": "18:00",
-   "title": "Community Beach Cleanup",
-   "venue": "End of Calle Pelícanos (Trópikos)",
-   "source": "Web",
+   "title": "Community Beach Cleanups",
+   "venue": "End of Calle Pelicanos",
+   "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/community-beach-cleanups/2026-11-11/",
+   "category": "other",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-11",
+   "start": "18:00",
+   "end": "19:00",
+   "title": "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)",
+   "venue": "Turtle Sanctuary",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-11/",
    "category": "other",
    "recurring": null
   },
@@ -1243,8 +1210,8 @@
    "start": "18:00",
    "end": "21:00",
    "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop, C. Miramar 51",
-   "source": "Web",
+   "venue": "Sayulita Wine Shop",
+   "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-11/",
    "category": "night",
    "recurring": null
@@ -1253,11 +1220,22 @@
    "date": "2026-11-11",
    "start": "20:00",
    "end": "21:00",
-   "title": "Salsa Dance with Laura",
-   "venue": "Latitude 20",
-   "source": "Web",
+   "title": "Salsa Dance with Laura at Latitude 20",
+   "venue": "Latitude20",
+   "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-11/",
    "category": "night",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-13",
+   "start": "10:00",
+   "end": "14:00",
+   "title": "Mercado del Pueblo",
+   "venue": "Calle Revolución, across from Escondido Bar",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-13/",
+   "category": "other",
    "recurring": null
   },
   {
@@ -1341,19 +1319,8 @@
    "date": "2026-11-18",
    "start": "20:00",
    "end": "21:00",
-   "title": "Salsa Dance with Laura at Latitude 20",
-   "venue": "Latitude 20, Manuel N. Navarrete 79",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-18/",
-   "category": "night",
-   "recurring": null
-  },
-  {
-   "date": "2026-11-18",
-   "start": "20:00",
-   "end": "21:00",
-   "title": "Salsa Dance with Laura (lesson then live band)",
-   "venue": "Latitude 20, Manuel N. Navarrete 79",
+   "title": "Salsa Dance with Laura",
+   "venue": "Latitude 20",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-18/",
    "category": "night",
@@ -1363,8 +1330,8 @@
    "date": "2026-11-20",
    "start": null,
    "end": null,
-   "title": "Día de la Revolución (holiday, local parade)",
-   "venue": "Sayulita town centre",
+   "title": "Día de la Revolución parade (holiday, banks closed)",
+   "venue": "From the bus stop to the main plaza",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/dia-de-la-revolucion-2/",
    "category": "other",
@@ -1378,6 +1345,17 @@
    "venue": "Town-wide, Sayulita",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/dia-de-la-revolucion-2/",
+   "category": "other",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-20",
+   "start": "10:00",
+   "end": "14:00",
+   "title": "Mercado del Pueblo",
+   "venue": "Calle Revolución, across from Escondido Bar",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-20/",
    "category": "other",
    "recurring": null
   },
@@ -1411,6 +1389,28 @@
    "venue": "Sayulita Sandbar, Av. Revolución 27",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-11-21/",
+   "category": "night",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-25",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-25/",
+   "category": "night",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-25",
+   "start": "20:00",
+   "end": "21:00",
+   "title": "Salsa Dance with Laura",
+   "venue": "Latitude 20",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-25/",
    "category": "night",
    "recurring": null
   },
@@ -1463,9 +1463,9 @@
     5,
     6
    ],
-   "next": "2026-10-26",
+   "next": "2026-10-27",
    "category": "other",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-10-26/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-10-27/",
    "source": "Sayulita Life"
   },
   {
@@ -1482,19 +1482,6 @@
    "source": "Sayulita Life"
   },
   {
-   "title": "Beginner Spanish Lessons",
-   "venue": "La Mexicana Spanish School",
-   "start": "12:30",
-   "end": "13:30",
-   "dows": [
-    0
-   ],
-   "next": "2026-10-26",
-   "category": "other",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/beginner-spanish-lessons/2026-10-26/",
-   "source": "Sayulita Life"
-  },
-  {
    "title": "¡Sábado al Muelle! (Saturday at The Dock)",
    "venue": "At The Dock Sayulita",
    "start": "12:30",
@@ -1505,6 +1492,19 @@
    "next": "2026-10-31",
    "category": "other",
    "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-10-31/",
+   "source": "Sayulita Life"
+  },
+  {
+   "title": "Beginner Spanish Lessons",
+   "venue": "La Mexicana Spanish School",
+   "start": "12:30",
+   "end": "13:30",
+   "dows": [
+    0
+   ],
+   "next": "2026-11-02",
+   "category": "other",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/beginner-spanish-lessons/2026-11-02/",
    "source": "Sayulita Life"
   },
   {
@@ -1530,9 +1530,9 @@
     2,
     4
    ],
-   "next": "2026-10-26",
+   "next": "2026-10-28",
    "category": "fit",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-10-26/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-10-28/",
    "source": "Sayulita Life"
   },
   {
@@ -1694,7 +1694,7 @@
    "type": "drink",
    "venue": "Alto Alto",
    "deal": "2×1 Aperol Spritz",
-   "days": "Mon, Tue, Wed, Thu, Fri, Sat",
+   "days": "Tue, Wed, Thu, Fri, Sat",
    "start": "17:00",
    "end": "20:00",
    "usual": null
@@ -1721,7 +1721,7 @@
    "type": "drink",
    "venue": "Mucho Bueno",
    "deal": "Happy hour",
-   "days": "Daily",
+   "days": "Sat-Sun (reported Oct 24-25)",
    "start": "18:00",
    "end": "21:00",
    "usual": null
@@ -1730,7 +1730,7 @@
    "type": "food",
    "venue": "Mucho Bueno",
    "deal": "Sushi happy hour",
-   "days": "Daily",
+   "days": "Sat (reported Oct 24)",
    "start": "13:00",
    "end": "17:00",
    "usual": null
@@ -1739,7 +1739,7 @@
    "type": "food",
    "venue": "Paku Paku",
    "deal": "Sushi happy hour",
-   "days": "Daily",
+   "days": "Sun (reported Oct 25)",
    "start": "13:00",
    "end": "17:00",
    "usual": null
@@ -1756,8 +1756,8 @@
   {
    "type": "drink",
    "venue": "GOAT Beach Club",
-   "deal": "Free tequila shot with Sinners show entry ($300 at the door), food and drinks for sale",
-   "days": "Mon Oct 26",
+   "deal": "Free tequila shot with Sinners show entry (door tickets $300); food and drinks for purchase",
+   "days": "Show nights (reported Oct 24-26)",
    "start": null,
    "end": null,
    "usual": null
@@ -1765,8 +1765,8 @@
   {
    "type": "food",
    "venue": "Chino Bites",
-   "deal": "Crunchy Geisha: crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche",
-   "days": "Daily special",
+   "deal": "Daily special: Crunchy Geisha crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche",
+   "days": "Sat-Sun (reported Oct 24-25)",
    "start": null,
    "end": null,
    "usual": null
@@ -1774,8 +1774,8 @@
   {
    "type": "food",
    "venue": "Papá Omar",
-   "deal": "Lebanese food in the plaza (shawarma, falafel, tabouli, hummus, pollo and res, fries), now at 13 Jose Mariscal",
-   "days": "Daily",
+   "deal": "Lebanese food in the plaza: shawarma, falafel, tabouli, hummus, chicken or beef, fries; open until 2 AM at 13 Jose Mariscal",
+   "days": "Sun (reported Oct 25)",
    "start": null,
    "end": "02:00",
    "usual": null
@@ -1784,7 +1784,16 @@
    "type": "food",
    "venue": "Lasagnas Artesanales",
    "deal": "Artisanal lasagna (traditional or spinach-ricotta) $140; banana bread or sea salt brownie $50",
-   "days": "Daily",
+   "days": "Sat-Sun (reported Oct 24-25)",
+   "start": null,
+   "end": null,
+   "usual": null
+  },
+  {
+   "type": "food",
+   "venue": "Bar By Borre",
+   "deal": "Antojitos Mexicanos (Mexican snacks) at Fiesta Catrina",
+   "days": "Mon (reported Oct 26)",
    "start": null,
    "end": null,
    "usual": null
@@ -1836,28 +1845,52 @@
    "url": "https://www.sayulitalife.com/sayulero/calendar/dia-de-muertos-celebrations/",
    "schedule": [
     {
-     "date": "2026-10-29",
-     "time": null,
-     "title": "Torneo Internacional de Surf Día de Muertos (3rd edition), day 1",
-     "where": "Sayulita"
+     "date": "2026-10-28",
+     "time": "18:00",
+     "title": "Torneo Internacional de Surf Día de Muertos: technical meeting and athlete briefing",
+     "where": "Terraza del Hotel Sayulinda"
     },
     {
-     "date": "2026-10-30",
+     "date": "2026-10-29",
      "time": null,
-     "title": "Torneo Internacional de Surf Día de Muertos (3rd edition), day 2",
-     "where": "Sayulita"
+     "title": "Torneo Internacional de Surf Día de Muertos 2026 begins (runs to Nov 1)",
+     "where": "Playa Principal (main beach)"
     },
     {
      "date": "2026-10-31",
-     "time": null,
-     "title": "Torneo Internacional de Surf Día de Muertos (3rd edition), day 3",
-     "where": "Sayulita"
+     "time": "18:00",
+     "title": "Day of the Dead Parade (Catrina parade)",
+     "where": "From Kapital bank to Sayulita Plaza"
     },
     {
      "date": "2026-11-01",
      "time": null,
-     "title": "Torneo Internacional de Surf Día de Muertos (3rd edition), final day",
-     "where": "Sayulita"
+     "title": "Altar and decoration viewing walk",
+     "where": "Sayulita Plaza"
+    },
+    {
+     "date": "2026-11-01",
+     "time": null,
+     "title": "Surf tournament finals and awards ceremony",
+     "where": "Playa Principal (main beach)"
+    },
+    {
+     "date": "2026-11-01",
+     "time": null,
+     "title": "Candlelight walk to the cemetery (time TBA, usually around midnight)",
+     "where": "From Sayulita Plaza to the cemetery (Panteón)"
+    },
+    {
+     "date": "2026-11-02",
+     "time": null,
+     "title": "Best altar award ceremony",
+     "where": "Sayulita Plaza"
+    },
+    {
+     "date": "2026-11-02",
+     "time": null,
+     "title": "Día de Muertos celebration and festival closing",
+     "where": "Sayulita (venue not specified)"
     }
    ]
   },
@@ -1872,32 +1905,44 @@
     {
      "date": "2026-10-28",
      "time": "18:00",
-     "title": "Technical meeting and athlete briefing, Torneo Internacional de Surf Día de Muertos",
-     "where": "Terraza del Hotel Sayulinda, Sayulita"
+     "title": "Surf tournament technical meeting (Torneo Internacional de Surf Día de Muertos)",
+     "where": "Terraza del Hotel Sayulinda"
     },
     {
      "date": "2026-10-29",
      "time": null,
-     "title": "Torneo Internacional de Surf Día de Muertos begins (runs to Nov 1)",
-     "where": "Playa Principal, Sayulita"
+     "title": "Torneo Internacional de Surf Día de Muertos begins (3rd edition; runs Oct 29 to Nov 1 per municipality/Sectur; Sayulita Life lists Oct 31 start)",
+     "where": "Main beach, Sayulita"
     },
     {
      "date": "2026-10-31",
-     "time": null,
-     "title": "Día de Muertos celebrations begin (Oct 31 to Nov 2): parades, altars, artistic performances, food",
-     "where": "Sayulita (venue not yet announced)"
+     "time": "18:00",
+     "title": "Day of the Dead Parade (Catrina parade)",
+     "where": "From Banco Kapital to Sayulita Plaza"
     },
     {
      "date": "2026-11-01",
      "time": null,
-     "title": "Surf tournament finals and awards",
-     "where": "Playa Principal, Sayulita"
+     "title": "Altars and decorations on display",
+     "where": "Sayulita Plaza"
+    },
+    {
+     "date": "2026-11-01",
+     "time": null,
+     "title": "Surf tournament awards (per press; Sayulita Life lists Nov 2 at the Plaza)",
+     "where": "Sayulita"
+    },
+    {
+     "date": "2026-11-01",
+     "time": null,
+     "title": "Walk to the cemetery (time TBA, normally around midnight)",
+     "where": "Sayulita cemetery"
     },
     {
      "date": "2026-11-02",
      "time": null,
-     "title": "Día de Muertos celebration and festival closing",
-     "where": "Sayulita (venue not yet announced)"
+     "title": "Best altar award ceremony (time TBA)",
+     "where": "Sayulita Plaza"
     }
    ]
   },
@@ -1906,26 +1951,38 @@
    "start": "2026-10-29",
    "end": "2026-11-01",
    "where": "Playa Principal, Sayulita",
-   "note": "Shortboard, longboard, SUP, bodyboard, para surf and dog surf exhibition; finals and awards Nov 1; ~500k MXN prize pool",
-   "url": "https://www.sijalo.mx/evento/c66e0921-bc3a-443b-bb60-9c6194d20d1b",
+   "note": "Shortboard, longboard, SUP, bodyboard, adaptive surf and a dog surf exhibition, about 500k MXN purse",
+   "url": "https://tribunadelabahia.com.mx/festival-dia-de-muertos-bahia-de-banderas-2026-sayulita-surf/",
    "schedule": [
     {
      "date": "2026-10-28",
      "time": "18:00",
-     "title": "Reunión técnica y briefing de atletas del torneo de surf",
-     "where": "Terraza del Hotel Sayulinda"
+     "title": "Athletes' technical meeting (mandatory liability waiver signing)",
+     "where": "Terraza del Hotel Sayulinda, Sayulita"
     },
     {
      "date": "2026-10-29",
      "time": null,
-     "title": "Inicio del Torneo Internacional de Surf",
-     "where": "Playa Principal de Sayulita"
+     "title": "Torneo Internacional de Surf Día de Muertos: opening and first competition day",
+     "where": "Playa Principal, Sayulita"
+    },
+    {
+     "date": "2026-10-30",
+     "time": null,
+     "title": "Torneo Internacional de Surf Día de Muertos: competition day",
+     "where": "Playa Principal, Sayulita"
+    },
+    {
+     "date": "2026-10-31",
+     "time": null,
+     "title": "Torneo Internacional de Surf Día de Muertos: competition day",
+     "where": "Playa Principal, Sayulita"
     },
     {
      "date": "2026-11-01",
      "time": null,
-     "title": "Finales y premiación del Torneo Internacional de Surf",
-     "where": "Playa Principal de Sayulita"
+     "title": "Torneo Internacional de Surf Día de Muertos: finals and awards ceremony",
+     "where": "Playa Principal, Sayulita"
     }
    ]
   },
@@ -1936,14 +1993,7 @@
    "where": "Sayulita",
    "note": "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing",
    "url": "https://www.tusbuenasnoticias.com/noticias/arte-y-cultura/2026/10/08/65437-festival-dia-de-muertos-bahia-de-banderas-2026-fechas-sedes-y-actividades",
-   "schedule": [
-    {
-     "date": "2026-10-29",
-     "time": null,
-     "title": "Torneo Internacional de Surf Día de Muertos, 3rd edition (runs Oct 29 to Nov 1; shortboard, longboard, SUP, bodyboard, para surf, dog exhibition)",
-     "where": "Sayulita"
-    }
-   ]
+   "schedule": []
   },
   {
    "title": "Medio Maraton 21 km, Riviera Nayarit",
@@ -2001,110 +2051,120 @@
   }
  ],
  "es": {
-  "Sayulita Sunset Social (Free Monthly Women's Social)": "Sayulita Sunset Social (convivio mensual gratuito para mujeres)",
-  "Beginner Spanish Lessons": "Clases de español para principiantes",
-  "NFL game days": "Días de partido de la NFL",
-  "Cultural Immersion: Day of the Dead (traditions exhibit, sugar skull face painting, pan de muerto tasting & baking demo": "Inmersión Cultural: Día de Muertos (exhibición de tradiciones, maquillaje de calaverita de azúcar, degustación de pan de muerto y demostración de cómo se hornea",
-  "Calabazas: Halloween Pumpkin-Carving Workshop & Costume Contest (children over 3)": "Calabazas: Taller de tallado de calabazas de Halloween y concurso de disfraces (niños mayores de 3 años)",
-  "Aloha Kids Club – After School Club with Miss Valeria and Miss Amanda": "Aloha Kids Club – Club extraescolar con Miss Valeria y Miss Amanda",
-  "Torneo Internacional de Surf Día de Muertos, 3rd edition (runs Oct 29 to Nov 1; shortboard, longboard, SUP, bodyboard, para surf, dog exhibition)": "Torneo Internacional de Surf Día de Muertos, 3a edición (del 29 de oct. al 1 de nov.; shortboard, longboard, SUP, bodyboard, para surf y exhibición de perros)",
-  "Mon, Tue, Wed, Thu, Fri, Sat": "Lun, Mar, Mié, Jue, Vie, Sáb",
-  "Torneo Internacional de Surf Día de Muertos begins (runs to Nov 1)": "Arranca el Torneo Internacional de Surf Día de Muertos (hasta el 1 de nov.)",
-  "SINNERS: Sunset Halloween Pole & Dance Show (10 acts, amateur pole contest, fire, DJ, afterparty, 18+)": "SINNERS: Show de Pole y Danza de Halloween al atardecer (10 actos, concurso amateur de pole, fuego, DJ, afterparty, +18)",
-  "SINNERS: Sunset Halloween Pole & Dance Show": "SINNERS: Show de Pole y Baile de Halloween al atardecer",
-  "RENEWAL 2027: Sayulita, Mexico": "RENOVACIÓN 2027: Sayulita, México",
-  "Community Beach Cleanup": "Limpieza comunitaria de playa",
-  "Local parade and flag ceremony, banks and government offices closed": "Desfile local y honores a la bandera; bancos y oficinas de gobierno cerrados",
-  "Clay Pieces for Your Ofrenda – Class 2: Glazing (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, clase 2: esmaltado (taller de cerámica Terracota Solar)",
-  "Día de Muertos celebrations begin (Oct 31 to Nov 2): parades, altars, artistic performances, food": "Arrancan las celebraciones de Día de Muertos (31 de oct. al 2 de nov.): desfiles, altares, presentaciones artísticas y comida",
-  "Día de la Revolución (holiday, local parade)": "Día de la Revolución (día festivo, desfile local)",
-  "El Inti presents: Retrato de Oro – Concert + Video Clip Launch": "El Inti presenta: Retrato de Oro, concierto + lanzamiento del videoclip",
-  "Cacao Circle and Drawing Meditation": "Círculo de Cacao y Meditación con Dibujo",
-  "All day happy hour!": "¡Happy hour todo el día!",
-  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing": "Alrededor de 500,000 MXN en premios: shortboard, longboard, SUP, bodyboard y surf con perros",
-  "Ping Pong Tournament then Karaoke at Sayulita Sandbar": "Torneo de ping pong y después karaoke en Sayulita Sandbar",
-  "Lebanese food in the plaza (shawarma, falafel, tabouli, hummus, pollo and res, fries), now at 13 Jose Mariscal": "Comida libanesa en la plaza (shawarma, falafel, tabule, hummus, pollo y res, papas fritas), ahora en Jose Mariscal 13",
-  "Happy Hour Drinks": "Bebidas de Happy Hour",
-  "Torneo Internacional de Surf Día de Muertos (3rd edition), day 3": "Torneo Internacional de Surf Día de Muertos (3a edición), día 3",
-  "Mon Oct 26": "Lun 26 oct",
-  "Catrina Makeup (Day of the Dead face painting, by appointment)": "Maquillaje de Catrina (pintura facial de Día de Muertos, con cita)",
-  "Surf tournament finals and awards": "Finales y premiación del torneo de surf",
-  "Crunchy Geisha: crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche": "Crunchy Geisha: hamburguesa de camarón tempura crujiente con pepino, ensalada de col y salsa cremosa estilo asiático en pan brioche de ajonjolí tostado",
-  "Thu to Sun, until end of October": "De jueves a domingo, hasta finales de octubre",
-  "SayuKidsClub Halloween & Día de Muertos: Adventure to Playa de los Muertos (kids 4-10)": "SayuKidsClub Halloween y Día de Muertos: Aventura a Playa de los Muertos (niños de 4 a 10 años)",
-  "Día de la Revolución (local parade about 9 to 10 am, bus stop to plaza; banks and government offices closed)": "Día de la Revolución (desfile local aproximadamente de 9 a 10 am, de la parada de autobús a la plaza; bancos y oficinas de gobierno cerrados)",
-  "Pumpkin Carving Night": "Noche de tallado de calabazas",
-  "Salsa Dance with Laura (lesson then live band)": "Baile de salsa con Laura (clase y después banda en vivo)",
-  "Pilates + Yoga Retreat: Sayulita, Mexico": "Retiro de Pilates + Yoga: Sayulita, México",
-  "Mercado del Pueblo season opening (first market day)": "Apertura de temporada del Mercado del Pueblo (primer día de mercado)",
-  "Latitude 20 Reopening Party with Akuaman Sound System and La Chanta Chamuya (Costume Party)": "Fiesta de reapertura de Latitude 20 con Akuaman Sound System y La Chanta Chamuya (fiesta de disfraces)",
-  "International Day of the Dead Surf Tournament (3rd edition)": "Torneo Internacional de Surf de Día de Muertos (3a edición)",
-  "Cacao Circle with drawing meditation on the beach": "Círculo de Cacao con meditación de dibujo en la playa",
-  "Hatha Yoga": "Hatha yoga",
-  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
-  "Sushi happy hour": "Happy hour de sushi",
-  "Día de Muertos Kids Camp (ages 5-12)": "Campamento infantil de Día de Muertos (de 5 a 12 años)",
-  "Yoga Fest: Hatha Flow with Itxa": "Yoga Fest: Hatha Flow con Itxa",
-  "Ceramics Workshop (class 2: glazing)": "Taller de cerámica (clase 2: esmaltado)",
-  "¡Sábado al Muelle! (Saturday at The Dock)": "¡Sábado al Muelle!",
-  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
-  "No ATM reports came in today, but tonight's spots take both cards and cash: GOAT for the Sinners show ($300 at the door) and Papá Omar in the plaza until 2 AM. If you do need pesos, use a bank ATM in town, pick 'decline conversion' so you're charged in pesos, and keep small bills for tacos and taxis.": "Hoy no llegaron reportes de cajeros, pero los lugares de esta noche aceptan tarjeta y efectivo: GOAT para el show de Sinners ($300 en la puerta) y Papá Omar en la plaza hasta las 2 AM. Si necesitas pesos, usa un cajero de banco en el pueblo, elige 'rechazar conversión' para que te cobren en pesos y guarda billetes chicos para los tacos y los taxis.",
-  "Día de Muertos Surf Tournament: athlete briefing & technical meeting": "Torneo de Surf Día de Muertos: briefing de atletas y reunión técnica",
-  "Happy hour all day during NFL games": "Happy hour todo el día durante los partidos de la NFL",
-  "Mat Pilates": "Pilates en mat",
-  "Día de Muertos Celebrations": "Celebraciones de Día de Muertos",
-  "Yoga Fest: Yin Yoga with Alexa": "Yoga Fest: Yin Yoga con Alexa",
-  "Technical meeting and athlete briefing, Torneo Internacional de Surf Día de Muertos": "Reunión técnica y briefing de atletas, Torneo Internacional de Surf Día de Muertos",
-  "Daily": "Diario",
-  "Artisanal lasagna (traditional or spinach-ricotta) $140; banana bread or sea salt brownie $50": "Lasaña artesanal (tradicional o de espinaca con ricota) $140; pan de plátano o brownie con sal de mar $50",
-  "Free pickleball, cornhole tourney, and happy hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "Yoga Fest: Hatha Yoga with Nayarani (El Centro Creativo Fundraiser)": "Yoga Fest: Hatha Yoga con Nayarani (recaudación de fondos para El Centro Creativo)",
-  "Karaoke & Ping Pong Tournament at La Redonda": "Karaoke y torneo de ping pong en La Redonda",
-  "Paint Your Own Hat & Sip": "Pinta tu propio sombrero y brinda",
-  "Yoga Fest: Sister Siesta with Andrea": "Yoga Fest: Sister Siesta con Andrea",
-  "2×1 Night": "Noche de 2×1",
-  "Torneo Internacional de Surf Día de Muertos (3rd edition), final day": "Torneo Internacional de Surf Día de Muertos (3a edición), día final",
-  "Fall Ayurveda Cleanse – guided experience led by Jenn Poemer": "Limpieza Ayurveda de Otoño, experiencia guiada por Jenn Poemer",
-  "La Soltura del Cuerpo / Fluidité du Mouvement – movement class with Yuridia Ortega (class 2)": "La Soltura del Cuerpo / Fluidité du Mouvement: clase de movimiento con Yuridia Ortega (clase 2)",
-  "Cultural Immersion: Día de Muertos (Raíces Turismo Biocultural) – tradition exhibit, calavera face painting, pan de muer": "Inmersión cultural: Día de Muertos (Raíces Turismo Biocultural) – exhibición de tradiciones, maquillaje de calavera, pan de muer",
-  "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)": "Liberación de tortuguitas (solo si las crías están listas; se confirma el mismo día, alrededor de las 2 a 3 PM)",
-  "Ping pong tournament then Karaoke at Sayulita Sandbar": "Torneo de ping pong y después karaoke en Sayulita Sandbar",
-  "Day of the Dead & Halloween pet costume celebration": "Celebración de Día de Muertos y Halloween con disfraces para mascotas",
-  "Catrina parade, surf and SUP contest, music and food; official schedule not yet posted": "Desfile de Catrinas, competencia de surf y SUP, música y comida; aún no se publica el horario oficial",
-  "MMVVMMTT & Goat Beach Club present: NEW YEAR'S EVE 2027": "MMVVMMTT y Goat Beach Club presentan: NOCHE DE AÑO NUEVO 2027",
-  "Torneo Internacional de Surf Día de Muertos (3rd edition)": "Torneo Internacional de Surf Día de Muertos (3ra edición)",
-  "Yin Yoga & Sound Full Moon Ceremony": "Ceremonia de luna llena con Yin Yoga y sonido",
-  "Shortboard, longboard, SUP, bodyboard, para surf and dog surf exhibition; finals and awards Nov 1; ~500k MXN prize pool": "Shortboard, longboard, SUP, bodyboard, para surf y exhibición de surf con perros; finales y premiación el 1 de noviembre; bolsa de premios de aprox. 500 mil MXN",
-  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
-  "Daily special": "Especial del día",
-  "Sinners Pole + Dance Show (Halloween costume party, amateur pole competition, DJ)": "Sinners Pole + Dance Show (fiesta de disfraces de Halloween, competencia amateur de pole, DJ)",
-  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
-  "Día de Muertos celebration and festival closing": "Celebración de Día de Muertos y clausura del festival",
-  "Yoga Fest: Restorative Yoga with Graziella": "Yoga Fest: Yoga Restaurativo con Graziella",
   "Salsa Dance with Laura": "Baile de salsa con Laura",
-  "Free tequila shot with Sinners show entry ($300 at the door), food and drinks for sale": "Shot de tequila gratis con tu entrada al show de Sinners ($300 en la puerta), venta de comida y bebidas",
-  "Body Looseness / Fluidity of Movement - dance workshop with Yuridia Ortega (class 2)": "Soltura corporal / Fluidez de movimiento - taller de danza con Yuridia Ortega (clase 2)",
-  "Salsa Dance with Laura at Latitude 20": "Baile de salsa con Laura en Latitude 20",
-  "Social Run Club": "Club social de corredores",
-  "Wed": "Mié",
-  "Pickleball Nights For a Good Cause": "Noches de pickleball con causa",
-  "Happy Hour specials Large Margaritas": "Promociones de Happy Hour: margaritas grandes",
+  "Karaoke & Ping Pong Tournament at La Redonda": "Karaoke y torneo de ping pong en La Redonda",
+  "SINNERS: Sunset Halloween Pole & Dance Show": "SINNERS: Show de Pole y Baile de Halloween al atardecer",
+  "Day of the Dead Parade (Catrina parade)": "Desfile de Día de Muertos (desfile de Catrinas)",
+  "International Day of the Dead Surf Tournament (3rd edition)": "Torneo Internacional de Surf de Día de Muertos (3a edición)",
+  "Happy hour all day during NFL games": "Happy hour todo el día durante los partidos de la NFL",
+  "Torneo Internacional de Surf Día de Muertos: competition day": "Torneo Internacional de Surf Día de Muertos: día de competencia",
+  "Artisanal lasagna (traditional or spinach-ricotta) $140; banana bread or sea salt brownie $50": "Lasaña artesanal (tradicional o de espinaca con ricota) $140; pan de plátano o brownie con sal de mar $50",
+  "Yoga Fest: Hatha Yoga with Nayarani (El Centro Creativo Fundraiser)": "Yoga Fest: Hatha Yoga con Nayarani (recaudación de fondos para El Centro Creativo)",
+  "Yoga Fest: Sister Siesta with Andrea": "Yoga Fest: Sister Siesta con Andrea",
+  "Salsa Dance with Laura (lesson then live band)": "Baile de salsa con Laura (clase y después banda en vivo)",
+  "RENEWAL 2027: Sayulita, Mexico": "RENOVACIÓN 2027: Sayulita, México",
+  "Beginner Spanish Lessons": "Clases de español para principiantes",
+  "Día de Muertos Celebrations": "Celebraciones de Día de Muertos",
+  "Sat-Sun (reported Oct 24-25)": "Sáb y dom (reportado el 24 y 25 de oct)",
+  "Altars and decorations on display": "Exhibición de altares y decoraciones",
+  "Torneo Internacional de Surf Día de Muertos: opening and first competition day": "Torneo Internacional de Surf Día de Muertos: inauguración y primer día de competencia",
   "Body Looseness / Fluidity of Movement - dance workshop with Yuridia Ortega (class 1)": "Soltura corporal / Fluidez de movimiento - taller de danza con Yuridia Ortega (clase 1)",
-  "2×1 Aperol Spritz": "Aperol Spritz al 2×1",
+  "Cultural Immersion: Day of the Dead (traditions exhibit, sugar skull face painting, pan de muerto tasting & baking demo": "Inmersión Cultural: Día de Muertos (exhibición de tradiciones, maquillaje de calaverita de azúcar, degustación de pan de muerto y demostración de cómo se hornea",
+  "Athletes' technical meeting (mandatory liability waiver signing)": "Junta técnica de atletas (firma obligatoria de carta responsiva)",
   "Crystal Sound Healing (Leah)": "Sanación con sonido de cristal (Leah)",
-  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
-  "La Soltura del Cuerpo / Fluidité du Mouvement – movement class with Yuridia Ortega (class 1)": "La Soltura del Cuerpo / Fluidité du Mouvement – clase de movimiento con Yuridia Ortega (clase 1)",
-  "Community Potluck": "Comida comunitaria de traje",
-  "Yoga Fest: Vinyasa Yoga with Vanessa": "Yoga Fest: Vinyasa Yoga con Vanessa",
-  "Torneo Internacional de Surf Día de Muertos: finals & awards": "Torneo Internacional de Surf Día de Muertos: finales y premiación",
-  "Community Potluck at ITH Amazing Surf Hostel": "Comida compartida comunitaria en ITH Amazing Surf Hostel",
-  "Muertos Make Up & Fresh Flower Crowns (reservation only)": "Maquillaje de Muertos y coronas de flores naturales (solo con reservación)",
-  "Torneo Internacional de Surf Día de Muertos (3rd edition), day 2": "Torneo Internacional de Surf Día de Muertos (3a edición), día 2",
+  "Paint Your Own Hat & Sip": "Pinta tu propio sombrero y brinda",
+  "Pickleball Nights For a Good Cause": "Noches de pickleball con causa",
+  "Ping pong tournament then Karaoke at Sayulita Sandbar": "Torneo de ping pong y después karaoke en Sayulita Sandbar",
+  "2×1 Night": "Noche de 2×1",
+  "Daily special: Crunchy Geisha crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche": "Especial del día: hamburguesa Crunchy Geisha de camarón tempura crujiente con pepino, ensalada de col y salsa cremosa estilo asiático en pan brioche tostado con ajonjolí",
+  "All day happy hour!": "¡Happy hour todo el día!",
+  "Torneo Internacional de Surf Día de Muertos: technical meeting and athlete briefing": "Torneo Internacional de Surf Día de Muertos: junta técnica y reunión informativa con atletas",
+  "GOAT Beach Club and Papá Omar take both cards and cash, so you can save your pesos for places that only take cash. When you do withdraw, use a bank ATM instead of a standalone one, choose 'decline conversion' so you're charged in pesos, take out a larger amount once, and keep small bills for tacos, taxis and the market.": "GOAT Beach Club y Papá Omar aceptan tarjeta y efectivo, así que puedes guardar tus pesos para los lugares que solo aceptan efectivo. Cuando saques dinero, usa un cajero de banco en lugar de uno independiente, elige 'rechazar conversión' para que te cobren en pesos, retira una cantidad mayor de una sola vez y guarda billetes chicos para tacos, taxis y el mercado.",
+  "Antojitos Mexicanos (Mexican snacks) at Fiesta Catrina": "Antojitos mexicanos en la Fiesta Catrina",
+  "Ping Pong Tournament then Karaoke at Sayulita Sandbar": "Torneo de ping pong y después karaoke en Sayulita Sandbar",
   "Sayulita Pole Event (showcase + amateur competition)": "Sayulita Pole Event (exhibición + competencia amateur)",
-  "Cacao Circle - Art Therapy": "Círculo de Cacao - Arteterapia",
+  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
+  "Daily": "Diario",
+  "Calabazas: Halloween Pumpkin-Carving Workshop & Costume Contest (children over 3)": "Calabazas: Taller de tallado de calabazas de Halloween y concurso de disfraces (niños mayores de 3 años)",
+  "Community Beach Cleanups": "Limpiezas comunitarias de playa",
+  "Pilates + Yoga Retreat: Sayulita, Mexico": "Retiro de Pilates + Yoga: Sayulita, México",
+  "Yoga Fest: Hatha Flow with Itxa": "Yoga Fest: Hatha Flow con Itxa",
+  "Día de la Revolución parade (holiday, banks closed)": "Desfile del Día de la Revolución (día feriado, bancos cerrados)",
+  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
+  "La Soltura del Cuerpo / Fluidité du Mouvement – movement class with Yuridia Ortega (class 1)": "La Soltura del Cuerpo / Fluidité du Mouvement – clase de movimiento con Yuridia Ortega (clase 1)",
+  "Día de la Revolución (local parade about 9 to 10 am, bus stop to plaza; banks and government offices closed)": "Día de la Revolución (desfile local aproximadamente de 9 a 10 am, de la parada de autobús a la plaza; bancos y oficinas de gobierno cerrados)",
+  "Free Pickleball, Cornhole Tourney & Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
+  "Lebanese food in the plaza: shawarma, falafel, tabouli, hummus, chicken or beef, fries; open until 2 AM at 13 Jose Mariscal": "Comida libanesa en la plaza: shawarma, falafel, tabule, hummus, pollo o res, papas fritas; abierto hasta las 2 AM en Jose Mariscal 13",
+  "Sayulita Sunset Social (Free Monthly Women's Social)": "Sayulita Sunset Social (convivio mensual gratuito para mujeres)",
+  "Wed": "Mié",
+  "Torneo Internacional de Surf Día de Muertos: finals & awards": "Torneo Internacional de Surf Día de Muertos: finales y premiación",
+  "Mercado del Pueblo season opening (first market day)": "Apertura de temporada del Mercado del Pueblo (primer día de mercado)",
+  "Best altar award ceremony": "Premiación al mejor altar",
+  "Fiesta Catrina: live music jam + dance ft. jgatsby, art exhibition, Catrina face painting, Mexican snacks": "Fiesta Catrina: jam de música en vivo y baile con jgatsby, exposición de arte, maquillaje de Catrina y antojitos mexicanos",
+  "¡Sábado al Muelle! (Saturday at The Dock)": "¡Sábado al Muelle!",
+  "Torneo Internacional de Surf Día de Muertos: technical meeting": "Torneo Internacional de Surf Día de Muertos: junta técnica",
+  "Torneo Internacional de Surf Día de Muertos begins (3rd edition; runs Oct 29 to Nov 1 per municipality/Sectur; Sayulita Life lists Oct 31 start)": "Arranca el Torneo Internacional de Surf Día de Muertos (3a edición; del 29 de oct al 1 de nov según el municipio y Sectur; Sayulita Life anuncia el inicio el 31 de oct)",
   "Kids Yoga Club": "Club de yoga para niños",
-  "Spanish Conversation Club": "Club de conversación en español",
-  "Torneo Internacional de Surf Día de Muertos (3rd edition), day 1": "Torneo Internacional de Surf Día de Muertos (3a edición), día 1"
+  "Shortboard, longboard, SUP, bodyboard, adaptive surf and a dog surf exhibition, about 500k MXN purse": "Shortboard, longboard, SUP, bodyboard, surf adaptado y exhibición de surf con perros; bolsa de premios de unos 500 mil MXN",
+  "Free pickleball, cornhole tourney, and happy hour": "Pickleball gratis, torneo de cornhole y happy hour",
+  "Yoga Fest: Yin Yoga with Alexa": "Yoga Fest: Yin Yoga con Alexa",
+  "Sun (reported Oct 25)": "Dom (reportado el 25 de oct)",
+  "Sushi happy hour": "Happy hour de sushi",
+  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
+  "Day of the Dead & Halloween pet costume celebration": "Celebración de Día de Muertos y Halloween con disfraces para mascotas",
+  "Ceramics Workshop (class 2: glazing)": "Taller de cerámica (clase 2: esmaltado)",
+  "Latitude 20 Reopening Party with Akuaman Sound System and La Chanta Chamuya (Costume Party)": "Fiesta de reapertura de Latitude 20 con Akuaman Sound System y La Chanta Chamuya (fiesta de disfraces)",
+  "Torneo Internacional de Surf Día de Muertos: finals and awards ceremony": "Torneo Internacional de Surf Día de Muertos: finales y premiación",
+  "NFL game days": "Días de partido de la NFL",
+  "Surf tournament technical meeting (Torneo Internacional de Surf Día de Muertos)": "Junta técnica del torneo de surf (Torneo Internacional de Surf Día de Muertos)",
+  "Community Potluck at ITH Amazing Surf Hostel": "Comida compartida comunitaria en ITH Amazing Surf Hostel",
+  "2×1 Aperol Spritz": "Aperol Spritz al 2×1",
+  "Catrina Makeup (Day of the Dead face painting, by appointment)": "Maquillaje de Catrina (pintura facial de Día de Muertos, con cita)",
+  "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)": "Liberación de tortuguitas (solo si las crías están listas; se confirma el mismo día, alrededor de las 2 a 3 PM)",
+  "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
+  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
+  "Catrina parade, surf and SUP contest, music and food; official schedule not yet posted": "Desfile de Catrinas, competencia de surf y SUP, música y comida; aún no se publica el horario oficial",
+  "Walk to the cemetery (time TBA, normally around midnight)": "Caminata al panteón (horario por confirmar, normalmente cerca de la medianoche)",
+  "El Inti presents: Retrato de Oro – Concert + Video Clip Launch": "El Inti presenta: Retrato de Oro, concierto + lanzamiento del videoclip",
+  "Torneo Internacional de Surf Día de Muertos (3rd edition)": "Torneo Internacional de Surf Día de Muertos (3ra edición)",
+  "SINNERS: Sunset Halloween Pole & Dance Show (10 acts, amateur pole contest, fire, DJ, afterparty, 18+)": "SINNERS: Show de Pole y Danza de Halloween al atardecer (10 actos, concurso amateur de pole, fuego, DJ, afterparty, +18)",
+  "Show nights (reported Oct 24-26)": "Noches de show (reportadas del 24 al 26 de oct)",
+  "LaMott DJ Set – Shamanic Downtempo": "DJ set de LaMott: downtempo chamánico",
+  "Tue, Wed, Thu, Fri, Sat": "Mar, mié, jue, vie, sáb",
+  "Happy Hour Drinks": "Bebidas de Happy Hour",
+  "Yoga Fest: Vinyasa Yoga with Vanessa": "Yoga Fest: Vinyasa Yoga con Vanessa",
+  "Muertos Make Up & Fresh Flower Crowns (reservation only)": "Maquillaje de Muertos y coronas de flores naturales (solo con reservación)",
+  "Mon (reported Oct 26)": "Lun (reportado el 26 de oct)",
+  "Cultural Immersion: Día de Muertos (Raíces Turismo Biocultural) – tradition exhibit, calavera face painting, pan de muer": "Inmersión cultural: Día de Muertos (Raíces Turismo Biocultural) – exhibición de tradiciones, maquillaje de calavera, pan de muer",
+  "Salsa Dance with Laura at Latitude 20": "Baile de salsa con Laura en Latitude 20",
+  "Local parade and flag ceremony, banks and government offices closed": "Desfile local y honores a la bandera; bancos y oficinas de gobierno cerrados",
+  "Happy Hour specials Large Margaritas": "Promociones de Happy Hour: margaritas grandes",
+  "Altar and decoration viewing walk": "Recorrido para ver altares y decoraciones",
+  "Mat Pilates": "Pilates en mat",
+  "Community Potluck": "Comida comunitaria de traje",
+  "Fall Ayurveda Cleanse – guided experience (Nov 6–15)": "Limpieza ayurvédica de otoño: experiencia guiada (6 al 15 de nov)",
+  "MMVVMMTT & Goat Beach Club present: NEW YEAR'S EVE 2027": "MMVVMMTT y Goat Beach Club presentan: NOCHE DE AÑO NUEVO 2027",
+  "Surf tournament awards (per press; Sayulita Life lists Nov 2 at the Plaza)": "Premiación del torneo de surf (según la prensa; Sayulita Life la anuncia el 2 de nov en la Plaza)",
+  "Fall Ayurveda Cleanse – guided experience led by Jenn Poemer": "Limpieza Ayurveda de Otoño, experiencia guiada por Jenn Poemer",
+  "Día de Muertos celebration and festival closing": "Celebración de Día de Muertos y clausura del festival",
+  "Best altar award ceremony (time TBA)": "Premiación al mejor altar (horario por confirmar)",
+  "Body Looseness / Fluidity of Movement - dance workshop with Yuridia Ortega (class 2)": "Soltura corporal / Fluidez de movimiento - taller de danza con Yuridia Ortega (clase 2)",
+  "Surf tournament finals and awards ceremony": "Finales y premiación del torneo de surf",
+  "About 500,000 MXN in prizes: shortboard, longboard, SUP, bodyboard, dog surfing": "Alrededor de 500,000 MXN en premios: shortboard, longboard, SUP, bodyboard y surf con perros",
+  "Yoga Fest: Restorative Yoga with Graziella": "Yoga Fest: Yoga Restaurativo con Graziella",
+  "'s Surf Photography Exhibition": "Exposición de fotografía de surf",
+  "Thu to Sun, until end of October": "De jueves a domingo, hasta finales de octubre",
+  "Social Run Club": "Club social de corredores",
+  "La Soltura del Cuerpo / Fluidité du Mouvement – movement class with Yuridia Ortega (class 2)": "La Soltura del Cuerpo / Fluidité du Mouvement: clase de movimiento con Yuridia Ortega (clase 2)",
+  "Free tequila shot with Sinners show entry (door tickets $300); food and drinks for purchase": "Shot de tequila gratis con tu entrada al show de Sinners (boletos en puerta $300); comida y bebidas a la venta",
+  "Candlelight walk to the cemetery (time TBA, usually around midnight)": "Caminata con velas al panteón (horario por confirmar, normalmente cerca de la medianoche)",
+  "Pumpkin Carving Night": "Noche de tallado de calabazas",
+  "SayuKidsClub Halloween & Día de Muertos: Adventure to Playa de los Muertos (kids 4-10)": "SayuKidsClub Halloween y Día de Muertos: Aventura a Playa de los Muertos (niños de 4 a 10 años)",
+  "Día de Muertos Kids Camp (ages 5-12)": "Campamento infantil de Día de Muertos (de 5 a 12 años)",
+  "Sat (reported Oct 24)": "Sáb (reportado el 24 de oct)",
+  "Torneo Internacional de Surf Día de Muertos 2026 begins (runs to Nov 1)": "Arranca el Torneo Internacional de Surf Día de Muertos 2026 (hasta el 1 de nov)",
+  "Clay Pieces for Your Ofrenda – Class 2: Glazing (Terracota Solar ceramics workshop)": "Piezas de barro para tu ofrenda, clase 2: esmaltado (taller de cerámica Terracota Solar)",
+  "ITH Sayulita Community Beach Cleanup": "Limpieza comunitaria de playa ITH Sayulita",
+  "Sinners Pole + Dance Show (Halloween costume party, amateur pole competition, DJ)": "Sinners Pole + Dance Show (fiesta de disfraces de Halloween, competencia amateur de pole, DJ)"
  }
 }
