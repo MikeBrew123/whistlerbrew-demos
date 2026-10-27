@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T07:05-07:00",
+ "updated": "2026-10-27T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -723,11 +723,11 @@
      "next_store": "FreshSt",
      "south": {
       "town": "Squamish",
-      "store": "No Frills",
-      "name": "LAVAZZA GROUND COFFEE, 250 g",
-      "per": 2.4,
-      "price": "$6.00",
-      "pct": 36
+      "store": "Costco",
+      "name": "Lavazza Crema E Aroma Coffee, 1 kg",
+      "per": 2.3,
+      "price": "Online Price $22.99",
+      "pct": 39
      }
     },
     {
