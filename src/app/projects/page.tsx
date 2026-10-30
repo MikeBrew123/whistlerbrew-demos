@@ -16,6 +16,14 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    name: "The Rainbow Bridge",
+    href: "/bridge/",
+    description: "Light a candle and let an AI medium gently draw out the story of a pet who has passed, then hear from them in a keepsake reading.",
+    status: "NEW",
+    accent: "#f5c86a",
+    external: true,
+  },
+  {
     name: "Swipe School",
     href: "/swipe/",
     description: "Game for learning swipe typing on your phone's own keyboard. 12 levels, combos, daily challenge, arcade high scores.",

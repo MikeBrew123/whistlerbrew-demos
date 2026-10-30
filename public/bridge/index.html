@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Rainbow Bridge</title>
+<meta name="description" content="Light a candle and hear from a pet who has crossed the Rainbow Bridge.">
+<meta property="og:title" content="The Rainbow Bridge">
+<meta property="og:description" content="Light a candle and hear from a pet who has crossed the Rainbow Bridge.">
+<meta name="theme-color" content="#14122e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #14122e;
+    --dusk: #2a2550;
+    --mist: #ddd6ee;
+    --mist-dim: #9d95bd;
+    --flame: #f5c86a;
+    --ember: #f0955a;
+    --glow: 0;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Karla", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--night);
+    color: var(--mist);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  #sky { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  /* The candle's warmth spreads up the sky as the connection deepens. */
+  .warmth {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(ellipse 70% 55% at 50% 100%, rgba(245, 170, 90, .28), transparent 70%);
+    opacity: var(--glow);
+    transition: opacity 3s ease;
+  }
+  main {
+    position: relative; z-index: 2;
+    min-height: 100dvh;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 48px 16px 24px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(2.6rem, 9vw, 4.4rem);
+    line-height: 1; letter-spacing: .01em;
+    margin: 0; text-align: center;
+  }
+  .lede {
+    font-family: var(--serif); font-style: italic;
+    font-size: 1.3rem; color: var(--mist-dim);
+    text-align: center; max-width: 30ch; margin: 14px auto 0;
+  }
+
+  /* The candle: the one bold object on the page. */
+  .candle-wrap { margin: 40px 0 8px; display: grid; place-items: center; }
+  .candle {
+    position: relative; width: 120px; height: 190px;
+    background: none; border: 0; padding: 0; cursor: pointer;
+    border-radius: 12px;
+  }
+  .candle:focus-visible { outline: 2px solid var(--flame); outline-offset: 8px; }
+  .wax {
+    position: absolute; bottom: 0; left: 36px; width: 48px; height: 110px;
+    border-radius: 6px 6px 4px 4px;
+    background: linear-gradient(90deg, #cfc4dd, #f4eefa 45%, #b8abcd);
+  }
+  .wick { position: absolute; bottom: 110px; left: 59px; width: 2px; height: 12px; background: #3a3148; border-radius: 1px; }
+  .flame {
+    position: absolute; bottom: 118px; left: 46px; width: 28px; height: 56px;
+    border-radius: 50% 50% 45% 45% / 65% 65% 35% 35%;
+    background: radial-gradient(ellipse at 50% 75%, #fff8e2 0 18%, var(--flame) 40%, var(--ember) 72%, transparent 76%);
+    transform-origin: 50% 100%;
+    opacity: 0; transform: scale(.2);
+    transition: opacity 1.2s ease, transform 1.2s cubic-bezier(.2, .9, .3, 1.2);
+    filter: drop-shadow(0 0 18px rgba(245, 200, 106, .8));
+  }
+  .halo {
+    position: absolute; bottom: 90px; left: -40px; width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 200, 106, .35), transparent 65%);
+    opacity: 0; transition: opacity 2s ease;
+  }
+  .lit .flame { opacity: 1; transform: scale(1); animation: flicker 3.2s ease-in-out infinite 1.2s; }
+  .lit .halo { opacity: 1; }
+  @keyframes flicker {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    30% { transform: scale(1.04, .97) rotate(-1.5deg); }
+    60% { transform: scale(.97, 1.04) rotate(1deg); }
+  }
+  .hint { font-size: .95rem; color: var(--mist-dim); text-align: center; margin: 4px 0 0; min-height: 1.5em; }
+
+  /* Conversation: the medium speaks in serif italic, the visitor in plain sans. */
+  .seance { width: 100%; max-width: 620px; display: none; flex-direction: column; flex: 1; }
+  .started .seance { display: flex; }
+  .started .intro { display: none; }
+  .started .candle-wrap { order: 3; margin: 12px 0 0; transform: scale(.6); transform-origin: 50% 100%; height: 120px; }
+  .log { display: flex; flex-direction: column; gap: 22px; padding: 8px 0 24px; }
+  .log > :last-child { scroll-margin-bottom: 150px; }
+  .medium {
+    font-family: var(--serif); font-style: italic; font-size: 1.42rem; line-height: 1.5;
+    color: #f1ebfb; max-width: 34ch;
+    text-shadow: 0 0 22px rgba(245, 200, 106, .18);
+  }
+  .medium .ch { opacity: 0; animation: ink .6s ease forwards; }
+  @keyframes ink { from { opacity: 0; filter: blur(4px); } to { opacity: 1; filter: blur(0); } }
+  .visitor {
+    align-self: flex-end; max-width: 30ch;
+    color: var(--mist); font-size: 1rem;
+    padding-right: 14px; border-right: 2px solid rgba(245, 200, 106, .45);
+    text-align: right;
+  }
+  .visitor img { display: block; margin-left: auto; width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 2px solid rgba(245, 200, 106, .5); }
+  .listening { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--mist-dim); animation: breathe 2.6s ease-in-out infinite; }
+  @keyframes breathe { 50% { opacity: .35; } }
+
+  form.speak { position: sticky; bottom: 12px; display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+  .row { display: flex; gap: 8px; align-items: flex-end; }
+  textarea {
+    flex: 1; resize: none; min-height: 52px; max-height: 160px;
+    background: rgba(20, 18, 46, .78); color: var(--mist);
+    border: 1px solid rgba(221, 214, 238, .25); border-radius: 26px;
+    padding: 14px 20px; font: inherit; line-height: 1.4;
+    backdrop-filter: blur(6px);
+  }
+  textarea::placeholder { color: var(--mist-dim); }
+  textarea:focus-visible { outline: 2px solid var(--flame); outline-offset: 2px; }
+  button.btn {
+    font: 500 1rem var(--sans); border-radius: 26px; padding: 14px 22px; cursor: pointer;
+    border: 1px solid transparent; transition: background .2s, color .2s;
+  }
+  .btn.primary { background: var(--flame); color: #2a1d10; }
+  .btn.primary:hover { background: #ffd98a; }
+  .btn.quiet { background: transparent; color: var(--mist); border-color: rgba(221, 214, 238, .3); }
+  .btn.quiet:hover { border-color: var(--flame); }
+  .btn:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .tools { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .listen-btn { display: none; align-self: center; }
+  .ready .listen-btn { display: inline-block; }
+  .ready .row, .ready .tools { display: none; }
+
+  /* The reading */
+  .reading { display: none; width: 100%; max-width: 640px; padding-bottom: 24px; }
+  .revealed .reading { display: block; animation: rise 2.4s ease both; }
+  .revealed .seance, .revealed .candle-wrap { display: none; }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+  .reading h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 7vw, 3rem); line-height: 1.1; text-align: center; margin: 8px 0 6px; }
+  .reading .from { text-align: center; color: var(--mist-dim); font-family: var(--serif); font-style: italic; font-size: 1.2rem; margin: 0 0 32px; }
+  .reading h3 { font-family: var(--serif); font-weight: 500; font-size: 1.25rem; color: var(--flame); margin: 28px 0 6px; }
+  .reading p.voice { font-family: var(--serif); font-size: 1.32rem; line-height: 1.6; margin: 0; }
+  .keepsake { margin: 40px auto 0; text-align: center; }
+  .keepsake img { width: 100%; max-width: 360px; border-radius: 14px; box-shadow: 0 0 60px rgba(245, 200, 106, .18); }
+  .keepsake .tools { margin-top: 16px; }
+  .deeper { display: none; } /* Paid "deeper reading" slot, enabled once Stripe is wired in. */
+  .again { display: block; margin: 28px auto 0; }
+
+  footer {
+    position: relative; z-index: 2; text-align: center;
+    font-size: .85rem; color: var(--mist-dim); padding: 0 16px 24px; max-width: 560px; margin: 0 auto;
+  }
+  footer a { color: var(--mist); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .medium .ch { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="warmth" aria-hidden="true"></div>
+
+<main id="app">
+  <section class="intro">
+    <h1>The Rainbow Bridge</h1>
+    <p class="lede">Some bonds do not end. Light the candle, and let them find their way back to you for a while.</p>
+  </section>
+
+  <div class="candle-wrap">
+    <button class="candle" id="candle" aria-label="Light the candle to begin">
+      <span class="halo"></span><span class="flame"></span><span class="wick"></span><span class="wax"></span>
+    </button>
+    <p class="hint" id="hint">Touch the candle to begin</p>
+  </div>
+
+  <section class="seance" aria-live="polite">
+    <div class="log" id="log"></div>
+    <form class="speak" id="speak">
+      <div class="row">
+        <label for="say" class="sr">Your answer</label>
+        <textarea id="say" rows="1" maxlength="1000" placeholder="Speak from the heart…"></textarea>
+        <button class="btn primary" type="submit" id="send">Answer</button>
+      </div>
+      <div class="tools">
+        <button class="btn quiet" type="button" id="photoBtn">Offer a photo</button>
+        <input type="file" id="photo" accept="image/*" hidden>
+      </div>
+      <button class="btn primary listen-btn" type="button" id="listen">Listen for them</button>
+    </form>
+  </section>
+
+  <article class="reading" id="reading" aria-live="polite"></article>
+</main>
+
+<footer>
+  An AI experience for comfort and reflection, offered for entertainment. Your words and photo are not stored.
+  If grief feels heavy, the ASPCA Pet Loss Hotline is at <a href="tel:18774743310">1-877-474-3310</a>, and in a crisis you can call or text <a href="tel:988">988</a> in Canada or the US.
+</footer>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const app = $("app"), log = $("log"), say = $("say"), send = $("send");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const turns = [];
+  let photo = null, photoPending = false, petName = "", busy = false;
+
+  /* ---------- Sky: stars plus a few slow fireflies ---------- */
+  const sky = $("sky"), ctx = sky.getContext("2d");
+  let stars = [], flies = [], W = 0, H = 0;
+  function sizeSky() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = innerWidth; H = innerHeight;
+    sky.width = W * dpr; sky.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    stars = Array.from({ length: Math.round(W * H / 2600) }, () => ({
+      x: Math.random() * W, y: Math.random() * H * .9, r: Math.random() * 1.2 + .2, p: Math.random() * 6.28,
+    }));
+    flies = Array.from({ length: 14 }, () => ({
+      x: Math.random() * W, y: H * (.45 + Math.random() * .5), a: Math.random() * 6.28, s: .15 + Math.random() * .25,
+    }));
+  }
+  function drawSky(t) {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, "#0d0b22"); g.addColorStop(.6, "#1d1940"); g.addColorStop(1, "#2a2550");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    // A faint prismatic arc: the bridge itself.
+    const cx = W / 2, cy = H * 1.05, R = Math.max(W, H) * .78;
+    ["#ff8f8f", "#ffc27a", "#fff08a", "#9cf2b0", "#8fd0ff", "#b79cff"].forEach((c, i) => {
+      ctx.beginPath(); ctx.arc(cx, cy, R - i * 7, Math.PI, 0);
+      ctx.strokeStyle = c; ctx.globalAlpha = .07 + .02 * Math.sin(t / 2400 + i); ctx.lineWidth = 7; ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+    for (const s of stars) {
+      ctx.globalAlpha = .35 + .45 * Math.abs(Math.sin(t / 1800 + s.p));
+      ctx.fillStyle = "#efeaff"; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.28); ctx.fill();
+    }
+    for (const f of flies) {
+      f.a += .004; f.x += Math.cos(f.a) * f.s; f.y += Math.sin(f.a * 1.3) * f.s * .6;
+      if (f.x < -10) f.x = W + 10; if (f.x > W + 10) f.x = -10;
+      const glow = .4 + .6 * Math.abs(Math.sin(t / 900 + f.a * 3));
+      const rg = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, 9);
+      rg.addColorStop(0, `rgba(255,224,140,${glow})`); rg.addColorStop(1, "rgba(255,224,140,0)");
+      ctx.globalAlpha = 1; ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(f.x, f.y, 9, 0, 6.28); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    if (!reduced) requestAnimationFrame(drawSky);
+  }
+  addEventListener("resize", () => { sizeSky(); if (reduced) drawSky(0); });
+  sizeSky(); reduced ? drawSky(0) : requestAnimationFrame(drawSky);
+
+  /* ---------- Conversation ---------- */
+  function mediumSays(text) {
+    const p = document.createElement("p"); p.className = "medium";
+    if (reduced) p.textContent = text;
+    else [...text].forEach((c, i) => {
+      const s = document.createElement("span"); s.className = "ch"; s.textContent = c;
+      s.style.animationDelay = (i * 22) + "ms"; p.appendChild(s);
+    });
+    log.appendChild(p); p.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "end" });
+    return reduced ? 0 : text.length * 22;
+  }
+  function visitorSays(text, img) {
+    const p = document.createElement("div"); p.className = "visitor";
+    if (img) { const i = new Image(); i.src = img; i.alt = "Your photo"; p.appendChild(i); }
+    if (text) p.appendChild(document.createTextNode(text));
+    log.appendChild(p);
+  }
+  function waiting(on, text = "The veil is thin tonight…") {
+    let w = $("waiting");
+    if (on && !w) { w = document.createElement("p"); w.id = "waiting"; w.className = "listening"; w.textContent = text; log.appendChild(w); w.scrollIntoView({ block: "end" }); }
+    if (!on && w) w.remove();
+  }
+  function setGlow(n) { document.documentElement.style.setProperty("--glow", Math.min(1, n).toFixed(2)); }
+
+  async function ask(mode) {
+    const body = { mode, turns };
+    if (photo && (photoPending || mode === "reading")) body.image = photo;
+    const r = await fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(data.message || "The veil is clouded right now. Please try again in a moment.");
+    photoPending = false;
+    return data;
+  }
+
+  async function mediumTurn() {
+    busy = true; send.disabled = true; waiting(true);
+    try {
+      const { reply, ready } = await ask("chat");
+      waiting(false);
+      turns.push({ role: "medium", text: reply });
+      const ms = mediumSays(reply);
+      setGlow(turns.filter(t => t.role === "visitor").length / 5);
+      if (ready) setTimeout(() => $("speak").classList.add("ready"), ms + 400), app.classList.add("near");
+    } catch (e) {
+      waiting(false); mediumSays(e.message);
+    } finally {
+      busy = false; send.disabled = false; say.focus();
+    }
+  }
+
+  $("candle").addEventListener("click", () => {
+    if (app.classList.contains("started")) return;
+    $("candle").classList.add("lit"); $("candle").setAttribute("aria-label", "The candle is lit");
+    $("hint").textContent = ""; setGlow(.15);
+    setTimeout(() => { app.classList.add("started"); mediumTurn(); }, reduced ? 0 : 1600);
+  });
+
+  $("speak").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const text = say.value.trim();
+    if (!text || busy) return;
+    if (!petName && turns.filter(t => t.role === "visitor").length === 0) petName = text.split(/[\s,.]/)[0];
+    turns.push({ role: "visitor", text }); visitorSays(text);
+    say.value = ""; say.style.height = "";
+    mediumTurn();
+  });
+  say.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("speak").requestSubmit(); }
+  });
+  say.addEventListener("input", () => { say.style.height = "auto"; say.style.height = say.scrollHeight + "px"; });
+
+  /* ---------- Photo: resized in the browser, sent to the medium, never stored ---------- */
+  $("photoBtn").addEventListener("click", () => $("photo").click());
+  $("photo").addEventListener("change", async () => {
+    const file = $("photo").files[0];
+    if (!file || !file.type.startsWith("image/") || busy) return;
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = URL.createObjectURL(file); });
+    const scale = Math.min(1, 1024 / Math.max(img.width, img.height));
+    const c = document.createElement("canvas"); c.width = Math.round(img.width * scale); c.height = Math.round(img.height * scale);
+    c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    photo = c.toDataURL("image/jpeg", .85); photoPending = true;
+    $("photoBtn").textContent = "Photo offered"; $("photoBtn").disabled = true;
+    const note = "I've placed their photo before the candle.";
+    turns.push({ role: "visitor", text: note }); visitorSays("", photo);
+    mediumTurn();
+  });
+
+  /* ---------- The reading ---------- */
+  $("listen").addEventListener("click", async () => {
+    $("listen").disabled = true; setGlow(1);
+    waiting(true, "They are drawing near…");
+    try {
+      const r = await ask("reading");
+      waiting(false);
+      if (!r.remembers) { mediumSays(r.message || "The connection slipped away. Please try again."); $("listen").disabled = false; return; }
+      showReading(r);
+    } catch (e) {
+      waiting(false); mediumSays(e.message); $("listen").disabled = false;
+    }
+  });
+
+  function showReading(r) {
+    const el = $("reading"); el.innerHTML = "";
+    const add = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; el.appendChild(n); return n; };
+    add("h2", "", r.title || "A message across the bridge");
+    add("p", "from", "from " + (r.petName || petName || "your companion"));
+    add("h3", "", "What I remember"); add("p", "voice", r.remembers);
+    add("h3", "", "What I want you to know"); add("p", "voice", r.wantsYouToKnow);
+    add("h3", "", "A sign to watch for"); add("p", "voice", r.sign);
+    const keep = document.createElement("div"); keep.className = "keepsake"; el.appendChild(keep);
+    const deeper = document.createElement("div"); deeper.className = "deeper"; deeper.dataset.tier = r.tier || "free"; el.appendChild(deeper);
+    const again = document.createElement("button"); again.className = "btn quiet again"; again.textContent = "Light a new candle";
+    again.onclick = () => location.reload(); el.appendChild(again);
+    app.classList.add("revealed"); scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    makeCard(r).then((url) => {
+      const img = new Image(); img.src = url; img.alt = "Keepsake card: " + r.cardLine; keep.appendChild(img);
+      const tools = document.createElement("div"); tools.className = "tools";
+      const name = (r.petName || "keepsake").replace(/[^\w-]+/g, "-").toLowerCase();
+      const dl = document.createElement("button"); dl.className = "btn primary"; dl.textContent = "Save keepsake card";
+      dl.onclick = () => { const a = document.createElement("a"); a.href = url; a.download = `rainbow-bridge-${name}.png`; a.click(); };
+      tools.appendChild(dl);
+      if (navigator.canShare) {
+        const sh = document.createElement("button"); sh.className = "btn quiet"; sh.textContent = "Share";
+        sh.onclick = async () => {
+          const blob = await (await fetch(url)).blob();
+          const file = new File([blob], `rainbow-bridge-${name}.png`, { type: "image/png" });
+          if (navigator.canShare({ files: [file] })) navigator.share({ files: [file], title: "The Rainbow Bridge" }).catch(() => {});
+        };
+        tools.appendChild(sh);
+      }
+      keep.appendChild(tools);
+    });
+  }
+
+  /* ---------- Keepsake card ---------- */
+  async function makeCard(r) {
+    await document.fonts.ready;
+    const c = document.createElement("canvas"); c.width = 1080; c.height = 1350;
+    const g = c.getContext("2d");
+    const bg = g.createLinearGradient(0, 0, 0, 1350);
+    bg.addColorStop(0, "#0d0b22"); bg.addColorStop(.65, "#221e48"); bg.addColorStop(1, "#3a2c4e");
+    g.fillStyle = bg; g.fillRect(0, 0, 1080, 1350);
+    for (let i = 0; i < 260; i++) {
+      g.globalAlpha = Math.random() * .7 + .1; g.fillStyle = "#efeaff";
+      g.beginPath(); g.arc(Math.random() * 1080, Math.random() * 1100, Math.random() * 1.8 + .3, 0, 6.28); g.fill();
+    }
+    ["#ff8f8f", "#ffc27a", "#fff08a", "#9cf2b0", "#8fd0ff", "#b79cff"].forEach((col, i) => {
+      g.globalAlpha = .22; g.strokeStyle = col; g.lineWidth = 12;
+      g.beginPath(); g.arc(540, 640, 400 - i * 12, Math.PI * 1.08, Math.PI * 1.92); g.stroke();
+    });
+    g.globalAlpha = 1;
+    const halo = g.createRadialGradient(540, 560, 150, 540, 560, 330);
+    halo.addColorStop(0, "rgba(245,200,106,.5)"); halo.addColorStop(1, "rgba(245,200,106,0)");
+    g.fillStyle = halo; g.beginPath(); g.arc(540, 560, 330, 0, 6.28); g.fill();
+    g.save(); g.beginPath(); g.arc(540, 560, 200, 0, 6.28); g.clip();
+    if (photo) {
+      const img = await new Promise((res) => { const i = new Image(); i.onload = () => res(i); i.src = photo; });
+      const s = Math.max(400 / img.width, 400 / img.height);
+      g.drawImage(img, 540 - img.width * s / 2, 560 - img.height * s / 2, img.width * s, img.height * s);
+    } else {
+      const orb = g.createRadialGradient(540, 600, 10, 540, 560, 200);
+      orb.addColorStop(0, "#fff6dc"); orb.addColorStop(.5, "#f5c86a"); orb.addColorStop(1, "#7a4f8f");
+      g.fillStyle = orb; g.fillRect(340, 360, 400, 400);
+    }
+    g.restore();
+    g.strokeStyle = "rgba(245,200,106,.85)"; g.lineWidth = 4; g.beginPath(); g.arc(540, 560, 202, 0, 6.28); g.stroke();
+    g.textAlign = "center"; g.fillStyle = "#f4eefc";
+    g.font = '500 92px "Cormorant Garamond"'; g.fillText(r.petName || petName || "", 540, 222);
+    g.font = 'italic 50px "Cormorant Garamond"'; g.fillStyle = "#f1ebfb";
+    wrap(g, r.cardLine || "", 540, 870, 860, 64);
+    g.font = '400 26px "Karla"'; g.fillStyle = "rgba(221,214,238,.6)"; g.fillText("whistlerbrew.com/bridge", 540, 1290);
+    return c.toDataURL("image/png");
+  }
+  function wrap(g, text, x, y, max, lh) {
+    let line = "";
+    for (const w of text.split(" ")) {
+      const t = line ? line + " " + w : w;
+      if (g.measureText(t).width > max && line) { g.fillText(line, x, y); line = w; y += lh; } else line = t;
+    }
+    if (line) g.fillText(line, x, y);
+  }
+})();
+</script>
+</body>
+</html>
