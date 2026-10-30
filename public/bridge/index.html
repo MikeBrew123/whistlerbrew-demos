@@ -158,7 +158,11 @@
   .keepsake { margin: 40px auto 0; text-align: center; }
   .keepsake img { width: 100%; max-width: 360px; border-radius: 14px; box-shadow: 0 0 60px rgba(245, 200, 106, .18); }
   .keepsake .tools { margin-top: 16px; }
-  .deeper { display: none; } /* Paid reading slot with the guarantee, enabled once Stripe is wired in. */
+  .promise { display: none; text-align: center; font-size: .9rem; color: var(--mist-dim); margin: 2px 0 0; }
+  .ready .promise { display: block; }
+  .ready.paid .promise { display: none; }
+  .miss .acts { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .miss .err { color: var(--ember); font-size: .9rem; text-align: center; margin: 0; min-height: 1.2em; }
 
   /* How did we do? */
   .rate { margin: 44px auto 0; text-align: center; max-width: 420px; }
@@ -219,7 +223,8 @@
         <button class="btn quiet" type="button" id="photoBtn">Offer a photo</button>
         <input type="file" id="photo" accept="image/*" hidden>
       </div>
-      <button class="btn primary listen-btn" type="button" id="listen">Listen for them</button>
+      <button class="btn primary listen-btn" type="button" id="listen">Receive their reading, $14.99</button>
+      <p class="promise">If it doesn't feel like them, you get your money back.</p>
     </form>
   </section>
 
@@ -238,6 +243,8 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const turns = [];
   let photo = null, photoPending = false, petName = "", busy = false;
+  let sid = null; // paid Stripe checkout session for this reading
+  const PHOTO_NOTE = "I've placed their photo before the candle.";
 
   /* ---------- Sky: stars plus a few slow fireflies ---------- */
   const sky = $("sky"), ctx = sky.getContext("2d");
@@ -283,15 +290,15 @@
   sizeSky(); reduced ? drawSky(0) : requestAnimationFrame(drawSky);
 
   /* ---------- Conversation ---------- */
-  function mediumSays(text) {
+  function mediumSays(text, instant = false) {
     const p = document.createElement("p"); p.className = "medium";
-    if (reduced) p.textContent = text;
+    if (reduced || instant) p.textContent = text;
     else [...text].forEach((c, i) => {
       const s = document.createElement("span"); s.className = "ch"; s.textContent = c;
       s.style.animationDelay = (i * 22) + "ms"; p.appendChild(s);
     });
     log.appendChild(p); p.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "end" });
-    return reduced ? 0 : text.length * 22;
+    return reduced || instant ? 0 : text.length * 22;
   }
   function visitorSays(text, img) {
     const p = document.createElement("div"); p.className = "visitor";
@@ -309,6 +316,7 @@
   async function ask(mode) {
     const body = { mode, turns };
     if (photo && (photoPending || mode === "reading")) body.image = photo;
+    if (sid) body.session_id = sid;
     const r = await fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
     const data = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(data.message || "The veil is clouded right now. Please try again in a moment.");
@@ -364,13 +372,53 @@
     c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
     photo = c.toDataURL("image/jpeg", .85); photoPending = true;
     $("photoBtn").textContent = "Photo offered"; $("photoBtn").disabled = true;
-    const note = "I've placed their photo before the candle.";
-    turns.push({ role: "visitor", text: note }); visitorSays("", photo);
+    turns.push({ role: "visitor", text: PHOTO_NOTE }); visitorSays("", photo);
     mediumTurn();
   });
 
-  /* ---------- The reading ---------- */
+  /* ---------- Payment: hosted Stripe Checkout, conversation kept in sessionStorage across the redirect ---------- */
+  function markPaid() {
+    $("speak").classList.add("paid"); $("listen").textContent = "Listen for them";
+  }
   $("listen").addEventListener("click", async () => {
+    if (sid) return giveReading();
+    $("listen").disabled = true;
+    try {
+      const r = await fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode: "checkout" }) });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok && d.free) { markPaid(); return giveReading(); }
+      if (!r.ok || !d.url) throw new Error(d.message || d.error || "The way to checkout is clouded. Please try again in a moment.");
+      try { sessionStorage.setItem("bridge.state", JSON.stringify({ turns, photo, petName })); } catch {}
+      location.href = d.url;
+    } catch (e) {
+      mediumSays(e.message); $("listen").disabled = false;
+    }
+  });
+
+  // Back from checkout (paid or canceled): restore the conversation, then give the reading if paid.
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const paid = params.get("paid"), canceled = params.get("canceled");
+    if (!paid && !canceled) return;
+    history.replaceState(null, "", location.pathname);
+    let saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem("bridge.state") || "null"); } catch {}
+    if (paid) { sid = paid; markPaid(); }
+    $("candle").classList.add("lit"); app.classList.add("started");
+    if (!saved || !saved.turns?.length) { setGlow(.15); mediumTurn(); return; } // new tab or device: begin again, already paid
+    turns.push(...saved.turns); photo = saved.photo; petName = saved.petName || "";
+    if (photo) { $("photoBtn").textContent = "Photo offered"; $("photoBtn").disabled = true; }
+    for (const t of turns) {
+      if (t.role === "medium") mediumSays(t.text, true);
+      else if (t.text === PHOTO_NOTE && photo) visitorSays("", photo);
+      else visitorSays(t.text);
+    }
+    setGlow(1); $("speak").classList.add("ready");
+    if (paid) giveReading();
+  })();
+
+  /* ---------- The reading ---------- */
+  async function giveReading() {
     $("listen").disabled = true; setGlow(1);
     waiting(true, "They are drawing near…");
     try {
@@ -381,7 +429,15 @@
     } catch (e) {
       waiting(false); mediumSays(e.message); $("listen").disabled = false;
     }
-  });
+  }
+
+  // The guarantee's free retry: same purchase, a fresh conversation with new answers.
+  function startRetry() {
+    turns.length = 0; log.innerHTML = ""; $("reading").innerHTML = "";
+    app.classList.remove("revealed"); $("speak").classList.remove("ready");
+    $("listen").disabled = false; photoPending = !!photo; setGlow(.15);
+    scrollTo({ top: 0 }); mediumTurn();
+  }
 
   function showReading(r) {
     const el = $("reading"); el.innerHTML = "";
@@ -392,9 +448,6 @@
     add("h3", "", "What I want you to know"); add("p", "voice", r.wantsYouToKnow);
     add("h3", "", "A sign to watch for"); add("p", "voice", r.sign);
     const keep = document.createElement("div"); keep.className = "keepsake"; el.appendChild(keep);
-    const deeper = document.createElement("div"); deeper.className = "deeper"; deeper.dataset.tier = r.tier || "free";
-    deeper.textContent = "Our promise: if the reading doesn't feel like them, tell us and we'll refund you in full.";
-    el.appendChild(deeper);
     el.appendChild(rateBox(r));
     const again = document.createElement("button"); again.className = "btn quiet again"; again.textContent = "Light a new candle";
     again.onclick = () => location.reload(); el.appendChild(again);
@@ -419,21 +472,40 @@
     });
   }
 
-  /* ---------- How did we do? Under 3 stars asks what we got wrong. ---------- */
+  /* ---------- How did we do? Under 3 stars asks what we got wrong, then offers the guarantee. ---------- */
   function rateBox(r) {
     const box = document.createElement("form"); box.className = "rate";
+    const acts = r.tier === "paid" ? [
+      r.canRetry && `<button class="btn primary" type="submit" value="retry">Try again with new answers</button>`,
+      r.canRefund && `<button class="btn quiet" type="submit" value="refund">Refund me</button>`,
+    ].filter(Boolean).join("") : "";
     box.innerHTML = `<fieldset><legend>How did we do?</legend><div class="stars">${
       [5, 4, 3, 2, 1].map(n => `<input type="radio" name="stars" id="s${n}" value="${n}"><label for="s${n}" title="${n} of 5" aria-label="${n} of 5">★</label>`).join("")
     }</div></fieldset>
     <div class="miss"><label for="missText">What did we get wrong? Your honesty helps the next person who lights a candle.</label>
       <textarea id="missText" maxlength="2000" placeholder="Something that didn't feel like them…"></textarea>
       <label class="check"><input type="checkbox" id="keepReading" checked> Include this reading so we can see what missed</label>
-      <button class="btn primary" type="submit">Send</button></div>`;
+      <div class="acts">${acts || `<button class="btn primary" type="submit">Send</button>`}</div>
+      <p class="err" role="alert"></p></div>`;
     const miss = box.querySelector(".miss");
+    const post = (rating, comment, withReading, action) => fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode: "feedback", rating, comment, action, session_id: sid, reading: withReading ? r : null }) });
     const send = async (rating, comment = "", withReading = false) => {
       box.innerHTML = `<p class="thanks">${rating >= 3 ? "Thank you. Their light stays with you." : "Thank you for telling us. We're listening."}</p>`;
-      fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode: "feedback", rating, comment, reading: withReading ? r : null }) }).catch(() => {});
+      post(rating, comment, withReading).catch(() => {});
+    };
+    const guarantee = async (action, rating, comment, withReading) => {
+      const err = box.querySelector(".err");
+      if (comment.length < 5) { err.textContent = "A few words about what missed, please. It helps us do better."; return; }
+      box.querySelectorAll(".acts button").forEach(b => b.disabled = true); err.textContent = "";
+      const resp = await post(rating, comment, withReading, action).catch(() => null);
+      const d = resp ? await resp.json().catch(() => ({})) : {};
+      if (!resp || !resp.ok) {
+        err.textContent = d.error || "That didn't go through. Please try again.";
+        box.querySelectorAll(".acts button").forEach(b => b.disabled = false); return;
+      }
+      if (action === "retry") return startRetry();
+      box.innerHTML = `<p class="thanks">Your refund is on its way. It can take 5 to 10 days to reach your card. Thank you for telling us what missed.</p>`;
     };
     box.addEventListener("change", (e) => {
       if (e.target.name !== "stars") return;
@@ -443,7 +515,10 @@
     box.addEventListener("submit", (e) => {
       e.preventDefault();
       const n = +(box.querySelector("input[name=stars]:checked")?.value || 0);
-      if (n) send(n, box.querySelector("#missText").value.trim(), box.querySelector("#keepReading").checked);
+      if (!n) return;
+      const comment = box.querySelector("#missText").value.trim(), withReading = box.querySelector("#keepReading").checked;
+      const action = e.submitter?.value;
+      if (action) guarantee(action, n, comment, withReading); else send(n, comment, withReading);
     });
     return box;
   }

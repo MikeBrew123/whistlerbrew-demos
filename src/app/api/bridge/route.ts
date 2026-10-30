@@ -1,17 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getRequestContext } from "@cloudflare/next-on-pages";
+import { KV, Purchase, canRefund, createCheckout, loadPurchase, refund, savePurchase, validSession } from "./purchase";
 
 export const runtime = "edge";
 
 // The Rainbow Bridge (/bridge): an AI pet medium.
-// mode "chat"    → the medium's next gentle question, plus ready=true once it has enough.
-// mode "reading" → the final reading as JSON for the reveal and the shareable card.
+// mode "chat"     → the medium's next gentle question, plus ready=true once it has enough. Free.
+// mode "checkout" → a Stripe Checkout URL for the $14.99 reading.
+// mode "reading"  → the final reading as JSON; needs a paid session_id once STRIPE_SECRET_KEY is set.
+// mode "feedback" → "How did we do?"; under 3 stars can also grant one free retry or a refund.
 // Rate limits live in the BRIDGE KV namespace (skipped in `next dev`, where there is no KV).
 
-type KV = {
-  get(key: string): Promise<string | null>;
-  put(key: string, value: string, opts?: { expirationTtl?: number }): Promise<void>;
-};
 type Turn = { role: "medium" | "visitor"; text: string };
 
 const MODEL = "claude-sonnet-5-5";
@@ -55,6 +54,11 @@ function cfEnv(): Record<string, unknown> {
 
 const kv = () => (cfEnv().BRIDGE as KV) ?? null;
 
+// Pages secrets arrive on the request context in production; `next dev` reads .env.local.
+const secret = (name: string) => (cfEnv()[name] as string | undefined) ?? process.env[name];
+
+const paidState = (p: Purchase) => ({ tier: "paid", canRetry: p.allowed === 1 && !p.refunded, canRefund: canRefund(p) });
+
 const clientIp = (req: NextRequest) =>
   req.headers.get("cf-connecting-ip") ?? req.headers.get("x-forwarded-for") ?? "local";
 
@@ -76,30 +80,74 @@ function parseImage(raw: unknown) {
 
 // "How did we do?" ratings, kept as fb:<time>:<id> in BRIDGE so the prompts can learn from misses.
 // List with: npx wrangler kv key list --binding BRIDGE --prefix fb:
-async function saveFeedback(req: NextRequest, body: { rating?: unknown; comment?: unknown; reading?: unknown }) {
+// The money-back guarantee: under 3 stars plus a short reason earns one free retry or a full refund.
+type FeedbackBody = { rating?: unknown; comment?: unknown; reading?: unknown; action?: unknown; session_id?: unknown };
+async function saveFeedback(req: NextRequest, body: FeedbackBody) {
   const rating = Math.round(Number(body.rating));
   if (!(rating >= 1 && rating <= 5)) return NextResponse.json({ error: "Bad rating" }, { status: 400 });
   const store = kv();
   if (await overLimit(store, clientIp(req), "feedback")) return NextResponse.json({ error: "rest" }, { status: 429 });
+  const comment = String(body.comment ?? "").slice(0, 2000).trim();
+  const action = body.action === "retry" || body.action === "refund" ? body.action : null;
+  const sid = validSession(body.session_id) ? body.session_id : null;
   const entry = {
     t: new Date().toISOString(),
     rating,
-    comment: String(body.comment ?? "").slice(0, 2000).trim(),
+    comment,
+    action,
+    sid,
     reading: body.reading && typeof body.reading === "object" ? JSON.stringify(body.reading).slice(0, 4000) : null,
   };
   if (store) await store.put(`fb:${Date.now()}:${crypto.randomUUID().slice(0, 8)}`, JSON.stringify(entry));
   else console.log("bridge feedback (no KV in dev):", entry);
-  return NextResponse.json({ ok: true });
+  if (!action) return NextResponse.json({ ok: true });
+
+  const key = secret("STRIPE_SECRET_KEY");
+  if (!key || !sid || rating >= 3 || comment.length < 5) {
+    return NextResponse.json({ error: "Tell us a little about what missed first." }, { status: 400 });
+  }
+  const p = await loadPurchase(key, store, sid).catch(() => null);
+  if (!p) return NextResponse.json({ error: "We couldn't find that purchase." }, { status: 404 });
+
+  if (action === "retry") {
+    if (p.allowed !== 1 || p.refunded) return NextResponse.json({ error: "Your free retry has already been used." }, { status: 409 });
+    p.allowed = 2;
+    await savePurchase(store, sid, p);
+    return NextResponse.json({ ok: true, retry: true });
+  }
+  if (p.refunded) return NextResponse.json({ ok: true, refunded: true });
+  if (!canRefund(p)) return NextResponse.json({ error: "Refunds are available for 30 days after purchase." }, { status: 409 });
+  try {
+    await refund(key, p);
+  } catch (e) {
+    console.error("bridge: refund", e);
+    return NextResponse.json({ error: "The refund didn't go through. Please try again in a moment." }, { status: 502 });
+  }
+  p.refunded = true;
+  await savePurchase(store, sid, p);
+  return NextResponse.json({ ok: true, refunded: true });
+}
+
+async function startCheckout(req: NextRequest) {
+  const key = secret("STRIPE_SECRET_KEY");
+  if (!key) return NextResponse.json({ free: true }); // payments not configured: readings stay free
+  try {
+    return NextResponse.json({ url: await createCheckout(key, req.nextUrl.origin) });
+  } catch (e) {
+    console.error("bridge: checkout", e);
+    return NextResponse.json({ error: "veil", message: "The way to checkout is clouded. Please try again in a moment." }, { status: 502 });
+  }
 }
 
 export async function POST(req: NextRequest) {
-  let body: { mode?: string; turns?: Turn[]; image?: string; rating?: unknown; comment?: unknown; reading?: unknown };
+  let body: { mode?: string; turns?: Turn[]; image?: string; session_id?: unknown } & FeedbackBody;
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Bad request" }, { status: 400 });
   }
   if (body.mode === "feedback") return saveFeedback(req, body);
+  if (body.mode === "checkout") return startCheckout(req);
 
   const mode = body.mode === "reading" ? "reading" : "chat";
   const turns = Array.isArray(body.turns) ? body.turns.slice(-MAX_TURNS) : [];
@@ -108,11 +156,23 @@ export async function POST(req: NextRequest) {
     .map((t) => ({ role: t.role, text: t.text.slice(0, MAX_TEXT).trim() }))
     .filter((t) => t.text);
 
-  // Pages secrets arrive on the request context in production; `next dev` reads .env.local.
-  const apiKey = (cfEnv().ANTHROPIC_API_KEY as string | undefined) ?? process.env.ANTHROPIC_API_KEY;
+  const apiKey = secret("ANTHROPIC_API_KEY");
   if (!apiKey) return NextResponse.json({ error: "Not configured" }, { status: 500 });
 
-  if (await overLimit(kv(), clientIp(req), mode)) {
+  // Paid readings: once Stripe is configured, a reading needs a paid checkout session with readings left.
+  const stripeKey = secret("STRIPE_SECRET_KEY");
+  let purchase: Purchase | null = null;
+  const sid = validSession(body.session_id) ? body.session_id : null;
+  if (mode === "reading" && stripeKey) {
+    purchase = sid ? await loadPurchase(stripeKey, kv(), sid).catch(() => null) : null;
+    if (!purchase || purchase.refunded) {
+      return NextResponse.json({ error: "unpaid", message: "The candle is waiting for your offering." }, { status: 402 });
+    }
+    if (purchase.used >= purchase.allowed) {
+      if (purchase.reading) return NextResponse.json({ ...purchase.reading, ...paidState(purchase) });
+      return NextResponse.json({ error: "unpaid", message: "This reading has already been given." }, { status: 402 });
+    }
+  } else if (await overLimit(kv(), clientIp(req), mode)) {
     return NextResponse.json({ error: "rest", message: "The candle needs to rest. Return tomorrow, when the veil is thin again." }, { status: 429 });
   }
 
@@ -178,6 +238,12 @@ export async function POST(req: NextRequest) {
   try {
     const reading = JSON.parse(match ? match[0] : "");
     if (!reading.remembers) throw new Error("incomplete");
+    if (purchase && sid) {
+      purchase.used += 1;
+      purchase.reading = reading;
+      await savePurchase(kv(), sid, purchase);
+      return NextResponse.json({ ...reading, ...paidState(purchase) });
+    }
     return NextResponse.json({ ...reading, tier: "free" });
   } catch {
     // Not JSON: usually the medium stepped out of character (crisis care). Pass it through as plain words.
