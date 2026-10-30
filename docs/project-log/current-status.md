@@ -90,4 +90,4 @@ Sources merged in order:
 
 ## The Rainbow Bridge (/bridge), added 2026-10-30
 - Live page: https://whistlerbrew.com/bridge (listed on /projects). API: /api/bridge (modes chat and reading), KV `BRIDGE` for rate limits.
-- Verified locally end to end (chat, photo vision, reading, keepsake card, mobile 375px, crisis reply). Production API blocked until the Pages `ANTHROPIC_API_KEY` secret is re-set; /api/estimate-maintenance has the same problem.
+- Verified locally end to end (chat, photo vision, reading, keepsake card, mobile 375px, crisis reply). Production verified 2026-10-30 after re-setting the Pages `ANTHROPIC_API_KEY` secret (also fixed /api/estimate-maintenance). Est. cost ~3 to 5 cents US per full reading on Sonnet 5.5.
