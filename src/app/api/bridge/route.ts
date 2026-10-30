@@ -44,13 +44,15 @@ Now deliver the reading: the pet speaking in their own first-person voice, throu
 Respond ONLY with valid JSON, no markdown:
 {"petName":"name","title":"a short evocative title for the reading","remembers":"2-4 sentences, first person, what they remember and loved","wantsYouToKnow":"2-4 sentences, first person, what they want the person to know (release any guilt, they are at peace)","sign":"1-2 sentences, a gentle sign to watch for, tied to their habits","cardLine":"one luminous sentence under 110 characters for a keepsake card"}`;
 
-function kv(): KV | null {
+function cfEnv(): Record<string, unknown> {
   try {
-    return ((getRequestContext().env as Record<string, unknown>).BRIDGE as KV) ?? null;
+    return getRequestContext().env as Record<string, unknown>;
   } catch {
-    return null;
+    return {};
   }
 }
+
+const kv = () => (cfEnv().BRIDGE as KV) ?? null;
 
 async function overLimit(store: KV | null, ip: string, mode: "chat" | "reading"): Promise<boolean> {
   if (!store) return false;
@@ -83,7 +85,8 @@ export async function POST(req: NextRequest) {
     .map((t) => ({ role: t.role, text: t.text.slice(0, MAX_TEXT).trim() }))
     .filter((t) => t.text);
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  // Pages secrets arrive on the request context in production; `next dev` reads .env.local.
+  const apiKey = (cfEnv().ANTHROPIC_API_KEY as string | undefined) ?? process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return NextResponse.json({ error: "Not configured" }, { status: 500 });
 
   const ip = req.headers.get("cf-connecting-ip") ?? req.headers.get("x-forwarded-for") ?? "local";
