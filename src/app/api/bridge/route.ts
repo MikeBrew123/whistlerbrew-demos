@@ -18,7 +18,7 @@ const MODEL = "claude-sonnet-5-5";
 const MAX_TURNS = 24;
 const MAX_TEXT = 1200;
 const MAX_IMAGE_B64 = 2_000_000;
-const LIMITS = { chat: 80, reading: 3 };
+const LIMITS = { chat: 80, reading: 3, feedback: 10 };
 const READY = "[[READY]]";
 
 const PERSONA = `You are the Keeper of the Rainbow Bridge, a gentle, old-souled medium who sits by a single candle and listens for animals who have crossed over. You speak to a person whose pet has died.
@@ -27,6 +27,7 @@ Voice: warm, unhurried, softly poetic. Short paragraphs. Sensory and impressioni
 
 Rules:
 - Never claim certainty about how or why the pet died, and never suggest the owner was at fault. Offer peace about any guilt.
+- Never give a verdict on medical or end-of-life decisions (pain, illness, euthanasia, whether something was caught in time). Comfort the person and affirm the love behind their choices instead.
 - Never mention being an AI unless sincerely asked. If sincerely asked, answer honestly and kindly.
 - If the person expresses thoughts of self-harm or is in crisis, gently step out of the reading, tell them they matter, and encourage them to reach out now: in Canada call or text 9-8-8, in the US call or text 988, or local emergency services. Do not continue the reading in that message.
 - Never ask for money, contact details, or personal identifiers.`;
@@ -54,7 +55,10 @@ function cfEnv(): Record<string, unknown> {
 
 const kv = () => (cfEnv().BRIDGE as KV) ?? null;
 
-async function overLimit(store: KV | null, ip: string, mode: "chat" | "reading"): Promise<boolean> {
+const clientIp = (req: NextRequest) =>
+  req.headers.get("cf-connecting-ip") ?? req.headers.get("x-forwarded-for") ?? "local";
+
+async function overLimit(store: KV | null, ip: string, mode: keyof typeof LIMITS): Promise<boolean> {
   if (!store) return false;
   const key = `rl:${mode}:${ip}:${new Date().toISOString().slice(0, 10)}`;
   const used = parseInt((await store.get(key)) ?? "0", 10) || 0;
@@ -70,13 +74,32 @@ function parseImage(raw: unknown) {
   return { type: "image", source: { type: "base64", media_type: m[1], data: m[2] } };
 }
 
+// "How did we do?" ratings, kept as fb:<time>:<id> in BRIDGE so the prompts can learn from misses.
+// List with: npx wrangler kv key list --binding BRIDGE --prefix fb:
+async function saveFeedback(req: NextRequest, body: { rating?: unknown; comment?: unknown; reading?: unknown }) {
+  const rating = Math.round(Number(body.rating));
+  if (!(rating >= 1 && rating <= 5)) return NextResponse.json({ error: "Bad rating" }, { status: 400 });
+  const store = kv();
+  if (await overLimit(store, clientIp(req), "feedback")) return NextResponse.json({ error: "rest" }, { status: 429 });
+  const entry = {
+    t: new Date().toISOString(),
+    rating,
+    comment: String(body.comment ?? "").slice(0, 2000).trim(),
+    reading: body.reading && typeof body.reading === "object" ? JSON.stringify(body.reading).slice(0, 4000) : null,
+  };
+  if (store) await store.put(`fb:${Date.now()}:${crypto.randomUUID().slice(0, 8)}`, JSON.stringify(entry));
+  else console.log("bridge feedback (no KV in dev):", entry);
+  return NextResponse.json({ ok: true });
+}
+
 export async function POST(req: NextRequest) {
-  let body: { mode?: string; turns?: Turn[]; image?: string };
+  let body: { mode?: string; turns?: Turn[]; image?: string; rating?: unknown; comment?: unknown; reading?: unknown };
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Bad request" }, { status: 400 });
   }
+  if (body.mode === "feedback") return saveFeedback(req, body);
 
   const mode = body.mode === "reading" ? "reading" : "chat";
   const turns = Array.isArray(body.turns) ? body.turns.slice(-MAX_TURNS) : [];
@@ -89,8 +112,7 @@ export async function POST(req: NextRequest) {
   const apiKey = (cfEnv().ANTHROPIC_API_KEY as string | undefined) ?? process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return NextResponse.json({ error: "Not configured" }, { status: 500 });
 
-  const ip = req.headers.get("cf-connecting-ip") ?? req.headers.get("x-forwarded-for") ?? "local";
-  if (await overLimit(kv(), ip, mode)) {
+  if (await overLimit(kv(), clientIp(req), mode)) {
     return NextResponse.json({ error: "rest", message: "The candle needs to rest. Return tomorrow, when the veil is thin again." }, { status: 429 });
   }
 

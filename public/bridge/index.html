@@ -158,7 +158,23 @@
   .keepsake { margin: 40px auto 0; text-align: center; }
   .keepsake img { width: 100%; max-width: 360px; border-radius: 14px; box-shadow: 0 0 60px rgba(245, 200, 106, .18); }
   .keepsake .tools { margin-top: 16px; }
-  .deeper { display: none; } /* Paid "deeper reading" slot, enabled once Stripe is wired in. */
+  .deeper { display: none; } /* Paid reading slot with the guarantee, enabled once Stripe is wired in. */
+
+  /* How did we do? */
+  .rate { margin: 44px auto 0; text-align: center; max-width: 420px; }
+  .rate legend { font-family: var(--serif); font-style: italic; font-size: 1.3rem; margin: 0 auto 10px; padding: 0; }
+  .rate fieldset { border: 0; margin: 0; padding: 0; }
+  .stars { display: inline-flex; flex-direction: row-reverse; gap: 4px; }
+  .stars input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .stars label { font-size: 2.1rem; line-height: 1; color: rgba(221, 214, 238, .3); cursor: pointer; padding: 4px; transition: color .15s; }
+  .stars label:hover, .stars label:hover ~ label, .stars input:checked ~ label { color: var(--flame); }
+  .stars input:focus-visible + label { outline: 2px solid var(--flame); outline-offset: 2px; border-radius: 6px; }
+  .miss { display: none; flex-direction: column; gap: 10px; margin-top: 14px; text-align: left; }
+  .miss.open { display: flex; }
+  .miss textarea { border-radius: 16px; min-height: 96px; }
+  .miss .check { display: flex; gap: 8px; align-items: center; font-size: .9rem; color: var(--mist-dim); }
+  .miss .btn { align-self: center; }
+  .thanks { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--mist-dim); margin: 12px 0 0; }
   .again { display: block; margin: 28px auto 0; }
 
   footer {
@@ -211,7 +227,7 @@
 </main>
 
 <footer>
-  An AI experience for comfort and reflection, offered for entertainment. Your words and photo are not stored.
+  An AI experience for comfort and reflection, offered for entertainment. Your photo is never stored; feedback you choose to send is kept so we can improve.
   If grief feels heavy, the ASPCA Pet Loss Hotline is at <a href="tel:18774743310">1-877-474-3310</a>, and in a crisis you can call or text <a href="tel:988">988</a> in Canada or the US.
 </footer>
 
@@ -376,7 +392,10 @@
     add("h3", "", "What I want you to know"); add("p", "voice", r.wantsYouToKnow);
     add("h3", "", "A sign to watch for"); add("p", "voice", r.sign);
     const keep = document.createElement("div"); keep.className = "keepsake"; el.appendChild(keep);
-    const deeper = document.createElement("div"); deeper.className = "deeper"; deeper.dataset.tier = r.tier || "free"; el.appendChild(deeper);
+    const deeper = document.createElement("div"); deeper.className = "deeper"; deeper.dataset.tier = r.tier || "free";
+    deeper.textContent = "Our promise: if the reading doesn't feel like them, tell us and we'll refund you in full.";
+    el.appendChild(deeper);
+    el.appendChild(rateBox(r));
     const again = document.createElement("button"); again.className = "btn quiet again"; again.textContent = "Light a new candle";
     again.onclick = () => location.reload(); el.appendChild(again);
     app.classList.add("revealed"); scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
@@ -398,6 +417,35 @@
       }
       keep.appendChild(tools);
     });
+  }
+
+  /* ---------- How did we do? Under 3 stars asks what we got wrong. ---------- */
+  function rateBox(r) {
+    const box = document.createElement("form"); box.className = "rate";
+    box.innerHTML = `<fieldset><legend>How did we do?</legend><div class="stars">${
+      [5, 4, 3, 2, 1].map(n => `<input type="radio" name="stars" id="s${n}" value="${n}"><label for="s${n}" title="${n} of 5" aria-label="${n} of 5">★</label>`).join("")
+    }</div></fieldset>
+    <div class="miss"><label for="missText">What did we get wrong? Your honesty helps the next person who lights a candle.</label>
+      <textarea id="missText" maxlength="2000" placeholder="Something that didn't feel like them…"></textarea>
+      <label class="check"><input type="checkbox" id="keepReading" checked> Include this reading so we can see what missed</label>
+      <button class="btn primary" type="submit">Send</button></div>`;
+    const miss = box.querySelector(".miss");
+    const send = async (rating, comment = "", withReading = false) => {
+      box.innerHTML = `<p class="thanks">${rating >= 3 ? "Thank you. Their light stays with you." : "Thank you for telling us. We're listening."}</p>`;
+      fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "feedback", rating, comment, reading: withReading ? r : null }) }).catch(() => {});
+    };
+    box.addEventListener("change", (e) => {
+      if (e.target.name !== "stars") return;
+      const n = +e.target.value;
+      if (n >= 3) send(n, "", true); else { miss.classList.add("open"); box.querySelector("#missText").focus(); }
+    });
+    box.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const n = +(box.querySelector("input[name=stars]:checked")?.value || 0);
+      if (n) send(n, box.querySelector("#missText").value.trim(), box.querySelector("#keepReading").checked);
+    });
+    return box;
   }
 
   /* ---------- Keepsake card ---------- */
