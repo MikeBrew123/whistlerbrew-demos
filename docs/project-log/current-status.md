@@ -91,3 +91,4 @@ Sources merged in order:
 ## The Rainbow Bridge (/bridge), added 2026-10-30
 - Live page: https://whistlerbrew.com/bridge (listed on /projects). API: /api/bridge (modes chat and reading), KV `BRIDGE` for rate limits.
 - Verified locally end to end (chat, photo vision, reading, keepsake card, mobile 375px, crisis reply). Production verified 2026-10-30 after re-setting the Pages `ANTHROPIC_API_KEY` secret (also fixed /api/estimate-maintenance). Est. cost ~3 to 5 cents US per full reading on Sonnet 5.5.
+- Feedback (2026-10-30): every reading ends with "How did we do?" 1-5. Under 3 asks what we got wrong. Entries live in KV `BRIDGE` under `fb:<ms>:<id>` (rating, comment, optional reading JSON). Read them with `npx wrangler kv key list --namespace-id 283ff0103cdd4cc4ad1326410bc91692 --prefix fb:` then `kv key get`. Money-back guarantee copy is in the hidden `.deeper` paid slot, shown once Stripe is live.
