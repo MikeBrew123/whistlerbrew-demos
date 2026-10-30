@@ -141,14 +141,6 @@ const PROJECTS: Project[] = [
     accent: "#fb923c",
     external: true,
   },
-  {
-    name: "EV",
-    href: "/ev/index.html",
-    description: "EV charging / data experiment.",
-    status: "WIP",
-    accent: "#22d3ee",
-    external: true,
-  },
 ];
 
 function Card({ p }: { p: Project }) {
