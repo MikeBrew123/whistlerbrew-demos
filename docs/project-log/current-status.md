@@ -87,3 +87,7 @@ Sources merged in order:
 
 ## 2026-10-10 Sayulita Today (/sayulita)
 - Static page public/sayulita/index.html + data.json, pushed twice a day by the Mac Mini (project-nexus/trip/public/sayulita_page.py via GitHub Contents API, same PAT as shopping). Client-side Open-Meteo beach strip, ES toggle from data.es map, Nightlife/Fitness/Other and Drinks/Food tabs, festival day programs. Koozie NFC tag points here.
+
+## The Rainbow Bridge (/bridge), added 2026-10-30
+- Live page: https://whistlerbrew.com/bridge (listed on /projects). API: /api/bridge (modes chat and reading), KV `BRIDGE` for rate limits.
+- Verified locally end to end (chat, photo vision, reading, keepsake card, mobile 375px, crisis reply). Production API blocked until the Pages `ANTHROPIC_API_KEY` secret is re-set; /api/estimate-maintenance has the same problem.
