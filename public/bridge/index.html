@@ -221,6 +221,17 @@
     .medium .ch { opacity: 1; }
   }
 </style>
+<script>
+  // Google Analytics (property "My Little Shadow"), on mylittleshadow.com only.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  if (location.hostname.endsWith("mylittleshadow.com")) {
+    const ga = document.createElement("script");
+    ga.async = true; ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6KL3XFSD8V";
+    document.head.appendChild(ga);
+    gtag("js", new Date()); gtag("config", "G-6KL3XFSD8V");
+  }
+</script>
 </head>
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
@@ -264,7 +275,7 @@
 </main>
 
 <footer>
-  An AI experience for comfort and reflection, offered for entertainment. Your photo and voice are never stored; feedback you choose to send is kept so we can improve.
+  An AI experience for comfort and reflection, offered for entertainment. Your photo and voice are never stored; feedback you choose to send is kept so we can improve. We use Google Analytics to count visits.
   If grief feels heavy, the ASPCA Pet Loss Hotline is at <a href="tel:18774743310">1-877-474-3310</a>, and in a crisis you can call or text <a href="tel:988">988</a> in Canada or the US.
 </footer>
 
@@ -299,7 +310,7 @@
     // A faint prismatic arc: the bridge itself.
     const cx = W / 2, cy = H * 1.05, R = Math.max(W, H) * .78;
     ["#ff8f8f", "#ffc27a", "#fff08a", "#9cf2b0", "#8fd0ff", "#b79cff"].forEach((c, i) => {
-      ctx.beginPath(); ctx.arc(cx, cy, R - i * 7, Math.PI, 0);
+      ctx.beginPath(); ctx.arc(cx, cy, Math.max(1, R - i * 7), Math.PI, 0);
       ctx.strokeStyle = c; ctx.globalAlpha = .07 + .02 * Math.sin(t / 2400 + i); ctx.lineWidth = 7; ctx.stroke();
     });
     ctx.globalAlpha = 1;
@@ -457,6 +468,7 @@
   $("candle").addEventListener("click", () => {
     if (app.classList.contains("started")) return;
     unlockAudio();
+    gtag("event", "light_candle");
     $("candle").classList.add("lit"); $("candle").setAttribute("aria-label", "The candle is lit");
     $("hint").textContent = ""; setGlow(.15);
     setTimeout(() => { app.classList.add("started"); mediumTurn(); }, reduced ? 0 : 1600);
@@ -505,6 +517,7 @@
       if (r.ok && d.free) { markPaid(); return giveReading(); }
       if (!r.ok || !d.url) throw new Error(d.message || d.error || "The way to checkout is clouded. Please try again in a moment.");
       try { sessionStorage.setItem("bridge.state", JSON.stringify({ turns, photo, petName })); } catch {}
+      gtag("event", "begin_checkout", { currency: "USD", value: 14.99 });
       location.href = d.url;
     } catch (e) {
       mediumSays(e.message); $("listen").disabled = false;
@@ -519,7 +532,10 @@
     history.replaceState(null, "", location.pathname);
     let saved = null;
     try { saved = JSON.parse(sessionStorage.getItem("bridge.state") || "null"); } catch {}
-    if (paid) { sid = paid; markPaid(); }
+    if (paid) {
+      sid = paid; markPaid();
+      gtag("event", "purchase", { transaction_id: paid, currency: "USD", value: 14.99, items: [{ item_name: "Rainbow Bridge Reading", price: 14.99, quantity: 1 }] });
+    }
     $("candle").classList.add("lit"); app.classList.add("started");
     if (!saved || !saved.turns?.length) { setGlow(.15); mediumTurn(); return; } // new tab or device: begin again, already paid
     turns.push(...saved.turns); photo = saved.photo; petName = saved.petName || "";
@@ -580,6 +596,7 @@
     const keep = document.createElement("div"); keep.className = "keepsake"; el.appendChild(keep);
     el.appendChild(wantBox());
     el.appendChild(rateBox(r));
+    gtag("event", "reading_given", { tier: r.tier || "free" });
     const again = document.createElement("button"); again.className = "btn quiet again"; again.textContent = "Light a new candle";
     again.onclick = () => location.reload(); el.appendChild(again);
     app.classList.add("revealed"); scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
@@ -612,6 +629,7 @@
     try { if (localStorage.getItem("mls.want.printed-card") === "1") thank(); } catch {}
     b.addEventListener("click", () => {
       thank();
+      gtag("event", "want_printed_card", { from: "bridge" });
       try { localStorage.setItem("mls.want.printed-card", "1"); } catch {}
       fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mode: "interest", item: "printed-card", from: "bridge" }) }).catch(() => {});
@@ -639,6 +657,7 @@
       body: JSON.stringify({ mode: "feedback", rating, comment, action, session_id: sid, reading: withReading ? r : null }) });
     const send = async (rating, comment = "", withReading = false) => {
       box.innerHTML = `<p class="thanks">${rating >= 3 ? "Thank you. Their light stays with you." : "Thank you for telling us. We're listening."}</p>`;
+      gtag("event", "rate_reading", { rating });
       post(rating, comment, withReading).catch(() => {});
     };
     const guarantee = async (action, rating, comment, withReading) => {
@@ -651,6 +670,7 @@
         err.textContent = d.error || "That didn't go through. Please try again.";
         box.querySelectorAll(".acts button").forEach(b => b.disabled = false); return;
       }
+      gtag("event", action === "retry" ? "free_retry" : "refund", action === "retry" ? { rating } : { transaction_id: sid, currency: "USD", value: 14.99 });
       if (action === "retry") return startRetry();
       box.innerHTML = `<p class="thanks">Your refund is on its way. It can take 5 to 10 days to reach your card. Thank you for telling us what missed.</p>`;
     };
