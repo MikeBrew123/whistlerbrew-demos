@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-10T13:40-07:00",
+ "updated": "2026-10-31T07:45-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Reigning champions 🏆",
-  "note": "The league has not posted 2026-27 dates yet. Last season opened December 13, 2025. Games fill in here as soon as they are announced."
+  "note": "Preseason is underway. The league has not posted regular-season dates yet (last season opened December 13, 2025). Games fill in here as soon as they are announced."
  },
  "manager": "César López Andrade",
  "games": [
@@ -61,6 +61,17 @@
    "result": "W 10-7",
    "note": "Extra innings. Champions! Series won 4-2.",
    "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "date": "2026-11-01",
+   "time": "13:00",
+   "opponent": "Magdalena, Jalisco",
+   "home": true,
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "round": "Preseason game",
+   "result": null,
+   "note": "Magdalena are the 2025-26 champions of the Liga Regional de Magdalena. Bring family and friends.",
+   "url": "https://www.facebook.com/JaibosDeSayulitaNay"
   }
  ],
  "roster": [],
