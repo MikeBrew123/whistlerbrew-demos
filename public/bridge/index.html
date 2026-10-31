@@ -100,7 +100,12 @@
   .seance { width: 100%; max-width: 620px; display: none; flex-direction: column; flex: 1; }
   .started .seance { display: flex; }
   .started .intro { display: none; }
-  .started .candle-wrap { order: 3; margin: 12px 0 0; transform: scale(.6); transform-origin: 50% 100%; height: 120px; }
+  .started .candle-wrap { order: 3; margin: 12px 0 0; transform: scale(.6); transform-origin: 50% 0; height: 120px; }
+  .started .hint { display: none; }
+  @media (max-width: 420px) {
+    .row textarea { padding: 14px 14px; }
+    .row .btn.primary { padding: 14px 16px; }
+  }
   .log { display: flex; flex-direction: column; gap: 22px; padding: 8px 0 24px; }
   .log > :last-child { scroll-margin-bottom: 150px; }
   .medium {
@@ -158,6 +163,27 @@
   .keepsake { margin: 40px auto 0; text-align: center; }
   .keepsake img { width: 100%; max-width: 360px; border-radius: 14px; box-shadow: 0 0 60px rgba(245, 200, 106, .18); }
   .keepsake .tools { margin-top: 16px; }
+  [hidden] { display: none !important; }
+
+  /* Voice */
+  .voice-toggle {
+    position: fixed; top: 14px; right: 14px; z-index: 3;
+    font: 500 .85rem var(--sans); color: var(--mist); background: rgba(20, 18, 46, .6);
+    border: 1px solid rgba(221, 214, 238, .25); border-radius: 20px; padding: 7px 14px; cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+  .voice-toggle[aria-pressed="false"] { color: var(--mist-dim); }
+  .voice-toggle:focus-visible, .mic:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
+  .mic {
+    flex: none; width: 52px; height: 52px; border-radius: 50%; padding: 0; display: grid; place-items: center;
+    background: rgba(20, 18, 46, .78); color: var(--mist); border: 1px solid rgba(221, 214, 238, .3); cursor: pointer;
+  }
+  .mic svg { width: 22px; height: 22px; }
+  .mic.rec { color: #2a1d10; background: var(--ember); border-color: var(--ember); animation: hear 1.4s ease-in-out infinite; }
+  .mic:disabled { opacity: .45; cursor: default; }
+  @keyframes hear { 50% { box-shadow: 0 0 0 10px rgba(240, 149, 90, .18); } }
+  .hear { display: block; margin: 0 auto 8px; }
+
   .promise { display: none; text-align: center; font-size: .9rem; color: var(--mist-dim); margin: 2px 0 0; }
   .ready .promise { display: block; }
   .ready.paid .promise { display: none; }
@@ -197,6 +223,7 @@
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="warmth" aria-hidden="true"></div>
+<button class="voice-toggle" id="voiceBtn" type="button" aria-pressed="true" hidden>Voice on</button>
 
 <main id="app">
   <section class="intro">
@@ -217,6 +244,9 @@
       <div class="row">
         <label for="say" class="sr">Your answer</label>
         <textarea id="say" rows="1" maxlength="1000" placeholder="Speak from the heart…"></textarea>
+        <button class="mic" type="button" id="mic" aria-label="Speak your answer" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        </button>
         <button class="btn primary" type="submit" id="send">Answer</button>
       </div>
       <div class="tools">
@@ -232,7 +262,7 @@
 </main>
 
 <footer>
-  An AI experience for comfort and reflection, offered for entertainment. Your photo is never stored; feedback you choose to send is kept so we can improve.
+  An AI experience for comfort and reflection, offered for entertainment. Your photo and voice are never stored; feedback you choose to send is kept so we can improve.
   If grief feels heavy, the ASPCA Pet Loss Hotline is at <a href="tel:18774743310">1-877-474-3310</a>, and in a crisis you can call or text <a href="tel:988">988</a> in Canada or the US.
 </footer>
 
@@ -313,6 +343,86 @@
   }
   function setGlow(n) { document.documentElement.style.setProperty("--glow", Math.min(1, n).toFixed(2)); }
 
+  /* ---------- Voice: the medium speaks aloud; visitors can answer by voice ---------- */
+  const player = new Audio();
+  // A tenth of a second of silence as a WAV, built here so it is always valid.
+  const SILENT = (() => {
+    const n = 800, b = new DataView(new ArrayBuffer(44 + n * 2)), w = (o, s) => [...s].forEach((c, i) => b.setUint8(o + i, c.charCodeAt(0)));
+    w(0, "RIFF"); b.setUint32(4, 36 + n * 2, true); w(8, "WAVEfmt "); b.setUint32(16, 16, true); b.setUint16(20, 1, true); b.setUint16(22, 1, true);
+    b.setUint32(24, 8000, true); b.setUint32(28, 16000, true); b.setUint16(32, 2, true); b.setUint16(34, 16, true); w(36, "data"); b.setUint32(40, n * 2, true);
+    return URL.createObjectURL(new Blob([b], { type: "audio/wav" }));
+  })();
+  let voiceOn = true;
+  try { voiceOn = localStorage.getItem("bridge.voice") !== "off"; } catch {}
+  let speakSeq = 0;
+  const voiceBtn = $("voiceBtn");
+  const showVoice = () => { voiceBtn.textContent = voiceOn ? "Voice on" : "Voice off"; voiceBtn.setAttribute("aria-pressed", String(voiceOn)); };
+  showVoice();
+  voiceBtn.addEventListener("click", () => {
+    voiceOn = !voiceOn; showVoice(); if (!voiceOn) hush();
+    try { localStorage.setItem("bridge.voice", voiceOn ? "on" : "off"); } catch {}
+  });
+  // Phones only allow audio started from a tap; a silent play during the first tap unlocks the player.
+  const unlockAudio = () => { player.src = SILENT; player.play().catch(() => {}); };
+  function hush() { speakSeq++; player.pause(); }
+  async function speak(text, sig, force = false) {
+    if ((!voiceOn && !force) || !voiceReady || !text || !sig) return false;
+    const seq = ++speakSeq;
+    try {
+      const r = await fetch("/api/bridge/voice", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, sig }) });
+      const { id } = await r.json();
+      if (!r.ok || !id || seq !== speakSeq) return false;
+      player.src = `/api/bridge/voice?id=${id}`;
+      await player.play();
+      return true;
+    } catch { return false; }
+  }
+
+  const mic = $("mic");
+  let rec = null, recTimer = 0;
+  // Shown once the server confirms voice is set up (first reply), and only where the browser can record.
+  let voiceReady = false;
+  function enableVoice() {
+    if (voiceReady) return; voiceReady = true;
+    voiceBtn.hidden = false;
+    if (navigator.mediaDevices?.getUserMedia && window.MediaRecorder) mic.hidden = false;
+  }
+  function micState(state) {
+    mic.classList.toggle("rec", state === "rec"); mic.disabled = state === "busy";
+    mic.setAttribute("aria-label", state === "rec" ? "Stop and send your answer" : "Speak your answer");
+    say.placeholder = state === "rec" ? "Listening… tap the mic when done" : state === "busy" ? "Hearing you…" : restingPlaceholder;
+  }
+  const restingPlaceholder = innerWidth < 420 ? "Your answer…" : "Speak from the heart…";
+  say.placeholder = restingPlaceholder;
+  mic.addEventListener("click", async () => {
+    if (rec) { rec.stop(); return; }
+    if (busy) return;
+    hush();
+    let stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch { say.placeholder = "The microphone is off. You can type instead."; return; }
+    const chunks = [];
+    rec = new MediaRecorder(stream);
+    rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+    rec.onstop = async () => {
+      clearTimeout(recTimer); stream.getTracks().forEach(t => t.stop());
+      const type = rec.mimeType || "audio/webm"; rec = null;
+      const blob = new Blob(chunks, { type });
+      if (blob.size < 2000) { micState("idle"); return; }
+      micState("busy");
+      try {
+        const form = new FormData(); form.append("audio", blob, "answer");
+        const r = await fetch("/api/bridge/voice", { method: "POST", body: form });
+        const d = await r.json().catch(() => ({}));
+        micState("idle");
+        if (!r.ok || !d.text) { say.placeholder = d.error || "I couldn't hear that. Please try again or type it."; return; }
+        say.value = d.text; $("speak").requestSubmit();
+      } catch { micState("idle"); say.placeholder = "I couldn't hear that. Please try again or type it."; }
+    };
+    rec.start(); micState("rec");
+    recTimer = setTimeout(() => rec && rec.stop(), 90000);
+  });
+
   async function ask(mode) {
     const body = { mode, turns };
     if (photo && (photoPending || mode === "reading")) body.image = photo;
@@ -327,10 +437,12 @@
   async function mediumTurn() {
     busy = true; send.disabled = true; waiting(true);
     try {
-      const { reply, ready } = await ask("chat");
+      const { reply, ready, sig, voice } = await ask("chat");
+      if (voice) enableVoice();
       waiting(false);
       turns.push({ role: "medium", text: reply });
       const ms = mediumSays(reply);
+      speak(reply, sig);
       setGlow(turns.filter(t => t.role === "visitor").length / 5);
       if (ready) setTimeout(() => $("speak").classList.add("ready"), ms + 400), app.classList.add("near");
     } catch (e) {
@@ -342,6 +454,7 @@
 
   $("candle").addEventListener("click", () => {
     if (app.classList.contains("started")) return;
+    unlockAudio();
     $("candle").classList.add("lit"); $("candle").setAttribute("aria-label", "The candle is lit");
     $("hint").textContent = ""; setGlow(.15);
     setTimeout(() => { app.classList.add("started"); mediumTurn(); }, reduced ? 0 : 1600);
@@ -351,6 +464,7 @@
     e.preventDefault();
     const text = say.value.trim();
     if (!text || busy) return;
+    hush();
     if (!petName && turns.filter(t => t.role === "visitor").length === 0) petName = text.split(/[\s,.]/)[0];
     turns.push({ role: "visitor", text }); visitorSays(text);
     say.value = ""; say.style.height = "";
@@ -424,7 +538,10 @@
     try {
       const r = await ask("reading");
       waiting(false);
-      if (!r.remembers) { mediumSays(r.message || "The connection slipped away. Please try again."); $("listen").disabled = false; return; }
+      if (!r.remembers) {
+        const words = r.message || "The connection slipped away. Please try again.";
+        mediumSays(words); speak(words, r.sig); $("listen").disabled = false; return;
+      }
       showReading(r);
     } catch (e) {
       waiting(false); mediumSays(e.message); $("listen").disabled = false;
@@ -444,6 +561,17 @@
     const add = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; el.appendChild(n); return n; };
     add("h2", "", r.title || "A message across the bridge");
     add("p", "from", "from " + (r.petName || petName || "your companion"));
+    if (r.voice) enableVoice();
+    if (r.voice && r.narration && r.narrationSig) {
+      const hear = add("button", "btn quiet hear", "Hear their message"); hear.type = "button";
+      hear.onclick = async () => {
+        if (!player.paused && player.src.includes("/api/bridge/voice")) { hush(); hear.textContent = "Hear their message"; return; }
+        hear.textContent = "Pause";
+        if (!(await speak(r.narration, r.narrationSig, true))) hear.textContent = "Hear their message";
+      };
+      player.onended = () => { hear.textContent = "Hear their message"; };
+      speak(r.narration, r.narrationSig).then((ok) => { if (ok) hear.textContent = "Pause"; });
+    }
     add("h3", "", "What I remember"); add("p", "voice", r.remembers);
     add("h3", "", "What I want you to know"); add("p", "voice", r.wantsYouToKnow);
     add("h3", "", "A sign to watch for"); add("p", "voice", r.sign);

@@ -55,3 +55,4 @@ config/service-account.json
 
 # clasp working copy for the pushup Apps Script (re-clone with clasp)
 pushup/apps-script/
+voice-samples/

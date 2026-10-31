@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getRequestContext } from "@cloudflare/next-on-pages";
-import { KV, Purchase, canRefund, createCheckout, loadPurchase, refund, savePurchase, validSession } from "./purchase";
+import { Purchase, canRefund, createCheckout, loadPurchase, refund, savePurchase, validSession } from "./purchase";
+import { clientIp, kv, overLimit, secret, signText } from "./shared";
 
 export const runtime = "edge";
 
@@ -17,7 +17,6 @@ const MODEL = "claude-sonnet-5-5";
 const MAX_TURNS = 24;
 const MAX_TEXT = 1200;
 const MAX_IMAGE_B64 = 2_000_000;
-const LIMITS = { chat: 80, reading: 3, feedback: 10 };
 const READY = "[[READY]]";
 
 const PERSONA = `You are the Keeper of the Rainbow Bridge, a gentle, old-souled medium who sits by a single candle and listens for animals who have crossed over. You speak to a person whose pet has died.
@@ -44,31 +43,14 @@ Now deliver the reading: the pet speaking in their own first-person voice, throu
 Respond ONLY with valid JSON, no markdown:
 {"petName":"name","title":"a short evocative title for the reading","remembers":"2-4 sentences, first person, what they remember and loved","wantsYouToKnow":"2-4 sentences, first person, what they want the person to know (release any guilt, they are at peace)","sign":"1-2 sentences, a gentle sign to watch for, tied to their habits","cardLine":"one luminous sentence under 110 characters for a keepsake card"}`;
 
-function cfEnv(): Record<string, unknown> {
-  try {
-    return getRequestContext().env as Record<string, unknown>;
-  } catch {
-    return {};
-  }
-}
-
-const kv = () => (cfEnv().BRIDGE as KV) ?? null;
-
-// Pages secrets arrive on the request context in production; `next dev` reads .env.local.
-const secret = (name: string) => (cfEnv()[name] as string | undefined) ?? process.env[name];
-
 const paidState = (p: Purchase) => ({ tier: "paid", canRetry: p.allowed === 1 && !p.refunded, canRefund: canRefund(p) });
 
-const clientIp = (req: NextRequest) =>
-  req.headers.get("cf-connecting-ip") ?? req.headers.get("x-forwarded-for") ?? "local";
-
-async function overLimit(store: KV | null, ip: string, mode: keyof typeof LIMITS): Promise<boolean> {
-  if (!store) return false;
-  const key = `rl:${mode}:${ip}:${new Date().toISOString().slice(0, 10)}`;
-  const used = parseInt((await store.get(key)) ?? "0", 10) || 0;
-  if (used >= LIMITS[mode]) return true;
-  await store.put(key, String(used + 1), { expirationTtl: 60 * 60 * 26 });
-  return false;
+// What the medium reads aloud at the reveal, signed so /api/bridge/voice will speak it.
+async function narrated(reading: Record<string, unknown>) {
+  const narration = [reading.title, reading.remembers, reading.wantsYouToKnow, reading.sign]
+    .filter((s) => typeof s === "string" && s)
+    .join("\n\n");
+  return { narration, narrationSig: await signText(narration), voice: !!secret("OPENAI_API_KEY") };
 }
 
 function parseImage(raw: unknown) {
@@ -169,7 +151,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "unpaid", message: "The candle is waiting for your offering." }, { status: 402 });
     }
     if (purchase.used >= purchase.allowed) {
-      if (purchase.reading) return NextResponse.json({ ...purchase.reading, ...paidState(purchase) });
+      if (purchase.reading) return NextResponse.json({ ...purchase.reading, ...paidState(purchase), ...(await narrated(purchase.reading)) });
       return NextResponse.json({ error: "unpaid", message: "This reading has already been given." }, { status: 402 });
     }
   } else if (await overLimit(kv(), clientIp(req), mode)) {
@@ -231,7 +213,8 @@ export async function POST(req: NextRequest) {
     if (!raw.replace(READY, "").trim()) {
       return NextResponse.json({ error: "veil", message: "The words slipped away before they reached me. Please say that once more." }, { status: 502 });
     }
-    return NextResponse.json({ reply: raw.replace(READY, "").trim(), ready });
+    const reply = raw.replace(READY, "").trim();
+    return NextResponse.json({ reply, ready, sig: await signText(reply), voice: !!secret("OPENAI_API_KEY") });
   }
 
   const match = raw.match(/\{[\s\S]*\}/);
@@ -242,11 +225,11 @@ export async function POST(req: NextRequest) {
       purchase.used += 1;
       purchase.reading = reading;
       await savePurchase(kv(), sid, purchase);
-      return NextResponse.json({ ...reading, ...paidState(purchase) });
+      return NextResponse.json({ ...reading, ...paidState(purchase), ...(await narrated(reading)) });
     }
-    return NextResponse.json({ ...reading, tier: "free" });
+    return NextResponse.json({ ...reading, tier: "free", ...(await narrated(reading)) });
   } catch {
     // Not JSON: usually the medium stepped out of character (crisis care). Pass it through as plain words.
-    return NextResponse.json({ message: raw, tier: "free" });
+    return NextResponse.json({ message: raw, tier: "free", sig: await signText(raw) });
   }
 }
