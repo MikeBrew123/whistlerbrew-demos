@@ -185,6 +185,9 @@ Swap test: the thump, floor time, the flop, the charger, listening for keys. Pas
 
 ## 4. For Brew to decide
 
+Answered 2026-10-31: same guarantee as the Bridge, grief hand-off to the Bridge approved, host stays unnamed. Still open: price and launch date.
+
+
 1. **Price and launch.** The product stays "Coming soon" until you price and launch it. Nothing in these prompts mentions money.
 2. **Guarantee.** The money-back guarantee is written for the Bridge. Does the same one (under 3 stars plus a reason, one free retry or a full refund within 30 days) apply here?
 3. **Grief hand-off.** If someone says their pet has died or is near the end, the host stops joking and points them to The Rainbow Bridge on the same site. Happy with that hand-off?

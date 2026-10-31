@@ -55,7 +55,8 @@ The home page moves from daylight to candlelight like a day ending. A grieving v
 4. **Crisis care.** Any prompt Hazel writes that talks with customers must step out of the act if someone sounds at risk: they matter, reach out now, call or text 9-8-8 in Canada or 988 in the US, or local emergency services.
 5. **Facts are fixed. Use them exactly, never embellish:**
    - The Rainbow Bridge reading: $14.99 USD. The conversation is free; the reading is paid.
-   - Guarantee: under 3 stars plus a few words about what missed earns one free retry with new answers, or a full refund, within 30 days.
+   - Guarantee (every paid reading, Bridge and living-pet alike; Brew 2026-10-31): under 3 stars plus a few words about what missed earns one free retry with new answers, or a full refund, within 30 days.
+   - Living-pet host: unnamed. If someone says their pet has died or is near the end, the host stops joking and points them gently to The Rainbow Bridge.
    - Photos and voice recordings are never stored. Feedback people choose to send is kept so we can improve.
    - Living-pet reading, letters and "Their story so far" are **Coming soon** until Brew prices and launches them. Never invent a price or a date.
    - Required footer line wherever the site has a footer: "An AI experience for comfort, celebration and entertainment."
