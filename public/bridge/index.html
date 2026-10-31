@@ -242,6 +242,34 @@
     gtag("js", new Date()); gtag("config", "G-6KL3XFSD8V");
   }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "Rainbow Bridge Reading",
+ "url": "https://mylittleshadow.com/bridge",
+ "description": "A gentle reading from a pet who has died, in their own voice, plus a keepsake card. Money back if it doesn't feel like them.",
+ "image": "https://mylittleshadow.com/bridge/og.jpg",
+ "brand": {
+  "@type": "Brand",
+  "name": "My Little Shadow"
+ },
+ "offers": {
+  "@type": "Offer",
+  "price": "14.99",
+  "priceCurrency": "USD",
+  "availability": "https://schema.org/InStock",
+  "url": "https://mylittleshadow.com/bridge",
+  "hasMerchantReturnPolicy": {
+   "@type": "MerchantReturnPolicy",
+   "applicableCountry": "CA",
+   "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+   "merchantReturnDays": 30,
+   "returnFees": "https://schema.org/FreeReturn"
+  }
+ }
+}
+</script>
 </head>
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
@@ -624,7 +652,7 @@
         sh.onclick = async () => {
           const blob = await (await fetch(url)).blob();
           const file = new File([blob], `rainbow-bridge-${name}.png`, { type: "image/png" });
-          if (navigator.canShare({ files: [file] })) navigator.share({ files: [file], title: "The Rainbow Bridge" }).catch(() => {});
+          if (navigator.canShare({ files: [file] })) navigator.share({ files: [file], title: "The Rainbow Bridge", text: "A message from " + (r.petName || "my companion") + ", across the Rainbow Bridge. https://mylittleshadow.com/bridge?utm_source=card_share&utm_medium=social" }).catch(() => {});
         };
         tools.appendChild(sh);
       }

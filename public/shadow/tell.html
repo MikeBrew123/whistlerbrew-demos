@@ -183,6 +183,34 @@
     gtag("js", new Date()); gtag("config", "G-6KL3XFSD8V");
   }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "What they'd tell you",
+ "url": "https://mylittleshadow.com/tell",
+ "description": "A playful reading in your pet's own voice: answers to the questions you've always wanted to ask them, plus a card made for sharing. Money back if it doesn't sound like them.",
+ "image": "https://mylittleshadow.com/shadow/og.jpg",
+ "brand": {
+  "@type": "Brand",
+  "name": "My Little Shadow"
+ },
+ "offers": {
+  "@type": "Offer",
+  "price": "9.99",
+  "priceCurrency": "USD",
+  "availability": "https://schema.org/InStock",
+  "url": "https://mylittleshadow.com/tell",
+  "hasMerchantReturnPolicy": {
+   "@type": "MerchantReturnPolicy",
+   "applicableCountry": "CA",
+   "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+   "merchantReturnDays": 30,
+   "returnFees": "https://schema.org/FreeReturn"
+  }
+ }
+}
+</script>
 </head>
 <body>
 <nav aria-label="Main">
@@ -521,14 +549,15 @@
       const tools = document.createElement("div"); tools.className = "tools";
       const name = (r.petName || "my-pet").replace(/[^\w-]+/g, "-").toLowerCase();
       const dl = document.createElement("button"); dl.className = "btn primary"; dl.textContent = "Save their card";
-      dl.onclick = () => { const a = document.createElement("a"); a.href = url; a.download = `${name}-says.png`; a.click(); };
+      dl.onclick = () => { gtag("event", "save_card", { product: PRODUCT }); const a = document.createElement("a"); a.href = url; a.download = `${name}-says.png`; a.click(); };
       tools.appendChild(dl);
       if (navigator.canShare) {
         const sh = document.createElement("button"); sh.className = "btn quiet"; sh.textContent = "Share";
         sh.onclick = async () => {
+          gtag("event", "share", { method: "card", content_type: PRODUCT });
           const blob = await (await fetch(url)).blob();
           const file = new File([blob], `${name}-says.png`, { type: "image/png" });
-          if (navigator.canShare({ files: [file] })) navigator.share({ files: [file], title: "What they'd tell you" }).catch(() => {});
+          if (navigator.canShare({ files: [file] })) navigator.share({ files: [file], title: "What they'd tell you", text: `${r.petName || "My pet"} finally got a word in. Hear what yours would say: https://mylittleshadow.com/tell?utm_source=card_share&utm_medium=social` }).catch(() => {});
         };
         tools.appendChild(sh);
       }
