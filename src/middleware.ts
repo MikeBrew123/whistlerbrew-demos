@@ -10,6 +10,14 @@ const MOVED: Record<string, string> = {
   "/shadow/": "/",
 };
 
+// Clean addresses on mylittleshadow.com for pages that live under public/shadow/.
+const PAGES: Record<string, string> = {
+  "/": "/shadow/index.html",
+  "/privacy": "/shadow/privacy.html",
+  "/terms": "/shadow/terms.html",
+  "/contact": "/shadow/contact.html",
+};
+
 export function middleware(req: NextRequest) {
   const host = (req.headers.get("host") ?? "").toLowerCase();
   const url = req.nextUrl.clone();
@@ -26,9 +34,10 @@ export function middleware(req: NextRequest) {
     url.protocol = "https";
     return NextResponse.redirect(url, 308);
   }
-  if (url.pathname !== "/") return NextResponse.next();
-  url.pathname = "/shadow/index.html";
+  const page = PAGES[url.pathname];
+  if (!page) return NextResponse.next();
+  url.pathname = page;
   return NextResponse.rewrite(url);
 }
 
-export const config = { matcher: ["/", "/bridge/index.html", "/shadow/index.html", "/shadow/"] };
+export const config = { matcher: ["/", "/privacy", "/terms", "/contact", "/bridge/index.html", "/shadow/index.html", "/shadow/"] };
