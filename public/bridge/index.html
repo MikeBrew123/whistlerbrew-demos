@@ -287,6 +287,7 @@
 <footer>
   An AI experience for comfort and reflection, offered for entertainment. Your photo and voice are never stored; feedback you choose to send is kept so we can improve. We use Google Analytics to count visits.
   If grief feels heavy, the ASPCA Pet Loss Hotline is at <a href="tel:18774743310">1-877-474-3310</a>, and in a crisis you can call or text <a href="tel:988">988</a> in Canada or the US.
+  <br>Our promise: if a reading doesn't feel like them, try again free from your reading, or email <a href="mailto:hello@mylittleshadow.com">hello@mylittleshadow.com</a> within 30 days for a full refund, handled within 24 hours.
   <br><span class="foot-links"><a href="/">My Little Shadow</a> <a href="/privacy">Privacy</a> <a href="/terms">Terms</a> <a href="/contact">Contact</a></span>
 </footer>
 
@@ -651,10 +652,9 @@
   /* ---------- How did we do? Under 3 stars asks what we got wrong, then offers the guarantee. ---------- */
   function rateBox(r) {
     const box = document.createElement("form"); box.className = "rate";
-    const acts = r.tier === "paid" ? [
-      r.canRetry && `<button class="btn primary" type="submit" value="retry">Try again with new answers</button>`,
-      r.canRefund && `<button class="btn quiet" type="submit" value="refund">Refund me</button>`,
-    ].filter(Boolean).join("") : "";
+    // The guarantee steers to a free retry; refunds are by email (see the footer and Terms).
+    const acts = r.tier === "paid" && r.canRetry
+      ? `<button class="btn primary" type="submit" value="retry">Try again with new answers, free</button>` : "";
     box.innerHTML = `<fieldset><legend>How did we do?</legend><div class="stars">${
       [5, 4, 3, 2, 1].map(n => `<input type="radio" name="stars" id="s${n}" value="${n}"><label for="s${n}" title="${n} of 5" aria-label="${n} of 5">★</label>`).join("")
     }</div></fieldset>
