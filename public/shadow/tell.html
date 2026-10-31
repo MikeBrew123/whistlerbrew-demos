@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What they'd tell you | My Little Shadow</title>
+<meta name="description" content="A playful reading in your pet's own voice. Tell us about them, add a photo, and hear what they've been trying to tell you.">
+<meta property="og:title" content="What they'd tell you">
+<meta property="og:description" content="Hear what your little shadow has been trying to tell you.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mylittleshadow.com/tell">
+<meta property="og:image" content="https://mylittleshadow.com/shadow/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A person and their dog at sunset, their shadows touching. My Little Shadow.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mylittleshadow.com/shadow/og.jpg">
+<link rel="canonical" href="https://mylittleshadow.com/tell">
+<meta name="theme-color" content="#fbefb4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c2140;
+    --ink-soft: #4a5070;
+    --butter: #fff0a8;
+    --paper: #fffdf6;
+    --sun: #ffd45c;
+    --peach: #ffb27e;
+    --head: "Bricolage Grotesque", system-ui, sans-serif;
+    --body: "Figtree", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: #ffe28f; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: linear-gradient(180deg, #d6ecfa 0, #e9f2ef 400px, #fbefb4 1100px, #ffe28f 1800px) no-repeat #ffe28f;
+    color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55;
+    overflow-x: hidden;
+  }
+  a { color: var(--ink); }
+  a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  nav { max-width: 760px; margin: 0 auto; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--head); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; border-radius: 999px; }
+  .voice-toggle {
+    font: 600 14px var(--body); color: var(--ink); background: var(--paper);
+    border: 2px solid var(--ink); border-radius: 999px; min-height: 40px; padding: 0 16px; cursor: pointer;
+  }
+  .voice-toggle[aria-pressed="false"] { opacity: .6; }
+
+  main { max-width: 760px; margin: 0 auto; padding: 8px 20px 24px; min-height: calc(100dvh - 80px); display: flex; flex-direction: column; }
+
+  /* Intro */
+  .kicker { margin: 24px 0 10px; font-weight: 600; font-size: 15px; letter-spacing: .02em; }
+  h1 { margin: 0; font-family: var(--head); font-weight: 800; font-size: clamp(2.4rem, 7.5vw, 4rem); line-height: 1.02; letter-spacing: -0.03em; max-width: 12em; }
+  .lede { margin: 18px 0 28px; font-size: 19px; max-width: 30em; }
+  .btn {
+    font: 700 17px var(--body); border-radius: 999px; min-height: 52px; padding: 0 26px; cursor: pointer;
+    border: 2px solid var(--ink); display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .btn.primary { background: var(--ink); color: var(--butter); box-shadow: 0 10px 24px -10px rgba(28,33,64,.6); }
+  .btn.primary:hover { background: #2c3260; }
+  .btn.quiet { background: var(--paper); color: var(--ink); }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .small { font-size: 15px; color: var(--ink-soft); margin: 14px 0 0; max-width: 32em; }
+  .steps { list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 20px 28px; }
+  .steps li { flex: 1 1 180px; border-top: 2px dashed rgba(28,33,64,.4); padding-top: 14px; font-size: 16px; }
+  .steps b { display: block; font-family: var(--head); font-size: 20px; }
+
+  /* Interview */
+  .chat { display: none; flex-direction: column; flex: 1; }
+  .started .chat { display: flex; }
+  .started .intro { display: none; }
+  .log { display: flex; flex-direction: column; gap: 16px; padding: 16px 0 24px; }
+  .log > :last-child { scroll-margin-bottom: 170px; }
+  .host {
+    align-self: flex-start; max-width: min(34em, 92%);
+    background: var(--paper); border-radius: 24px 24px 24px 6px; padding: 16px 20px;
+    font-family: var(--head); font-weight: 600; font-size: 20px; line-height: 1.35;
+    box-shadow: 0 12px 26px -18px rgba(28,33,64,.5);
+  }
+  .host .ch { opacity: 0; animation: pop .25s ease forwards; }
+  @keyframes pop { to { opacity: 1; } }
+  .person {
+    align-self: flex-end; max-width: min(28em, 85%);
+    background: var(--ink); color: var(--butter); border-radius: 24px 24px 6px 24px; padding: 12px 18px; font-size: 17px;
+  }
+  .person img { display: block; width: 140px; height: 140px; object-fit: cover; border-radius: 16px; }
+  .person.pic { background: transparent; padding: 0; }
+  .thinking { align-self: flex-start; font-family: var(--head); font-weight: 600; color: var(--ink-soft); padding: 4px 8px; }
+  .thinking span { display: inline-block; animation: hop 1s ease-in-out infinite; }
+  .thinking span:nth-child(2) { animation-delay: .15s; } .thinking span:nth-child(3) { animation-delay: .3s; }
+  @keyframes hop { 50% { transform: translateY(-4px); } }
+
+  form.say { position: sticky; bottom: 12px; display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+  .row { display: flex; gap: 8px; align-items: flex-end; }
+  textarea {
+    flex: 1; resize: none; min-height: 52px; max-height: 160px;
+    background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: 26px;
+    padding: 13px 20px; font: inherit; line-height: 1.4;
+  }
+  textarea::placeholder { color: var(--ink-soft); }
+  .mic {
+    flex: none; width: 52px; height: 52px; border-radius: 50%; padding: 0; display: grid; place-items: center;
+    background: var(--paper); color: var(--ink); border: 2px solid var(--ink); cursor: pointer;
+  }
+  .mic svg { width: 22px; height: 22px; }
+  .mic.rec { background: var(--peach); animation: hear 1.4s ease-in-out infinite; }
+  .mic:disabled { opacity: .5; cursor: default; }
+  @keyframes hear { 50% { box-shadow: 0 0 0 10px rgba(255,178,126,.35); } }
+  .tools { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .tools .btn { min-height: 44px; font-size: 15px; }
+  .listen-btn { display: none; align-self: center; font-size: 19px; min-height: 58px; }
+  .ready .listen-btn { display: inline-flex; }
+  .ready .row, .ready .tools { display: none; }
+  .promise { display: none; text-align: center; font-size: 15px; color: var(--ink-soft); margin: 0; }
+  .ready .promise { display: block; }
+  .ready.paid .promise { display: none; }
+
+  /* The reading */
+  .reading { display: none; padding: 16px 0 24px; }
+  .revealed .reading { display: block; animation: rise .8s ease both; }
+  .revealed .chat { display: none; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .reading .from { margin: 16px 0 6px; font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+  .reading h2 { margin: 0 0 20px; font-family: var(--head); font-weight: 800; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.05; letter-spacing: -0.025em; }
+  .hear { margin: 0 0 24px; min-height: 44px; font-size: 15px; }
+  .portrait { font-family: var(--head); font-weight: 600; font-size: 22px; line-height: 1.4; margin: 0; }
+  .reading h3 { margin: 36px 0 14px; font-family: var(--head); font-weight: 800; font-size: 24px; letter-spacing: -0.01em; }
+  .qa { display: flex; flex-direction: column; gap: 14px; }
+  .qa .q { align-self: flex-end; max-width: 85%; background: var(--ink); color: var(--butter); border-radius: 22px 22px 6px 22px; padding: 10px 16px; margin: 0; }
+  .qa .a { align-self: flex-start; max-width: 92%; background: var(--paper); border-radius: 22px 22px 22px 6px; padding: 14px 18px; margin: 0; font-family: var(--head); font-weight: 600; font-size: 19px; line-height: 1.38; box-shadow: 0 12px 26px -18px rgba(28,33,64,.5); }
+  .know { background: var(--sun); border-radius: 24px; padding: 20px 22px; font-family: var(--head); font-weight: 600; font-size: 21px; line-height: 1.4; margin: 0; }
+  .keepsake { margin: 40px auto 0; text-align: center; }
+  .keepsake img { width: 100%; max-width: 380px; border-radius: 18px; box-shadow: 0 24px 40px -22px rgba(28,33,64,.55); transform: rotate(-1.5deg); }
+  .keepsake .tools { margin-top: 20px; }
+  .want-line { margin: 28px auto 0; text-align: center; font-weight: 600; display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: center; }
+  .want-line .btn { min-height: 44px; font-size: 15px; }
+  [hidden] { display: none !important; }
+
+  /* How did we do? */
+  .rate { margin: 44px auto 0; text-align: center; max-width: 440px; }
+  .rate legend { font-family: var(--head); font-weight: 800; font-size: 22px; margin: 0 auto 8px; padding: 0; }
+  .rate fieldset { border: 0; margin: 0; padding: 0; }
+  .stars { display: inline-flex; flex-direction: row-reverse; gap: 4px; }
+  .stars input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .stars label { font-size: 2.2rem; line-height: 1; color: rgba(28,33,64,.25); cursor: pointer; padding: 4px; transition: color .15s; }
+  .stars label:hover, .stars label:hover ~ label, .stars input:checked ~ label { color: var(--ink); }
+  .stars input:focus-visible + label { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 6px; }
+  .miss { display: none; flex-direction: column; gap: 10px; margin-top: 14px; text-align: left; }
+  .miss.open { display: flex; }
+  .miss textarea { border-radius: 18px; min-height: 96px; }
+  .miss .check { display: flex; gap: 8px; align-items: center; font-size: 15px; color: var(--ink-soft); }
+  .miss .acts { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .miss .err { color: #a3361f; font-size: 15px; text-align: center; margin: 0; min-height: 1.2em; }
+  .thanks { font-family: var(--head); font-weight: 600; font-size: 19px; margin: 12px 0 0; }
+  .again { display: flex; margin: 28px auto 0; }
+
+  footer { max-width: 760px; margin: 0 auto; padding: 8px 20px 32px; font-size: 14px; color: var(--ink-soft); text-align: center; }
+  .foot-links { display: inline-flex; flex-wrap: wrap; gap: 4px 18px; justify-content: center; margin-top: 10px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+  @media (max-width: 420px) {
+    .host { font-size: 18px; }
+    textarea { padding: 13px 14px; }
+    .row .btn.primary { padding: 0 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .host .ch { opacity: 1; }
+  }
+</style>
+<script>
+  // Google Analytics (property "My Little Shadow"), on mylittleshadow.com only.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  if (location.hostname.endsWith("mylittleshadow.com")) {
+    const ga = document.createElement("script");
+    ga.async = true; ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6KL3XFSD8V";
+    document.head.appendChild(ga);
+    gtag("js", new Date()); gtag("config", "G-6KL3XFSD8V");
+  }
+</script>
+</head>
+<body>
+<nav aria-label="Main">
+  <a class="brand" href="/">
+    <svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="#1c2140"></circle><ellipse cx="27" cy="16" rx="6" ry="5" fill="#1c2140" opacity="0.28"></ellipse></svg>
+    My Little Shadow
+  </a>
+  <button class="voice-toggle" id="voiceBtn" type="button" aria-pressed="true" hidden>Voice on</button>
+</nav>
+
+<main id="app">
+  <section class="intro">
+    <p class="kicker">What they'd tell you</p>
+    <h1>Let them finally get a word in.</h1>
+    <p class="lede">Tell us about the one who follows you from room to room. A few quick questions, a photo if you like, and they get the microphone: a funny, loving message in their own voice, plus a card made for sharing.</p>
+    <button class="btn primary" id="begin" type="button">Start
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </button>
+    <p class="small">The chat is free. Their reading is $9.99 USD, and if it doesn't sound like them, you get your money back.</p>
+    <ol class="steps">
+      <li><b>Tell us about them</b>Type or just talk. Their habits, their crimes, the spot on the couch that is legally theirs.</li>
+      <li><b>Add a photo</b>Optional. We use it for your reading and your card, then let it go.</li>
+      <li><b>Hear what they'd say</b>Their take on life with you, and answers to the questions you've always wanted to ask.</li>
+    </ol>
+  </section>
+
+  <section class="chat" aria-live="polite">
+    <div class="log" id="log"></div>
+    <form class="say" id="say">
+      <div class="row">
+        <label for="text" class="sr">Your answer</label>
+        <textarea id="text" rows="1" maxlength="1000" placeholder="Tell me about them…"></textarea>
+        <button class="mic" type="button" id="mic" aria-label="Speak your answer" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        </button>
+        <button class="btn primary" type="submit" id="send">Send</button>
+      </div>
+      <div class="tools">
+        <button class="btn quiet" type="button" id="photoBtn">Add a photo</button>
+        <input type="file" id="photo" accept="image/*" hidden>
+      </div>
+      <button class="btn primary listen-btn" type="button" id="listen">Hear from them, $9.99</button>
+      <p class="promise">If it doesn't sound like them, you get your money back.</p>
+    </form>
+  </section>
+
+  <article class="reading" id="reading" aria-live="polite"></article>
+</main>
+
+<footer>
+  An AI experience for fun and celebration. It's a playful voice built from what you tell us, not mind reading, and never veterinary advice: health questions go to your vet. Your photo and voice are never stored; feedback you choose to send is kept so we can improve. We use Google Analytics to count visits.
+  <br>Our promise: if a reading doesn't sound like them, try again free from your reading, or email <a href="mailto:hello@mylittleshadow.com">hello@mylittleshadow.com</a> within 30 days for a full refund, handled within 24 hours.
+  <br><span class="foot-links"><a href="/">My Little Shadow</a> <a href="/bridge">The Rainbow Bridge</a> <a href="/privacy">Privacy</a> <a href="/terms">Terms</a> <a href="/contact">Contact</a></span>
+</footer>
+
+<script>
+(() => {
+  const PRODUCT = "tell", PRICE = 9.99, ITEM = "What they'd tell you";
+  const $ = (id) => document.getElementById(id);
+  const app = $("app"), log = $("log"), text = $("text"), send = $("send");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const turns = [];
+  let photo = null, photoPending = false, petName = "", busy = false;
+  let sid = null; // paid Stripe checkout session for this reading
+  const PHOTO_NOTE = "Here's a photo of them.";
+  const api = (body) => fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ product: PRODUCT, ...body }) });
+
+  /* ---------- Conversation ---------- */
+  function hostSays(words, instant = false) {
+    const p = document.createElement("p"); p.className = "host";
+    if (reduced || instant) p.textContent = words;
+    else [...words].forEach((c, i) => {
+      const s = document.createElement("span"); s.className = "ch"; s.textContent = c;
+      s.style.animationDelay = (i * 14) + "ms"; p.appendChild(s);
+    });
+    log.appendChild(p); p.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "end" });
+    return reduced || instant ? 0 : words.length * 14;
+  }
+  function personSays(words, img) {
+    const p = document.createElement("div"); p.className = "person" + (img ? " pic" : "");
+    if (img) { const i = new Image(); i.src = img; i.alt = "Your photo"; p.appendChild(i); }
+    if (words) p.appendChild(document.createTextNode(words));
+    log.appendChild(p);
+  }
+  function waiting(on) {
+    let w = $("waiting");
+    if (on && !w) {
+      w = document.createElement("p"); w.id = "waiting"; w.className = "thinking";
+      w.innerHTML = "<span>.</span><span>.</span><span>.</span>"; w.setAttribute("aria-label", "Thinking");
+      log.appendChild(w); w.scrollIntoView({ block: "end" });
+    }
+    if (!on && w) w.remove();
+  }
+
+  /* ---------- Voice: the host (and later the pet) speaks aloud; answers can be spoken ---------- */
+  const player = new Audio();
+  const SILENT = (() => {
+    const n = 800, b = new DataView(new ArrayBuffer(44 + n * 2)), w = (o, s) => [...s].forEach((c, i) => b.setUint8(o + i, c.charCodeAt(0)));
+    w(0, "RIFF"); b.setUint32(4, 36 + n * 2, true); w(8, "WAVEfmt "); b.setUint32(16, 16, true); b.setUint16(20, 1, true); b.setUint16(22, 1, true);
+    b.setUint32(24, 8000, true); b.setUint32(28, 16000, true); b.setUint16(32, 2, true); b.setUint16(34, 16, true); w(36, "data"); b.setUint32(40, n * 2, true);
+    return URL.createObjectURL(new Blob([b], { type: "audio/wav" }));
+  })();
+  let voiceOn = true;
+  try { voiceOn = localStorage.getItem("tell.voice") !== "off"; } catch {}
+  let speakSeq = 0;
+  const voiceBtn = $("voiceBtn");
+  const showVoice = () => { voiceBtn.textContent = voiceOn ? "Voice on" : "Voice off"; voiceBtn.setAttribute("aria-pressed", String(voiceOn)); };
+  showVoice();
+  voiceBtn.addEventListener("click", () => {
+    voiceOn = !voiceOn; showVoice(); if (!voiceOn) hush();
+    try { localStorage.setItem("tell.voice", voiceOn ? "on" : "off"); } catch {}
+  });
+  const unlockAudio = () => { player.src = SILENT; player.play().catch(() => {}); };
+  function hush() { speakSeq++; player.pause(); }
+  async function speak(words, sig, force = false) {
+    if ((!voiceOn && !force) || !voiceReady || !words || !sig) return false;
+    const seq = ++speakSeq;
+    try {
+      const r = await fetch("/api/bridge/voice", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: words, sig, tone: PRODUCT }) });
+      const { id } = await r.json();
+      if (!r.ok || !id || seq !== speakSeq) return false;
+      player.src = `/api/bridge/voice?id=${id}`;
+      await player.play();
+      return true;
+    } catch { return false; }
+  }
+
+  const mic = $("mic");
+  let rec = null, recTimer = 0, voiceReady = false;
+  function enableVoice() {
+    if (voiceReady) return; voiceReady = true;
+    voiceBtn.hidden = false;
+    if (navigator.mediaDevices?.getUserMedia && window.MediaRecorder) mic.hidden = false;
+  }
+  const restingPlaceholder = innerWidth < 420 ? "Your answer…" : "Tell me about them…";
+  text.placeholder = restingPlaceholder;
+  function micState(state) {
+    mic.classList.toggle("rec", state === "rec"); mic.disabled = state === "busy";
+    mic.setAttribute("aria-label", state === "rec" ? "Stop and send your answer" : "Speak your answer");
+    text.placeholder = state === "rec" ? "Listening… tap the mic when done" : state === "busy" ? "Getting that down…" : restingPlaceholder;
+  }
+  mic.addEventListener("click", async () => {
+    if (rec) { rec.stop(); return; }
+    if (busy) return;
+    hush();
+    let stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch { text.placeholder = "The microphone is off. You can type instead."; return; }
+    const chunks = [];
+    rec = new MediaRecorder(stream);
+    rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+    rec.onstop = async () => {
+      clearTimeout(recTimer); stream.getTracks().forEach(t => t.stop());
+      const type = rec.mimeType || "audio/webm"; rec = null;
+      const blob = new Blob(chunks, { type });
+      if (blob.size < 2000) { micState("idle"); return; }
+      micState("busy");
+      try {
+        const form = new FormData(); form.append("audio", blob, "answer"); form.append("tone", PRODUCT);
+        const r = await fetch("/api/bridge/voice", { method: "POST", body: form });
+        const d = await r.json().catch(() => ({}));
+        micState("idle");
+        if (!r.ok || !d.text) { text.placeholder = d.error || "I couldn't hear that. Please try again or type it."; return; }
+        text.value = d.text; $("say").requestSubmit();
+      } catch { micState("idle"); text.placeholder = "I couldn't hear that. Please try again or type it."; }
+    };
+    rec.start(); micState("rec");
+    recTimer = setTimeout(() => rec && rec.stop(), 90000);
+  });
+
+  async function ask(mode) {
+    const body = { mode, turns };
+    if (photo && (photoPending || mode === "reading")) body.image = photo;
+    if (sid) body.session_id = sid;
+    const r = await api(body);
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(data.message || "Something went sideways on our end. Please try that again in a moment.");
+    photoPending = false;
+    return data;
+  }
+
+  async function hostTurn() {
+    busy = true; send.disabled = true; waiting(true);
+    try {
+      const { reply, ready, sig, voice } = await ask("chat");
+      if (voice) enableVoice();
+      waiting(false);
+      turns.push({ role: "medium", text: reply });
+      const ms = hostSays(reply);
+      speak(reply, sig);
+      if (ready) setTimeout(() => $("say").classList.add("ready"), ms + 300);
+    } catch (e) {
+      waiting(false); hostSays(e.message);
+    } finally {
+      busy = false; send.disabled = false; text.focus();
+    }
+  }
+
+  $("begin").addEventListener("click", () => {
+    if (app.classList.contains("started")) return;
+    unlockAudio();
+    gtag("event", "start_tell");
+    app.classList.add("started"); hostTurn();
+  });
+
+  $("say").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const words = text.value.trim();
+    if (!words || busy) return;
+    hush();
+    if (!petName && turns.filter(t => t.role === "visitor").length === 0) petName = words.split(/[\s,.]/)[0];
+    turns.push({ role: "visitor", text: words }); personSays(words);
+    text.value = ""; text.style.height = "";
+    hostTurn();
+  });
+  text.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("say").requestSubmit(); }
+  });
+  text.addEventListener("input", () => { text.style.height = "auto"; text.style.height = text.scrollHeight + "px"; });
+
+  /* ---------- Photo: resized in the browser, sent with the chat, never stored ---------- */
+  $("photoBtn").addEventListener("click", () => $("photo").click());
+  $("photo").addEventListener("change", async () => {
+    const file = $("photo").files[0];
+    if (!file || !file.type.startsWith("image/") || busy) return;
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = URL.createObjectURL(file); });
+    const scale = Math.min(1, 1024 / Math.max(img.width, img.height));
+    const c = document.createElement("canvas"); c.width = Math.round(img.width * scale); c.height = Math.round(img.height * scale);
+    c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    photo = c.toDataURL("image/jpeg", .85); photoPending = true;
+    $("photoBtn").textContent = "Photo added"; $("photoBtn").disabled = true;
+    turns.push({ role: "visitor", text: PHOTO_NOTE }); personSays("", photo);
+    hostTurn();
+  });
+
+  /* ---------- Payment: hosted Stripe Checkout, conversation kept in sessionStorage across the redirect ---------- */
+  function markPaid() { $("say").classList.add("paid"); $("listen").textContent = "Hear from them"; }
+  $("listen").addEventListener("click", async () => {
+    if (sid) return giveReading();
+    $("listen").disabled = true;
+    try {
+      const r = await api({ mode: "checkout" });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok && d.free) { markPaid(); return giveReading(); }
+      if (!r.ok || !d.url) throw new Error(d.message || d.error || "Checkout isn't loading right now. Please try again in a moment.");
+      try { sessionStorage.setItem("tell.state", JSON.stringify({ turns, photo, petName })); } catch {}
+      gtag("event", "begin_checkout", { currency: "USD", value: PRICE, items: [{ item_name: ITEM, price: PRICE, quantity: 1 }] });
+      location.href = d.url;
+    } catch (e) {
+      hostSays(e.message); $("listen").disabled = false;
+    }
+  });
+
+  // Back from checkout (paid or canceled): restore the conversation, then give the reading if paid.
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const paid = params.get("paid"), canceled = params.get("canceled");
+    if (!paid && !canceled) return;
+    history.replaceState(null, "", location.pathname);
+    let saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem("tell.state") || "null"); } catch {}
+    if (paid) {
+      sid = paid; markPaid();
+      gtag("event", "purchase", { transaction_id: paid, currency: "USD", value: PRICE, items: [{ item_name: ITEM, price: PRICE, quantity: 1 }] });
+    }
+    app.classList.add("started");
+    if (!saved || !saved.turns?.length) { hostTurn(); return; } // new tab or device: begin again, already paid
+    turns.push(...saved.turns); photo = saved.photo; petName = saved.petName || "";
+    if (photo) { $("photoBtn").textContent = "Photo added"; $("photoBtn").disabled = true; }
+    for (const t of turns) {
+      if (t.role === "medium") hostSays(t.text, true);
+      else if (t.text === PHOTO_NOTE && photo) personSays("", photo);
+      else personSays(t.text);
+    }
+    $("say").classList.add("ready");
+    if (paid) giveReading();
+  })();
+
+  /* ---------- The reading ---------- */
+  async function giveReading() {
+    $("listen").disabled = true; waiting(true);
+    try {
+      const r = await ask("reading");
+      waiting(false);
+      if (!r.portrait) {
+        const words = r.message || "That one got away from us. Please try again.";
+        hostSays(words); speak(words, r.sig); $("listen").disabled = false; return;
+      }
+      showReading(r);
+    } catch (e) {
+      waiting(false); hostSays(e.message); $("listen").disabled = false;
+    }
+  }
+
+  // The guarantee's free retry: same purchase, a fresh conversation with new answers.
+  function startRetry() {
+    turns.length = 0; log.innerHTML = ""; $("reading").innerHTML = "";
+    app.classList.remove("revealed"); $("say").classList.remove("ready");
+    $("listen").disabled = false; photoPending = !!photo;
+    scrollTo({ top: 0 }); hostTurn();
+  }
+
+  function showReading(r) {
+    const el = $("reading"); el.innerHTML = "";
+    const add = (tag, cls, words, parent = el) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = words; parent.appendChild(n); return n; };
+    add("p", "from", "A message from " + (r.petName || petName || "your pet"));
+    add("h2", "", r.title || "They have some things to say");
+    if (r.voice) enableVoice();
+    if (r.voice && r.narration && r.narrationSig) {
+      const hear = add("button", "btn quiet hear", "Hear it out loud"); hear.type = "button";
+      hear.onclick = async () => {
+        if (!player.paused && player.src.includes("/api/bridge/voice")) { hush(); hear.textContent = "Hear it out loud"; return; }
+        hear.textContent = "Pause";
+        if (!(await speak(r.narration, r.narrationSig, true))) hear.textContent = "Hear it out loud";
+      };
+      player.onended = () => { hear.textContent = "Hear it out loud"; };
+      speak(r.narration, r.narrationSig).then((ok) => { if (ok) hear.textContent = "Pause"; });
+    }
+    add("p", "portrait", r.portrait);
+    const answers = Array.isArray(r.theirAnswers) ? r.theirAnswers.filter(a => a && a.answer) : [];
+    if (answers.length) {
+      add("h3", "", "You asked, they answered");
+      const qa = document.createElement("div"); qa.className = "qa"; el.appendChild(qa);
+      for (const a of answers) { add("p", "q", a.question || "", qa); add("p", "a", a.answer, qa); }
+    }
+    if (r.oneThingToKnow) { add("h3", "", "One thing they want you to know"); add("p", "know", r.oneThingToKnow); }
+    const keep = document.createElement("div"); keep.className = "keepsake"; el.appendChild(keep);
+    el.appendChild(wantBox());
+    el.appendChild(rateBox(r));
+    gtag("event", "reading_given", { tier: r.tier || "free", product: PRODUCT });
+    const again = document.createElement("button"); again.className = "btn quiet again"; again.textContent = "Start another pet";
+    again.onclick = () => location.reload(); el.appendChild(again);
+    app.classList.add("revealed"); scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    makeCard(r).then((url) => {
+      const img = new Image(); img.src = url; img.alt = "Card: " + r.cardLine; keep.appendChild(img);
+      const tools = document.createElement("div"); tools.className = "tools";
+      const name = (r.petName || "my-pet").replace(/[^\w-]+/g, "-").toLowerCase();
+      const dl = document.createElement("button"); dl.className = "btn primary"; dl.textContent = "Save their card";
+      dl.onclick = () => { const a = document.createElement("a"); a.href = url; a.download = `${name}-says.png`; a.click(); };
+      tools.appendChild(dl);
+      if (navigator.canShare) {
+        const sh = document.createElement("button"); sh.className = "btn quiet"; sh.textContent = "Share";
+        sh.onclick = async () => {
+          const blob = await (await fetch(url)).blob();
+          const file = new File([blob], `${name}-says.png`, { type: "image/png" });
+          if (navigator.canShare({ files: [file] })) navigator.share({ files: [file], title: "What they'd tell you" }).catch(() => {});
+        };
+        tools.appendChild(sh);
+      }
+      keep.appendChild(tools);
+    });
+  }
+
+  /* ---------- Printed cards: coming soon, counting interest (no personal details) ---------- */
+  function wantBox() {
+    const p = document.createElement("p"); p.className = "want-line";
+    p.innerHTML = `<span>Printed cards, mailed to you. Coming soon.</span> <button type="button" class="btn quiet">I'd want one</button>`;
+    const b = p.querySelector("button");
+    const thank = () => { b.textContent = "Thanks, you're counted"; b.disabled = true; };
+    try { if (localStorage.getItem("mls.want.printed-card") === "1") thank(); } catch {}
+    b.addEventListener("click", () => {
+      thank();
+      gtag("event", "want_printed_card", { from: PRODUCT });
+      try { localStorage.setItem("mls.want.printed-card", "1"); } catch {}
+      api({ mode: "interest", item: "printed-card", from: PRODUCT }).catch(() => {});
+    });
+    return p;
+  }
+
+  /* ---------- How did we do? Under 3 stars asks what we got wrong, then offers the free retry. ---------- */
+  function rateBox(r) {
+    const box = document.createElement("form"); box.className = "rate";
+    const acts = r.tier === "paid" && r.canRetry
+      ? `<button class="btn primary" type="submit" value="retry">Try again with new answers, free</button>` : "";
+    box.innerHTML = `<fieldset><legend>How did we do?</legend><div class="stars">${
+      [5, 4, 3, 2, 1].map(n => `<input type="radio" name="stars" id="s${n}" value="${n}"><label for="s${n}" title="${n} of 5" aria-label="${n} of 5">★</label>`).join("")
+    }</div></fieldset>
+    <div class="miss"><label for="missText">What did we get wrong? Be honest, it helps us get the next pet right.</label>
+      <textarea id="missText" maxlength="2000" placeholder="Something that didn't sound like them…"></textarea>
+      <label class="check"><input type="checkbox" id="keepReading" checked> Include this reading so we can see what missed</label>
+      <div class="acts">${acts || `<button class="btn primary" type="submit">Send</button>`}</div>
+      <p class="err" role="alert"></p></div>`;
+    const miss = box.querySelector(".miss");
+    const post = (rating, comment, withReading, action) => api({ mode: "feedback", rating, comment, action, session_id: sid, reading: withReading ? r : null });
+    const sendRating = async (rating, comment = "", withReading = false) => {
+      box.innerHTML = `<p class="thanks">${rating >= 3 ? "Thank you. Give them a scratch from us." : "Thanks for telling us. We're on it."}</p>`;
+      gtag("event", "rate_reading", { rating, product: PRODUCT });
+      post(rating, comment, withReading).catch(() => {});
+    };
+    const guarantee = async (action, rating, comment, withReading) => {
+      const err = box.querySelector(".err");
+      if (comment.length < 5) { err.textContent = "A few words about what missed, please. It helps us do better."; return; }
+      box.querySelectorAll(".acts button").forEach(b => b.disabled = true); err.textContent = "";
+      const resp = await post(rating, comment, withReading, action).catch(() => null);
+      const d = resp ? await resp.json().catch(() => ({})) : {};
+      if (!resp || !resp.ok) {
+        err.textContent = d.error || "That didn't go through. Please try again.";
+        box.querySelectorAll(".acts button").forEach(b => b.disabled = false); return;
+      }
+      gtag("event", "free_retry", { rating, product: PRODUCT });
+      startRetry();
+    };
+    box.addEventListener("change", (e) => {
+      if (e.target.name !== "stars") return;
+      const n = +e.target.value;
+      if (n >= 3) sendRating(n, "", true); else { miss.classList.add("open"); box.querySelector("#missText").focus(); }
+    });
+    box.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const n = +(box.querySelector("input[name=stars]:checked")?.value || 0);
+      if (!n) return;
+      const comment = box.querySelector("#missText").value.trim(), withReading = box.querySelector("#keepReading").checked;
+      const action = e.submitter?.value;
+      if (action) guarantee(action, n, comment, withReading); else sendRating(n, comment, withReading);
+    });
+    return box;
+  }
+
+  /* ---------- Shareable card: daylight, photo in a sunny frame, their line in big type ---------- */
+  async function makeCard(r) {
+    await document.fonts.ready;
+    const c = document.createElement("canvas"); c.width = 1080; c.height = 1350;
+    const g = c.getContext("2d");
+    const bg = g.createLinearGradient(0, 0, 0, 1350);
+    bg.addColorStop(0, "#d6ecfa"); bg.addColorStop(.45, "#fbefb4"); bg.addColorStop(1, "#ffc983");
+    g.fillStyle = bg; g.fillRect(0, 0, 1080, 1350);
+    // The photo, or a sunny square with the pet's shadow.
+    const px = 240, py = 150, ps = 600;
+    g.save(); g.translate(540, py + ps / 2); g.rotate(-0.03); g.translate(-540, -(py + ps / 2));
+    g.fillStyle = "#fffdf6"; g.shadowColor = "rgba(28,33,64,.35)"; g.shadowBlur = 40; g.shadowOffsetY = 18;
+    roundRect(g, px - 24, py - 24, ps + 48, ps + 48, 28); g.fill();
+    g.shadowColor = "transparent";
+    g.save(); roundRect(g, px, py, ps, ps, 16); g.clip();
+    if (photo) {
+      const img = await new Promise((res) => { const i = new Image(); i.onload = () => res(i); i.src = photo; });
+      const s = Math.max(ps / img.width, ps / img.height);
+      g.drawImage(img, 540 - img.width * s / 2, py + ps / 2 - img.height * s / 2, img.width * s, img.height * s);
+    } else {
+      g.fillStyle = "#ffd45c"; g.fillRect(px, py, ps, ps);
+      g.fillStyle = "#f4c64d"; g.fillRect(px, py + ps - 140, ps, 140);
+      // The home page's dog or cat silhouette (100x100 path), standing on the ground line, with its shadow.
+      const DOG = "M30 95 L30 72 Q28 56 35 46 L38 32 Q35 23 40 16 L44 5 L49 13 Q55 11 60 13 L65 5 L67 18 Q71 25 68 33 Q65 39 58 41 L58 49 Q70 56 72 70 L74 86 Q80 89 86 85 Q90 82 93 86 Q91 95 78 95 Z";
+      const CAT = "M36 95 Q30 72 38 52 Q41 42 42 36 L38 12 L49 23 Q55 21 61 23 L71 12 L67 36 Q70 44 67 52 Q77 68 73 92 Q82 92 87 84 Q91 76 88 66 Q86 60 90 60 Q96 70 94 82 Q90 97 70 97 L40 97 Z";
+      const kind = (turns.find(t => t.role === "visitor")?.text || "").toLowerCase();
+      const pet = new Path2D(/\b(cat|kitten|kitty)\b/.test(kind) ? CAT : DOG), k = 3.6, base = py + ps - 140;
+      g.fillStyle = "#1c2140";
+      g.save(); g.translate(540 - 50 * k, base - 96 * k); g.scale(k, k); g.fill(pet); g.restore();
+      g.save(); g.globalAlpha = .2; g.translate(540 - 50 * k, base); g.transform(1, 0, -1.4, -0.4, 0, 0); g.translate(0, -96 * k); g.scale(k, k); g.fill(pet); g.restore();
+    }
+    g.restore(); g.restore();
+    g.textAlign = "center"; g.fillStyle = "#1c2140";
+    g.font = '700 34px "Figtree"'; g.fillText("A message from " + (r.petName || petName || "my pet"), 540, 880);
+    g.font = '600 56px "Bricolage Grotesque"';
+    wrap(g, "“" + (r.cardLine || "") + "”", 540, 970, 900, 68);
+    g.font = '600 26px "Figtree"'; g.fillStyle = "#4a5070"; g.fillText("mylittleshadow.com", 540, 1300);
+    return c.toDataURL("image/png");
+  }
+  function roundRect(g, x, y, w, h, r) {
+    g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+    g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+  }
+  function wrap(g, words, x, y, max, lh) {
+    let line = "";
+    for (const w of words.split(" ")) {
+      const t = line ? line + " " + w : w;
+      if (g.measureText(t).width > max && line) { g.fillText(line, x, y); line = w; y += lh; } else line = t;
+    }
+    if (line) g.fillText(line, x, y);
+  }
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 Date: 2026-10-31
 Writer: Hazel
 Voice: daylight
-Status: draft for review. Content only; the main session wires it into code.
+Status: LIVE at mylittleshadow.com/tell since 2026-10-31 ($9.99), prompts used verbatim in `src/app/api/bridge/route.ts`.
 
 Product: a playful personality reading for a living pet. A warm, funny host interviews the person so their pet can finally get a word in. No medium, no spirit world, no candle.
 
@@ -185,7 +185,7 @@ Swap test: the thump, floor time, the flop, the charger, listening for keys. Pas
 
 ## 4. For Brew to decide
 
-Answered 2026-10-31: same guarantee as the Bridge, grief hand-off to the Bridge approved, host stays unnamed. Still open: price and launch date.
+Answered 2026-10-31: same guarantee as the Bridge, grief hand-off to the Bridge approved, host stays unnamed, $9.99 USD, launched 2026-10-31.
 
 
 1. **Price and launch.** The product stays "Coming soon" until you price and launch it. Nothing in these prompts mentions money.

@@ -18,9 +18,17 @@ const PROJECTS: Project[] = [
   {
     name: "My Little Shadow",
     href: "/shadow/",
-    description: "Home of My Little Shadow (mylittleshadow.com): readings, letters and keepsakes for every chapter of a pet's life. The Rainbow Bridge is live; the rest is coming soon.",
+    description: "Home of My Little Shadow (mylittleshadow.com): readings, letters and keepsakes for every chapter of a pet's life. What they'd tell you (/tell, living-pet reading, $9.99) and The Rainbow Bridge are live; the rest is coming soon.",
     status: "NEW",
     accent: "#ffc983",
+    external: true,
+  },
+  {
+    name: "What they'd tell you",
+    href: "/shadow/tell.html",
+    description: "My Little Shadow's living-pet reading: a funny host interviews you about your pet, then the pet gets the microphone. Answers your questions in their voice, plus a shareable card. $9.99.",
+    status: "NEW",
+    accent: "#ffd45c",
     external: true,
   },
   {

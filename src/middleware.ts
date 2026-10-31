@@ -8,6 +8,7 @@ const MOVED: Record<string, string> = {
   "/bridge/index.html": "/bridge",
   "/shadow/index.html": "/",
   "/shadow/": "/",
+  "/shadow/tell.html": "/tell",
 };
 
 // Clean addresses on mylittleshadow.com for pages that live under public/shadow/.
@@ -16,6 +17,7 @@ const PAGES: Record<string, string> = {
   "/privacy": "/shadow/privacy.html",
   "/terms": "/shadow/terms.html",
   "/contact": "/shadow/contact.html",
+  "/tell": "/shadow/tell.html",
 };
 
 export function middleware(req: NextRequest) {
@@ -40,4 +42,4 @@ export function middleware(req: NextRequest) {
   return NextResponse.rewrite(url);
 }
 
-export const config = { matcher: ["/", "/privacy", "/terms", "/contact", "/bridge/index.html", "/shadow/index.html", "/shadow/"] };
+export const config = { matcher: ["/", "/privacy", "/terms", "/contact", "/tell", "/shadow/tell.html", "/bridge/index.html", "/shadow/index.html", "/shadow/"] };
