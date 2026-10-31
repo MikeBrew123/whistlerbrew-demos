@@ -687,7 +687,7 @@
     g.font = '500 92px "Cormorant Garamond"'; g.fillText(r.petName || petName || "", 540, 222);
     g.font = 'italic 50px "Cormorant Garamond"'; g.fillStyle = "#f1ebfb";
     wrap(g, r.cardLine || "", 540, 870, 860, 64);
-    g.font = '400 26px "Karla"'; g.fillStyle = "rgba(221,214,238,.6)"; g.fillText("whistlerbrew.com/bridge", 540, 1290);
+    g.font = '400 26px "Karla"'; g.fillStyle = "rgba(221,214,238,.6)"; g.fillText((location.hostname.endsWith("mylittleshadow.com") ? "mylittleshadow.com" : "whistlerbrew.com") + "/bridge", 540, 1290);
     return c.toDataURL("image/png");
   }
   function wrap(g, text, x, y, max, lh) {
