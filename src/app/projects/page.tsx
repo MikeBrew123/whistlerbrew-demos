@@ -16,6 +16,14 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    name: "My Little Shadow",
+    href: "/shadow/",
+    description: "Home of My Little Shadow (mylittleshadow.com): readings, letters and keepsakes for every chapter of a pet's life. The Rainbow Bridge is live; the rest is coming soon.",
+    status: "NEW",
+    accent: "#ffc983",
+    external: true,
+  },
+  {
     name: "The Rainbow Bridge",
     href: "/bridge/",
     description: "Light a candle and let an AI medium gently draw out the story of a pet who has passed, then hear from them in a keepsake reading.",
