@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T17:01:28.557Z",
+  "updated_at": "2026-10-31T23:01:18.515Z",
   "fires": [
     {
       "country": "Belgium",
@@ -202,6 +202,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"Summerland landslides raise concerns after wildfire leaves slopes vulnerable\",\n      \"url\": \"https://globalnews.ca/news/12126734/summerland-landslide"
+    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"New information challenges military's account of deadly Wainwright fire\",\n      \"url\": \"https://globalnews.ca/news/12127761/wainwright-satellite-fire"
   }
 }
