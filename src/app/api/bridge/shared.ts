@@ -20,7 +20,7 @@ export const secret = (name: string) => (cfEnv()[name] as string | undefined) ??
 export const clientIp = (req: NextRequest) =>
   req.headers.get("cf-connecting-ip") ?? req.headers.get("x-forwarded-for") ?? "local";
 
-const LIMITS = { chat: 80, reading: 3, feedback: 10, speak: 200, listen: 120 };
+const LIMITS = { chat: 80, reading: 3, feedback: 10, speak: 200, listen: 120, interest: 3 };
 
 export async function overLimit(store: KV | null, ip: string, mode: keyof typeof LIMITS): Promise<boolean> {
   if (!store) return false;

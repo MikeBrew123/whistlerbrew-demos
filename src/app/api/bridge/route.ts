@@ -110,6 +110,21 @@ async function saveFeedback(req: NextRequest, body: FeedbackBody) {
   return NextResponse.json({ ok: true, refunded: true });
 }
 
+// "I'd want one" taps for products that don't exist yet (printed keepsake cards), counted per
+// page so demand can be measured before building. No personal details are kept.
+// Read with: npx wrangler kv key get "interest:printed-card:home" --binding BRIDGE
+const INTEREST_ITEMS = new Set(["printed-card"]);
+async function countInterest(req: NextRequest, body: { item?: unknown; from?: unknown }) {
+  const item = String(body.item ?? ""), from = body.from === "bridge" ? "bridge" : "home";
+  if (!INTEREST_ITEMS.has(item)) return NextResponse.json({ error: "Bad request" }, { status: 400 });
+  const store = kv();
+  if (await overLimit(store, clientIp(req), "interest")) return NextResponse.json({ ok: true });
+  const key = `interest:${item}:${from}`;
+  if (store) await store.put(key, String((parseInt((await store.get(key)) ?? "0", 10) || 0) + 1));
+  else console.log("bridge interest (no KV in dev):", key);
+  return NextResponse.json({ ok: true });
+}
+
 async function startCheckout(req: NextRequest) {
   const key = secret("STRIPE_SECRET_KEY");
   if (!key) return NextResponse.json({ free: true }); // payments not configured: readings stay free
@@ -130,6 +145,7 @@ export async function POST(req: NextRequest) {
   }
   if (body.mode === "feedback") return saveFeedback(req, body);
   if (body.mode === "checkout") return startCheckout(req);
+  if (body.mode === "interest") return countInterest(req, body as { item?: unknown; from?: unknown });
 
   const mode = body.mode === "reading" ? "reading" : "chat";
   const turns = Array.isArray(body.turns) ? body.turns.slice(-MAX_TURNS) : [];

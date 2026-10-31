@@ -206,6 +206,8 @@
   .miss .btn { align-self: center; }
   .thanks { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--mist-dim); margin: 12px 0 0; }
   .again { display: block; margin: 28px auto 0; }
+  .want-line { margin: 28px auto 0; text-align: center; color: var(--mist-dim); font-family: var(--serif); font-style: italic; font-size: 1.1rem; display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: center; }
+  .want-line .btn { font-style: normal; padding: 10px 18px; font-size: .95rem; }
 
   footer {
     position: relative; z-index: 2; text-align: center;
@@ -576,6 +578,7 @@
     add("h3", "", "What I want you to know"); add("p", "voice", r.wantsYouToKnow);
     add("h3", "", "A sign to watch for"); add("p", "voice", r.sign);
     const keep = document.createElement("div"); keep.className = "keepsake"; el.appendChild(keep);
+    el.appendChild(wantBox());
     el.appendChild(rateBox(r));
     const again = document.createElement("button"); again.className = "btn quiet again"; again.textContent = "Light a new candle";
     again.onclick = () => location.reload(); el.appendChild(again);
@@ -598,6 +601,22 @@
       }
       keep.appendChild(tools);
     });
+  }
+
+  /* ---------- Printed keepsake: coming soon, counting interest (no personal details) ---------- */
+  function wantBox() {
+    const p = document.createElement("p"); p.className = "want-line";
+    p.innerHTML = `<span>Printed keepsake cards, mailed to you. Coming soon.</span> <button type="button" class="btn quiet">I'd want one</button>`;
+    const b = p.querySelector("button");
+    const thank = () => { b.textContent = "Thank you, you're counted"; b.disabled = true; };
+    try { if (localStorage.getItem("mls.want.printed-card") === "1") thank(); } catch {}
+    b.addEventListener("click", () => {
+      thank();
+      try { localStorage.setItem("mls.want.printed-card", "1"); } catch {}
+      fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "interest", item: "printed-card", from: "bridge" }) }).catch(() => {});
+    });
+    return p;
   }
 
   /* ---------- How did we do? Under 3 stars asks what we got wrong, then offers the guarantee. ---------- */

@@ -17,6 +17,9 @@
   #bridge a:focus-visible, footer a:focus-visible { outline-color: #f5c86a; }
   .soon { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 2px dashed rgba(28,33,64,0.55); font-weight: 700; font-size: 15px; }
   #hero { touch-action: pan-y; }
+  .want { font: 700 15px 'Figtree', system-ui, sans-serif; color: #1c2140; background: #fffdf6; border: 2px solid #1c2140; border-radius: 999px; min-height: 44px; padding: 0 20px; cursor: pointer; }
+  .want:focus-visible { outline: 3px solid #1c2140; outline-offset: 3px; }
+  .want:disabled { cursor: default; opacity: .8; }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 </style>
 </head>
@@ -209,6 +212,14 @@ Still waits by the door at 5:40, even on Saturdays.</div>
 </div>
 </section>
 
+<!-- Printed keepsake: coming soon, counting interest -->
+<div style="background: #d384a6; padding: 8px 20px 40px">
+<p style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 18px; font-weight: 600; color: #1c2140; text-align: center">
+<span>Printed keepsake cards, mailed to you. Coming soon.</span>
+<button type="button" class="want" data-from="home">I'd want one</button>
+</p>
+</div>
+
 <!-- DUSK transition -->
 <div style="position: relative; background: linear-gradient(180deg, #d384a6 0%, #6a4a8c 45%, #14122e 100%); height: 240px">
 <span aria-hidden="true" style="position: absolute; left: 12%; top: 58%; width: 2px; height: 2px; border-radius: 50%; background: #fff"></span>
@@ -315,6 +326,20 @@ Answer by voice or text</li>
     flame.style.transform = "scale(" + (tick ? 1.06 : 0.94) + ")";
     flame.style.boxShadow = "0 0 " + (tick ? "44px 14px" : "32px 8px") + " rgba(245,200,106,0.45)";
   }, 1400);
+
+  // "I'd want one": counts interest in printed cards, no personal details. Remembered per browser.
+  document.querySelectorAll(".want").forEach((b) => {
+    let done = false;
+    try { done = localStorage.getItem("mls.want.printed-card") === "1"; } catch {}
+    const thank = () => { b.textContent = "Thanks, you're counted"; b.disabled = true; };
+    if (done) thank();
+    b.addEventListener("click", () => {
+      thank();
+      try { localStorage.setItem("mls.want.printed-card", "1"); } catch {}
+      fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "interest", item: "printed-card", from: b.dataset.from }) }).catch(() => {});
+    });
+  });
 })();
 </script>
 </body>
