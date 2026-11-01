@@ -69,6 +69,19 @@ h2 small { font: 500 13px Inter, sans-serif; color: var(--muted); }
 .links { display: grid; gap: 6px; font-size: 14px; }
 footer { margin-top: 36px; color: var(--muted); font-size: 13px; text-align: center; }
 footer a { color: var(--sea); }
+.item.today { border: 2px solid var(--sun); }
+.tag.hot { background: var(--sun); color: #fff; }
+.scout { grid-column: 1 / -1; border-top: 1px dashed var(--line); padding-top: 10px; font-size: 14px; }
+.scout summary { cursor: pointer; color: var(--sea); font-weight: 600; }
+.scout h4 { margin: 10px 0 4px; font: 600 12px Inter, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.scout ul { margin: 0; padding-left: 18px; }
+.scout p { margin: 0; }
+.opp { display: block; }
+.opp > summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 8px; }
+.opp > summary::-webkit-details-marker { display: none; }
+.opp > summary::after { content: "+"; color: var(--sea); font-weight: 700; }
+.opp[open] > summary::after { content: "−"; }
+.opp .scout { border: 0; padding-top: 0; }
 </style>
 </head>
 <body>
@@ -90,14 +103,20 @@ footer a { color: var(--sea); }
   <h2>Next games</h2>
   <div class="list" id="next"></div>
 
-  <h2>Results <small id="resLabel"></small></h2>
+  <h2>Results <small id="resLabel">this season</small></h2>
   <div class="list res" id="results"></div>
+
+  <h2>Heavy hitters 💪</h2>
+  <div class="list" id="stats"></div>
+
+  <h2>In the news 📰</h2>
+  <div class="list" id="news"></div>
+
+  <h2>Know the opponents</h2>
+  <div class="list" id="opps"></div>
 
   <h2>Roster <small id="mgr"></small></h2>
   <div class="list" id="roster"></div>
-
-  <h2>Stats</h2>
-  <div class="list" id="stats"></div>
 
   <h2>2026 title run standouts</h2>
   <div class="list" id="standouts"></div>
@@ -145,10 +164,41 @@ footer a { color: var(--sea); }
     el.innerHTML = items && items.length ? items.map(render).join("") : '<div class="empty">' + esc(emptyText) + "</div>";
   }
   function vs(g) { return (g.home ? "vs " : "at ") + g.opponent; }
+  var OPPS = {};
+  function fold(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+  // "Magdalena, Jalisco" or "Pureros" should both find their scouting report
+  function oppFor(name) {
+    var n = fold(name);
+    for (var k in OPPS) { if (n.indexOf(fold(k).split(/[ ,(]/)[0]) >= 0 || fold(k).indexOf(n.split(/[ ,(]/)[0]) >= 0) return OPPS[k]; }
+    return null;
+  }
+  function scout(o) {
+    if (!o) return "";
+    var facts = (o.town_facts || []).filter(Boolean), hit = o.hitters || [];
+    return '<p class="m">' + esc([o.town, o.drive ? o.drive + " from Sayulita" : "", o.population ? "pop. " + o.population : ""].filter(Boolean).join(" · ")) + "</p>" +
+      (o.nickname ? "<h4>The name</h4><p>" + esc(o.nickname) + "</p>" : "") +
+      (facts.length ? "<h4>About the town</h4><ul>" + facts.map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : "") +
+      (o.record ? "<h4>How they do</h4><p>" + esc(o.record) + "</p>" : "") +
+      (hit.length ? "<h4>Players to watch</h4><ul>" + hit.map(function (h) { return "<li><b>" + esc(h.name) + "</b>" + (h.pos ? " (" + esc(h.pos) + ")" : "") + ": " + esc(h.line) + link(h.url) + "</li>"; }).join("") + "</ul>" : "") +
+      (o.park ? "<h4>Home park</h4><p>" + esc(o.park) + "</p>" : "") +
+      (/^https:\/\//.test(o.url || "") ? '<p class="m"><a href="' + esc(o.url) + '" rel="noopener" target="_blank">more ↗</a></p>' : "");
+  }
   function nextRow(g) {
-    return '<article class="item"><div class="when">' + esc(fmtDay(g.date, { weekday: "short" })) + "<b>" + esc(fmtDay(g.date, { month: "short", day: "numeric" })) +
-      '</b></div><div><p class="t">' + esc(vs(g)) + tag(g.home ? "Home" : "Away") + '</p><p class="m">' +
-      esc([g.time ? time12(g.time) : "", g.venue, g.round].filter(Boolean).join(" · ")) + link(g.url, "details") + "</p></div></article>";
+    var today = g.date === todayIso, o = oppFor(g.opponent);
+    return '<article class="item' + (today ? " today" : "") + '"><div class="when">' + esc(fmtDay(g.date, { weekday: "short" })) + "<b>" + esc(fmtDay(g.date, { month: "short", day: "numeric" })) +
+      '</b></div><div><p class="t">' + esc(vs(g)) + (today ? '<span class="tag hot">Today</span>' : "") + tag(g.home ? "Home" : "Away") + '</p><p class="m">' +
+      esc([g.time ? time12(g.time) : "", g.venue, g.round].filter(Boolean).join(" · ")) + link(g.url, "details") +
+      (g.note ? "<br>" + esc(g.note) : "") + "</p></div>" +
+      (o ? '<details class="scout"' + (today ? " open" : "") + "><summary>Scouting report: " + esc(g.opponent) + "</summary>" + scout(o) + "</details>" : "") + "</article>";
+  }
+  function oppRow(name) {
+    var o = OPPS[name];
+    return '<details class="item opp"><summary><span><span class="t">' + esc(name) + '</span><br><span class="m">' + esc([o.town, o.drive].filter(Boolean).join(" · ")) +
+      '</span></span></summary><div class="scout">' + scout(o) + "</div></details>";
+  }
+  function newsRow(n) {
+    return '<article class="item"><div class="when">' + esc(n.date ? fmtDay(n.date, { month: "short" }) : "") + "<b>" + esc(n.date ? fmtDay(n.date, { day: "numeric" }) : "📰") +
+      '</b></div><div><p class="t">' + esc(n.headline) + '</p><p class="m">' + esc(n.team || "") + link(n.url) + "</p></div></article>";
   }
   function resRow(g) {
     var r = String(g.result || ""), cls = /^W/i.test(r) ? "w" : /^L/i.test(r) ? "l" : "";
@@ -174,12 +224,16 @@ footer a { color: var(--sea); }
       $("seasonLabel").textContent = s.label || ""; $("seasonStatus").textContent = s.status || ""; $("seasonNote").textContent = s.note || "";
       $("banner").hidden = false;
     }
-    var games = (d.games || []).slice().sort(function (a, b) { return (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")); });
+    OPPS = d.opponents || {};
+    var from = d.season_from || "2026-09-01";
+    var games = (d.games || []).filter(function (g) { return g.date >= from; }).sort(function (a, b) { return (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")); });
     fill($("next"), games.filter(function (g) { return g.date >= todayIso && !g.result; }), nextRow,
       "No games on the calendar yet. The schedule shows up here as soon as the league posts it.");
     var res = games.filter(function (g) { return g.result; }).reverse();
-    if (res.length) $("resLabel").textContent = "latest first";
+    if (res.length) $("resLabel").textContent = "this season, latest first";
     fill($("results"), res, resRow, "No results yet this season.");
+    fill($("news"), d.news, newsRow, "Nothing in the press lately.");
+    fill($("opps"), Object.keys(OPPS), oppRow, "");
     if (d.manager) $("mgr").textContent = "Manager: " + d.manager;
     fill($("roster"), d.roster, playerRow, "The 2026-27 roster is not public yet. Names go up here once the team or league lists them.");
     fill($("stats"), d.stats, statRow, "Season stats start once games do. Highlights from last year's title run are below.");
