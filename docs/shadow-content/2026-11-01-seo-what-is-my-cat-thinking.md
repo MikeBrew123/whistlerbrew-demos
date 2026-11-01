@@ -6,18 +6,18 @@ Voice: daylight
 Status: draft for the main session
 Target phrase: what is my cat thinking
 
-- **Title tag:** What is my cat thinking? 9 cat habits, translated
+- **Title tag:** What is my cat thinking? 9 cat habits, in their words
 - **Meta description:** Ever wondered what your cat is thinking? Nine classic cat habits in their own smug words, plus the usual reasons behind each one.
-- **H1:** What is my cat thinking? A translation guide
+- **H1:** What is my cat thinking? Their side of the story
 - **URL slug:** /what-is-my-cat-thinking
 
 ---
 
-# What is my cat thinking? A translation guide
+# What is my cat thinking? Their side of the story
 
 Your cat is looking at you. Is it love? Judgement? Are you standing in their sunbeam? With cats, the honest answer is often all three.
 
-Cats don't explain themselves, and they would like to keep it that way. So here is a translation of the things cats do every day, in the words they'd probably use, with the plain, well-known reasons behind each habit.
+Cats don't explain themselves, and they would like to keep it that way. So here are the things cats do every day, in the words they'd probably use, with the plain, well-known reasons behind each habit.
 
 ## Why does my cat knock things off the table?
 
@@ -77,7 +77,7 @@ Cats don't explain themselves, and they would like to keep it that way. So here 
 
 Those are the answers most cats would give, if they could be bothered. Your cat has their own: the specific crimes, the daily rituals, the chair that is no longer yours. That's what What they'd tell you is for.
 
-At [mylittleshadow.com/tell](https://mylittleshadow.com/tell) you chat with a friendly host about your cat: their name, three words that sum them up, the habit that makes them them, a routine you share, and the questions you've always wanted to ask. Then your cat finally gets the microphone. You get a funny, loving message in their own voice, answers to your questions, and a card made for sharing. It's a playful voice built from what you tell us, not mind reading.
+At [mylittleshadow.com/tell](https://mylittleshadow.com/tell) you chat with a friendly host about your cat: their name, three words that sum them up, the habit that makes them them, a routine you share, and the questions you've always wanted to ask. Then your cat finally gets the microphone. You get a funny, loving message in their own voice, answers to your questions, and a card made for sharing. It's a playful, AI-written voice built from what you tell us.
 
 Here is a line from a **sample reading** for Duchess, a grey tabby who sits in the bathroom sink every morning while her person brushes their teeth:
 
@@ -87,7 +87,7 @@ And from the same **sample reading**, when asked why she knocks rings off the dr
 
 > "You keep putting small shiny things on my dresser and then acting surprised. I am helping them reach the floor, where everything belongs. Also, it makes you come over to me, which was the point."
 
-The chat is free. The reading is $9.99 USD, and if it doesn't sound like your cat, you get your money back.
+The chat is free. The reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
 
 **[Let your cat have the last word](https://mylittleshadow.com/tell)**
 
@@ -96,8 +96,8 @@ The chat is free. The reading is $9.99 USD, and if it doesn't sound like your ca
 **Q: Do cats love their owners?**
 A: Many cats show affection in their own way: following you from room to room, slow blinking, head bumps, sleeping near you or choosing your lap. It's often quieter than a dog's hello, but it counts.
 
-**Q: Can What they'd tell you read my cat's mind?**
-A: No. It's a playful voice built from what you share about your cat: their personality, habits and routines. It's made for fun and celebration, not mind reading, and it's never veterinary advice.
+**Q: How does What they'd tell you work?**
+A: You have a short chat with a friendly host about your cat. Then you get a playful, AI-written message in your cat's voice and a card made for sharing. The chat is free, and the message is $9.99 USD. It's for fun and celebration, never veterinary advice.
 
 **Q: What do I need for a reading?**
-A: Just your cat's name and a few things about them, like their personality, a favourite habit and a routine you share. A photo is optional and never stored. The chat is free, and the reading is $9.99 USD with your money back if it doesn't sound like them.
+A: Just your cat's name and a few things about them, like their personality, a favourite habit and a routine you share. A photo is optional and never stored. The chat is free, and the reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.

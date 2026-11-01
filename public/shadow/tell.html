@@ -65,7 +65,12 @@
   .btn.quiet { background: var(--paper); color: var(--ink); }
   .btn:disabled { opacity: .5; cursor: default; }
   .small { font-size: 15px; color: var(--ink-soft); margin: 14px 0 0; max-width: 32em; }
-  .steps { list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 20px 28px; }
+  .sample { float: right; position: relative; width: clamp(128px, 36vw, 224px); margin: 24px 0 12px 18px; transform: rotate(-1.5deg); }
+  .sample img { display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 12px; box-shadow: 0 18px 36px -18px rgba(28,33,64,.55); background: #fbefb4; }
+  .sample .pill { position: absolute; top: 8px; left: 8px; background: var(--ink); color: var(--butter); font: 700 12px var(--body); padding: 2px 10px; border-radius: 999px; }
+  .sample figcaption { margin-top: 8px; font-size: 13px; line-height: 1.35; color: var(--ink-soft); text-align: center; }
+  .bridge-link { align-self: flex-start; text-decoration: none; }
+  .steps { clear: both; list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 20px 28px; }
   .steps li { flex: 1 1 180px; border-top: 2px dashed rgba(28,33,64,.4); padding-top: 14px; font-size: 16px; }
   .steps b { display: block; font-family: var(--head); font-size: 20px; }
 
@@ -223,6 +228,11 @@
 
 <main id="app">
   <section class="intro">
+    <figure class="sample">
+      <img id="sampleCard" alt="Sample card from Waffles: &ldquo;The microwave beeps, I answer. That's just good manners.&rdquo;" width="224" height="280">
+      <span class="pill">Sample</span>
+      <figcaption>A sample card for Waffles, a beagle. Yours is made from what you tell us.</figcaption>
+    </figure>
     <p class="kicker">What they'd tell you</p>
     <h1>Let them finally get a word in.</h1>
     <p class="lede">Tell us about the one who follows you from room to room. A few quick questions, a photo if you like, and they get the microphone: a funny, loving message in their own voice, plus a card made for sharing.</p>
@@ -262,7 +272,7 @@
 
 <footer>
   An AI experience for fun and celebration. It's a playful voice built from what you tell us, not mind reading, and never veterinary advice: health questions go to your vet. Your photo and voice are never stored; feedback you choose to send is kept so we can improve. We use Google Analytics to count visits.
-  <br>Our promise: if a reading doesn't sound like them, try again free from your reading, or email <a href="mailto:hello@mylittleshadow.com">hello@mylittleshadow.com</a> within 30 days for a full refund, handled within 24 hours.
+  <br>Our promise: if a reading isn't right for you, email <a href="mailto:hello@mylittleshadow.com">hello@mylittleshadow.com</a> within 30 days for a full refund, handled within 24 hours.
   <br><span class="foot-links"><a href="/">My Little Shadow</a> <a href="/what-would-my-dog-say">What would my dog say?</a> <a href="/what-is-my-cat-thinking">What is my cat thinking?</a> <a href="/questions-to-ask-your-dog">Questions to ask your pet</a> <a href="/bridge">The Rainbow Bridge</a> <a href="/privacy">Privacy</a> <a href="/terms">Terms</a> <a href="/contact">Contact</a></span>
 </footer>
 
@@ -293,6 +303,12 @@
     });
     log.appendChild(p); p.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "end" });
     return reduced || instant ? 0 : words.length * 14;
+  }
+  // When someone says their pet has died, the host points to the Bridge; this makes it one tap.
+  function bridgeLink() {
+    const a = document.createElement("a"); a.className = "btn quiet bridge-link"; a.href = "/bridge";
+    a.textContent = "Visit The Rainbow Bridge"; a.addEventListener("click", () => gtag("event", "bridge_handoff"));
+    log.appendChild(a); a.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "end" });
   }
   function personSays(words, img) {
     const p = document.createElement("div"); p.className = "person" + (img ? " pic" : "");
@@ -406,6 +422,7 @@
       turns.push({ role: "medium", text: reply });
       const ms = hostSays(reply);
       speak(reply, sig);
+      if (/rainbow bridge/i.test(reply)) setTimeout(bridgeLink, ms + 300);
       if (ready) setTimeout(() => $("say").classList.add("ready"), ms + 300);
     } catch (e) {
       waiting(false); hostSays(e.message);
@@ -414,6 +431,8 @@
     }
   }
 
+  makeCard({ petName: "Waffles", cardLine: "The microwave beeps, I answer. That's just good manners." })
+    .then((url) => { $("sampleCard").src = url; }).catch(() => {});
   $("begin").addEventListener("click", () => {
     if (app.classList.contains("started")) return;
     unlockAudio();

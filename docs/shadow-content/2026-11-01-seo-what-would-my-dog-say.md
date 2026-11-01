@@ -6,7 +6,7 @@ Voice: daylight
 Status: draft for the main session
 Target phrase: what would my dog say (also: if my dog could talk)
 
-- **Title tag:** What would my dog say? 9 dog habits, translated
+- **Title tag:** What would my dog say? 9 dog habits, in their words
 - **Meta description:** If your dog could talk, what would they say? Nine everyday dog habits in their own cheeky words, plus the usual reasons behind them.
 - **H1:** What would my dog say if they could talk?
 - **URL slug:** /what-would-my-dog-say
@@ -17,7 +17,7 @@ Target phrase: what would my dog say (also: if my dog could talk)
 
 You know the look. You stand up, and your dog is already standing. You open the fridge, and there they are, sitting very nicely, as if they just happened to be passing. If your dog could talk, you would never get a quiet minute again.
 
-They can't, so here is the next best thing: the everyday things dogs do, translated into what they'd probably say about it, with the plain, well-known reasons behind each habit. Spoiler: most of it comes back to you.
+They can't, so here is the next best thing: the everyday things dogs do, put into the words they'd probably use, with the plain, well-known reasons behind each habit. Spoiler: most of it comes back to you.
 
 ## Why does my dog follow me to the bathroom?
 
@@ -77,7 +77,7 @@ They can't, so here is the next best thing: the everyday things dogs do, transla
 
 Those are the answers most dogs would give. Your dog has their own: the specific crimes, the daily routines, the spot on the couch that is legally theirs. That's what What they'd tell you is for.
 
-At [mylittleshadow.com/tell](https://mylittleshadow.com/tell) you chat with a friendly host about your dog: their name, three words that sum them up, the habit that makes them them, a routine you share, and the questions you've always wanted to ask. Then your dog gets the microphone. You get a funny, loving message in their own voice, answers to your questions, and a card made for sharing. It's a playful voice built from what you tell us, not mind reading.
+At [mylittleshadow.com/tell](https://mylittleshadow.com/tell) you chat with a friendly host about your dog: their name, three words that sum them up, the habit that makes them them, a routine you share, and the questions you've always wanted to ask. Then your dog gets the microphone. You get a funny, loving message in their own voice, answers to your questions, and a card made for sharing. It's a playful, AI-written voice built from what you tell us.
 
 Here is a line from a **sample reading** for Waffles, a beagle who howls every time the microwave beeps:
 
@@ -87,17 +87,17 @@ And from the same **sample reading**, when asked why he steals socks:
 
 > "They smell like you, and you leave them lying around like you don't want them. I am a beagle. Finding things is my whole job."
 
-The chat is free. The reading is $9.99 USD, and if it doesn't sound like your dog, you get your money back.
+The chat is free. The reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
 
 **[Let your dog get a word in](https://mylittleshadow.com/tell)**
 
 ## FAQ
 
 **Q: Can dogs understand what we say?**
-A: Many dogs learn to recognise certain words, like their name, "walk" or "treat", and most are very good at reading our tone of voice and body language. Full sentences are another story, which is why a translation helps.
+A: Many dogs learn to recognise certain words, like their name, "walk" or "treat", and most are very good at reading our tone of voice and body language. Full sentences are another story, which is where a little imagination comes in.
 
-**Q: Is What they'd tell you a psychic reading?**
-A: No. It's a playful voice built from what you share about your dog: their personality, habits and routines. It's made for fun and celebration, not mind reading, and it's never veterinary advice.
+**Q: How does What they'd tell you work?**
+A: You have a short chat with a friendly host about your dog. Then you get a playful, AI-written message in your dog's voice and a card made for sharing. The chat is free, and the message is $9.99 USD. It's for fun and celebration, never veterinary advice.
 
 **Q: How much does a reading cost?**
-A: Chatting with the host is free. The reading is $9.99 USD, and if it doesn't sound like your dog, you get your money back.
+A: Chatting with the host is free. The reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
