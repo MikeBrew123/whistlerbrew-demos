@@ -251,6 +251,9 @@ async function countInterest(req: NextRequest, body: { item?: unknown; from?: un
 async function startCheckout(req: NextRequest, kind: Kind) {
   const key = secret("STRIPE_SECRET_KEY");
   if (!key) return NextResponse.json({ free: true }); // payments not configured: readings stay free
+  if (await overLimit(kv(), clientIp(req), "checkout")) {
+    return NextResponse.json({ error: "rest", message: kind.say.rest }, { status: 429 });
+  }
   try {
     return NextResponse.json({ url: await createCheckout(key, req.nextUrl.origin, kind.product) });
   } catch (e) {

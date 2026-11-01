@@ -9,6 +9,12 @@ const MOVED: Record<string, string> = {
   "/shadow/index.html": "/",
   "/shadow/": "/",
   "/shadow/tell.html": "/tell",
+  "/shadow/privacy.html": "/privacy",
+  "/shadow/terms.html": "/terms",
+  "/shadow/contact.html": "/contact",
+  "/shadow/articles/what-would-my-dog-say.html": "/what-would-my-dog-say",
+  "/shadow/articles/what-is-my-cat-thinking.html": "/what-is-my-cat-thinking",
+  "/shadow/articles/questions-to-ask-your-dog.html": "/questions-to-ask-your-dog",
 };
 
 // Clean addresses on mylittleshadow.com for pages that live under public/shadow/.
