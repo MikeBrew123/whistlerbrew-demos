@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T11:01:28.168Z",
+  "updated_at": "2026-11-01T23:01:25.934Z",
   "fires": [
     {
       "country": "Belgium",
@@ -202,6 +202,6 @@
   ],
   "last_report": {
     "error": "Claude parse failed",
-    "raw": "```json\n{\n  \"canada_news\": [\n    {\n      \"title\": \"New information challenges military's account of deadly Wainwright fire\",\n      \"url\": \"https://globalnews.ca/news/12127761/wainwright-satellite-fire"
+    "raw": "```json\n{\n  \"canada_news\": [],\n  \"world_fires\": [\n    {\n      \"country\": \"Belgium\",\n      \"name\": \"Belgian Nature Reserve Wildfire\",\n      \"status\": \"Active\",\n      \"summary\": \"Wildfire tearing throug"
   }
 }
