@@ -275,6 +275,11 @@
   const turns = [];
   let photo = null, photoPending = false, petName = "", busy = false;
   let sid = null; // paid Stripe checkout session for this reading
+  // The paid session (and the reading, once given) is remembered on this device for 60 days, as long as
+  // the server keeps it, so a refresh or "Start another pet" never loses what someone paid for.
+  const PAID_KEY = "tell.paid", KEEP_MS = 60 * 86400000;
+  const remembered = () => { try { const p = JSON.parse(localStorage.getItem(PAID_KEY) || "null"); return p && p.sid && Date.now() - p.t < KEEP_MS ? p : null; } catch { return null; } };
+  const remember = (p) => { try { localStorage.setItem(PAID_KEY, JSON.stringify(p)); } catch {} };
   const PHOTO_NOTE = "Here's a photo of them.";
   const api = (body) => fetch("/api/bridge", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ product: PRODUCT, ...body }) });
 
@@ -468,14 +473,22 @@
   (() => {
     const params = new URLSearchParams(location.search);
     const paid = params.get("paid"), canceled = params.get("canceled");
-    if (!paid && !canceled) return;
+    if (!paid && !canceled) return offerSaved();
     history.replaceState(null, "", location.pathname);
-    let saved = null;
-    try { saved = JSON.parse(sessionStorage.getItem("tell.state") || "null"); } catch {}
     if (paid) {
       sid = paid; markPaid();
-      gtag("event", "purchase", { transaction_id: paid, currency: "USD", value: PRICE, items: [{ item_name: ITEM, price: PRICE, quantity: 1 }] });
+      if (remembered()?.sid !== paid) {
+        remember({ sid: paid, t: Date.now() });
+        gtag("event", "purchase", { transaction_id: paid, currency: "USD", value: PRICE, items: [{ item_name: ITEM, price: PRICE, quantity: 1 }] });
+      }
     }
+    resumeChat(!!paid);
+  })();
+
+  // Restores the conversation kept across checkout; with a paid session, gives the reading.
+  function resumeChat(paid) {
+    let saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem("tell.state") || "null"); } catch {}
     app.classList.add("started");
     if (!saved || !saved.turns?.length) { hostTurn(); return; } // new tab or device: begin again, already paid
     turns.push(...saved.turns); photo = saved.photo; petName = saved.petName || "";
@@ -487,7 +500,22 @@
     }
     $("say").classList.add("ready");
     if (paid) giveReading();
-  })();
+  }
+
+  // A paid reading from an earlier visit on this device: offer it back on the start screen.
+  function offerSaved() {
+    const p = remembered();
+    if (!p) return;
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "btn quiet"; b.style.marginLeft = "10px";
+    b.textContent = p.reading ? `See ${p.reading.petName || "your pet"}'s reading again` : "Finish the reading you paid for";
+    b.onclick = () => {
+      unlockAudio(); sid = p.sid; markPaid();
+      if (p.reading) { app.classList.add("started"); showReading(p.reading); }
+      else resumeChat(true);
+    };
+    $("begin").after(b);
+  }
 
   /* ---------- The reading ---------- */
   async function giveReading() {
@@ -507,6 +535,7 @@
 
   // The guarantee's free retry: same purchase, a fresh conversation with new answers.
   function startRetry() {
+    const p = remembered(); if (p) remember({ sid: p.sid, t: p.t }); // the retry's reading replaces it
     turns.length = 0; log.innerHTML = ""; $("reading").innerHTML = "";
     app.classList.remove("revealed"); $("say").classList.remove("ready");
     $("listen").disabled = false; photoPending = !!photo;
@@ -541,6 +570,7 @@
     el.appendChild(wantBox());
     el.appendChild(rateBox(r));
     gtag("event", "reading_given", { tier: r.tier || "free", product: PRODUCT });
+    if (r.tier === "paid" && sid) remember({ sid, t: remembered()?.t || Date.now(), reading: r });
     const again = document.createElement("button"); again.className = "btn quiet again"; again.textContent = "Start another pet";
     again.onclick = () => location.reload(); el.appendChild(again);
     app.classList.add("revealed"); scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
