@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Product, Purchase, createCheckout, loadPurchase, savePurchase, validSession } from "./purchase";
-import { clientIp, kv, overLimit, secret, signText } from "./shared";
+import { clientIp, kv, overLimit, secret, signText, tally } from "./shared";
 
 export const runtime = "edge";
 
@@ -368,6 +368,11 @@ export async function POST(req: NextRequest) {
   }
 
   const data = await resp.json();
+  const u = data?.usage ?? {};
+  await tally(kv(), {
+    claude_calls: 1, claude_in: u.input_tokens, claude_out: u.output_tokens,
+    claude_cache_read: u.cache_read_input_tokens, claude_cache_write: u.cache_creation_input_tokens,
+  });
   const raw: string = (data?.content ?? []).filter((c: { type: string }) => c.type === "text").map((c: { text: string }) => c.text).join("").trim();
 
   if (mode === "chat") {

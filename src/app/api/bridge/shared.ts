@@ -44,3 +44,17 @@ export async function signText(text: string): Promise<string> {
 }
 
 export const verifyText = async (text: string, sig: unknown) => typeof sig === "string" && sig === (await signText(text));
+
+// Daily API usage for the Command Center, which prices it from list rates. KV is eventually
+// consistent, so two calls in the same instant can drop a count; close enough at this volume.
+export async function tally(store: KV | null, add: Record<string, unknown>): Promise<void> {
+  if (!store) return;
+  try {
+    const key = `usage:${new Date().toISOString().slice(0, 10)}`;
+    const cur: Record<string, number> = JSON.parse((await store.get(key)) ?? "{}");
+    for (const [k, v] of Object.entries(add)) cur[k] = (cur[k] ?? 0) + (Number(v) || 0);
+    await store.put(key, JSON.stringify(cur), { expirationTtl: 60 * 60 * 24 * 400 });
+  } catch (e) {
+    console.error("bridge: tally", e);
+  }
+}
