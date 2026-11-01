@@ -1,76 +1,21 @@
 {
- "updated": "2026-10-31T07:45-07:00",
+ "updated": "2026-11-01T10:19-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Reigning champions 🏆",
-  "note": "Preseason is underway. The league has not posted regular-season dates yet (last season opened December 13, 2025). Games fill in here as soon as they are announced."
+  "note": "Preseason is on. The league has not posted the 2026-27 schedule yet. One local outlet reported a November 9 start, not confirmed (last season opened December 13, 2025). Games fill in here as soon as they are announced."
  },
  "manager": "César López Andrade",
  "games": [
-  {
-   "date": "2026-03-13",
-   "time": null,
-   "opponent": "Coqueros de Tuxpan",
-   "home": true,
-   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Semifinal, game 1",
-   "result": "W 7-6",
-   "note": "Fermín López two-run homer. Felipe González the win, Luis Iván Rodríguez the save.",
-   "url": "https://ntv.com.mx/2026/03/13/sayulita-vence-7-6-a-los-coqueros-de-tuxpan-en-el-juego-1-de-la-semifinal/"
-  },
-  {
-   "date": "2026-03-22",
-   "time": null,
-   "opponent": "Coqueros de Tuxpan",
-   "home": false,
-   "venue": "Tuxpan",
-   "round": "Semifinal, game 6",
-   "result": "W 3-0",
-   "note": "Samuel Zamudio three-run homer in the 9th to clinch the series 4-2.",
-   "url": "https://ntv.com.mx/2026/03/23/jaibos-de-sayulita-avanza-a-la-final-de-la-linabe/"
-  },
-  {
-   "date": "2026-04-03",
-   "time": null,
-   "opponent": "Delfines de Puerto Vallarta",
-   "home": false,
-   "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
-   "round": "Final, game 4",
-   "result": "L 0-4",
-   "note": "Series tied 2-2.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "date": "2026-04-04",
-   "time": null,
-   "opponent": "Delfines de Puerto Vallarta",
-   "home": true,
-   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Final, game 5",
-   "result": "W 4-1",
-   "note": "Kender Villegas complete game.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "date": "2026-04-05",
-   "time": null,
-   "opponent": "Delfines de Puerto Vallarta",
-   "home": false,
-   "venue": "Puerto Vallarta",
-   "round": "Final, game 6",
-   "result": "W 10-7",
-   "note": "Extra innings. Champions! Series won 4-2.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
   {
    "date": "2026-11-01",
    "time": "13:00",
    "opponent": "Magdalena, Jalisco",
    "home": true,
    "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Preseason game",
+   "round": "Preseason exhibition",
    "result": null,
-   "note": "Magdalena are the 2025-26 champions of the Liga Regional de Magdalena. Bring family and friends.",
+   "note": "No press preview or result found online as of the morning of Nov 1. Check the team Facebook page for the final score.",
    "url": "https://www.facebook.com/JaibosDeSayulitaNay"
   }
  ],
@@ -126,7 +71,44 @@
    "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
   }
  ],
- "stats": [],
+ "stats": [
+  {
+   "name": "Samuel Zamudio",
+   "pos": "C",
+   "line": "2025-26 final series MVP. Solo HR in Game 1 of the final, walk-off hit to win Game 3, and a 9th-inning homer to win the semifinal clincher 3-0 at Tuxpan. No season stat line published.",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
+  },
+  {
+   "name": "Brayan Vázquez",
+   "pos": "",
+   "line": "Drove in runs in the 10-7, 11-inning title clincher at Puerto Vallarta. No season stat line published.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "name": "Hans Chacón",
+   "pos": "",
+   "line": "Drove in runs in the 10-7 title clincher. No season stat line published.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "name": "Juliandry Higuera",
+   "pos": "P",
+   "line": "Complete-game 3-0 shutout at Tuxpan to win the 2025-26 semifinal.",
+   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
+  },
+  {
+   "name": "Kender Villegas",
+   "pos": "P",
+   "line": "Complete-game 4-1 win over Puerto Vallarta in Game 5 of the final.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "name": "Alberto Hecheverría",
+   "pos": "P (Cuban)",
+   "line": "Winning pitcher in the 10-7 title clincher.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  }
+ ],
  "facts": [
   "The Jaibos won the first league title in club history on April 5, 2026, beating Delfines de Puerto Vallarta 4 games to 2. The clincher went to extra innings, 10-7, in Vallarta.",
   "It was their second straight trip to the final. A year earlier, Tabaqueros de Santiago beat them 4 games to 2. This time they knocked out Coqueros de Tuxpan 4-2 in the semis and finished the job.",
@@ -181,5 +163,279 @@
    "label": "Team history (Sayulita Life)",
    "url": "https://www.sayulitalife.com/sayulero/sayulitalifes-monthly-5000-donation-goes-to-los-jaibos-de-sayulita/"
   }
- ]
+ ],
+ "season_from": "2026-09-01",
+ "news": [
+  {
+   "date": "2026-10-22",
+   "team": "Jaibos de Sayulita",
+   "headline": "Jaibos player Aram Samuel Castellón was named to Mexico's Under-18 team for the Pan American Championship in Santo Domingo, Oct 22 to 29.",
+   "url": "https://consentidocomun.mx/jairo-de-sayulita-representara-a-mexico-en-el-panamericano-de-beisbol-sub-18r/"
+  },
+  {
+   "date": "2026-10-08",
+   "team": "Delfines de Puerto Vallarta",
+   "headline": "Delfines manager Osiris García blamed last season's lost final on baseball fights, after his club split two preseason games with LMP side Charros de Jalisco.",
+   "url": "https://noticiasal.com.mx/index.php/2026/10/08/delfines-de-vallarta-muestran-nivel-de-liga-mexicana-y-serie-del-pacifico/"
+  },
+  {
+   "date": "2026-04-12",
+   "team": "Jaibos de Sayulita",
+   "headline": "Sayulita kept celebrating its first championship with fans in the streets.",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeonato-liga-nayarita-celebracion/"
+  },
+  {
+   "date": "2026-04-05",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos won their first LINABE title, 10-7 in 11 innings at Puerto Vallarta, in a game that lasted more than five hours.",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeones-liga-nayarita-beisbol/"
+  },
+  {
+   "date": "2026-03-30",
+   "team": "Jaibos de Sayulita",
+   "headline": "The final against Puerto Vallarta turned ugly: a bench-clearing scuffle in Game 1, a brawl with 10 ejections in Game 2, and police stepping in after Game 3.",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
+  },
+  {
+   "date": "2026-03-23",
+   "team": "Jaibos de Sayulita",
+   "headline": "After falling behind Tuxpan 2-1, the Jaibos made roster changes and won three straight to reach the final.",
+   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
+  },
+  {
+   "date": "2026-02-15",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos finished first in the regular season, and Santiago vs Tuxpan, called the mother of all battles, returned in the playoffs.",
+   "url": "https://ntv.com.mx/2026/02/15/tabaqueros-de-santiago-vs-coqueros-de-tuxpan-la-gran-rivalidad-vuelve-a-playoffs/"
+  },
+  {
+   "date": "2026-02-01",
+   "team": "League",
+   "headline": "Zona Costa beat Zona Valle 6-3 in the All-Star Game in Tepic; Delfines catcher Elver González was MVP with an 8th-inning grand slam.",
+   "url": "https://ntv.com.mx/2026/02/01/zona-costa-se-lleva-el-juego-de-estrellas-de-la-linabe/"
+  }
+ ],
+ "opponents": {
+  "Magdalena (Jalisco)": {
+   "town": "Magdalena, Jalisco",
+   "drive": "about 3.5 h (roughly 250 km via Tepic)",
+   "population": "~17,000 town, ~22,000 municipality (2020)",
+   "nickname": "No team nickname found.",
+   "town_facts": [
+    "Magdalena is famous for fire opals, and the hills around it hold hundreds of opal and obsidian mines. Gem shops line the town.",
+    "It sits about 78 km northwest of Guadalajara, right next door to the town of Tequila.",
+    "Laguna de Magdalena, a big reservoir west of town, draws many bird species."
+   ],
+   "record": "Not a LINABE team. No league record or 2025-26 result found.",
+   "park": "Not found",
+   "url": "https://en.wikipedia.org/wiki/Magdalena,_Jalisco",
+   "hitters": []
+  },
+  "Delfines de Puerto Vallarta": {
+   "town": "Puerto Vallarta, Jalisco",
+   "drive": "about 45 min (40 km)",
+   "population": "~220,000 city, ~290,000 municipality (2020)",
+   "nickname": "Delfines means dolphins, a nod to the dolphins of Banderas Bay.",
+   "town_facts": [
+    "Puerto Vallarta became world famous after John Huston filmed The Night of the Iguana nearby in 1963.",
+    "The Malecón seaside boardwalk is lined with bronze sculptures.",
+    "It is the only Jalisco club in a Nayarit league. The Ameca River is the state line, and Sayulita sits just across it."
+   ],
+   "record": "2025-26: second in the regular season, beat Ocelotes UAN in the quarterfinal and Tecuala 4-1 in the semifinal, then lost the final 4-2 to the Jaibos. No league title found. This is Sayulita's fiercest rivalry: the 2026 final had a brawl with 10 ejections. Split two preseason games with LMP club Charros de Jalisco on Oct 3-4, 2026. Manager: Osiris García.",
+   "park": "Unidad Deportiva Agustín Flores Contreras",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/",
+   "hitters": [
+    {
+     "name": "Manny Orozco",
+     "pos": "",
+     "line": "Two-run HR and the 9th-inning go-ahead hit, 3 RBI, in a 3-2 win at Sayulita in Game 1 of the 2026 final.",
+     "url": "https://ntv.com.mx/2026/03/27/puerto-vallarta-vence-3-2-a-sayulita-en-el-primero-de-la-serie-final-de-la-linabe/"
+    },
+    {
+     "name": "Elver González",
+     "pos": "C",
+     "line": "2026 All-Star Game MVP with an 8th-inning grand slam.",
+     "url": "https://ntv.com.mx/2026/02/01/zona-costa-se-lleva-el-juego-de-estrellas-de-la-linabe/"
+    },
+    {
+     "name": "Ángel Cabrera",
+     "pos": "P (Cuban)",
+     "line": "Complete game, 10 strikeouts, 2 runs in the 3-2 Game 1 win of the final; also threw a 4-0 shutout in Game 4.",
+     "url": "https://ntv.com.mx/2026/03/27/puerto-vallarta-vence-3-2-a-sayulita-en-el-primero-de-la-serie-final-de-la-linabe/"
+    }
+   ]
+  },
+  "Coqueros de Tuxpan": {
+   "town": "Tuxpan, Nayarit",
+   "drive": "about 3 h (roughly 200 km)",
+   "population": "~22,000 town, ~29,000 municipality (2005)",
+   "nickname": "Coqueros means coconut growers or coconut sellers, a common trade on the Nayarit coast.",
+   "town_facts": [
+    "Tuxpan is the smallest municipality in Nayarit, on rich farmland along the Río San Pedro.",
+    "Farmers here formed a land cooperative in 1919 that is described as one of the biggest in Mexico.",
+    "The Convent of Santa Catalina dates from 1607, and the Coamiles ceremonial site has about 40 known structures."
+   ],
+   "record": "A league power with 5 titles, including 2020-21, 2022-23 and 2023-24. 2025-26: third in the regular season, beat archrival Santiago in the quarterfinal, then lost the semifinal 4-2 to the Jaibos after leading 2-1.",
+   "park": "Estadio Lorenzo López Ibáñez",
+   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/",
+   "hitters": [
+    {
+     "name": "Fernando Alaniz",
+     "pos": "",
+     "line": "Grand slam vs Tecuala in Dec 2025, and a homer in Game 1 of the 2026 semifinal vs Sayulita.",
+     "url": "https://meridiano.mx/2025/12/29/jornada-sabatina-de-la-linabe/"
+    },
+    {
+     "name": "Sergio Villalobos",
+     "pos": "",
+     "line": "4 hits on 2025-26 opening day in a 16-5 win over Rosamorada.",
+     "url": "https://ntv.com.mx/2025/12/14/coqueros-de-tuxpan-arrasa-16-5-a-vaqueros-de-rosamorada-en-arranque-de-la-linabe/"
+    },
+    {
+     "name": "Irving López",
+     "pos": "P",
+     "line": "Winning pitcher on opening day (5.1 IP, 3 R) and in a 14-3 semifinal win over Sayulita.",
+     "url": "https://meridiano.mx/2026/03/16/serie-pareja-en-la-linabe/"
+    }
+   ]
+  },
+  "Tabaqueros de Santiago": {
+   "town": "Santiago Ixcuintla, Nayarit",
+   "drive": "about 2 h 45 min (roughly 175 km)",
+   "population": "~94,000 municipality (2020)",
+   "nickname": "Tabaqueros means tobacco growers. Santiago is one of the most important tobacco regions in Mexico.",
+   "town_facts": [
+    "The municipality includes Mexcaltitán, an island village reachable only by boat, which local tradition links to Aztlán, the legendary homeland of the Aztecs.",
+    "The Nuestras Raíces mosaic mural covers about 1,100 square meters and tells the story of Mexico's origins.",
+    "Farms here grow tobacco, beans, watermelon, mangoes and chiles."
+   ],
+   "record": "The league's winningest club with 7 titles listed, most recently 2024-25, when they beat the Jaibos 4-1 in Game 6 of the final. 2025-26: fourth in the regular season, lost the quarterfinal to archrival Tuxpan.",
+   "park": "Estadio Revolución",
+   "url": "https://ntv.com.mx/2025/03/02/tabaqueros-de-santiago-es-campeon-de-la-liga-nayarit-de-beisbol/",
+   "hitters": [
+    {
+     "name": "Iván \"El Foco\" Morales",
+     "pos": "C",
+     "line": "Game-tying HR plus a 2-run single in the 4-1 title clincher over Sayulita, March 2025.",
+     "url": "https://ntv.com.mx/2025/03/02/tabaqueros-de-santiago-es-campeon-de-la-liga-nayarit-de-beisbol/"
+    },
+    {
+     "name": "Mauricio Ledezma",
+     "pos": "",
+     "line": "Walk-off hit in the 9th to beat Ocelotes UAN 2-1, Dec 2025.",
+     "url": "https://meridiano.mx/2025/12/29/jornada-sabatina-de-la-linabe/"
+    },
+    {
+     "name": "Bryan Durán Langarica",
+     "pos": "P",
+     "line": "Complete game in the 2024-25 clincher over Sayulita. Note: a Brian Durán Langarica pitched for Tuxpan in the 2026 semifinal.",
+     "url": "https://ntv.com.mx/2025/03/02/tabaqueros-de-santiago-es-campeon-de-la-liga-nayarit-de-beisbol/"
+    }
+   ]
+  },
+  "Camaroneros de Tecuala": {
+   "town": "Tecuala, Nayarit",
+   "drive": "about 3.5 h (roughly 260 km)",
+   "population": "~15,000 town, ~42,000 municipality (2000)",
+   "nickname": "Camaroneros means shrimpers. Tecuala's lagoons, like Agua Brava, are big shrimp producers.",
+   "town_facts": [
+    "Playa Novillero runs about 82 km and is billed as one of the longest beaches in the world.",
+    "Much of the west of the municipality is mangrove swamp inside the Marismas Nacionales reserve.",
+    "The name is said to mean a place of many wild animals."
+   ],
+   "record": "1 title (2000). Sat out 2024-25 and returned for 2025-26. Finished sixth, lost the quarterfinal to the Jaibos but advanced as best loser, then lost the semifinal 4-1 to Puerto Vallarta.",
+   "park": "Estadio Santos Ramos Contreras (2026 playoff home games were played at Martín M. Sáizar in Acaponeta)",
+   "url": "https://meridiano.mx/2026/03/18/coqueros-y-camaroneros-reciben-este-viernes/",
+   "hitters": [
+    {
+     "name": "Javier Regla",
+     "pos": "P",
+     "line": "Winning pitcher in a 17-7 semifinal win over Puerto Vallarta, March 2026.",
+     "url": "https://meridiano.mx/2026/03/16/serie-pareja-en-la-linabe/"
+    }
+   ]
+  },
+  "Cachorros de Acaponeta": {
+   "town": "Acaponeta, Nayarit",
+   "drive": "about 3 h 15 min (roughly 245 km)",
+   "population": "~20,000 town, ~37,000 municipality (2020)",
+   "nickname": "Cachorros means cubs.",
+   "town_facts": [
+    "The name blends Tepehuano and Nahuatl words, roughly a place by the river where beans tangle in the reeds.",
+    "The town has one of Mexico's oldest corn flour plants and several mango packing houses.",
+    "Poet Alí Chumacero was born here."
+   ],
+   "record": "3 titles: 2012-13, 2014-15 and 2019-20. Missed the six-team playoff field in 2025-26. Beat Compostela 15-1 in Dec 2025.",
+   "park": "Estadio Martín M. Sáizar",
+   "url": "https://meridiano.mx/2025/12/29/jornada-sabatina-de-la-linabe/",
+   "hitters": [
+    {
+     "name": "Gabriel Salas",
+     "pos": "P",
+     "line": "Winning pitcher in a 15-1 win over Compostela, Dec 2025.",
+     "url": "https://meridiano.mx/2025/12/29/jornada-sabatina-de-la-linabe/"
+    }
+   ]
+  },
+  "Pureros de Compostela": {
+   "town": "Compostela, Nayarit",
+   "drive": "about 1 h 15 min (roughly 75 km)",
+   "population": "~20,000 town, ~77,000 municipality (2020)",
+   "nickname": "Pureros means cigar makers, from puro, Spanish for cigar. Nayarit is Mexico's main tobacco state.",
+   "town_facts": [
+    "Founded in 1530 by conquistador Nuño de Guzmán and named after Santiago de Compostela in Spain.",
+    "The municipality includes the beach towns of Rincón de Guayabitos and La Peñita de Jaltemba, just up the coast from Sayulita.",
+    "It is the closest Nayarit rival to Sayulita by road."
+   ],
+   "record": "3 titles: 2001, 2004 and 2007-08. Missed the six-team playoff field in 2025-26. Lost 15-1 to Acaponeta in Dec 2025.",
+   "park": "Estadio Gilberto Flores Muñoz",
+   "url": "https://es.wikipedia.org/wiki/Liga_de_B%C3%A9isbol_del_Noroeste_de_M%C3%A9xico",
+   "hitters": []
+  },
+  "Ocelotes UAN": {
+   "town": "Tepic, Nayarit",
+   "drive": "about 2 h (roughly 110 km)",
+   "population": "~370,000 city (2020)",
+   "nickname": "Ocelotes are ocelots, the spotted wild cat that is the mascot of the Universidad Autónoma de Nayarit (UAN).",
+   "town_facts": [
+    "Tepic is the state capital, home of the state university that runs the team.",
+    "The city sits inland at about 900 meters, cooler than the coast.",
+    "Tepic's Coloso del Pacífico stadium hosts the pro Jaguares de Nayarit and hosted the 2026 LINABE All-Star Game."
+   ],
+   "record": "4 titles as the Diablos Rojos Universitarios de Tepic (2005, 2006, 2008-09, 2013-14). 2025-26: fifth in the regular season, lost the quarterfinal to Puerto Vallarta.",
+   "park": "Estadio Universitario UAN, Tepic",
+   "url": "https://es.wikipedia.org/wiki/Liga_de_B%C3%A9isbol_del_Noroeste_de_M%C3%A9xico",
+   "hitters": []
+  },
+  "Vaqueros de Rosamorada": {
+   "town": "Rosamorada, Nayarit",
+   "drive": "about 3 h (roughly 200 km)",
+   "population": "~34,000 municipality (2020)",
+   "nickname": "Vaqueros means cowboys.",
+   "town_facts": [
+    "Rosamorada means purple rose, after a tree with purple flowers that once stood in the town center.",
+    "Lagoons near the Pacific support fishing and shrimp farming, while the east rises toward the Sierra Madre.",
+    "Farms grow beans, chiles, rice, melons and watermelon."
+   ],
+   "record": "1 title (2018-19). Missed the six-team playoff field in 2025-26. Lost 16-5 to Tuxpan on opening day under new manager Antonio Lamas.",
+   "park": "Estadio Pablo Zermeño Lamas (Wikipedia lists Carmelo Cervantes)",
+   "url": "https://ntv.com.mx/2025/12/14/coqueros-de-tuxpan-arrasa-16-5-a-vaqueros-de-rosamorada-en-arranque-de-la-linabe/",
+   "hitters": []
+  },
+  "Tiburones de San Blas": {
+   "town": "San Blas, Nayarit",
+   "drive": "about 2 h (roughly 120 km)",
+   "population": "~9,000 town, ~37,000 municipality",
+   "nickname": "Tiburones means sharks, fitting for an old Pacific port town.",
+   "town_facts": [
+    "Founded in 1768 as Spain's launch port for expeditions to California. A 1760 fort with carvings of Spanish kings still stands on the hill.",
+    "Longfellow's last poem, The Bells of San Blas, was inspired by the bells of its ruined church.",
+    "Boats tour the mangroves of La Tovara, and birders have counted up to 292 species in a single Christmas Bird Count."
+   ],
+   "record": "Joined the league in 2023. Listed as a tentative entry for 2025-26 but not in the nine-team field that played. No results or titles found.",
+   "park": "Estadio Carlos Luna Chávez",
+   "url": "https://meridiano.mx/2023/09/27/se-unen-tiburones-de-san-blas-a-la-libn/",
+   "hitters": []
+  }
+ }
 }
