@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Product, Purchase, canRefund, createCheckout, loadPurchase, savePurchase, validSession } from "./purchase";
+import { Product, Purchase, createCheckout, loadPurchase, savePurchase, validSession } from "./purchase";
 import { clientIp, kv, overLimit, secret, signText } from "./shared";
 
 export const runtime = "edge";
@@ -10,7 +10,7 @@ export const runtime = "edge";
 // mode "chat"     → the host's next question, plus ready=true once it has enough. Free.
 // mode "checkout" → a Stripe Checkout URL for the product's reading.
 // mode "reading"  → the final reading as JSON; needs a paid session_id once STRIPE_SECRET_KEY is set.
-// mode "feedback" → "How did we do?"; under 3 stars can also grant one free retry or a refund.
+// mode "feedback" → "How did we do?" rating and note. Refunds and new tries are handled by email (scripts/mls-support.py).
 // Rate limits live in the BRIDGE KV namespace (skipped in `next dev`, where there is no KV).
 
 type Turn = { role: "medium" | "visitor"; text: string };
@@ -100,7 +100,7 @@ type Kind = {
   waitCue: string;
   complete: string; // reading field that proves a full reading came back
   narrate: (r: Record<string, unknown>) => unknown[];
-  say: { rest: string; veil: string; slipped: string; checkout: string; unpaid: string; given: string };
+  say: { rest: string; veil: string; slipped: string; checkout: string; unpaid: string; given: string; down: string; downPaid: string };
 };
 
 const KINDS: Record<"bridge" | "tell", Kind> = {
@@ -109,7 +109,7 @@ const KINDS: Record<"bridge" | "tell", Kind> = {
       app: "rainbow-bridge",
       cents: 1499,
       name: "Rainbow Bridge Reading",
-      description: "A personal reading and keepsake card. If it doesn't feel like them, your money back.",
+      description: "A personal reading and keepsake card. If it doesn't feel right, write to hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.",
       page: "/bridge",
       displayName: "The Rainbow Bridge",
       background: "#14122e",
@@ -132,6 +132,8 @@ const KINDS: Record<"bridge" | "tell", Kind> = {
       checkout: "The way to checkout is clouded. Please try again in a moment.",
       unpaid: "The candle is waiting for your offering.",
       given: "This reading has already been given.",
+      down: "We're mending something on our side, so the candle is dim for now. Please come back soon. Checkout is paused while we mend it, so no one will be charged.",
+      downPaid: "We're mending something on our side, so their reading can't come through just now. Your purchase is safe. Return to this page later on this device to receive it, or write to hello@mylittleshadow.com and we'll help.",
     },
   },
   tell: {
@@ -139,7 +141,7 @@ const KINDS: Record<"bridge" | "tell", Kind> = {
       app: "what-theyd-tell-you",
       cents: 999,
       name: "What they'd tell you",
-      description: "A reading in your pet's own voice, plus a card made for sharing. If it doesn't sound like them, your money back.",
+      description: "A reading in your pet's own voice, plus a card made for sharing. Not right for you? Email hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.",
       page: "/tell",
       displayName: "My Little Shadow",
       background: "#fff6dc",
@@ -167,12 +169,29 @@ const KINDS: Record<"bridge" | "tell", Kind> = {
       checkout: "Checkout isn't loading right now. Please try again in a moment.",
       unpaid: "Their reading is ready as soon as checkout is done.",
       given: "This reading has already been given.",
+      down: "We're fixing something on our end, so the microphone is off for now. Please come back soon. Checkout is paused while we fix it, so nobody will be charged.",
+      downPaid: "We're fixing something on our end, so their reading can't be written just now. Your purchase is safe. Come back to this page later on this device to finish it, or email hello@mylittleshadow.com and we'll help.",
     },
   },
 };
 const kindOf = (b: { product?: unknown }) => KINDS[b.product === "tell" ? "tell" : "bridge"];
 
-const paidState = (p: Purchase) => ({ tier: "paid", canRetry: p.allowed === 1 && !p.refunded, canRefund: canRefund(p) });
+const paidState = (_p: Purchase) => ({ tier: "paid" });
+
+// When the AI account is out of funds (or its key stops working), the site says so and stops taking
+// payments until it is fixed. The flag clears itself; the next good call proves it.
+const DOWN_KEY = "down:ai";
+const isDown = async () => !!(await kv()?.get(DOWN_KEY));
+async function markDown(why: string) {
+  console.error("bridge: AI unavailable, pausing sales:", why.slice(0, 300));
+  await kv()?.put(DOWN_KEY, why.slice(0, 300), { expirationTtl: 600 });
+}
+const OUT_OF_FUNDS = /credit balance|billing|insufficient_quota|exceeded your current quota|payment/i;
+
+// GET ?status: lets the pages (and the Mac mini's watcher) know whether readings can be made right now.
+export async function GET() {
+  return NextResponse.json({ down: await isDown() }, { headers: { "Cache-Control": "no-store" } });
+}
 
 // What the medium (or the pet) reads aloud at the reveal, signed so /api/bridge/voice will speak it.
 async function narrated(kind: Kind, reading: Record<string, unknown>) {
@@ -192,7 +211,7 @@ function parseImage(raw: unknown) {
 
 // "How did we do?" ratings, kept as fb:<time>:<id> in BRIDGE so the prompts can learn from misses.
 // List with: npx wrangler kv key list --binding BRIDGE --prefix fb:
-// The money-back guarantee: under 3 stars plus a short reason earns one free retry or a full refund.
+// "How did we do?" ratings. The money-back process runs by email: support offers a new try, then a full refund.
 type FeedbackBody = { rating?: unknown; comment?: unknown; reading?: unknown; action?: unknown; session_id?: unknown; product?: unknown };
 async function saveFeedback(req: NextRequest, body: FeedbackBody) {
   const rating = Math.round(Number(body.rating));
@@ -200,7 +219,6 @@ async function saveFeedback(req: NextRequest, body: FeedbackBody) {
   const store = kv();
   if (await overLimit(store, clientIp(req), "feedback")) return NextResponse.json({ error: "rest" }, { status: 429 });
   const comment = String(body.comment ?? "").slice(0, 2000).trim();
-  const action = body.action === "retry" || body.action === "refund" ? body.action : null;
   const sid = validSession(body.session_id) ? body.session_id : null;
   const kind = kindOf(body);
   const entry = {
@@ -208,29 +226,13 @@ async function saveFeedback(req: NextRequest, body: FeedbackBody) {
     app: kind.product.app,
     rating,
     comment,
-    action,
     sid,
     reading: body.reading && typeof body.reading === "object" ? JSON.stringify(body.reading).slice(0, 4000) : null,
   };
-  if (store) await store.put(`fb:${Date.now()}:${crypto.randomUUID().slice(0, 8)}`, JSON.stringify(entry));
+  // Kept up to 12 months to improve the prompts (see Privacy). Refunds and retries are handled by email.
+  if (store) await store.put(`fb:${Date.now()}:${crypto.randomUUID().slice(0, 8)}`, JSON.stringify(entry), { expirationTtl: 365 * 86400 });
   else console.log("bridge feedback (no KV in dev):", entry);
-  if (!action) return NextResponse.json({ ok: true });
-
-  const key = secret("STRIPE_SECRET_KEY");
-  if (!key || !sid || rating >= 3 || comment.length < 5) {
-    return NextResponse.json({ error: "Tell us a little about what missed first." }, { status: 400 });
-  }
-  const p = await loadPurchase(key, store, sid, kind.product.app).catch(() => null);
-  if (!p) return NextResponse.json({ error: "We couldn't find that purchase." }, { status: 404 });
-
-  if (action === "retry") {
-    if (p.allowed !== 1 || p.refunded) return NextResponse.json({ error: "Your free retry has already been used." }, { status: 409 });
-    p.allowed = 2;
-    await savePurchase(store, sid, p);
-    return NextResponse.json({ ok: true, retry: true });
-  }
-  // Refunds are handled by email (decision 2026-10-31), so a person sees every one; no self-serve refund here.
-  return NextResponse.json({ error: "Refunds are by email: hello@mylittleshadow.com, within 30 days." }, { status: 410 });
+  return NextResponse.json({ ok: true });
 }
 
 // "I'd want one" taps for products that don't exist yet (printed keepsake cards), counted per
@@ -251,6 +253,7 @@ async function countInterest(req: NextRequest, body: { item?: unknown; from?: un
 async function startCheckout(req: NextRequest, kind: Kind) {
   const key = secret("STRIPE_SECRET_KEY");
   if (!key) return NextResponse.json({ free: true }); // payments not configured: readings stay free
+  if (await isDown()) return NextResponse.json({ error: "down", message: kind.say.down }, { status: 503 });
   if (await overLimit(kv(), clientIp(req), "checkout")) {
     return NextResponse.json({ error: "rest", message: kind.say.rest }, { status: 429 });
   }
@@ -283,6 +286,11 @@ export async function POST(req: NextRequest) {
 
   const apiKey = secret("ANTHROPIC_API_KEY");
   if (!apiKey) return NextResponse.json({ error: "Not configured" }, { status: 500 });
+
+  if (await isDown()) {
+    const message = mode === "reading" && body.session_id ? kind.say.downPaid : kind.say.down;
+    return NextResponse.json({ error: "down", message }, { status: 503 });
+  }
 
   // Paid readings: once Stripe is configured, a reading needs a paid checkout session with readings left.
   const stripeKey = secret("STRIPE_SECRET_KEY");
@@ -349,7 +357,13 @@ export async function POST(req: NextRequest) {
     }),
   });
   if (!resp.ok) {
-    console.error("bridge: anthropic", kind.product.app, resp.status, await resp.text());
+    const why = await resp.text();
+    console.error("bridge: anthropic", kind.product.app, resp.status, why);
+    if (resp.status === 401 || resp.status === 403 || OUT_OF_FUNDS.test(why)) {
+      await markDown(`anthropic ${resp.status}: ${why}`);
+      const message = mode === "reading" && purchase ? kind.say.downPaid : kind.say.down;
+      return NextResponse.json({ error: "down", message }, { status: 503 });
+    }
     return NextResponse.json({ error: "veil", message: kind.say.veil }, { status: 502 });
   }
 

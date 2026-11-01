@@ -87,7 +87,7 @@ And from the same **sample reading**, when asked why she knocks rings off the dr
 
 > "You keep putting small shiny things on my dresser and then acting surprised. I am helping them reach the floor, where everything belongs. Also, it makes you come over to me, which was the point."
 
-The chat is free. The reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
+The chat is free. The reading is $9.99 USD. Not right for you? Email hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.
 
 **[Let your cat have the last word](https://mylittleshadow.com/tell)**
 
@@ -100,4 +100,4 @@ A: Many cats show affection in their own way: following you from room to room, s
 A: You have a short chat with a friendly host about your cat. Then you get a playful, AI-written message in your cat's voice and a card made for sharing. The chat is free, and the message is $9.99 USD. It's for fun and celebration, never veterinary advice.
 
 **Q: What do I need for a reading?**
-A: Just your cat's name and a few things about them, like their personality, a favourite habit and a routine you share. A photo is optional and never stored. The chat is free, and the reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
+A: Just your cat's name and a few things about them, like their personality, a favourite habit and a routine you share. A photo is optional, and we don't keep it. The chat is free, and the reading is $9.99 USD. Not right for you? Email hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.

@@ -97,7 +97,7 @@ The answers above are what most pets would say. Yours has their own: the particu
 
 At [mylittleshadow.com/tell](https://mylittleshadow.com/tell) you tell a friendly host about your pet: their name, three words that sum them up, the habit that makes them them, a routine you share, and up to three questions you've always wanted to ask. Then your pet gets the microphone. You get a funny, loving message in their own voice, their answers to your questions, and a card made for sharing. It's a playful, AI-written voice built from what you tell us.
 
-The chat is free. The reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
+The chat is free. The reading is $9.99 USD. Not right for you? Email hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.
 
 **[Ask your pet your questions](https://mylittleshadow.com/tell)**
 

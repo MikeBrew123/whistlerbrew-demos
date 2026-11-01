@@ -87,7 +87,7 @@ And from the same **sample reading**, when asked why he steals socks:
 
 > "They smell like you, and you leave them lying around like you don't want them. I am a beagle. Finding things is my whole job."
 
-The chat is free. The reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
+The chat is free. The reading is $9.99 USD. Not right for you? Email hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.
 
 **[Let your dog get a word in](https://mylittleshadow.com/tell)**
 
@@ -100,4 +100,4 @@ A: Many dogs learn to recognise certain words, like their name, "walk" or "treat
 A: You have a short chat with a friendly host about your dog. Then you get a playful, AI-written message in your dog's voice and a card made for sharing. The chat is free, and the message is $9.99 USD. It's for fun and celebration, never veterinary advice.
 
 **Q: How much does a reading cost?**
-A: Chatting with the host is free. The reading is $9.99 USD. If it isn't right for you, email hello@mylittleshadow.com within 30 days for a full refund.
+A: Chatting with the host is free. The reading is $9.99 USD. Not right for you? Email hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.

@@ -216,7 +216,7 @@ TEMPLATE = """<!doctype html>
 </article>
 <aside class="try">
   <h2>Let your pet get a word in</h2>
-  <p>Chat about them for free, then hear what they'd tell you in their own voice. $9.99, and your money back if it doesn't sound like them.</p>
+  <p>Chat about them for free, then hear what they'd tell you in their own voice. $9.99 USD. Not right for you? Email hello@mylittleshadow.com within 30 days and tell us what missed. We'll reply within 24 hours and offer to make a new reading, or refund you in full if you'd rather.</p>
   <a href="/tell">Start their reading</a>
 </aside>
 </main>
