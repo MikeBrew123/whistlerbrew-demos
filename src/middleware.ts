@@ -18,6 +18,10 @@ const PAGES: Record<string, string> = {
   "/terms": "/shadow/terms.html",
   "/contact": "/shadow/contact.html",
   "/tell": "/shadow/tell.html",
+  // Search guides (built from Hazel's drafts by scripts/mls-article.py).
+  "/what-would-my-dog-say": "/shadow/articles/what-would-my-dog-say.html",
+  "/what-is-my-cat-thinking": "/shadow/articles/what-is-my-cat-thinking.html",
+  "/questions-to-ask-your-dog": "/shadow/articles/questions-to-ask-your-dog.html",
 };
 
 export function middleware(req: NextRequest) {
@@ -42,4 +46,4 @@ export function middleware(req: NextRequest) {
   return NextResponse.rewrite(url);
 }
 
-export const config = { matcher: ["/", "/privacy", "/terms", "/contact", "/tell", "/shadow/tell.html", "/bridge/index.html", "/shadow/index.html", "/shadow/"] };
+export const config = { matcher: ["/", "/privacy", "/terms", "/contact", "/tell", "/shadow/tell.html", "/what-would-my-dog-say", "/what-is-my-cat-thinking", "/questions-to-ask-your-dog", "/bridge/index.html", "/shadow/index.html", "/shadow/"] };

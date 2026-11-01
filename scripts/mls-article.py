@@ -111,9 +111,11 @@ def build(src: Path):
     slug = (field(text, "URL slug", "Slug", "URL") or "").strip("/ ")
     if not all([title, desc, h1, slug]) or not re.fullmatch(r"[a-z0-9-]+", slug):
         sys.exit(f"{src}: missing or bad header (title={title!r} desc={desc!r} h1={h1!r} slug={slug!r})")
-    # Body starts at the first ## heading after the header block.
+    # Body starts after the article's own "# H1" line (the second "# " heading; the first names the draft),
+    # or at the first ## heading if there is no such line.
     lines = text.splitlines()
-    first = next(i for i, l in enumerate(lines) if l.startswith("## "))
+    h1s = [i for i, l in enumerate(lines) if l.startswith("# ")]
+    first = h1s[1] + 1 if len(h1s) > 1 else next(i for i, l in enumerate(lines) if l.startswith("## "))
     # Stop before any notes for Brew / the main session.
     stop = next((i for i in range(first, len(lines)) if re.match(r"^##\s+(Notes?|For Brew|Self-check|Checks?)\b", lines[i], re.I)), len(lines))
     body, faq = split_faq(lines[first:stop])

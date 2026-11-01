@@ -32,6 +32,14 @@ const PROJECTS: Project[] = [
     external: true,
   },
   {
+    name: "My Little Shadow guides",
+    href: "/shadow/articles/what-would-my-dog-say.html",
+    description: "Search guides that lead to What they'd tell you: What would my dog say?, What is my cat thinking?, and Questions to ask your dog if they could talk. Written by Hazel.",
+    status: "NEW",
+    accent: "#ffe28f",
+    external: true,
+  },
+  {
     name: "The Rainbow Bridge",
     href: "/bridge/",
     description: "Light a candle and let an AI medium gently draw out the story of a pet who has passed, then hear from them in a keepsake reading.",
