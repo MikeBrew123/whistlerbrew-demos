@@ -22,7 +22,17 @@ const PAGES: Record<string, string> = {
   "/what-would-my-dog-say": "/shadow/articles/what-would-my-dog-say.html",
   "/what-is-my-cat-thinking": "/shadow/articles/what-is-my-cat-thinking.html",
   "/questions-to-ask-your-dog": "/shadow/articles/questions-to-ask-your-dog.html",
+  "/bridge": "/bridge/index.html",
+  // The site's own robots, sitemap and icons (whistlerbrew.com keeps its own).
+  "/robots.txt": "/shadow/robots.txt",
+  "/sitemap.xml": "/shadow/sitemap.xml",
+  "/favicon.ico": "/shadow/favicon.ico",
+  "/favicon.svg": "/shadow/favicon.svg",
+  "/apple-touch-icon.png": "/shadow/apple-touch-icon.png",
 };
+
+const OWN_PREFIXES = ["/shadow/", "/bridge/", "/api/bridge", "/_next/"];
+const SEARCH_CONSOLE_FILE = "/google6e9e7a1290118832.html";
 
 export function middleware(req: NextRequest) {
   const host = (req.headers.get("host") ?? "").toLowerCase();
@@ -40,10 +50,18 @@ export function middleware(req: NextRequest) {
     url.protocol = "https";
     return NextResponse.redirect(url, 308);
   }
+  // Old file addresses on this domain go to their clean address (query kept for Stripe returns).
+  const clean = MOVED[url.pathname];
+  if (clean) return NextResponse.redirect(`https://mylittleshadow.com${clean}${url.search}`, 308);
   const page = PAGES[url.pathname];
-  if (!page) return NextResponse.next();
+  if (!page) {
+    // Only My Little Shadow's own files live on this domain; the rest of whistlerbrew.com is not served here.
+    const own = OWN_PREFIXES.some((p) => url.pathname.startsWith(p)) || url.pathname === SEARCH_CONSOLE_FILE;
+    return own ? NextResponse.next() : new NextResponse("Not found", { status: 404, headers: { "Content-Type": "text/plain" } });
+  }
   url.pathname = page;
   return NextResponse.rewrite(url);
 }
 
-export const config = { matcher: ["/", "/privacy", "/terms", "/contact", "/tell", "/shadow/tell.html", "/what-would-my-dog-say", "/what-is-my-cat-thinking", "/questions-to-ask-your-dog", "/bridge/index.html", "/shadow/index.html", "/shadow/"] };
+// Every path except Next build assets, so the brand domain can refuse whistlerbrew.com pages.
+export const config = { matcher: ["/((?!_next/static|_next/image).*)"] };

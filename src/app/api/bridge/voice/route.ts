@@ -32,6 +32,7 @@ const TONES = {
 type Tone = keyof typeof TONES;
 const toneOf = (t: unknown): Tone => (t === "tell" ? "tell" : "bridge");
 const PARKED_SECONDS = 600;
+const MAX_PLAYS = 4; // a parked line can be fetched a few times (browsers re-request audio), not replayed endlessly
 const devParked = new Map<string, string>(); // `next dev` has no KV
 
 export async function GET(req: NextRequest) {
@@ -41,6 +42,12 @@ export async function GET(req: NextRequest) {
   const store = kv();
   const parked = store ? await store.get(`say:${id}`) : devParked.get(id);
   if (!parked) return new Response(null, { status: 404 });
+  if (store) {
+    const playsKey = `plays:${id}`;
+    const plays = parseInt((await store.get(playsKey)) ?? "0", 10) || 0;
+    if (plays >= MAX_PLAYS) return new Response(null, { status: 429 });
+    await store.put(playsKey, String(plays + 1), { expirationTtl: PARKED_SECONDS });
+  }
   // Parked as {text, tone}; plain text from before tones existed is the Bridge voice.
   let text = parked, tone: Tone = "bridge";
   if (parked.startsWith("{")) {

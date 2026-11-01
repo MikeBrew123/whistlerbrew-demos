@@ -14,6 +14,7 @@ export type Purchase = {
   created: number; // unix seconds
   allowed: number; // readings this purchase may produce (1, or 2 after a free retry)
   used: number;
+  tries?: number; // reading attempts, including ones that failed, capped so a purchase can't buy endless model calls
   refunded: boolean;
   reading?: Record<string, unknown>;
 };

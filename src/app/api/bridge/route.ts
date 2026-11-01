@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Product, Purchase, canRefund, createCheckout, loadPurchase, refund, savePurchase, validSession } from "./purchase";
+import { Product, Purchase, canRefund, createCheckout, loadPurchase, savePurchase, validSession } from "./purchase";
 import { clientIp, kv, overLimit, secret, signText } from "./shared";
 
 export const runtime = "edge";
@@ -17,6 +17,7 @@ type Turn = { role: "medium" | "visitor"; text: string };
 
 const MODEL = "claude-sonnet-5-5";
 const MAX_TURNS = 24;
+const MAX_EXTRA_TRIES = 4;
 const MAX_TEXT = 1200;
 const MAX_IMAGE_B64 = 2_000_000;
 const READY = "[[READY]]";
@@ -109,7 +110,7 @@ const KINDS: Record<"bridge" | "tell", Kind> = {
       cents: 1499,
       name: "Rainbow Bridge Reading",
       description: "A personal reading and keepsake card. If it doesn't feel like them, your money back.",
-      page: "/bridge/index.html",
+      page: "/bridge",
       displayName: "The Rainbow Bridge",
       background: "#14122e",
       button: "#f5c86a",
@@ -228,17 +229,8 @@ async function saveFeedback(req: NextRequest, body: FeedbackBody) {
     await savePurchase(store, sid, p);
     return NextResponse.json({ ok: true, retry: true });
   }
-  if (p.refunded) return NextResponse.json({ ok: true, refunded: true });
-  if (!canRefund(p)) return NextResponse.json({ error: "Refunds are available for 30 days after purchase." }, { status: 409 });
-  try {
-    await refund(key, p);
-  } catch (e) {
-    console.error("bridge: refund", e);
-    return NextResponse.json({ error: "The refund didn't go through. Please try again in a moment." }, { status: 502 });
-  }
-  p.refunded = true;
-  await savePurchase(store, sid, p);
-  return NextResponse.json({ ok: true, refunded: true });
+  // Refunds are handled by email (decision 2026-10-31), so a person sees every one; no self-serve refund here.
+  return NextResponse.json({ error: "Refunds are by email: hello@mylittleshadow.com, within 30 days." }, { status: 410 });
 }
 
 // "I'd want one" taps for products that don't exist yet (printed keepsake cards), counted per
@@ -302,6 +294,12 @@ export async function POST(req: NextRequest) {
       if (purchase.reading) return NextResponse.json({ ...purchase.reading, ...paidState(purchase), ...(await narrated(kind, purchase.reading)) });
       return NextResponse.json({ error: "unpaid", message: kind.say.given }, { status: 402 });
     }
+    // Each reading may take a few attempts (a reply that isn't a reading doesn't use it up), but not endless ones.
+    purchase.tries = (purchase.tries ?? 0) + 1;
+    if (purchase.tries > purchase.allowed + MAX_EXTRA_TRIES) {
+      return NextResponse.json({ error: "rest", message: kind.say.rest }, { status: 429 });
+    }
+    await savePurchase(kv(), sid!, purchase);
   } else if (await overLimit(kv(), clientIp(req), mode)) {
     return NextResponse.json({ error: "rest", message: kind.say.rest }, { status: 429 });
   }
@@ -357,7 +355,10 @@ export async function POST(req: NextRequest) {
 
   if (mode === "chat") {
     const userTurns = clean.filter((t) => t.role === "visitor").length;
-    const ready = raw.includes(READY) || userTurns >= 7;
+    // Once the host has stepped out to give crisis numbers, never put the buy button in front of them.
+    const CRISIS = /\b988\b|9-8-8/;
+    const crisis = CRISIS.test(raw) || clean.some((t) => t.role === "medium" && CRISIS.test(t.text));
+    const ready = !crisis && (raw.includes(READY) || userTurns >= 7);
     if (!raw.replace(READY, "").trim()) {
       return NextResponse.json({ error: "veil", message: kind.say.slipped }, { status: 502 });
     }

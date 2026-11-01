@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>What they'd tell you | My Little Shadow</title>
 <meta name="description" content="A playful reading in your pet's own voice. Tell us about them, add a photo, and hear what they've been trying to tell you.">
 <meta property="og:title" content="What they'd tell you">
@@ -285,6 +288,7 @@
   const turns = [];
   let photo = null, photoPending = false, petName = "", busy = false;
   let sid = null; // paid Stripe checkout session for this reading
+  let unconfirmed = null; // a ?paid= return the server hasn't confirmed yet
   // The paid session (and the reading, once given) is remembered on this device for 60 days, as long as
   // the server keeps it, so a refresh or "Start another pet" never loses what someone paid for.
   const PAID_KEY = "tell.paid", KEEP_MS = 60 * 86400000;
@@ -408,7 +412,7 @@
     if (sid) body.session_id = sid;
     const r = await api(body);
     const data = await r.json().catch(() => ({}));
-    if (!r.ok) throw new Error(data.message || "Something went sideways on our end. Please try that again in a moment.");
+    if (!r.ok) throw Object.assign(new Error(data.message || "Something went sideways on our end. Please try that again in a moment."), { status: r.status });
     photoPending = false;
     return data;
   }
@@ -498,7 +502,7 @@
       sid = paid; markPaid();
       if (remembered()?.sid !== paid) {
         remember({ sid: paid, t: Date.now() });
-        gtag("event", "purchase", { transaction_id: paid, currency: "USD", value: PRICE, items: [{ item_name: ITEM, price: PRICE, quantity: 1 }] });
+        unconfirmed = paid; // counted as a purchase once the server confirms it
       }
     }
     resumeChat(!!paid);
@@ -546,8 +550,16 @@
         const words = r.message || "That one got away from us. Please try again.";
         hostSays(words); speak(words, r.sig); $("listen").disabled = false; return;
       }
+      if (r.tier === "paid" && unconfirmed && unconfirmed === sid) {
+        gtag("event", "purchase", { transaction_id: sid, currency: "USD", value: PRICE, items: [{ item_name: ITEM, price: PRICE, quantity: 1 }] });
+        unconfirmed = null;
+      }
       showReading(r);
     } catch (e) {
+      if (e.status === 402 && unconfirmed && unconfirmed === sid) { // not a real purchase: forget it so the buy button works again
+        try { localStorage.removeItem(PAID_KEY); } catch {}
+        sid = unconfirmed = null; $("say").classList.remove("paid"); $("listen").textContent = "Hear from them, $9.99";
+      }
       waiting(false); hostSays(e.message); $("listen").disabled = false;
     }
   }
