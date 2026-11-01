@@ -35,6 +35,14 @@ def stripe(method, path, data=None):
         return json.load(r)
 
 
+def notify(text):
+    """Telegram to Brew through the Mac mini's notify.sh (run there directly, or over ssh)."""
+    local = Path.home() / "bin" / "notify.sh"
+    cmd = [str(local), text] if local.exists() else ["ssh", "mini", f"~/bin/notify.sh {json.dumps(text)}"]
+    if subprocess.run(cmd, capture_output=True).returncode:
+        print("(Telegram alert didn't go through; tell Brew directly.)")
+
+
 def wrangler(*args):
     return subprocess.run(["npx", "wrangler", "kv", "key", *args, "--namespace-id", NS],
                           capture_output=True, text=True)
@@ -75,6 +83,7 @@ def main():
         p["allowed"] = p.get("used", 0) + 1
         save(arg, p)
         print(f"Send them: {SITE}{PAGES.get(p.get('app'), '/bridge')}?paid={arg}&again=1")
+        notify(f"My Little Shadow: new reading granted instead of a refund ({p.get('app')}, {arg[-8:]}).")
     elif cmd == "refund":
         p = load(arg)
         if p.get("refunded"):
@@ -84,6 +93,7 @@ def main():
         p["refunded"] = True
         save(arg, p)
         print("Refunded in full. It reaches their card in 5 to 10 days.")
+        notify(f"My Little Shadow: refund issued ({p.get('app')}, {arg[-8:]}).")
     else:
         sys.exit(__doc__)
 
