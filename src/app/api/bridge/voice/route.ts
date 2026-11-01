@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { clientIp, kv, overLimit, secret, verifyText } from "../shared";
+import { clientIp, kv, overLimit, secret, verifyText, tally } from "../shared";
 
 export const runtime = "edge";
 
@@ -67,6 +67,7 @@ export async function GET(req: NextRequest) {
     console.error("bridge voice: speak", resp.status, await resp.text());
     return new Response(null, { status: 502 });
   }
+  await tally(store, { tts_calls: 1, tts_chars: text.length });
   return new Response(resp.body, { headers: { "Content-Type": "audio/mpeg", "Cache-Control": "private, max-age=600" } });
 }
 
@@ -115,5 +116,7 @@ async function listen(req: NextRequest, key: string) {
     console.error("bridge voice: listen", resp.status, data);
     return NextResponse.json({ error: "I couldn't hear that. Please try again or type it." }, { status: 502 });
   }
+  const u = data.usage ?? {};
+  await tally(kv(), { stt_calls: 1, stt_seconds: u.seconds, stt_in: u.input_tokens, stt_out: u.output_tokens });
   return NextResponse.json({ text: String(data.text ?? "").trim() });
 }
