@@ -631,7 +631,7 @@
   // Our AI is out of funds or down: say so and take no payments until it is back.
   fetch("/api/bridge?status").then((r) => r.json()).then((d) => {
     if (!d.down) return;
-    const start = $("candle"); start.disabled = true;
+    const start = $("candle"); start.disabled = true; $("hint").hidden = true;
     const note = document.createElement("p"); note.className = "small down-note"; note.setAttribute("role", "status");
     note.textContent = "We're mending something on our side, so the candle is dim for now. Please come back soon. Checkout is paused while we mend it, so no one will be charged."; start.after(note);
   }).catch(() => {});
