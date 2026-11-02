@@ -1,155 +1,155 @@
 {
- "headline_en": "Baseball, surf finals and a torchlit walk for the dead: a full Día de Muertos Sunday",
- "headline_es": "Béisbol, finales de surf y una caminata con antorchas: un domingo completo de Día de Muertos",
- "weather_en": "Waves 0.9 m and gentle all day, UV high at midday, 61% chance of rain with the best odds late at night, sunset 18:25.",
- "weather_es": "Olas de 0.9 m y suaves todo el día, UV alto al mediodía, 61% de probabilidad de lluvia (más posible al final de la noche), atardecer a las 18:25.",
+ "headline_en": "Day of the Dead Monday: waves in the morning, tacos, sunset and a catrina contest at night",
+ "headline_es": "Lunes de Día de Muertos: olas en la mañana, tacos, atardecer y concurso de catrinas en la noche",
+ "weather_en": "Waves about 0.9 m all day, great for beginners. UV is high at midday, so stay in the shade. Rain chance is 61%, so keep the covered options handy. Sunset at 18:25.",
+ "weather_es": "Olas de unos 0.9 m todo el día, ideales para principiantes. El UV es alto al mediodía, busca sombra. Hay 61% de probabilidad de lluvia, así que ten a la mano las opciones techadas. Atardecer a las 18:25.",
  "stops": [
   {
-   "time": "08:00",
+   "time": "08:15",
    "kind": "breakfast",
    "place": "El Espresso",
    "title_en": "Plaza breakfast",
    "title_es": "Desayuno en la plaza",
-   "why_en": "A central plaza café that is the town's breakfast hub, with 8 people recommending it.",
-   "why_es": "Un café en la plaza central que es el punto de desayuno del pueblo, recomendado por 8 personas.",
+   "why_en": "A central plaza cafe that works as the breakfast hub, and a gentle start before the sun gets strong.",
+   "why_es": "Un café en la plaza central que es el punto de desayuno, y un buen arranque antes de que pegue el sol.",
    "order_en": "Chilaquiles",
    "order_es": "Chilaquiles",
    "swap": {
     "place": "Northswell Cafe",
     "title_en": "Vegan breakfast",
     "title_es": "Desayuno vegano",
-    "why_en": "A bright, welcoming vegan café if you want something lighter and plant-based.",
-    "why_es": "Un café vegano luminoso y acogedor si quieres algo más ligero y de origen vegetal."
+    "why_en": "Bright, casual vegan cafe if you want something lighter.",
+    "why_es": "Café vegano, luminoso y casual si quieres algo más ligero."
    }
   },
   {
-   "time": "10:00",
+   "time": "09:45",
    "kind": "surf",
    "place": "La Lancha Beach",
-   "title_en": "Easy waves at La Lancha",
-   "title_es": "Olas amables en La Lancha",
-   "why_en": "Waves are 0.9 m and gentle, perfect for learning, and La Lancha is the uncrowded learn-to-surf beach. Surf It Out comes recommended for lessons.",
-   "why_es": "Las olas son de 0.9 m y suaves, ideales para aprender, y La Lancha es la playa tranquila para tomar clases. Surf It Out es muy recomendada para clases.",
+   "title_en": "Learn to surf at La Lancha",
+   "title_es": "Aprende a surfear en La Lancha",
+   "why_en": "Waves are around 0.9 m, which is beginner friendly, and the water is uncrowded. Get out before the midday sun.",
+   "why_es": "Las olas están en unos 0.9 m, buenas para principiantes, y el agua está tranquila. Sal antes del sol de mediodía.",
    "order_en": "",
    "order_es": "",
    "swap": {
-    "place": "Playa Principal",
-    "title_en": "Watch the surf tournament finals",
-    "title_es": "Ver las finales del torneo de surf",
-    "why_en": "Catch the Día de Muertos International Surf Tournament final heats and awards from the sand instead of paddling out.",
-    "why_es": "Mira las finales y la premiación del Torneo Internacional de Surf de Día de Muertos desde la arena en lugar de meterte al agua."
+    "place": "Playa Los Muertos",
+    "title_en": "Calm swim in the shade",
+    "title_es": "Nadada tranquila a la sombra",
+    "why_en": "Calmer water and shady spots if you would rather skip the surf.",
+    "why_es": "Agua más calmada y rincones con sombra si prefieres no surfear."
    }
   },
   {
-   "time": "12:15",
+   "time": "12:30",
    "kind": "street food",
    "place": "Tacos Al Pastor Tal Ivan",
-   "title_en": "Plaza taco stand",
-   "title_es": "Tacos en el puesto de la plaza",
-   "why_en": "A quick, cheap, long-hours plaza stand, ideal for a bite before the game.",
-   "why_es": "Un puesto rápido, barato y de horario largo en la plaza, ideal para comer antes del partido.",
+   "title_en": "Street tacos at the plaza stand",
+   "title_es": "Tacos de calle en el puesto de la plaza",
+   "why_en": "Quick, cheap and open long hours, a good way to get out of the midday sun and refuel.",
+   "why_es": "Rápido, barato y con horario largo, ideal para refrescarte del sol del mediodía y recargar.",
    "order_en": "Al pastor tacos",
    "order_es": "Tacos al pastor",
    "swap": {
-    "place": "Naty's Cocina",
-    "title_en": "Vegetarian street tacos",
-    "title_es": "Tacos vegetarianos de calle",
-    "why_en": "A small street-seating spot for breakfast and lunch that closes mid-afternoon, so go early.",
-    "why_es": "Un lugar pequeño con mesas en la calle para desayuno y comida que cierra a media tarde, así que ve temprano."
-   }
-  },
-  {
-   "time": "13:00",
-   "kind": "event",
-   "place": "Estadio Manuel Rodríguez Sánchez",
-   "title_en": "Jaibos de Sayulita vs Magdalena",
-   "title_es": "Jaibos de Sayulita vs Magdalena",
-   "why_en": "It's a home game and the whole town turns out, so this is the local ritual of the day.",
-   "why_es": "Es juego en casa y todo el pueblo va, así que es el ritual local del día.",
-   "order_en": "",
-   "order_es": "",
-   "swap": {
-    "place": "Latitude 20",
-    "title_en": "Sunday happy hour indoors",
-    "title_es": "Happy hour dominguero bajo techo",
-    "why_en": "Sunday happy hour runs 11:00 to 15:00 with 2x1 tequila shots $100 and a beer + shot combo $100, a fine escape from the midday sun.",
-    "why_es": "El happy hour del domingo es de 11:00 a 15:00 con shots de tequila 2x1 a $100 y combo de cerveza + shot a $100, un buen escape del sol del mediodía."
+    "place": "Mimi's Cake Stand",
+    "title_en": "Sweet plaza stop",
+    "title_es": "Parada dulce en la plaza",
+    "why_en": "A local favorite stand with fresh sweets if you are not up for tacos.",
+    "why_es": "Un puesto favorito de los locales con dulces frescos si no se te antojan tacos."
    }
   },
   {
    "time": "15:30",
    "kind": "happy hour",
    "place": "At The Dock",
-   "title_en": "Happy hour at the dock",
-   "title_es": "Happy hour en el muelle",
-   "why_en": "Happy hour drinks run 15:00 to 17:00, plus Day of the Dead specials all day, and it's a lively beachfront spot with cover if showers roll in.",
-   "why_es": "El happy hour de bebidas es de 15:00 a 17:00, además de especiales de Día de Muertos todo el día, en un lugar animado frente a la playa con techo por si cae lluvia.",
+   "title_en": "Happy hour with Day of the Dead specials",
+   "title_es": "Happy hour con especiales de Día de Muertos",
+   "why_en": "Happy hour drinks run 15:00 to 17:00 at this beachfront spot, with Day of the Dead specials all day. A good spot to wait out any showers.",
+   "why_es": "El happy hour va de 15:00 a 17:00 en este lugar frente al mar, con especiales de Día de Muertos todo el día. Buen lugar para esperar si cae algún chubasco.",
    "order_en": "Happy hour drinks and the Day of the Dead specials",
    "order_es": "Bebidas del happy hour y los especiales de Día de Muertos",
    "swap": {
-    "place": "M&F Coffee Roasters",
-    "title_en": "Coffee break, no alcohol",
-    "title_es": "Pausa de café sin alcohol",
-    "why_en": "A small specialty roastery for a calm, alcohol-free afternoon pick-me-up.",
-    "why_es": "Una pequeña tostaduría de especialidad para un descanso tranquilo y sin alcohol."
+    "place": "Rollado",
+    "title_en": "Pan de Muerto ice cream sandwich",
+    "title_es": "Sándwich de helado de Pan de Muerto",
+    "why_en": "An alcohol-free treat: limited-time Pan de Muerto rolled ice cream sandwiches.",
+    "why_es": "Un antojo sin alcohol: sándwiches de helado rolado de Pan de Muerto por tiempo limitado."
    }
   },
   {
    "time": "17:45",
    "kind": "sunset",
    "place": "Playa Carricitos",
-   "title_en": "Sunset at Carricitos",
-   "title_es": "Atardecer en Carricitos",
-   "why_en": "A secluded beach with pristine sunsets and virtually no crowds, just in time for the 18:25 sunset.",
-   "why_es": "Una playa apartada con atardeceres impecables y casi sin gente, justo a tiempo para el atardecer de las 18:25.",
+   "title_en": "Sunset at a quiet beach",
+   "title_es": "Atardecer en una playa tranquila",
+   "why_en": "A secluded beach with pristine sunsets and almost no crowds. The sun goes down at 18:25.",
+   "why_es": "Una playa apartada con atardeceres impecables y casi sin gente. El sol se oculta a las 18:25.",
    "order_en": "",
    "order_es": "",
    "swap": {
-    "place": "Turtle Sanctuary",
-    "title_en": "Baby turtle release",
-    "title_es": "Liberación de tortuguitas",
-    "why_en": "At 18:00, only if the hatchlings are ready, and it's confirmed around 2 to 3 PM today, so check first.",
-    "why_es": "A las 18:00, solo si las crías están listas, y se confirma hoy alrededor de las 2 a 3 de la tarde, así que verifica antes."
+    "place": "Tropical House Cafe",
+    "title_en": "Sunset with an ocean view",
+    "title_es": "Atardecer con vista al mar",
+    "why_en": "A friendly bar with an ocean view, and it has a roof if clouds roll in.",
+    "why_es": "Un bar amable con vista al mar y techo por si llegan nubes."
    }
   },
   {
-   "time": "19:30",
+   "time": "19:15",
    "kind": "dinner",
    "place": "Tiburón",
    "title_en": "Seafood dinner",
    "title_es": "Cena de mariscos",
-   "why_en": "A breezy seafood spot with great cocktails and friendly service, loved by 5 people.",
-   "why_es": "Un lugar fresco de mariscos con excelentes cocteles y servicio amable, recomendado por 5 personas.",
-   "order_en": "Fish of the day, tuna poke with wontons, and a watermelon margarita",
+   "why_en": "Breezy seafood spot with great cocktails and friendly service.",
+   "why_es": "Lugar fresco de mariscos con excelentes cocteles y servicio amable.",
+   "order_en": "Fish of the day, tuna poke with wontons and a watermelon margarita",
    "order_es": "Pescado del día, poke de atún con wontons y una margarita de sandía",
    "swap": {
-    "place": "Bichos Tacos",
-    "title_en": "Casual tacos",
-    "title_es": "Tacos casuales",
-    "why_en": "A fresh, vibrant taco spot for dinner if you want something more casual and easier on the wallet.",
-    "why_es": "Un lugar fresco y vibrante de tacos para cenar si quieres algo más casual y más económico."
+    "place": "Sur 38",
+    "title_en": "Quiet upscale dinner",
+    "title_es": "Cena tranquila y elegante",
+    "why_en": "Small and quiet, for a calmer evening.",
+    "why_es": "Pequeño y tranquilo, para una noche más relajada."
    }
   },
   {
-   "time": "23:00",
+   "time": "20:30",
    "kind": "event",
-   "place": "Día de Muertos Walk to the Cemetery",
-   "title_en": "Torchlit walk to the cemetery",
-   "title_es": "Caminata con antorchas al panteón",
-   "why_en": "The Almas Eternas procession by torchlight starts at 23:00 from the Main Plaza to the Sayulita Cemetery, a fitting close to Día de Muertos.",
-   "why_es": "La procesión de Almas Eternas con antorchas sale a las 23:00 de la plaza principal al panteón de Sayulita, un cierre perfecto para el Día de Muertos.",
+   "place": "Plaza de Sayulita",
+   "title_en": "Catrina contest and altar contest",
+   "title_es": "Concurso de catrinas y de altares",
+   "why_en": "The Catrina and Catrín contest starts at 20:00 and the altar contest follows at 21:00 in the main plaza.",
+   "why_es": "El concurso de catrinas y catrines empieza a las 20:00 y el de altares sigue a las 21:00 en la plaza principal.",
    "order_en": "",
    "order_es": "",
    "swap": {
     "place": "Sayulita Sandbar",
-    "title_en": "Games and live music instead",
-    "title_es": "Juegos y música en vivo",
-    "why_en": "If you'd rather stay in the mood for a casual night, Sandbar has games, sports and live music, with smash burgers and smoked wings.",
-    "why_es": "Si prefieres una noche más casual, Sandbar tiene juegos, deportes y música en vivo, con smash burgers y alitas ahumadas."
+    "title_en": "Easygoing sports bar night",
+    "title_es": "Noche relajada en el bar deportivo",
+    "why_en": "A low-key sports bar with free games if you want a break from the crowd.",
+    "why_es": "Un bar deportivo tranquilo con juegos gratis si quieres descansar de la multitud."
+   }
+  },
+  {
+   "time": "22:00",
+   "kind": "night",
+   "place": "Escondido Bar",
+   "title_en": "Día de los Muertos party",
+   "title_es": "Fiesta de Día de los Muertos",
+   "why_en": "Max Mignot and Bandida play a Day of the Dead party with Tequila Valle, starting at 20:00 and still going.",
+   "why_es": "Max Mignot y Bandida tocan en una fiesta de Día de los Muertos con Tequila Valle, que empezó a las 20:00 y sigue.",
+   "order_en": "Cocktails",
+   "order_es": "Cocteles",
+   "swap": {
+    "place": "Tropical House Cafe",
+    "title_en": "Mellow nightcap",
+    "title_es": "Último trago tranquilo",
+    "why_en": "A friendly bar with great staff for a quieter drink.",
+    "why_es": "Un bar amable con buen personal para un trago más tranquilo."
    }
   }
  ],
- "date": "2026-11-01",
+ "date": "2026-11-02",
  "sunset": "18:25",
- "updated": "2026-11-01T07:05-07:00"
+ "updated": "2026-11-02T07:05-07:00"
 }
