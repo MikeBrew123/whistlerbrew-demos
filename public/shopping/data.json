@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T07:05-07:00",
+ "updated": "2026-11-02T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -239,7 +239,7 @@
       "per": 12.99,
       "name": "Fresh AAA Certified Angus Beef Brisket (subject to availabil"
      },
-     "history": "Lowest in 4 weeks"
+     "history": "Lowest in 5 weeks"
     },
     {
      "item": "Chicken wings",
@@ -294,7 +294,7 @@
      },
      "pct_cheaper": 23,
      "next_store": "FreshSt",
-     "history": "Lowest in 4 weeks"
+     "history": "Lowest in 5 weeks"
     },
     {
      "item": "Chicken thighs",
@@ -378,7 +378,7 @@
      },
      "pct_cheaper": 0,
      "next_store": "Independent",
-     "history": "Lowest in 4 weeks"
+     "history": "Lowest in 5 weeks"
     },
     {
      "item": "Chicken breast",
@@ -431,7 +431,7 @@
       "per": 8.99,
       "name": "Canadian Fresh Side Pork Belly"
      },
-     "history": "Lowest in 4 weeks",
+     "history": "Lowest in 5 weeks",
      "south": {
       "town": "Squamish",
       "store": "Save-On-Foods",
@@ -516,7 +516,7 @@
      },
      "pct_cheaper": 14,
      "next_store": "FreshSt",
-     "history": "Lowest in 4 weeks",
+     "history": "Lowest in 5 weeks",
      "south": {
       "town": "Vancouver",
       "store": "Real Canadian Superstore",
@@ -686,20 +686,20 @@
      "stores": [
       {
        "store": "FreshSt",
-       "name": "Fresh Wild Pacific Coho Salmon Fillets",
-       "price": "$14.60 avg/ea",
+       "name": "Sockeye Salmon Fillets - Frozen",
+       "price": "$63.79 avg/ea",
        "was": null,
-       "per": 29.44,
+       "per": 33.07,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020051500000_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020056800000_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 29.44,
-      "name": "Fresh Wild Pacific Coho Salmon Fillets"
+      "per": 33.07,
+      "name": "Sockeye Salmon Fillets - Frozen"
      },
      "south": {
       "town": "Vancouver",
@@ -707,7 +707,7 @@
       "name": "FRESH COHO SALMON FILLETS",
       "per": 12.0,
       "price": "$12.00 LB",
-      "pct": 59
+      "pct": 64
      }
     },
     {
@@ -794,12 +794,12 @@
      "pct_cheaper": 2,
      "next_store": "Shoppers",
      "south": {
-      "town": "Squamish",
-      "store": "Costco",
-      "name": "Lavazza Crema E Aroma Coffee, 1 kg",
-      "per": 2.3,
-      "price": "Online Price $22.99",
-      "pct": 50
+      "town": "Vancouver",
+      "store": "Real Canadian Superstore",
+      "name": "KICKING HORSE WHOLE BEAN COFFEE, 454 G",
+      "per": 3.74,
+      "price": "$16.99 OVER LIMIT PAY 22 EA",
+      "pct": 19
      }
     },
     {
@@ -823,7 +823,7 @@
       "per": 9.49,
       "name": "Dairyland - Coffee Cream - 18% m.f. 473ml"
      },
-     "history": "Lowest in 4 weeks"
+     "history": "Lowest in 5 weeks"
     },
     {
      "item": "Coffee cream 18%, big (946 mL+)",
@@ -841,49 +841,39 @@
      "unit": "/dozen",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "GRADE \"A\" LARGE WHITE EGGS",
-       "price": "$3.99 each, SATURDAY, OCTOBER 31 & SUNDAY, NOVEMBER 1 ONLY!",
-       "per": 3.99,
-       "sale": true,
-       "until": "Nov 2",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/438730758/1792810221/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
-       "name": "Golden Valley - Brown Eggs - Large 12pk",
-       "price": "$5.59",
+       "name": "Golden Valley - White Eggs - Large 30pk",
+       "price": "$12.99",
        "was": null,
-       "per": 5.59,
+       "per": 5.2,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005579910104_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005579910303_00.jpg?width=500"
+      },
+      {
+       "store": "Shoppers",
+       "name": "PC FREE-RUN EGGS",
+       "price": "$5.79 each",
+       "per": 5.79,
+       "sale": true,
+       "until": "Nov 7",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/438727664/1792810260/extra_large.jpg"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 5.59,
-      "name": "Golden Valley - Brown Eggs - Large 12pk"
+      "per": 5.2,
+      "name": "Golden Valley - White Eggs - Large 30pk"
      },
-     "pct_cheaper": 29,
-     "next_store": "FreshSt"
+     "pct_cheaper": 10,
+     "next_store": "Shoppers"
     },
     {
      "item": "Butter",
      "unit": "/100g",
      "stores": [
-      {
-       "store": "Shoppers",
-       "name": "NO NAME BUTTER",
-       "price": "$5.49 each SATURDAY, OCTOBER 31 & SUNDAY, NOVEMBER 1 ONLY!",
-       "per": 1.21,
-       "sale": true,
-       "until": "Nov 2",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/438727235/1792810221/extra_large.jpg"
-      },
       {
        "store": "FreshSt",
        "name": "Dairyland - Creamery Butter - Salted 454g",
@@ -901,8 +891,14 @@
       "per": 1.97,
       "name": "Dairyland - Creamery Butter - Salted 454g"
      },
-     "pct_cheaper": 39,
-     "next_store": "FreshSt"
+     "south": {
+      "town": "Squamish",
+      "store": "Walmart",
+      "name": "Gay Lea butter",
+      "per": 1.09,
+      "price": "$4.97",
+      "pct": 45
+     }
     },
     {
      "item": "Cheese",
@@ -957,7 +953,7 @@
      },
      "pct_cheaper": 32,
      "next_store": "Independent",
-     "history": "Lowest in 4 weeks"
+     "history": "Lowest in 5 weeks"
     },
     {
      "item": "Yogurt",
@@ -1107,16 +1103,6 @@
        "until": "Nov 5",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/438754337/1792798121/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
-       "name": "ROYALE BATHROOM TISSUE",
-       "price": "$5.99 each SATURDAY, OCTOBER 31 & SUNDAY, NOVEMBER 1 ONLY!",
-       "per": null,
-       "sale": true,
-       "until": "Nov 2",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/438725883/1792810218/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -1275,22 +1261,22 @@
     "avg_margin": 17
    },
    {
-    "store": "Shoppers",
-    "points": 18,
-    "wins": 4,
-    "big_wins": 3,
-    "real_sales": 6,
-    "fake_sales": 2,
-    "avg_margin": 26
-   },
-   {
     "store": "FreshSt",
-    "points": 9,
-    "wins": 2,
+    "points": 12,
+    "wins": 3,
     "big_wins": 0,
     "real_sales": 3,
     "fake_sales": 0,
-    "avg_margin": 3
+    "avg_margin": 6
+   },
+   {
+    "store": "Shoppers",
+    "points": 3,
+    "wins": 2,
+    "big_wins": 1,
+    "real_sales": 4,
+    "fake_sales": 3,
+    "avg_margin": 19
    },
    {
     "store": "Creekside",
@@ -1315,12 +1301,12 @@
    },
    {
     "store": "FreshSt",
-    "points": 48,
+    "points": 51,
     "weeks_won": 0
    },
    {
     "store": "Shoppers",
-    "points": 32,
+    "points": 17,
     "weeks_won": 0
    },
    {
@@ -1361,14 +1347,14 @@
      "items": 6
     },
     {
+     "store": "Shoppers",
+     "pct": 48,
+     "items": 7
+    },
+    {
      "store": "Independent",
      "pct": 45,
      "items": 4
-    },
-    {
-     "store": "Shoppers",
-     "pct": 34,
-     "items": 8
     },
     {
      "store": "FreshSt",
