@@ -1,82 +1,36 @@
 {
- "updated": "2026-10-16T16:32-07:00",
+ "updated": "2026-11-02T02:27-07:00",
  "stats": {
-  "videos": 97,
-  "comments": 8239,
-  "youtube": 2780,
-  "reddit": 5459,
-  "threads": 686,
-  "people": 1063
+  "videos": 103,
+  "comments": 8297,
+  "youtube": 2953,
+  "reddit": 5344,
+  "threads": 694,
+  "people": 1108
  },
  "intro": {
-  "en": "Visitors rave most about Sayulita and San Pancho's incredible taco spots, chill beach days, friendly surf lessons, and laid-back local vibe.",
-  "es": "A los visitantes les encanta sobre todo la increíble oferta de tacos, los días relajados de playa, las clases de surf con instructores amigables y el ambiente tranquilo de Sayulita y San Pancho."
+  "en": "Visitors love Sayulita and San Pancho for amazing tacos, friendly surf lessons, golden sunsets and a chill, walkable beach-town vibe.",
+  "es": "A los visitantes les encantan Sayulita y San Pancho por sus tacos increíbles, clases de surf amables, atardeceres dorados y el ambiente tranquilo y caminable de pueblo playero."
  },
  "min_people": 3,
  "picks": [
   {
-   "name": "Mary's Taco Sayulita",
-   "town": "Sayulita",
-   "category": "food",
-   "people": 27,
-   "creators": 1,
-   "fans": 21,
-   "critics": 5,
-   "last": "2026-09",
-   "en": "Get fish and shrimp tacos; generous portions though reviews are mixed.",
-   "es": "Come por los tacos de camarón y pescado; porciones generosas, pero las opiniones son mixtas.",
-   "orders": [
-    {
-     "item": "Fish tacos",
-     "people": 8
-    },
-    {
-     "item": "Shrimp tacos",
-     "people": 8
-    },
-    {
-     "item": "Garlic shrimp",
-     "people": 2
-    },
-    {
-     "item": "Horchata",
-     "people": 1
-    },
-    {
-     "item": "Poblano and cheese empanada",
-     "people": 1
-    }
-   ],
-   "street": false,
-   "when": "",
-   "price": "$$",
-   "quote": "My husband would double agree with you for the mary's fish and shrimp tacos. He dreams of them.",
-   "vibe": "busy casual spot, mixed reviews",
-   "links": {
-    "maps": "https://maps.google.com/?cid=15358387411800239256&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-   },
-   "google": {
-    "rating": 4.6,
-    "reviews": 2416
-   }
-  },
-  {
    "name": "La Lancha Beach",
    "town": "Sayulita",
    "category": "surf",
-   "people": 16,
+   "people": 19,
    "creators": 0,
-   "fans": 16,
+   "fans": 19,
    "critics": 0,
-   "last": "2026-09",
-   "en": "Perfect for beginner surfers with small waves, uncrowded water, and local instructors available.",
-   "es": "Perfecta para surfistas principiantes con olas pequeñas, agua tranquila e instructores locales disponibles.",
+   "last": "2026-10",
+   "en": "Grab a lesson and surf La Lancha, where the long, gentle breaks are perfect for beginners.",
+   "es": "Tómate una clase y surfea en La Lancha, donde las olas largas y suaves son ideales para principiantes.",
    "orders": [],
    "street": false,
-   "when": "February best for waves, good for lessons",
+   "when": "February",
    "price": "",
-   "quote": "It was my first time surfing ever, and I was very grateful for the small waves and uncrowded waters.",
-   "vibe": "beginner-friendly, uncrowded, beautiful",
+   "quote": "Check out playa la lancha. Great beach with long wave breaks that are perfect for beginner to intermediate surfers.",
+   "vibe": "Gentle beginner waves, uncrowded water",
    "links": {
     "maps": "https://maps.google.com/?cid=12844829637911513045&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
    },
@@ -86,12 +40,58 @@
    }
   },
   {
+   "name": "Mary's Taco Sayulita",
+   "town": "Sayulita",
+   "category": "food",
+   "people": 26,
+   "creators": 1,
+   "fans": 20,
+   "critics": 5,
+   "last": "2026-09",
+   "en": "Go for the garlic shrimp or fish and shrimp tacos, and don't skip the poblano cheese empanada.",
+   "es": "Pide los camarones al ajillo o los tacos de pescado y camarón, y no te pierdas la empanada de poblano con queso.",
+   "orders": [
+    {
+     "item": "fish tacos",
+     "people": 3
+    },
+    {
+     "item": "shrimp tacos",
+     "people": 3
+    },
+    {
+     "item": "garlic shrimp",
+     "people": 2
+    },
+    {
+     "item": "horchata",
+     "people": 1
+    },
+    {
+     "item": "poblano cheese empanada",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "Lunch and dinner",
+   "price": "",
+   "quote": "Mary's - the best place we've eatin so far it's not even close. Get the shrimp and fish tacos.",
+   "vibe": "Family-run classic, long lines, mixed reviews",
+   "links": {
+    "maps": "https://maps.google.com/?cid=15358387411800239256&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 2416
+   }
+  },
+  {
    "name": "Don Pedro's Restaurant & Bar",
    "town": "Sayulita",
    "category": "food",
-   "people": 16,
+   "people": 15,
    "creators": 1,
-   "fans": 15,
+   "fans": 14,
    "critics": 0,
    "last": "2026-09",
    "en": "Upscale restaurant with ocean views, excellent for large groups and special occasions.",
@@ -152,27 +152,27 @@
    "fans": 13,
    "critics": 0,
    "last": "2026-10",
-   "en": "Sports bar with free games, cheap burgers and wings, live music; perfect for meeting people.",
-   "es": "Bar deportivo con juegos gratis, hamburguesas y alitas económicas, música en vivo; perfecto para conocer gente.",
+   "en": "Stop in for smash burgers at 110 pesos and smoked wings at 90, then play pickleball or cornhole free with your order.",
+   "es": "Pasa por unas hamburguesas smash de 110 pesos y alitas ahumadas de 90, luego juega pickleball o cornhole gratis si pides algo de comer o beber.",
    "orders": [
     {
-     "item": "Smash burgers",
-     "people": 12
+     "item": "burgers",
+     "people": 8
     },
     {
-     "item": "Smoked wings",
-     "people": 12
+     "item": "smoked wings",
+     "people": 6
     },
     {
-     "item": "Beers",
-     "people": 5
+     "item": "beers",
+     "people": 2
     }
    ],
    "street": false,
-   "when": "open 2pm Saturdays, events nightly except Tuesdays",
+   "when": "Daily, live music Saturdays",
    "price": "$",
-   "quote": "I love the sandbar on revolucion. Amazing food and loads of games and cool people. V big too.",
-   "vibe": "games, sports, live music, social",
+   "quote": "Beers are 50 pesos, great smash cheeseburgers for 110 pesos, smoked wings for 90 pesos.",
+   "vibe": "Sports bar, free games, karaoke nights",
    "links": {
     "web": "https://www.sayulitasandbar.com/",
     "ig": "https://www.instagram.com/sandbar.sayulita/",
@@ -185,22 +185,86 @@
    }
   },
   {
+   "name": "Public House",
+   "town": "Sayulita",
+   "category": "drinks",
+   "people": 11,
+   "creators": 1,
+   "fans": 10,
+   "critics": 0,
+   "last": "2026-10",
+   "en": "Pick a craft beer from the cans and bottles, catch a game, and go Thursday for the DJ set.",
+   "es": "Pide una cerveza artesanal de las latas o botellas, mira un partido y ve el jueves por el DJ set.",
+   "orders": [
+    {
+     "item": "craft beer",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "Thursday nights for DJ",
+   "price": "",
+   "quote": "they have great craft beers in cans and bottles from all over Mexico.",
+   "vibe": "Plaza sports bar with craft beer",
+   "links": {
+    "web": "https://sayulitapublichouse.com/",
+    "ig": "https://www.instagram.com/sayulitapublichouse/",
+    "sl": "https://www.sayulitalife.com/business/public-house",
+    "maps": "https://maps.google.com/?cid=8283276397202326633&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 328
+   }
+  },
+  {
+   "name": "Hotelito Los Sueños",
+   "town": "Sayulita",
+   "category": "stay",
+   "people": 9,
+   "creators": 0,
+   "fans": 9,
+   "critics": 0,
+   "last": "2026-10",
+   "en": "Book a yoga class here, then fill up on the breakfast buffet, which runs until 11:30 with many vegan options.",
+   "es": "Toma una clase de yoga aquí y luego desayuna en el buffet, que sirve hasta las 11:30 con muchas opciones veganas.",
+   "orders": [
+    {
+     "item": "breakfast buffet",
+     "people": 5
+    }
+   ],
+   "street": false,
+   "when": "Breakfast, buffet until 11:30",
+   "price": "$",
+   "quote": "Hotelito Los Sueños has clean rooms and a really good breakfast.",
+   "vibe": "Quiet north-side hotel, yoga palapa, pools",
+   "links": {
+    "web": "https://hotelitolossuenos.com/",
+    "maps": "https://maps.google.com/?cid=12423658995168339159&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 278
+   }
+  },
+  {
    "name": "Playa Los Muertos",
    "town": "Sayulita",
    "category": "beach",
-   "people": 18,
+   "people": 14,
    "creators": 0,
-   "fans": 16,
+   "fans": 12,
    "critics": 2,
    "last": "2026-09",
-   "en": "Gentle beach with protective rocks and calm waters, best for families and swimmers.",
-   "es": "Playa tranquila con rocas protectoras y aguas calmadas, ideal para familias y nadadores.",
+   "en": "Head to Playa de los Muertos for the calmest swimming, shady spots, and beach massages at a fair price.",
+   "es": "Ve a Playa de los Muertos por el agua más tranquila, sombra y masajes en la playa a buen precio.",
    "orders": [],
    "street": false,
    "when": "",
    "price": "",
-   "quote": "The only beach we swim at in Sayulita is Los Muertos - the rocks surrounding it break up the cross-tide and it's much gentler.",
-   "vibe": "calm, safe, family-friendly",
+   "quote": "Playa de los Muertos was the calmest spot by far. I got in a bunch of solo swims there without any issue.",
+   "vibe": "Calmer water, shady spots, kid-friendly",
    "links": {
     "maps": "https://maps.google.com/?cid=8137083115922858690&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
    },
@@ -213,11 +277,11 @@
    "name": "Playa Carricitos",
    "town": "Sayulita",
    "category": "beach",
-   "people": 12,
+   "people": 11,
    "creators": 0,
-   "fans": 11,
+   "fans": 10,
    "critics": 1,
-   "last": "2026-09",
+   "last": "2026-10",
    "en": "Hike or drive to this secluded beach for the most beautiful sunsets you'll ever see.",
    "es": "Camina o conduce a esta playa aislada para los atardeceres más bellos que jamás hayas visto.",
    "orders": [],
@@ -232,39 +296,6 @@
    "google": {
     "rating": 4.8,
     "reviews": 392
-   }
-  },
-  {
-   "name": "Public House",
-   "town": "Sayulita",
-   "category": "drinks",
-   "people": 10,
-   "creators": 0,
-   "fans": 10,
-   "critics": 0,
-   "last": "2026-09",
-   "en": "Sports bar with craft beers on the plaza; great for watching World Cup and Mexico games.",
-   "es": "Bar deportivo con cervezas artesanales en la plaza; excelente para ver Copa Mundial y partidos de México.",
-   "orders": [
-    {
-     "item": "craft beers",
-     "people": 1
-    }
-   ],
-   "street": false,
-   "when": "Thursday nights for DJ sets",
-   "price": "",
-   "quote": "So many great places to watch World Cup and during Mexico games the place is popping.",
-   "vibe": "lively sports bar, craft beers, plaza location",
-   "links": {
-    "web": "https://sayulitapublichouse.com/",
-    "ig": "https://www.instagram.com/sayulitapublichouse/",
-    "sl": "https://www.sayulitalife.com/business/public-house",
-    "maps": "https://maps.google.com/?cid=8283276397202326633&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-   },
-   "google": {
-    "rating": 4.6,
-    "reviews": 328
    }
   },
   {
@@ -299,64 +330,89 @@
    }
   },
   {
-   "name": "Hotelito Los Sueños",
+   "name": "Alley Cat Tours",
    "town": "Sayulita",
-   "category": "stay",
-   "people": 8,
+   "category": "outdoors",
+   "people": 11,
    "creators": 0,
-   "fans": 8,
-   "critics": 0,
-   "last": "2026-09",
-   "en": "Hotel with daily yoga, great breakfast buffet with vegan options, and two pools near beach.",
-   "es": "Hotel con yoga diario, excelente buffet de desayuno con opciones veganas y dos piscinas cerca de la playa.",
-   "orders": [
-    {
-     "item": "breakfast buffet",
-     "people": 4
-    }
-   ],
+   "fans": 10,
+   "critics": 1,
+   "last": "2026-10",
+   "en": "Book the Alley Cat catamaran for a full-day all-inclusive trip to Marietas, with snorkeling and whale sightings in season.",
+   "es": "Reserva el catamarán Alley Cat para un día completo todo incluido a Marietas, con snorkel y, en temporada, avistamiento de ballenas.",
+   "orders": [],
    "street": false,
-   "when": "breakfast until 1130, morning and evening yoga",
-   "price": "$$",
-   "quote": "Great breakfast buffet with lots of options, daily yoga opportunities, 2 pools, quiet area steps from the beach.",
-   "vibe": "yoga-focused hotel, breakfast buffet, quiet beach",
+   "when": "",
+   "price": "",
+   "quote": "We did the Marietas excursion. They made us feel like family.",
+   "vibe": "All-inclusive catamaran day trip, family-run",
    "links": {
-    "web": "https://hotelitolossuenos.com/",
-    "maps": "https://maps.google.com/?cid=12423658995168339159&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    "web": "https://allycattours.com/",
+    "maps": "https://maps.google.com/?cid=6125152452006301185&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
    },
    "google": {
-    "rating": 4.6,
-    "reviews": 278
+    "rating": 5,
+    "reviews": 559
    }
   },
   {
-   "name": "Sur 38",
+   "name": "Sayulinda Hotel",
+   "town": "Sayulita",
+   "category": "stay",
+   "people": 7,
+   "creators": 0,
+   "fans": 7,
+   "critics": 0,
+   "last": "2026-10",
+   "en": "Grab a day pass for the Sayulinda rooftop pool and bar, right in the middle of town, with bags held for you.",
+   "es": "Compra un pase de día para la azotea de Sayulinda, con alberca y bar, en pleno centro, y te guardan tus bolsas.",
+   "orders": [],
+   "street": false,
+   "when": "",
+   "price": "",
+   "quote": "The Sayulinda Hotel has a great rooftop pool, bar, and lounge area, and does day passes as well.",
+   "vibe": "Rooftop pool, lounge, central, day passes",
+   "links": {
+    "web": "https://sayulindahotel.com/",
+    "maps": "https://maps.google.com/?cid=18382728836847031282&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.5,
+    "reviews": 304
+   }
+  },
+  {
+   "name": "The Dock",
    "town": "Sayulita",
    "category": "food",
-   "people": 8,
+   "people": 9,
    "creators": 0,
    "fans": 8,
-   "critics": 0,
-   "last": "2026-07",
-   "en": "Upscale tapas and wine spot with intimate, cozy atmosphere.",
-   "es": "Lugar elegante de tapas y vino con atmósfera íntima y acogedora.",
+   "critics": 1,
+   "last": "2026-10",
+   "en": "Pull up a chair right on the sand at The Dock, ideal for big groups, and order the puttanesca.",
+   "es": "Siéntate en la arena frente a The Dock, ideal para grupos grandes, y pide la puttanesca.",
    "orders": [
     {
-     "item": "tapas",
-     "people": 1
-    },
-    {
-     "item": "wine",
+     "item": "Puttanesca",
      "people": 1
     }
    ],
    "street": false,
    "when": "",
-   "price": "$$$",
-   "quote": "We like to go to Sur38 for tapas and wine, it's a little fancier.",
-   "vibe": "upscale tapas and wine, intimate setting",
-   "links": {},
-   "google": null
+   "price": "",
+   "quote": "The Dock is great that was my travel group’s favorite spot of our whole trip back in December",
+   "vibe": "Beachfront, big-group space, giant screen",
+   "links": {
+    "web": "https://www.thedocksayulita.com/",
+    "ig": "https://www.instagram.com/thedocksayulita/",
+    "sl": "https://www.sayulitalife.com/business/the-dock",
+    "maps": "https://maps.google.com/?cid=10813782660059040558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.7,
+    "reviews": 340
+   }
   },
   {
    "name": "Surf It Out",
@@ -415,50 +471,7 @@
    }
   },
   {
-   "name": "Alley Cat Tours",
-   "town": "Sayulita",
-   "category": "outdoors",
-   "people": 10,
-   "creators": 0,
-   "fans": 9,
-   "critics": 1,
-   "last": "2026-07",
-   "en": "Take a catamaran to Isla Marietas with snorkeling and all-inclusive food.",
-   "es": "Toma un catamarán a Isla Marietas con snorkel y comida incluida.",
-   "orders": [
-    {
-     "item": "catamaran tour",
-     "people": 7
-    },
-    {
-     "item": "Marietas excursion",
-     "people": 3
-    },
-    {
-     "item": "snorkeling",
-     "people": 2
-    },
-    {
-     "item": "quad rental",
-     "people": 1
-    }
-   ],
-   "street": false,
-   "when": "",
-   "price": "",
-   "quote": "1000% yes. I've been to Mexico 13 times and this was by far the best boat excursion.",
-   "vibe": "family-oriented, all-inclusive, friendly",
-   "links": {
-    "web": "https://allycattours.com/",
-    "maps": "https://maps.google.com/?cid=6125152452006301185&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-   },
-   "google": {
-    "rating": 5,
-    "reviews": 559
-   }
-  },
-  {
-   "name": "Alto Alto",
+   "name": "Sur 38",
    "town": "Sayulita",
    "category": "food",
    "people": 7,
@@ -466,29 +479,21 @@
    "fans": 7,
    "critics": 0,
    "last": "2026-07",
-   "en": "Try Alto Alto for fancy Mediterranean dinner, perfect for special occasions.",
-   "es": "Prueba Alto Alto para cena mediterránea elegante, perfecta para ocasiones especiales.",
+   "en": "Sur 38 is small and quiet for dinner, so order anything with poblano rajas, a favorite here.",
+   "es": "Sur 38 es pequeño y tranquilo para cenar, y pide cualquier platillo con rajas poblanas.",
    "orders": [
     {
-     "item": "Mediterranean dinner",
-     "people": 2
+     "item": "Poblano rajas",
+     "people": 1
     }
    ],
    "street": false,
-   "when": "dinner",
-   "price": "$$$",
-   "quote": "Dinner at Alto Alto was great for a fun, upscale location",
-   "vibe": "upscale, Mediterranean, wedding-worthy",
-   "links": {
-    "web": "https://altoaltosayulita.com/",
-    "ig": "https://www.instagram.com/altoaltosayulita/",
-    "sl": "https://www.sayulitalife.com/business/alto-alto",
-    "maps": "https://maps.google.com/?cid=18285723410439965949&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-   },
-   "google": {
-    "rating": 4.6,
-    "reviews": 249
-   }
+   "when": "Dinner",
+   "price": "",
+   "quote": "Anything with Poblano rajas from Sur 38",
+   "vibe": "Small, quiet, upscale dinner spot",
+   "links": {},
+   "google": null
   },
   {
    "name": "Aaleyah's Wings",
@@ -644,14 +649,14 @@
    "fans": 8,
    "critics": 1,
    "last": "2026-08",
-   "en": "Hike Monkey Mountain from Higuera Blanca; bring water, sunscreen, and good shoes for this hot trail.",
-   "es": "Camina Monkey Mountain desde Higuera Blanca; trae agua, protector solar, y buenos zapatos para esta caminata caliente.",
+   "en": "Monkey Mountain is a hot, easy-to-follow jungle hike, so bring water and sunscreen and grab an Uber to Higuera Blanca.",
+   "es": "Monkey Mountain es un sendero caluroso y fácil de seguir; lleva agua y bloqueador, y pide un Uber a Higuera Blanca.",
    "orders": [],
    "street": false,
    "when": "",
    "price": "",
-   "quote": "Monkey mountain is easy alone. Uber to Higuera Blanca, and then follow the trail using Alltrails. Wear good shoes and sunscreen, take water, it is a hot one.",
-   "vibe": "jungle hike, scenic, hot, accessible",
+   "quote": "Monkey mountain is easy alone. Uber to Higuera Blanca, and then follow the trail using Alltrails.",
+   "vibe": "Hot jungle hike, Higuera Blanca trailhead",
    "links": {
     "web": "https://www.monkeymountainhike.mx/",
     "maps": "https://maps.google.com/?cid=14197291500715669251&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
@@ -697,57 +702,32 @@
    }
   },
   {
-   "name": "The Dock",
+   "name": "Alto Alto",
    "town": "Sayulita",
    "category": "food",
    "people": 6,
    "creators": 0,
    "fans": 6,
    "critics": 0,
-   "last": "2026-06",
-   "en": "The Dock's a great beachfront dinner spot with good food, drinks, and an awesome vibe.",
-   "es": "The Dock es un excelente restaurante frente a la playa para cenar con buena comida, bebidas, y ambiente genial.",
-   "orders": [
-    {
-     "item": "puttanesca",
-     "people": 1
-    }
-   ],
-   "street": false,
-   "when": "dinner",
-   "price": "",
-   "quote": "We went to it our first night in town. It was right on the beach, good food, good drinks, it was so nice",
-   "vibe": "beachfront, dinner, lively, screens",
-   "links": {
-    "web": "https://www.thedocksayulita.com/",
-    "ig": "https://www.instagram.com/thedocksayulita/",
-    "sl": "https://www.sayulitalife.com/business/the-dock",
-    "maps": "https://maps.google.com/?cid=10813782660059040558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-   },
-   "google": {
-    "rating": 4.7,
-    "reviews": 340
-   }
-  },
-  {
-   "name": "Marietas Islands",
-   "town": "Nearby",
-   "category": "outdoors",
-   "people": 8,
-   "creators": 0,
-   "fans": 7,
-   "critics": 1,
-   "last": "2026-09",
-   "en": "Book a day-trip snorkel tour to Marietas Islands with equipment, park fees, and lunch included.",
-   "es": "Reserva un tour de snorkel de día a las Islas Marietas con equipo, tarifas de parque, y almuerzo incluido.",
+   "last": "2026-07",
+   "en": "Go to Alto Alto for an upscale, fun Mediterranean dinner. One visitor called it amazing, and it hosted a wedding welcome party.",
+   "es": "Ve a Alto Alto por una cena mediterránea elegante y divertida, donde hasta se hizo una fiesta de bienvenida de boda.",
    "orders": [],
    "street": false,
-   "when": "day trips",
-   "price": "$",
-   "quote": "1600 pesos for an incredible trip to Las Marietas that included snorkeling equipment, park fees, and lunch.",
-   "vibe": "snorkeling tour, scenic, boat pickup",
-   "links": {},
-   "google": null
+   "when": "Dinner",
+   "price": "$$$",
+   "quote": "I really like Alto Alto for Mediterranean food, but I’m bias because that’s where I had the welcome party for my wedding.",
+   "vibe": "Upscale Mediterranean dinner, fun atmosphere",
+   "links": {
+    "web": "https://altoaltosayulita.com/",
+    "ig": "https://www.instagram.com/altoaltosayulita/",
+    "sl": "https://www.sayulitalife.com/business/alto-alto",
+    "maps": "https://maps.google.com/?cid=18285723410439965949&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   "google": {
+    "rating": 4.6,
+    "reviews": 249
+   }
   },
   {
    "name": "Kapital Bank",
@@ -836,6 +816,31 @@
     "rating": 4.8,
     "reviews": 100
    }
+  },
+  {
+   "name": "Alchemista",
+   "town": "Sayulita",
+   "category": "stay",
+   "people": 5,
+   "creators": 0,
+   "fans": 5,
+   "critics": 0,
+   "last": "2026-10",
+   "en": "Grab breakfast at Alchemista, where the chilaquiles are a regular's go-to order.",
+   "es": "Desayuna en Alchemista, donde los chilaquiles son el pedido de siempre.",
+   "orders": [
+    {
+     "item": "chilaquiles",
+     "people": 1
+    }
+   ],
+   "street": false,
+   "when": "Breakfast",
+   "price": "",
+   "quote": "Chilaquiles at alchemista was my go to",
+   "vibe": "Breakfast go-to, chilaquiles, wellness-minded crowd",
+   "links": {},
+   "google": null
   },
   {
    "name": "Tropical House Cafe",
@@ -992,19 +997,23 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-10",
-   "en": "Grab vegetarian tacos at Naty's before they close mid-afternoon.",
-   "es": "Prueba los tacos vegetarianos en Naty's antes de que cierren.",
+   "en": "Go to Naty's Cocina for breakfast or lunch, bring cash, and order the vegetarian tacos, which commenters call delicious and inexpensive.",
+   "es": "Ve a Naty's Cocina a desayunar o comer, lleva efectivo y pide los tacos vegetarianos, deliciosos y baratos.",
    "orders": [
     {
      "item": "vegetarian tacos",
      "people": 2
+    },
+    {
+     "item": "fruit drinks",
+     "people": 1
     }
    ],
    "street": true,
-   "when": "Breakfast and lunch, closes mid-afternoon",
+   "when": "Daytime, breakfast and lunch, closes mid afternoon",
    "price": "$",
    "quote": "I remember Naty's Cocina as having amazing delicious vegetarian tacos.",
-   "vibe": "small spot, street seating",
+   "vibe": "Small cash-only taco stand, veggie-friendly",
    "links": {
     "sl": "https://www.sayulitalife.com/business/natys",
     "maps": "https://maps.google.com/?cid=8853263357154260367&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
@@ -1048,34 +1057,6 @@
    }
   },
   {
-   "name": "Tierra Tropical Beach Club",
-   "town": "San Pancho",
-   "category": "stay",
-   "people": 5,
-   "creators": 0,
-   "fans": 5,
-   "critics": 0,
-   "last": "2026-09",
-   "en": "Spend a day at this luxurious beach club with excellent food and drinks.",
-   "es": "Pasa un día en este club de playa lujoso con excelente comida y bebidas.",
-   "orders": [],
-   "street": false,
-   "when": "Closed Mondays",
-   "price": "$$$",
-   "quote": "it's heaven! $500 pesos for the day, but you can stay all day and it's so luxurious and quiet!",
-   "vibe": "luxurious, quiet, exclusive beach club",
-   "links": {
-    "web": "https://tierratropical.com.mx/tierra-tropical.php",
-    "ig": "https://www.instagram.com/tierratropicalbeachclub/",
-    "sl": "https://www.sayulitalife.com/business/tierra-tropical-beach-club",
-    "maps": "https://maps.google.com/?cid=13910622938296126475&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-   },
-   "google": {
-    "rating": 4.5,
-    "reviews": 516
-   }
-  },
-  {
    "name": "Marea Cafe",
    "town": "Sayulita",
    "category": "food",
@@ -1111,31 +1092,6 @@
     "rating": 4.8,
     "reviews": 118
    }
-  },
-  {
-   "name": "Carbon",
-   "town": "Sayulita",
-   "category": "food",
-   "people": 7,
-   "creators": 0,
-   "fans": 6,
-   "critics": 1,
-   "last": "2026-06",
-   "en": "Carbon's patio serves fantastic burgers in a cozy, quiet neighborhood spot.",
-   "es": "El patio de Carbon sirve hamburguesas fantásticas en un lugar acogedor y tranquilo.",
-   "orders": [
-    {
-     "item": "burger",
-     "people": 1
-    }
-   ],
-   "street": false,
-   "when": "Open from 8pm, closed Thursdays",
-   "price": "",
-   "quote": "it's a little street patio in the north side so it's quieter. it's such a cozy vibe.",
-   "vibe": "cozy street patio, quiet, open kitchen",
-   "links": {},
-   "google": null
   },
   {
    "name": "El Itacate",
@@ -1213,6 +1169,26 @@
    "price": "",
    "quote": "Great fish of the day, ahi wonton appetizer and specials",
    "vibe": "breezy seafood, great cocktails, friendly service",
+   "links": {},
+   "google": null
+  },
+  {
+   "name": "Marietas Islands",
+   "town": "Nearby",
+   "category": "outdoors",
+   "people": 9,
+   "creators": 0,
+   "fans": 7,
+   "critics": 2,
+   "last": "2026-10",
+   "en": "Take a boat day trip to Islas Marietas with pickup from Sayulita, and remember sunscreen is illegal on the islands.",
+   "es": "Haz un paseo en lancha de un día a las Islas Marietas con salida desde Sayulita, y recuerda que el bloqueador está prohibido allí.",
+   "orders": [],
+   "street": false,
+   "when": "Day trips by boat, shut during hurricanes",
+   "price": "$$",
+   "quote": "They pick up and drop off in Sayulita. Just a really fun day.",
+   "vibe": "Boat day trip, snorkeling, fun crew",
    "links": {},
    "google": null
   },
@@ -1357,19 +1333,23 @@
    "fans": 5,
    "critics": 0,
    "last": "2026-10",
-   "en": "Grab vegetarian tacos at Naty's before they close mid-afternoon.",
-   "es": "Prueba los tacos vegetarianos en Naty's antes de que cierren.",
+   "en": "Go to Naty's Cocina for breakfast or lunch, bring cash, and order the vegetarian tacos, which commenters call delicious and inexpensive.",
+   "es": "Ve a Naty's Cocina a desayunar o comer, lleva efectivo y pide los tacos vegetarianos, deliciosos y baratos.",
    "orders": [
     {
      "item": "vegetarian tacos",
      "people": 2
+    },
+    {
+     "item": "fruit drinks",
+     "people": 1
     }
    ],
    "street": true,
-   "when": "Breakfast and lunch, closes mid-afternoon",
+   "when": "Daytime, breakfast and lunch, closes mid afternoon",
    "price": "$",
    "quote": "I remember Naty's Cocina as having amazing delicious vegetarian tacos.",
-   "vibe": "small spot, street seating",
+   "vibe": "Small cash-only taco stand, veggie-friendly",
    "links": {
     "sl": "https://www.sayulitalife.com/business/natys",
     "maps": "https://maps.google.com/?cid=8853263357154260367&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
@@ -1495,64 +1475,85 @@
    }
   }
  ],
- "warnings": [],
+ "warnings": [
+  {
+   "name": "Playa San Pancho",
+   "town": "San Pancho",
+   "category": "beach",
+   "people": 5,
+   "creators": 1,
+   "fans": 0,
+   "critics": 4,
+   "last": "2026-10",
+   "en": "",
+   "es": "",
+   "orders": null,
+   "street": null,
+   "when": null,
+   "price": null,
+   "quote": null,
+   "vibe": null,
+   "links": null,
+   "google": null
+  }
+ ],
  "skip": [],
  "tips": [
   {
-   "en": "Carry pesos cash, especially for tips and small vendors; cards work at many restaurants.",
-   "es": "Lleva efectivo en pesos, sobre todo para propinas y pequeños negocios; muchos restaurantes también aceptan tarjeta.",
+   "en": "Sayulita is very walkable, and many say you do not need a car in town.",
+   "es": "Sayulita es muy caminable, y muchos dicen que no necesitas auto en el pueblo.",
    "category": "tip",
+   "people": 8,
+   "quote": "Absolutely don't get a car. Maybe golf cart but everything is pretty walkable"
+  },
+  {
+   "en": "Golf carts are a popular choice, though some say you can skip them and walk.",
+   "es": "Los carritos de golf son una opción popular, aunque algunos dicen que puedes omitirlos y caminar.",
+   "category": "tip",
+   "people": 7,
+   "quote": "I think many tourists get a golf cart by default but it's really not needed."
+  },
+  {
+   "en": "The plaza area gets noisy at night; stay a couple of blocks away or on the north side.",
+   "es": "La zona de la plaza es ruidosa de noche; hospédate a un par de cuadras o en el lado norte.",
+   "category": "warning",
    "people": 5,
-   "quote": "nearly all places accept tap to pay, choose pesos"
+   "quote": "The plaza and a 2 block radius can be very noisy at night, but the neighborhoods are quiet and great"
   },
   {
-   "en": "Uber, taxis with fixed posted prices, and local buses all serve the area, though Uber availability can vary.",
-   "es": "Uber, taxis con precios fijos publicados y camiones locales cubren la zona, aunque la disponibilidad de Uber puede variar.",
-   "category": "tip",
-   "people": 5,
-   "quote": "Fixed prices from PV to Sayulita. Signs inside the taxis."
-  },
-  {
-   "en": "Renting a golf cart or ATV (around 500 pesos a day) is a fun way to get around locally.",
-   "es": "Rentar un carrito de golf o un ATV (alrededor de 500 pesos al día) es una forma divertida de moverte por la zona.",
+   "en": "Bring pesos. Small shops, bars and taco stands often prefer cash, and cards can cost 3-5% more.",
+   "es": "Lleva pesos. Tiendas pequeñas, bares y taquerías suelen preferir efectivo, y pagar con tarjeta puede costar 3-5% más.",
    "category": "tip",
    "people": 4,
-   "quote": "rentar un carrito de golf y recorrer todo"
+   "quote": "Bring pesos. You will often pay 3-5% more for your purchase if you use a card"
   },
   {
-   "en": "Catching the Día de los Muertos parade in late October or November is a lively, worthwhile experience.",
-   "es": "Ver el desfile de Día de los Muertos a finales de octubre o en noviembre es una experiencia animada y que vale la pena.",
+   "en": "Pay in pesos and always decline the conversion rate at card machines and ATMs.",
+   "es": "Paga en pesos y siempre rechaza la conversión de divisa en terminales de tarjeta y cajeros.",
    "category": "tip",
    "people": 4,
-   "quote": "Don't miss the dia de los Muertos parade...Get candy for kids"
+   "quote": "all of the taco, tequila, pacífico places accept card. Just decline the conversion."
   },
   {
-   "en": "Before storms, pack a portable charger, cash, and extra water and food; power and wifi may cut out.",
-   "es": "Antes de una tormenta, lleva un cargador portátil, efectivo, y agua y comida extra; la luz y el wifi pueden fallar.",
-   "category": "tip",
-   "people": 4,
-   "quote": "We will likely lose electricity, cell service and wifi"
-  },
-  {
-   "en": "Natural fiber clothing and comfortable sandals handle the heat and cobblestone streets better than synthetic fabrics.",
-   "es": "La ropa de fibras naturales y las sandalias cómodas resisten mejor el calor y las calles de empedrado que la ropa sintética.",
-   "category": "tip",
-   "people": 4,
-   "quote": "hilly town, cobblestones, be careful of your steps"
-  },
-  {
-   "en": "Daily food costs often run 1,000-2,000 pesos per person, with tacos the most budget-friendly option.",
-   "es": "Los gastos diarios de comida suelen ser de 1,000 a 2,000 pesos por persona; los tacos son la opción más económica.",
-   "category": "tip",
-   "people": 3,
-   "quote": "1000 pesos per day per person recommended"
-  },
-  {
-   "en": "Search Facebook groups or Sayulitalife.com for rentals, and consider finalizing in person to avoid scam listings.",
-   "es": "Busca rentas en grupos de Facebook o en Sayulitalife.com, y considera cerrar el trato en persona para evitar estafas.",
+   "en": "ATMs can run out of cash on busy weekends and holidays, so keep some cash on hand.",
+   "es": "Los cajeros pueden quedarse sin efectivo en fines de semana concurridos y días festivos, así que ten efectivo a la mano.",
    "category": "warning",
    "people": 3,
-   "quote": "There's a lot of scams. Get there first to rent in person."
+   "quote": "you can find ATMs in Sayulita but just be aware that they can run out of cash, especially during high season"
+  },
+  {
+   "en": "Uber and InDrive are popular for rides, and scheduling trips in the app works well.",
+   "es": "Uber e InDrive son populares para trasladarte, y programar los viajes en la app funciona bien.",
+   "category": "tip",
+   "people": 3,
+   "quote": "if you schedule your trips in the app it works quite well."
+  },
+  {
+   "en": "Midday is hot and humid, so bring sunscreen and a hat, and look for shady spots.",
+   "es": "El mediodía es caluroso y húmedo, así que lleva bloqueador y sombrero, y busca lugares con sombra.",
+   "category": "tip",
+   "people": 3,
+   "quote": "The exception would be if you go soon when it's 80° and 80% humidity which is gnarly."
   }
  ]
 }
