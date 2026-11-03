@@ -9,7 +9,8 @@ missed. We offer one new reading with new answers; if they'd rather not, we refu
   python3 scripts/mls-support.py retry <sid>     # allow one more reading, print the link to send them
   python3 scripts/mls-support.py refund <sid>    # full refund in Stripe, reading locked
 
-Run from the repo root. Stripe key: STRIPE_SECRET_KEY in .env.local. KV: BRIDGE namespace via wrangler.
+Run from the repo root. Stripe key: the live key in carnivore-weekly/secrets/api-keys.json (.env.local only
+holds the test key). KV: BRIDGE namespace via wrangler.
 """
 import base64, json, subprocess, sys, urllib.parse, urllib.request
 from pathlib import Path
@@ -21,10 +22,11 @@ KEEP = 60 * 86400  # same as the site's purchase TTL
 
 
 def stripe_key():
-    for line in Path(".env.local").read_text().splitlines():
-        if line.startswith("STRIPE_SECRET_KEY="):
-            return line.split("=", 1)[1].strip().strip('"')
-    sys.exit("STRIPE_SECRET_KEY not found in .env.local")
+    keys = Path(__file__).resolve().parents[2] / "carnivore-weekly" / "secrets" / "api-keys.json"
+    key = json.loads(keys.read_text())["stripe"]["secret_key_live"]
+    if not key.startswith("sk_live_"):
+        sys.exit(f"Expected a live Stripe key in {keys}")
+    return key
 
 
 def stripe(method, path, data=None):
