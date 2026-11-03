@@ -1,12 +1,23 @@
 {
- "updated": "2026-11-02T07:06-07:00",
+ "updated": "2026-11-03T06:59-07:00",
  "season": {
   "label": "2026-27 season",
-  "status": "Reigning champions 🏆",
-  "note": "Preseason is on. The league has not posted the 2026-27 schedule yet. One local outlet reported a November 9 start, not confirmed (last season opened December 13, 2025). Games fill in here as soon as they are announced."
+  "status": "Season on 🔥",
+  "note": "No public page announces a 2026-27 LINABE opening date yet; the Jaibos played a home preseason game on 2026-11-01."
  },
  "manager": "César López Andrade",
  "games": [
+  {
+   "date": "2026-11-01",
+   "time": null,
+   "opponent": "Rojos de Magdalena Jalisco",
+   "home": true,
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "round": "Pretemporada",
+   "result": "W 6-5",
+   "note": "Preseason game played in the afternoon. Jaibos led 2-1 after 5 innings.",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfOA4oEhJX0/"
+  },
   {
    "date": "2026-11-01",
    "time": "13:00",
@@ -19,7 +30,36 @@
    "url": "https://www.facebook.com/JaibosDeSayulitaNay"
   }
  ],
- "roster": [],
+ "roster": [
+  {
+   "name": "Brian Vásquez",
+   "pos": "P",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNoUhoh09c/"
+  },
+  {
+   "name": "Jesús Guerrero \"Chuyin\"",
+   "pos": "P",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyS__vzzI/"
+  },
+  {
+   "name": "Henoc Alaniz",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyj53Ntof/"
+  },
+  {
+   "name": "Andy Vásquez",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyj53Ntof/"
+  }
+ ],
  "standouts": [
   {
    "name": "Samuel Zamudio",
@@ -73,40 +113,22 @@
  ],
  "stats": [
   {
-   "name": "Samuel Zamudio",
-   "pos": "C",
-   "line": "2025-26 final series MVP. Solo HR in Game 1 of the final, walk-off hit to win Game 3, and a 9th-inning homer to win the semifinal clincher 3-0 at Tuxpan. No season stat line published.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
-  },
-  {
-   "name": "Brayan Vázquez",
-   "pos": "",
-   "line": "Drove in runs in the 10-7, 11-inning title clincher at Puerto Vallarta. No season stat line published.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "name": "Hans Chacón",
-   "pos": "",
-   "line": "Drove in runs in the 10-7 title clincher. No season stat line published.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "name": "Juliandry Higuera",
+   "name": "Brian Vásquez",
    "pos": "P",
-   "line": "Complete-game 3-0 shutout at Tuxpan to win the 2025-26 semifinal.",
-   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
+   "line": "Preseason vs Magdalena: starter, 5 K, relieved in the 5th inning",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNoUhoh09c/"
   },
   {
-   "name": "Kender Villegas",
+   "name": "Henoc Alaniz",
+   "pos": "",
+   "line": "Preseason vs Magdalena: go-ahead RBI hit",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyj53Ntof/"
+  },
+  {
+   "name": "Jesús Guerrero \"Chuyin\"",
    "pos": "P",
-   "line": "Complete-game 4-1 win over Puerto Vallarta in Game 5 of the final.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "name": "Alberto Hecheverría",
-   "pos": "P (Cuban)",
-   "line": "Winning pitcher in the 10-7 title clincher.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+   "line": "Preseason vs Magdalena: relief from the 5th inning",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNoUhoh09c/"
   }
  ],
  "facts": [
@@ -167,6 +189,12 @@
  "season_from": "2026-09-01",
  "news": [
   {
+   "date": "2026-11-01",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos beat Rojos de Magdalena Jalisco 6-5 in their first home preseason game at Estadio Manuel Rodríguez Sánchez.",
+   "url": "https://www.instagram.com/sayulitaisthebest/p/DfQAUWEm9rs/"
+  },
+  {
    "date": "2026-10-22",
    "team": "Jaibos de Sayulita",
    "headline": "Jaibos player Aram Samuel Castellón was named to Mexico's Under-18 team for the Pan American Championship in Santo Domingo, Oct 22 to 29.",
@@ -177,6 +205,12 @@
    "team": "Delfines de Puerto Vallarta",
    "headline": "Delfines manager Osiris García blamed last season's lost final on baseball fights, after his club split two preseason games with LMP side Charros de Jalisco.",
    "url": "https://noticiasal.com.mx/index.php/2026/10/08/delfines-de-vallarta-muestran-nivel-de-liga-mexicana-y-serie-del-pacifico/"
+  },
+  {
+   "date": "2026-09-25",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos launched three 2026-27 jerseys (La Marea, Sayulita, El Campeón), all with a champion patch, priced from 700 pesos.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
   },
   {
    "date": "2026-04-12",
@@ -201,18 +235,6 @@
    "team": "Jaibos de Sayulita",
    "headline": "After falling behind Tuxpan 2-1, the Jaibos made roster changes and won three straight to reach the final.",
    "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
-  },
-  {
-   "date": "2026-02-15",
-   "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos finished first in the regular season, and Santiago vs Tuxpan, called the mother of all battles, returned in the playoffs.",
-   "url": "https://ntv.com.mx/2026/02/15/tabaqueros-de-santiago-vs-coqueros-de-tuxpan-la-gran-rivalidad-vuelve-a-playoffs/"
-  },
-  {
-   "date": "2026-02-01",
-   "team": "League",
-   "headline": "Zona Costa beat Zona Valle 6-3 in the All-Star Game in Tepic; Delfines catcher Elver González was MVP with an 8th-inning grand slam.",
-   "url": "https://ntv.com.mx/2026/02/01/zona-costa-se-lleva-el-juego-de-estrellas-de-la-linabe/"
   }
  ],
  "opponents": {
