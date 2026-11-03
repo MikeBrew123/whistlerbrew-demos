@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T07:05-07:00",
+ "updated": "2026-11-03T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -599,26 +599,8 @@
        "until": "Nov 5",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/438754535/1792798110/extra_large.jpg"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Harvest - Applewood Bacon 500g",
-       "price": "$19.49",
-       "was": null,
-       "per": 17.68,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005739380032_00.jpg?width=500"
       }
      ],
-     "everyday": {
-      "store": "FreshSt",
-      "per": 17.68,
-      "name": "Harvest - Applewood Bacon 500g"
-     },
-     "pct_cheaper": 59,
-     "next_store": "FreshSt",
      "south": {
       "town": "Vancouver",
       "store": "No Frills",
@@ -794,12 +776,12 @@
      "pct_cheaper": 2,
      "next_store": "Shoppers",
      "south": {
-      "town": "Vancouver",
-      "store": "Real Canadian Superstore",
-      "name": "KICKING HORSE WHOLE BEAN COFFEE, 454 G",
-      "per": 3.74,
-      "price": "$16.99 OVER LIMIT PAY 22 EA",
-      "pct": 19
+      "town": "Squamish",
+      "store": "Costco",
+      "name": "Lavazza Crema E Aroma Coffee, 1 kg",
+      "per": 2.3,
+      "price": "Online Price $22.99",
+      "pct": 50
      }
     },
     {
@@ -1243,15 +1225,6 @@
   "week_of": "2026-10-29",
   "standings": [
    {
-    "store": "Independent",
-    "points": 21,
-    "wins": 3,
-    "big_wins": 3,
-    "real_sales": 6,
-    "fake_sales": 0,
-    "avg_margin": 38
-   },
-   {
     "store": "Nesters",
     "points": 18,
     "wins": 5,
@@ -1259,6 +1232,15 @@
     "real_sales": 7,
     "fake_sales": 2,
     "avg_margin": 17
+   },
+   {
+    "store": "Independent",
+    "points": 15,
+    "wins": 2,
+    "big_wins": 2,
+    "real_sales": 5,
+    "fake_sales": 0,
+    "avg_margin": 28
    },
    {
     "store": "FreshSt",
@@ -1291,7 +1273,7 @@
   "season": [
    {
     "store": "Independent",
-    "points": 223,
+    "points": 217,
     "weeks_won": 3
    },
    {
@@ -1319,8 +1301,8 @@
   "awards": {
    "worth_the_drive": {
     "store": "Independent",
-    "avg_margin": 38,
-    "wins": 3
+    "avg_margin": 28,
+    "wins": 2
    },
    "fake_sale": {
     "store": "Shoppers",
