@@ -1,23 +1,12 @@
 {
- "updated": "2026-11-03T06:59-07:00",
+ "updated": "2026-11-04T07:01-07:00",
  "season": {
   "label": "2026-27 season",
-  "status": "Season on 🔥",
-  "note": "No public page announces a 2026-27 LINABE opening date yet; the Jaibos played a home preseason game on 2026-11-01."
+  "status": "Reigning champions 🏆",
+  "note": "Preseason is on. The league has not posted the 2026-27 schedule yet. One local outlet reported a November 9 start, not confirmed (last season opened December 13, 2025). Games fill in here as soon as they are announced."
  },
  "manager": "César López Andrade",
  "games": [
-  {
-   "date": "2026-11-01",
-   "time": null,
-   "opponent": "Rojos de Magdalena Jalisco",
-   "home": true,
-   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Pretemporada",
-   "result": "W 6-5",
-   "note": "Preseason game played in the afternoon. Jaibos led 2-1 after 5 innings.",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfOA4oEhJX0/"
-  },
   {
    "date": "2026-11-01",
    "time": "13:00",
@@ -32,32 +21,11 @@
  ],
  "roster": [
   {
-   "name": "Brian Vásquez",
+   "name": "Jonathan Calleja",
    "pos": "P",
    "from": "",
    "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNoUhoh09c/"
-  },
-  {
-   "name": "Jesús Guerrero \"Chuyin\"",
-   "pos": "P",
-   "from": "",
-   "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyS__vzzI/"
-  },
-  {
-   "name": "Henoc Alaniz",
-   "pos": "",
-   "from": "",
-   "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyj53Ntof/"
-  },
-  {
-   "name": "Andy Vásquez",
-   "pos": "",
-   "from": "",
-   "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyj53Ntof/"
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfN0CS9BLaF/"
   }
  ],
  "standouts": [
@@ -113,22 +81,40 @@
  ],
  "stats": [
   {
-   "name": "Brian Vásquez",
-   "pos": "P",
-   "line": "Preseason vs Magdalena: starter, 5 K, relieved in the 5th inning",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNoUhoh09c/"
+   "name": "Samuel Zamudio",
+   "pos": "C",
+   "line": "2025-26 final series MVP. Solo HR in Game 1 of the final, walk-off hit to win Game 3, and a 9th-inning homer to win the semifinal clincher 3-0 at Tuxpan. No season stat line published.",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
   },
   {
-   "name": "Henoc Alaniz",
+   "name": "Brayan Vázquez",
    "pos": "",
-   "line": "Preseason vs Magdalena: go-ahead RBI hit",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNyj53Ntof/"
+   "line": "Drove in runs in the 10-7, 11-inning title clincher at Puerto Vallarta. No season stat line published.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
   },
   {
-   "name": "Jesús Guerrero \"Chuyin\"",
+   "name": "Hans Chacón",
+   "pos": "",
+   "line": "Drove in runs in the 10-7 title clincher. No season stat line published.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "name": "Juliandry Higuera",
    "pos": "P",
-   "line": "Preseason vs Magdalena: relief from the 5th inning",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfNoUhoh09c/"
+   "line": "Complete-game 3-0 shutout at Tuxpan to win the 2025-26 semifinal.",
+   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
+  },
+  {
+   "name": "Kender Villegas",
+   "pos": "P",
+   "line": "Complete-game 4-1 win over Puerto Vallarta in Game 5 of the final.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+  },
+  {
+   "name": "Alberto Hecheverría",
+   "pos": "P (Cuban)",
+   "line": "Winning pitcher in the 10-7 title clincher.",
+   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
   }
  ],
  "facts": [
@@ -191,8 +177,8 @@
   {
    "date": "2026-11-01",
    "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos beat Rojos de Magdalena Jalisco 6-5 in their first home preseason game at Estadio Manuel Rodríguez Sánchez.",
-   "url": "https://www.instagram.com/sayulitaisthebest/p/DfQAUWEm9rs/"
+   "headline": "The team posted preseason video of pitcher Jonathan Calleja working out with the Jaibos.",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfN0CS9BLaF/"
   },
   {
    "date": "2026-10-22",
@@ -209,7 +195,7 @@
   {
    "date": "2026-09-25",
    "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos launched three 2026-27 jerseys (La Marea, Sayulita, El Campeón), all with a champion patch, priced from 700 pesos.",
+   "headline": "Jaibos released three 2026-27 jerseys (La Marea, Sayulita, El Campeón) with a champion patch and said their goal is to defend the title.",
    "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
   },
   {
