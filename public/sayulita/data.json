@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-04T12:50-07:00",
- "cash_tip": "No ATM reports came in this week, but Norange takes debit and credit cards through Mercado Pago, Apple Pay and Google Pay, so you can keep your pesos for tacos, taxis and the market. If you do need cash, use a bank ATM in town and pick 'decline conversion' so you're charged in pesos.",
+ "updated": "2026-11-05T07:00-07:00",
+ "cash_tip": "Good news if you're low on pesos: Norange takes debit and credit cards plus Apple Pay and Google Pay through Mercado Pago, and JAHGYRO GYROS accepts cards for delivery. When you do need cash, use a bank ATM instead of a standalone one, always pick 'decline conversion' so you're charged in pesos, take out a bigger amount once, and keep small bills handy for tacos, taxis and the market.",
  "feeds": {
-  "whatsapp": "2026-11-04T18:29:04+00:00",
-  "whatsapp_checked": "2026-11-04T18:30:05.535542+00:00"
+  "whatsapp": "2026-11-05T07:06:02+00:00",
+  "whatsapp_checked": "2026-11-05T13:30:05.189822+00:00"
  },
  "events": [
   {
@@ -16,116 +16,6 @@
    "url": "https://allevents.in/sayulita/pilates-yoga-retreat-sayulita-mexico/200030505954300",
    "category": "fit",
    "recurring": null
-  },
-  {
-   "date": "2026-11-04",
-   "start": "09:00",
-   "end": "21:00",
-   "title": "At The Dock – Day of the Dead Specials",
-   "venue": "At The Dock Sayulita",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/at-the-dock-day-of-the-dead-specials/2026-11-04/",
-   "category": "night",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-04",
-   "start": "09:00",
-   "end": "10:00",
-   "title": "Flow & Freestyle Pole Class (Donation Based)",
-   "venue": "Altura Vista Sayulita Pole & Dance",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-11-04",
-   "start": "13:30",
-   "end": "14:30",
-   "title": "Adult Jazz with",
-   "venue": "Sayulita Yoga Center",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-11-04",
-   "start": "15:00",
-   "end": "17:00",
-   "title": "Aloha Kids Club After School Club with Miss Valeria and Miss Amanda",
-   "venue": "",
-   "source": "Town chat",
-   "url": "",
-   "category": "other",
-   "recurring": null
-  },
-  {
-   "date": "2026-11-04",
-   "start": "16:00",
-   "end": null,
-   "title": "Tea Ceremony: Communion with Tea",
-   "venue": "La Flor del Tao, Nueva Galicia 66, San Pancho",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": null
-  },
-  {
-   "date": "2026-11-04",
-   "start": "16:00",
-   "end": "22:00",
-   "title": "Free Pickleball, Cornhole Tourney and Happy Hour",
-   "venue": "Sayulita Sandbar, Av. Revolución 27",
-   "source": "Web",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/free-pickleball-cornhole-tourney-and-happy-hour-at-sayulita-sandbar/2026-11-04/",
-   "category": "fit",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-04",
-   "start": "17:00",
-   "end": "18:30",
-   "title": "Pickleball Nights For a Good Cause",
-   "venue": "Escuela Primaria Damián Carmona",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-11-04/",
-   "category": "fit",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-04",
-   "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-04/",
-   "category": "night",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-04",
-   "start": "18:00",
-   "end": "19:00",
-   "title": "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)",
-   "venue": "Turtle Sanctuary",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-04/",
-   "category": "other",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-04",
-   "start": "20:00",
-   "end": "21:00",
-   "title": "Salsa Dance with Laura at Latitude 20",
-   "venue": "Latitude20",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-04/",
-   "category": "night",
-   "recurring": true
   },
   {
    "date": "2026-11-05",
@@ -185,11 +75,22 @@
   {
    "date": "2026-11-05",
    "start": "18:00",
+   "end": "20:00",
+   "title": "Festival Internacional de Cine de Sayulita",
+   "venue": "",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/festival-internacional-de-cine-de-sayulita/2026-11-05/",
+   "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-05",
+   "start": "18:00",
    "end": null,
    "title": "FICS Film Screening on Calle Zarquito",
    "venue": "Calle Zarquito",
    "source": "Town chat",
-   "url": "",
+   "url": "https://www.sayulitalife.com/sayulero/series/festival-internacional-de-cine-de-sayulita/",
    "category": "other",
    "recurring": null
   },
@@ -339,11 +240,11 @@
   {
    "date": "2026-11-07",
    "start": "10:00",
-   "end": null,
-   "title": "Yoga Fest: Restorative Yoga with Graziella",
+   "end": "11:30",
+   "title": "Restorative Iyengar Yoga",
    "venue": "Sayulita Yoga Center",
    "source": "Town chat",
-   "url": "",
+   "url": "https://www.sayulitayogacenter.com/copy-of-jivamukti-yoga",
    "category": "fit",
    "recurring": null
   },
@@ -371,14 +272,25 @@
   },
   {
    "date": "2026-11-07",
-   "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-07/",
-   "category": "night",
-   "recurring": true
+   "start": "17:00",
+   "end": "19:00",
+   "title": "Sol Sirena Wire Wrapping Chandelier Earrings Jewelry Workshop",
+   "venue": "My Sister's Hostel",
+   "source": "Town chat",
+   "url": "",
+   "category": "other",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-07",
+   "start": "17:30",
+   "end": null,
+   "title": "Yoga Fest: Yin Yoga with Alexa",
+   "venue": "Sayulita Yoga Center",
+   "source": "Town chat",
+   "url": "",
+   "category": "fit",
+   "recurring": null
   },
   {
    "date": "2026-11-07",
@@ -394,11 +306,33 @@
   {
    "date": "2026-11-07",
    "start": "18:00",
+   "end": "20:00",
+   "title": "Festival Internacional de Cine de Sayulita",
+   "venue": "",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/festival-internacional-de-cine-de-sayulita/2026-11-07/",
+   "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-07",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-07/",
+   "category": "night",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-07",
+   "start": "18:00",
    "end": null,
    "title": "FICS Film Screening at La Katrina",
    "venue": "La Katrina",
    "source": "Town chat",
-   "url": "",
+   "url": "https://www.sayulitalife.com/sayulero/series/festival-internacional-de-cine-de-sayulita/",
    "category": "other",
    "recurring": null
   },
@@ -428,23 +362,23 @@
    "date": "2026-11-07",
    "start": null,
    "end": null,
-   "title": "2nd Annual Fundraiser for Centro Creativo (yoga)",
-   "venue": "Sayulita Yoga Center",
-   "source": "Town chat",
-   "url": "",
-   "category": "fit",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-07",
-   "start": null,
-   "end": null,
    "title": "Women's community gathering",
    "venue": "ANIMA",
    "source": "Town chat",
    "url": "",
    "category": "other",
    "recurring": null
+  },
+  {
+   "date": "2026-11-07",
+   "start": null,
+   "end": null,
+   "title": "2nd Annual Fundraiser for Centro Creativo (yoga)",
+   "venue": "Sayulita Yoga Center",
+   "source": "Town chat",
+   "url": "",
+   "category": "fit",
+   "recurring": true
   },
   {
    "date": "2026-11-08",
@@ -493,11 +427,22 @@
   {
    "date": "2026-11-08",
    "start": "18:00",
+   "end": "20:00",
+   "title": "Festival Internacional de Cine de Sayulita",
+   "venue": "",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/festival-internacional-de-cine-de-sayulita/2026-11-08/",
+   "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-08",
+   "start": "18:00",
    "end": null,
    "title": "FICS Film Screening at The Embers",
    "venue": "The Embers",
    "source": "Town chat",
-   "url": "",
+   "url": "https://www.sayulitalife.com/sayulero/series/festival-internacional-de-cine-de-sayulita/",
    "category": "other",
    "recurring": null
   },
@@ -618,20 +563,9 @@
    "title": "Sayu-Limpia Monthly Beach Cleanup",
    "venue": "End of Calle Pelicanos, on the beach",
    "source": "Town chat",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/community-beach-cleanups/2026-11-11/",
+   "url": "https://www.sayulitalife.com/sayulero/series/community-beach-cleanups/",
    "category": "other",
    "recurring": null
-  },
-  {
-   "date": "2026-11-11",
-   "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-11/",
-   "category": "night",
-   "recurring": true
   },
   {
    "date": "2026-11-11",
@@ -642,6 +576,17 @@
    "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-11/",
    "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-11",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-11/",
+   "category": "night",
    "recurring": true
   },
   {
@@ -757,23 +702,23 @@
   {
    "date": "2026-11-14",
    "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-14/",
-   "category": "night",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-14",
-   "start": "18:00",
    "end": "19:00",
    "title": "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)",
    "venue": "Turtle Sanctuary",
    "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-14/",
    "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-14",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-14/",
+   "category": "night",
    "recurring": true
   },
   {
@@ -888,6 +833,28 @@
   },
   {
    "date": "2026-11-18",
+   "start": "14:30",
+   "end": "17:15",
+   "title": "Unity Breathwork Workshop: Our Dark and Light Sides - Secretly Friends (charity fundraiser)",
+   "venue": "Nomada",
+   "source": "Town chat",
+   "url": "",
+   "category": "fit",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-18",
+   "start": "15:15",
+   "end": "18:00",
+   "title": "Unity Breathwork Workshop: The Joy of Being: A Somatic Exploration (charity fundraiser)",
+   "venue": "Nomada",
+   "source": "Town chat",
+   "url": "",
+   "category": "fit",
+   "recurring": null
+  },
+  {
+   "date": "2026-11-18",
    "start": "16:00",
    "end": "22:00",
    "title": "Free Pickleball, Cornhole Tourney and Happy Hour",
@@ -911,23 +878,23 @@
   {
    "date": "2026-11-18",
    "start": "18:00",
-   "end": "21:00",
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
-   "source": "Sayulita Life",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-18/",
-   "category": "night",
-   "recurring": true
-  },
-  {
-   "date": "2026-11-18",
-   "start": "18:00",
    "end": "19:00",
    "title": "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)",
    "venue": "Turtle Sanctuary",
    "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-18/",
    "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-18",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-18/",
+   "category": "night",
    "recurring": true
   },
   {
@@ -954,6 +921,17 @@
   },
   {
    "date": "2026-11-20",
+   "start": "07:30",
+   "end": "08:30",
+   "title": "Social Run Club",
+   "venue": "Plaza Cocula",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/social-run-club/2026-11-20/",
+   "category": "fit",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-20",
    "start": "09:00",
    "end": null,
    "title": "Día de la Revolución parade",
@@ -968,9 +946,31 @@
    "start": "10:00",
    "end": "14:00",
    "title": "Mercado del Pueblo",
-   "venue": "Mercado del Pueblo (Av. Revolución)",
-   "source": "Web",
+   "venue": "Mercado del Pueblo",
+   "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-20/",
+   "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-20",
+   "start": "17:00",
+   "end": "18:30",
+   "title": "Pickleball Nights For a Good Cause",
+   "venue": "Escuela Primaria Damián Carmona",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-11-20/",
+   "category": "fit",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-20",
+   "start": "18:00",
+   "end": "19:00",
+   "title": "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)",
+   "venue": "Turtle Sanctuary",
+   "source": "Sayulita Life",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-20/",
    "category": "other",
    "recurring": true
   },
@@ -980,7 +980,7 @@
    "end": "20:00",
    "title": "Friday Bonfire & Live Band at The Dock",
    "venue": "At The Dock Sayulita",
-   "source": "Web",
+   "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/fogata-bonfire-friday-viernes-live-band/2026-11-20/",
    "category": "night",
    "recurring": true
@@ -989,11 +989,22 @@
    "date": "2026-11-20",
    "start": "21:00",
    "end": "23:59",
-   "title": "Ping Pong Tournament then Karaoke",
-   "venue": "Sayulita Sandbar",
-   "source": "Web",
+   "title": "Ping pong tournament then Karaoke at Sayulita Sandbar",
+   "venue": "Sandbar",
+   "source": "Sayulita Life",
    "url": "https://www.sayulitalife.com/sayulero/calendar/ping-pong-tournament-then-karaoke-at-sayulita-sandbar/2026-11-20/",
    "category": "night",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-21",
+   "start": "12:30",
+   "end": "18:00",
+   "title": "¡Sábado al Muelle! (Saturday at The Dock)",
+   "venue": "At The Dock Sayulita",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-11-21/",
+   "category": "other",
    "recurring": true
   },
   {
@@ -1001,7 +1012,7 @@
    "start": "18:00",
    "end": "21:00",
    "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-21/",
    "category": "night",
@@ -1012,7 +1023,7 @@
    "start": "20:30",
    "end": "23:30",
    "title": "Live Music at Sayulita Sandbar",
-   "venue": "Sandbar",
+   "venue": "Sandbar, Av. Revolución 27",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-11-21/",
    "category": "night",
@@ -1067,7 +1078,7 @@
    "start": "18:00",
    "end": "21:00",
    "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-25/",
    "category": "night",
@@ -1077,8 +1088,8 @@
    "date": "2026-11-25",
    "start": "20:00",
    "end": "21:00",
-   "title": "Salsa Dance with Laura",
-   "venue": "Latitude 20",
+   "title": "Salsa Dance with Laura at Latitude 20",
+   "venue": "Latitude20, Manuel N. Navarrete 79",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-25/",
    "category": "night",
@@ -1089,7 +1100,7 @@
    "start": null,
    "end": null,
    "title": "Thanksgiving Specials & Menus",
-   "venue": "Various Sayulita restaurants",
+   "venue": "Various restaurants, Sayulita",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/thanksgiving-specials-menus/",
    "category": "other",
@@ -1100,7 +1111,7 @@
    "start": "10:00",
    "end": "14:00",
    "title": "Mercado del Pueblo",
-   "venue": "Mercado del Pueblo (Av. Revolución)",
+   "venue": "Mercado del Pueblo, Av. Revolución",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-11-27/",
    "category": "other",
@@ -1130,10 +1141,21 @@
   },
   {
    "date": "2026-11-28",
+   "start": "12:30",
+   "end": "18:00",
+   "title": "¡Sábado al Muelle! (Saturday at The Dock)",
+   "venue": "At The Dock Sayulita",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-11-28/",
+   "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-11-28",
    "start": "18:00",
    "end": "21:00",
    "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-28/",
    "category": "night",
@@ -1144,7 +1166,7 @@
    "start": "20:30",
    "end": "23:30",
    "title": "Live Music at Sayulita Sandbar",
-   "venue": "Sandbar",
+   "venue": "Sandbar, Av. Revolución 27",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-11-28/",
    "category": "night",
@@ -1165,8 +1187,8 @@
    "date": "2026-11-30",
    "start": "19:00",
    "end": "22:00",
-   "title": "Salsa Night at Don Pedro's",
-   "venue": "Don Pedro's Restaurant",
+   "title": "Don Pedro's Salsa Night (lessons at 19:00)",
+   "venue": "Don Pedro's Restaurant, C. Marlín",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/?p=10010604",
    "category": "night",
@@ -1199,7 +1221,7 @@
    "start": "18:00",
    "end": "21:00",
    "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-12-02/",
    "category": "night",
@@ -1209,8 +1231,8 @@
    "date": "2026-12-02",
    "start": "20:00",
    "end": "21:00",
-   "title": "Salsa Dance with Laura",
-   "venue": "Latitude 20",
+   "title": "Salsa Dance with Laura at Latitude 20",
+   "venue": "Latitude20, Manuel N. Navarrete 79",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-12-02/",
    "category": "night",
@@ -1221,7 +1243,7 @@
    "start": "10:00",
    "end": "14:00",
    "title": "Mercado del Pueblo",
-   "venue": "Mercado del Pueblo (Av. Revolución)",
+   "venue": "Mercado del Pueblo, Av. Revolución",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/mercado-del-pueblo-3/2026-12-04/",
    "category": "other",
@@ -1235,6 +1257,39 @@
    "venue": "At The Dock Sayulita",
    "source": "Web",
    "url": "https://www.sayulitalife.com/sayulero/calendar/fogata-bonfire-friday-viernes-live-band/2026-12-04/",
+   "category": "night",
+   "recurring": true
+  },
+  {
+   "date": "2026-12-05",
+   "start": "12:30",
+   "end": "18:00",
+   "title": "¡Sábado al Muelle! (Saturday at The Dock)",
+   "venue": "At The Dock Sayulita",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/sabado-al-muelle-saturday-at-the-dock/2026-12-05/",
+   "category": "other",
+   "recurring": true
+  },
+  {
+   "date": "2026-12-05",
+   "start": "18:00",
+   "end": "21:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop, C. Miramar 51",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-12-05/",
+   "category": "night",
+   "recurring": true
+  },
+  {
+   "date": "2026-12-05",
+   "start": "20:30",
+   "end": "23:30",
+   "title": "Live Music at Sayulita Sandbar",
+   "venue": "Sandbar, Av. Revolución 27",
+   "source": "Web",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/live-music-at-sayulita-sandbar-2/2026-12-05/",
    "category": "night",
    "recurring": true
   },
@@ -1287,9 +1342,9 @@
     5,
     6
    ],
-   "next": "2026-11-04",
+   "next": "2026-11-05",
    "category": "other",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-04/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/baby-turtle-release-2/2026-11-05/",
    "source": "Sayulita Life"
   },
   {
@@ -1311,14 +1366,13 @@
    "start": "09:00",
    "end": "21:00",
    "dows": [
-    2,
     3,
     4,
     5
    ],
-   "next": "2026-11-04",
+   "next": "2026-11-05",
    "category": "night",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/at-the-dock-day-of-the-dead-specials/2026-11-04/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/at-the-dock-day-of-the-dead-specials/2026-11-05/",
    "source": "Sayulita Life"
   },
   {
@@ -1376,15 +1430,15 @@
   },
   {
    "title": "Free Pickleball, Cornhole Tourney and Happy Hour",
-   "venue": "Sayulita Sandbar, Av. Revolución 27",
+   "venue": "Sayulita Sandbar",
    "start": "16:00",
    "end": "22:00",
    "dows": [
     2
    ],
-   "next": "2026-11-04",
+   "next": "2026-11-11",
    "category": "fit",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/free-pickleball-cornhole-tourney-and-happy-hour-at-sayulita-sandbar/2026-11-04/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/free-pickleball-cornhole-tourney-and-happy-hour-at-sayulita-sandbar/2026-11-11/",
    "source": "Web"
   },
   {
@@ -1397,23 +1451,24 @@
     2,
     4
    ],
-   "next": "2026-11-04",
+   "next": "2026-11-06",
    "category": "fit",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-11-04/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/pickleball-nights-for-a-good-cause/2026-11-06/",
    "source": "Sayulita Life"
   },
   {
-   "title": "Mexican Wine Tasting & Live Jazz",
-   "venue": "Sayulita Wine Shop",
+   "title": "Festival Internacional de Cine de Sayulita",
+   "venue": "",
    "start": "18:00",
-   "end": "21:00",
+   "end": "20:00",
    "dows": [
-    2,
-    5
+    3,
+    5,
+    6
    ],
-   "next": "2026-11-04",
-   "category": "night",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-04/",
+   "next": "2026-11-05",
+   "category": "other",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/festival-internacional-de-cine-de-sayulita/2026-11-05/",
    "source": "Sayulita Life"
   },
   {
@@ -1430,16 +1485,17 @@
    "source": "Sayulita Life"
   },
   {
-   "title": "Salsa Dance with Laura at Latitude 20",
-   "venue": "Latitude20",
-   "start": "20:00",
+   "title": "Mexican Wine Tasting & Live Jazz",
+   "venue": "Sayulita Wine Shop",
+   "start": "18:00",
    "end": "21:00",
    "dows": [
-    2
+    2,
+    5
    ],
-   "next": "2026-11-04",
+   "next": "2026-11-07",
    "category": "night",
-   "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-04/",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/mexican-wine-tasting-live-jazz/2026-11-07/",
    "source": "Sayulita Life"
   },
   {
@@ -1453,6 +1509,19 @@
    "next": "2026-11-10",
    "category": "other",
    "url": "https://www.sayulitalife.com/sayulero/calendar/community-potluck-at-ith-amazing-surf-hostel/2026-11-10/",
+   "source": "Sayulita Life"
+  },
+  {
+   "title": "Salsa Dance with Laura at Latitude 20",
+   "venue": "Latitude20",
+   "start": "20:00",
+   "end": "21:00",
+   "dows": [
+    2
+   ],
+   "next": "2026-11-11",
+   "category": "night",
+   "url": "https://www.sayulitalife.com/sayulero/calendar/salsa-dance-with-laura-at-latitude-20-2/2026-11-11/",
    "source": "Sayulita Life"
   },
   {
@@ -1522,9 +1591,27 @@
   },
   {
    "type": "food",
+   "venue": "Chino Bites",
+   "deal": "Today's special: Crunchy Geisha, a crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche",
+   "days": "Daily special (posted Tue and Wed)",
+   "start": null,
+   "end": null,
+   "usual": null
+  },
+  {
+   "type": "food",
+   "venue": "JAHGYRO GYROS",
+   "deal": "Delivery-only gyros in Sayulita: Falafel $120, Pollo $140, new Monchoso (chicken with falafel) $160. Order by WhatsApp, cards accepted",
+   "days": "Wed-Fri",
+   "start": "18:00",
+   "end": "22:30",
+   "usual": null
+  },
+  {
+   "type": "food",
    "venue": "Mucho Bueno",
    "deal": "Sushi happy hour",
-   "days": "Tuesday (Nov 3)",
+   "days": "Daily",
    "start": "13:00",
    "end": "17:00",
    "usual": null
@@ -1533,25 +1620,16 @@
    "type": "drink",
    "venue": "Mucho Bueno",
    "deal": "Happy hour",
-   "days": "Tuesday (Nov 3)",
+   "days": "Daily",
    "start": "18:00",
    "end": "21:00",
-   "usual": null
-  },
-  {
-   "type": "food",
-   "venue": "Chino Bites",
-   "deal": "Crunchy Geisha special: crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche",
-   "days": "Sunday and Tuesday (Nov 1 and 3)",
-   "start": null,
-   "end": null,
    "usual": null
   },
   {
    "type": "drink",
    "venue": "La Isla",
    "deal": "Happy hour",
-   "days": "Tuesday (Nov 3)",
+   "days": "Daily",
    "start": "16:00",
    "end": "17:00",
    "usual": null
@@ -1560,7 +1638,7 @@
    "type": "food",
    "venue": "Pineapple Paradise",
    "deal": "Nacho Night during the NFL Monday night game",
-   "days": "Monday",
+   "days": "Mondays",
    "start": null,
    "end": null,
    "usual": null
@@ -1569,7 +1647,7 @@
    "type": "drink",
    "venue": "Pineapple Paradise",
    "deal": "Happy hour on Monday Night Football night",
-   "days": "Monday",
+   "days": "Mondays",
    "start": "18:00",
    "end": "21:00",
    "usual": null
@@ -1577,7 +1655,7 @@
   {
    "type": "food",
    "venue": "Lasagnas Artesanales",
-   "deal": "Traditional or spinach-ricotta lasagna $140; banana bread or brownie $50",
+   "deal": "Traditional or spinach-ricotta lasagna $140; desserts: banana bread $50, brownie $50",
    "days": "Daily",
    "start": null,
    "end": null,
@@ -1596,7 +1674,7 @@
    "type": "drink",
    "venue": "Sandbar",
    "deal": "Margaritas $100",
-   "days": "Monday (Nov 2)",
+   "days": "Daily",
    "start": null,
    "end": "22:00",
    "usual": null
@@ -1605,7 +1683,7 @@
    "type": "food",
    "venue": "Sandbar",
    "deal": "Burgers $100",
-   "days": "Monday (Nov 2)",
+   "days": "Daily",
    "start": null,
    "end": "22:00",
    "usual": null
@@ -1675,82 +1753,46 @@
    "url": "https://www.sayulitalife.com/sayulero/calendar/at-the-dock-day-of-the-dead-specials/2026-11-01/",
    "schedule": [
     {
-     "date": "2026-10-26",
-     "time": "09:00",
-     "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
-    },
-    {
-     "date": "2026-10-27",
-     "time": "09:00",
-     "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
-    },
-    {
-     "date": "2026-10-28",
-     "time": "09:00",
-     "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
-    },
-    {
-     "date": "2026-10-29",
-     "time": "09:00",
-     "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
-    },
-    {
-     "date": "2026-10-30",
-     "time": "09:00",
-     "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
-    },
-    {
-     "date": "2026-10-31",
-     "time": "09:00",
-     "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
-    },
-    {
      "date": "2026-11-01",
      "time": "09:00",
      "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
+     "where": "At The Dock Sayulita, Pescadores #5"
     },
     {
      "date": "2026-11-02",
      "time": "09:00",
      "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
+     "where": "At The Dock Sayulita, Pescadores #5"
     },
     {
      "date": "2026-11-03",
      "time": "09:00",
      "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
+     "where": "At The Dock Sayulita, Pescadores #5"
     },
     {
      "date": "2026-11-04",
      "time": "09:00",
      "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
+     "where": "At The Dock Sayulita, Pescadores #5"
     },
     {
      "date": "2026-11-05",
      "time": "09:00",
      "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
+     "where": "At The Dock Sayulita, Pescadores #5"
     },
     {
      "date": "2026-11-06",
      "time": "09:00",
      "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
+     "where": "At The Dock Sayulita, Pescadores #5"
     },
     {
      "date": "2026-11-07",
      "time": "09:00",
      "title": "At The Dock – Day of the Dead Specials",
-     "where": "At The Dock, Pescadores #5, Sayulita"
+     "where": "At The Dock Sayulita, Pescadores #5"
     }
    ]
   },
@@ -1764,6 +1806,15 @@
    "schedule": []
   },
   {
+   "title": "Festival Internacional de Cine de Sayulita (FICS)",
+   "start": "2026-11-03",
+   "end": "2026-11-08",
+   "where": "Sayulita, several venues",
+   "note": "First edition, Day of the Dead theme. Screenings 18:00 to 20:00 on Nov 5, 7 and 8.",
+   "url": "https://www.sayulitalife.com/sayulero/series/festival-internacional-de-cine-de-sayulita/",
+   "schedule": []
+  },
+  {
    "title": "Mercado del Pueblo 18th season",
    "start": "2026-11-06",
    "end": "2027-05-07",
@@ -1774,164 +1825,8 @@
     {
      "date": "2026-11-06",
      "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2026-11-13",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2026-11-20",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2026-11-27",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2026-12-04",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2026-12-11",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2026-12-18",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2026-12-25",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-01-01",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-01-08",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-01-15",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-01-22",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-01-29",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-02-05",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-02-12",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-02-19",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-02-26",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-03-05",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-03-12",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-03-19",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-03-26",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-04-02",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-04-09",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-04-16",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-04-23",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-04-30",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
-    },
-    {
-     "date": "2027-05-07",
-     "time": "10:00",
-     "title": "Mercado del Pueblo",
-     "where": "Mercado del Pueblo, Av. Revolución, across from Escondido Bar"
+     "title": "Mercado del Pueblo opening day, 18th season (farmers market, every Friday 10:00-14:00, November to May)",
+     "where": "Calle Revolución 15A, just north of the main bridge, Sayulita"
     }
    ]
   },
@@ -1942,7 +1837,14 @@
    "where": "Sayulita",
    "note": "",
    "url": "https://turismo.bahiadebanderas.gob.mx/eventos/",
-   "schedule": []
+   "schedule": [
+    {
+     "date": "2026-11-08",
+     "time": null,
+     "title": "Medio Maratón y 10K Riviera Nayarit 2026 (10 km and 21 km)",
+     "where": "Not in Sayulita: starts and finishes at FIBBA, route along Paseo de los Cocoteros (Nuevo Vallarta, Bahía de Banderas)"
+    }
+   ]
   },
   {
    "title": "Festival Gourmet International",
@@ -1991,86 +1893,88 @@
   }
  ],
  "es": {
-  "FICS Film Screening at La Katrina": "Proyección de cine FICS en La Katrina",
-  "Yoga Fest: Sister Siesta with Andrea": "Yoga Fest: Sister Siesta con Andrea",
-  "Free Pickleball, Cornhole Tourney and Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "Little Market - Live Music Event": "Little Market - Evento de música en vivo",
-  "FICS Film Screening at The Embers": "Proyección de cine FICS en The Embers",
-  "Social Run Club": "Club social de corredores",
-  "Nightly around 18:00, check the camp's Facebook for same-day updates": "Todas las tardes alrededor de las 18:00, revisa el Facebook del campamento para novedades del día",
-  "Limited-time Pan de Muerto rolled ice cream sandwiches": "Sándwiches de helado enrollado de pan de muerto, por tiempo limitado",
-  "FICS Film Screening on Calle Zarquito": "Proyección de cine FICS en la Calle Zarquito",
-  "Fall Ayurveda Cleanse – guided experience (Nov 6–15)": "Limpieza ayurvédica de otoño: experiencia guiada (6 al 15 de nov)",
-  "Monday (Nov 2)": "Lunes (2 de nov)",
-  "Karaoke & Ping Pong Tournament at La Redonda": "Karaoke y torneo de ping pong en La Redonda",
-  "At The Dock – Day of the Dead Specials": "At The Dock – Especiales de Día de Muertos",
-  "Paint Your Own Hat & Sip": "Pinta tu propio sombrero y brinda",
-  "Baby Turtle Releases": "Liberación de tortuguitas",
-  "National holiday, local parade and celebrations": "Día feriado nacional, desfile local y festejos",
-  "Sayulita Pink Ladybugs Girls Softball Team Practice (Ages 7-12)": "Entrenamiento del equipo de softbol femenil Sayulita Pink Ladybugs (de 7 a 12 años)",
-  "Free pickleball, cornhole tourney, and happy hour": "Pickleball gratis, torneo de cornhole y happy hour",
-  "All day happy hour!": "¡Happy hour todo el día!",
-  "Mercado del Pueblo 18th season": "Mercado del Pueblo, 18.ª temporada",
-  "2nd Annual Fundraiser for Centro Creativo (yoga)": "2a Recaudación Anual de Fondos para Centro Creativo (yoga)",
-  "Sister Siesta with Andrea": "Sister Siesta con Andrea",
-  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
-  "Sayu-Limpia Monthly Beach Cleanup": "Sayu-Limpia: limpieza mensual de playa",
-  "Pickleball Nights For a Good Cause": "Noches de pickleball con causa",
-  "Every Friday, 10am to 2pm.": "Todos los viernes, de 10 am a 2 pm.",
-  "Día de la Revolución parade": "Desfile del Día de la Revolución",
-  "Happy hour on Monday Night Football night": "Happy hour en la noche de Monday Night Football",
-  "Sushi happy hour": "Happy hour de sushi",
-  "Week-long retreat by Sol Collective, ticketed": "Retiro de una semana de Sol Collective, con boleto",
-  "Salsa Dance with Laura at Latitude 20": "Baile de salsa con Laura en Latitude 20",
-  "Pilates + Yoga Retreat: Sayulita, Mexico": "Retiro de Pilates + Yoga: Sayulita, México",
-  "At The Dock Day of the Dead Specials": "Especiales de Día de Muertos en At The Dock",
-  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
-  "Healthy Knees Workshop": "Taller de rodillas sanas",
-  "Aloha Kids Club After School Club with Miss Valeria and Miss Amanda": "Aloha Kids Club: club extraescolar con Miss Valeria y Miss Amanda",
-  "Community Potluck at ITH Amazing Surf Hostel": "Comida compartida comunitaria en ITH Amazing Surf Hostel",
-  "Burgers $100": "Hamburguesas $100",
-  "Ping Pong Tournament then Karaoke": "Torneo de ping pong y después karaoke",
-  "Yoga Fest: Vinyasa Yoga with Vanessa": "Yoga Fest: Vinyasa Yoga con Vanessa",
-  "Yoga Fest: Restorative Yoga with Graziella": "Yoga Fest: Yoga Restaurativo con Graziella",
-  "Cacao Women's Circle guided by Andrea Cueva Rodriguez": "Círculo de Mujeres con Cacao guiado por Andrea Cueva Rodriguez",
-  "Thanksgiving Specials & Menus": "Especiales y menús de Thanksgiving",
-  "Adult Jazz with": "Jazz para adultos con",
-  "Tuesday (Nov 3)": "Martes (3 de nov)",
-  "Trevas Art Camp Fundraiser": "Recaudación de fondos del Trevas Art Camp",
-  "¡Sábado al Muelle! (Saturday at The Dock)": "¡Sábado al Muelle!",
-  "Happy Hour Drinks": "Bebidas de Happy Hour",
-  "Friday Bonfire & Live Band at The Dock": "Viernes de fogata y banda en vivo en The Dock",
-  "Community Beach Cleanups": "Limpiezas comunitarias de playa",
-  "Beginner Spanish Lessons": "Clases de español para principiantes",
-  "Lunch: biónico $70, salad, sandwich or sincronizadas $80, extra ingredient $10, home delivery available": "Comida: biónico $70, ensalada, sándwich o sincronizadas $80, ingrediente extra $10, servicio a domicilio disponible",
-  "Crunchy Geisha special: crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche": "Especial Crunchy Geisha: hamburguesa de camarón tempura crujiente con pepino, ensalada de col y salsa cremosa estilo asiático en pan brioche de ajonjolí tostado",
-  "MMVVMMTT & Goat Beach Club present: NEW YEAR'S EVE 2027": "MMVVMMTT y Goat Beach Club presentan: NOCHE DE AÑO NUEVO 2027",
+  "Traditional or spinach-ricotta lasagna $140; desserts: banana bread $50, brownie $50": "Lasaña tradicional o de espinaca con ricota $140; postres: pan de plátano $50, brownie $50",
   "Happy Hour specials Large Margaritas": "Promociones de Happy Hour: margaritas grandes",
-  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
-  "Karaoke & Ping Pong Tournament": "Karaoke y torneo de ping pong",
-  "No ATM reports came in this week, but Norange takes debit and credit cards through Mercado Pago, Apple Pay and Google Pay, so you can keep your pesos for tacos, taxis and the market. If you do need cash, use a bank ATM in town and pick 'decline conversion' so you're charged in pesos.": "Esta semana no recibimos reportes de cajeros, pero Norange acepta tarjetas de débito y crédito con Mercado Pago, Apple Pay y Google Pay, así que puedes guardar tus pesos para los tacos, los taxis y el mercado. Si necesitas efectivo, usa un cajero de banco en el pueblo y elige 'rechazar conversión' para que te cobren en pesos.",
-  "Salsa Dance with Laura": "Baile de salsa con Laura",
-  "Sunday and Tuesday (Nov 1 and 3)": "Domingo y martes (1 y 3 de nov)",
+  "First edition, Day of the Dead theme. Screenings 18:00 to 20:00 on Nov 5, 7 and 8.": "Primera edición, con temática de Día de Muertos. Proyecciones de 18:00 a 20:00 el 5, 7 y 8 de noviembre.",
+  "Social Run Club": "Club social de corredores",
+  "FICS Film Screening at La Katrina": "Proyección de cine FICS en La Katrina",
+  "Karaoke & Ping Pong Tournament at La Redonda": "Karaoke y torneo de ping pong en La Redonda",
+  "At The Dock Day of the Dead Specials": "Especiales de Día de Muertos en At The Dock",
+  "Good news if you're low on pesos: Norange takes debit and credit cards plus Apple Pay and Google Pay through Mercado Pago, and JAHGYRO GYROS accepts cards for delivery. When you do need cash, use a bank ATM instead of a standalone one, always pick 'decline conversion' so you're charged in pesos, take out a bigger amount once, and keep small bills handy for tacos, taxis and the market.": "Buenas noticias si andas corto de pesos: Norange acepta tarjetas de débito y crédito, además de Apple Pay y Google Pay a través de Mercado Pago, y JAHGYRO GYROS acepta tarjetas en pedidos a domicilio. Cuando sí necesites efectivo, usa un cajero de banco en lugar de uno independiente, elige siempre 'rechazar conversión' para que te cobren en pesos, saca una cantidad más grande de una sola vez y ten billetes chicos a la mano para tacos, taxis y el mercado.",
+  "Free pickleball, cornhole tourney, and happy hour": "Pickleball gratis, torneo de cornhole y happy hour",
+  "Sayu-Limpia Monthly Beach Cleanup": "Sayu-Limpia: limpieza mensual de playa",
+  "Healthy Knees Workshop": "Taller de rodillas sanas",
+  "Baby Turtle Releases": "Liberación de tortuguitas",
+  "FICS Film Screening at The Embers": "Proyección de cine FICS en The Embers",
+  "Cacao Women's Circle guided by Andrea Cueva Rodriguez": "Círculo de Mujeres con Cacao guiado por Andrea Cueva Rodriguez",
   "Mexican Wine Tasting & Live Jazz": "Cata de vinos mexicanos y jazz en vivo",
-  "Tea Ceremony: Communion with Tea": "Ceremonia del té: comunión con el té",
-  "Yoga Fest: Hatha Flow with Itxa": "Yoga Fest: Hatha Flow con Itxa",
-  "Nacho Night during the NFL Monday night game": "Noche de nachos durante el partido de la NFL del lunes por la noche",
-  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
-  "Limited time": "Por tiempo limitado",
-  "The Art of Leather Craft by Art House Cerámica": "El arte del trabajo en piel con Art House Cerámica",
-  "Salsa Night at Don Pedro's": "Noche de salsa en Don Pedro's",
-  "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)": "Liberación de tortuguitas (solo si las crías están listas; se confirma el mismo día, alrededor de las 2 a 3 PM)",
+  "Live Music at Sayulita Sandbar": "Música en vivo en Sayulita Sandbar",
   "Women's community gathering": "Encuentro comunitario de mujeres",
-  "RENEWAL 2027: Sayulita, Mexico": "RENOVACIÓN 2027: Sayulita, México",
-  "Daily": "Diario",
-  "Flow & Freestyle Pole Class (Donation Based)": "Clase de pole Flow & Freestyle (cooperación voluntaria)",
-  "Monday": "Lunes",
-  "Yoga Fest: Hatha Yoga with Nayarani (El Centro Creativo Fundraiser)": "Yoga Fest: Hatha Yoga con Nayarani (recaudación de fondos para El Centro Creativo)",
+  "Beginner Spanish Lessons": "Clases de español para principiantes",
+  "Community Potluck at ITH Amazing Surf Hostel": "Comida compartida comunitaria en ITH Amazing Surf Hostel",
+  "Delivery-only gyros in Sayulita: Falafel $120, Pollo $140, new Monchoso (chicken with falafel) $160. Order by WhatsApp, cards accepted": "Gyros solo a domicilio en Sayulita: Falafel $120, Pollo $140, nuevo Monchoso (pollo con falafel) $160. Pide por WhatsApp, se aceptan tarjetas",
+  "Limited time": "Por tiempo limitado",
+  "Week-long retreat by Sol Collective, ticketed": "Retiro de una semana de Sol Collective, con boleto",
   "Ping pong tournament then Karaoke at Sayulita Sandbar": "Torneo de ping pong y después karaoke en Sayulita Sandbar",
+  "Evening processions leading up to Christmas.": "Procesiones nocturnas en los días previos a la Navidad.",
+  "RENEWAL 2027: Sayulita, Mexico": "RENOVACIÓN 2027: Sayulita, México",
+  "Sayulita Pink Ladybugs Girls Softball Team Practice (Ages 7-12)": "Entrenamiento del equipo de softbol femenil Sayulita Pink Ladybugs (de 7 a 12 años)",
+  "Pilates + Yoga Retreat: Sayulita, Mexico": "Retiro de Pilates + Yoga: Sayulita, México",
+  "Paint Your Own Hat & Sip": "Pinta tu propio sombrero y brinda",
+  "Unity Breathwork Workshop: The Joy of Being: A Somatic Exploration (charity fundraiser)": "Taller Unity Breathwork: La alegría de ser, una exploración somática (evento de recaudación con causa)",
+  "Nightly processions, building to fireworks and music on Dec 12.": "Procesiones cada noche que culminan con fuegos artificiales y música el 12 de diciembre.",
   "Daily 09:00 to 21:00 holiday food and drink specials": "Todos los días de 09:00 a 21:00, especiales de comida y bebida de temporada",
-  "Traditional or spinach-ricotta lasagna $140; banana bread or brownie $50": "Lasaña tradicional o de espinaca con ricota $140; pan de plátano o brownie $50",
+  "Lunch: biónico $70, salad, sandwich or sincronizadas $80, extra ingredient $10, home delivery available": "Comida: biónico $70, ensalada, sándwich o sincronizadas $80, ingrediente extra $10, servicio a domicilio disponible",
+  "Baby turtle release (only if hatchlings are ready; confirmed day of, around 2 to 3 PM)": "Liberación de tortuguitas (solo si las crías están listas; se confirma el mismo día, alrededor de las 2 a 3 PM)",
+  "Nightly around 18:00, check the camp's Facebook for same-day updates": "Todas las tardes alrededor de las 18:00, revisa el Facebook del campamento para novedades del día",
+  "Community Beach Cleanups": "Limpiezas comunitarias de playa",
+  "Limited-time Pan de Muerto rolled ice cream sandwiches": "Sándwiches de helado enrollado de pan de muerto, por tiempo limitado",
+  "Nacho Night during the NFL Monday night game": "Noche de nachos durante el partido de la NFL del lunes por la noche",
+  "Burgers $100": "Hamburguesas $100",
   "Juice, smoothie and licuado menu, home delivery available": "Menú de jugos, smoothies y licuados, con servicio a domicilio",
+  "Sister Siesta with Andrea": "Sister Siesta con Andrea",
+  "Friday Bonfire & Live Band at The Dock": "Viernes de fogata y banda en vivo en The Dock",
+  "Community Potluck": "Comida comunitaria de traje",
+  "Daily special (posted Tue and Wed)": "Especial del día (publicado martes y miércoles)",
+  "Happy Hour Drinks": "Bebidas de Happy Hour",
+  "Mercado del Pueblo opening day, 18th season (farmers market, every Friday 10:00-14:00, November to May)": "Día de apertura del Mercado del Pueblo, temporada 18 (mercado de productores, todos los viernes de 10:00 a 14:00, de noviembre a mayo)",
+  "Yoga Fest: Yin Yoga with Alexa": "Yoga Fest: Yin Yoga con Alexa",
+  "Medio Maratón y 10K Riviera Nayarit 2026 (10 km and 21 km)": "Medio Maratón y 10K Riviera Nayarit 2026 (10 km y 21 km)",
+  "Wed-Fri": "Mié-Vie",
+  "At The Dock – Day of the Dead Specials": "At The Dock – Especiales de Día de Muertos",
+  "Daily": "Diario",
+  "Sushi happy hour": "Happy hour de sushi",
+  "Karaoke & Ping Pong Tournament": "Karaoke y torneo de ping pong",
+  "Trevas Art Camp Fundraiser": "Recaudación de fondos del Trevas Art Camp",
+  "Pickleball Nights For a Good Cause": "Noches de pickleball con causa",
+  "Restorative Iyengar Yoga": "Yoga Iyengar restaurativo",
+  "MMVVMMTT & Goat Beach Club present: NEW YEAR'S EVE 2027": "MMVVMMTT y Goat Beach Club presentan: NOCHE DE AÑO NUEVO 2027",
+  "Thanksgiving Specials & Menus": "Especiales y menús de Thanksgiving",
+  "National holiday, local parade and celebrations": "Día feriado nacional, desfile local y festejos",
+  "Every Friday, 10am to 2pm.": "Todos los viernes, de 10 am a 2 pm.",
+  "¡Sábado al Muelle! (Saturday at The Dock)": "¡Sábado al Muelle!",
+  "Día de la Revolución parade": "Desfile del Día de la Revolución",
+  "Yoga Fest: Vinyasa Yoga with Vanessa": "Yoga Fest: Vinyasa Yoga con Vanessa",
+  "FICS Film Screening on Calle Zarquito": "Proyección de cine FICS en la Calle Zarquito",
+  "Yoga Fest: Hatha Yoga with Nayarani (El Centro Creativo Fundraiser)": "Yoga Fest: Hatha Yoga con Nayarani (recaudación de fondos para El Centro Creativo)",
+  "Free Pickleball, Cornhole Tourney and Happy Hour": "Pickleball gratis, torneo de cornhole y happy hour",
   "Wed": "Mié",
-  "Community Potluck": "Comida comunitaria de traje"
+  "Ping Pong Tournament then Karaoke": "Torneo de ping pong y después karaoke",
+  "Mondays": "Lunes",
+  "Little Market - Live Music Event": "Little Market - Evento de música en vivo",
+  "Don Pedro's Salsa Night (lessons at 19:00)": "Noche de Salsa en Don Pedro's (clases a las 19:00)",
+  "Sol Sirena Wire Wrapping Chandelier Earrings Jewelry Workshop": "Taller de joyería Sol Sirena: aretes candelabro con técnica de alambrismo",
+  "Yoga Fest: Sister Siesta with Andrea": "Yoga Fest: Sister Siesta con Andrea",
+  "Happy hour on Monday Night Football night": "Happy hour en la noche de Monday Night Football",
+  "All day happy hour!": "¡Happy hour todo el día!",
+  "Unity Breathwork Workshop: Our Dark and Light Sides - Secretly Friends (charity fundraiser)": "Taller Unity Breathwork: Nuestro lado oscuro y nuestro lado luminoso, amigos en secreto (evento de recaudación con causa)",
+  "Guest chefs and special menus around the bay.": "Chefs invitados y menús especiales en toda la bahía.",
+  "Mercado del Pueblo 18th season": "Mercado del Pueblo, 18.ª temporada",
+  "The Art of Leather Craft by Art House Cerámica": "El arte del trabajo en piel con Art House Cerámica",
+  "Yoga Fest: Hatha Flow with Itxa": "Yoga Fest: Hatha Flow con Itxa",
+  "Fall Ayurveda Cleanse – guided experience (Nov 6–15)": "Limpieza ayurvédica de otoño: experiencia guiada (6 al 15 de nov)",
+  "Today's special: Crunchy Geisha, a crispy shrimp tempura burger with cucumber, slaw and Asian-style creamy sauce on toasted sesame brioche": "Especial de hoy: Crunchy Geisha, una hamburguesa de camarón tempura crujiente con pepino, ensalada de col y salsa cremosa estilo asiático en pan brioche tostado con ajonjolí",
+  "Salsa Dance with Laura at Latitude 20": "Baile de salsa con Laura en Latitude 20",
+  "2nd Annual Fundraiser for Centro Creativo (yoga)": "2a Recaudación Anual de Fondos para Centro Creativo (yoga)"
  }
 }
