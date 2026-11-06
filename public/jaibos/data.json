@@ -1,23 +1,12 @@
 {
- "updated": "2026-11-05T07:02-07:00",
+ "updated": "2026-11-06T07:03-07:00",
  "season": {
   "label": "2026-27 season",
-  "status": "Season on 🔥",
-  "note": "No 2026-27 LINABE opening date, schedule, roster or stats had been published on the team's public pages or in local press as of 2026-11-05. The team's Facebook page cannot be read without logging in."
+  "status": "Reigning champions 🏆",
+  "note": "Preseason is on. The league has not posted the 2026-27 schedule yet. One local outlet reported a November 9 start, not confirmed (last season opened December 13, 2025). Games fill in here as soon as they are announced."
  },
  "manager": "César López Andrade",
  "games": [
-  {
-   "date": "2026-11-01",
-   "time": null,
-   "opponent": "Rojos de Magdalena (Jalisco)",
-   "home": true,
-   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Pretemporada (exhibition, not LINABE)",
-   "result": "W 6-5",
-   "note": "Preseason game played the afternoon of the post. Visitors confirmed the Jaibos won by one run.",
-   "url": "https://www.instagram.com/jaibosdesayulita/reel/DfOA4oEhJX0/"
-  },
   {
    "date": "2026-11-01",
    "time": "13:00",
@@ -30,7 +19,15 @@
    "url": "https://www.facebook.com/JaibosDeSayulitaNay"
   }
  ],
- "roster": [],
+ "roster": [
+  {
+   "name": "Manu de la Rosa",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYRP28O_tk/"
+  }
+ ],
  "standouts": [
   {
    "name": "Samuel Zamudio",
@@ -178,10 +175,16 @@
  "season_from": "2026-09-01",
  "news": [
   {
-   "date": "2026-11-01",
+   "date": "2026-11-05",
    "team": "Jaibos de Sayulita",
-   "headline": "Jaibos beat Rojos de Magdalena 6-5 in their first home preseason game at Estadio Manuel Rodríguez Sánchez.",
-   "url": "https://www.instagram.com/p/DfQAUWEm9rs/"
+   "headline": "The team posted a birthday message for its player Manu de la Rosa, calling him 'nuestro Jaibo'.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYRP28O_tk/"
+  },
+  {
+   "date": "2026-11-04",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos and the Jaibitos Jr youth team marched in the Sayulita Día de Muertos festival parade.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfWHnFDm-wW/"
   },
   {
    "date": "2026-10-22",
@@ -194,18 +197,6 @@
    "team": "Delfines de Puerto Vallarta",
    "headline": "Delfines manager Osiris García blamed last season's lost final on baseball fights, after his club split two preseason games with LMP side Charros de Jalisco.",
    "url": "https://noticiasal.com.mx/index.php/2026/10/08/delfines-de-vallarta-muestran-nivel-de-liga-mexicana-y-serie-del-pacifico/"
-  },
-  {
-   "date": "2026-09-25",
-   "team": "Jaibos de Sayulita",
-   "headline": "Team revealed three season jerseys with a champion patch, saying the goal is to defend the LINABE title.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
-  },
-  {
-   "date": "2026-09-25",
-   "team": "Jaibos de Sayulita",
-   "headline": "Team announced work at Estadio Manuel Rodríguez Sánchez to clear a youth training area and said a fan-experience project will be presented soon.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddux2bNmjDi/"
   },
   {
    "date": "2026-04-12",
@@ -224,6 +215,12 @@
    "team": "Jaibos de Sayulita",
    "headline": "The final against Puerto Vallarta turned ugly: a bench-clearing scuffle in Game 1, a brawl with 10 ejections in Game 2, and police stepping in after Game 3.",
    "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
+  },
+  {
+   "date": "2026-03-23",
+   "team": "Jaibos de Sayulita",
+   "headline": "After falling behind Tuxpan 2-1, the Jaibos made roster changes and won three straight to reach the final.",
+   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
   }
  ],
  "opponents": {
