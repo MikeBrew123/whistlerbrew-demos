@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T07:01-07:00",
+ "updated": "2026-11-08T06:59-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Reigning champions 🏆",
@@ -17,28 +17,9 @@
    "result": null,
    "note": "Magdalena are the 2025-26 champions of the Liga Regional de Magdalena. Bring family and friends.",
    "url": "https://www.facebook.com/JaibosDeSayulitaNay"
-  },
-  {
-   "date": "2026-11-08",
-   "time": "12:00",
-   "opponent": "Jaibos Veteranos",
-   "home": true,
-   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Preseason exhibition",
-   "result": null,
-   "note": "Team calls it the last exhibition game before the new season, aiming to defend the 2025-26 title.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYGg_bO-_i/"
   }
  ],
- "roster": [
-  {
-   "name": "Manu de la Rosa",
-   "pos": "",
-   "from": "",
-   "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYRP28O_tk/"
-  }
- ],
+ "roster": [],
  "standouts": [
   {
    "name": "Samuel Zamudio",
@@ -186,18 +167,6 @@
  "season_from": "2026-09-01",
  "news": [
   {
-   "date": "2026-11-05",
-   "team": "Jaibos de Sayulita",
-   "headline": "The defending LINABE champions announced a final preseason exhibition against Jaibos Veteranos on Sunday Nov 8 at 12:00 at Estadio Manuel Rodríguez Sánchez.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYGg_bO-_i/"
-  },
-  {
-   "date": "2026-11-05",
-   "team": "Jaibos de Sayulita",
-   "headline": "The team's Instagram bio lists the club as LINABE champion with Estadio Manuel Rodríguez Sánchez as its home park.",
-   "url": "https://www.instagram.com/jaibosdesayulita/"
-  },
-  {
    "date": "2026-10-22",
    "team": "Jaibos de Sayulita",
    "headline": "Jaibos player Aram Samuel Castellón was named to Mexico's Under-18 team for the Pan American Championship in Santo Domingo, Oct 22 to 29.",
@@ -232,6 +201,18 @@
    "team": "Jaibos de Sayulita",
    "headline": "After falling behind Tuxpan 2-1, the Jaibos made roster changes and won three straight to reach the final.",
    "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
+  },
+  {
+   "date": "2026-02-15",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos finished first in the regular season, and Santiago vs Tuxpan, called the mother of all battles, returned in the playoffs.",
+   "url": "https://ntv.com.mx/2026/02/15/tabaqueros-de-santiago-vs-coqueros-de-tuxpan-la-gran-rivalidad-vuelve-a-playoffs/"
+  },
+  {
+   "date": "2026-02-01",
+   "team": "League",
+   "headline": "Zona Costa beat Zona Valle 6-3 in the All-Star Game in Tepic; Delfines catcher Elver González was MVP with an 8th-inning grand slam.",
+   "url": "https://ntv.com.mx/2026/02/01/zona-costa-se-lleva-el-juego-de-estrellas-de-la-linabe/"
   }
  ],
  "opponents": {
