@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T06:59-07:00",
+ "updated": "2026-11-09T07:01-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Reigning champions 🏆",
@@ -17,9 +17,35 @@
    "result": null,
    "note": "Magdalena are the 2025-26 champions of the Liga Regional de Magdalena. Bring family and friends.",
    "url": "https://www.facebook.com/JaibosDeSayulitaNay"
+  },
+  {
+   "date": "2026-11-08",
+   "time": "12:00",
+   "opponent": "Jaibos Veteranos",
+   "home": true,
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "round": "Preseason exhibition",
+   "result": null,
+   "note": "Billed as the last exhibition game of the preseason. No final score has been posted.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYGg_bO-_i/"
   }
  ],
- "roster": [],
+ "roster": [
+  {
+   "name": "Manu de la Rosa",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYRP28O_tk/"
+  },
+  {
+   "name": "Aram Samuel Castellón",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://consentidocomun.mx/jairo-de-sayulita-representara-a-mexico-en-el-panamericano-de-beisbol-sub-18r/"
+  }
+ ],
  "standouts": [
   {
    "name": "Samuel Zamudio",
@@ -167,9 +193,21 @@
  "season_from": "2026-09-01",
  "news": [
   {
-   "date": "2026-10-22",
+   "date": "2026-11-05",
    "team": "Jaibos de Sayulita",
-   "headline": "Jaibos player Aram Samuel Castellón was named to Mexico's Under-18 team for the Pan American Championship in Santo Domingo, Oct 22 to 29.",
+   "headline": "The Jaibos announced their last preseason exhibition game against Jaibos Veteranos, saying the season goal is to defend the championship.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYGg_bO-_i/"
+  },
+  {
+   "date": "2026-11-04",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos and the Jaibitos Jr marched in Sayulita's Día de Muertos parade.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfWHnFDm-wW/"
+  },
+  {
+   "date": "2026-10-20",
+   "team": "Jaibos de Sayulita",
+   "headline": "Jaibos player Aram Samuel Castellón was named to Mexico's Under-18 team for the Pan American Baseball Championship in Santo Domingo, Oct 22 to 29.",
    "url": "https://consentidocomun.mx/jairo-de-sayulita-representara-a-mexico-en-el-panamericano-de-beisbol-sub-18r/"
   },
   {
@@ -177,6 +215,18 @@
    "team": "Delfines de Puerto Vallarta",
    "headline": "Delfines manager Osiris García blamed last season's lost final on baseball fights, after his club split two preseason games with LMP side Charros de Jalisco.",
    "url": "https://noticiasal.com.mx/index.php/2026/10/08/delfines-de-vallarta-muestran-nivel-de-liga-mexicana-y-serie-del-pacifico/"
+  },
+  {
+   "date": "2026-09-25",
+   "team": "Jaibos de Sayulita",
+   "headline": "The club said work continues at Estadio Manuel Rodríguez Sánchez to open a new area where youth players can train alongside the senior team, with a fan-experience project to be announced.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddux2bNmjDi/"
+  },
+  {
+   "date": "2026-09-25",
+   "team": "Jaibos de Sayulita",
+   "headline": "The Jaibos launched three jerseys (La Marea, Sayulita and El Campeón), priced at 700 to 800 pesos.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
   },
   {
    "date": "2026-04-12",
@@ -189,30 +239,6 @@
    "team": "Jaibos de Sayulita",
    "headline": "The Jaibos won their first LINABE title, 10-7 in 11 innings at Puerto Vallarta, in a game that lasted more than five hours.",
    "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeones-liga-nayarita-beisbol/"
-  },
-  {
-   "date": "2026-03-30",
-   "team": "Jaibos de Sayulita",
-   "headline": "The final against Puerto Vallarta turned ugly: a bench-clearing scuffle in Game 1, a brawl with 10 ejections in Game 2, and police stepping in after Game 3.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
-  },
-  {
-   "date": "2026-03-23",
-   "team": "Jaibos de Sayulita",
-   "headline": "After falling behind Tuxpan 2-1, the Jaibos made roster changes and won three straight to reach the final.",
-   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
-  },
-  {
-   "date": "2026-02-15",
-   "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos finished first in the regular season, and Santiago vs Tuxpan, called the mother of all battles, returned in the playoffs.",
-   "url": "https://ntv.com.mx/2026/02/15/tabaqueros-de-santiago-vs-coqueros-de-tuxpan-la-gran-rivalidad-vuelve-a-playoffs/"
-  },
-  {
-   "date": "2026-02-01",
-   "team": "League",
-   "headline": "Zona Costa beat Zona Valle 6-3 in the All-Star Game in Tepic; Delfines catcher Elver González was MVP with an 8th-inning grand slam.",
-   "url": "https://ntv.com.mx/2026/02/01/zona-costa-se-lleva-el-juego-de-estrellas-de-la-linabe/"
   }
  ],
  "opponents": {
