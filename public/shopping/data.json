@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T07:05-07:00",
+ "updated": "2026-11-09T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -144,7 +144,7 @@
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020000600000_00.jpg?width=500"
       }
      ],
-     "history": "Lowest in 5 weeks"
+     "history": "Lowest in 6 weeks"
     },
     {
      "item": "Beef roast",
@@ -235,7 +235,7 @@
       "per": 12.99,
       "name": "Fresh AAA Certified Angus Beef Brisket (subject to availabil"
      },
-     "history": "Lowest in 5 weeks"
+     "history": "Lowest in 6 weeks"
     },
     {
      "item": "Chicken wings",
@@ -328,7 +328,7 @@
        "img": "https://f.wishabi.net/page_items/439290661/1793412338/extra_large.jpg"
       }
      ],
-     "history": "Lowest in 5 weeks",
+     "history": "Lowest in 6 weeks",
      "south": {
       "town": "Vancouver",
       "store": "Real Canadian Superstore",
@@ -359,7 +359,7 @@
       "per": 7.93,
       "name": "BBQ Chicken Whole - Cold 800g"
      },
-     "history": "Lowest in 5 weeks"
+     "history": "Lowest in 6 weeks"
     },
     {
      "item": "Chicken breast",
@@ -424,7 +424,7 @@
       "per": 8.99,
       "name": "Canadian Fresh Side Pork Belly"
      },
-     "history": "Lowest in 5 weeks",
+     "history": "Lowest in 6 weeks",
      "south": {
       "town": "Vancouver",
       "store": "Real Canadian Superstore",
@@ -467,7 +467,7 @@
      },
      "pct_cheaper": 45,
      "next_store": "FreshSt",
-     "history": "Lowest in 5 weeks"
+     "history": "Lowest in 6 weeks"
     },
     {
      "item": "Pork shoulder",
@@ -537,37 +537,12 @@
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020009100000_00.jpg?width=500"
       }
      ],
-     "history": "Lowest in 5 weeks"
+     "history": "Lowest in 6 weeks"
     },
     {
      "item": "Bacon",
      "unit": "/lb",
-     "stores": [
-      {
-       "store": "FreshSt",
-       "name": "Harvest - Applewood Bacon 500g",
-       "price": "$19.49",
-       "was": null,
-       "per": 17.68,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005739380032_00.jpg?width=500"
-      }
-     ],
-     "everyday": {
-      "store": "FreshSt",
-      "per": 17.68,
-      "name": "Harvest - Applewood Bacon 500g"
-     },
-     "south": {
-      "town": "Vancouver",
-      "store": "Real Canadian Superstore",
-      "name": "PC\u00ae BACON, 375 G",
-      "per": 6.04,
-      "price": "$4.99",
-      "pct": 66
-     }
+     "stores": []
     },
     {
      "item": "Sausages",
@@ -756,7 +731,7 @@
       "per": 9.49,
       "name": "Dairyland - Coffee Cream - 18% m.f. 473ml"
      },
-     "history": "Lowest in 5 weeks"
+     "history": "Lowest in 6 weeks"
     },
     {
      "item": "Coffee cream 18%, big (946 mL+)",
@@ -774,16 +749,6 @@
      "unit": "/dozen",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "GRADE \"A\" LARGE WHITE EGGS",
-       "price": "$3.99 each SATURDAY, NOVEMBER 7 & SUNDAY, NOVEMBER 8 ONLY!",
-       "per": 3.99,
-       "sale": true,
-       "until": "Nov 9",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/439209786/1793367317/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
        "name": "Golden Valley - White Eggs - Large 30pk",
        "price": "$12.99",
@@ -799,9 +764,7 @@
       "store": "FreshSt",
       "per": 5.2,
       "name": "Golden Valley - White Eggs - Large 30pk"
-     },
-     "pct_cheaper": 23,
-     "next_store": "FreshSt"
+     }
     },
     {
      "item": "Butter",
@@ -1070,16 +1033,6 @@
       },
       {
        "store": "Independent",
-       "name": "ROYALE BATHROOM TISSUE 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS 3=6 ROLLS OR F",
-       "price": "$10.00",
-       "per": null,
-       "sale": true,
-       "until": "Nov 12",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/439290721/1793412339/extra_large.jpg"
-      },
-      {
-       "store": "Independent",
        "name": "COTTONELLE BATHROOM TISSUE, 12=48 ROLLS OR FLUSHABLE WIPES, 4'S",
        "price": "$15.00",
        "per": null,
@@ -1089,14 +1042,14 @@
        "img": "https://f.wishabi.net/page_items/439290710/1793412330/extra_large.jpg"
       },
       {
-       "store": "Shoppers",
-       "name": "CHARMIN BATHROOM TISSUE",
-       "price": "$7.99 each SATURDAY, NOVEMBER 7 & SUNDAY, NOVEMBER 8 ONLY!",
+       "store": "Independent",
+       "name": "ROYALE BATHROOM TISSUE 12 DOUBLE ROLLS, TIGER TOWELS PAPER TOWELS 3=6 ROLLS OR F",
+       "price": "$10.00",
        "per": null,
        "sale": true,
-       "until": "Nov 9",
+       "until": "Nov 12",
        "reg": null,
-       "img": "https://f.wishabi.net/page_items/439206049/1793367314/extra_large.jpg"
+       "img": "https://f.wishabi.net/page_items/439290721/1793412339/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1107,6 +1060,17 @@
        "until": "Nov 13",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/439208951/1793367321/extra_large.jpg"
+      },
+      {
+       "store": "FreshSt",
+       "name": "Purex Bathroom Tissue - 2 Ply - Double Rolls 12s",
+       "price": "$8.99",
+       "was": "$14.99",
+       "per": null,
+       "sale": true,
+       "until": "",
+       "reg": null,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006132848214_00.jpg?width=500"
       }
      ]
     }
@@ -1260,15 +1224,6 @@
     "avg_margin": 28
    },
    {
-    "store": "Shoppers",
-    "points": 16,
-    "wins": 3,
-    "big_wins": 1,
-    "real_sales": 5,
-    "fake_sales": 0,
-    "avg_margin": 18
-   },
-   {
     "store": "FreshSt",
     "points": 13,
     "wins": 2,
@@ -1276,6 +1231,15 @@
     "real_sales": 5,
     "fake_sales": 0,
     "avg_margin": 22
+   },
+   {
+    "store": "Shoppers",
+    "points": 10,
+    "wins": 2,
+    "big_wins": 0,
+    "real_sales": 4,
+    "fake_sales": 0,
+    "avg_margin": 15
    },
    {
     "store": "Nesters",
@@ -1314,7 +1278,7 @@
    },
    {
     "store": "Shoppers",
-    "points": 33,
+    "points": 27,
     "weeks_won": 0
    },
    {
@@ -1350,14 +1314,14 @@
    },
    "whistler_tax": [
     {
+     "store": "Shoppers",
+     "pct": 202,
+     "items": 4
+    },
+    {
      "store": "Nesters",
      "pct": 158,
      "items": 7
-    },
-    {
-     "store": "Shoppers",
-     "pct": 152,
-     "items": 5
     },
     {
      "store": "FreshSt",
