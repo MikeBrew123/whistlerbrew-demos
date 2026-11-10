@@ -1,61 +1,61 @@
 {
- "headline_en": "Easy waves, tacos and a beach sunset: a perfect Monday in Sayulita",
- "headline_es": "Olas suaves, tacos y atardecer en la playa: un lunes perfecto en Sayulita",
- "weather_en": "Waves 0.9 m (beginner friendly), UV high at midday, 8% rain, sunny 28°C, sunset at 6:22 PM.",
- "weather_es": "Olas de 0.9 m (buenas para principiantes), UV alto al mediodía, 8% de lluvia, soleado 28°C, atardecer a las 18:22.",
+ "headline_en": "Easy waves, golden sunset, and karaoke to close the night",
+ "headline_es": "Olas suaves, atardecer dorado y karaoke para cerrar la noche",
+ "weather_en": "Waves around 0.8 m (beginner friendly), strong sun at midday (UV 6), no rain, 28 C, sunset at 6:21 PM.",
+ "weather_es": "Olas de unos 0.8 m (buenas para principiantes), sol fuerte al mediodía (UV 6), sin lluvia, 28 °C, atardecer a las 6:21 PM.",
  "stops": [
   {
-   "time": "08:15",
+   "time": "08:30",
    "kind": "breakfast",
-   "place": "Café Papu",
-   "title_en": "Organic coffee and a big breakfast",
-   "title_es": "Café orgánico y un buen desayuno",
-   "why_en": "Open Mondays from 8:00 with 100% organic Nayarit coffee, a gentle start before the water.",
-   "why_es": "Abre los lunes desde las 8:00 con café 100% orgánico de Nayarit, un arranque tranquilo antes del mar.",
-   "order_en": "Omelette or a bowl, a smoothie, and the Nayarit coffee.",
-   "order_es": "Omelette o un bowl, un smoothie y el café de Nayarit.",
+   "place": "El Espresso",
+   "title_en": "Plaza breakfast to start",
+   "title_es": "Desayuno en la plaza para arrancar",
+   "why_en": "A central plaza cafe that is the breakfast hub for many visitors.",
+   "why_es": "Un café en la plaza central que es el punto de desayuno de muchos visitantes.",
+   "order_en": "Chilaquiles",
+   "order_es": "Chilaquiles",
    "swap": {
     "place": "Northswell Cafe",
     "title_en": "Vegan breakfast",
     "title_es": "Desayuno vegano",
-    "why_en": "A bright, welcoming vegan cafe for a lighter, plant-based morning.",
-    "why_es": "Un café vegano, luminoso y acogedor, para una mañana más ligera y vegetal."
+    "why_en": "A bright, welcoming vegan cafe if you want something plant-based.",
+    "why_es": "Un café vegano luminoso y acogedor si prefieres algo a base de plantas."
    }
   },
   {
-   "time": "09:45",
+   "time": "10:00",
    "kind": "surf",
    "place": "La Lancha Beach",
-   "title_en": "Learn to surf at La Lancha",
-   "title_es": "Aprende a surfear en La Lancha",
-   "why_en": "Waves are 0.9 m, right in the beginner zone, and the morning sun is still kind.",
-   "why_es": "Las olas son de 0.9 m, ideales para principiantes, y el sol de la mañana todavía es amable.",
+   "title_en": "Learn to surf in gentle waves",
+   "title_es": "Aprende a surfear en olas suaves",
+   "why_en": "Waves are about 0.8 m with a long 12 second period, and the sun is still kind in the morning.",
+   "why_es": "Las olas están en unos 0.8 m con periodo largo de 12 segundos, y el sol todavía es amable por la mañana.",
    "order_en": "",
    "order_es": "",
    "swap": {
     "place": "Playa Los Muertos",
-    "title_en": "Calm, shady beach time",
-    "title_es": "Playa tranquila con sombra",
-    "why_en": "Calmer water and shady spots if you would rather swim and relax than surf.",
-    "why_es": "Aguas más calmadas y sombra si prefieres nadar y relajarte en vez de surfear."
+    "title_en": "Calm water and shade",
+    "title_es": "Agua tranquila y sombra",
+    "why_en": "A calmer, shady, kid-friendly beach for a quieter morning.",
+    "why_es": "Una playa más tranquila, con sombra y buena para niños, para una mañana relajada."
    }
   },
   {
    "time": "12:30",
    "kind": "lunch",
    "place": "Matiz Mariscos",
-   "title_en": "Seafood lunch out of the midday sun",
-   "title_es": "Comida de mariscos lejos del sol del mediodía",
-   "why_en": "A seafood lunch spot, perfect for getting out of the strongest UV of the day.",
-   "why_es": "Un lugar de mariscos para la comida, ideal para resguardarse del UV más fuerte del día.",
-   "order_en": "The atún tostada.",
-   "order_es": "La tostada de atún.",
+   "title_en": "Seafood lunch out of the peak sun",
+   "title_es": "Comida de mariscos lejos del sol fuerte",
+   "why_en": "A seafood lunch spot that lets you take a break while the midday UV is highest.",
+   "why_es": "Un lugar de mariscos para descansar mientras el UV del mediodía está en su punto más alto.",
+   "order_en": "Atun tostada",
+   "order_es": "Tostada de atún",
    "swap": {
     "place": "Choco Banana",
-    "title_en": "Casual vegan-friendly lunch",
-    "title_es": "Comida casual con opciones veganas",
-    "why_en": "A relaxed, budget-friendly lunch spot with vegan options (it closes at 5).",
-    "why_es": "Un lugar relajado y económico con opciones veganas (cierra a las 5)."
+    "title_en": "Cheaper vegan-friendly lunch",
+    "title_es": "Comida más económica y vegana",
+    "why_en": "A casual lunch spot with a bean burger, open until 5.",
+    "why_es": "Un lugar casual para comer con hamburguesa de frijol, abierto hasta las 5."
    }
   },
   {
@@ -64,52 +64,52 @@
    "place": "Tacos Al Pastor Tal Ivan",
    "title_en": "Plaza street tacos",
    "title_es": "Tacos callejeros en la plaza",
-   "why_en": "A quick, cheap plaza stand with long hours, loved by many locals and visitors.",
-   "why_es": "Un puesto rápido y barato en la plaza con horario largo, muy querido por locales y visitantes.",
-   "order_en": "Al pastor tacos.",
-   "order_es": "Tacos al pastor.",
+   "why_en": "A quick, cheap plaza stand with long hours, so it is open this afternoon.",
+   "why_es": "Un puesto rápido y barato en la plaza con horario largo, así que está abierto esta tarde.",
+   "order_en": "Al pastor tacos",
+   "order_es": "Tacos al pastor",
    "swap": {
-    "place": "Naty's Cocina",
-    "title_en": "Veggie tacos stand",
-    "title_es": "Puesto de tacos vegetarianos",
-    "why_en": "A small cash-only stand with veggie-friendly tacos and fruit drinks, open until mid afternoon.",
-    "why_es": "Un puestito de solo efectivo con tacos vegetarianos y aguas de fruta, abierto hasta media tarde."
+    "place": "Papá Omar",
+    "title_en": "Lebanese street food",
+    "title_es": "Comida callejera libanesa",
+    "why_en": "Open daily from noon at the new plaza location, with vegan options too.",
+    "why_es": "Abierto diario desde el mediodía en su nueva ubicación en la plaza, con opciones veganas también."
    }
   },
   {
    "time": "15:30",
    "kind": "happy hour",
    "place": "At The Dock",
-   "title_en": "Beachfront happy hour",
+   "title_en": "Happy hour on the beachfront",
    "title_es": "Happy hour frente a la playa",
-   "why_en": "Happy hour drinks run 3:00 to 5:00 PM at a beachfront spot with room for the whole group.",
-   "why_es": "El happy hour va de 3:00 a 5:00 PM en un lugar frente a la playa con espacio para todo el grupo.",
-   "order_en": "Happy hour drinks.",
-   "order_es": "Bebidas del happy hour.",
+   "why_en": "Happy hour drinks run from 3 to 5 PM at a beachfront spot with room for big groups.",
+   "why_es": "El happy hour de bebidas es de 3 a 5 PM en un lugar frente a la playa con espacio para grupos grandes.",
+   "order_en": "Happy hour drinks",
+   "order_es": "Bebidas del happy hour",
    "swap": {
-    "place": "Mucho Bueno",
-    "title_en": "Sushi happy hour",
-    "title_es": "Happy hour de sushi",
-    "why_en": "Hand rolls $85, nigiris $50 and sashimis $160 until 5:00 PM, no drinking needed.",
-    "why_es": "Hand rolls $85, nigiris $50 y sashimis $160 hasta las 5:00 PM, sin necesidad de tomar alcohol."
+    "place": "Dumplings & Drops (Plaza Nawalli)",
+    "title_en": "No alcohol, dumplings and DJ",
+    "title_es": "Sin alcohol, dumplings y DJ",
+    "why_en": "The weekly dumpling and DJ pop-up starts at 4 PM in Plaza Nawalli.",
+    "why_es": "El pop-up semanal de dumplings y DJ empieza a las 4 PM en Plaza Nawalli."
    }
   },
   {
-   "time": "17:45",
+   "time": "17:30",
    "kind": "sunset",
    "place": "Playa Carricitos",
    "title_en": "Sunset on a quiet beach",
    "title_es": "Atardecer en una playa tranquila",
-   "why_en": "A secluded beach known for pristine sunsets and almost no crowds, with the sun going down at 6:22 PM.",
-   "why_es": "Una playa apartada conocida por sus atardeceres y casi sin gente, con el sol poniéndose a las 18:22.",
+   "why_en": "A secluded beach known for pristine sunsets and almost no crowds, with the sun setting at 6:21 PM.",
+   "why_es": "Una playa apartada famosa por sus atardeceres y casi sin gente, con el sol poniéndose a las 6:21 PM.",
    "order_en": "",
    "order_es": "",
    "swap": {
     "place": "Turtle Sanctuary",
     "title_en": "Baby turtle release",
     "title_es": "Liberación de tortuguitas",
-    "why_en": "At 6:00 PM, only if the hatchlings are ready; it is confirmed around 2 to 3 PM today.",
-    "why_es": "A las 6:00 PM, solo si las crías están listas; se confirma hoy alrededor de las 2 a 3 PM."
+    "why_en": "At 6 PM, only if the hatchlings are ready, which is confirmed around 2 to 3 PM today.",
+    "why_es": "A las 6 PM, solo si las crías están listas, lo cual se confirma hoy entre 2 y 3 PM."
    }
   },
   {
@@ -118,38 +118,38 @@
    "place": "Tiburón",
    "title_en": "Breezy seafood dinner",
    "title_es": "Cena de mariscos con brisa",
-   "why_en": "Breezy seafood with great cocktails and friendly service, a lovely way to end the day.",
-   "why_es": "Mariscos con brisa, buenos cocteles y servicio amable, una linda forma de cerrar el día.",
-   "order_en": "The fish of the day, tuna poke with wontons, and a watermelon margarita.",
-   "order_es": "El pescado del día, poke de atún con wontons y una margarita de sandía.",
+   "why_en": "A seafood spot with great cocktails and friendly service.",
+   "why_es": "Un lugar de mariscos con excelentes cocteles y servicio amable.",
+   "order_en": "Fish of the day, with a watermelon margarita",
+   "order_es": "Pescado del día, con una margarita de sandía",
    "swap": {
-    "place": "Bichos Tacos",
-    "title_en": "Casual taco dinner",
-    "title_es": "Cena casual de tacos",
-    "why_en": "A fresh, vibrant and more relaxed taco spot for dinner.",
-    "why_es": "Un lugar de tacos fresco, vibrante y más relajado para cenar."
+    "place": "Dumplings & Drops (Plaza Nawalli)",
+    "title_en": "Casual and cheaper dinner",
+    "title_es": "Cena casual y más económica",
+    "why_en": "The dumpling and DJ pop-up runs until 9 PM in Plaza Nawalli.",
+    "why_es": "El pop-up de dumplings y DJ sigue hasta las 9 PM en Plaza Nawalli."
    }
   },
   {
-   "time": "21:15",
+   "time": "22:00",
    "kind": "night",
-   "place": "Escondido Bar",
-   "title_en": "Easy cocktails to close the night",
-   "title_es": "Cocteles tranquilos para cerrar la noche",
-   "why_en": "A working bar with good vibes, a relaxed place for a final drink on a Monday.",
-   "why_es": "Un bar con buena onda y ambiente relajado para un último trago en lunes.",
-   "order_en": "Their cocktails.",
-   "order_es": "Sus cocteles.",
+   "place": "Redonda",
+   "title_en": "Karaoke and ping pong",
+   "title_es": "Karaoke y ping pong",
+   "why_en": "The Karaoke and Ping Pong Tournament at La Redonda runs from 10 to 11:30 PM.",
+   "why_es": "El torneo de Karaoke y Ping Pong en La Redonda es de 10 a 11:30 PM.",
+   "order_en": "",
+   "order_es": "",
    "swap": {
-    "place": "Sayulita Sandbar",
-    "title_en": "Sports bar and snacks",
-    "title_es": "Bar deportivo y botanas",
-    "why_en": "A budget-friendly sports bar with free games if you want something livelier.",
-    "why_es": "Un bar deportivo económico con juegos gratis si quieres algo más animado."
+    "place": "ITH Amazing Surf Hostel",
+    "title_en": "Quieter community potluck",
+    "title_es": "Convivio comunitario más tranquilo",
+    "why_en": "The Community Potluck runs from 8 to 10 PM, a mellow way to end the day.",
+    "why_es": "El convivio comunitario es de 8 a 10 PM, una forma tranquila de cerrar el día."
    }
   }
  ],
- "date": "2026-11-09",
- "sunset": "18:22",
- "updated": "2026-11-09T07:05-07:00"
+ "date": "2026-11-10",
+ "sunset": "18:21",
+ "updated": "2026-11-10T07:05-07:00"
 }
