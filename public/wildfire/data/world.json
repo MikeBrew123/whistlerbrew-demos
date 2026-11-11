@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T17:01:26.655Z",
+  "updated_at": "2026-11-11T23:01:25.869Z",
   "fires": [
     {
       "country": "Belgium",
@@ -207,16 +207,17 @@
     },
     "items_out": {
       "canada": 0,
-      "world_fires": 28
+      "world_fires": 27
     },
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new items provided in input",
-      "All 28 existing world fires retained as Active status",
-      "No deduplication required - no duplicate sources in existing data",
-      "No contained fires to remove (all marked Active)",
-      "All images preserved from existing data"
+      "No new Canada news items provided",
+      "No new world news items provided",
+      "All 27 existing active fires preserved from prior dataset",
+      "No deduplication necessary - no duplicate stories found",
+      "No fires contained >60 days ago to remove",
+      "All fire records include images where available"
     ]
   }
 }
