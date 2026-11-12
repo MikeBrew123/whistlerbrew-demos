@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T11:01:26.067Z",
+  "updated_at": "2026-11-12T23:01:26.190Z",
   "fires": [
     {
       "country": "Belgium",
@@ -212,10 +212,9 @@
     "deduped": 0,
     "rerouted": 0,
     "notes": [
-      "No new articles provided for processing",
-      "All 28 world fires preserved from existing_fires as all remain Active",
-      "No duplicates to merge or deduplicate",
-      "No items required rerouting between buckets"
+      "No new items provided in canada_news or world_news inputs",
+      "Retained all 28 active fires from existing_fires (no fires qualified for removal: none contained >60 days ago)",
+      "All fires maintain Active status and complete metadata including images where present"
     ]
   }
 }
