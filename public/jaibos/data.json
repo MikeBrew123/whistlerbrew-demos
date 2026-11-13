@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-12T07:04-07:00",
+ "updated": "2026-11-13T07:02-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Reigning champions 🏆",
-  "note": "Opening day is Saturday November 14. Jaibos open the LINABE 2026-27 title defense Saturday Nov 14 away at Delfines in Puerto Vallarta (date derived from the team's Nov 11 post saying 'in 3 days, this Saturday'), with the home opener Sunday Nov 15 at 1:00 PM; the full schedule exists only as an image on the team's Nov 9 Instagram post and could not be read, and no press or league-site coverage of 2026-27 exists yet."
+  "note": "Opening day is Saturday November 14. Jaibos open Saturday Nov 14 at Delfines in Puerto Vallarta, then host them Sunday Nov 15; the full calendar was posted only as an image I could not read, and no 2026-27 roster list or stats are published yet."
  },
  "manager": "César López Andrade",
  "games": [
@@ -19,37 +19,26 @@
    "url": "https://www.facebook.com/JaibosDeSayulitaNay"
   },
   {
-   "date": "2026-11-08",
-   "time": "12:00",
-   "opponent": "Jaibos Veteranos",
-   "home": true,
-   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Preseason exhibition",
-   "result": null,
-   "note": "Final preseason game, a generations game; no score published.",
-   "url": "https://www.instagram.com/p/DfYGg_bO-_i/"
-  },
-  {
    "date": "2026-11-14",
    "time": null,
-   "opponent": "Delfines de Puerto Vallarta",
+   "opponent": "Delfines de Vallarta",
    "home": false,
    "venue": "Puerto Vallarta (ballpark not stated)",
-   "round": "Regular season, opening day",
+   "round": "Regular season, opening series",
    "result": null,
-   "note": "Team post of Nov 11 says the season starts 'in 3 days, this Saturday' in Puerto Vallarta against Delfines; time and ballpark not given.",
-   "url": "https://www.instagram.com/p/DfoLxOGMFLu/"
+   "note": "Team post of Nov 11 says the season starts in 3 days, this Saturday, in Puerto Vallarta against Delfines.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfoLxOGMFLu/"
   },
   {
    "date": "2026-11-15",
    "time": "13:00",
-   "opponent": "Delfines de Puerto Vallarta",
+   "opponent": "Delfines de Vallarta",
    "home": true,
    "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
    "round": "Regular season, home opener",
    "result": null,
-   "note": "Team says all home games this season start at 1:00 PM, with any changes announced on social media the week of the game.",
-   "url": "https://www.instagram.com/reel/DfkcktyOANJ/"
+   "note": "Home opener and start of the title defense, with a Mercado Jaibo (food, drinks, beer) at the park.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfqWbW1Brwr/"
   }
  ],
  "roster": [
@@ -58,14 +47,7 @@
    "pos": "",
    "from": "",
    "number": "",
-   "url": "https://www.instagram.com/p/DfYRP28O_tk/"
-  },
-  {
-   "name": "Sebastián López",
-   "pos": "Batboy / prospect",
-   "from": "",
-   "number": "",
-   "url": "https://www.instagram.com/reel/Dfm2t0zBz2E/"
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfYRP28O_tk/"
   }
  ],
  "standouts": [
@@ -215,52 +197,52 @@
  "season_from": "2026-09-01",
  "news": [
   {
+   "date": "2026-11-12",
+   "team": "Jaibos de Sayulita",
+   "headline": "The defending champions announced their home opener against Delfines de Vallarta for Sunday Nov 15 at 1:00 PM at Estadio Manuel Rodríguez Sánchez.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfqWbW1Brwr/"
+  },
+  {
    "date": "2026-11-11",
    "team": "Jaibos de Sayulita",
-   "headline": "Jaibos announce their LINABE season starts Saturday in Puerto Vallarta against Delfines.",
-   "url": "https://www.instagram.com/p/DfoLxOGMFLu/"
-  },
-  {
-   "date": "2026-11-10",
-   "team": "Jaibos de Sayulita",
-   "headline": "Jaibos promote the home opener against Delfines de Vallarta on Sunday Nov 15 at 1:00 PM at Estadio Manuel Rodríguez Sánchez.",
-   "url": "https://www.instagram.com/reel/DfkcktyOANJ/"
-  },
-  {
-   "date": "2026-11-10",
-   "team": "Jaibos de Sayulita",
-   "headline": "Jaibos congratulate Bahía de Banderas municipal president Héctor Santana on his second government report and thank him for supporting the team.",
-   "url": "https://www.instagram.com/p/Dfk3S-XtcSY/"
+   "headline": "The team said its LINABE season starts Saturday in Puerto Vallarta against Delfines.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfoLxOGMFLu/"
   },
   {
    "date": "2026-11-09",
    "team": "Jaibos de Sayulita",
-   "headline": "Jaibos publish their 2026-27 LINABE schedule and confirm the first home game is Sunday Nov 15.",
-   "url": "https://www.instagram.com/p/DfiLGavRRre/"
+   "headline": "The Jaibos published their 2026-27 LINABE calendar and said home games will be at 1:00 PM at Estadio Manuel Rodríguez Sánchez, with any time changes announced the week of the game.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DfiLGavRRre/"
   },
   {
-   "date": "2026-11-09",
+   "date": "2026-11-08",
    "team": "Jaibos de Sayulita",
-   "headline": "Four eras of Jaibos played the generations game in Sayulita on Nov 8, the last preseason outing.",
+   "headline": "Jaibos players from four eras played a generations game in Sayulita, described as the last game of the preseason.",
    "url": "https://www.instagram.com/sayulitaisthebest/p/Dfhl-ONm0ws/"
-  },
-  {
-   "date": "2026-11-05",
-   "team": "Jaibos de Sayulita",
-   "headline": "Jaibos announce they will close preseason on Nov 8 at noon against the Jaibos Veteranos at home.",
-   "url": "https://www.instagram.com/p/DfYGg_bO-_i/"
-  },
-  {
-   "date": "2026-11-04",
-   "team": "Jaibos de Sayulita",
-   "headline": "Jaibos and Jaibitos Jr took part in the Sayulita Día de Muertos festival parade.",
-   "url": "https://www.instagram.com/p/DfWHnFDm-wW/"
   },
   {
    "date": "2026-10-22",
    "team": "Jaibos de Sayulita",
    "headline": "Jaibos player Aram Samuel Castellón was named to Mexico's Under-18 team for the Pan American Championship in Santo Domingo, Oct 22 to 29.",
    "url": "https://consentidocomun.mx/jairo-de-sayulita-representara-a-mexico-en-el-panamericano-de-beisbol-sub-18r/"
+  },
+  {
+   "date": "2026-10-08",
+   "team": "Delfines de Puerto Vallarta",
+   "headline": "Delfines manager Osiris García blamed last season's lost final on baseball fights, after his club split two preseason games with LMP side Charros de Jalisco.",
+   "url": "https://noticiasal.com.mx/index.php/2026/10/08/delfines-de-vallarta-muestran-nivel-de-liga-mexicana-y-serie-del-pacifico/"
+  },
+  {
+   "date": "2026-09-25",
+   "team": "Jaibos de Sayulita",
+   "headline": "The team presented three jerseys for the 2026-27 season (La Marea, Sayulita and El Campeón), all with a champion patch, priced from 700 pesos.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
+  },
+  {
+   "date": "2026-09-25",
+   "team": "Jaibos de Sayulita",
+   "headline": "Work continues at Estadio Manuel Rodríguez Sánchez, including clearing a new area for youth training, and the board says a fan experience project will be announced soon.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddux2bNmjDi/"
   }
  ],
  "opponents": {
