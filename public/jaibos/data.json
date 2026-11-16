@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-15T07:03-07:00",
+ "updated": "2026-11-16T06:59-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Season on 🔥",
-  "note": "League and team posts set the LINABE 26-27 opening for Saturday Nov 14, 2026, with nine teams and a nine-weekend regular season; no full schedule, roster or stats table was publicly readable."
+  "note": "Jaibos opened the 2026-27 LINABE season away at Delfines on Nov 14; the league has not published a full schedule, roster or stats on any page I could read, and Facebook pages were login-walled."
  },
  "manager": "César López Andrade",
  "games": [
@@ -26,8 +26,8 @@
    "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
    "round": "Serie 1, Juego 1",
    "result": "L 3-6",
-   "note": "Season opener. Score is from the team's Instagram caption (Jaibos 3, Delfines 6); the Tribuna de la Bahía preview confirms date, time and venue: https://tribunadelabahia.com.mx/delfines-puerto-vallarta-jaibos-sayulita-serie/",
-   "url": "https://www.instagram.com/jaibosdesayulita/"
+   "note": "Nine innings. The team's Instagram and the Tribuna headline say 6-3; one sentence in the Tribuna article says Delfines scored five. Samuel Zamudio hit a 2-run home run.",
+   "url": "https://tribunadelabahia.com.mx/delfines-puerto-vallarta-vence-jaibos-sayulita/"
   },
   {
    "date": "2026-11-15",
@@ -37,25 +37,11 @@
    "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
    "round": "Serie 1, Juego 2",
    "result": null,
-   "note": "Home opener announced by the team; no result was posted when checked. Nothing beyond Serie 1 has been published in readable form.",
+   "note": "Home opener with opening ceremony, per the team's Instagram. No final score found yet. Tribuna de la Bahía placed this game in Puerto Vallarta instead, so the venue is sourced to the team.",
    "url": "https://www.instagram.com/jaibosdesayulita/"
   }
  ],
  "roster": [
-  {
-   "name": "Kender Villegas",
-   "pos": "P (starter)",
-   "from": "",
-   "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/"
-  },
-  {
-   "name": "Donnet Zamudio",
-   "pos": "P",
-   "from": "",
-   "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/"
-  },
   {
    "name": "Samuel Zamudio",
    "pos": "",
@@ -66,6 +52,27 @@
   {
    "name": "Andy Vásquez",
    "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/"
+  },
+  {
+   "name": "Fermín López",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/"
+  },
+  {
+   "name": "Daniel Molina",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/jaibosdesayulita/"
+  },
+  {
+   "name": "Donnet Zamudio",
+   "pos": "P",
    "from": "",
    "number": "",
    "url": "https://www.instagram.com/jaibosdesayulita/"
@@ -126,7 +133,7 @@
   {
    "name": "Samuel Zamudio",
    "pos": "",
-   "line": "1 HR, 2 RBI in the Nov 14 opener (single-game line from a team post; no season stat table is published yet)",
+   "line": "1 HR, 2 RBI in the Nov 14 opener (single game, no season stat tables published yet)",
    "url": "https://www.instagram.com/jaibosdesayulita/"
   }
  ],
@@ -192,15 +199,21 @@
  "season_from": "2026-09-01",
  "news": [
   {
+   "date": "2026-11-15",
+   "team": "Jaibos de Sayulita",
+   "headline": "Delfines de Puerto Vallarta beat the Jaibos 6-3 in the first game of Serie 1 and lead the series 1-0.",
+   "url": "https://tribunadelabahia.com.mx/delfines-puerto-vallarta-vence-jaibos-sayulita/"
+  },
+  {
    "date": "2026-11-14",
-   "team": "Delfines de Puerto Vallarta",
-   "headline": "Delfines hosted the defending champion Jaibos at 18:00 at the Agustín Flores Contreras complex in Serie 1 of the 2026-27 season.",
+   "team": "Jaibos de Sayulita",
+   "headline": "Tribuna de la Bahía previewed the Serie 1 opener between Delfines and the Jaibos, set for 18:00 at the Agustín Flores Contreras ballpark.",
    "url": "https://tribunadelabahia.com.mx/delfines-puerto-vallarta-jaibos-sayulita-serie/"
   },
   {
    "date": "2026-11-13",
    "team": "LINABE",
-   "headline": "League president Conrado Lizárraga said last season had 111 games and more than 96,000 fans in the ballparks.",
+   "headline": "League president Conrado Lizárraga said last season had 111 games and more than 96 thousand fans in the ballparks.",
    "url": "https://ntv.com.mx/2026/11/13/presentan-nueva-temporadade-la-liga-nayarita-de-beisbol-german-jimenez-camarena-para-la-temporada-2026-2027/"
   },
   {
@@ -232,12 +245,6 @@
    "team": "Jaibos de Sayulita",
    "headline": "The final against Puerto Vallarta turned ugly: a bench-clearing scuffle in Game 1, a brawl with 10 ejections in Game 2, and police stepping in after Game 3.",
    "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
-  },
-  {
-   "date": "2026-03-23",
-   "team": "Jaibos de Sayulita",
-   "headline": "After falling behind Tuxpan 2-1, the Jaibos made roster changes and won three straight to reach the final.",
-   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
   }
  ],
  "opponents": {
