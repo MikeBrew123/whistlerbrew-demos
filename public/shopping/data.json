@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T07:05-07:00",
+ "updated": "2026-11-16T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -43,7 +43,7 @@
   },
   "pct_cheaper": 7,
   "next_store": "Shoppers",
-  "history": "Lowest in 6 weeks"
+  "history": "Lowest in 7 weeks"
  },
  "stores": [
   {
@@ -272,7 +272,7 @@
       "per": 12.99,
       "name": "Fresh AAA Certified Angus Beef Brisket (subject to availabil"
      },
-     "history": "Lowest in 6 weeks"
+     "history": "Lowest in 7 weeks"
     },
     {
      "item": "Chicken wings",
@@ -477,7 +477,7 @@
       "per": 8.99,
       "name": "Canadian Fresh Side Pork Belly"
      },
-     "history": "Lowest in 6 weeks"
+     "history": "Lowest in 7 weeks"
     },
     {
      "item": "Pork chops",
@@ -802,7 +802,7 @@
       "per": 9.49,
       "name": "Dairyland - Coffee Cream - 18% m.f. 473ml"
      },
-     "history": "Lowest in 6 weeks"
+     "history": "Lowest in 7 weeks"
     },
     {
      "item": "Coffee cream 18%, big (946 mL+)",
@@ -820,16 +820,6 @@
      "unit": "/dozen",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "GRADE \"A\" LARGE WHITE EGGS",
-       "price": "$3.99 each",
-       "per": 3.99,
-       "sale": true,
-       "until": "Nov 16",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/440176176/1794338245/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
        "name": "Golden Valley - White Eggs - Large 30pk",
        "price": "$12.99",
@@ -839,6 +829,16 @@
        "until": "",
        "reg": null,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005579910303_00.jpg?width=500"
+      },
+      {
+       "store": "Shoppers",
+       "name": "PC FREE-RUN EGGS",
+       "price": "$5.79 each",
+       "per": 5.79,
+       "sale": true,
+       "until": "Nov 20",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/440180995/1794338282/extra_large.jpg"
       }
      ],
      "everyday": {
@@ -846,8 +846,8 @@
       "per": 5.2,
       "name": "Golden Valley - White Eggs - Large 30pk"
      },
-     "pct_cheaper": 23,
-     "next_store": "FreshSt"
+     "pct_cheaper": 10,
+     "next_store": "Shoppers"
     },
     {
      "item": "Butter",
@@ -936,7 +936,7 @@
      },
      "pct_cheaper": 26,
      "next_store": "Independent",
-     "history": "Lowest in 6 weeks",
+     "history": "Lowest in 7 weeks",
      "south": {
       "town": "Squamish",
       "store": "Costco",
@@ -999,7 +999,7 @@
      },
      "pct_cheaper": 34,
      "next_store": "Shoppers",
-     "history": "Lowest in 6 weeks"
+     "history": "Lowest in 7 weeks"
     }
    ]
   },
@@ -1033,16 +1033,6 @@
       },
       {
        "store": "Shoppers",
-       "name": "NO NAME PAPER TOWELS (2 Roll), ALUMINUM FOIL (25') or GLAD CLING WRAP (30m)",
-       "price": "$1.49 each",
-       "per": null,
-       "sale": true,
-       "until": "Nov 20",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/440180987/1794338277/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
        "name": "ROYALE TIGER (3 Roll) or PC MAX (2 Roll - 3 Roll) PAPER TOWELS",
        "price": "$6.99 each",
        "per": null,
@@ -1050,6 +1040,16 @@
        "until": "Nov 20",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/440177106/1794338258/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
+       "name": "NO NAME PAPER TOWELS (2 Roll), ALUMINUM FOIL (25') or GLAD CLING WRAP (30m)",
+       "price": "$1.49 each",
+       "per": null,
+       "sale": true,
+       "until": "Nov 20",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/440180987/1794338277/extra_large.jpg"
       },
       {
        "store": "Shoppers",
@@ -1107,16 +1107,6 @@
        "until": "Nov 19",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/440198044/1794343674/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
-       "name": "ROYALE BATHROOM TISSUE 12 Roll",
-       "price": "$5.99 each",
-       "per": null,
-       "sale": true,
-       "until": "Nov 16",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/440176175/1794338244/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -1260,15 +1250,6 @@
   "week_of": "2026-11-12",
   "standings": [
    {
-    "store": "Shoppers",
-    "points": 23,
-    "wins": 4,
-    "big_wins": 4,
-    "real_sales": 6,
-    "fake_sales": 1,
-    "avg_margin": 34
-   },
-   {
     "store": "Independent",
     "points": 19,
     "wins": 4,
@@ -1287,13 +1268,22 @@
     "avg_margin": 8
    },
    {
+    "store": "Shoppers",
+    "points": 14,
+    "wins": 3,
+    "big_wins": 3,
+    "real_sales": 5,
+    "fake_sales": 2,
+    "avg_margin": 38
+   },
+   {
     "store": "FreshSt",
-    "points": 7,
-    "wins": 1,
+    "points": 10,
+    "wins": 2,
     "big_wins": 0,
     "real_sales": 4,
     "fake_sales": 0,
-    "avg_margin": 6
+    "avg_margin": 8
    },
    {
     "store": "Creekside",
@@ -1318,12 +1308,12 @@
    },
    {
     "store": "FreshSt",
-    "points": 72,
+    "points": 75,
     "weeks_won": 0
    },
    {
     "store": "Shoppers",
-    "points": 47,
+    "points": 38,
     "weeks_won": 0
    },
    {
@@ -1336,17 +1326,17 @@
   "awards": {
    "worth_the_drive": {
     "store": "Shoppers",
-    "avg_margin": 34,
-    "wins": 4
+    "avg_margin": 38,
+    "wins": 3
    },
    "fake_sale": {
     "store": "Shoppers",
-    "item": "Chicken wings",
-    "name": "PC FULLY COOKED FROZEN CHICKEN BREAST CHUNKS (800g) or CHICK",
-    "per": 9.35,
-    "everyday": 8.99,
-    "unit": "/lb",
-    "pct_over": 4
+    "item": "Eggs",
+    "name": "PC FREE-RUN EGGS",
+    "per": 5.79,
+    "everyday": 5.2,
+    "unit": "/dozen",
+    "pct_over": 11
    },
    "deepest": {
     "store": "FreshSt",
@@ -1375,7 +1365,7 @@
     },
     {
      "store": "Shoppers",
-     "pct": 5,
+     "pct": 9,
      "items": 7
     }
    ]
