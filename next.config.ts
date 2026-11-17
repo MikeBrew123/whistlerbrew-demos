@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
       { source: '/bridge', destination: '/bridge/index.html', permanent: false, missing: [{ type: 'host', value: 'mylittleshadow.com' }] },
       { source: '/shadow', destination: '/shadow/index.html', permanent: false },
       { source: '/swipe', destination: '/swipe/index.html', permanent: false },
+      { source: '/tower', destination: '/tower/index.html', permanent: false },
+      { source: '/tower/archive', destination: '/tower/archive/index.html', permanent: false },
+      { source: '/tower/:date(\\d{4}-\\d{2}-\\d{2})', destination: '/tower/:date/index.html', permanent: false },
       { source: '/sitrep', destination: '/resource-order-web.html', permanent: false },
     ];
   },
