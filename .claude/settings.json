@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(git * --no-verify*)",
+      "Bash(git config *core.hooksPath*)",
+      "Bash(git config *emailguard.skip*)",
+      "Bash(*echo $SUPABASE_ACCESS_TOKEN*)",
+      "Bash(env)",
+      "Bash(printenv*)",
+      "Read(~/.ssh/id_*)",
+      "Edit(//**/docs/project-log/daily/**)",
+      "Bash(git reset --hard*)"
+    ]
+  }
+}
