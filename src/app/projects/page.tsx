@@ -134,6 +134,14 @@ const PROJECTS: Project[] = [
     accent: "#ff6b35",
   },
   {
+    name: "From the Tower",
+    href: "/tower/",
+    description: "Weekly wildfire intelligence newsletter. BC first, then Canada, the US and global. AI-written, Monday mornings.",
+    status: "LIVE",
+    accent: "#B3261E",
+    external: true,
+  },
+  {
     name: "Wildfire Tracker",
     href: "/wildfire/index.html",
     description: "BC wildfire dashboard — live BCWS counts, evac notices, zone news. N8N-driven.",
