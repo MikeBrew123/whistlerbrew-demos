@@ -73,6 +73,32 @@ export default function Home() {
 
       <section className="mt-10 max-w-xl w-full text-left">
         <h2 className="text-[#808080] text-xs font-semibold uppercase tracking-wider mb-4 text-center">
+          Free to read
+        </h2>
+        <a
+          href="/tower/"
+          className="block p-5 bg-[#1e1e1e] border border-[#333] rounded-lg hover:border-[#B3261E] transition-colors"
+        >
+          <p className="text-white font-semibold mb-1">
+            🔥 From the Tower{" "}
+            <span className="ml-1 align-middle bg-[#F8C329] text-[#1E1E1E] text-[10px] font-bold uppercase tracking-wider py-0.5 px-2 rounded">
+              Beta
+            </span>
+          </p>
+          <p className="text-[#808080] text-xs mb-2">Weekly wildfire intel · new every Monday · written by AI</p>
+          <p className="text-[#b0b0b0] text-sm leading-relaxed">
+            The week in wildfire, read in a couple of minutes. BC first, then
+            Canada, the US and the world. News, decisions and new learning, with
+            a link to every source.
+          </p>
+          <span className="inline-block mt-4 bg-[#B3261E] text-white font-semibold text-sm py-2 px-5 rounded-md">
+            Read this week ▶
+          </span>
+        </a>
+      </section>
+
+      <section className="mt-10 max-w-xl w-full text-left">
+        <h2 className="text-[#808080] text-xs font-semibold uppercase tracking-wider mb-4 text-center">
           Also from Brew
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">

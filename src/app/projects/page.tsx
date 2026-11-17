@@ -137,7 +137,7 @@ const PROJECTS: Project[] = [
     name: "From the Tower",
     href: "/tower/",
     description: "Weekly wildfire intelligence newsletter. BC first, then Canada, the US and global. AI-written, Monday mornings.",
-    status: "LIVE",
+    status: "BETA",
     accent: "#B3261E",
     external: true,
   },
