@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-18T07:00-07:00",
+ "updated": "2026-11-19T07:02-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Season on 🔥",
-  "note": "LINABE presented its nine-team 2026-27 season in Tepic on 2026-11-13 but no opening date was published, and the Jaibos played Serie 1 at Delfines on 2026-11-14."
+  "note": "Opening series was played Nov 14-15, 2026. No Jaibos 2026-27 roster, manager, player stats or later schedule was found on any public page, and the league site (linabegjc.com.mx) still shows 2025-26 data."
  },
  "manager": "César López Andrade",
  "games": [
@@ -26,19 +26,19 @@
    "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
    "round": "Serie 1, Game 1",
    "result": "L 3-6",
-   "note": "The article's headline and body say 6-3, but one paragraph says Delfines scored five runs to the Jaibos' three, so the score is unconfirmed.",
-   "url": "https://tribunadelabahia.com.mx/delfines-puerto-vallarta-vence-jaibos-sayulita/"
+   "note": "Start time comes from the Nov 14 preview at https://tribunadelabahia.com.mx/delfines-puerto-vallarta-jaibos-sayulita-serie/ . NTV and the Tribuna headline both say 6-3, but the Tribuna article body says five runs to three.",
+   "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
   },
   {
    "date": "2026-11-15",
    "time": null,
    "opponent": "Delfines de Puerto Vallarta",
-   "home": false,
-   "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
+   "home": true,
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
    "round": "Serie 1, Game 2",
-   "result": null,
-   "note": "Scheduled per the Game 1 report. No public result found as of .",
-   "url": "https://tribunadelabahia.com.mx/delfines-puerto-vallarta-vence-jaibos-sayulita/"
+   "result": "L 4-10",
+   "note": "Tribuna says this game was played in Sayulita. The ballpark name is from the team's Instagram bio and the municipal page https://www.bahiadebanderas.gob.mx/hector-santana-acompana-el-arranque-de-la-liga-de-beisbol-/",
+   "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
   }
  ],
  "roster": [],
@@ -193,27 +193,39 @@
  "season_from": "2026-09-01",
  "news": [
   {
+   "date": "2026-11-18",
+   "team": "Jaibos de Sayulita",
+   "headline": "Delfines de Puerto Vallarta swept the defending champion Jaibos in the opening series, 6-3 and 10-4.",
+   "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
+  },
+  {
+   "date": "2026-11-17",
+   "team": "LINABE",
+   "headline": "After Serie 1, Compostela and Puerto Vallarta are 2-0, Sayulita and Santiago are 0-2, and Ocelotes UAN had a bye.",
+   "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
+  },
+  {
    "date": "2026-11-16",
    "team": "Jaibos de Sayulita",
-   "headline": "Bahía de Banderas mayor Héctor Santana attended the 2026-27 season start at Estadio Manuel Rodríguez Sánchez in Sayulita, congratulated the Jaibos on last season's title and backed their push for a second straight championship.",
+   "headline": "Bahía de Banderas mayor Héctor Santana attended the season opener at Estadio Manuel Rodríguez Sánchez and backed the Jaibos' bid for back-to-back titles.",
    "url": "https://www.bahiadebanderas.gob.mx/hector-santana-acompana-el-arranque-de-la-liga-de-beisbol-2026-2027/"
   },
   {
-   "date": "2026-11-15",
-   "team": "Delfines de Puerto Vallarta",
-   "headline": "Delfines beat the Jaibos at home in Game 1 of Serie 1, renewing the rivalry from last season's final.",
-   "url": "https://tribunadelabahia.com.mx/delfines-puerto-vallarta-vence-jaibos-sayulita/"
+   "date": "2026-11-16",
+   "team": "Jaibos de Sayulita",
+   "headline": "The team posted its official team photo with a message about defending the championship.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Df0Mr1US9y3/"
   },
   {
    "date": "2026-11-13",
    "team": "LINABE",
-   "headline": "The league presented its 2026-27 season in Tepic with nine teams (Acaponeta, Compostela, Puerto Vallarta, Rosamorada, Santiago, Sayulita, Tecuala, Tuxpan, Ocelotes UAN), and president Conrado Lizárraga reported more than 96,000 fans last season.",
+   "headline": "The league presented the 2026-27 season with nine teams, including Jaibos de Sayulita, and president Conrado Lizárraga said last season drew more than 96,000 fans over 111 games.",
    "url": "https://ntv.com.mx/2026/11/13/presentan-nueva-temporadade-la-liga-nayarita-de-beisbol-german-jimenez-camarena-para-la-temporada-2026-2027/"
   },
   {
-   "date": "2026-10-20",
+   "date": "2026-10-22",
    "team": "Jaibos de Sayulita",
-   "headline": "Aram Samuel Castellón, described as a member of the Jaibos de Sayulita, was called up to Mexico's U-18 team for the XVI Pan American Championship in Santo Domingo, October 22 to 29.",
+   "headline": "Jaibos player Aram Samuel Castellón was named to Mexico's Under-18 team for the Pan American Championship in Santo Domingo, Oct 22 to 29.",
    "url": "https://consentidocomun.mx/jairo-de-sayulita-representara-a-mexico-en-el-panamericano-de-beisbol-sub-18r/"
   },
   {
@@ -223,22 +235,10 @@
    "url": "https://noticiasal.com.mx/index.php/2026/10/08/delfines-de-vallarta-muestran-nivel-de-liga-mexicana-y-serie-del-pacifico/"
   },
   {
-   "date": "2026-04-12",
+   "date": "2026-09-25",
    "team": "Jaibos de Sayulita",
-   "headline": "Sayulita kept celebrating its first championship with fans in the streets.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeonato-liga-nayarita-celebracion/"
-  },
-  {
-   "date": "2026-04-05",
-   "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos won their first LINABE title, 10-7 in 11 innings at Puerto Vallarta, in a game that lasted more than five hours.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeones-liga-nayarita-beisbol/"
-  },
-  {
-   "date": "2026-03-30",
-   "team": "Jaibos de Sayulita",
-   "headline": "The final against Puerto Vallarta turned ugly: a bench-clearing scuffle in Game 1, a brawl with 10 ejections in Game 2, and police stepping in after Game 3.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
+   "headline": "The Jaibos released three jersey designs, La Marea, Sayulita and El Campeón, priced from $700.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
   }
  ],
  "opponents": {
