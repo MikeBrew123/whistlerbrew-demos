@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-19T07:02-07:00",
+ "updated": "2026-11-20T07:04-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Season on 🔥",
-  "note": "Opening series was played Nov 14-15, 2026. No Jaibos 2026-27 roster, manager, player stats or later schedule was found on any public page, and the league site (linabegjc.com.mx) still shows 2025-26 data."
+  "note": "The league presented the 2026-27 season on Nov 13 and Series 1 was played Nov 14-15, but no 2026-27 roster, player stats or 2026-27 manager has been published yet."
  },
  "manager": "César López Andrade",
  "games": [
@@ -24,9 +24,9 @@
    "opponent": "Delfines de Puerto Vallarta",
    "home": false,
    "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
-   "round": "Serie 1, Game 1",
+   "round": "Regular season, Series 1, Game 1",
    "result": "L 3-6",
-   "note": "Start time comes from the Nov 14 preview at https://tribunadelabahia.com.mx/delfines-puerto-vallarta-jaibos-sayulita-serie/ . NTV and the Tribuna headline both say 6-3, but the Tribuna article body says five runs to three.",
+   "note": "NTV and the Tribuna headline say 6-3, but the Tribuna article body says 5-3.",
    "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
   },
   {
@@ -35,10 +35,21 @@
    "opponent": "Delfines de Puerto Vallarta",
    "home": true,
    "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Serie 1, Game 2",
+   "round": "Regular season, Series 1, Game 2",
    "result": "L 4-10",
-   "note": "Tribuna says this game was played in Sayulita. The ballpark name is from the team's Instagram bio and the municipal page https://www.bahiadebanderas.gob.mx/hector-santana-acompana-el-arranque-de-la-liga-de-beisbol-/",
-   "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
+   "note": "Home opener per the team and Tribuna (Nov 18). An earlier Tribuna preview had placed this game in Puerto Vallarta.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Dfzs_wshaxl/"
+  },
+  {
+   "date": "2026-11-22",
+   "time": "13:00",
+   "opponent": "Coqueros de Tuxpan",
+   "home": true,
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "round": "Regular season, Series 2, Game 2",
+   "result": null,
+   "note": "Game 1 of Series 2 was not found on any public page.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Df5hwyrBT-r/"
   }
  ],
  "roster": [],
@@ -193,33 +204,27 @@
  "season_from": "2026-09-01",
  "news": [
   {
+   "date": "2026-11-19",
+   "team": "Jaibos de Sayulita",
+   "headline": "Tacos al Pastor Díaz was announced as an official team sponsor for the 2026-27 season.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Df8i5XGNZ0h/"
+  },
+  {
    "date": "2026-11-18",
    "team": "Jaibos de Sayulita",
-   "headline": "Delfines de Puerto Vallarta swept the defending champion Jaibos in the opening series, 6-3 and 10-4.",
+   "headline": "Delfines de Puerto Vallarta swept the defending champion Jaibos 6-3 and 10-4 in the opening series, renewing their rivalry from last season's final.",
    "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
   },
   {
-   "date": "2026-11-17",
-   "team": "LINABE",
-   "headline": "After Serie 1, Compostela and Puerto Vallarta are 2-0, Sayulita and Santiago are 0-2, and Ocelotes UAN had a bye.",
-   "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
-  },
-  {
    "date": "2026-11-16",
    "team": "Jaibos de Sayulita",
-   "headline": "Bahía de Banderas mayor Héctor Santana attended the season opener at Estadio Manuel Rodríguez Sánchez and backed the Jaibos' bid for back-to-back titles.",
+   "headline": "Bahía de Banderas mayor Héctor Santana attended the season opener at Estadio Manuel Rodríguez Sánchez and wished the defending champions luck going for a second straight title.",
    "url": "https://www.bahiadebanderas.gob.mx/hector-santana-acompana-el-arranque-de-la-liga-de-beisbol-2026-2027/"
-  },
-  {
-   "date": "2026-11-16",
-   "team": "Jaibos de Sayulita",
-   "headline": "The team posted its official team photo with a message about defending the championship.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/Df0Mr1US9y3/"
   },
   {
    "date": "2026-11-13",
    "team": "LINABE",
-   "headline": "The league presented the 2026-27 season with nine teams, including Jaibos de Sayulita, and president Conrado Lizárraga said last season drew more than 96,000 fans over 111 games.",
+   "headline": "The league presented the 2026-27 season in Tepic with nine teams, after a record 2025-26 with more than 96,000 fans over 111 games.",
    "url": "https://ntv.com.mx/2026/11/13/presentan-nueva-temporadade-la-liga-nayarita-de-beisbol-german-jimenez-camarena-para-la-temporada-2026-2027/"
   },
   {
@@ -237,8 +242,14 @@
   {
    "date": "2026-09-25",
    "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos released three jersey designs, La Marea, Sayulita and El Campeón, priced from $700.",
+   "headline": "The Jaibos launched three 2026-27 jerseys (La Marea, Sayulita away, El Campeón home), each with a champion patch.",
    "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
+  },
+  {
+   "date": "2026-04-12",
+   "team": "Jaibos de Sayulita",
+   "headline": "Sayulita kept celebrating its first championship with fans in the streets.",
+   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeonato-liga-nayarita-celebracion/"
   }
  ],
  "opponents": {
