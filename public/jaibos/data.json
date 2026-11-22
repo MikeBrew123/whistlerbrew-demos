@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-20T07:04-07:00",
+ "updated": "2026-11-22T07:05-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Season on 🔥",
-  "note": "The league presented the 2026-27 season on Nov 13 and Series 1 was played Nov 14-15, but no 2026-27 roster, player stats or 2026-27 manager has been published yet."
+  "note": "Nine teams opened the 2026-27 LINABE season on Nov 14-15, and the Jaibos are defending champions; no roster or player stats for 2026-27 were published on any page found, and the league site linabegjc.com.mx has not been updated since the 2025-26 season."
  },
  "manager": "César López Andrade",
  "games": [
@@ -24,9 +24,9 @@
    "opponent": "Delfines de Puerto Vallarta",
    "home": false,
    "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
-   "round": "Regular season, Series 1, Game 1",
+   "round": "Serie 1, Juego 1",
    "result": "L 3-6",
-   "note": "NTV and the Tribuna headline say 6-3, but the Tribuna article body says 5-3.",
+   "note": "The Tribuna result story says 6-3 three times but also has one line reading 5-3. NTV confirms 6-3. The 18:00 start comes from the Tribuna preview at https://tribunadelabahia.com.mx/delfines-puerto-vallarta-jaibos-sayulita-serie/",
    "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
   },
   {
@@ -34,11 +34,22 @@
    "time": null,
    "opponent": "Delfines de Puerto Vallarta",
    "home": true,
-   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Regular season, Series 1, Game 2",
+   "venue": "Sayulita (per Tribuna recap)",
+   "round": "Serie 1, Juego 2",
    "result": "L 4-10",
-   "note": "Home opener per the team and Tribuna (Nov 18). An earlier Tribuna preview had placed this game in Puerto Vallarta.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/Dfzs_wshaxl/"
+   "note": "Venue conflict: the Nov 18 Tribuna recap puts the game in Sayulita, but Tribuna's Nov 15 preview (https://tribunadelabahia.com.mx/delfines-puerto-vallarta-vence-jaibos-sayulita/) put it at Agustín Flores Contreras in Vallarta. The 10-4 score is confirmed by NTV.",
+   "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
+  },
+  {
+   "date": "2026-11-21",
+   "time": "18:30",
+   "opponent": "Coqueros de Tuxpan",
+   "home": false,
+   "venue": "Estadio Lorenzo López Ibáñez, Tuxpan",
+   "round": "Serie 2, Juego 1",
+   "result": "L 1-5",
+   "note": "The game-day post gives 6:30 PM Tuxpan time (7:30 PM Sayulita time): https://www.instagram.com/jaibosdesayulita/p/DgBGDOxh4ve/ . The score comes from the team's post-game post, which does not state the game date.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DgCGRtfB545/"
   },
   {
    "date": "2026-11-22",
@@ -46,10 +57,10 @@
    "opponent": "Coqueros de Tuxpan",
    "home": true,
    "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
-   "round": "Regular season, Series 2, Game 2",
+   "round": "Serie 2, Juego 2",
    "result": null,
-   "note": "Game 1 of Series 2 was not found on any public page.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/Df5hwyrBT-r/"
+   "note": "The team's post says 'tomorrow at 1:00 PM in Sayulita' but does not name the opponent. Coqueros is inferred because this is Game 2 of the Serie 2 matchup. The stadium name comes from the team's Instagram bio. Not played as of this report.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DgCGRtfB545/"
   }
  ],
  "roster": [],
@@ -204,27 +215,21 @@
  "season_from": "2026-09-01",
  "news": [
   {
-   "date": "2026-11-19",
-   "team": "Jaibos de Sayulita",
-   "headline": "Tacos al Pastor Díaz was announced as an official team sponsor for the 2026-27 season.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/Df8i5XGNZ0h/"
-  },
-  {
    "date": "2026-11-18",
    "team": "Jaibos de Sayulita",
-   "headline": "Delfines de Puerto Vallarta swept the defending champion Jaibos 6-3 and 10-4 in the opening series, renewing their rivalry from last season's final.",
+   "headline": "Delfines de Puerto Vallarta swept the defending champion Jaibos in the season-opening series, leaving Sayulita 0-2.",
    "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
   },
   {
-   "date": "2026-11-16",
-   "team": "Jaibos de Sayulita",
-   "headline": "Bahía de Banderas mayor Héctor Santana attended the season opener at Estadio Manuel Rodríguez Sánchez and wished the defending champions luck going for a second straight title.",
-   "url": "https://www.bahiadebanderas.gob.mx/hector-santana-acompana-el-arranque-de-la-liga-de-beisbol-2026-2027/"
+   "date": "2026-11-17",
+   "team": "LINABE",
+   "headline": "After the first series, Compostela and Puerto Vallarta led at 2-0, while Santiago and Sayulita sat at 0-2; Ocelotes had the bye.",
+   "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
   },
   {
    "date": "2026-11-13",
    "team": "LINABE",
-   "headline": "The league presented the 2026-27 season in Tepic with nine teams, after a record 2025-26 with more than 96,000 fans over 111 games.",
+   "headline": "The league presented the 2026-27 season in Tepic with nine teams, and president Conrado Lizárraga reported more than 96 thousand fans and 111 games last season.",
    "url": "https://ntv.com.mx/2026/11/13/presentan-nueva-temporadade-la-liga-nayarita-de-beisbol-german-jimenez-camarena-para-la-temporada-2026-2027/"
   },
   {
@@ -242,8 +247,14 @@
   {
    "date": "2026-09-25",
    "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos launched three 2026-27 jerseys (La Marea, Sayulita away, El Campeón home), each with a champion patch.",
+   "headline": "The Jaibos unveiled three 2026-27 jerseys with the champion patch: navy away, white and gold home, and a sky blue La Marea special edition.",
    "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
+  },
+  {
+   "date": "2026-09-25",
+   "team": "Jaibos de Sayulita",
+   "headline": "The club reported ongoing work at Estadio Manuel Rodríguez Sánchez, including a new youth training area and a fan experience project to be announced soon.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddux2bNmjDi/"
   },
   {
    "date": "2026-04-12",
