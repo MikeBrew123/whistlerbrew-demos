@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T07:05-07:00",
+ "updated": "2026-11-22T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -178,14 +178,14 @@
      "stores": [
       {
        "store": "FreshSt",
-       "name": "AAA Certified Angus Beef Outside Round Roast",
-       "price": "$30.84 avg/ea",
-       "was": null,
-       "per": 13.99,
-       "sale": false,
+       "name": "AAA Certified Angus Beef Sirloin Tip Roast",
+       "price": "$22.02 avg/ea",
+       "was": "$33.05 avg/ea",
+       "per": 9.99,
+       "sale": true,
        "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020003500000_00.jpg?width=500"
+       "reg": 14.99,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020001100000_00.jpg?width=500"
       },
       {
        "store": "Nesters",
@@ -203,16 +203,8 @@
       "per": 13.99,
       "name": "AAA Certified Angus Beef Outside Round Roast"
      },
-     "pct_cheaper": 7,
-     "next_store": "Nesters",
-     "south": {
-      "town": "Squamish",
-      "store": "Walmart",
-      "name": "Your Fresh Market\u2122 AAA sirloin tip beef roast",
-      "per": 10.88,
-      "price": "$10.88 lb",
-      "pct": 22
-     }
+     "pct_cheaper": 33,
+     "next_store": "Nesters"
     },
     {
      "item": "Short ribs",
@@ -278,19 +270,19 @@
       {
        "store": "FreshSt",
        "name": "Vij\u2019s Cauliflower - Chilli Garlic Wings 460g",
-       "price": "$6.69",
-       "was": "$7.99",
-       "per": 6.6,
-       "sale": true,
+       "price": "$7.99",
+       "was": null,
+       "per": 7.88,
+       "sale": false,
        "until": "",
-       "reg": 7.88,
+       "reg": null,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062801135391_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 8.99,
-      "name": "Chicken Wings - Split Family Pack"
+      "per": 7.88,
+      "name": "Vij\u2019s Cauliflower - Chilli Garlic Wings 460g"
      },
      "south": {
       "town": "Vancouver",
@@ -298,7 +290,7 @@
       "name": "NO NAME\u00ae CHICKEN WINGS, 908 G",
       "per": 5.5,
       "price": "$11.00 OVER LIMIT PAY 14 EA",
-      "pct": 17
+      "pct": 30
      }
     },
     {
@@ -587,8 +579,26 @@
        "until": "Nov 26",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/440585373/1794838420/extra_large.jpg"
+      },
+      {
+       "store": "FreshSt",
+       "name": "Harvest - Applewood Bacon 500g",
+       "price": "$19.49",
+       "was": null,
+       "per": 17.68,
+       "sale": false,
+       "until": "",
+       "reg": null,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005739380032_00.jpg?width=500"
       }
      ],
+     "everyday": {
+      "store": "FreshSt",
+      "per": 17.68,
+      "name": "Harvest - Applewood Bacon 500g"
+     },
+     "pct_cheaper": 76,
+     "next_store": "FreshSt",
      "history": "Lowest in 7 weeks"
     },
     {
@@ -815,22 +825,22 @@
       },
       {
        "store": "FreshSt",
-       "name": "Golden Valley - White Eggs - Large 30pk",
-       "price": "$12.99",
+       "name": "Golden Valley - White Eggs - Large 12pk",
+       "price": "$5.59",
        "was": null,
-       "per": 5.2,
+       "per": 5.59,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005579910303_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005574205058_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 5.2,
-      "name": "Golden Valley - White Eggs - Large 30pk"
+      "per": 5.59,
+      "name": "Golden Valley - White Eggs - Large 12pk"
      },
-     "pct_cheaper": 23,
+     "pct_cheaper": 29,
      "next_store": "FreshSt"
     },
     {
@@ -914,20 +924,20 @@
       },
       {
        "store": "FreshSt",
-       "name": "Mt Lehman Cheese Co - Duchess Goat Cheese with CHILI ONI 150g",
-       "price": "$12.99",
+       "name": "Boursin Fresh Soft Cheese - Basil & Chive 150g",
+       "price": "$8.99",
        "was": null,
-       "per": 8.66,
+       "per": 5.99,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062805554826_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0007981300056_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 8.66,
-      "name": "Mt Lehman Cheese Co - Duchess Goat Cheese with CHILI ONI 150"
+      "per": 5.99,
+      "name": "Boursin Fresh Soft Cheese - Basil & Chive 150g"
      },
      "pct_cheaper": 29,
      "next_store": "Shoppers",
@@ -1043,17 +1053,6 @@
        "until": "Nov 28",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/440247958/1794389275/extra_large.jpg"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Bamboolia - Bamboo Paper Towel 2s",
-       "price": "$4.49",
-       "was": "$6.39",
-       "per": null,
-       "sale": true,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062774500355_00.JPG?width=500"
       }
      ]
     },
@@ -1239,24 +1238,6 @@
      "ends": "Nov 24"
     },
     {
-     "title": "20,000 points",
-     "detail": "Shoppers Drug Mart: every $150 spent on Ultimate Dining gift cards",
-     "store": "Shoppers",
-     "ends": "Nov 20"
-    },
-    {
-     "title": "5,000 points",
-     "detail": "Shoppers Drug Mart: every $100 spent on Visa Prepaid Gift Cards",
-     "store": "Shoppers",
-     "ends": "Nov 20"
-    },
-    {
-     "title": "5,000 points",
-     "detail": "Shoppers Drug Mart: when you purchase almost any 2 Life Brand body wash, limit 1",
-     "store": "Shoppers",
-     "ends": "Nov 20"
-    },
-    {
      "title": "10,000 points",
      "detail": "Shoppers Drug Mart: every $50 spent on Boston Pizza gift cards, coming soon (available in 2 days)",
      "store": "Shoppers",
@@ -1297,22 +1278,22 @@
     "avg_margin": 26
    },
    {
-    "store": "FreshSt",
-    "points": 14,
+    "store": "Independent",
+    "points": 17,
     "wins": 4,
-    "big_wins": 0,
-    "real_sales": 2,
-    "fake_sales": 0,
-    "avg_margin": 10
+    "big_wins": 1,
+    "real_sales": 6,
+    "fake_sales": 1,
+    "avg_margin": 25
    },
    {
-    "store": "Independent",
-    "points": 11,
-    "wins": 3,
-    "big_wins": 0,
-    "real_sales": 5,
-    "fake_sales": 1,
-    "avg_margin": 8
+    "store": "FreshSt",
+    "points": 16,
+    "wins": 4,
+    "big_wins": 1,
+    "real_sales": 2,
+    "fake_sales": 0,
+    "avg_margin": 17
    },
    {
     "store": "Shoppers",
@@ -1321,7 +1302,7 @@
     "big_wins": 1,
     "real_sales": 5,
     "fake_sales": 1,
-    "avg_margin": 23
+    "avg_margin": 29
    },
    {
     "store": "Creekside",
@@ -1336,7 +1317,7 @@
   "season": [
    {
     "store": "Independent",
-    "points": 297,
+    "points": 303,
     "weeks_won": 4
    },
    {
@@ -1346,7 +1327,7 @@
    },
    {
     "store": "FreshSt",
-    "points": 92,
+    "points": 94,
     "weeks_won": 0
    },
    {
