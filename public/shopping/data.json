@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T07:05-07:00",
+ "updated": "2026-11-23T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -261,7 +261,7 @@
       "per": 12.99,
       "name": "Fresh AAA Certified Angus Beef Brisket (subject to availabil"
      },
-     "history": "Lowest in 7 weeks"
+     "history": "Lowest in 8 weeks"
     },
     {
      "item": "Chicken wings",
@@ -456,7 +456,7 @@
       "per": 8.99,
       "name": "Canadian Fresh Side Pork Belly"
      },
-     "history": "Lowest in 7 weeks"
+     "history": "Lowest in 8 weeks"
     },
     {
      "item": "Pork chops",
@@ -599,7 +599,7 @@
      },
      "pct_cheaper": 76,
      "next_store": "FreshSt",
-     "history": "Lowest in 7 weeks"
+     "history": "Lowest in 8 weeks"
     },
     {
      "item": "Sausages",
@@ -768,11 +768,11 @@
      "next_store": "Nesters",
      "south": {
       "town": "Squamish",
-      "store": "Costco",
-      "name": "LavAzza Crema E Aroma whole bean coffee",
-      "per": 2.0,
-      "price": "PRICE $19.99",
-      "pct": 57
+      "store": "Walmart",
+      "name": "Ethical Bean coffee organic lush medium dark roast whole bea",
+      "per": 2.7,
+      "price": "$26.97",
+      "pct": 42
      }
     },
     {
@@ -796,7 +796,7 @@
       "per": 9.49,
       "name": "Dairyland - Coffee Cream - 18% m.f. 473ml"
      },
-     "history": "Lowest in 7 weeks"
+     "history": "Lowest in 8 weeks"
     },
     {
      "item": "Coffee cream 18%, big (946 mL+)",
@@ -814,16 +814,6 @@
      "unit": "/dozen",
      "stores": [
       {
-       "store": "Shoppers",
-       "name": "GRADE \"A\" LARGE WHITE EGGS",
-       "price": "$3.99 each",
-       "per": 3.99,
-       "sale": true,
-       "until": "Nov 23",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/440251401/1794389261/extra_large.jpg"
-      },
-      {
        "store": "FreshSt",
        "name": "Golden Valley - White Eggs - Large 12pk",
        "price": "$5.59",
@@ -839,9 +829,7 @@
       "store": "FreshSt",
       "per": 5.59,
       "name": "Golden Valley - White Eggs - Large 12pk"
-     },
-     "pct_cheaper": 29,
-     "next_store": "FreshSt"
+     }
     },
     {
      "item": "Butter",
@@ -856,16 +844,6 @@
        "until": "Nov 26",
        "reg": 1.96,
        "img": "https://f.wishabi.net/page_items/440585363/1794838413/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
-       "name": "NO NAME BUTTER",
-       "price": "$5.49 each",
-       "per": 1.21,
-       "sale": true,
-       "until": "Nov 23",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/440246547/1794389249/extra_large.jpg"
       },
       {
        "store": "FreshSt",
@@ -884,9 +862,9 @@
       "per": 1.97,
       "name": "Dairyland - Creamery Butter - Salted 454g"
      },
-     "pct_cheaper": 9,
-     "next_store": "Shoppers",
-     "history": "Lowest in 7 weeks"
+     "pct_cheaper": 44,
+     "next_store": "FreshSt",
+     "history": "Lowest in 8 weeks"
     },
     {
      "item": "Cheese",
@@ -924,31 +902,23 @@
       },
       {
        "store": "FreshSt",
-       "name": "Boursin Fresh Soft Cheese - Basil & Chive 150g",
-       "price": "$8.99",
+       "name": "Mt Lehman Cheese Co - Water-Buffalo Milk Cheddar Cheese 150g",
+       "price": "$13.99",
        "was": null,
-       "per": 5.99,
+       "per": 9.33,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0007981300056_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062805554823_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 5.99,
-      "name": "Boursin Fresh Soft Cheese - Basil & Chive 150g"
+      "per": 9.33,
+      "name": "Mt Lehman Cheese Co - Water-Buffalo Milk Cheddar Cheese 150g"
      },
      "pct_cheaper": 29,
-     "next_store": "Shoppers",
-     "south": {
-      "town": "Squamish",
-      "store": "Costco",
-      "name": "Kraft cheese slices",
-      "per": 0.64,
-      "price": "PRICE $7.99",
-      "pct": 55
-     }
+     "next_store": "Shoppers"
     },
     {
      "item": "Yogurt",
@@ -1102,16 +1072,6 @@
       },
       {
        "store": "Shoppers",
-       "name": "PC BATHROOM TISSUE",
-       "price": "$4.99 each",
-       "per": null,
-       "sale": true,
-       "until": "Nov 23",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/440245131/1794389247/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
        "name": "COTTONELLE PERSONAL WIPES (2 x 42's) or CHARMIN BATHROOM TISSUE (6 Roll)",
        "price": "$7.99 each",
        "per": null,
@@ -1119,6 +1079,17 @@
        "until": "Nov 28",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/440249826/1794389285/extra_large.jpg"
+      },
+      {
+       "store": "FreshSt",
+       "name": "Royale - Bathroom Tissue - Double Rolls - Original 2 Ply 12pk",
+       "price": "$10.99",
+       "was": "$14.99",
+       "per": null,
+       "sale": true,
+       "until": "",
+       "reg": null,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006343570373_00.jpg?width=500"
       }
      ]
     }
@@ -1279,12 +1250,12 @@
    },
    {
     "store": "Independent",
-    "points": 17,
+    "points": 19,
     "wins": 4,
-    "big_wins": 1,
+    "big_wins": 2,
     "real_sales": 6,
     "fake_sales": 1,
-    "avg_margin": 25
+    "avg_margin": 34
    },
    {
     "store": "FreshSt",
@@ -1297,12 +1268,12 @@
    },
    {
     "store": "Shoppers",
-    "points": 7,
-    "wins": 1,
-    "big_wins": 1,
-    "real_sales": 5,
+    "points": 0,
+    "wins": 0,
+    "big_wins": 0,
+    "real_sales": 3,
     "fake_sales": 1,
-    "avg_margin": 29
+    "avg_margin": null
    },
    {
     "store": "Creekside",
@@ -1317,7 +1288,7 @@
   "season": [
    {
     "store": "Independent",
-    "points": 303,
+    "points": 305,
     "weeks_won": 4
    },
    {
@@ -1332,7 +1303,7 @@
    },
    {
     "store": "Shoppers",
-    "points": 40,
+    "points": 33,
     "weeks_won": 0
    },
    {
@@ -1344,9 +1315,9 @@
   "weeks_scored": 9,
   "awards": {
    "worth_the_drive": {
-    "store": "Nesters",
-    "avg_margin": 26,
-    "wins": 8
+    "store": "Independent",
+    "avg_margin": 34,
+    "wins": 4
    },
    "fake_sale": {
     "store": "Shoppers",
@@ -1369,8 +1340,8 @@
    "whistler_tax": [
     {
      "store": "Shoppers",
-     "pct": 52,
-     "items": 6
+     "pct": 93,
+     "items": 4
     },
     {
      "store": "Independent",
