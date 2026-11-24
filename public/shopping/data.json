@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T07:05-07:00",
+ "updated": "2026-11-24T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
@@ -739,14 +739,14 @@
      "stores": [
       {
        "store": "FreshSt",
-       "name": "Republica Coffee Roasters - Organic The Perfect Storm Blend - Dark Roast 454g",
+       "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - Light Roast 454g",
        "price": "$20.99",
        "was": null,
        "per": 4.62,
        "sale": false,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062784332871_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062784332874_00.jpg?width=500"
       },
       {
        "store": "Nesters",
@@ -762,7 +762,7 @@
      "everyday": {
       "store": "FreshSt",
       "per": 4.62,
-      "name": "Republica Coffee Roasters - Organic The Perfect Storm Blend "
+      "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - L"
      },
      "pct_cheaper": 13,
      "next_store": "Nesters",
