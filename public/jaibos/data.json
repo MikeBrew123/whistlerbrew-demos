@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-23T07:01-07:00",
+ "updated": "2026-11-24T07:02-07:00",
  "season": {
   "label": "2026-27 season",
   "status": "Season on 🔥",
-  "note": "Nine-team 2026-27 LINABE season presented Nov 13, opened Nov 14-15; Jaibos are defending champions and started 0-2. No full schedule, roster or stats were found on any public page."
+  "note": "The LINABE 2026-27 season opened Nov 14-15 with nine teams, and the Jaibos are the defending 2025-26 champions. The full schedule, times, roster and individual stats are only on the league's own channels, which I could not read."
  },
  "manager": "César López Andrade",
  "games": [
@@ -20,45 +20,52 @@
   },
   {
    "date": "2026-11-14",
-   "time": "18:00",
+   "time": null,
    "opponent": "Delfines de Puerto Vallarta",
    "home": false,
-   "venue": "Unidad Deportiva Agustín Flores Contreras, Puerto Vallarta",
-   "round": "Serie 1, Game 1",
+   "venue": "Puerto Vallarta (park not named)",
+   "round": "Regular season, series 1, game 1",
    "result": "L 3-6",
-   "note": "Headline and NTV say 6-3; one paragraph of the Tribuna recap says five runs to three.",
-   "url": "https://tribunadelabahia.com.mx/delfines-puerto-vallarta-vence-jaibos-sayulita/"
+   "note": "Opening game of the season.",
+   "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
   },
   {
    "date": "2026-11-15",
    "time": null,
    "opponent": "Delfines de Puerto Vallarta",
    "home": true,
-   "venue": "Sayulita",
-   "round": "Serie 1, Game 2",
+   "venue": "Sayulita (Estadio Manuel Rodríguez Sánchez is the team's listed home park)",
+   "round": "Regular season, series 1, game 2",
    "result": "L 4-10",
-   "note": "Nov 18 Tribuna recap says played in Sayulita; the Nov 15 Tribuna article had listed it at Agustín Flores Contreras with Delfines home. Score confirmed by NTV.",
-   "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
+   "note": "Delfines swept the series 2-0.",
+   "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
   },
   {
    "date": "2026-11-22",
    "time": null,
-   "opponent": "Coqueros (de Tuxpan)",
+   "opponent": "Coqueros de Tuxpan",
    "home": true,
-   "venue": "Sayulita",
-   "round": "Regular season",
-   "result": null,
-   "note": "Team post shows Coqueros 4, Jaibos 3 after 3 innings; final score not published in any readable source. Starting pitcher Kender Villegas.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/DgDpoW6syW_/"
+   "venue": "Estadio Manuel Rodríguez Sánchez, Sayulita",
+   "round": "Regular season, series 2",
+   "result": "W 8-7",
+   "note": "First win of the season. Andy Vásquez hit a walk-off 3-run HR in the 9th. Date inferred from the team's Nov 23 post saying the win came 'ayer'. The other series 2 game was at Tuxpan, but its date and score were not published, and the team finished the series in last place.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DgEUWU0uYhn/"
   }
  ],
  "roster": [
   {
-   "name": "Kender Villegas",
-   "pos": "P (starting pitcher, Nov 22)",
+   "name": "Andy Vásquez",
+   "pos": "",
    "from": "",
    "number": "",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/DgDhZf1uITf/"
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DgEUWU0uYhn/"
+  },
+  {
+   "name": "Samuel Zamudio",
+   "pos": "",
+   "from": "",
+   "number": "",
+   "url": "https://www.instagram.com/beta.medios/reel/DgGW4RShNxf/"
   }
  ],
  "standouts": [
@@ -114,40 +121,16 @@
  ],
  "stats": [
   {
+   "name": "Andy Vásquez",
+   "pos": "",
+   "line": "2 HR vs Tuxpan on Nov 22 (7th inning, then a 3-run walk-off in the 9th)",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DgEUWU0uYhn/"
+  },
+  {
    "name": "Samuel Zamudio",
-   "pos": "C",
-   "line": "2025-26 final series MVP. Solo HR in Game 1 of the final, walk-off hit to win Game 3, and a 9th-inning homer to win the semifinal clincher 3-0 at Tuxpan. No season stat line published.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-toman-ventaja-delfines-vallarta/"
-  },
-  {
-   "name": "Brayan Vázquez",
    "pos": "",
-   "line": "Drove in runs in the 10-7, 11-inning title clincher at Puerto Vallarta. No season stat line published.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "name": "Hans Chacón",
-   "pos": "",
-   "line": "Drove in runs in the 10-7 title clincher. No season stat line published.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "name": "Juliandry Higuera",
-   "pos": "P",
-   "line": "Complete-game 3-0 shutout at Tuxpan to win the 2025-26 semifinal.",
-   "url": "https://meridiano.mx/2026/03/23/jaibos-gana-a-tuxpan-y-esta-en-la-final/"
-  },
-  {
-   "name": "Kender Villegas",
-   "pos": "P",
-   "line": "Complete-game 4-1 win over Puerto Vallarta in Game 5 of the final.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
-  },
-  {
-   "name": "Alberto Hecheverría",
-   "pos": "P (Cuban)",
-   "line": "Winning pitcher in the 10-7 title clincher.",
-   "url": "https://ntv.com.mx/2026/04/05/jaibos-de-sayulita-campeones-de-la-linabe-por-primera-vez/"
+   "line": "1 HR at Tuxpan, series 2 (date not stated)",
+   "url": "https://www.instagram.com/beta.medios/reel/DgGW4RShNxf/"
   }
  ],
  "facts": [
@@ -212,21 +195,33 @@
  "season_from": "2026-09-01",
  "news": [
   {
-   "date": "2026-11-18",
+   "date": "2026-11-23",
    "team": "Jaibos de Sayulita",
-   "headline": "Delfines de Puerto Vallarta swept the defending champion Jaibos 6-3 and 10-4 in the season-opening series.",
+   "headline": "The Jaibos said they closed the second series in last place despite getting their first win.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/DgGsyvBuyBf/"
+  },
+  {
+   "date": "2026-11-22",
+   "team": "Jaibos de Sayulita",
+   "headline": "Andy Vásquez's walk-off three-run homer beat Coqueros de Tuxpan 8-7 at home.",
+   "url": "https://www.instagram.com/jaibosdesayulita/reel/DgD6g7uhJBk/"
+  },
+  {
+   "date": "2026-11-18",
+   "team": "Delfines de Puerto Vallarta",
+   "headline": "Delfines swept the defending champion Jaibos 6-3 and 10-4 to open the LINABE season.",
    "url": "https://tribunadelabahia.com.mx/puerto-vallarta-delfines-victoria-serie-linabe/"
   },
   {
    "date": "2026-11-17",
    "team": "LINABE",
-   "headline": "After round one, Puerto Vallarta and Compostela lead at 2-0 while Sayulita and Santiago sit at 0-2; Ocelotes had the bye.",
+   "headline": "Puerto Vallarta and Compostela opened 2-0, while Santiago and Sayulita opened 0-2 and Ocelotes UAN had a bye.",
    "url": "https://ntv.com.mx/2026/11/17/puerto-vallarta-y-compostela-arrancan-con-dos-triunfos-en-la-liga-nayarita-de-beisbol/"
   },
   {
    "date": "2026-11-13",
    "team": "LINABE",
-   "headline": "League president Conrado Lizárraga presented the nine-team 2026-27 season in Tepic, with Grupo Alica as main sponsor.",
+   "headline": "The league presented its nine-team 2026-27 season and said last season drew more than 96,000 fans over 111 games.",
    "url": "https://ntv.com.mx/2026/11/13/presentan-nueva-temporadade-la-liga-nayarita-de-beisbol-german-jimenez-camarena-para-la-temporada-2026-2027/"
   },
   {
@@ -244,20 +239,8 @@
   {
    "date": "2026-09-25",
    "team": "Jaibos de Sayulita",
-   "headline": "Jaibos unveiled three 2026-27 jerseys, including a white and gold El Campeón design marking their title defense, priced at 700 to 800 pesos.",
-   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddu8Ibfjj4F/"
-  },
-  {
-   "date": "2026-04-12",
-   "team": "Jaibos de Sayulita",
-   "headline": "Sayulita kept celebrating its first championship with fans in the streets.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeonato-liga-nayarita-celebracion/"
-  },
-  {
-   "date": "2026-04-05",
-   "team": "Jaibos de Sayulita",
-   "headline": "The Jaibos won their first LINABE title, 10-7 in 11 innings at Puerto Vallarta, in a game that lasted more than five hours.",
-   "url": "https://tribunadelabahia.com.mx/jaibos-sayulita-campeones-liga-nayarita-beisbol/"
+   "headline": "Work continues at Estadio Manuel Rodríguez Sánchez, including a new area where youth players can train.",
+   "url": "https://www.instagram.com/jaibosdesayulita/p/Ddux2bNmjDi/"
   }
  ],
  "opponents": {
