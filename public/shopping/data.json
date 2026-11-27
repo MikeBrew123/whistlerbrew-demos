@@ -1,20 +1,9 @@
 {
- "updated": "2026-11-26T07:05-07:00",
+ "updated": "2026-11-27T07:05-07:00",
  "bubbly": {
   "item": "Bubly",
   "unit": "/can",
   "stores": [
-   {
-    "store": "FreshSt",
-    "name": "Bubly Sparkling Water Beverage - Blackberry 12/355ml",
-    "price": "$7.49",
-    "was": "$9.49",
-    "per": 0.62,
-    "sale": true,
-    "until": "",
-    "reg": 0.79,
-    "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006900015819_00.jpg?width=500"
-   },
    {
     "store": "Nesters",
     "name": "Bubly Sparkling Water",
@@ -34,22 +23,33 @@
     "until": "Dec 5",
     "reg": null,
     "img": "https://f.wishabi.net/page_items/440940349/1794989717/extra_large.jpg"
+   },
+   {
+    "store": "FreshSt",
+    "name": "Bubly Sparkling Water Beverage - Blackberry 12/355ml",
+    "price": "$9.49",
+    "was": null,
+    "per": 0.79,
+    "sale": false,
+    "until": "",
+    "reg": null,
+    "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006900015819_00.jpg?width=500"
    }
   ],
   "everyday": {
    "store": "FreshSt",
-   "per": 1.99,
-   "name": "Bubly Sparkling Water Beverage - Lime 355ml"
+   "per": 0.79,
+   "name": "Bubly Sparkling Water Beverage - Blackberry 12/355ml"
   },
-  "pct_cheaper": 5,
-  "next_store": "Nesters",
+  "pct_cheaper": 7,
+  "next_store": "Shoppers",
   "south": {
    "town": "Squamish",
    "store": "Walmart",
    "name": "bubly sparkling water beverage",
    "per": 0.52,
    "price": "$6.27",
-   "pct": 16
+   "pct": 20
   }
  },
  "stores": [
@@ -178,20 +178,21 @@
       {
        "store": "FreshSt",
        "name": "AAA Certified Angus Beef Top Sirloin Roast",
-       "price": "$51.79 avg/ea",
-       "was": null,
-       "per": 23.49,
-       "sale": false,
+       "price": "$33.05 avg/ea",
+       "was": "$51.79 avg/ea",
+       "per": 14.99,
+       "sale": true,
        "until": "",
-       "reg": null,
+       "reg": 23.49,
        "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020000600000_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 23.49,
-      "name": "AAA Certified Angus Beef Top Sirloin Roast"
-     }
+      "per": 24.49,
+      "name": "AAA Certified Angus Beef Boneless Top Sirloin Steak"
+     },
+     "history": "Lowest in 8 weeks"
     },
     {
      "item": "Beef roast",
@@ -199,14 +200,14 @@
      "stores": [
       {
        "store": "FreshSt",
-       "name": "AAA Certified Angus Beef Sirloin Tip Roast",
-       "price": "$22.02 avg/ea",
-       "was": "$33.05 avg/ea",
-       "per": 9.99,
+       "name": "AAA Certified Angus Beef Eye of Round Roast",
+       "price": "$23.13 avg/ea",
+       "was": "$34.15 avg/ea",
+       "per": 10.49,
        "sale": true,
        "until": "",
-       "reg": 14.99,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020001100000_00.jpg?width=500"
+       "reg": 15.49,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020002400000_00.jpg?width=500"
       },
       {
        "store": "Nesters",
@@ -224,7 +225,7 @@
       "per": 13.99,
       "name": "AAA Certified Angus Beef Outside Round Roast"
      },
-     "pct_cheaper": 49,
+     "pct_cheaper": 46,
      "next_store": "Nesters"
     },
     {
@@ -499,6 +500,17 @@
      "unit": "/lb",
      "stores": [
       {
+       "store": "FreshSt",
+       "name": "Family Pack Pork Loin Centre Cut Chops",
+       "price": "$14.52 avg/ea",
+       "was": "$21.13 avg/ea",
+       "per": 5.49,
+       "sale": true,
+       "until": "",
+       "reg": 7.99,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020026200000_00.jpg?width=500"
+      },
+      {
        "store": "Nesters",
        "name": "Pork Chops",
        "price": "$6.99 lb",
@@ -507,17 +519,6 @@
        "until": "Dec 3",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/441291008/1795206533/extra_large.jpg"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Canadian Fresh Boneless Pork Sirloin Chops",
-       "price": "$4.95 avg/ea",
-       "was": null,
-       "per": 7.49,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0020021000000_00.jpg?width=500"
       }
      ],
      "everyday": {
@@ -525,8 +526,8 @@
       "per": 7.49,
       "name": "Canadian Fresh Boneless Pork Sirloin Chops"
      },
-     "pct_cheaper": 7,
-     "next_store": "FreshSt"
+     "pct_cheaper": 21,
+     "next_store": "Nesters"
     },
     {
      "item": "Pork shoulder",
@@ -633,24 +634,8 @@
        "until": "Dec 3",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/441321152/1795243624/extra_large.jpg"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Harvest - Applewood Bacon 500g",
-       "price": "$19.49",
-       "was": null,
-       "per": 17.68,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005739380032_00.jpg?width=500"
       }
      ],
-     "everyday": {
-      "store": "FreshSt",
-      "per": 17.68,
-      "name": "Harvest - Applewood Bacon 500g"
-     },
      "pct_cheaper": 42,
      "next_store": "Independent",
      "history": "Lowest in 8 weeks"
@@ -782,6 +767,17 @@
        "img": "https://f.wishabi.net/page_items/441321238/1795243650/extra_large.jpg"
       },
       {
+       "store": "FreshSt",
+       "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - Light Roast 454g",
+       "price": "$15.99",
+       "was": "$20.99",
+       "per": 3.52,
+       "sale": true,
+       "until": "",
+       "reg": 4.62,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062784332874_00.jpg?width=500"
+      },
+      {
        "store": "Nesters",
        "name": "Kicking Horse Organic Coffee",
        "price": "$17.99 ea",
@@ -790,17 +786,6 @@
        "until": "Dec 3",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/441291154/1795206528/extra_large.jpg"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - Light Roast 454g",
-       "price": "$20.99",
-       "was": null,
-       "per": 4.62,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062784332874_00.jpg?width=500"
       },
       {
        "store": "Shoppers",
@@ -815,11 +800,11 @@
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 4.62,
-      "name": "Republica Coffee Roasters - Organic The Lion\u2019s Den Blend - L"
+      "per": 5.0,
+      "name": "Lavazza - Qualita Rossa Roasted Ground Coffee 250g"
      },
-     "pct_cheaper": 39,
-     "next_store": "Nesters"
+     "pct_cheaper": 32,
+     "next_store": "FreshSt"
     },
     {
      "item": "Coffee cream 18%, small (473 mL)",
@@ -904,6 +889,17 @@
        "img": "https://f.wishabi.net/page_items/440939350/1794989694/extra_large.jpg"
       },
       {
+       "store": "FreshSt",
+       "name": "Dairyland Creamery Butter - Salted 454g",
+       "price": "$6.99",
+       "was": "$8.95",
+       "per": 1.54,
+       "sale": true,
+       "until": "",
+       "reg": 1.97,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006870004505_00.jpg?width=500"
+      },
+      {
        "store": "Nesters",
        "name": "Lactantia Butter Sticks",
        "price": "$7.99 ea",
@@ -912,26 +908,15 @@
        "until": "Dec 3",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/441291090/1795206530/extra_large.jpg"
-      },
-      {
-       "store": "FreshSt",
-       "name": "Dairyland Creamery Butter - Salted 454g",
-       "price": "$8.95",
-       "was": null,
-       "per": 1.97,
-       "sale": false,
-       "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006870004505_00.jpg?width=500"
       }
      ],
      "everyday": {
       "store": "FreshSt",
-      "per": 1.97,
-      "name": "Dairyland Creamery Butter - Salted 454g"
+      "per": 2.05,
+      "name": "Meadowvale - Creamery Butter - Salted 454g"
      },
-     "pct_cheaper": 31,
-     "next_store": "Nesters"
+     "pct_cheaper": 21,
+     "next_store": "FreshSt"
     },
     {
      "item": "Cheese",
@@ -1024,14 +1009,14 @@
       },
       {
        "store": "FreshSt",
-       "name": "Olympic Greek Yogurt - Plain 2% m.f. 1.75kg",
-       "price": "$16.99",
-       "was": null,
-       "per": 0.97,
-       "sale": false,
+       "name": "Activia Probiotic Yogurt - Blueberry 2.9% m.f. 650g",
+       "price": "$4.29",
+       "was": "$6.49",
+       "per": 0.66,
+       "sale": true,
        "until": "",
-       "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005916140220_00.jpg?width=500"
+       "reg": 1.0,
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0005680034596_00.jpg?width=500"
       }
      ],
      "everyday": {
@@ -1102,16 +1087,6 @@
       },
       {
        "store": "Shoppers",
-       "name": "BOUNTY PAPER TOWELS 4 Roll",
-       "price": "$10.99 each",
-       "per": null,
-       "sale": true,
-       "until": "Dec 5",
-       "reg": null,
-       "img": "https://f.wishabi.net/page_items/440943676/1794989733/extra_large.jpg"
-      },
-      {
-       "store": "Shoppers",
        "name": "NO NAME PAPER TOWELS (2 Roll), ALUMINUM FOIL (25') or GLAD CLING WRAP (30m)",
        "price": "$1.49 each",
        "per": null,
@@ -1119,6 +1094,16 @@
        "until": "Dec 5",
        "reg": null,
        "img": "https://f.wishabi.net/page_items/440943839/1794989732/extra_large.jpg"
+      },
+      {
+       "store": "Shoppers",
+       "name": "BOUNTY PAPER TOWELS 4 Roll",
+       "price": "$10.99 each",
+       "per": null,
+       "sale": true,
+       "until": "Dec 5",
+       "reg": null,
+       "img": "https://f.wishabi.net/page_items/440943676/1794989733/extra_large.jpg"
       }
      ]
     },
@@ -1168,14 +1153,14 @@
       },
       {
        "store": "FreshSt",
-       "name": "Royale - Bathroom Tissue - Double Rolls - Original 2 Ply 12pk",
-       "price": "$10.99",
-       "was": "$14.99",
+       "name": "Sky Bathroom Tissue 12pk",
+       "price": "$8.99",
+       "was": "$9.99",
        "per": null,
        "sale": true,
        "until": "",
        "reg": null,
-       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0006343570373_00.jpg?width=500"
+       "img": "https://gmfgcdn.azureedge.net/gmfgcdn-41100db7-5d96-426e-a77b-dbba44febaba/0062714600408_00.jpg?width=500"
       }
      ]
     }
@@ -1196,38 +1181,7 @@
     "Independent",
     "Shoppers"
    ],
-   "offers": [
-    {
-     "title": "20,000 or 30,000 points",
-     "detail": "Shoppers Drug Mart: when you spend $60 in-store, reveal your offer, limit 1, coming soon (available tomorrow)",
-     "store": "Shoppers",
-     "ends": ""
-    },
-    {
-     "title": "30,000 points",
-     "detail": "Shoppers Drug Mart: when you spend $100+ on Cosmetics, Skincare, Fragrance, Beauty tools, online only, coming soon (available tomorrow)",
-     "store": "Shoppers",
-     "ends": ""
-    },
-    {
-     "title": "10,000 points",
-     "detail": "Shoppers Drug Mart: every $50 spent on Boston Pizza gift cards, coming soon (available in 2 days)",
-     "store": "Shoppers",
-     "ends": ""
-    },
-    {
-     "title": "10,000 points",
-     "detail": "Shoppers Drug Mart: every $100 on Sony PlayStation, Golf Town, H&M, kobo or The Keg gift cards, coming soon (available in 2 days)",
-     "store": "Shoppers",
-     "ends": ""
-    },
-    {
-     "title": "10,000 points",
-     "detail": "Shoppers Drug Mart: spend $50+ on shoppersphoto.ca, online only, coming soon (available in 2 days)",
-     "store": "Shoppers",
-     "ends": ""
-    }
-   ]
+   "offers": []
   }
  ],
  "points_rules": [
@@ -1236,7 +1190,7 @@
   "Load offers in the app before you shop, or they don't count.",
   "Only chase an offer that gives 20% or more back on something you'd buy anyway. A low shelf price beats points."
  ],
- "nesters_locals_day": "2026-11-26",
+ "nesters_locals_day": "2026-12-31",
  "scoreboard": {
   "week_of": "2026-11-26",
   "standings": [
@@ -1251,30 +1205,30 @@
    },
    {
     "store": "Independent",
-    "points": 27,
+    "points": 26,
     "wins": 5,
     "big_wins": 4,
-    "real_sales": 7,
+    "real_sales": 6,
     "fake_sales": 1,
-    "avg_margin": 30
+    "avg_margin": 28
    },
    {
     "store": "Shoppers",
-    "points": 21,
+    "points": 24,
     "wins": 4,
     "big_wins": 4,
     "real_sales": 7,
-    "fake_sales": 2,
-    "avg_margin": 35
+    "fake_sales": 1,
+    "avg_margin": 33
    },
    {
     "store": "FreshSt",
-    "points": 16,
+    "points": 22,
     "wins": 4,
-    "big_wins": 1,
-    "real_sales": 2,
+    "big_wins": 2,
+    "real_sales": 6,
     "fake_sales": 0,
-    "avg_margin": 18
+    "avg_margin": 22
    },
    {
     "store": "Creekside",
@@ -1289,7 +1243,7 @@
   "season": [
    {
     "store": "Independent",
-    "points": 353,
+    "points": 352,
     "weeks_won": 4
    },
    {
@@ -1299,12 +1253,12 @@
    },
    {
     "store": "FreshSt",
-    "points": 107,
+    "points": 113,
     "weeks_won": 0
    },
    {
     "store": "Shoppers",
-    "points": 54,
+    "points": 57,
     "weeks_won": 0
    },
    {
@@ -1331,12 +1285,12 @@
    },
    "deepest": {
     "store": "FreshSt",
-    "item": "Beef roast",
-    "name": "AAA Certified Angus Beef Sirloin Tip Roast",
-    "per": 9.99,
-    "reg": 14.99,
+    "item": "Sirloin steak",
+    "name": "AAA Certified Angus Beef Top Sirloin Roast",
+    "per": 14.99,
+    "reg": 23.49,
     "unit": "/lb",
-    "pct_off": 33
+    "pct_off": 36
    },
    "whistler_tax": [
     {
@@ -1348,6 +1302,11 @@
      "store": "Shoppers",
      "pct": 24,
      "items": 9
+    },
+    {
+     "store": "FreshSt",
+     "pct": 7,
+     "items": 4
     },
     {
      "store": "Independent",
